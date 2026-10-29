@@ -1,0 +1,349 @@
+   Compiling kh1-hook v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh1-hook)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.65s
+     Running unittests src/lib.rs (target/debug/deps/character_core-81e3588a434a3e69)
+
+running 21 tests
+test combo::tests::height_and_facing_windows ... ok
+test combo::tests::table_order_finishers_and_alternation ... ok
+test drive::tests::anti_chance_follows_the_counter ... ok
+test drive::tests::form_gauge_lasts_level_plus_three_bars_and_drains ... ok
+test drive::tests::levels_follow_the_table ... ok
+test drive::tests::hits_add_drive_truncated ... ok
+test controller::tests::arc_peaks_at_height_and_is_continuous ... ok
+test drive::tests::refill_fills_the_drive_or_the_form_gauge ... ok
+test drive::tests::spending_keeps_a_part_bar_unless_full ... ok
+test drive::tests::points_fill_bars_and_cap ... ok
+test reaction::tests::clash_table ... ok
+test npc::tests::magnet_pulls_into_an_orbit_then_drops ... ok
+test npc::tests::small_hit_flinches_and_slides_back ... ok
+test npc::tests::walks_by_root_motion_and_attacks_with_windows ... ok
+test reaction::tests::categories ... ok
+test npc::tests::launch_flies_then_lands_into_the_down_motion ... ok
+test reaction::tests::heavier_bodies_move_less ... ok
+test reaction::tests::front_and_back_flinches ... ok
+test reaction::tests::blow_brakes_to_the_floor_speed ... ok
+test reaction::tests::hit_back_uses_knockback_or_defaults ... ok
+test reaction::tests::launch_faces_the_attacker_and_uses_knockback_as_speed ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sim.rs (target/debug/deps/sim-ab0db3529ca1fa10)
+
+running 70 tests
+test action_button_mid_dodge_glides ... ok
+test a_blocked_glide_is_noted_not_started ... ok
+test a_double_tap_of_the_roll_is_no_quick_run ... ok
+test aerial_dodge_after_rolling_off_a_ledge ... ok
+test a_pushed_scripted_motion_follows_without_a_gap ... ok
+test aerial_dodge_once_per_airtime ... ok
+test air_cast_sinks_at_its_share_of_gravity ... ok
+test air_cast_stops_the_fall_one_frame_then_falls ... ok
+test air_combo_ends_before_the_landing_however_slow_the_presses ... ok
+test air_attack_lands_into_the_landing ... ok
+test air_reflect_holds_as_final_forms ... ok
+test aerial_recovery_rights_sora_mid_launch ... ok
+test carried_into_the_air_falls_on_at_its_speed ... ok
+test an_early_attack_press_is_not_kept ... ok
+test air_spell_combo_ends_on_landing ... ok
+test attack_moves_in_its_allow_movement_range ... ok
+test dodge_roll_uses_root_motion_and_level_iframes ... ok
+test combo_keeps_its_direction ... ok
+test a_tall_grounded_target_gets_the_ground_combo ... ok
+test falling_air_cast_lands_into_the_landing ... ok
+test finishing_reflect_as_the_first_finisher_then_a_finisher ... ok
+test finishing_reflect_as_the_second_finisher ... ok
+test drive_in_the_air_holds_and_swaps_carry_movement ... ok
+test glide_needs_height_and_held_button ... ok
+test glide_on_the_action_button ... ok
+test glide_in_place_hovers ... ok
+test grabs_a_ledge_after_the_apex_and_hangs ... ok
+test holding_through_the_roll_turns_it_into_quick_run ... ok
+test guard_faces_the_locked_target ... ok
+test guard_row_move_plays_from_square_without_a_guard ... ok
+test jump_also_climbs_from_a_hang ... ok
+test finishing_reflect_twice_then_the_combo_ends_after_it ... ok
+test ground_inertia_slides_to_a_stop ... ok
+test guard_row_attack_launches_from_square ... ok
+test jump_has_takeoff_frames_and_reaches_height ... ok
+test holding_toward_the_wall_grabs_then_a_fresh_push_climbs ... ok
+test lock_on_picks_nearest_and_releases ... ok
+test jump_out_of_the_landing_hold ... ok
+test moving_air_attack_steers_and_falls ... ok
+test landing_keeps_running_with_the_stick_and_stops_dead_without ... ok
+test neutral_aerial_dodge_goes_straight_up ... ok
+test jump_height_depends_on_hold ... ok
+test ground_combo_buffers_and_ends_with_finisher ... ok
+test horizontal_slash_is_part_of_the_air_combo ... ok
+test no_finishing_reflect_after_a_missed_finisher ... ok
+test no_grab_when_the_ledge_is_too_close_to_the_ground ... ok
+test kh1_spells_take_one_slot_each ... ok
+test no_cast_during_the_landing ... ok
+test quick_run_ends_in_the_landing ... ok
+test no_magic_buffered_through_a_finisher ... ok
+test quick_run_ends_on_release_and_roll_chains_into_it ... ok
+test quick_run_from_a_standstill_goes_along_the_facing ... ok
+test quick_run_out_of_the_roll_with_guard_equipped ... ok
+test magnet_burst_with_foes_beside ... ok
+test quick_run_ends_only_on_release ... ok
+test reflect_cannot_follow_the_last_finisher ... ok
+test runs_at_run_speed_and_turns_at_capped_rate ... ok
+test second_finisher_after_a_finisher_without_a_window ... ok
+test spell_cast_from_the_swing_combo_window ... ok
+test spell_mid_combo_is_a_step_of_it ... ok
+test sora_flinches_and_is_pushed_back_by_a_small_hit ... ok
+test square_priority_for_every_equipped_combination ... ok
+test wall_hit_without_a_repelled_motion_doesnt_loop ... ok
+test sora_is_launched_lands_and_gets_up ... ok
+test reflect_mid_combo_is_one_step ... ok
+test wisdom_keeps_momentum_in_the_air_and_on_landing ... ok
+test whiffed_swings_do_not_advance_the_combo ... ok
+test wisdom_shots_landing_carry_the_combo ... ok
+test vicinity_break_when_surrounded_only ... ok
+test square_swing_in_a_ground_combo ... ok
+
+test result: ok. 70 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests src/lib.rs (target/debug/deps/combat_core-93f9487fd2919b4e)
+
+running 18 tests
+test hit::tests::combo_boost_adds_per_hit ... ok
+test hit::tests::bounds_and_immunity ... ok
+test hit::tests::cure_heals_allies_only ... ok
+test hit::tests::basic_physical_hit ... ok
+test hit::tests::revenge_and_guard ... ok
+test hit::tests::magic_and_difficulty ... ok
+test hit::tests::interval_gating ... ok
+test hit::tests::same_team_is_not_a_target ... ok
+test record::tests::same_group_counts_up_and_new_group_resets ... ok
+test record::tests::interval_allows_a_rehit ... ok
+test shape::tests::columns_are_vertical_and_centred ... ok
+test record::tests::timer_blocks_other_groups ... ok
+test shape::tests::spheres ... ok
+test shape::tests::cubes_never_hit ... ok
+test shape::tests::sweep_steps_one_radius_until_within_one_and_a_half ... ok
+test shape::tests::volume_sweeps_from_the_second_frame ... ok
+test shape::tests::sphere_against_column_narrows_past_the_end ... ok
+test shape::tests::ellipsoid_uses_summed_axes ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/kh1_data-53c5bdadb2a78148)
+
+running 21 tests
+test jiggle::skip_tests::a_skipped_chain_is_left_as_posed ... ok
+test jiggle::tests::a_warp_restarts_the_chain ... ok
+test jiggle::cap_tests::swing_capped ... ok
+test jiggle::tests::still_pose_stays_put ... ok
+test jiggle::tests::moving_chain_trails_then_settles ... ok
+test secondary::tests::parts_cover_their_bones ... ok
+test retarget::tests::each_kh1_bone_has_one_part ... ok
+test secondary::tests::a_hood_turned_into_the_back_is_pushed_off_it ... ok
+test secondary::tests::a_spike_turned_into_the_head_is_held_back ... ok
+test secondary::tests::matches_from_the_binds ... ok
+test secondary::tests::the_hood_folds_as_kh2_s ... ok
+test texmap::tests::eyes_become_solid_blobs_and_shut_frames_stay_shut ... ok
+test secondary::tests::a_spike_turns_as_kh2_s_relative_to_the_head ... ok
+test texmap::tests::back_facing_counts_as_further ... ok
+test texmap::tests::frames_are_found_and_rebuilt ... ok
+test texmap::tests::colours_follow_the_surface ... ok
+test texmap::tests::strips_make_triangles ... ok
+test texmap::tests::islands_are_found_by_a_point ... ok
+test secondary::tests::the_chain_hangs_as_kh2_s_from_kh1_s_pommel ... ok
+test jiggle::down_tests::hangs_down_in_a_y_down_world ... ok
+test jiggle::hang_tests::a_free_chain_hangs_down ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/local_inverse.rs (target/debug/deps/local_inverse-1a92b955bfa376d2)
+
+running 1 test
+test kh2_motions_survive_the_round_trip ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/local_secondary.rs (target/debug/deps/local_secondary-28c1d760ab056eef)
+
+running 1 test
+test kh1_parts_follow_kh2_motions ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/dinput8-93c79ceb2b369044)
+
+running 97 tests
+test cure::tests::kh1_sora ... ok
+test cure::tests::kh1_magic ... ok
+test cure::tests::kh2_rule ... ok
+test drivegauge::tests::costs_are_kh2s ... ok
+test drivegauge::tests::damage_drive ... ok
+test drivegauge::tests::drops_follow_the_weights ... ok
+test drivegauge::tests::form_level_is_its_growth_ability ... ok
+test drivegauge::tests::save_bytes_are_checked ... ok
+test drivegauge::tests::maximum_grows_with_the_six_fights_to_nine ... ok
+test driveitems::tests::drop_rolls ... ok
+test drivegauge::tests::forms_and_reflect_dont_raise_it ... ok
+test drivegauge::tests::shown_with_the_first_form ... ok
+test driveitems::tests::prices ... ok
+test drivegauge::tests::the_hud_follows_the_form_gauge_length ... ok
+test driveitems::tests::record_fields ... ok
+test driveitems::tests::drop_tiers ... ok
+test driveitems::tests::shop ... ok
+test dual_wield::tests::adds_only_dual_disabled_in_one_empty_slot ... ok
+test driveitems::tests::usable_rule ... ok
+test dual_wield::tests::fragmented_lists_are_not_repaired_or_activated ... ok
+test dual_wield::tests::full_list_keeps_all_existing_abilities ... ok
+test driveitems::tests::chests ... ok
+test driveitems::tests::ids_unused_by_kh1 ... ok
+test dual_wield::tests::ground_filter_preserves_order_and_rejects_added_ability_air_and_hop_rows ... ok
+test dual_wield::tests::native_table_records_are_exact_and_only_dual_record_added ... ok
+test dual_wield::tests::imported_clip_keeps_both_weapons_own_contact_windows ... ok
+test dual_wield::tests::no_growth_or_action_abilities_added ... ok
+test dual_wield::tests::only_exact_equipped_byte_enables ... ok
+test dual_wield::tests::removal_preserves_other_states_order_and_duplicates ... ok
+test dual_wield::tests::unloaded_state_never_changes_list ... ok
+test growth::tests::bonus_ap_follows_the_learned_abilities ... ok
+test growth::tests::kh1_grants_wait_for_the_mods_schedule ... ok
+test growth::tests::fresh_save_has_nothing ... ok
+test growth::tests::early_gifts_keep_one_copy ... ok
+test growth::tests::list_ends_at_first_empty ... ok
+test growth::tests::grants_follow_level_and_lists ... ok
+test growth::tests::level_ups_give_kh2_abilities_once ... ok
+test growth::tests::kh1_menu_maps ... ok
+test growth::tests::full_finished_save_makes_room ... ok
+test growth::tests::menu_ids_are_distinct_and_new ... ok
+test growth::tests::modes_parse ... ok
+test growth::tests::menu_abilities_work_when_equipped ... ok
+test growth::tests::one_of_each_only ... ok
+test growth::tests::room_comes_from_spare_copies_then_the_least_missed ... ok
+test keys::tests::names ... ok
+test growth::tests::support_abilities_count_per_equipped_copy ... ok
+test keys::tests::other_keys ... ok
+test growth::tests::unequipped_abilities_do_nothing ... ok
+test menujump::tests::backing_out_two_levels_holds_both_presses ... ok
+test keys::tests::page_down_and_off ... ok
+test menujump::tests::the_press_that_closes_a_submenu_never_reaches_kh2 ... ok
+test menujump::tests::a_press_logged_once ... ok
+test keys::tests::unknown ... ok
+test menujump::tests::the_top_level_jumps_as_normal ... ok
+test mercy::tests::a_new_hit_after_it_starts_it_again ... ok
+test mercy::tests::a_short_flinch ... ok
+test mercy::tests::held_through_the_reaction_then_30_frames ... ok
+test mercy::tests::kh1_having_him_counts_down ... ok
+test mercy::tests::missed_frames_do_not_stretch_it ... ok
+test mercy::tests::nothing_without_a_hit ... ok
+test mercy::tests::repeats_are_told_apart ... ok
+test mercy::tests::the_same_frame_lands_once ... ok
+test mercy::tests::a_slam_and_its_shockwave ... ok
+test partners::tests::a_guest_doesnt_stand_in ... ok
+test partners::tests::alone_only_limit ... ok
+test partners::tests::the_full_party_opens_every_form ... ok
+test partners::tests::knocked_out_counts_as_gone ... ok
+test partners::tests::the_reason_names_the_partner ... ok
+test partners::tests::the_table ... ok
+test partners::tests::vanishing::a_kh1_reset_while_away_is_still_ours ... ok
+test partners::tests::vanishing::a_new_actor_comes_in_whole ... ok
+test partners::tests::vanishing::left_for_good ... ok
+test partners::tests::vanishing::kh1s_own_hide_is_left_alone ... ok
+test partners::tests::vanishing::our_exact_bits_are_ours ... ok
+test partners::tests::vanishing::restored_bits ... ok
+test partners::tests::vanishing::shown_by_kh1_clears_ours ... ok
+test partners::tests::vanishing::shown_once_then_kh1s ... ok
+test partners::tests::vanishing::taken_and_back ... ok
+test partners::tests::vanishing::the_log_names_the_bits ... ok
+test partners::tests::vanishing::the_old_net_missed_it ... ok
+test partners::tests::who_vanishes ... ok
+test story::tests::drive_gauge_fights ... ok
+test story::tests::bits_change_with_each_flag ... ok
+test story::tests::each_tier_alone ... ok
+test story::tests::every_choice_gets_every_form_once ... ok
+test story::tests::nothing_before_guard_armor ... ok
+test story::tests::read_thresholds ... ok
+test story::tests::reflect_levels ... ok
+test story::tests::shield ... ok
+test story::tests::sword ... ok
+test story::tests::rod ... ok
+test story::tests::unknown_choice_is_the_swords ... ok
+test story::tests::master_and_final ... ok
+test support::tests::damage_control_halves_at_low_hp ... ok
+test support::tests::drive_converter_turns_munny_into_orbs ... ok
+test support::tests::rates_per_copy ... ok
+test support::tests::packs_and_tells_changes ... ok
+
+test result: ok. 97 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/steam_map.rs (target/debug/deps/steam_map-39605506e4809062)
+
+running 2 tests
+test sorted ... ok
+test every_rva_mapped ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/version.rs (target/debug/deps/version-4b9781e6822f8471)
+
+running 1 test
+test version_is_the_latest_stage ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/kh2_anim-3ae11f4d460cdb8c)
+
+running 2 tests
+test solve::tests::two_bone_reaches_target ... ok
+test solve::tests::euler_round_trip ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/local.rs (target/debug/deps/local-16c3e8a97223046e)
+
+running 2 tests
+test every_sora_motion_poses_and_feet_reach_ik_targets ... ok
+test sora_mesh_skins_at_bind_pose ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/kh2_rig-0228406982c1f05b)
+
+running 1 test
+test tests::motion_hits_keep_their_swing_while_open ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/final_form.rs (target/debug/deps/final_form-cff747b51db12ab5)
+
+running 1 test
+test final_form_keyblades_spin_and_hurt_in_the_glide ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests character_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests combat_core
+
+running 1 test
+test crates/combat-core/src/lib.rs - (line 20) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+   Doc-tests kh1_data
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests kh2_anim
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests kh2_rig
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

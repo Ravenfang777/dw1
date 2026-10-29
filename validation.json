@@ -1,0 +1,53 @@
+{
+  "name": "KH1FM Dual Wield Ground Prototype v1",
+  "upstream_repo": "https://github.com/PM2CRAZY/KH2-Combat-in-KH1",
+  "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
+  "derivative_commit": "7f08c17718234d7a4ade2ef723ea6442b0bbcd7d",
+  "target": "x86_64-pc-windows-gnu",
+  "dll_sha256": "0dc2bcd1d0984deb6a12fc86af038c8825430c620251a3be628750c4ad56dee4",
+  "dll_bytes": 4918929,
+  "local_tests_passed": 239,
+  "new_dual_policy_controller_tests": 10,
+  "all_local_suites_passed": true,
+  "windows_cross_build_succeeded": true,
+  "exports": [
+    "DllMain",
+    "DirectInput8Create",
+    "OnInit",
+    "OnFrame"
+  ],
+  "imports": [
+    "KERNEL32.dll",
+    "msvcrt.dll",
+    "ntdll.dll",
+    "USERENV.dll",
+    "WINMM.dll",
+    "WS2_32.dll",
+    "api-ms-win-core-synch-l1-2-0.dll",
+    "bcryptprimitives.dll"
+  ],
+  "ability": {
+    "name": "Dual Wield",
+    "id": 126,
+    "ap": 0,
+    "initially_equipped": false,
+    "additional_ability_grants": [],
+    "native_table_entries_1_to_65": "preserved byte-for-byte"
+  },
+  "runtime_scope": {
+    "ground": "base Valor rows only; no air/hop/ability-requiring rows",
+    "air_and_casting": "native KH1; additional offhand contacts not added to these in v1",
+    "weapon": "duplicate of current KH1 weapon; no secondary selection or inventory claim",
+    "appearance": "native model/textures/colours; imported ground poses only",
+    "drive_menu_gauge_drain_tint_growth_stats": "not installed",
+    "ground_contacts": "both by default; optional offhand-only setting"
+  },
+  "game_test_performed_here": false,
+  "limitations": [
+    "No local KH2 install: runtime import, rendering, native contact and effect timing remain unverified here.",
+    "Optional upstream game-data tests did not exercise their real-data branches.",
+    "The Windows DLL was built on Linux, not executed in KH1 here.",
+    "Native hands and weapon contact alignment across different weapons/maps require gameplay.",
+    "Requires the earlier embedded offhand model replacement and competing weapon/moveset scripts to be disabled."
+  ]
+}
