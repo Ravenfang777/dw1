@@ -1,8 +1,9 @@
-Source: 39decfe8ff9045f8ffdc672d70f7ab900adaf002
-Stage: s347
+Source: d932175e0d953ea72d7b3f4b0a0837d3be690a27
+Stage: s348
 Target: x86_64-pc-windows-gnu
-DLL SHA256: 42984ee4dc7d3c7d0eb450d06579ddfd657d9184f075ebe81352cc7bd3c45177
-DLL bytes: 5002586
-Local tests: 296 passed, 0 failed, 18 suites; 67 Dual Wield tests
-Release cross-build and PE inspection: PASS
+DLL SHA256: 5f5db0ce936bf5eae2b45d21e3dba3e18e793e949583b817953d4f6e7c9334ee
+DLL bytes: 4605385
+Local tests: 307 passed, 0 failed, 18 suites; 78 Dual Wield tests
+Release cross-build: PASS (kh1-hook codegen-units=1)
+PE/native anchor checks: PASS
 Game execution: not performed here

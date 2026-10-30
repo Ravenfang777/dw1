@@ -1,138 +1,128 @@
-KH1FM DUAL WIELD -- PROTOTYPE v8 (s347)
+KH1FM DUAL STYLES -- PROTOTYPE v9 (s348)
 
-Install this ZIP as one OpenKH mod, replacing v7. It reads animation data
-from your own KH2FM installation. No game assets are included.
+Install this ZIP as one OpenKH mod, replacing v8. The animation data is
+read from your own KH2FM installation; no game assets are included.
 
-NEW IN v8
-- While Dual Wield and native Guard are equipped, the selected Guard action
-  becomes Valor's action-button attack: its rising double slash and hop.
-  This is the actual loaded Valor row 11, not a guessed animation swap.
-- The donor's own timing, launch, weapon-hit windows, impact feedback and
-  per-hand attack trails use the existing imported melee controller.
-  It is an attack; it has no defensive Guard window.
-- Guard remains a requirement. No Guard, growth, action or other ability is
-  granted, renamed or switched on by this replacement. Unequipping Dual
-  Wield restores the normal KH1 Guard behavior.
-- KH1's Guard versus Dodge Roll selection is preserved. With Dodge Roll
-  equipped, moving Square still selects native Roll under KH1's threshold
-  rule. If Guard alone is equipped, native Guard selection can work while
-  moving, and becomes the Valor attack. Air Glide and spell shortcuts stay
-  native. A missing/invalid donor keeps the native Guard route.
-- This explicit Guard attack works even when an ordinary combo lane stays
-  native due to equipped attack abilities. A native ability follow-up waits
-  for the imported cancel window and selects from the proper native air
-  state. Other combo-lane ability priority remains unchanged.
-- Retains v7's Final Glide/Superglide with blade contacts and shared slowed
-  Valor combat/scripted/cutscene idle. Default KH1 ground/air casting stays.
+THE TWO ABILITIES
+Style: Dual Close (existing ability 126, renamed)
+- Retains v8's Valor ground/aerial combat, native attack-ability lane
+  priority, rising Guard attack, shared slower idle and Final glides.
+- Ground and aerial casting remain the default KH1 animations.
+- Its existing equipped/disabled state is preserved on update.
 
-ADJUST IDLE SPEED
-Fully close KH1FM. In kh1-dual-wield.ini beside the game executable, add
-or edit this line (an existing INI is preserved):
+Style: Dual Ranged (new ability 125, zero AP, initially unequipped)
+- Uses matching Final Form visuals for the same admitted movement, idle,
+  item, common damage and recognized interaction/cutscene-idle actions.
+- Both copies of the currently equipped KH1 weapon follow Final's
+  floating weapon poses, including their authored blade spin.
+- Uses Final's ground/aerial casting visuals for all seven KH1 spells.
+  KH1 still supplies MP costs, spell levels, rate/recovery, targets,
+  projectiles, effects, sounds and spell damage.
+- Attack is disabled. Normal combos, native attack-ability rows,
+  counterattack routes, and physical special commands/follow-ups are
+  blocked. Sonic Blade, Ars Arcanum, Strike Raid, Ragnarok and Trinity
+  Limit are not offered while Ranged is active.
+- It never runs a Final combo controller or a spell-to-attack follow-up.
+  Native Guard and Dodge Roll remain available if already equipped;
+  Guard does NOT become the Close style's rising attack in Ranged.
+- The floating weapons can hurt enemies during their actual Final
+  non-melee weapon-hit windows, including jumping, falling/landing and
+  gliding where those windows exist. Damage is not an always-on aura.
+  Both blades use the displayed equipped weapon's length and native
+  contact/impact sound/effects. Only real weapon-hit windows are used;
+  Final body/spell hitboxes and scripts do not create additional spells.
+  Scene idles are visual only. No continuous swing-trail emitter is added.
 
-  idle_speed = 0.75
+MUTUALLY EXCLUSIVE
+Equipping either style automatically unequips the previous style. Both
+ability entries remain learned. Only those two equipped flags change;
+other abilities, their order and AP are retained. Old poses, casts,
+contacts and emitters are retired when the style changes. Unequipping
+the active style restores normal KH1 behavior and removes the duplicate.
 
-0.75 = 75% of the donor's authored speed; 0.50 = half speed; 1.0 = authored
-speed. Accepted finite range is 0.10..2.00; missing/invalid values use 0.75.
-Restart KH1FM to read changes. This applies to the combat and supported
-cutscene idle only. It does not change attack timing or glide speed.
+Both styles duplicate whichever KH1 weapon is currently equipped. There
+is no second weapon selection or inventory copy, Drive gauge/drain/timer,
+costume/recolour, partner removal, stat/AP bonus or extra native ability.
+
+FINAL CASTING DONORS
+Fire: Final Fire ground/air.
+Blizzard: Final Blizzard ground/air.
+Thunder: Final Thunder ground/air.
+Cure: Final Cure ground/air.
+Gravity: Final Thunder ground/air.
+Stop and Aero: Final Cure ground/air.
+Gravity/Stop/Aero keep their actual KH1 spell behavior. Their donor choice
+is visual. The cast follows its verified native motion clock and stops on
+interruption or a style/map/weapon change. Exact release sync needs a
+fresh-process game test.
 
 INSTALL / UPDATE -- FULLY CLOSE KH1FM FIRST
-1. Disable v1/v2/v3/v4/v5/v6/v7 and enable only v8 in OpenKH. All versions target
-   the same DLL. F1 cannot reload or replace this native DLL.
-2. Keep older integrated/offhand Lua, Synch/moveset routers, v8 embedded
-   duplicate-model assets and the full KH2 Combat / kh1-kh2.dll mod disabled.
-   If an old embedded duplicate was copied into another mod, restore its
-   normal Sora model assets.
-3. OpenKH Mods Manager -> Kingdom Hearts Final Mix -> install this ZIP as
-   a Mod Archive -> enable it -> Build and Run. Panacea is required.
-4. Load your save, equip Dual Wield, and stand idle briefly for the held
-   duplicate calibration. Existing ability and INI entries are reused.
+1. Disable v8 and every earlier Dual Wield prototype; enable only v9.
+   Keep old integrated/offhand Lua, Synch/moveset routers, embedded
+   duplicate Sora-model assets and the full KH2 Combat overhaul disabled.
+2. Install this ZIP in OpenKH Mods Manager for Kingdom Hearts Final Mix,
+   enable it, then Build and Run. Panacea is required.
+3. Load your save. The old Dual Wield entry is now Style: Dual Close.
+   Style: Dual Ranged is added unequipped. Equip either style.
+4. Stand idle briefly for weapon/pose admission, then test. KH1FM and
+   KH2FM must be in the same PC 1.5+2.5 installation folder. Normal Sora
+   is required. F1 does not reload this native DLL; restart the game.
 
-Normal Sora is required. KH1FM and KH2FM must be in the same PC 1.5+2.5
-install folder. Do not install/rename this DLL as the shared dinput8.dll;
-OpenKH/Panacea loads dll/kh1-dual-wield.dll from the mod manifest.
+Do not rename/install this DLL as the shared dinput8.dll. The manifest
+loads dll/kh1-dual-wield.dll through OpenKH/Panacea.
 
-TEST THIS VERSION
-1. Equip native Guard and Dual Wield, stand still and press the Guard button
-   once. Check Valor's rising attack, launch, both blade contacts and trails,
-   then the return to native falling/landing. Repeat while changing targets.
-2. With Guard and Dodge Roll equipped, compare stationary Square (new attack)
-   and moving Square (native Roll). Unequip Guard and verify no new attack is
-   available; unequip Dual Wield and verify the normal KH1 Guard returns.
-3. Equip a native combo ability, then try the new Guard attack and valid
-   attack/magic follow-ups. Check proper native aerial actions and casting.
-   Existing imported melee offhand isolation applies to this attack too.
-4. Interrupt the attack, change maps/weapons and unequip/re-equip Dual Wield.
-   Check that old trails and poses retire. Also check both Final glides and
-   revisit the prior cutscene idle as regression checks.
+TEST v9
+- Equip Close, then Ranged: verify Close becomes unequipped. Reverse
+  the switch and verify Ranged becomes unequipped. Save/reload and repeat.
+- In Ranged, verify Attack is greyed and cannot be triggered from the
+  menu, casting, Guard/counterattack or equipped attack abilities.
+  Talk/Open/Examine, magic shortcuts and normal items must still work.
+- Check Final idle, walk/run, jumps, fall/landing, item/damage actions,
+  both glides, and all seven ground/air spells. Check both weapon poses.
+- Jump/fall/glide close to one enemy and check floating blade contacts.
+  Compare a whiff. Exclude party damage when attributing enemy HP loss.
+- Change maps and equipped weapons, then switch styles and unequip.
+  Check that old poses/trails/hits stop and normal KH1 Attack returns.
+- Return to Close as a regression check, including native combo abilities
+  and its rising Guard attack with native Guard equipped.
 
-RETAINED BEHAVIOR
-Dual Wield is ability 126, zero AP, initially unequipped. It duplicates the
-currently equipped KH1 weapon without another selection or inventory copy.
-Unequipping restores KH1 routing/poses and removes the duplicate. No gauge,
-drain, timer, transformation, costume/recolour, partner removal, stat/AP
-bonus, camera/HUD/shortcut change or extra ability grant is installed.
+SETTINGS -- EXISTING INI PRESERVED
+kh1-dual-wield.ini is beside KINGDOM HEARTS FINAL MIX.exe.
+  idle_speed = 0.75
+Changes both styles' combat and supported scene-idle speed. 1.0 is the
+original rate; 0.50 is half rate. Accepted range 0.10..2.00. Restart to read.
 
-Equipped native attack abilities keep their ENTIRE affected combo lane
-under KH1, including native selection, prerequisites, timing and contacts.
-  Ground: Vortex, Counterattack, Blitz, Slapshot, Sliding Dash, Ripple Drive,
-          Stun Impact, Gravity Break, Zantetsuken.
-  Air: Aerial Sweep, Hurricane Blast.
-The duplicate is cosmetic on native combo lanes. Other lanes use existing
-Valor base ground/aerial rows and per-hand contacts/trails. Combo Plus,
-Air Combo Plus and Combo Master alone do not force a native lane.
-Native fallback actions retain a cosmetic hand-following duplicate, even
-when KH1 stows/hides the primary weapon, while the current actor pose is valid.
-Swing trails require an imported attack window, not an enemy; impact
-effects and sound require contact. Non-attack donors add no contact/trails.
+  offhand_only_test = off
+Use off to test BOTH blades. An existing on value still isolates the
+left imported contacts, including Close Guard/glide and Ranged floating
+contacts. It does not block native spells, items or party damage.
 
-Available Valor movement, item-use/throw and common front/back, high/low,
-heavy and aerial damage reactions remain visual overlays. KH1 retains
-controls, movement, damage, item quantity/targets, effects, sounds and events.
-The new Glide/Superglide donor choice supersedes v5's Valor glide candidate.
-
-Both recognized scripted and event standing idles now use Valor combat
-IDLE 0 at idle_speed, including the previously separate LINK_IDLE route.
-Chest opening, lifting/carrying/throwing objects, pushing and the Trinities
-remain native. Dedicated EVM/event-bank poses, separate actors/copies,
-movie cinematics and unknown gestures stay native. No blanket cutscene
-replacement is claimed. Missing/invalid donor data stays native.
-
-OPTIONAL OFFHAND CONTACT ISOLATION
-After fully closing KH1FM, set in kh1-dual-wield.ini:
-  offhand_only_test = on
-This isolates LEFT IMPORTED MELEE, INCLUDING GLIDE CONTACTS. It does not block native
-attack-ability combos, spells, items or other characters' damage.
-Unequip native action abilities for imported offhand-only tests. Set off
-again to restore both imported blades.
+  remove_dual_wield = off
+For uninstall only: set on, launch with v9, load and save, close the game,
+then disable the mod and Build again. This removes both custom style
+entries and preserves the other abilities/save data.
 
 LOG
-kh1-dual-wield.log is beside KINGDOM HEARTS FINAL MIX.exe and the INI.
-The earlier supplied log identifies this installation folder:
-  C:\Steam\steamapps\common\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-\
-Look for s347 / PROTOTYPE v8, DUAL WIELD GLIDE DONOR, DUAL WIELD VISUAL DATA,
-DUAL WIELD GUARD DONOR READY, DUAL WIELD GUARD ATTACK REQUEST,
-DUAL WIELD VISUAL ACTIVE, DUAL WIELD GLIDE CONTACT READY,
-DUAL WIELD SCENE IDLE ROUTE and DUAL WIELD COMBO ROUTES. DATA lists donor
-availability; ACTIVE reports the first accepted action sample and speed.
-Return the NEW log with a matching short recording for a bad transition.
+kh1-dual-wield.log is beside the game executable/INI. Check s348 and
+PROTOTYPE v9. Useful lines: DUAL STYLE CHANGED, DUAL STYLE READY,
+DUAL CLOSE VISUAL DATA, DUAL RANGED VISUAL DATA, DUAL RANGED CAST DONOR,
+DUAL RANGED FINAL CAST and DUAL STYLE FLOATING CONTACT READY.
+Return the NEW log and a short recording for an incorrect transition.
 
-REMOVAL
-Unequip Dual Wield for normal play. To remove its saved ability entry:
-close the game, set remove_dual_wield = on in the INI, launch with v8,
-load and save, close, disable this mod and Build again. Only that entry
-is removed; every other ability/save entry is retained.
+COVERAGE AND VALIDATION
+Supported regular-bank actions retain the prior strict request/header
+checks. Missing Final clips and unmatched native gestures retain native
+body poses and a cosmetic hand-following duplicate. Dedicated EVM/event
+poses, chest opening, carrying/pushing/throwing objects and Trinities are
+not blanket-replaced. There is no promise that every animation contains
+a damaging weapon window. Stale/missing draws stop floating contacts.
 
-VALIDATION / LIMITS
-296 local tests passed, including 67 Dual Wield tests, across 18 suites.
-Windows x64 release cross-build passed; PE exports/imports checked.
-ZIP CRC and all extracted file hashes checked. Source patch and original
-credits/licences are included.
+307 local tests passed in 18 suites, including 78 Dual Wield tests.
+Windows x64 release cross-build and PE exports/imports passed. New native
+menu/offer anchors match the supplied Steam executable. ZIP CRC and full
+extraction hashes checked. Cumulative source patch and credits included.
 
-The DLL has NOT been run inside KH1FM here. No local KH2 install is present,
-so optional real-game-data tests used their no-install paths. Actual donor
-availability/appearance, Guard input/launch/cancels and restoration, the
-specific cutscene, menu-pause timing, glide
-contact alignment/re-hit behavior, guard response, impact sound/effects,
-map/scene transitions and native action triggers need your fresh-process
-game test. Keep the v7 ZIP to revert if needed.
+The DLL has NOT been run inside KH1FM here. Actual ability-menu refresh,
+style exclusivity in game, Final donor appearance/availability, casting
+release sync, weapon geometry/rehits/impact feedback and map transitions
+still need your fresh-process test. Keep the v8 ZIP to revert if needed.

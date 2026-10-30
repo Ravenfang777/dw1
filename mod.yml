@@ -1,13 +1,14 @@
-title: KH1FM Dual Wield Prototype v8
+title: KH1FM Dual Styles Prototype v9
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Passive Dual Wield ability duplicating the current KH1 weapon. Selected
-  native Guard becomes Valor's rising action-button attack with its launch,
-  blade contacts and trails. Requires Guard equipped; native Dodge Roll
-  selection retained. Final glides with contacts and shared slower Valor idle.
-  Equipped native attack abilities retain their combo lane. Native KH1
-  casting and movement; no Drive system or extra grants. Requires KH2FM
-  in the same install. Disable earlier versions and the full KH2 Combat mod.
+  Two exclusive passive abilities duplicating the equipped KH1 weapon.
+  Style Dual Close retains Valor combat and native attack ability priority.
+  Style Dual Ranged uses Final action and casting visuals; Attack and physical
+  specials are disabled, with only authored floating weapon contacts.
+  Equipping either style unequips the other. Native KH1 spells and movement;
+  no Drive gauge, transformation or bonus native abilities. Requires KH2FM
+  in the same installation. Disable earlier Dual Wield versions and the full
+  KH2 Combat overhaul.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

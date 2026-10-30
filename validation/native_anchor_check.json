@@ -1,0 +1,16 @@
+[
+  {
+    "epic_rva": "0x292330",
+    "steam_rva": "0x2944c0",
+    "expected_prologue_matches": true
+  },
+  {
+    "epic_rva": "0x2912f0",
+    "steam_rva": "0x293480",
+    "expected_prologue_matches": true
+  },
+  {
+    "special_prompt_call_matches": true,
+    "steam_call_rva": "0x294ca2"
+  }
+]

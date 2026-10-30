@@ -1,24 +1,23 @@
-DUAL WIELD PROTOTYPE v8 -- s347
+DUAL STYLES PROTOTYPE v9 -- s348
 
-Derived from JamesPMx / PM2CRAZY's MIT OR Apache-2.0 project:
+Derived from JamesPMx / PM2CRAZY:
 https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v8: 39decfe8ff9045f8ffdc672d70f7ab900adaf002
+Derivative v9: d932175e0d953ea72d7b3f4b0a0837d3be690a27
+Licences: MIT OR Apache-2.0. Original credits are retained.
 
-source/DualWield_v8.patch contains all eight derivative commits. Apply with
-  git am /path/to/DualWield_v8.patch
-to the pinned upstream checkout. No game files, executable bytes, extracted
-tables, disassembly or decompiler output are shipped.
-
-Source rules/confidence: docs/combat-model.md in the patch. Native glide
-subtype/time-step behavior was privately checked in the supplied Steam
-executable. Donor motion dictionary and slot fallback:
-https://openkh.dev/kh2/file/anb/mset.html
+source/DualStyles_v9.patch contains all nine derivative commits. Apply
+with git am to the pinned upstream checkout. No game files, native
+executable bytes, extracted tables or decompiler/disassembly dumps ship.
+Source rules/confidence and native addresses: docs/combat-model.md.
 
 Build (Rust 1.99.1, Windows GNU target, MinGW GCC 13-posix):
-  cargo build --release -p kh1-hook --target x86_64-pc-windows-gnu --locked
-Rename release dinput8.dll to kh1-dual-wield.dll for OpenKH/Panacea.
+  cargo rustc --release -p kh1-hook --target x86_64-pc-windows-gnu --locked -- -C codegen-units=1
+The one-unit setting avoids empty parallel-codegen object files observed
+in this environment. Rename release dinput8.dll to kh1-dual-wield.dll in
+the package; load with the supplied OpenKH manifest.
+
 Tests:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim --locked
-296 passed, 0 failed; 67 Dual Wield tests; 18 suites.
-No Windows/game execution or installed donor validation claimed.
+307 passed, 0 failed; 78 Dual Wield tests; 18 suites.
+No Windows/game execution or installed Final donor validation is claimed.
