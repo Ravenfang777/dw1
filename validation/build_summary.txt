@@ -1,8 +1,8 @@
 Windows x64 GNU release build passed.
 Rust 1.99.1; MinGW GCC 13-posix; kh1-hook codegen-units=1.
 Warnings: 1303 (inherited unused/dead code); no errors.
-316 local tests passed; 18 suites; 87 Dual Wield tests.
+321 local tests passed; 18 suites; 92 Dual Wield tests.
 PE exports: DirectInput8Create, DllMain, OnFrame, OnInit
-DLL bytes: 4618675
-DLL SHA256: 4b15f977cf7801902c6b3f7a823724af1a8f17e5cd08532c40aff28202eec307
+DLL bytes: 4625192
+DLL SHA256: 50cee0e5ba4702c652e2d390c29e1322a232706e3d97cbb044d99d32d69374d2
 No live game execution performed.

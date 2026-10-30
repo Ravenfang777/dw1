@@ -1,12 +1,12 @@
-DUAL STYLES PROTOTYPE v11 -- s350
+DUAL STYLES PROTOTYPE v12 -- s351
 
 Derived from JamesPMx / PM2CRAZY:
 https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v11: a77281cb3457243c726a4db60408aba8863eda0d
+Derivative v12: 78274512cf7e4955b85b6b74c0b6362d397413dc
 Licences: MIT OR Apache-2.0. Original credits retained.
 
-source/DualStyles_v11.patch contains all eleven derivative commits.
+source/DualStyles_v12.patch contains all twelve derivative commits.
 Apply with git am to pinned upstream. No game assets, game executables,
 extracted tables or decompiler/disassembly dumps ship. Rules and source
 confidence are recorded in docs/combat-model.md.
@@ -18,5 +18,5 @@ Rename release dinput8.dll to kh1-dual-wield.dll; use OpenKH/Panacea.
 
 Tests:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim --locked
-316 passed; 0 failed; 18 suites; 87 Dual Wield tests.
+321 passed; 0 failed; 18 suites; 92 Dual Wield tests.
 No Windows/game execution or installed Final donor validation claimed.

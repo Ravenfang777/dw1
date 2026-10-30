@@ -1,13 +1,13 @@
-title: KH1FM Dual Styles Prototype v11
+title: KH1FM Dual Styles Prototype v12
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Close uses native held-weapon Glide and Superglide without glide damage.
-  Ranged gains an Aero-pose basic combo and a regular Glide floor hover.
-  Both exclusive abilities duplicate the currently equipped KH1 weapon.
-  Ranged attacks use only model and blade animation, no Aero spell or MP.
-  Existing native spells and Final casting visuals retained. No Drive
-  gauge, transformation or bonus abilities. Requires KH2FM in the same
-  installation. Disable older Dual Wield and the full KH2 Combat overhaul.
+  Refreshes the Close offhand from its live draw hand during native glides.
+  Ranged attacks keep Final idle on Sora with the same spinning weapons
+  on ground and air; finite three-slot combos, combo modifiers and air
+  hover. Both exclusive styles duplicate the currently equipped weapon.
+  Native spells retained; no Aero spell/MP from Attack, Drive system,
+  costume or bonus abilities. Requires KH2FM in the same installation.
+  Disable older Dual Wield and the full KH2 Combat overhaul.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy
