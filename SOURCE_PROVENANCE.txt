@@ -1,29 +1,18 @@
-DUAL STYLES PROTOTYPE v15 -- s354
-
-Derived from JamesPMx / PM2CRAZY:
-https://github.com/PM2CRAZY/KH2-Combat-in-KH1
+FOUR STYLES PROTOTYPE v16 -- s355
+Derived from JamesPMx / PM2CRAZY: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v15: cee8760ed7446fbb3eff9cb3b46f283c26b1027c
+Derivative v16 source: 095388d526e32db2973bbff3423d3708539e1918
 Licences: MIT OR Apache-2.0. Original credits retained.
-
-source/DualStyles_v15.patch contains fifteen derivative commits. Apply
-with git am to pinned upstream. The isolated renderer uses the existing
-kh2-magic/kh2-fx/fx12 source. No game assets/executables, extracted tables
-or decompiler/disassembly dumps ship. Rules/source/confidence are in
-docs/combat-model.md. Native research receipts contain no game bytes.
-
-Historical recovery before v14: saved v13 source was reapplied to pinned
-upstream after a workspace reset. Original v13: 2b58a7bcb76711325f484d3d84905cf0a2e26be1
-Reconstructed v13: 0c9b7dfd31ec8d74b6ae47df2a28850324af35b4
-All 22 final touched-file blobs matched its source-patch index hashes.
-
-Build: Rust 1.99.1; Windows GNU; MinGW GCC 13-posix; one build job.
+source/FourStyles_v16.patch contains 16 derivative commits; apply with git am.
+The passive profile reuses the existing character, magic, FX and native-contact source.
+No game assets/executables, extracted tables or decompiler/disassembly dumps ship.
+Sources/confidence and limits: docs/combat-model.md and AGENTS.md.
+Historical source recovery before v14: original v13 2b58a7bcb76711325f484d3d84905cf0a2e26be1; reconstructed 0c9b7dfd31ec8d74b6ae47df2a28850324af35b4.
+All 22 touched-file blobs matched its source-patch index hashes.
+Build: Rust 1.99.1, Windows GNU, MinGW GCC 13-posix, one build job.
   cargo rustc --release -p kh1-hook --target x86_64-pc-windows-gnu --locked -- -C codegen-units=1 -A warnings
-Inherited unused/dead-code warnings suppressed in final build; no errors.
-One codegen unit avoids empty parallel-codegen objects seen in this host.
-Rename release dinput8.dll to kh1-dual-wield.dll; use OpenKH/Panacea.
-
+Inherited unused/dead-code warnings suppressed; no build errors.
 Tests:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim -p kh2-magic -p kh2-fx -p kh2-bdx --locked
-404 passed; 0 failed; 27 suites; 103 Dual Wield tests.
-No live Windows/game/GPU or installed donor appearance validation claimed.
+412 passed, 0 failed, 27 suites, 111 style tests. No live v16 game/GPU test.
+Use OpenKH/Panacea with renamed kh1-dual-wield.dll, not the shared dinput8.dll.

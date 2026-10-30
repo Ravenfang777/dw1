@@ -1,8 +1,6 @@
-Windows x64 GNU release cross-build passed.
-Rust 1.99.1; MinGW GCC 13-posix; one job; codegen-units=1.
-Inherited unused/dead-code warnings suppressed (-A warnings); errors unsuppressed.
-404 local tests passed; 27 suites; 103 Dual Wield tests.
-PE exports: DirectInput8Create, DllMain, OnFrame, OnInit
-DLL bytes: 4708491
-DLL SHA256: eb2844724c5d118768fa7ed2570ec7a901015c2c25c2fd78638e79ffcf262f49
-No live game/GPU execution performed.
+   Compiling kh1-hook v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh1-hook)
+    Finished `release` profile [optimized] target(s) in 24.09s
+
+DLL SHA256 e61da2d6f866b3c073c91e87cb81dfaa495760b0dc8bfc3bb82f3d352c4f4eb2
+Source 095388d526e32db2973bbff3423d3708539e1918
+412 tests passed; no live v16 game/GPU test.

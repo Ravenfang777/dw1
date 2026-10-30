@@ -3,6 +3,51 @@
   "exe_stamp": 1721645006,
   "new_native_checks": [
     {
+      "anchor": "native_effect_constructor",
+      "steam_rva": "0x1e0100",
+      "matches": true
+    },
+    {
+      "anchor": "native_effect_vm",
+      "steam_rva": "0x31c4f0",
+      "matches": true
+    },
+    {
+      "anchor": "unconditional_effect_update_callback",
+      "steam_rva": "0x31c73d",
+      "matches": true
+    },
+    {
+      "anchor": "native_effect_draw_argument_gate",
+      "steam_rva": "0x31c740",
+      "matches": true
+    },
+    {
+      "anchor": "gated_draw_callback",
+      "steam_rva": "0x31c754",
+      "matches": true
+    },
+    {
+      "anchor": "spell_resource_section_offset",
+      "steam_rva": "0x28f783",
+      "matches": true
+    }
+  ],
+  "trampolines": [
+    {
+      "anchor": "native_effect_constructor",
+      "whole_position_independent_bytes": 5
+    },
+    {
+      "anchor": "native_effect_vm",
+      "whole_position_independent_bytes": 5
+    }
+  ],
+  "draw_semantics": "original VM update continues once; its existing draw argument alone becomes zero for attributed ready replacements",
+  "epic_hook_addresses_inferred": false,
+  "live_game_checked": false,
+  "retained_v15_action_and_renderer_anchors": [
+    {
       "anchor": "roll_prologue",
       "steam_rva": "0x2c9e60",
       "matches": true
@@ -41,6 +86,5 @@
       ],
       "no_relative_instructions_stolen": true
     }
-  ],
-  "no_game_bytes_included": true
+  ]
 }

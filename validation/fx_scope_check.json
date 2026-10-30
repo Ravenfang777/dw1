@@ -1,13 +1,24 @@
 {
-  "fx_runtime_is_separate_from_full_overhaul": true,
-  "native_hp_mp_write_helpers_absent": true,
-  "script_damage_heal_events_ignored": true,
-  "native_cast_gate": true,
-  "scene_binding_and_menu_guards": true,
-  "explicit_native_base": true,
-  "isolated_modules_installed": [
-    "dual_actions",
-    "dual_magic_fx"
-  ],
-  "no_reflect_drive_menu_stat_hooks_added": true
+  "checks": {
+    "spell_casts_require_native_observer": true,
+    "native_spell_scripts_do_not_resolve_strike_events": true,
+    "only_wisdom_object_script_attacks_resolve_new_contacts": true,
+    "native_filter_has_no_native_state_writes": true,
+    "native_vm_original_updates_once_with_existing_no_draw_flag": true,
+    "native_constructor_always_runs_first": true,
+    "native_filter_uses_actor_generation_and_effect_sequence": true,
+    "package_ready_required_before_native_visuals_hidden": true,
+    "no_reflect_private_base_read": true,
+    "no_drive_or_full_magic_hooks_installed": true,
+    "single_donors_do_not_activate_drive_policy": true,
+    "native_draw_requires_same_cast_script_admission": true
+  },
+  "source_sha256": {
+    "crates/kh1-hook/src/win/native_spell_fx.rs": "34ec81b8cba8392a6b5961cb83eb7c6e65c556cc6d9c4263b1b2570c3ca39664",
+    "crates/kh1-hook/src/win/dual_magic_fx.rs": "cedb9bc7c780fee4f33b17335307b4156cb2ea25ddd66d933a58f9339431a4cc",
+    "crates/kh1-hook/src/win/form.rs": "c71476542418f699c59a2a33ae4dcc17bf208157d30b00b71aa388c61a5dab2d"
+  },
+  "native_spell_damage_remains_kh1": true,
+  "new_gameplay_contact_source": "Wisdom object-script projectile attack shapes only",
+  "live_gpu_test_performed": false
 }
