@@ -1,111 +1,109 @@
-KH1FM FIVE STYLES -- PROTOTYPE v17 (s356)
+KH1FM FIVE STYLES -- PROTOTYPE v18 (s357)
 
 INSTALL / UPDATE
-1. Fully close KH1FM. Disable v16 and every older Dual Wield prototype.
-2. Install this ZIP as one OpenKH mod, enable v17, then Build and Run.
+1. Fully close KH1FM. Disable v17 and every older Dual Wield prototype.
+2. Install this ZIP as one OpenKH mod, enable v18, then Build and Run.
    Panacea is required. F1 cannot reload a native DLL.
-3. Equip one style in Sora's abilities menu. Style: Anti is new, 0 AP,
-   and starts disabled. Equipping a style disables the previous style.
+3. Equip one style. The five existing IDs/states remain: Dual A 126,
+   Dual B 125, Single A 124, Single B 123 and Anti 122. All are 0 AP.
+   Enabling a style disables the previously equipped style.
 
 Keep older integrated/offhand Lua, Synch/moveset routers, duplicate Sora
 model mods and the full KH2 Combat overhaul disabled. Requires normal
-Sora and KH2FM in the same installation. Runtime reads your own KH2
-resources; no game assets are supplied. Do not copy this DLL into the
-scripts folder or enable multiple prototype versions together.
-
-THE FIVE STYLES
-  Style: Dual A   (126): Valor, two copies of the equipped KH1 weapon.
-  Style: Dual B   (125): Final, two copies of the equipped KH1 weapon.
-  Style: Single A (124): ordinary KH2 Sora, one equipped KH1 weapon.
-  Style: Single B (123): Wisdom, one equipped weapon, shots/Quick Run.
-  Style: Anti     (122): Anti-form body animations and unarmed combat.
-
-All are 0 AP. No second weapon selection, Drive gauge, timer, outfit,
-recolour, bonus stats, partner removal or additional ability is added.
-Single A/B never create a duplicate. Anti hides the equipped Keyblade
-visually, keeping normal Sora's model/colour and his saved equipment.
-Unequipping or changing a style retires its controller/pose/effects.
+Sora and your installed KH2FM in the same installation. No game assets
+are supplied. The DLL belongs to this OpenKH mod, not the scripts folder.
 
 WHAT CHANGED
-Single A now uses base KH2 Sora rather than Limit: matching movement,
-attacks, magic poses, items, damage, jump/fall/landing and ledge donors.
-Its Superglide starts one actual base Sora aerial finisher. Regular
-Glide stays held/native as before. Missing visual matches fall back to
-KH1. Existing KH1 attack abilities still retain their native combo
-lane in the four weapon styles; no donor action ability is granted.
+Dual B now uses Quick Run, through the same committed native-dodge path
+that works for Single B. Wisdom Quick Run/Quick Run End body motions
+203/204 are ported into the Final donor, with both Final idle weapon
+tracks retained. No moving-spin hitboxes or growth ability is granted.
+Native Dodge Roll eligibility/input still gates the replacement. Guard
+keeps the stationary keyblade spin; normal Final combos stay in place.
 
-Anti uses its intrinsic ground/air combos, body hitboxes, authored
-attack movement, Square Anti Glide and combo Side Spin where present.
-Matching locomotion, damage, jump/landing, idle and ledge animations
-use Anti data. Its original PAX body effects share the isolated FX
-renderer. Magic, items, summons and physical special commands are
-blocked in menus, targets/shortcuts and command dispatch before costs.
-Field interactions stay usable. Native movement/collision/ability
-gates remain in charge outside attack actions. This is the first live
-prototype of Anti as an ability; exact retargeting still needs testing.
+Single B's running animation plays at 75% on its own continuous clock.
+Native clip wrap and repeated render passes cannot reset/accelerate it.
+This changes the pose rate, leaving movement speed and Quick Run alone.
+Dual A's configured idle speed and the other styles' run rates remain.
 
-Dual B's moving spin uses the working native committed-dodge hook,
-with real loaded hit metadata and base Sora movement numbers. It no
-longer waits for the duplicate weapon resource to start the action.
-Current drawn-blade geometry is still required for offhand damage.
-Single B's working Quick Run and Dual A's real finisher are retained.
+Spell target impacts now inherit the original cast's native draw tag.
+The prior filter followed the caster VM; native contacts create target
+sparks separately. The shared attack constructor records the actual
+Sora/canonical spell/cast identity, then the original impact creation
+runs in that scope. Its particles can be hidden by the existing draw
+filter after the same cast's KH2 replacement starts. Every original
+contact, hit record, spark creation, target binding and audio still runs.
+Other actors, melee, unknown/unadmitted effects and missing replacements
+retain native drawing. No native HP/MP or effect-state patch is added.
+This is a fresh live test of target-impact coverage, not a verified
+claim that every remastered visual layer is gone.
 
-SPELL EFFECT OVERLAP
-The native filter now captures Sora's actual spell-script work and
-follows its asynchronous VM updates and effect descendants. v16 had
-mistaken an effect-flag pointer for its caster. Only a cast whose KH2
-visual script actually starts can hide the matching native rendering.
-Native MP, healing, damage, effect simulation and audio still run.
+Anti darkness uses actual looping, body-bound effects named by Anti's
+idle/arrival PAX triggers. They start while Style: Anti is equipped and
+retire on unequip, actor/weapon/room generation or invalid scene scope.
+The one-shot transformation bursts and motion-specific effects are
+excluded. Sora keeps his normal model/colour. Attack effects have a
+separate bounded lifetime; aura triggers cannot double on every attack.
+No gauge, timer, outfit, stat bonus, partner change or extra ability.
+If the installed donor has no matching persistent effect, the log says
+which elements were found; no arbitrary effect ID is guessed.
 
-The imported spell packages cover Fire, Blizzard, Thunder and Cure,
-all three levels, in Dual B and Single B. Gravity, Stop and Aero keep
-native effects. Single A has KH2 cast poses with native KH1 effects.
-Unknown effects/casters and missing replacements retain native draws.
-The new ownership path and complete remastered-layer suppression need
-a fresh game test; local checks cannot prove their final appearance.
+Anti Glide is restored: its real row 11 has no hitbox, which v17's
+filter incorrectly excluded. Square can use its authored movement,
+no-gravity and initial invulnerability. Body attacks and Side Spin
+remain. Anti still blocks magic, items, summons and physical specials.
 
 FIRST TEST
-1. Wait for STYLE TABLE READY, donor data and KH2 SPELL EFFECTS READY.
-2. Dual B: with Dodge Roll equipped, use Square plus direction. Check
-   for DUAL B COMMITTED SPIN START and the moving blade spin; verify
-   stationary Guard too. Test Fire/Blizzard/Thunder/Cure ground/air.
-3. Single A: verify base Sora attacks/movement and actual finisher
-   Superglide. Single B: confirm Quick Run and shots still work.
-4. Anti: verify no weapon, ground/air combos, moving Square Anti Glide,
-   Side Spin during a combo, jumping/falling/damage and ledge poses.
-   Try Magic, Items and shortcuts: no cast, item or cost should occur.
-5. Switch among all five styles, unequip, change map/weapon, take damage,
-   and pause. Previous style effects and ownership should retire.
+1. Wait for STYLE TABLE READY, data and KH2 SPELL EFFECTS READY.
+2. Dual B: equip Dodge Roll, hold a direction and press Square. Check
+   for Quick Run and DUAL B QUICK RUN START in the log. Test release,
+   stationary Guard, both blades, interruption and map transitions.
+3. Dual B and Single B: hit a target with Fire/Blizzard/Thunder, then
+   test Cure. Look for STYLE NATIVE SPELL TARGET FX and DRAW FILTERED.
+   Check that damage/healing/MP still work and target visuals no longer
+   double. Return the fresh full log if overlap remains.
+4. Single B: hold Run and confirm its animation is slower while travel
+   speed stays the same. Verify Quick Run and shots still work.
+5. Anti: stand idle, run and attack. Check for the darkness particles,
+   ANTI DARKNESS AURA DATA/START, and Square Anti Glide. Unequip and
+   change styles/maps: the aura should disappear. Try Magic/Items and
+   shortcuts: no cast, item use or cost should occur.
+
+SPELL COVERAGE
+KH2 effect packages cover Fire, Blizzard, Thunder and Cure, all three
+native levels, in Dual B and Single B. Gravity, Stop and Aero retain
+native effects. Single A uses KH2 cast poses with native KH1 effects.
+Native KH1 damage, healing, costs and levels remain authoritative.
 
 LOG / SETTINGS -- NEXT TO KINGDOM HEARTS FINAL MIX.exe
-kh1-dual-wield.log should contain s356 and PROTOTYPE v17.
-Useful markers:
-  SINGLE STYLE DATA: KH2_Sora_base / KH2_Sora_air_finisher
-  DUAL B ACTION DATA / STYLE NATIVE ROLL ENTRY
-  DUAL B COMMITTED SPIN START / STYLE COMMITTED DODGE START FAILED
-  STYLE NATIVE SPELL OWNER / DUAL B NATIVE SPELL DRAW FILTERED
-  ANTI STYLE DATA / ANTI STYLE READY / ANTI ACTION REQUEST
-Return a fresh full log if B still rolls, a spell still doubles, or
-Anti data/actions/poses fail; old version logs cannot identify v17.
+kh1-dual-wield.log should show s357 and PROTOTYPE v18.
+Useful new markers:
+  DUAL B ACTION DATA: quick_run_ready
+  DUAL B QUICK RUN REQUEST / DUAL B QUICK RUN START
+  STYLE NATIVE SPELL TARGET FILTER READY / SPELL TARGET FX
+  ANTI DARKNESS AURA DATA / ANTI DARKNESS AURA START
 
-Existing kh1-dual-wield.ini is preserved. Missing keys use defaults:
+Existing kh1-dual-wield.ini is preserved; missing keys use defaults:
   dual_b_spell_fx = on
-Off restores native drawing and removes imported B spell visuals;
-Wisdom shots and Anti PAX remain. Casting animations are unchanged.
+Off removes B imported spell visuals/filtering. Wisdom shots, Anti
+PAX and casting animations remain.
   idle_speed = 0.75
-Supported combat/scene idle rate; .10..2.00, 1.0 = authored speed.
+Supported idle/scene-idle rate, .10..2.00. Single B Run is fixed at .75.
   offhand_only_test = off
-On isolates left imported contacts in Dual styles only. Single and
-Anti contacts keep their normal sources. Spells/party are unaffected.
+On isolates left imported contacts in Dual styles only. Single/Anti
+contacts, native spells and party damage are unaffected.
   remove_dual_wield = off
-For uninstall: set on, launch/load/save using v17, close, disable the
-mod and Build again. Removes only the five custom entries. Restart
-KH1 after every native DLL or INI change.
+For uninstall: set on, launch/load/save using v18, close, disable this
+mod and Build again. Removes only the five custom entries. Restart KH1
+after native DLL or INI edits.
 
 VALIDATION / LIMITS
-420 local tests passed across 27 suites, including 119 style tests.
-Windows x64 release cross-build and expected imports/exports passed.
-Steam native factory/scheduler fields, whole prologues and draw gate
-match the supplied executable. New spell ownership hooks are Steam
-only; no Epic address is inferred. No Windows game/GPU test was run.
-Source patch, provenance, licences and validation receipts are included.
+426 local tests passed across 27 suites, including 125 style tests.
+Windows x64 release build and expected imports/exports passed. Nine
+new native constructor/target-spark anchors match the supplied Steam
+executable; all originals are preserved. New spell filter hooks are
+Steam only, with no inferred Epic addresses. No game/GPU test was run.
+Darkness appearance, Quick Run blade placement and complete target
+visual suppression need a fresh game test. Missing metadata and
+unsupported rendering programs are logged. Source patch, provenance,
+licences and validation receipts are included; no game assets/dumps.

@@ -143,5 +143,58 @@
     5,
     6
   ],
-  "v17_live_game_checked": false
+  "v17_live_game_checked": false,
+  "new_v18_checks": [
+    {
+      "anchor": "shared_attack_constructor_prologue",
+      "steam_rva": "0x2b2dc0",
+      "matches": true
+    },
+    {
+      "anchor": "target_spark_prologue",
+      "steam_rva": "0x2b4320",
+      "matches": true
+    },
+    {
+      "anchor": "attack_constructor_owner_store",
+      "steam_rva": "0x2b2e79",
+      "matches": true
+    },
+    {
+      "anchor": "attack_constructor_data_store",
+      "steam_rva": "0x2b300b",
+      "matches": true
+    },
+    {
+      "anchor": "attack_wrapper_shared_constructor_call",
+      "steam_rva": "0x2b327d",
+      "matches": true
+    },
+    {
+      "anchor": "contact_target_spark_call",
+      "steam_rva": "0x2b429c",
+      "matches": true
+    },
+    {
+      "anchor": "contact_sound_separate_call",
+      "steam_rva": "0x2b42de",
+      "matches": true
+    },
+    {
+      "anchor": "spark_reads_attack_data",
+      "steam_rva": "0x2b4348",
+      "matches": true
+    },
+    {
+      "anchor": "spark_creates_effect_tail",
+      "steam_rva": "0x2b43db",
+      "matches": true
+    }
+  ],
+  "new_v18_position_independent_prologues": [
+    5,
+    5
+  ],
+  "v18_all_originals_run_once": true,
+  "v18_target_visuals_live_tested": false
 }

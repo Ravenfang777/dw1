@@ -1,16 +1,16 @@
 {
-  "name": "KH1FM Five Styles Prototype v17",
-  "stage": "s356",
-  "source_commit": "eef9738323ba308c4718a7fa051659e5a80823ff",
+  "name": "KH1FM Five Styles Prototype v18",
+  "stage": "s357",
+  "source_commit": "ef0aff967365629d7f06e42e2156da69b904662e",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4749110,
-  "dll_sha256": "87b1b715eec3f66265e0f429f26335aa71f3b78b044f3b969047d5510dc63705",
-  "source_patch_sha256": "7f4d39b707aa695c46dc5cb448b0618256cf71b458f82af18b574a60426edfea",
-  "tests_passed": 420,
+  "dll_bytes": 4774846,
+  "dll_sha256": "a960e3cdf7c0ff344613395a2b84237972de3f947581ab190f9c72cca85c5eb0",
+  "source_patch_sha256": "a104c6f5ed4dd560008987777bab894bfc5746e0699acf82f55faee9425dc107",
+  "tests_passed": 426,
   "tests_failed": 0,
   "test_suites": 27,
-  "style_tests": 119,
+  "style_tests": 125,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -30,6 +30,6 @@
   ],
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v17_game_or_gpu_test": false,
+  "live_v18_game_or_gpu_test": false,
   "no_game_assets": true
 }
