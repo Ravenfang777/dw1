@@ -1,9 +1,10 @@
-title: KH1FM Dual Wield Prototype v7
+title: KH1FM Dual Wield Prototype v8
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Passive Dual Wield ability duplicating the current KH1 weapon. Final
-  Glide and Superglide with swept blade contacts, shared looping Valor
-  combat and scripted/cutscene standing idle at adjustable speed (default 75%).
+  Passive Dual Wield ability duplicating the current KH1 weapon. Selected
+  native Guard becomes Valor's rising action-button attack with its launch,
+  blade contacts and trails. Requires Guard equipped; native Dodge Roll
+  selection retained. Final glides with contacts and shared slower Valor idle.
   Equipped native attack abilities retain their combo lane. Native KH1
   casting and movement; no Drive system or extra grants. Requires KH2FM
   in the same install. Disable earlier versions and the full KH2 Combat mod.

@@ -1,16 +1,16 @@
 {
-  "name": "KH1FM Dual Wield Prototype v7",
-  "stage": "s346",
+  "name": "KH1FM Dual Wield Prototype v8",
+  "stage": "s347",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "derivative_commit": "fe8a5ed766abaee80da8628e48dc866abb3d8f3d",
+  "derivative_commit": "39decfe8ff9045f8ffdc672d70f7ab900adaf002",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4997387,
-  "dll_sha256": "55c4cbdca6149952a30a9afd81b6045b8e332852522096488023b8eee3715d2c",
-  "source_patch_sha256": "ae4fa42317f94c0d62828b31594d099a51238a22498a412327d877beb94ebdcf",
+  "dll_bytes": 5002586,
+  "dll_sha256": "42984ee4dc7d3c7d0eb450d06579ddfd657d9184f075ebe81352cc7bd3c45177",
+  "source_patch_sha256": "9b1a76526cf5970269759a0bdb00a794ffd300f78d1f3e2051ba75ebd9ed63f6",
   "test_suites": 18,
-  "tests_passed": 289,
+  "tests_passed": 296,
   "tests_failed": 0,
-  "dual_wield_tests": 60,
+  "dual_wield_tests": 67,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -54,9 +54,14 @@
   },
   "native_ability_policy": "Entire affected ground/air combo lane native; cosmetic duplicate only",
   "casting": "Default native KH1 ground and air",
+  "guard": "Selected native Guard becomes Valor row 11 rising attack; own loaded hop, hits and trails; no defensive Guard window",
+  "guard_requirement": "Equipped native Guard (21), Dual Wield, native grounded action selection and ready matching donor",
+  "guard_granted": false,
+  "dodge_roll": "Native threshold and selection retained; no new roll ability",
+  "guard_native_followups": "Valid command window restores native air state before native ability selection",
   "game_execution_performed_here": false,
   "limitations": [
     "Actual donor availability/appearance needs game testing.",
-    "Specific cutscene coverage, glide collision/re-hit behavior, guard response, impact feedback and map transitions need game testing."
+    "Guard input/launch/cancels/restoration, native ability follow-ups, cutscene coverage, glide contacts and map transitions need game testing."
   ]
 }

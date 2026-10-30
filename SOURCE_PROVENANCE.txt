@@ -1,12 +1,12 @@
-DUAL WIELD PROTOTYPE v7 -- s346
+DUAL WIELD PROTOTYPE v8 -- s347
 
 Derived from JamesPMx / PM2CRAZY's MIT OR Apache-2.0 project:
 https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v7: fe8a5ed766abaee80da8628e48dc866abb3d8f3d
+Derivative v8: 39decfe8ff9045f8ffdc672d70f7ab900adaf002
 
-source/DualWield_v7.patch contains all seven derivative commits. Apply with
-  git am /path/to/DualWield_v7.patch
+source/DualWield_v8.patch contains all eight derivative commits. Apply with
+  git am /path/to/DualWield_v8.patch
 to the pinned upstream checkout. No game files, executable bytes, extracted
 tables, disassembly or decompiler output are shipped.
 
@@ -20,5 +20,5 @@ Build (Rust 1.99.1, Windows GNU target, MinGW GCC 13-posix):
 Rename release dinput8.dll to kh1-dual-wield.dll for OpenKH/Panacea.
 Tests:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim --locked
-289 passed, 0 failed; 60 Dual Wield tests; 18 suites.
+296 passed, 0 failed; 67 Dual Wield tests; 18 suites.
 No Windows/game execution or installed donor validation claimed.

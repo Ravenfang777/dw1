@@ -1,32 +1,29 @@
-KH1FM DUAL WIELD -- PROTOTYPE v7 (s346)
+KH1FM DUAL WIELD -- PROTOTYPE v8 (s347)
 
-Install this ZIP as one OpenKH mod, replacing v6. It reads animation data
+Install this ZIP as one OpenKH mod, replacing v7. It reads animation data
 from your own KH2FM installation. No game assets are included.
 
-NEW IN v7
-- Both native Glide and Superglide now use Final Form GLIDE. Master donor
-  loading is removed. KH1 retains ability requirements, input and movement.
-- Both spinning blades can hit enemies while gliding. Each uses the actual
-  equipped KH1 weapon's sampled start-to-tip range at its displayed grip,
-  filled with overlapping spheres and swept between fresh samples.
-- Final's loaded glide weapon windows (ATKP 1281 right / 1282 left) supply
-  power and repeat-hit intervals. Expected donor data is 100% power and
-  one re-hit per blade/target every 30 native 60-Hz frames. The donor loop
-  does not reset the cooldown. Both glides share one window lifetime.
-- Native enemy hurtparts/contact processing handles damage, impact visuals,
-  sound and reactions. No direct HP writes or broad body-centered damage
-  sphere. No new glide swing trail, donor spell, voice or extra ability.
-- Contacts run once after native physics, from a current displayed pose.
-  Old/missing/invalid poses cannot hit. Native movement since the last draw
-  is accounted for, with up to one frame of pose latency. Missing draws
-  clear sweeps while preserving cooldowns; landing, another action, unequip
-  or changed actor/map/weapon binding retires the session.
-- Corrects the second standing-idle route: v6 still used LINK_IDLE 6 for
-  regular scripted standing idles without the global event flag. Both that
-  route and the event idle now use the SAME Valor combat IDLE 0, continuous
-  clock and idle_speed as the slower gameplay idle. Unknown/dedicated event
-  gestures remain native. New bounded scene-route logs identify any scene
-  that does not reach the recognized standing-idle route.
+NEW IN v8
+- While Dual Wield and native Guard are equipped, the selected Guard action
+  becomes Valor's action-button attack: its rising double slash and hop.
+  This is the actual loaded Valor row 11, not a guessed animation swap.
+- The donor's own timing, launch, weapon-hit windows, impact feedback and
+  per-hand attack trails use the existing imported melee controller.
+  It is an attack; it has no defensive Guard window.
+- Guard remains a requirement. No Guard, growth, action or other ability is
+  granted, renamed or switched on by this replacement. Unequipping Dual
+  Wield restores the normal KH1 Guard behavior.
+- KH1's Guard versus Dodge Roll selection is preserved. With Dodge Roll
+  equipped, moving Square still selects native Roll under KH1's threshold
+  rule. If Guard alone is equipped, native Guard selection can work while
+  moving, and becomes the Valor attack. Air Glide and spell shortcuts stay
+  native. A missing/invalid donor keeps the native Guard route.
+- This explicit Guard attack works even when an ordinary combo lane stays
+  native due to equipped attack abilities. A native ability follow-up waits
+  for the imported cancel window and selects from the proper native air
+  state. Other combo-lane ability priority remains unchanged.
+- Retains v7's Final Glide/Superglide with blade contacts and shared slowed
+  Valor combat/scripted/cutscene idle. Default KH1 ground/air casting stays.
 
 ADJUST IDLE SPEED
 Fully close KH1FM. In kh1-dual-wield.ini beside the game executable, add
@@ -40,9 +37,9 @@ Restart KH1FM to read changes. This applies to the combat and supported
 cutscene idle only. It does not change attack timing or glide speed.
 
 INSTALL / UPDATE -- FULLY CLOSE KH1FM FIRST
-1. Disable v1/v2/v3/v4/v5/v6 and enable only v7 in OpenKH. All versions target
+1. Disable v1/v2/v3/v4/v5/v6/v7 and enable only v8 in OpenKH. All versions target
    the same DLL. F1 cannot reload or replace this native DLL.
-2. Keep older integrated/offhand Lua, Synch/moveset routers, v7 embedded
+2. Keep older integrated/offhand Lua, Synch/moveset routers, v8 embedded
    duplicate-model assets and the full KH2 Combat / kh1-kh2.dll mod disabled.
    If an old embedded duplicate was copied into another mod, restore its
    normal Sora model assets.
@@ -56,18 +53,18 @@ install folder. Do not install/rename this DLL as the shared dinput8.dll;
 OpenKH/Panacea loads dll/kh1-dual-wield.dll from the mod manifest.
 
 TEST THIS VERSION
-1. Revisit the cutscene that used the wrong idle. Compare its regular
-   standing idle with the slowed combat idle, through several loop cycles.
-   If it is still different, return the new log and identify the scene;
-   a dedicated event-bank pose may need a separate verified mapping.
-2. With Dual Wield and native Glide equipped, brush an enemy with the blade
-   tips while Sora stays clear. Test Superglide separately. Exclude party,
-   spells and unrelated damage for attribution. Both blades can hit; holding
-   contact should use the donor interval rather than damage every frame.
-3. Pause/resume, leave glide, land, change maps/weapons and unequip/re-equip
-   Dual Wield. Check that contacts stop immediately and old sweeps retire.
-4. Check normal spells and native attack abilities. Optional offhand-only
-   testing now isolates imported glide contacts too (see below).
+1. Equip native Guard and Dual Wield, stand still and press the Guard button
+   once. Check Valor's rising attack, launch, both blade contacts and trails,
+   then the return to native falling/landing. Repeat while changing targets.
+2. With Guard and Dodge Roll equipped, compare stationary Square (new attack)
+   and moving Square (native Roll). Unequip Guard and verify no new attack is
+   available; unequip Dual Wield and verify the normal KH1 Guard returns.
+3. Equip a native combo ability, then try the new Guard attack and valid
+   attack/magic follow-ups. Check proper native aerial actions and casting.
+   Existing imported melee offhand isolation applies to this attack too.
+4. Interrupt the attack, change maps/weapons and unequip/re-equip Dual Wield.
+   Check that old trails and poses retire. Also check both Final glides and
+   revisit the prior cutscene idle as regression checks.
 
 RETAINED BEHAVIOR
 Dual Wield is ability 126, zero AP, initially unequipped. It duplicates the
@@ -113,7 +110,8 @@ LOG
 kh1-dual-wield.log is beside KINGDOM HEARTS FINAL MIX.exe and the INI.
 The earlier supplied log identifies this installation folder:
   C:\Steam\steamapps\common\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-\
-Look for s346 / PROTOTYPE v7, DUAL WIELD GLIDE DONOR, DUAL WIELD VISUAL DATA,
+Look for s347 / PROTOTYPE v8, DUAL WIELD GLIDE DONOR, DUAL WIELD VISUAL DATA,
+DUAL WIELD GUARD DONOR READY, DUAL WIELD GUARD ATTACK REQUEST,
 DUAL WIELD VISUAL ACTIVE, DUAL WIELD GLIDE CONTACT READY,
 DUAL WIELD SCENE IDLE ROUTE and DUAL WIELD COMBO ROUTES. DATA lists donor
 availability; ACTIVE reports the first accepted action sample and speed.
@@ -121,19 +119,20 @@ Return the NEW log with a matching short recording for a bad transition.
 
 REMOVAL
 Unequip Dual Wield for normal play. To remove its saved ability entry:
-close the game, set remove_dual_wield = on in the INI, launch with v7,
+close the game, set remove_dual_wield = on in the INI, launch with v8,
 load and save, close, disable this mod and Build again. Only that entry
 is removed; every other ability/save entry is retained.
 
 VALIDATION / LIMITS
-289 local tests passed, including 60 Dual Wield tests, across 18 suites.
+296 local tests passed, including 67 Dual Wield tests, across 18 suites.
 Windows x64 release cross-build passed; PE exports/imports checked.
 ZIP CRC and all extracted file hashes checked. Source patch and original
 credits/licences are included.
 
 The DLL has NOT been run inside KH1FM here. No local KH2 install is present,
 so optional real-game-data tests used their no-install paths. Actual donor
-availability/appearance, the specific cutscene, menu-pause timing, glide
+availability/appearance, Guard input/launch/cancels and restoration, the
+specific cutscene, menu-pause timing, glide
 contact alignment/re-hit behavior, guard response, impact sound/effects,
 map/scene transitions and native action triggers need your fresh-process
-game test. Keep the v6 ZIP to revert if needed.
+game test. Keep the v7 ZIP to revert if needed.
