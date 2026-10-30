@@ -1,16 +1,16 @@
 {
-  "name": "KH1FM Dual Wield Prototype v6",
-  "stage": "s345",
+  "name": "KH1FM Dual Wield Prototype v7",
+  "stage": "s346",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "derivative_commit": "00dd0012f2c7fd0c5041fb428a60abe56c49b0dd",
+  "derivative_commit": "fe8a5ed766abaee80da8628e48dc866abb3d8f3d",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4953265,
-  "dll_sha256": "e6aafa004cea006cac1549113f08db53bf131f14fb3899570a45bbccdd1022cb",
-  "source_patch_sha256": "a70101f0072a630fb79405ba552259847488223374832de850eaeeb8b9324022",
+  "dll_bytes": 4997387,
+  "dll_sha256": "55c4cbdca6149952a30a9afd81b6045b8e332852522096488023b8eee3715d2c",
+  "source_patch_sha256": "ae4fa42317f94c0d62828b31594d099a51238a22498a412327d877beb94ebdcf",
   "test_suites": 18,
-  "tests_passed": 280,
+  "tests_passed": 289,
   "tests_failed": 0,
-  "dual_wield_tests": 51,
+  "dual_wield_tests": 60,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -28,9 +28,9 @@
     "api-ms-win-core-synch-l1-2-0.dll",
     "bcryptprimitives.dll"
   ],
-  "glide": "Master GLIDE 205; actual native player-work subtype bit clear",
+  "glide": "Final GLIDE 205; actual native player-work subtype bit clear",
   "superglide": "Final GLIDE 205; actual native player-work subtype bit set",
-  "combat_and_supported_scene_idle": "Same Valor combat IDLE 0; continuous looping native-time clock",
+  "combat_and_supported_scene_idle": "All recognized scripted/event idles share Valor combat IDLE 0, root, clock and speed",
   "idle_speed": {
     "default": 0.75,
     "range": [
@@ -41,7 +41,10 @@
     "restart_required": true
   },
   "clock": "Native 60Hz frame-step units; once per OnFrame; repeated draws reuse snapshot; no wall-clock catch-up",
-  "donor_scripts_effects_controllers_contacts_trails": "not run for non-attack visuals",
+  "donor_scripts_effects_controllers": "not run; glide reads only its two weapon attack windows",
+  "glide_contacts": "Actual displayed equipped-weapon blade length at both grips; native hurtparts/contact; per-blade donor power/interval; no direct HP writes",
+  "glide_freshness": "Current binding and displayed pose; consumed once after native physics; at most one-frame pose latency; stale geometry retires without resetting cooldowns",
+  "glide_swing_trails": false,
   "ability": {
     "name": "Dual Wield",
     "id": 126,
@@ -54,6 +57,6 @@
   "game_execution_performed_here": false,
   "limitations": [
     "Actual donor availability/appearance needs game testing.",
-    "Native menu-pause timing, looping, glide placement and scene/map transitions need game testing."
+    "Specific cutscene coverage, glide collision/re-hit behavior, guard response, impact feedback and map transitions need game testing."
   ]
 }

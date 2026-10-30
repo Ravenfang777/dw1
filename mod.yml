@@ -1,9 +1,9 @@
-title: KH1FM Dual Wield Prototype v6
+title: KH1FM Dual Wield Prototype v7
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Passive Dual Wield ability duplicating the current KH1 weapon. Master
-  Glide and Final Superglide visual donors, continuous looping Valor
-  combat and supported cutscene idle at adjustable speed (default 75%).
+  Passive Dual Wield ability duplicating the current KH1 weapon. Final
+  Glide and Superglide with swept blade contacts, shared looping Valor
+  combat and scripted/cutscene standing idle at adjustable speed (default 75%).
   Equipped native attack abilities retain their combo lane. Native KH1
   casting and movement; no Drive system or extra grants. Requires KH2FM
   in the same install. Disable earlier versions and the full KH2 Combat mod.
