@@ -1,24 +1,25 @@
-SOURCE AND BUILD -- DUAL WIELD GROUND PROTOTYPE v1
+SOURCE AND BUILD -- DUAL WIELD PROTOTYPE v2 (s341)
 
 Derived from JamesPMx / PM2CRAZY's MIT OR Apache-2.0 project:
 https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative: 7f08c17718234d7a4ade2ef723ea6442b0bbcd7d
+Derivative v1: 7f08c17718234d7a4ade2ef723ea6442b0bbcd7d
+Derivative v2: 7062682ace519b73fcdfb0e021479fdf449b82f7
 
-The included source/DualWield_v1.patch applies with git am to that upstream
-commit. No game data, game assets or decompiler output are in the patch.
-Native KH2 data readers/evaluator, KH1 retargeting, contact bridge and weapon
-loader are upstream code; the passive ability gate and narrow ownership
-profile are derivative changes. See CREDITS.md and NOTICE.
+source/DualWield_v2.patch contains the two derivative commits. Apply with
+  git am /path/to/DualWield_v2.patch
+on a checkout of that exact upstream commit. No game assets, extracted
+tables or decompiler output are committed or shipped. CREDITS.md, NOTICE,
+LICENSE-MIT and LICENSE-APACHE retain upstream and OpenKH attribution.
 
 Rebuild with Rust, the x86_64-pc-windows-gnu target and a MinGW x64 linker:
   cargo build --release -p kh1-hook --target x86_64-pc-windows-gnu --locked
-The resulting dinput8.dll is installed as kh1-dual-wield.dll through Panacea.
-Do not put it in the shared game folder as a dinput8 proxy.
+The resulting dinput8.dll is renamed kh1-dual-wield.dll and loaded through
+Panacea. It must not replace the shared folder's dinput8 proxy.
 
-Local checks used:
+Validation command:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim --locked
-239 tests passed, including 10 new policy/controller checks. The full local
-transcript and PE header/import/export report are included under validation.
-Real-data optional checks need the player's own install. No in-game result
-or actual Windows runtime execution is claimed by this package.
+All 247 local tests passed, including 18 Dual Wield policy/controller tests.
+Windows cross-build: rustc 1.99.1, x86_64-pc-windows-gnu, MinGW GCC 13-posix.
+No Windows/game execution is claimed. Optional tests needing game data
+used their no-install paths. The user's runtime test remains necessary.

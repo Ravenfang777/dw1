@@ -1,11 +1,12 @@
-title: KH1FM Dual Wield Prototype v1
+title: KH1FM Dual Wield Prototype v2
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Passive Dual Wield ability. Duplicates Sora's currently equipped KH1 weapon
-  and enables a Valor base ground combo, with native air/casting and no Drive
-  gauge, resource drain, recolouring, stat bonuses or additional ability grants.
-  Requires KH2FM in the same install. Test without the previous offhand scripts,
-  embedded duplicate-model assets or full KH2 Combat mod.
+  Passive Dual Wield ability. Duplicates the currently equipped KH1 weapon,
+  adds Valor ground/aerial combos and standing idle, and corrects custom
+  trail retirement and actor-bound placement. Native casting. No Drive gauge,
+  resource drain, recolouring, stat bonuses or additional ability grants.
+  Requires KH2FM in the same install. Disable v1, earlier offhand scripts,
+  embedded duplicate-model assets and the full KH2 Combat mod for this test.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

@@ -1,86 +1,94 @@
-KH1FM DUAL WIELD -- GROUND PROTOTYPE v1
+KH1FM DUAL WIELD -- PROTOTYPE v2 (s341)
 
-This is one OpenKH mod, with a native DLL that reads KH2's motion data from
-your own installed KH2 Final Mix. It replaces the earlier Lua test for this
-run. It does not require the full KH2 Combat for KH1 mod to be enabled.
+This replaces v1. It is one OpenKH mod with a native DLL that reads motion
+and combo data from your own KH2 Final Mix installation. Keep only this
+weapon/moveset system enabled for the test.
 
-WHAT THIS FIRST TEST DOES
-- Adds exactly one ability: Dual Wield, zero AP, initially UNEQUIPPED.
-- Equipped: draws a copy of Sora's currently equipped KH1 weapon in his left
-  hand and uses KH2 Valor's basic ground combo. No second weapon selection.
-- Unequipped: hides the duplicate and gives ground attacks back to KH1.
-- A weapon change loads the new equipped weapon's own model and effects.
-- Sora retains his normal model, textures and colours.
-- No Drive gauge, timer, drain, transformation, partner removal, extra
-  abilities, AP/stat boosts, camera, HUD or shortcut changes.
+CHANGES IN v2
+- Custom trails stop when their swing window closes, and retire on native
+  control, magic, damage, unequip, weapon changes and map changes.
+- The left emitter requires that attack tick's actual weapon pose. Old
+  poses and emitters are discarded after a discontinuity or missing render.
+- Only Sora's active model instance supplies/receives the custom field pose.
+  Placement stays at his current actor position; old output bones cannot
+  feed back into it. Native and imported weapon poses use one world snapshot.
+- Adds Valor's standing battle idle, used over KH1's standing-idle slots.
+- Adds Valor's base aerial combos, including each blade's own contacts and
+  swing trails. Native jump/fall velocity seeds entry; native fall resumes
+  at the current height when the combo ends.
+- Ground/aerial casting keep KH1's normal animations, timing and effects.
 
-INSTALL -- FRESH PROCESS, ONLY THIS WEAPON/MOVESET SYSTEM
-1. Fully close KH1FM. Do not use F1 reload.
-2. Disable the v22/older integrated offhand Lua, Synch and other moveset
-   routers. Keep the original KH2 Combat for KH1 mod / kh1-kh2.dll disabled.
-3. Disable the previous v6 offhand Sora model replacement in OpenKH for this
-   test. This DLL draws its own weapon copy; the old embedded duplicate is
-   not used. Restore the normal Sora model assets if those were copied into
-   another mod manually. This package does not overwrite your model files.
-4. In OpenKH Mods Manager (Kingdom Hearts Final Mix), install this ZIP with
-   Mods > Install a New Mod > Select and install Mod Archive. Enable it,
-   then Build and Run. Panacea is required, as for the reference mod.
-5. Load your save, wait briefly, then open Sora's Abilities menu and equip
-   Dual Wield (0 AP). Start with Kingdom Key, then test another weapon.
+THE ABILITY
+Dual Wield remains 0 AP, initially unequipped. Equipped: the current KH1
+weapon is duplicated into the left hand, with Valor's base ground/aerial
+combos and standing idle. No second weapon selection or inventory copy is
+required. Unequipped: the duplicate disappears and KH1's moveset returns.
+No Drive gauge, timer, drain, transformation, outfit/model recolour, partner
+removal, other ability grants, AP/stat bonuses, camera or HUD changes.
 
-KH1FM and KH2FM must be installed in the same 1.5+2.5 game folder. The DLL
-reads KH2's data there. No game assets are included in this package.
+INSTALL / UPDATE -- FULLY CLOSE KH1FM FIRST
+1. Disable Dual Wield v1 in OpenKH. Enable only v2; both packages use the
+   same DLL destination. Do not use F1 to reload this native mod.
+2. Keep older integrated/offhand Lua, Synch/moveset routers, the v6 embedded
+   duplicate-model replacement, and the full KH2 Combat / kh1-kh2.dll mod
+   disabled. Restore normal Sora model assets if the old duplicate was
+   manually copied into another mod.
+3. In OpenKH Mods Manager (Kingdom Hearts Final Mix), install this ZIP as
+   a Mod Archive, enable it, then Build and Run. Panacea is required.
+4. Load your save, wait briefly, then equip Dual Wield in Sora's Abilities.
+   An entry already saved by v1 is reused; another copy is not added.
 
-TEST
-1. With Dual Wield off, check that Sora has his normal appearance and attacks.
-2. Equip it and test a few ground swings/combos near one enemy. Both blades'
-   ground contacts are enabled in this build. Include a few clear whiffs.
-3. Change Sora's equipped weapon. The left-hand copy should change with it,
-   without changing inventory counts or requiring another selection.
-4. Unequip Dual Wield. The extra weapon should disappear and native ground
-   attacks should return. Check that the other ability entries/states match.
-5. Re-equip it, change maps and repeat a short test. Also check that aerial
-   attacks and ground/aerial casting still use their normal KH1 animations.
+KH1FM and KH2FM must be in the same PC 1.5+2.5 install folder. No game
+assets are included. Do not install this DLL as dinput8.dll in the shared
+game folder; OpenKH/Panacea loads it as dll/kh1-dual-wield.dll.
 
-The extra imported offhand contacts/trails are GROUND-ONLY in this prototype.
-Native aerial attacks and magic keep KH1's existing contacts and effects.
-Expansion of the imported moveset to aerial attacks comes after this test.
+QUICK TEST
+1. Stand idle, walk and turn. Check the new idle, attached duplicate and
+   absence of a continuously emitting ribbon.
+2. Swing on empty ground, then do ground and aerial combos near an enemy.
+   Trails should follow the swings even on whiffs. Impact sounds/effects
+   should occur only on contacts. Both blades are enabled by default.
+3. Stop attacking. Cast ground and aerial magic, and allow an enemy to hit
+   Sora. Watch for lingering ribbons, a ground snap or a displaced model.
+4. Change maps and repeat. Switch the equipped weapon; the left copy should
+   follow it. Unequip/re-equip Dual Wield to check restoration.
 
-RETURN THE LOG
-Send kh1-dual-wield.log from the game executable's folder, with matching
-video. It records DUAL WIELD LEARNED, DUAL WIELD EQUIPPED and DUAL WIELD READY,
-the selected weapon resource, loaded Valor rows, native hits and any failed
-hook/data admission. It is separate from the old Lua log.
+RETURN kh1-dual-wield.log FROM THE GAME EXECUTABLE'S FOLDER
+Include matching video. The native log is separate from the Lua console.
+Look for the s341/v2 startup and DUAL WIELD READY. The DATA line reports
+separate ground/aerial row counts and confirms the Valor idle is present.
+Missing hooks or incomplete Valor data leave the custom profile unavailable.
 
-OPTIONAL CONTACT ISOLATION
-The first launch creates kh1-dual-wield.ini beside the game executable.
-After the initial moveset test, you may fully close the game and change:
+OPTIONAL OFFHAND CONTACT ISOLATION
+The generated kh1-dual-wield.ini remains beside the game executable.
+After fully closing the game, set:
   offhand_only_test = on
-That permits only the left weapon's imported ground contacts. Native aerial
-and spell contacts remain native. Set it back to off for both ground blades.
-It is off by default so the initial full combo can connect normally.
+Only the left weapon's imported ground/aerial contacts are then allowed.
+This does not suppress native spell damage or other characters' damage.
+Set it back to off for both blades. Existing v1 INI settings are retained;
+no reset is needed for the new aerial and idle behavior.
 
-ABILITY / SAVE DETAILS
-Only Dual Wield is appended to an empty ability entry; it is not equipped
-automatically. Nothing is evicted to make room. A full or non-contiguous
-ability list is left untouched. Saving in-game can retain the new entry.
-For removal: close the game, set remove_dual_wield = on in the generated INI,
-start with this mod, load your save, save it, then close the game and disable
-this mod / Build again. The removal option changes only Dual Wield entries.
+SAVE / REMOVAL
+Only Dual Wield is appended to an empty ability entry, and is not equipped
+automatically. No existing entry is evicted or changed. Saving can retain
+it. To remove it: close the game, set remove_dual_wield = on in the INI,
+launch with v2, load and save, close, then disable this mod and Build again.
+That option removes only Dual Wield entries.
 
 VALIDATION AND LIMITS
-239 local tests passed, including ten new Dual Wield policy/controller checks.
-The Windows x64 DLL was cross-compiled and its required exports/imports were
-checked. Tests cover preserving native ability records and states, bounded
-insertion/removal, ground-row admission and separate weapon contact windows,
-plus existing animation, retargeting, rig, controller and combat regressions.
+247 local tests passed, including 18 Dual Wield policy/controller tests.
+Coverage includes native ability preservation, ground/aerial row admission,
+separate contact windows, the real Character controller's aerial entry/exit,
+actor-anchored placement, rejected stale/menu/private-owner/room/weapon
+poses and same-tick trail intent. The Windows x64 DLL cross-build and
+exports/imports were checked; the final ZIP was fully extracted locally.
 
-This build has NOT run in KH1FM here. Optional tests needing local game data
-did not exercise their real-data paths. Actual menu behavior, loaded Valor
-rows, attachment, contact/feedback, transitions and performance need the
-fresh-process game test. Weapon contact geometry originates in Valor's data;
-different weapon lengths and unusual Sora models still need verification.
+This build has not been run inside KH1FM here. No local KH2 install was
+available: optional real-game-data tests did not exercise their data paths.
+The runtime air handoff, actual native rendering/effect retirement, loaded
+Valor rows, contacts, different weapon lengths and map transitions require
+your fresh-process game test. The changes address confirmed code defects;
+this package does not claim that every visual issue is already game-verified.
 
-The source patch, build identity, hashes and test transcript are included for
-review. Existing upstream credits/licences are retained. Do not enable the
-older offhand system or the full combat overhaul alongside this prototype.
+Source patch, exact build identity, test transcript and original credits /
+licences are included. Keep v1's ZIP if you need to revert.

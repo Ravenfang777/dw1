@@ -1,13 +1,17 @@
 {
-  "name": "KH1FM Dual Wield Ground Prototype v1",
+  "name": "KH1FM Dual Wield Prototype v2",
+  "stage": "s341",
   "upstream_repo": "https://github.com/PM2CRAZY/KH2-Combat-in-KH1",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "derivative_commit": "7f08c17718234d7a4ade2ef723ea6442b0bbcd7d",
+  "derivative_commit": "7062682ace519b73fcdfb0e021479fdf449b82f7",
   "target": "x86_64-pc-windows-gnu",
-  "dll_sha256": "0dc2bcd1d0984deb6a12fc86af038c8825430c620251a3be628750c4ad56dee4",
-  "dll_bytes": 4918929,
-  "local_tests_passed": 239,
-  "new_dual_policy_controller_tests": 10,
+  "dll_bytes": 4904996,
+  "dll_sha256": "39ac39be8dc474de2b486c00dad6c7fae82473dd3154ab8eaddb4da49262214d",
+  "patch_sha256": "50947d04749edf48dc860adc6e42988a6b19c6e9de59256e6cfd22437733a9d1",
+  "local_tests_passed": 247,
+  "dual_wield_policy_controller_tests": 18,
+  "added_in_v2_tests": 8,
+  "test_suites": 18,
   "all_local_suites_passed": true,
   "windows_cross_build_succeeded": true,
   "exports": [
@@ -35,19 +39,22 @@
     "native_table_entries_1_to_65": "preserved byte-for-byte"
   },
   "runtime_scope": {
-    "ground": "base Valor rows only; no air/hop/ability-requiring rows",
-    "air_and_casting": "native KH1; additional offhand contacts not added to these in v1",
-    "weapon": "duplicate of current KH1 weapon; no secondary selection or inventory claim",
-    "appearance": "native model/textures/colours; imported ground poses only",
-    "drive_menu_gauge_drain_tint_growth_stats": "not installed",
-    "ground_contacts": "both by default; optional offhand-only setting"
+    "ground_and_air": "ability-free Valor base rows; ground hop rows excluded",
+    "idle": "Valor standing battle idle over native idle slots only; game-frame clock",
+    "casting_and_locomotion": "native KH1; imported controller owns attacks only",
+    "weapon": "duplicate current KH1 weapon, no secondary selection or inventory claim",
+    "appearance": "native Sora model/textures/colours; custom idle and attack poses only",
+    "drive_gauge_menu_drain_tint_growth_stats": "not installed",
+    "contacts": "both blades by default; offhand_only_test isolates left imported ground/air contacts",
+    "trail": "per-hand windows, same-tick posed left emitter, all-exit retirement; no enemy required",
+    "pose": "exact actor-instance identity, actor-anchored placement, complete world-space weapon snapshot"
   },
   "game_test_performed_here": false,
   "limitations": [
-    "No local KH2 install: runtime import, rendering, native contact and effect timing remain unverified here.",
-    "Optional upstream game-data tests did not exercise their real-data branches.",
-    "The Windows DLL was built on Linux, not executed in KH1 here.",
-    "Native hands and weapon contact alignment across different weapons/maps require gameplay.",
-    "Requires the earlier embedded offhand model replacement and competing weapon/moveset scripts to be disabled."
+    "No local KH2 install: data import, native rendering, effects and air handoffs require runtime validation.",
+    "Optional upstream game-data tests did not exercise their real-data paths.",
+    "Windows DLL cross-compiled on Linux, not executed inside KH1 here.",
+    "Contact geometry originates in Valor data; different KH1 weapon lengths need gameplay verification.",
+    "Old offhand Lua/model assets and full combat overhaul must be disabled."
   ]
 }
