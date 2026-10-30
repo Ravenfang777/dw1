@@ -1,34 +1,53 @@
-KH1FM DUAL WIELD -- PROTOTYPE v2 (s341)
+KH1FM DUAL WIELD -- PROTOTYPE v3 (s342)
 
-This replaces v1. It is one OpenKH mod with a native DLL that reads motion
-and combo data from your own KH2 Final Mix installation. Keep only this
-weapon/moveset system enabled for the test.
+This replaces v1/v2. Install this ZIP as one OpenKH mod. It reads animation
+and combo data from your own KH2 Final Mix installation; no game assets
+are included.
 
-CHANGES IN v2
-- Custom trails stop when their swing window closes, and retire on native
-  control, magic, damage, unequip, weapon changes and map changes.
-- The left emitter requires that attack tick's actual weapon pose. Old
-  poses and emitters are discarded after a discontinuity or missing render.
-- Only Sora's active model instance supplies/receives the custom field pose.
-  Placement stays at his current actor position; old output bones cannot
-  feed back into it. Native and imported weapon poses use one world snapshot.
-- Adds Valor's standing battle idle, used over KH1's standing-idle slots.
-- Adds Valor's base aerial combos, including each blade's own contacts and
-  swing trails. Native jump/fall velocity seeds entry; native fall resumes
-  at the current height when the combo ends.
-- Ground/aerial casting keep KH1's normal animations, timing and effects.
+CHANGES IN v3
+- Corrects the offhand grip calculation: attachment uses each current
+  hand's local axes and the native right-hand grip calibration. Skeleton
+  bind-position differences no longer shift the duplicate behind the palm.
+  The actual weapon-relative motion is retained.
+- Adds Valor's run animation over native KH1 running. Native speed, actor
+  movement, input and footsteps remain in control. Slow walking stays KH1.
+- Adds Master casting poses to existing ground and aerial KH1 spells.
+  A pose starts only after a native spell motion request is observed.
+  Native motion changes, interruptions, weapon/map changes and unequipping
+  retire it. Repeated casts wait for the new native request to be consumed.
+  Master root travel is removed from the visual pose; it cannot move the
+  native actor. Master weapon movement may float during the casting pose.
+
+CASTING POSE MAPPINGS
+  KH1 Fire     -> Master Fire
+  KH1 Blizzard -> Master Blizzard
+  KH1 Thunder  -> Master Thunder
+  KH1 Cure     -> Master Cure
+  KH1 Gravity  -> Master Thunder
+  KH1 Stop     -> Master Cure
+  KH1 Aero     -> Master Cure
+These apply to existing spell levels, on the ground and in the air.
+Only the body/weapon poses are sampled. KH1 still executes the spell,
+including MP costs, effects, damage, native release events, movement and
+cancels. The donor pose follows the native animation clock, without running
+KH2 attack/spell scripts. Exact visual release alignment needs a game test.
+Missing or incomplete Master data falls back to native casting.
 
 THE ABILITY
-Dual Wield remains 0 AP, initially unequipped. Equipped: the current KH1
-weapon is duplicated into the left hand, with Valor's base ground/aerial
-combos and standing idle. No second weapon selection or inventory copy is
-required. Unequipped: the duplicate disappears and KH1's moveset returns.
+Dual Wield is 0 AP, initially unequipped. Equipped: the current KH1 weapon
+is duplicated into the left hand, with Valor's base ground/aerial combos,
+standing idle and run, plus the Master casting visuals above. No second
+weapon selection or inventory copy is required. Unequipped: the duplicate
+disappears and KH1's moveset returns.
 No Drive gauge, timer, drain, transformation, outfit/model recolour, partner
 removal, other ability grants, AP/stat bonuses, camera or HUD changes.
+v2's per-hand attack windows, trail retirement and actor-bound placement
+are retained. Swing trails do not need an enemy; impact sounds/effects
+require an actual contact. Both imported blades are enabled by default.
 
 INSTALL / UPDATE -- FULLY CLOSE KH1FM FIRST
-1. Disable Dual Wield v1 in OpenKH. Enable only v2; both packages use the
-   same DLL destination. Do not use F1 to reload this native mod.
+1. Disable Dual Wield v1/v2 in OpenKH. Enable only v3; these versions use
+   the same DLL destination. Do not use F1 to reload this native mod.
 2. Keep older integrated/offhand Lua, Synch/moveset routers, the v6 embedded
    duplicate-model replacement, and the full KH2 Combat / kh1-kh2.dll mod
    disabled. Restore normal Sora model assets if the old duplicate was
@@ -36,59 +55,64 @@ INSTALL / UPDATE -- FULLY CLOSE KH1FM FIRST
 3. In OpenKH Mods Manager (Kingdom Hearts Final Mix), install this ZIP as
    a Mod Archive, enable it, then Build and Run. Panacea is required.
 4. Load your save, wait briefly, then equip Dual Wield in Sora's Abilities.
-   An entry already saved by v1 is reused; another copy is not added.
+   An existing Dual Wield entry is reused; another copy is not added.
+   Existing v1/v2 INI settings are retained; no reset is needed.
 
-KH1FM and KH2FM must be in the same PC 1.5+2.5 install folder. No game
-assets are included. Do not install this DLL as dinput8.dll in the shared
-game folder; OpenKH/Panacea loads it as dll/kh1-dual-wield.dll.
+KH1FM and KH2FM must be in the same PC 1.5+2.5 install folder. Normal Sora
+is required for this prototype. Do not install the DLL as dinput8.dll in
+the shared game folder; OpenKH/Panacea loads dll/kh1-dual-wield.dll.
 
 QUICK TEST
-1. Stand idle, walk and turn. Check the new idle, attached duplicate and
-   absence of a continuously emitting ribbon.
+1. Stand idle, turn and view both hands close up. Check the grip position.
+   Run in several directions, then slow-walk and stop. Check for unwanted
+   body displacement or a continuously emitting ribbon.
 2. Swing on empty ground, then do ground and aerial combos near an enemy.
-   Trails should follow the swings even on whiffs. Impact sounds/effects
-   should occur only on contacts. Both blades are enabled by default.
-3. Stop attacking. Cast ground and aerial magic, and allow an enemy to hit
-   Sora. Watch for lingering ribbons, a ground snap or a displaced model.
-4. Change maps and repeat. Switch the equipped weapon; the left copy should
-   follow it. Unequip/re-equip Dual Wield to check restoration.
+   Trails should follow swings even on whiffs; impacts require contacts.
+3. Cast the seven KH1 spells on the ground and in the air, where KH1 allows
+   them. Try repeated Fire casts and spell levels available in your save.
+   Check the pose against the native release effect, MP cost and recovery.
+4. Let an enemy interrupt a cast; land during an aerial cast. Then change
+   maps and weapons, and unequip/re-equip Dual Wield. Check that stale poses
+   and trails retire and that the duplicate follows the current weapon.
 
-RETURN kh1-dual-wield.log FROM THE GAME EXECUTABLE'S FOLDER
-Include matching video. The native log is separate from the Lua console.
-Look for the s341/v2 startup and DUAL WIELD READY. The DATA line reports
-separate ground/aerial row counts and confirms the Valor idle is present.
+LOG LOCATION
+kh1-dual-wield.log is beside KINGDOM HEARTS FINAL MIX.exe and
+kh1-dual-wield.ini, not in OpenKH's scripts folder.
+Your supplied log identifies the game folder as:
+  C:\Steam\steamapps\common\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-\
+Return the new log with a matching short video if anything is misaligned.
+Look for s342 and PROTOTYPE v3, DUAL WIELD READY, the DATA idle/run flags,
+DUAL WIELD MASTER VISUAL DATA READY, DUAL WIELD PALM BASIS,
+DUAL WIELD VALOR RUN ACTIVE and DUAL WIELD MASTER CAST.
 Missing hooks or incomplete Valor data leave the custom profile unavailable.
 
 OPTIONAL OFFHAND CONTACT ISOLATION
-The generated kh1-dual-wield.ini remains beside the game executable.
-After fully closing the game, set:
+After fully closing the game, set in kh1-dual-wield.ini:
   offhand_only_test = on
-Only the left weapon's imported ground/aerial contacts are then allowed.
-This does not suppress native spell damage or other characters' damage.
-Set it back to off for both blades. Existing v1 INI settings are retained;
-no reset is needed for the new aerial and idle behavior.
+Only left imported ground/aerial melee contacts are then allowed. This
+does not suppress native spell damage or other characters' damage.
+Set it back to off for both blades.
 
 SAVE / REMOVAL
 Only Dual Wield is appended to an empty ability entry, and is not equipped
 automatically. No existing entry is evicted or changed. Saving can retain
 it. To remove it: close the game, set remove_dual_wield = on in the INI,
-launch with v2, load and save, close, then disable this mod and Build again.
+launch with v3, load and save, close, then disable this mod and Build again.
 That option removes only Dual Wield entries.
 
 VALIDATION AND LIMITS
-247 local tests passed, including 18 Dual Wield policy/controller tests.
-Coverage includes native ability preservation, ground/aerial row admission,
-separate contact windows, the real Character controller's aerial entry/exit,
-actor-anchored placement, rejected stale/menu/private-owner/room/weapon
-poses and same-tick trail intent. The Windows x64 DLL cross-build and
-exports/imports were checked; the final ZIP was fully extracted locally.
+259 local tests passed, including 30 Dual Wield policy/controller tests.
+The 12 new tests cover hand-local calibration, native run/cast clocks,
+all seven spell mappings, repeated and interrupted casts, stale binding
+rejection, root-travel removal and explicit floating-weapon admission.
+The Windows x64 release cross-build and PE exports/imports passed checks.
+The ZIP was fully extracted and its DLL hash checked before delivery.
 
-This build has not been run inside KH1FM here. No local KH2 install was
-available: optional real-game-data tests did not exercise their data paths.
-The runtime air handoff, actual native rendering/effect retirement, loaded
-Valor rows, contacts, different weapon lengths and map transitions require
-your fresh-process game test. The changes address confirmed code defects;
-this package does not claim that every visual issue is already game-verified.
+This build has not been run inside KH1FM here. No local KH2 installation
+was available: optional real-game-data tests did not exercise their data
+paths. Palm placement, loaded donor data, pose/event visual alignment,
+runtime rendering, contacts and map transitions need your fresh game test.
+The tests do not establish finalized HP loss or left-hand attribution.
 
 Source patch, exact build identity, test transcript and original credits /
-licences are included. Keep v1's ZIP if you need to revert.
+licences are included. Keep v2's ZIP if you need to revert.

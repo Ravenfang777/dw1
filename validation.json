@@ -1,24 +1,24 @@
 {
-  "name": "KH1FM Dual Wield Prototype v2",
-  "stage": "s341",
+  "name": "KH1FM Dual Wield Prototype v3",
+  "stage": "s342",
   "upstream_repo": "https://github.com/PM2CRAZY/KH2-Combat-in-KH1",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "derivative_commit": "7062682ace519b73fcdfb0e021479fdf449b82f7",
+  "derivative_commit": "631fe4f271c8a64ad8f9b6abc93049737aa39c8a",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4904996,
-  "dll_sha256": "39ac39be8dc474de2b486c00dad6c7fae82473dd3154ab8eaddb4da49262214d",
-  "patch_sha256": "50947d04749edf48dc860adc6e42988a6b19c6e9de59256e6cfd22437733a9d1",
-  "local_tests_passed": 247,
-  "dual_wield_policy_controller_tests": 18,
-  "added_in_v2_tests": 8,
+  "dll_bytes": 4926239,
+  "dll_sha256": "89e5dddeb5ddd06c64d3f03c339f58c8ce6a3cecffb2d8d4a82a603cff4b6dbe",
+  "patch_sha256": "629d77e8244139b1dd95f27739dc7121706d2591e7a051190b9938215da2b95f",
+  "local_tests_passed": 259,
+  "dual_wield_policy_controller_tests": 30,
+  "added_in_v3_tests": 12,
   "test_suites": 18,
   "all_local_suites_passed": true,
   "windows_cross_build_succeeded": true,
   "exports": [
-    "DllMain",
     "DirectInput8Create",
-    "OnInit",
-    "OnFrame"
+    "DllMain",
+    "OnFrame",
+    "OnInit"
   ],
   "imports": [
     "KERNEL32.dll",
@@ -40,21 +40,36 @@
   },
   "runtime_scope": {
     "ground_and_air": "ability-free Valor base rows; ground hop rows excluded",
-    "idle": "Valor standing battle idle over native idle slots only; game-frame clock",
-    "casting_and_locomotion": "native KH1; imported controller owns attacks only",
-    "weapon": "duplicate current KH1 weapon, no secondary selection or inventory claim",
-    "appearance": "native Sora model/textures/colours; custom idle and attack poses only",
+    "idle_and_run": "Valor poses over native grounded idle/run slots and native clocks",
+    "walk_physics_speed": "native KH1",
+    "casting": "visual-only Master body/weapon sampling over observed native KH1 casts",
+    "spell_mapping": {
+      "Fire": "Fire",
+      "Blizzard": "Blizzard",
+      "Thunder": "Thunder",
+      "Cure": "Cure",
+      "Gravity": "Thunder",
+      "Stop": "Cure",
+      "Aero": "Cure"
+    },
+    "native_spell_logic_mp_effects_damage_events_movement_cancels": "retained",
+    "donor_spell_and_attack_scripts": "not executed for casting overlays",
+    "grip": "hand-local axes; bind translations excluded; native right grip calibration retained",
+    "weapon": "duplicate current KH1 weapon; no secondary selection or inventory claim",
+    "appearance": "native Sora model/textures/colours; animation pose changes only",
     "drive_gauge_menu_drain_tint_growth_stats": "not installed",
-    "contacts": "both blades by default; offhand_only_test isolates left imported ground/air contacts",
-    "trail": "per-hand windows, same-tick posed left emitter, all-exit retirement; no enemy required",
-    "pose": "exact actor-instance identity, actor-anchored placement, complete world-space weapon snapshot"
+    "contacts": "both blades by default; offhand_only_test isolates left imported ground/air melee",
+    "trail": "per-hand attack windows, same-tick posed left emitter, all-exit retirement; no enemy required",
+    "pose": "exact actor-instance identity, actor-anchored placement, casting donor root removed"
   },
   "game_test_performed_here": false,
   "limitations": [
-    "No local KH2 install: data import, native rendering, effects and air handoffs require runtime validation.",
-    "Optional upstream game-data tests did not exercise their real-data paths.",
+    "No local KH2 installation: optional real-data tests did not exercise their data paths.",
     "Windows DLL cross-compiled on Linux, not executed inside KH1 here.",
-    "Contact geometry originates in Valor data; different KH1 weapon lengths need gameplay verification.",
+    "Palm alignment and actual run/casting overlays require fresh-process game validation.",
+    "Normalized donor timing preserves native events but does not prove visual release-marker alignment.",
+    "Master weapon motion may float during casting; no new form or spell logic is activated.",
+    "Different KH1 weapon lengths, contacts, native rendering and map transitions require gameplay verification.",
     "Old offhand Lua/model assets and full combat overhaul must be disabled."
   ]
 }

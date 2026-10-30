@@ -1,12 +1,13 @@
-title: KH1FM Dual Wield Prototype v2
+title: KH1FM Dual Wield Prototype v3
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
   Passive Dual Wield ability. Duplicates the currently equipped KH1 weapon,
-  adds Valor ground/aerial combos and standing idle, and corrects custom
-  trail retirement and actor-bound placement. Native casting. No Drive gauge,
-  resource drain, recolouring, stat bonuses or additional ability grants.
-  Requires KH2FM in the same install. Disable v1, earlier offhand scripts,
-  embedded duplicate-model assets and the full KH2 Combat mod for this test.
+  with a corrected hand-local grip, Valor ground/aerial combos, idle and run,
+  and Master casting poses over existing KH1 spells. Native spell logic,
+  MP, effects and damage retained. No Drive gauge, drain, recolouring,
+  stat bonuses or additional ability grants. Requires KH2FM in the same install.
+  Disable v1/v2, older offhand scripts, embedded duplicate-model assets and
+  the full KH2 Combat mod for this test.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

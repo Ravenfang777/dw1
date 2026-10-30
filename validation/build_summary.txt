@@ -1,0 +1,9 @@
+Source: 631fe4f271c8a64ad8f9b6abc93049737aa39c8a
+Target: x86_64-pc-windows-gnu
+Release cross-build: PASS
+PE architecture: pei-x86-64
+DLL SHA256: 89e5dddeb5ddd06c64d3f03c339f58c8ce6a3cecffb2d8d4a82a603cff4b6dbe
+DLL bytes: 4926239
+Local regressions: 259 passed, 0 failed, 18 suites
+Dual Wield policy/controller tests: 30 passed
+Windows/game execution: not performed here
