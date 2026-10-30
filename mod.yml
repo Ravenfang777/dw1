@@ -1,13 +1,12 @@
-title: KH1FM Four Styles Prototype v16
+title: KH1FM Five Styles Prototype v17
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Four exclusive passive styles: Dual A Valor, Dual B Final,
-  Single A Limit, Single B Wisdom. Only Dual styles duplicate your
-  equipped KH1 weapon. Explicit moving spin for Dual B Dodge Roll;
-  Wisdom shots and Quick Run; held Glide and Limit-finisher Superglide
-  for Single A. KH2 spell effects with owned KH1 draw filtering for
-  both B styles. Native spell rules and attack ability priority.
-  Requires KH2FM in the same installation; no Drive gauge or outfit.
+  Five exclusive 0-AP styles. Dual A Valor; Dual B Final; Single A
+  base KH2 Sora; Single B Wisdom; Anti weaponless Anti-form.
+  Only Dual styles duplicate your equipped weapon. Anti blocks magic,
+  items and summons. Revised Dual B spin dodge and native spell visual
+  ownership. No Drive gauge, outfit, bonus stats or extra abilities.
+  Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

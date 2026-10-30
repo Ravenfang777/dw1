@@ -1,24 +1,39 @@
 {
   "checks": {
     "spell_casts_require_native_observer": true,
-    "native_spell_scripts_do_not_resolve_strike_events": true,
-    "only_wisdom_object_script_attacks_resolve_new_contacts": true,
-    "native_filter_has_no_native_state_writes": true,
-    "native_vm_original_updates_once_with_existing_no_draw_flag": true,
+    "native_spell_script_strike_events_not_resolved": true,
+    "only_wisdom_object_script_attacks_add_spell_contacts": true,
+    "native_filter_has_no_effect_or_spell_state_writes": true,
+    "native_update_once_uses_existing_no_draw_path": true,
     "native_constructor_always_runs_first": true,
-    "native_filter_uses_actor_generation_and_effect_sequence": true,
-    "package_ready_required_before_native_visuals_hidden": true,
+    "effect_sequence_and_binding_scope": true,
+    "matching_cast_script_admission_required": true,
+    "async_work_caster_and_resource_are_checked": true,
+    "scheduler_vm_identity_checked": true,
+    "factory_reuse_clears_old_scope": true,
+    "native_effect_flags_not_mistaken_for_owner": true,
     "no_reflect_private_base_read": true,
-    "no_drive_or_full_magic_hooks_installed": true,
+    "no_full_drive_or_magic_modules_installed": true,
     "single_donors_do_not_activate_drive_policy": true,
-    "native_draw_requires_same_cast_script_admission": true
+    "single_a_selects_actual_base_sora": true,
+    "anti_body_controller_and_no_weapon_visual": true,
+    "anti_commands_blocked_before_original": true,
+    "anti_fx_share_existing_renderer": true,
+    "dual_b_committed_roll_does_not_require_duplicate_ready": true,
+    "single_b_quick_run_and_dual_a_real_finisher_retained": true
   },
   "source_sha256": {
-    "crates/kh1-hook/src/win/native_spell_fx.rs": "34ec81b8cba8392a6b5961cb83eb7c6e65c556cc6d9c4263b1b2570c3ca39664",
-    "crates/kh1-hook/src/win/dual_magic_fx.rs": "cedb9bc7c780fee4f33b17335307b4156cb2ea25ddd66d933a58f9339431a4cc",
-    "crates/kh1-hook/src/win/form.rs": "c71476542418f699c59a2a33ae4dcc17bf208157d30b00b71aa388c61a5dab2d"
+    "crates/kh1-hook/src/win/native_spell_fx.rs": "e114cf3e8ab81e953f6fd7c85bc75e3199b1aec1e042c80e9da61aa37c9e75cd",
+    "crates/kh1-hook/src/win/dual_magic_fx.rs": "6ae445b8168d2ac89c0ab83e452558bb80b5ec37fcd5539a09c661ead92d2edb",
+    "crates/kh1-hook/src/win/form.rs": "6fb676f44e1e2114b9051324aba5fe23372481cbae79f3cebdd77acf00e3d3df",
+    "crates/kh1-hook/src/win/dual.rs": "0e5d2c80630cb1b6d37852b15e9680af62a0e02417dd48e702328c14b07a4432",
+    "crates/kh1-hook/src/win/dual_actions.rs": "2d58a8449849620edcd35e1393f57fa5ce7b250a4cce416fc16f2de19fb9e3a7",
+    "crates/kh1-hook/src/win/pose.rs": "82608e78e1dfa3c11bf0105c7b057f0ec5eabc840566fa1b0f7b14ef31564185",
+    "crates/kh1-hook/src/win/takeover.rs": "fef4141ad6a0b463a84cfc7f1953eb6b55f62fa4f370d1230d5497d0b9799538",
+    "crates/kh1-hook/src/win/combat.rs": "4298118a5e00558e56d31383fde4c81ea01bdfeb9b29edf40a97ef5d5a711d94"
   },
-  "native_spell_damage_remains_kh1": true,
-  "new_gameplay_contact_source": "Wisdom object-script projectile attack shapes only",
-  "live_gpu_test_performed": false
+  "kind": "static source scope audit plus separately recorded controller/executable validation",
+  "native_spell_gameplay": "KH1",
+  "new_contact_sources": "Wisdom object script shots and Anti real body windows; Dual B real displayed blades",
+  "live_game_or_gpu_test_performed": false
 }
