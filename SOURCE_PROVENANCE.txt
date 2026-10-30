@@ -1,4 +1,4 @@
-SOURCE AND BUILD -- DUAL WIELD PROTOTYPE v3 (s342)
+SOURCE AND BUILD -- DUAL WIELD PROTOTYPE v4 (s343)
 
 Derived from JamesPMx / PM2CRAZY's MIT OR Apache-2.0 project:
 https://github.com/PM2CRAZY/KH2-Combat-in-KH1
@@ -6,21 +6,27 @@ Upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
 Derivative v1: 7f08c17718234d7a4ade2ef723ea6442b0bbcd7d
 Derivative v2: 7062682ace519b73fcdfb0e021479fdf449b82f7
 Derivative v3: 631fe4f271c8a64ad8f9b6abc93049737aa39c8a
+Derivative v4: 5622eb07b037a4d1e2b993b61e3c155e593fdbd5
 
-source/DualWield_v3.patch contains all three derivative commits. Apply with
-  git am /path/to/DualWield_v3.patch
-on a checkout of that exact upstream commit. No game assets, extracted
-tables or decompiler output are committed or shipped. CREDITS.md, NOTICE,
-LICENSE-MIT and LICENSE-APACHE retain upstream and OpenKH attribution.
+source/DualWield_v4.patch contains all four derivative commits. Apply with
+  git am /path/to/DualWield_v4.patch
+on a checkout of the exact upstream commit above. No game assets, extracted
+tables or decompiler output are committed or shipped. Original CREDITS.md,
+NOTICE, LICENSE-MIT and LICENSE-APACHE retain upstream/OpenKH attribution.
 
 Rebuild with Rust, the x86_64-pc-windows-gnu target and a MinGW x64 linker:
   cargo build --release -p kh1-hook --target x86_64-pc-windows-gnu --locked
-The resulting dinput8.dll is renamed kh1-dual-wield.dll and loaded through
-Panacea. It must not replace the shared folder's dinput8 proxy.
+Rename the resulting dinput8.dll to kh1-dual-wield.dll for Panacea loading.
+Do not replace the shared game folder's dinput8 proxy.
 
 Validation command:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim --locked
-All 259 local tests passed, including 30 Dual Wield policy/controller tests.
+260 local tests passed, including 31 Dual Wield policy/controller tests.
 Windows cross-build: rustc 1.99.1, x86_64-pc-windows-gnu, MinGW GCC 13-posix.
-No Windows/game execution is claimed. Optional tests needing game data
-used their no-install paths. The user's runtime test remains necessary.
+No Windows/game execution is claimed. Optional game-data tests used their
+no-install paths. Fresh-process KH1 testing remains necessary.
+
+Mapping sources and confidence are recorded in docs/combat-model.md in the
+patch. Native 0..13 slot matches come from upstream pose::play_for; native
+edge-hang/climb/glide states from takeover.rs. Valor magic restriction is
+from upstream form.rs::Kind::magic_sub and docs/drive-model.md.

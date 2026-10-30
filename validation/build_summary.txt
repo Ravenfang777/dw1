@@ -1,9 +1,9 @@
-Source: 631fe4f271c8a64ad8f9b6abc93049737aa39c8a
+Source: 5622eb07b037a4d1e2b993b61e3c155e593fdbd5
 Target: x86_64-pc-windows-gnu
 Release cross-build: PASS
 PE architecture: pei-x86-64
-DLL SHA256: 89e5dddeb5ddd06c64d3f03c339f58c8ce6a3cecffb2d8d4a82a603cff4b6dbe
-DLL bytes: 4926239
-Local regressions: 259 passed, 0 failed, 18 suites
-Dual Wield policy/controller tests: 30 passed
+DLL SHA256: 6d8f1b4ef9965230ba23ad1048479a845467c6edaefc45fa26581d756e4865ce
+DLL bytes: 4934935
+Local regressions: 260 passed, 0 failed, 18 suites
+Dual Wield policy/controller tests: 31 passed
 Windows/game execution: not performed here
