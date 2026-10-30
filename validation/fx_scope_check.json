@@ -1,0 +1,13 @@
+{
+  "fx_runtime_is_separate_from_full_overhaul": true,
+  "native_hp_mp_write_helpers_absent": true,
+  "script_damage_heal_events_ignored": true,
+  "native_cast_gate": true,
+  "scene_binding_and_menu_guards": true,
+  "explicit_native_base": true,
+  "isolated_modules_installed": [
+    "dual_actions",
+    "dual_magic_fx"
+  ],
+  "no_reflect_drive_menu_stat_hooks_added": true
+}

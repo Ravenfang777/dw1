@@ -1,12 +1,13 @@
-title: KH1FM Dual Styles Prototype v14
+title: KH1FM Dual Styles Prototype v15
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Dual A Superglide uses Valor's aerial-finisher animation over native
-  movement. Dual B Guard is a silent stationary blade spin; Dodge Roll
-  is a moving version of that spin. Final base combos and KH2 casting
-  animations retained. Both styles duplicate the equipped KH1 weapon.
-  Requires KH2FM in the same installation. Disable older Dual Wield
-  versions and the full KH2 Combat overhaul.
+  Dual A Superglide starts a real Valor aerial finisher with movement and
+  blade contacts. Dual B replaces committed native Dodge Roll with its
+  moving blade spin. Adds actual KH2 Fire/Blizzard/Thunder/Cure effect
+  resources over native spell gameplay; native effects may remain.
+  Duplicate the equipped weapon; exclusive passive styles, no Drive.
+  Requires KH2FM in the same install. Disable older Dual Wield versions
+  and the full KH2 Combat overhaul.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

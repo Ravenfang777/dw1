@@ -1,117 +1,122 @@
-KH1FM DUAL STYLES -- PROTOTYPE v14 (s353)
+KH1FM DUAL STYLES -- PROTOTYPE v15 (s354)
 
 INSTALL / UPDATE
-1. Fully close KH1FM. Disable v13 and every older Dual Wield prototype.
-2. Install this ZIP as one OpenKH mod, enable v14, then Build and Run.
+1. Fully close KH1FM. Disable v14 and every older Dual Wield prototype.
+2. Install this ZIP as one OpenKH mod, enable v15, then Build and Run.
    Panacea is required. F1 does not reload a native DLL.
-3. Equip Style: Dual A or Style: Dual B. Existing names/IDs, AP,
+3. Equip Style: Dual A or Style: Dual B. IDs 126/125, AP, existing
    learned/equipped state and mutual exclusion are preserved.
 
 Keep older integrated/offhand Lua, Synch/moveset routers, duplicate
 Sora-model mods and the full KH2 Combat overhaul disabled. Normal Sora
 and KH1FM/KH2FM in the same PC 1.5+2.5 installation are required.
-Donor animations come from your KH2FM files. No game assets ship.
 Use the included manifest; do not replace the shared dinput8.dll.
+All KH2 animations/effects are read from your own install. No game assets ship.
 
-CHANGES IN v14
+WHAT CHANGED
 
-Style: Dual A -- Valor finisher Superglide
-- Superglide repeats Valor's base aerial-combo finisher animation while
-  native Superglide is active. The motion is read from actual Valor
-  combo data, with real rig/clip admission, rather than guessed.
-- This is an animation replacement. KH1 still controls Superglide's
-  speed, steering, collision, ability gate and ending when released.
-- Donor root travel, hit windows, events and voices are not executed.
-  No Superglide attack damage or finisher spell/effect is added.
-- Body and both weapon tracks use the finisher. The old native-glide
-  attachment refresh cannot overwrite the admitted finisher's offhand.
-- Regular Glide keeps its native held pose and live-hand refresh.
-  Missing finisher data retains the native Superglide pose/duplicate.
+DUAL A -- REAL FINISHER IN PLACE OF SUPERGLIDE
+- The native Superglide start proves the ability/input is allowed.
+  Instead of continuing glide movement, it exits that native state
+  and starts the actual Valor base aerial finisher attack.
+- The real row keeps its authored root/hop movement and per-blade
+  contact timing. It can hit enemies and produce native impact/audio.
+- No native glide speed is inherited. This is not v14's looping pose.
+- One activation plays one finisher. Release Square and press again
+  to rearm; holding alone does not make an endless attack loop.
+- The action ends into native falling/landing at the resulting position.
+  Regular Glide is unchanged. No new ability or Combo Master is granted.
+- Missing donor data leaves the native held Superglide fallback.
 
-Style: Dual B -- stationary Guard and moving Dodge Roll spins
-- Guard keeps one cycle of the previous Final idle-body/Keyblade spin.
-  The extra native attack voice is suppressed. Swing/trail sounds and
-  native hit impact/audio remain; ordinary attack voices are unchanged.
-- Dodge Roll now performs a MOVING version of that same spin, replacing
-  v13's Master aerial dodge. Use directional input to move/steer during
-  its one cycle. It uses Final's normal walk/run movement parameters.
-- Sora keeps Final's looping idle body while both blades spin, just as
-  during Guard. The blade contact windows are identical to Guard's.
-- There is no Master hop, new airborne input, follow-up combo window,
-  Aero spell/effect, MP cost or invulnerability grant. Master data is
-  no longer loaded. Moving over an edge permits normal falling.
-- Guard and Dodge Roll still require their respective native equipped
-  abilities. Native tilt chooses between them when both are equipped.
-  Missing/invalid roll-spin data retains native Dodge Roll.
+DUAL B -- NATIVE DODGE ROLL REPLACEMENT
+- Intercepts the actual committed native Dodge Roll start before its
+  roll motion/flags/voice. The native selector still proves the earned
+  ability, directional input and Guard-versus-Roll decision.
+- Performs one moving Final idle-body/Keyblade spin, with the same
+  blade contacts as Guard. Use the stick to move/steer during its cycle.
+- If Final has no valid standalone movement speeds, use the loaded
+  base Sora movement data. If its casting clip has no melee triggers,
+  use actual ability-free base-attack metadata for each missing blade.
+- Guard remains the stationary version. Both omit the extra attack
+  voice, retaining weapon/trail and native hit sounds. No invulnerability,
+  Master dodge, spell/MP cost or extra ability is added.
+- Native Roll is retained only if its hook/data/model cannot be admitted;
+  a specific admission-failure log now explains that fallback.
 
-DUAL B MAGIC -- KH2 ANIMATIONS
-B already targeted Final Form's KH2 casting animations in v13; this
-version retains that route for all seven KH1 spells, on ground and air.
-The log now identifies those casts explicitly as DUAL B KH2 CAST.
-  Fire             -> Final Fire family      (56 / 58)
-  Blizzard         -> Final Blizzard family  (59 / 61)
-  Thunder/Gravity  -> Final Thunder family   (62 / 64)
-  Cure/Stop/Aero    -> Final Cure family      (65 / 67)
-KH1 still owns MP, spell levels, spell release/projectiles/effects,
-damage and movement. The animation donor never runs a KH2 spell event.
-The v10 Fire invalid-read fix remains. Dual A casting stays default KH1.
-
-RETAINED
-Dual A uses Valor combat. Dual B uses Final's actual base ground/air
-combo selector with three slots plus Combo Plus/Air Combo Plus. Both
-styles retain native attack-ability priority for an entire affected lane.
-Disable native ground action attacks (Vortex, Counterattack, Blitz,
-Slapshot, Sliding Dash, Ripple Drive, Stun Impact, Gravity Break,
-Zantetsuken) or air action attacks (Aerial Sweep, Hurricane Blast) to
-test an isolated imported base combo. Combo Plus alone retains that combo.
-
-B retains regular-Glide floor hover and its prior Superglide behavior.
-To test regular Glide, unequip Superglide, which has native priority.
-Each style duplicates the equipped KH1 weapon with no second selection
-or inventory copy. Unequipping removes the duplicate/restores native KH1.
-No Drive gauge, drain/timer, transformation, costume, stats/AP bonus or
-extra native ability is added. Existing INI settings are preserved.
+DUAL B -- ACTUAL KH2 SPELL EFFECTS
+- Adds the real MAG/BDX/PAX effect resources for Fire, Blizzard, Thunder
+  and Cure, at their actual native levels, using Final's magic subs.
+- This is a separate effect renderer. It goes beyond casting animations.
+  Wait for DUAL B KH2 SPELL EFFECTS READY before the first test.
+- Native KH1 still handles MP, healing, damage, status, projectiles and
+  collision. KH2 visual-script attacks/heals are ignored completely.
+- IMPORTANT: native spell effects remain visible in this first effect
+  test. You may see both native and KH2 visuals. This build adds genuine
+  KH2 resources without replacing native spell behavior/effects.
+- Gravity, Stop and Aero keep their native effects. Their existing Final
+  casting overlays remain. All seven spells retain native levels/MP.
+- A and unequipped styles keep native spells. New visuals retire on
+  unequip, map/actor/weapon changes and scenes; menus/pauses hide/freeze.
+- No Reflect, Drive, menu, gauge, stat or full-overhaul spell hooks are
+  enabled. The earlier uninitialized spell-level lookup is not reused.
+- Native spell audio remains. This test does not replace audio with KH2 audio.
 
 FIRST TEST
-1. A: equip Superglide and check the repeating Valor aerial finisher,
-   both blades, turning and button-release ending. Regular Glide should
-   still be held normally. Check map and weapon changes for stale poses.
-2. B: equip Guard, use neutral stick and check one stationary spin with
-   no attack voice, MP loss or Aero effect. Check weapon/hit sounds.
-3. Equip Dodge Roll. Use directional input to start a moving spin; steer
-   during it and confirm it ends once. Compare both blade contacts near
-   a single enemy; exclude party damage when attributing enemy HP loss.
-4. Cast each spell from idle and from the air. Check Final's KH2 cast
-   animation and native spell effects/MP. Casting should not add another
-   spell, use Master animations or automatically start an attack.
-5. Check damage interruptions, collision, landing, style/weapon changes,
-   map transitions and unequipping. Check native attack-ability priority.
+1. A: equip Superglide, jump/fall and activate it in empty space. Sora
+   should execute ONE actual Valor finisher and then fall, rather than
+   keeping Superglide movement. Release/repress to repeat. Test one enemy
+   for real blade contact and landing. Regular Glide should stay normal.
+2. B: equip Dodge Roll. With directional input, activate it and look for
+   DUAL B NATIVE ROLL REPLACED and DUAL B MOVING SPIN REQUEST. It should
+   move with the spinning blades and stop after one cycle. Guard should
+   still spin in place, without the added vocal line.
+3. Wait for SPELL EFFECTS READY. Cast Fire, Blizzard, Thunder and Cure
+   on the ground, then in the air. Look for DUAL B REAL KH2 SPELL FX.
+   Confirm visible KH2 effects and unchanged native MP/healing/damage.
+   Existing native effects may overlap; do not count them as added damage.
+4. Check weapon/style changes, native damage interruption, map transitions,
+   pause/menus and unequipping. Exclude party damage when attributing hits.
+
+RETAINED
+Both styles duplicate the currently equipped KH1 weapon with no second
+selection/inventory copy. Equipping one cancels the other. Unequipping
+removes the duplicate/restores native behavior. No Drive gauge, drain,
+timer, transformation, costume, bonus stats/AP or extra ability is added.
+A retains Valor combat; B retains Final's three-slot base ground/air
+combos plus Combo Plus/Air Combo Plus. Native attack-ability lane priority
+still applies to ordinary combos. B's regular-Glide floor hover and prior
+Superglide remain. Guard and Dodge Roll still require their native abilities.
 
 SETTINGS / LOG -- NEXT TO KINGDOM HEARTS FINAL MIX.exe
-kh1-dual-wield.ini (existing file preserved; restart after edits):
+Existing kh1-dual-wield.ini is preserved. Missing keys use defaults.
+  dual_b_spell_fx = on
+New setting, on by default: actual KH2 spell visual layer. Off disables
+only the new effect renderer; actions and native spells stay enabled.
   idle_speed = 0.75
-Combat/supported scene-idle rate, including both spin body tracks.
-1.0 is authored idle speed; accepted range .10..2.00.
+Combat/supported scene-idle rate, including B spin body tracks; .10..2.00.
   offhand_only_test = off
 On isolates left imported contacts. Native spells/items/party remain.
   remove_dual_wield = off
-Uninstall only: set on, launch/load/save with v14, close, disable the mod
-and Build again. It removes only both custom style entries.
+Uninstall only: set on, launch/load/save with v15, close, disable mod,
+then Build again. It removes only both custom style entries.
+Restart the game after INI edits.
 
-kh1-dual-wield.log: look for s353, PROTOTYPE v14, DUAL A SUPERGLIDE DATA,
-DUAL B MOVING SPIN REQUEST, DUAL B ACTION DATA and DUAL B KH2 CAST.
-Return this NEW log and a short recording if animation, movement or
-contact is wrong. Data logs report whether the real donor was admitted.
+kh1-dual-wield.log: check s354 and PROTOTYPE v15. New markers:
+  DUAL A SUPERGLIDE REPLACED / DUAL A REAL FINISHER START
+  DUAL B NATIVE ROLL REPLACED / DUAL B ROLL ADMISSION FAILED
+  DUAL B KH2 SPELL EFFECTS READY / DUAL B REAL KH2 SPELL FX
+If Roll remains native or a new effect is absent, return this NEW log
+with a short recording of one activation/cast. The log distinguishes
+missing packages/data/hooks from an accepted action/effect script.
 
-VALIDATION
-330 local tests passed across 18 suites, including 101 Dual Wield tests.
-They check the finisher route/fallback, attachment ownership, identical
-Guard/roll contact timing, steerable finite movement without a hop or
-extra ability, scoped voice suppression, all seven ground/air cast
-routes and retained combo/input/geometry behavior.
-Windows x64 release cross-build and PE imports/exports passed. No new
-native hook/address; retained Steam checks are labelled as historical.
-ZIP CRC/extraction/all-entry hashes verified. Cumulative source patch,
-recovery evidence, original credits and licenses included. No live game
-execution or installed donor appearance/contact validation here.
-Keep v13 if you need to revert.
+VALIDATION / LIMITS
+404 local tests passed across 27 suites, including 103 Dual Wield tests
+and the magic-script/effect/BDX suites. Tests cover real finisher root
+movement/contacts/end, input/ability policy, spin movement and fallback,
+cast/style/level routing and retained geometry/ownership behavior.
+Windows x64 release cross-build and PE imports/exports passed. New hook
+prologues/operands match the supplied Steam executable; runtime guards
+retain native fallback on mismatch. Native FX scope/anchor receipts,
+source patch, original credits and licenses are included. ZIP CRC,
+extraction and all-entry hashes checked. No live game/GPU execution or
+installed donor appearance validation here. Keep v14 if you need to revert.

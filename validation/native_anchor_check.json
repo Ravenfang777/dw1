@@ -1,69 +1,46 @@
 {
-  "retained_checks": [
+  "exe_sha256": "d790746245d26159f3ee0e1060e33b2fa2de06941850a4ac724f598722884bac",
+  "exe_stamp": 1721645006,
+  "new_native_checks": [
     {
-      "epic_rva": "0x292330",
-      "steam_rva": "0x2944c0",
-      "expected_prologue_matches": true
-    },
-    {
-      "epic_rva": "0x2912f0",
-      "steam_rva": "0x293480",
-      "expected_prologue_matches": true
-    },
-    {
-      "special_prompt_call_matches": true,
-      "steam_call_rva": "0x294ca2"
-    },
-    {
-      "epic_rva": "0x2b0890",
-      "steam_rva": "0x2b2a20",
-      "expected_prologue_matches": true
-    },
-    {
-      "epic_rva": "0x2b0a60",
-      "steam_rva": "0x2b2bf0",
-      "expected_prologue_matches": true
-    },
-    {
-      "anchor": "move subtype",
-      "steam_rva": "0x2b2a5f",
+      "anchor": "roll_prologue",
+      "steam_rva": "0x2c9e60",
       "matches": true
     },
     {
-      "anchor": "height source",
-      "steam_rva": "0x2b2a68",
+      "anchor": "roll_flag",
+      "steam_rva": "0x2c9e76",
       "matches": true
     },
     {
-      "anchor": "input subtype",
-      "steam_rva": "0x2b2c8b",
+      "anchor": "roll_motion",
+      "steam_rva": "0x2c9e80",
       "matches": true
     },
     {
-      "anchor": "input held test",
-      "steam_rva": "0x2b2c9f",
+      "anchor": "superglide_prologue",
+      "steam_rva": "0x2b2750",
       "matches": true
     },
     {
-      "registration_site_steam": "0x2b2709",
-      "callback_steam": "0x2b29f0",
-      "target_matches": true
+      "anchor": "superglide_subtype",
+      "steam_rva": "0x2b276d",
+      "matches": true
     },
     {
-      "registration_site_steam": "0x2b2721",
-      "callback_steam": "0x2b2d00",
-      "target_matches": true
+      "anchor": "spell_world_pass",
+      "steam_rva": "0x1ecf30",
+      "matches": true
     },
     {
-      "registration_site_steam": "0x2b2728",
-      "callback_steam": "0x2b2a20",
-      "target_matches": true
-    },
-    {
-      "registration_site_steam": "0x2b26fd",
-      "callback_steam": "0x2b2bf0",
-      "target_matches": true
+      "anchor": "hook_trampolines",
+      "whole_instruction_lengths": [
+        6,
+        9,
+        15
+      ],
+      "no_relative_instructions_stolen": true
     }
   ],
-  "v14_note": "v14 adds no hook/address. These Steam checks were performed for v11 and retained through v13; no live executable or fresh native-anchor check is claimed for v14."
+  "no_game_bytes_included": true
 }
