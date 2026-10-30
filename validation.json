@@ -1,16 +1,16 @@
 {
-  "name": "KH1FM Dual Wield Prototype v5",
-  "stage": "s344",
+  "name": "KH1FM Dual Wield Prototype v6",
+  "stage": "s345",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "derivative_commit": "0c01ff35f8d00260923e1a43956722365568ef6c",
+  "derivative_commit": "00dd0012f2c7fd0c5041fb428a60abe56c49b0dd",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4960973,
-  "dll_sha256": "6e819fec4755eb942266472425fb36ab2daccc2d2c40b8d57b5819c73090ad0d",
-  "source_patch_sha256": "55b586bea0b245ed6aa5c3e473b6fcbddcff987f178d662ab5b7db695d072858",
+  "dll_bytes": 4953265,
+  "dll_sha256": "e6aafa004cea006cac1549113f08db53bf131f14fb3899570a45bbccdd1022cb",
+  "source_patch_sha256": "a70101f0072a630fb79405ba552259847488223374832de850eaeeb8b9324022",
   "test_suites": 18,
-  "tests_passed": 272,
+  "tests_passed": 280,
   "tests_failed": 0,
-  "dual_wield_tests": 43,
+  "dual_wield_tests": 51,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -28,6 +28,20 @@
     "api-ms-win-core-synch-l1-2-0.dll",
     "bcryptprimitives.dll"
   ],
+  "glide": "Master GLIDE 205; actual native player-work subtype bit clear",
+  "superglide": "Final GLIDE 205; actual native player-work subtype bit set",
+  "combat_and_supported_scene_idle": "Same Valor combat IDLE 0; continuous looping native-time clock",
+  "idle_speed": {
+    "default": 0.75,
+    "range": [
+      0.1,
+      2.0
+    ],
+    "authored_rate": 1.0,
+    "restart_required": true
+  },
+  "clock": "Native 60Hz frame-step units; once per OnFrame; repeated draws reuse snapshot; no wall-clock catch-up",
+  "donor_scripts_effects_controllers_contacts_trails": "not run for non-attack visuals",
   "ability": {
     "name": "Dual Wield",
     "id": 126,
@@ -35,49 +49,11 @@
     "initially_equipped": false,
     "other_grants": []
   },
-  "native_ability_policy": "Entire affected ground/air combo lane remains native; cosmetic duplicate only.",
-  "native_ground_abilities": [
-    17,
-    19,
-    20,
-    53,
-    54,
-    56,
-    57,
-    58,
-    59
-  ],
-  "native_air_abilities": [
-    18,
-    55
-  ],
-  "imported_air_continuation": "Ground placeholder cannot start a ground ability during imported air; equipped air abilities keep native air before import.",
-  "cosmetic_attachment": "Held locomotion calibration; current native left hand; exact binding and fresh pose; independent of primary visibility.",
-  "new_visual_candidates": [
-    "item use/throw",
-    "front/back high/low flinch",
-    "front/back heavy damage",
-    "front/back air damage",
-    "scripted standing interaction idle",
-    "regular cutscene field idle"
-  ],
-  "scene_children": "Native local motion of unretargeted children retained; no world-matrix feedback.",
-  "casting": "Default native KH1 ground and air; no Master donor.",
-  "non_attack_donor_scripts_damage_contacts_trails_voices": "not run",
-  "default_native_routes_extra_offhand_damage": false,
-  "offhand_only_test_scope": "Imported Valor melee only; native ability combos unaffected.",
-  "unsupported_interactions": [
-    "chest opening",
-    "lift/carry/throw objects",
-    "push",
-    "Trinities",
-    "dedicated event-bank poses"
-  ],
+  "native_ability_policy": "Entire affected ground/air combo lane native; cosmetic duplicate only",
+  "casting": "Default native KH1 ground and air",
   "game_execution_performed_here": false,
   "limitations": [
-    "Donor availability and appearance require game testing.",
-    "Item release gestures use normalized native time and may need event alignment.",
-    "Native ability triggers and mixed loadouts need gameplay confirmation.",
-    "Only recognized regular standing idles receive scene/interaction donors."
+    "Actual donor availability/appearance needs game testing.",
+    "Native menu-pause timing, looping, glide placement and scene/map transitions need game testing."
   ]
 }

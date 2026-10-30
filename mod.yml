@@ -1,13 +1,12 @@
-title: KH1FM Dual Wield Prototype v5
+title: KH1FM Dual Wield Prototype v6
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Passive Dual Wield ability duplicating the current KH1 weapon.
-  Preserves equipped native attack abilities by keeping the affected combo
-  lane under KH1. Cosmetic offhand remains visible on default actions.
-  Matching Valor movement, item, common damage and supported interaction
-  and cutscene idle visuals. Native KH1 casting; no Drive system or extra
-  ability grants. Requires KH2FM in the same install. Disable earlier Dual
-  Wield versions, old offhand scripts/assets and the full KH2 Combat mod.
+  Passive Dual Wield ability duplicating the current KH1 weapon. Master
+  Glide and Final Superglide visual donors, continuous looping Valor
+  combat and supported cutscene idle at adjustable speed (default 75%).
+  Equipped native attack abilities retain their combo lane. Native KH1
+  casting and movement; no Drive system or extra grants. Requires KH2FM
+  in the same install. Disable earlier versions and the full KH2 Combat mod.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

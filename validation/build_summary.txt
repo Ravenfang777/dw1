@@ -1,8 +1,8 @@
-Source: 0c01ff35f8d00260923e1a43956722365568ef6c
-Stage: s344
+Source: 00dd0012f2c7fd0c5041fb428a60abe56c49b0dd
+Stage: s345
 Target: x86_64-pc-windows-gnu
-DLL SHA256: 6e819fec4755eb942266472425fb36ab2daccc2d2c40b8d57b5819c73090ad0d
-DLL bytes: 4960973
-Local tests: 272 passed, 0 failed, 18 suites; 43 Dual Wield tests
+DLL SHA256: e6aafa004cea006cac1549113f08db53bf131f14fb3899570a45bbccdd1022cb
+DLL bytes: 4953265
+Local tests: 280 passed, 0 failed, 18 suites; 51 Dual Wield tests
 Release cross-build and PE inspection: PASS
 Game execution: not performed here

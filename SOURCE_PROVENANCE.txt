@@ -1,18 +1,18 @@
-DUAL WIELD PROTOTYPE v5 -- s344
+DUAL WIELD PROTOTYPE v6 -- s345
 
 Derived from JamesPMx / PM2CRAZY's MIT OR Apache-2.0 project:
 https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v5: 0c01ff35f8d00260923e1a43956722365568ef6c
+Derivative v6: 00dd0012f2c7fd0c5041fb428a60abe56c49b0dd
 
-source/DualWield_v5.patch contains all five derivative commits. Apply with
-  git am /path/to/DualWield_v5.patch
-to the pinned upstream checkout. No game files, executable bytes,
-extracted tables, disassembly or decompiler output are shipped.
+source/DualWield_v6.patch contains all six derivative commits. Apply with
+  git am /path/to/DualWield_v6.patch
+to the pinned upstream checkout. No game files, executable bytes, extracted
+tables, disassembly or decompiler output are shipped.
 
-Source rules/confidence: docs/combat-model.md in the patch. Native action
-roles were checked in the user's supplied Steam executable and regular
-MSET privately. Donor motion names/slot fallback: OpenKH documentation
+Source rules/confidence: docs/combat-model.md in the patch. Native glide
+subtype/time-step behavior was privately checked in the supplied Steam
+executable. Donor motion dictionary and slot fallback:
 https://openkh.dev/kh2/file/anb/mset.html
 
 Build (Rust 1.99.1, Windows GNU target, MinGW GCC 13-posix):
@@ -20,5 +20,5 @@ Build (Rust 1.99.1, Windows GNU target, MinGW GCC 13-posix):
 Rename release dinput8.dll to kh1-dual-wield.dll for OpenKH/Panacea.
 Tests:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim --locked
-272 passed, 0 failed; 43 Dual Wield tests; 18 suites.
-No Windows/game execution or installed Valor donor validation claimed.
+280 passed, 0 failed; 51 Dual Wield tests; 18 suites.
+No Windows/game execution or installed donor validation claimed.
