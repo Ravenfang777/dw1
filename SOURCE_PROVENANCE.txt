@@ -1,23 +1,22 @@
-DUAL STYLES PROTOTYPE v10 -- s349
+DUAL STYLES PROTOTYPE v11 -- s350
 
 Derived from JamesPMx / PM2CRAZY:
 https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v10: cbd6d310fc9bea9518f397f8d40fc2b9efceaddc
-Licences: MIT OR Apache-2.0. Original credits are retained.
+Derivative v11: a77281cb3457243c726a4db60408aba8863eda0d
+Licences: MIT OR Apache-2.0. Original credits retained.
 
-source/DualStyles_v10.patch contains all ten derivative commits. Apply
-with git am to the pinned upstream checkout. No game files, native
-executable bytes, extracted tables or decompiler/disassembly dumps ship.
-Source rules/confidence and native addresses: docs/combat-model.md.
+source/DualStyles_v11.patch contains all eleven derivative commits.
+Apply with git am to pinned upstream. No game assets, game executables,
+extracted tables or decompiler/disassembly dumps ship. Rules and source
+confidence are recorded in docs/combat-model.md.
 
-Build (Rust 1.99.1, Windows GNU target, MinGW GCC 13-posix):
+Build: Rust 1.99.1, Windows GNU target, MinGW GCC 13-posix
   cargo rustc --release -p kh1-hook --target x86_64-pc-windows-gnu --locked -- -C codegen-units=1
-The one-unit setting avoids empty parallel-codegen object files observed
-in this environment. Rename release dinput8.dll to kh1-dual-wield.dll in
-the package; load with the supplied OpenKH manifest.
+One codegen unit avoids empty parallel-codegen objects seen in this host.
+Rename release dinput8.dll to kh1-dual-wield.dll; use OpenKH/Panacea.
 
 Tests:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim --locked
-308 passed, 0 failed; 79 Dual Wield tests; 18 suites.
-No Windows/game execution or installed Final donor validation is claimed.
+316 passed; 0 failed; 18 suites; 87 Dual Wield tests.
+No Windows/game execution or installed Final donor validation claimed.

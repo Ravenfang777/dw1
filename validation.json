@@ -1,16 +1,16 @@
 {
-  "name": "KH1FM Dual Styles Prototype v10",
-  "stage": "s349",
-  "source_commit": "cbd6d310fc9bea9518f397f8d40fc2b9efceaddc",
+  "name": "KH1FM Dual Styles Prototype v11",
+  "stage": "s350",
+  "source_commit": "a77281cb3457243c726a4db60408aba8863eda0d",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4605385,
-  "dll_sha256": "d0016a8930a61179160383453f12fcf9bd69701abf8c378913e6117c8fbd5c39",
-  "source_patch_sha256": "f596ffccf07966fe963cea78b63ec191de2d1b72e9587c8ee79dbb4488a7d2fd",
-  "tests_passed": 308,
+  "dll_bytes": 4618675,
+  "dll_sha256": "4b15f977cf7801902c6b3f7a823724af1a8f17e5cd08532c40aff28202eec307",
+  "source_patch_sha256": "700b55e03d1932401909af56005feb2004da883ce03b8296ae384dbaa66a85e4",
+  "tests_passed": 316,
   "tests_failed": 0,
   "test_suites": 18,
-  "dual_tests": 79,
+  "dual_tests": 87,
   "windows_release_cross_build_passed": true,
   "kh1_hook_codegen_units": 1,
   "exports": [
@@ -29,63 +29,13 @@
     "api-ms-win-core-synch-l1-2-0.dll",
     "bcryptprimitives.dll"
   ],
-  "abilities": [
-    {
-      "name": "Style: Dual Close",
-      "id": 126,
-      "ap": 0,
-      "migration": "existing equipped flag preserved"
-    },
-    {
-      "name": "Style: Dual Ranged",
-      "id": 125,
-      "ap": 0,
-      "initially_equipped": false
-    }
-  ],
-  "exclusivity": "Equipping either disables the previous style in place; saved choice survives model suspension.",
-  "close": "Existing v8 Valor/native ability priority, Guard attack, Final glides, default KH1 casting.",
-  "ranged": "Matching Final non-melee visuals and ground/air KH1 cast overlays. No imported melee controller.",
-  "ranged_attack_block": "Menu fill/selection, command dispatch and native attack-row execution; physical specials/offer/follow-ups blocked.",
-  "ranged_floating_contacts": "Actual equipped-blade geometry and current authored Final weapon1/weapon2 Hitbox windows; no scene, body or donor spell hits.",
-  "native_spell_logic": "Unchanged; existing KH1 MP, level, rate/recovery, targets, projectiles, FX/sound and damage.",
-  "cast_crash_fix": "Remove Reflect-dependent level lookup with uninitialized private module BASE; omit unused NativeCast level field. Final casting retained.",
-  "donor_spell_mapping": {
-    "Fire": [
-      56,
-      58
-    ],
-    "Blizzard": [
-      59,
-      61
-    ],
-    "Thunder": [
-      62,
-      64
-    ],
-    "Cure": [
-      65,
-      67
-    ],
-    "Gravity": [
-      62,
-      64
-    ],
-    "Stop": [
-      65,
-      67
-    ],
-    "Aero": [
-      65,
-      67
-    ]
-  },
-  "native_ability_records": "Copied byte-for-byte; no additional native ability grants.",
-  "offhand_only_test": "Retained for both imported contact styles; off tests both blades.",
-  "game_execution_performed_here": false,
-  "limitations": [
-    "Live ability-menu exclusivity and native input paths need game testing.",
-    "Final appearance/cast sync/floating weapon contacts and transitions need game testing.",
-    "Missing donor data falls back to native visuals."
-  ]
+  "close_glides": "Native KH1 body/primary grip plus calibrated cosmetic left blade; no glide contacts.",
+  "ranged_regular_glide": "Native regular Glide only; clamp descent to 1 unit floor clearance; native button release; collision and start gates retained.",
+  "ranged_superglide": "Prior Final visual/passive windows and native movement retained.",
+  "ranged_attack": "Final 65 ground / 67 air Aero-pose adapter; finite basic/finisher rows; no MP, spell event, body hit or donor root travel.",
+  "attack_geometry": "Displayed equipped-blade start-to-tip geometry; current binding, <=1 physics frame and <=5 donor-frame lag; same-motion reset rejects old endpoints.",
+  "native_spell_logic": "KH1 MP/levels/projectiles/effects/damage retained, with v10 cast observer fix.",
+  "style_exclusivity": "Equip either to disable previous style; no extra native abilities.",
+  "game_execution_performed": false,
+  "game_assets_included": false
 }

@@ -12,5 +12,55 @@
   {
     "special_prompt_call_matches": true,
     "steam_call_rva": "0x294ca2"
+  },
+  {
+    "epic_rva": "0x2b0890",
+    "steam_rva": "0x2b2a20",
+    "expected_prologue_matches": true
+  },
+  {
+    "epic_rva": "0x2b0a60",
+    "steam_rva": "0x2b2bf0",
+    "expected_prologue_matches": true
+  },
+  {
+    "anchor": "move subtype",
+    "steam_rva": "0x2b2a5f",
+    "matches": true
+  },
+  {
+    "anchor": "height source",
+    "steam_rva": "0x2b2a68",
+    "matches": true
+  },
+  {
+    "anchor": "input subtype",
+    "steam_rva": "0x2b2c8b",
+    "matches": true
+  },
+  {
+    "anchor": "input held test",
+    "steam_rva": "0x2b2c9f",
+    "matches": true
+  },
+  {
+    "registration_site_steam": "0x2b2709",
+    "callback_steam": "0x2b29f0",
+    "target_matches": true
+  },
+  {
+    "registration_site_steam": "0x2b2721",
+    "callback_steam": "0x2b2d00",
+    "target_matches": true
+  },
+  {
+    "registration_site_steam": "0x2b2728",
+    "callback_steam": "0x2b2a20",
+    "target_matches": true
+  },
+  {
+    "registration_site_steam": "0x2b26fd",
+    "callback_steam": "0x2b2bf0",
+    "target_matches": true
   }
 ]

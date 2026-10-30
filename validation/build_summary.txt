@@ -1,9 +1,8 @@
-Source: cbd6d310fc9bea9518f397f8d40fc2b9efceaddc
-Stage: s349
-Target: x86_64-pc-windows-gnu
-DLL SHA256: d0016a8930a61179160383453f12fcf9bd69701abf8c378913e6117c8fbd5c39
-DLL bytes: 4605385
-Local tests: 308 passed, 0 failed, 18 suites; 79 Dual Wield tests
-Release cross-build: PASS (kh1-hook codegen-units=1)
-PE/native anchor checks: PASS
-Game execution: not performed here
+Windows x64 GNU release build passed.
+Rust 1.99.1; MinGW GCC 13-posix; kh1-hook codegen-units=1.
+Warnings: 1303 (inherited unused/dead code); no errors.
+316 local tests passed; 18 suites; 87 Dual Wield tests.
+PE exports: DirectInput8Create, DllMain, OnFrame, OnInit
+DLL bytes: 4618675
+DLL SHA256: 4b15f977cf7801902c6b3f7a823724af1a8f17e5cd08532c40aff28202eec307
+No live game execution performed.

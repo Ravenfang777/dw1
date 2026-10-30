@@ -1,15 +1,13 @@
-title: KH1FM Dual Styles Prototype v10
+title: KH1FM Dual Styles Prototype v11
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Fixes an invalid Ranged cast observer read that can crash Fire/spells.
-  Two exclusive passive abilities duplicating the equipped KH1 weapon.
-  Style Dual Close retains Valor combat and native attack ability priority.
-  Style Dual Ranged uses Final action and casting visuals; Attack and physical
-  specials are disabled, with only authored floating weapon contacts.
-  Equipping either style unequips the other. Native KH1 spells and movement;
-  no Drive gauge, transformation or bonus native abilities. Requires KH2FM
-  in the same installation. Disable earlier Dual Wield versions and the full
-  KH2 Combat overhaul.
+  Close uses native held-weapon Glide and Superglide without glide damage.
+  Ranged gains an Aero-pose basic combo and a regular Glide floor hover.
+  Both exclusive abilities duplicate the currently equipped KH1 weapon.
+  Ranged attacks use only model and blade animation, no Aero spell or MP.
+  Existing native spells and Final casting visuals retained. No Drive
+  gauge, transformation or bonus abilities. Requires KH2FM in the same
+  installation. Disable older Dual Wield and the full KH2 Combat overhaul.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy
