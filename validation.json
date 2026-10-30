@@ -1,16 +1,16 @@
 {
-  "name": "KH1FM Dual Styles Prototype v9",
-  "stage": "s348",
-  "source_commit": "d932175e0d953ea72d7b3f4b0a0837d3be690a27",
+  "name": "KH1FM Dual Styles Prototype v10",
+  "stage": "s349",
+  "source_commit": "cbd6d310fc9bea9518f397f8d40fc2b9efceaddc",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
   "dll_bytes": 4605385,
-  "dll_sha256": "5f5db0ce936bf5eae2b45d21e3dba3e18e793e949583b817953d4f6e7c9334ee",
-  "source_patch_sha256": "e071c7a537aeb1314143282227318b81ec4905c38dc2a468c8a7f6101669e7c7",
-  "tests_passed": 307,
+  "dll_sha256": "d0016a8930a61179160383453f12fcf9bd69701abf8c378913e6117c8fbd5c39",
+  "source_patch_sha256": "f596ffccf07966fe963cea78b63ec191de2d1b72e9587c8ee79dbb4488a7d2fd",
+  "tests_passed": 308,
   "tests_failed": 0,
   "test_suites": 18,
-  "dual_tests": 78,
+  "dual_tests": 79,
   "windows_release_cross_build_passed": true,
   "kh1_hook_codegen_units": 1,
   "exports": [
@@ -49,6 +49,7 @@
   "ranged_attack_block": "Menu fill/selection, command dispatch and native attack-row execution; physical specials/offer/follow-ups blocked.",
   "ranged_floating_contacts": "Actual equipped-blade geometry and current authored Final weapon1/weapon2 Hitbox windows; no scene, body or donor spell hits.",
   "native_spell_logic": "Unchanged; existing KH1 MP, level, rate/recovery, targets, projectiles, FX/sound and damage.",
+  "cast_crash_fix": "Remove Reflect-dependent level lookup with uninitialized private module BASE; omit unused NativeCast level field. Final casting retained.",
   "donor_spell_mapping": {
     "Fire": [
       56,

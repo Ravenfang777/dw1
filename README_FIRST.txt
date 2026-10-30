@@ -1,7 +1,26 @@
-KH1FM DUAL STYLES -- PROTOTYPE v9 (s348)
+KH1FM DUAL STYLES -- PROTOTYPE v10 (s349)
 
-Install this ZIP as one OpenKH mod, replacing v8. The animation data is
+Install this ZIP as one OpenKH mod, replacing v9. The animation data is
 read from your own KH2FM installation; no game assets are included.
+
+FIX IN v10
+The Ranged cast observer no longer reads spell levels through the disabled
+Reflect/overhaul module. Its private game base was never initialized in
+this isolated mod, producing an invalid memory-read path when a real cast
+started. The level value was not needed to select Final's cast animation.
+
+Final ground/air casting remains enabled. Native KH1 spell levels, MP,
+effects/damage and recovery remain native. Both exclusive styles, Attack
+restrictions and floating weapon contacts are retained.
+
+FIRST TEST
+1. Fully restart with v10 and equip Style: Dual Ranged.
+2. Cast Fire once on the ground, away from enemies; then try aerial Fire.
+3. Repeat near one enemy, then check the other six spells and style
+   switching. Revisit Style: Dual Close as a regression check.
+4. If it still crashes, return the NEW kh1-dual-wield.log from beside the
+   game executable. The exact user exception was not available here;
+   v10 removes the concrete invalid-read path found by source inspection.
 
 THE TWO ABILITIES
 Style: Dual Close (existing ability 126, renamed)
@@ -57,13 +76,14 @@ interruption or a style/map/weapon change. Exact release sync needs a
 fresh-process game test.
 
 INSTALL / UPDATE -- FULLY CLOSE KH1FM FIRST
-1. Disable v8 and every earlier Dual Wield prototype; enable only v9.
+1. Disable v9 and every earlier Dual Wield prototype; enable only v10.
    Keep old integrated/offhand Lua, Synch/moveset routers, embedded
    duplicate Sora-model assets and the full KH2 Combat overhaul disabled.
 2. Install this ZIP in OpenKH Mods Manager for Kingdom Hearts Final Mix,
    enable it, then Build and Run. Panacea is required.
 3. Load your save. The old Dual Wield entry is now Style: Dual Close.
-   Style: Dual Ranged is added unequipped. Equip either style.
+   Existing style entries/equipped states are reused. New entries start
+   unequipped. Equip either style.
 4. Stand idle briefly for weapon/pose admission, then test. KH1FM and
    KH2FM must be in the same PC 1.5+2.5 installation folder. Normal Sora
    is required. F1 does not reload this native DLL; restart the game.
@@ -71,7 +91,7 @@ INSTALL / UPDATE -- FULLY CLOSE KH1FM FIRST
 Do not rename/install this DLL as the shared dinput8.dll. The manifest
 loads dll/kh1-dual-wield.dll through OpenKH/Panacea.
 
-TEST v9
+TEST v10
 - Equip Close, then Ranged: verify Close becomes unequipped. Reverse
   the switch and verify Ranged becomes unequipped. Save/reload and repeat.
 - In Ranged, verify Attack is greyed and cannot be triggered from the
@@ -98,13 +118,13 @@ left imported contacts, including Close Guard/glide and Ranged floating
 contacts. It does not block native spells, items or party damage.
 
   remove_dual_wield = off
-For uninstall only: set on, launch with v9, load and save, close the game,
+For uninstall only: set on, launch with v10, load and save, close the game,
 then disable the mod and Build again. This removes both custom style
 entries and preserves the other abilities/save data.
 
 LOG
-kh1-dual-wield.log is beside the game executable/INI. Check s348 and
-PROTOTYPE v9. Useful lines: DUAL STYLE CHANGED, DUAL STYLE READY,
+kh1-dual-wield.log is beside the game executable/INI. Check s349 and
+PROTOTYPE v10. Useful lines: DUAL STYLE CHANGED, DUAL STYLE READY,
 DUAL CLOSE VISUAL DATA, DUAL RANGED VISUAL DATA, DUAL RANGED CAST DONOR,
 DUAL RANGED FINAL CAST and DUAL STYLE FLOATING CONTACT READY.
 Return the NEW log and a short recording for an incorrect transition.
@@ -117,7 +137,7 @@ poses, chest opening, carrying/pushing/throwing objects and Trinities are
 not blanket-replaced. There is no promise that every animation contains
 a damaging weapon window. Stale/missing draws stop floating contacts.
 
-307 local tests passed in 18 suites, including 78 Dual Wield tests.
+308 local tests passed in 18 suites, including 79 Dual Wield tests.
 Windows x64 release cross-build and PE exports/imports passed. New native
 menu/offer anchors match the supplied Steam executable. ZIP CRC and full
 extraction hashes checked. Cumulative source patch and credits included.

@@ -1,6 +1,7 @@
-title: KH1FM Dual Styles Prototype v9
+title: KH1FM Dual Styles Prototype v10
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
+  Fixes an invalid Ranged cast observer read that can crash Fire/spells.
   Two exclusive passive abilities duplicating the equipped KH1 weapon.
   Style Dual Close retains Valor combat and native attack ability priority.
   Style Dual Ranged uses Final action and casting visuals; Attack and physical
