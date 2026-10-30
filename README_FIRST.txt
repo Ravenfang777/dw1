@@ -1,132 +1,135 @@
-KH1FM DUAL WIELD -- PROTOTYPE v4 (s343)
+KH1FM DUAL WIELD -- PROTOTYPE v5 (s344)
 
-This replaces v1/v2/v3. Install this ZIP as one OpenKH mod. It reads Valor
-animation and combo data from your own KH2 Final Mix installation; no game
-assets are included.
+Install this ZIP as one OpenKH mod, replacing v4. It reads Valor animation
+data from your own KH2FM installation. No game assets are included.
 
-CHANGES IN v4
-- Removes the Master casting override on both ground and air. Its observer,
-  sampler and donor loading are removed. Existing KH1 magic keeps its default
-  animation, effects, MP cost, damage, event timing, movement and cancels.
-- Expands Valor's matching visuals from idle/run to walking, jumping/rising,
-  falling, landing, ledge hanging/climbing, and glide when a donor exists.
-  Existing base ground/aerial combos, grip correction and trails are retained.
-- KH1 still performs movement and gates the actions. Drawing a matching pose
-  does not grant High Jump, Glide, Dodge Roll, Guard or any other ability.
-- Jump/rise pairs share one donor timeline, so switching from KH1 takeoff to
-  rise does not restart Valor's jump. Fall loops; landing/climbing play once.
-  Native clocks control playback, including pauses.
-- Removes donor root travel from non-attack poses so KH1 alone moves Sora.
-  Ledge poses use a bounded native hand midpoint; invalid/missing phase,
-  donor or alignment data falls back to the current native pose.
+CHANGES
+- The duplicate can draw even when KH1 hides or stows the primary weapon.
+  Default actions use a hold calibrated during the first held idle/walk/run,
+  following the current native left hand independently of the primary's
+  weapon bones. The native body/action is left intact on fallback routes.
+- Equipped KH1 attack abilities take priority. Their entire affected ground
+  or air combo uses KH1's original routing, timing, contacts and animations,
+  so prerequisites, hit counters and finishers remain native. The second
+  weapon on that native combo is VISUAL ONLY. This is not a per-swing hybrid.
+- With those action abilities unequipped, that lane uses the existing Valor
+  base combo and both imported blades' independent contacts as before.
+  Combo Plus, Air Combo Plus and Combo Master alone still use Valor.
+- Adds available Valor item-use/throw and common front/back, high/low,
+  heavy and aerial damage reaction visuals over the corresponding native
+  KH1 requests. KH1 still applies damage, item healing/quantity/targets,
+  movement, effects, sounds, invulnerability, events and cancels.
+- Adds available Valor LINK_IDLE for recognized scripted standing idles,
+  and Valor's resolved field idle for recognized cutscene standing idles.
+  Native local motion on unretargeted children, including facial bones,
+  remains under the retargeted parent. Actor placement and scripts stay KH1.
+- Keeps v4's movement visuals, v3's grip correction and existing trail /
+  actor-identity guards. Default KH1 magic remains on the ground and in air.
 
-ANIMATION MATCHES
-  KH1 standing idle    -> Valor idle
-  KH1 walk             -> Valor walk
-  KH1 run              -> Valor run
-  KH1 jump / rise      -> Valor jump, continued across the two native clips
-  KH1 fall             -> Valor fall loop
-  KH1 landing          -> Valor landing
-  KH1 edge hang        -> Valor hang, if present
-  KH1 edge climb       -> Valor climb, if present
-  KH1 Glide/Superglide -> Valor's resolved glide clip, if present
-  KH1 ground/air combo -> existing filtered base Valor combos
-These are the verified action mappings in the source, not a blanket numeric
-slot replacement. The readiness log lists each candidate and availability.
-A resolved Valor clip can itself be shared with normal KH2 Sora. Missing
-clips stay native. No spell, item, reaction or special is guessed from an
-unrelated animation. Ladders, poles, bars, swimming and flight stay native.
-Native movement speed, jump height, gravity, collisions, grabs, gameplay
-windows and events are retained. The visual overlays run no donor contacts,
-swing trails, spell scripts, particles, voices or footsteps.
+ATTACK ABILITY PRIORITY
+Ground lane stays native with any of these equipped:
+  Vortex, Counterattack, Blitz, Slapshot, Sliding Dash, Ripple Drive,
+  Stun Impact, Gravity Break, Zantetsuken.
+Air lane stays native with either of these equipped:
+  Aerial Sweep, Hurricane Blast.
+Disabled/unequipped abilities do not select a native lane. A native selected
+ability row is also allowed to run on its normal route. During an imported
+air combo, KH1 is parked on its ground state; a placeholder ground row then
+continues Valor air instead of starting a ground ability at height.
+No abilities are added, renamed, switched on or removed by this routing.
 
-VALOR AND MAGIC IN THE REFERENCE MOD
-The pinned upstream source treats Valor as unable to cast: its
-win/form.rs::Kind::magic_sub returns None for Valor, and its Drive docs
-record magic being disabled. That restriction is not enabled for Dual Wield.
-KH1 spells stay usable and use their normal KH1 ground/air animations.
-No Master casting donor is loaded by this version.
+ANIMATION SCOPE -- PLEASE READ
+These are visual matches, not imported KH2 action controllers. New donors
+must exist in Valor and the sampled native header must match its current
+regular-bank request. Pending, missing, unknown or unsuitable data keeps
+the current native KH1 animation. The log lists donor availability.
 
-THE ABILITY
-Dual Wield is 0 AP, initially unequipped. Equipped: the current KH1 weapon
-is duplicated into the left hand and the matching Valor profile is used.
-No second weapon selection or inventory copy is required. Unequipped:
-the duplicate disappears and KH1's normal moveset returns.
-No Drive gauge, timer, drain, transformation, outfit/model recolour, partner
-removal, other ability grants, AP/stat bonuses, camera or HUD changes.
-Swing trails do not need an enemy; impact sounds/effects need a contact.
-Both imported blades are enabled by default.
+Interactions are currently LIMITED TO SUPPORTED STANDING IDLES. Chest
+opening, lifting/carrying/throwing objects, pushing and the five Trinities
+keep KH1 animations: no verified Valor donor is assigned to them here.
+The cosmetic duplicate follows the native hand on these regular Sora routes.
+Cutscene idle applies only where the active regular Sora actor actually uses
+a recognized standing idle. Dedicated EVM/event poses, separate scripted
+actors/copies, movie cinematics and unknown gestures remain native.
+No blanket cutscene or interaction replacement is claimed.
+
+Damage coverage is common light/heavy/aerial reactions, not every KO,
+get-up, status or scripted damage pose. Those other poses remain native.
+Items keep KH1's gameplay release events; normalized visual timing has not
+been verified to align the hand-release gesture perfectly for every item.
+
+THE PASSIVE ABILITY
+Dual Wield: id 126, zero AP, initially unequipped. Duplicates the current KH1
+weapon without a second selection or extra inventory copy. Unequipping
+restores KH1 routing/poses and removes the duplicate. No Drive gauge,
+timer, drain, transformation, costume/recolour, partner removal, stat/AP
+bonus, camera/HUD/shortcut change or extra ability grant is installed.
+Native fallback actions/combos have a cosmetic offhand: no extra offhand
+damage, impact or swing-trail window is added. Imported Valor combos retain
+their existing per-hand contacts and trails. Swing trails need no enemy;
+contact impact effects/sounds require a hit.
 
 INSTALL / UPDATE -- FULLY CLOSE KH1FM FIRST
-1. Disable earlier Dual Wield versions in OpenKH. Enable only v4; all
-   versions use the same DLL destination. Do not use F1 to reload this DLL.
+1. Disable v1/v2/v3/v4 in OpenKH and enable only v5. All versions use the
+   same DLL destination. F1 cannot reload or replace this native DLL.
 2. Keep older integrated/offhand Lua, Synch/moveset routers, the v6 embedded
-   duplicate-model replacement, and the full KH2 Combat / kh1-kh2.dll mod
-   disabled. Restore normal Sora model assets if the old duplicate was
-   manually copied into another mod.
-3. In OpenKH Mods Manager (Kingdom Hearts Final Mix), install this ZIP as
-   a Mod Archive, enable it, then Build and Run. Panacea is required.
-4. Load your save, wait briefly, then equip Dual Wield in Sora's Abilities.
-   An existing Dual Wield entry is reused; another copy is not added.
-   Existing INI settings are retained; no reset is needed.
+   duplicate-model assets and the full KH2 Combat / kh1-kh2.dll mod disabled.
+   If you manually copied the embedded duplicate into another mod, restore
+   normal Sora model assets there.
+3. OpenKH Mods Manager -> Kingdom Hearts Final Mix -> install this ZIP as
+   a Mod Archive -> enable it -> Build and Run. Panacea is required.
+4. Load your save, equip Dual Wield, and stand idle briefly for the held
+   duplicate calibration. Existing ability and INI entries are reused.
 
-KH1FM and KH2FM must be in the same PC 1.5+2.5 install folder. Normal Sora
-is required for this prototype. Do not install the DLL as dinput8.dll in
-the shared game folder; OpenKH/Panacea loads dll/kh1-dual-wield.dll.
+Normal Sora is required. KH1FM and KH2FM must be in the same PC 1.5+2.5
+install folder. Do not rename/install this DLL as the shared dinput8.dll;
+OpenKH/Panacea loads dll/kh1-dual-wield.dll through the mod manifest.
 
-QUICK TEST
-1. With Dual Wield equipped, stand idle, turn, walk slowly and run. Check
-   both weapon grips and absence of a continuously emitting ribbon.
-2. Jump from a standstill and while moving. Hold/release jump, fall from
-   a ledge, land, then repeat into a ground/aerial combo. Watch the switch
-   from jump to rise, fall and landing for a restart, freeze or displacement.
-3. Hang from and climb a normal ledge. If already learned, try Glide and
-   Superglide. Check the log for donor availability and action admission.
-4. Cast ground/aerial magic. Confirm normal KH1 casting, MP and effects.
-   Try an item, take a hit and use any KH1-only special available in the save.
-5. Change maps and weapons, then unequip/re-equip Dual Wield. Check that
-   poses and trails retire, the copy follows the weapon, and KH1 restores.
+TEST
+1. Equip a native attack ability, such as Slapshot. Compare its normal
+   trigger with Dual Wield equipped/unequipped. Check native finishers too.
+   The duplicate is cosmetic on the native ground/air combo lane.
+2. Unequip native action abilities, then try Valor ground and aerial combos.
+   Try a mixed loadout: a native ground ability with Valor air, and vice versa.
+3. Cast ground/air magic, use a self/party-target item, take front/back hits,
+   and check the duplicate during default actions and weapon stowing.
+4. Talk, open a chest, carry/push an object and try a short scene. Known idle
+   donors may apply; the listed gestures stay native. Check face/hand poses.
+5. Change maps and weapons, then unequip/re-equip Dual Wield. Check correct
+   duplication, retirement of old trails/poses and restoration of KH1.
 
-LOG LOCATION
-kh1-dual-wield.log is beside KINGDOM HEARTS FINAL MIX.exe and
-kh1-dual-wield.ini, not in OpenKH's scripts folder.
-Your supplied log identifies the folder as:
+LOG
+kh1-dual-wield.log is beside KINGDOM HEARTS FINAL MIX.exe / the INI.
+Your supplied earlier log identifies:
   C:\Steam\steamapps\common\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-\
-Return the new log with a short matching video if an action looks wrong.
-Look for s343 / PROTOTYPE v4, DUAL WIELD READY,
-DUAL WIELD VALOR VISUAL DATA and DUAL WIELD VALOR VISUAL ACTIVE.
-The DATA line lists each donor or native fallback; ACTIVE reports the first
-successful sample of each matched action. A missing hook or incomplete
-required Valor combo data leaves the custom profile unavailable.
+Look for s344 / PROTOTYPE v5, DUAL WIELD COMBO ROUTES, DUAL WIELD NATIVE
+ATTACK, DUAL WIELD VALOR VISUAL DATA and VALOR VISUAL ACTIVE.
+ROUTES reports native or Valor for each lane; DATA lists every candidate
+or native fallback; ACTIVE is the first accepted sample for that action.
+Return this NEW log with a short matching recording for a bad transition.
 
 OPTIONAL OFFHAND CONTACT ISOLATION
-After fully closing the game, set in kh1-dual-wield.ini:
+After fully closing KH1FM, in kh1-dual-wield.ini:
   offhand_only_test = on
-Only left imported ground/aerial melee contacts are then allowed. This
-retains native spell damage and other characters' damage.
-Set it back to off for both blades.
+This isolates LEFT IMPORTED VALOR MELEE ONLY. It does not block native
+attack-ability combos, spells, items or other characters' damage.
+Unequip the native action abilities for an imported offhand-only test.
+Set the option back to off for both imported blades.
 
-SAVE / REMOVAL
-Only Dual Wield is appended to an empty ability entry, initially unequipped.
-Existing entries are preserved. Saving can retain Dual Wield.
-To remove it: close the game, set remove_dual_wield = on in the INI, launch
-with v4, load and save, close, then disable this mod and Build again.
-That option removes only Dual Wield entries.
+REMOVAL
+Unequip Dual Wield for normal play. To remove its saved ability entry:
+close the game, set remove_dual_wield = on in the INI, launch with v5,
+load and save, close, disable this mod and Build again. Only that entry
+is removed; every other ability/save entry is retained.
 
-VALIDATION AND LIMITS
-260 local tests passed, including 31 Dual Wield policy/controller tests.
-Coverage includes native action exclusions, both jump pairs across the rise
-boundary, mixed clip rates, paused/one-shot clocks, bad metadata rejection,
-root removal and bounded atomic ledge alignment. Existing ability/save,
-contact, grip, placement and trail checks are retained.
-The Windows x64 release cross-build and PE exports/imports passed checks.
-The ZIP was fully extracted and its DLL hash checked before delivery.
+VALIDATION / LIMITS
+272 local tests passed, including 43 Dual Wield policy/controller tests,
+across 18 suites. Windows x64 release cross-build passed; expected exports
+and system-library imports checked. ZIP CRC and every extracted file hash
+checked. Source patch and original credits/licences included.
 
-This build has not been run inside KH1FM here. No local KH2 installation
-was available: optional real-game-data tests did not exercise their data
-paths. Actual donor availability, visible blends, hand placement, contacts,
-ledge/glide transitions and map changes need your fresh game test.
-The tests do not establish finalized HP loss or left-hand attribution.
-
-Source patch, exact build identity, test transcript and original credits /
-licences are included. Keep v3's ZIP if you need to revert.
+The DLL has NOT been run inside KH1FM here. There is no local KH2 install,
+so optional real-game-data tests used their no-install paths. Actual donor
+availability, appearance, release gestures, mixed ability loadouts, native
+ability triggers, offhand visibility and map/scene changes require your
+fresh-process game test. Keep the v4 ZIP if you need to revert.

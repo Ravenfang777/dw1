@@ -1,32 +1,24 @@
-SOURCE AND BUILD -- DUAL WIELD PROTOTYPE v4 (s343)
+DUAL WIELD PROTOTYPE v5 -- s344
 
 Derived from JamesPMx / PM2CRAZY's MIT OR Apache-2.0 project:
 https://github.com/PM2CRAZY/KH2-Combat-in-KH1
-Upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v1: 7f08c17718234d7a4ade2ef723ea6442b0bbcd7d
-Derivative v2: 7062682ace519b73fcdfb0e021479fdf449b82f7
-Derivative v3: 631fe4f271c8a64ad8f9b6abc93049737aa39c8a
-Derivative v4: 5622eb07b037a4d1e2b993b61e3c155e593fdbd5
+Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
+Derivative v5: 0c01ff35f8d00260923e1a43956722365568ef6c
 
-source/DualWield_v4.patch contains all four derivative commits. Apply with
-  git am /path/to/DualWield_v4.patch
-on a checkout of the exact upstream commit above. No game assets, extracted
-tables or decompiler output are committed or shipped. Original CREDITS.md,
-NOTICE, LICENSE-MIT and LICENSE-APACHE retain upstream/OpenKH attribution.
+source/DualWield_v5.patch contains all five derivative commits. Apply with
+  git am /path/to/DualWield_v5.patch
+to the pinned upstream checkout. No game files, executable bytes,
+extracted tables, disassembly or decompiler output are shipped.
 
-Rebuild with Rust, the x86_64-pc-windows-gnu target and a MinGW x64 linker:
+Source rules/confidence: docs/combat-model.md in the patch. Native action
+roles were checked in the user's supplied Steam executable and regular
+MSET privately. Donor motion names/slot fallback: OpenKH documentation
+https://openkh.dev/kh2/file/anb/mset.html
+
+Build (Rust 1.99.1, Windows GNU target, MinGW GCC 13-posix):
   cargo build --release -p kh1-hook --target x86_64-pc-windows-gnu --locked
-Rename the resulting dinput8.dll to kh1-dual-wield.dll for Panacea loading.
-Do not replace the shared game folder's dinput8 proxy.
-
-Validation command:
+Rename release dinput8.dll to kh1-dual-wield.dll for OpenKH/Panacea.
+Tests:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim --locked
-260 local tests passed, including 31 Dual Wield policy/controller tests.
-Windows cross-build: rustc 1.99.1, x86_64-pc-windows-gnu, MinGW GCC 13-posix.
-No Windows/game execution is claimed. Optional game-data tests used their
-no-install paths. Fresh-process KH1 testing remains necessary.
-
-Mapping sources and confidence are recorded in docs/combat-model.md in the
-patch. Native 0..13 slot matches come from upstream pose::play_for; native
-edge-hang/climb/glide states from takeover.rs. Valor magic restriction is
-from upstream form.rs::Kind::magic_sub and docs/drive-model.md.
+272 passed, 0 failed; 43 Dual Wield tests; 18 suites.
+No Windows/game execution or installed Valor donor validation claimed.
