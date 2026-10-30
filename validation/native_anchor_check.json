@@ -65,5 +65,5 @@
       "target_matches": true
     }
   ],
-  "v13_note": "Stage s352/v13 adds no native hook or address. The implementations and executable inputs covered by these v11/v12 checks are unchanged."
+  "v14_note": "v14 adds no hook/address. These Steam checks were performed for v11 and retained through v13; no live executable or fresh native-anchor check is claimed for v14."
 }

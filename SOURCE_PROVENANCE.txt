@@ -1,15 +1,21 @@
-DUAL STYLES PROTOTYPE v13 -- s352
+DUAL STYLES PROTOTYPE v14 -- s353
 
 Derived from JamesPMx / PM2CRAZY:
 https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v13: 2b58a7bcb76711325f484d3d84905cf0a2e26be1
+Derivative v14: de5589474ddd6902e302a19c23e16fb3810133ed
 Licences: MIT OR Apache-2.0. Original credits retained.
 
-source/DualStyles_v13.patch contains all thirteen derivative commits.
-Apply with git am to pinned upstream. No game assets, game executables,
-extracted tables or decompiler/disassembly dumps ship. Rules and source
-confidence are recorded in docs/combat-model.md.
+source/DualStyles_v14.patch contains fourteen derivative commits.
+Apply with git am to pinned upstream. No game assets/executables,
+extracted tables or decompiler/disassembly dumps ship.
+Rules/source/confidence: docs/combat-model.md in the source patch.
+
+Recovery: the workspace reset after v13. Its saved source patch was
+reapplied to pinned upstream. Original v13: 2b58a7bcb76711325f484d3d84905cf0a2e26be1
+Reconstructed v13: 0c9b7dfd31ec8d74b6ae47df2a28850324af35b4
+All 22 final touched-file blobs match the delivered patch's index hashes.
+See validation/source_recovery.json for the source patch hash/receipt.
 
 Build: Rust 1.99.1, Windows GNU target, MinGW GCC 13-posix
   cargo rustc --release -p kh1-hook --target x86_64-pc-windows-gnu --locked -- -C codegen-units=1
@@ -18,5 +24,5 @@ Rename release dinput8.dll to kh1-dual-wield.dll; use OpenKH/Panacea.
 
 Tests:
   cargo test -p kh1-hook -p character-core -p combat-core -p kh2-rig -p kh1-data -p kh2-anim --locked
-327 passed; 0 failed; 18 suites; 98 Dual Wield tests.
-No Windows/game execution or installed Final/Master donor validation claimed.
+330 passed; 0 failed; 18 suites; 101 Dual Wield tests.
+No Windows/game execution or installed donor appearance validation claimed.

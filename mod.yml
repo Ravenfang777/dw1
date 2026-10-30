@@ -1,12 +1,12 @@
-title: KH1FM Dual Styles Prototype v13
+title: KH1FM Dual Styles Prototype v14
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Renames the abilities to Style: Dual A and Style: Dual B. Dual A retains
-  Valor. Dual B uses Final basic ground/air combos, Master aerial dodge in
-  place of Dodge Roll, and the former idle-body Keyblade spin on Guard.
-  Duplicate the equipped weapon; exclusive passive styles, native spells
-  and attack-ability priority. Requires KH2FM in the same installation.
-  Disable older Dual Wield versions and the full KH2 Combat overhaul.
+  Dual A Superglide uses Valor's aerial-finisher animation over native
+  movement. Dual B Guard is a silent stationary blade spin; Dodge Roll
+  is a moving version of that spin. Final base combos and KH2 casting
+  animations retained. Both styles duplicate the equipped KH1 weapon.
+  Requires KH2FM in the same installation. Disable older Dual Wield
+  versions and the full KH2 Combat overhaul.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy
