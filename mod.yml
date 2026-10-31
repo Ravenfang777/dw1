@@ -1,8 +1,8 @@
-title: KH1FM Seven Styles Prototype v35
+title: KH1FM Seven Styles Prototype v36
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Single C: KH2 Sora first air hit, Horizontal Slash, shortened Riku 182;
-  Vicinity Break ground finisher; custom Triangle actions removed.
+  Single C: repair named Sora strike validation and independent combo admission;
+  keep Vicinity Break and Sora/Horizontal Slash/Riku aerial mapping.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll
