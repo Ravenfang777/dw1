@@ -1,9 +1,9 @@
-title: KH1FM Seven Styles Prototype v38
+title: KH1FM Nine Styles Prototype v39
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Single C: end Riku 182 at frame 77, before the residual follow-up;
-  preserve confirmed source admission, casting and other combos.
-  Requires KH2FM in the same installation and OpenKH Panacea.
+  Adds playable Master-based Dual D and a source-inventory entry for KH1 Dark Riku Single D.
+  Single D retains native moves until original animation data is mapped.
+  Requires installed KH2FM and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

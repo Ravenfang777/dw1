@@ -1,0 +1,41 @@
+SINGLE D ANIMATION INVENTORY
+
+The automatic read-only capture checks these distinct original KH1 models:
+xa_ex_1160 / xa_ex_1168: Dark Riku
+xa_ex_1580 / xa_ex_1588: Ansem (Riku), included separately for disambiguation.
+Model-name reference: https://openkh.dev/kh1/dictionary/mdls.html
+
+Do not assign KH2 Riku's numbers or labels to these KH1 banks. Their actual
+animation slots and semantic names have not been observed in this environment.
+The generated CSV is a full numbered source inventory, including empty or
+unreadable slots. Columns: model,bank,slot,status,frames,fps,bones,keyed_channels,
+helper_channels,helpers,seconds. The log prints a bounded metadata summary.
+Action names will need source playback/observation after reading those numbers.
+
+The existing KH1 motion parser evaluates plain forward channels; it does not
+implement the helper/IK pass yet. A proper Dark Riku port needs separate source
+skeleton retargeting, root/control and contact mapping. No boss AI, guessed
+native pointer or foreign model/moveset is installed by this capture version.
+Source banks are read from original/backup packages without saving game assets.
+No user action beyond starting the build is required for the first inventory.
+
+BIRTH BY SLEEP
+
+Yes, BBS has useful source data. OpenKH documents:
+- PAM: animation entries, frame count/rate/looping and per-bone channels.
+- PMO: model skeletons and weighted geometry.
+- AAC / ABC: body / weapon collision and effects.
+- FEP particles and SEB/SEI/SCD audio-related files are additional effect sources.
+
+This needs a new BBS importer and skeleton retargeter. The current KH2 loader
+cannot read BBS data directly. Inspect the user's BBS release and package layout
+before assuming PSP-format details apply unchanged to a remaster. Start with
+animation/body/weapon tracks, then adapt root motion, attack windows/damage,
+commands, particles and sound separately. Having these files does not establish
+that BBS combo rules, AI or spell behavior can be copied unchanged.
+No BBS importer, assets or new BBS moveset is included in v39.
+
+Primary format sources:
+https://openkh.dev/bbs/file/type/pam.html
+https://openkh.dev/bbs/file/type/pmo.html
+https://openkh.dev/bbs/file-type.html

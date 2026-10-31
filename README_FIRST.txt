@@ -1,69 +1,86 @@
-KH1FM SEVEN STYLES -- PROTOTYPE v38 (s377)
+KH1FM NINE STYLES -- PROTOTYPE v39 (s378)
 
 INSTALL
-1. Fully close KH1FM. Disable v37 and every older Dual Wield prototype.
-2. Import this ZIP into OpenKH, enable ONLY v38, then Build and Run.
+1. Fully close KH1FM. Disable v38 and every older Dual Wield prototype.
+2. Import this ZIP into OpenKH, enable ONLY v39, then Build and Run.
    Panacea and installed KH2FM are required. F1 cannot reload a DLL.
-3. Confirm s377 / PROTOTYPE v38 in kh1-dual-wield.log beside the game EXE.
+3. Confirm s378 / PROTOTYPE v39 in kh1-dual-wield.log beside the game EXE.
 Use normal Sora. Keep the full KH2 Combat overhaul, older offhand/moveset Lua
-and duplicate Sora model mods disabled. Existing INI/save entries are preserved.
+and duplicate Sora model mods disabled. Existing INI/save settings are retained.
 
-SINGLE C -- REMOVE THE REMAINING 182 FOLLOW-UP
-v37 ended at frame 92 and still showed a brief unwanted horizontal swing.
-v38 ends 182 at frame 77, fifteen frames earlier, after the preceding hit.
-Original source: 148 frames. Total tail removed: 71. Playback speed, original
-pose/weapon data and root prefix are preserved. Only this host finisher changes.
+STATUS: EIGHT PLAYABLE STYLES + ONE SOURCE-INVENTORY ENTRY
+Menu: Single A, Single B, Single C, Single D, Dual A, Dual B, Dual C, Dual D, Anti.
+All are exclusive, 0 AP, initially disabled. Enabling one disables the other.
+Old IDs do not change: A124/B123/C120 singles, A126/B125/C121 duals, Anti122.
+New IDs: Single D119, Dual D118. Native abilities/save entries are not evicted.
+No gauge, outfit changes, bonus stats, party changes or extra abilities.
+Only Dual styles duplicate the current equipped weapon; no second selection.
 
-Keep contact windows 17..34, 45..55 and 69..77. Remove both 82..92 and108..122.
-All hit/trail/hold windows end with the visible clip. Discarded damage is not
-shifted or amplified into earlier hits. The original installed bank is unchanged.
+DUAL D -- MASTER FORM BASE
+Master's original ability-free ground/aerial combos, built-in hops and spinning
+body-contact finisher use existing native KH1 contacts/feedback. Matching idle,
+movement, jump/fall/land, damage, item and interaction poses use Master when
+available. Both weapon tracks, held/floating attachment and separate source
+trail windows are used. No donor object/AI/spell/voice/effect scripts run during
+melee combos. Existing native attack abilities retain priority.
 
-Your s376 log confirms both combo lanes load and records 182 through84/85 then
-normal fall, without a sampled Horizontal Slash restart. The remaining82..92
-source portion is the candidate unwanted follow-up. Periodic logging does not
-identify every visual frame, so please check the new endpoint in game.
+Guard uses base KH2 Sora's Guard pose on the normal KH1 Guard action. Glide and
+Superglide retain native held-blade movement/pose with visual duplication.
+This does not change Dual A's actual Superglide attack finisher.
 
-The added real-controller test repeatedly presses Attack through the full air
-combo and20 recovery frames. It verifies Sora first hit -> Horizontal Slash ->
-Riku182 and no extra attack afterward. No engine/input/blend/native hook change.
+Master casts use matching KH2 body/weapon poses with native KH1 costs, damage,
+healing and targeting. Existing shared KH2 effects cover Fire, Blizzard, Thunder
+and Cure (Master form sub20); Gravity, Stop and Aero retain native effects.
+Only admitted same-level replacement visuals hide owned native drawing.
+The existing dual_b_spell_fx=on setting also enables these replacements.
 
-PRESERVED
-Ground: Riku152 -> Riku151 -> Vicinity Break.
-Air: KH2 Sora first air hit -> Horizontal Slash -> shortened Riku182.
-Horizontal Slash remains the normal second air-combo step. Combo Plus and
-Air Combo Plus keep input-driven continuation. Native KH1 attack abilities
-retain priority; unequip relevant modifiers to isolate this base sequence.
-Keep confirmed v36 source validation and independent ground/air admission,
-separate Riku/Sora rigs/battle/retargets, native Square/Triangle, Quick Run,
-aerial193 Cure/Stop/Aero/Gravity casting/parry, grounded item casts and spell FX.
-All other six styles, equipment/appearance, Glide attachment/colors and Dual A
-Superglide finisher are preserved. Only Dual A/B/C duplicate the equipped weapon.
+SINGLE D -- DARK RIKU SOURCE CAPTURE, NOT A PLAYABLE MOVESET YET
+The original KH1 Dark Riku assets are not available in this workspace. Assigning
+unknown boss animation numbers would be guessing. The new exclusive entry
+therefore retains normal KH1 moves and one weapon during this capture stage.
+Its menu help and equip log explicitly say mapping is pending.
+
+On startup this build automatically reads the original installed Dark Riku banks
+and attempts to write kh1-dual-wield-dark-riku-animations.csv beside the game EXE,
+in the same folder as kh1-dual-wield.log. No enemy/fight/attack is needed.
+Wait for SINGLE D INVENTORY COMPLETE in the log. Return the generated CSV and
+fresh full log so the actual numbered list can be provided and attacks mapped.
+If capture fails or no CSV appears, return the log's SINGLE D INVENTORY UNAVAILABLE
+or BANK NOT READ messages. Other styles remain independently usable.
+More source/format notes: DARK_RIKU_AND_BBS.txt.
 
 FIRST TEST
-Equip Style: Single C and perform the complete air combo. Confirm182 ends on
-the intended downward slash and no unwanted extra horizontal swing appears.
-The log should show ground_ready=true, air_ready=true, Riku182_length=77 and
-trimmed_tail=71 in SINGLE C COMBO MAP. If the endpoint remains off, a short
-recording will help identify the exact last pose. Return the fresh full log
-if admission or input behavior fails.
+- Equip Dual D. Check idle/movement, ground and aerial combos, turning, native
+  Guard, ordinary Glide/Superglide, both blades, trails and impacts on one enemy.
+- Unequip native attack modifiers while isolating Master base combos; re-equip
+  them to check native priority. Try map changes and switching among styles.
+- Cast Fire/Blizzard/Thunder/Cure on ground/in air, then attack and move. Check
+  costs/damage/healing stay native and no stale animation or trail remains.
+- Confirm equipping a different style removes the old duplicate/controller.
+Return the full fresh log if a donor or attack adapter fails to admit.
 
-IDs (exclusive,0 AP): Dual A126, Dual B125, Single A124, Single B123,
-Anti122, Dual C121, Single C120. Unequipping restores native behavior.
+PRESERVED
+Single C's complete data adapter remains unchanged: ground Riku152 -> Riku151 ->
+Vicinity Break; air Sora181 -> Horizontal Slash -> Riku182 shortened to77 frames.
+Its Quick Run, 193 aerial Cure/Stop/Aero/Gravity/parry, normal Square/Triangle,
+grounded item casts and native ability priority remain. All other existing style
+controllers, native combat backend, B dodges/guard/fire and standard Glide
+attachment/colors are preserved. Dual A Superglide remains the real finisher.
+
 INI defaults: dual_b_spell_fx=on, idle_speed=0.75, offhand_only_test=off,
 remove_dual_wield=off. DLL/INI changes require a full game restart.
-To remove entries: set remove_dual_wield on; launch/load/save with v38;
+To remove entries: set remove_dual_wield on; launch/load/save with v39;
 close; disable the mod and Build again.
 
 VALIDATION AND LIMITS
-511 tests /31 suites /161 style tests pass. Windows x64 release, existing
-four exports/eight imports,109 source checks,11 native anchors and seven
-protected model checks pass. Builds use -C codegen-units=1. Existing tests
-verify the77-frame root prefix, three exact hits, no late contact/trail/hold,
-source identity and native ability rules; the added test covers repeated input.
-ZIP CRC, independent extraction, every entry hash and saved-copy checks pass.
-No actual v38 game/GPU or installed animation playback was run here. The exact
-visual downward-slash endpoint still needs the fresh game test.
+517 tests across31 suites, including165 style tests, pass. Windows x64 release,
+existing4 exports/8 imports,88 source-scope checks,11 native anchors and7 model
+checks pass. Builds use -C codegen-units=1. ZIP CRC, independent extraction,
+every entry hash and exact saved-copy verification accompany delivery.
+No actual v39 game/GPU playback or original Dark Riku bank parsing was run here.
+Master's visual timing/attachment/gameplay still need a fresh game test.
+Single D's source inventory is the prerequisite to implementing its moveset.
 
-Source patch (38 derivative commits), pinned upstream, credits/licences and
+Source patch (39 derivative commits), pinned upstream, credits/licences and
 validation receipts are included. Rules/confidence: docs/combat-model.md
-Stage377. No game executable, extracted asset, recording or disassembly ships.
+Stage378. No game executables, extracted assets, dumps or recordings ship.
