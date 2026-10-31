@@ -1,117 +1,99 @@
-KH1FM SEVEN STYLES -- PROTOTYPE v34 (s373)
+KH1FM SEVEN STYLES -- PROTOTYPE v35 (s374)
 
 INSTALL
-1. Fully close KH1FM. Disable v33 and every older Dual Wield prototype.
-2. Import this ZIP into OpenKH, enable ONLY v34, then Build and Run.
+1. Fully close KH1FM. Disable v34 and every older Dual Wield prototype.
+2. Import this ZIP into OpenKH, enable ONLY v35, then Build and Run.
    Panacea and your installed KH2FM are required. F1 cannot reload a DLL.
-3. Confirm s373 / PROTOTYPE v34 in kh1-dual-wield.log beside the game EXE.
+3. Confirm s374 / PROTOTYPE v35 in kh1-dual-wield.log beside the game EXE.
 
 Keep the full KH2 Combat overhaul, older offhand/moveset Lua and duplicate
 Sora model mods disabled. Use normal Sora. Existing INI/save style entries
 are preserved. This is a native OpenKH DLL mod; no game assets ship.
 
-SINGLE C -- REQUESTED MAPPING
+SINGLE C -- REVISED MAPPING
 Ground step 1: Riku 152
 Ground step 2: Riku 151
-Ground finisher: Riku 152
-Air step 1: Riku 182
-Air step 2: Riku 181
-Air finisher: actual KH2 BASE SORA ability-free aerial combo finisher
+Ground finisher: KH2 base Sora Vicinity Break
+Air step 1: KH2 base Sora first air combo hit (181)
+Air step 2: KH2 base Sora Horizontal Slash
+Air finisher: Riku 182, ending ten frames early
+
+This uses the user's revised air list. Horizontal Slash is the second Attack
+press in the combo. The former Triangle 195/194 commands are fully removed;
+Triangle again follows native behavior. There is no custom aerial Square
+action. Existing grounded Dodge Roll -> Wisdom Quick Run remains.
+
+Vicinity Break and Horizontal Slash resolve from actual KH2 ability-180/99
+source rows, with their real weapon contacts. Neither ability is added or
+separately equipped. Vicinity Break fills the finisher slot rather than its
+original surrounded-foe opening condition. Donor scripts/events do not run.
+Existing native trail, impact/contact feedback and source attack records remain.
 
 Combo Plus/Air Combo Plus alternate the two base choices before the finisher.
-Each continuation still needs a new Attack press in the late input window;
-no entire combo is automatically queued. Native KH1 attack abilities retain
-priority and can select their native combo lane. To isolate the listed base
-sequence, temporarily unequip relevant native attack modifiers if needed.
+Each continuation needs a new Attack press in its late input window. Native
+KH1 attack abilities keep priority; temporarily unequip relevant native attack
+modifiers if needed to isolate this listed base sequence.
 
-The Sora finisher uses its own skeleton, weapon pose and battle data, not Riku
-bone indices. The controller swaps the rig before sampling/contact geometry;
-Sora's separate body retarget handles the transition. Real source root travel
-and strike windows remain. No animation files need manual installation.
+Riku 182 is 148 frames in the admitted bank. Its host finisher now ends at
+138, preserving the source playback speed, root prefix and all five contact
+windows (the last ends at 122). Only the final ten frames are omitted. The
+original animation bank and all other source clips are unchanged. Unexpected
+source data that would lose a hit is rejected. This first ten-frame cut still
+needs a visual check to confirm it removes the drop-off you noticed.
 
-AERIAL CURE / STOP / AERO / GRAVITY
-All four use Riku animation 193 while airborne. During a currently displayed,
-accepted 193 cast, actual source collision shapes supply native pure-guard
-objects for blocking/parrying and projectile deflection under KH1's native
-clash rules. Guard objects deal no damage and grant no global invulnerability.
-Unguardable attacks retain native rules. The guard retires on interruption,
-cast end, missed/stale draw, teleport, owned action or style/binding change.
+Sora's three combo slots use his own rig, equipped-weapon pose and battle
+records, with separate body mapping. Riku's other steps use his rig. No foreign
+bone channels are relabelled; old collision sweeps retire when the rig changes.
+No animation files need manual installation.
 
-The whole finite visible 193 interval is the requested guard policy; it is not
-claimed to be the original KH2 Riku script timing. An original 193 body attack
-is NOT submitted by casting. Native KH1 spell execution, damage/healing, MP,
-level and ability gates remain. Ground versions keep Riku item-use pose 9.
+CASTING AND OTHER PRESERVED FEATURES
+Aerial Cure/Stop/Aero/Gravity still use Riku 193 with the v34 actual-draw/cast-
+scoped native guard/parry/deflection path. Native attack/projectile clash rules
+still decide what can be blocked. Ground versions keep Riku item-use pose 9.
+Sora fallback casts/Guard/ledge/Glide poses and matching KH2 spell effects
+remain. Native KH1 costs, healing, damage, levels and ability gates remain.
+Gravity/Stop/Aero keep native effects, as no direct Sora KH2 counterpart was
+selected. The existing dual_b_spell_fx option controls matching effect swaps.
 
-SQUARE AND TRIANGLE
-The v33 aerial Square tap override and held latch are completely removed.
-Free airborne Square again follows native KH1 selection, including Glide.
-The existing ground Dodge Roll -> Wisdom Quick Run replacement remains.
-
-Fresh Triangle in normal free gameplay:
-  Ground: Riku 195 once.
-  Air: Riku 194 once, held in air for its finite pose, then fall.
-These are visual/root actions without added damage, spell/FX scripts, combo
-chains or extra abilities. They do not cancel an already running native or
-owned action. Native can-act/field/water, menu and shortcut gates remain;
-scripted/context interactions retain their native path. Keyboard and pad
-logical Triangle aliases are admitted. Holding Triangle does not queue repeats.
-
-PRESERVED POSES, EFFECTS AND OTHER STYLES
-Single C still uses base KH2 Sora for other spell-casting/Guard/ledge/Glide
-fallback poses, and keeps its Riku movement/item/damage/idle poses. Fire,
-Blizzard, Thunder and Cure keep their base Sora KH2 effects at native levels.
-Gravity, Stop and Aero retain KH1 effects because base KH2 Sora has no direct
-counterparts. Cure's visual release is normalized to 193 in air or 9 on ground.
-The existing dual_b_spell_fx option controls the matching replacement effects.
-
-The other six styles, IDs/exclusivity, equipped weapon/appearance and native
-ability priority remain. Protected checks cover the complete offhand Glide/
-color renderer, Dual A's working Superglide finisher, Dual B actions/FX,
-Wisdom shots and Roxas loading/combos/Guard. No full hurt/Drive/spell takeover
-hook or new native hook site is installed.
+All other six styles remain, including confirmed Glide attachment/colors,
+Dual A's actual Superglide attack finisher, Dual B/Single B Quick Run and Guard,
+Fire recovery, Wisdom shots and playable dual Roxas. This update adds no gauge,
+model/costume change, extra ability/command, fixed weapon or stat bonus.
+Only Dual A/B/C duplicate the currently equipped weapon; Single C has one.
 
 FIRST TEST
-1. Equip Style: Single C. Check ground 152 -> 151 -> 152.
-2. Check air 182 -> 181 -> Sora finisher, then normal return to fall/landing.
-3. Tap/hold Square from a fresh jump: it should no longer select 193.
-4. Cast aerial Cure, Stop, Aero and Gravity: check 193 and challenge its guard
-   with a normally guardable melee attack or projectile. Test interruption/end
-   too, so protection cannot linger after the cast. Compare grounded item casts.
-5. Tap Triangle standing (195) and from a fresh jump/fall (194). Test menus,
-   shortcuts and nearby field interactions separately; busy actions keep priority.
-6. If a feature fails, return the full fresh kh1-dual-wield.log including startup.
-   Useful diagnostics: SINGLE C COMBO MAP, SINGLE C CAST GUARD DATA/ACTIVE,
-   SINGLE C TRIANGLE REQUEST/START, STYLE KH2 CAST and any UNAVAILABLE messages.
+1. Equip Style: Single C. Check ground 152 -> 151 -> Vicinity Break.
+2. Check air Sora first hit -> Horizontal Slash -> Riku 182, then normal fall.
+   Watch the transition into 182 and whether its shortened ending fixes the drop.
+3. Tap Triangle standing and airborne: no custom 195/194 action should start.
+4. Check aerial 193 casts/parries and normal grounded item casts still work.
+5. If something fails, return the full fresh kh1-dual-wield.log from startup.
+   Look for SINGLE C COMBO MAP, trimmed_tail=10, binding source labels and any
+   UNAVAILABLE message. The map includes actual resolved source motion IDs.
 
 IDs (exclusive, 0 AP): Dual A 126, Dual B 125, Single A 124, Single B 123,
-Anti 122, Dual C 121, Single C 120. Only the three Dual styles duplicate the
-currently equipped weapon. Single C keeps Sora's appearance and one weapon.
-No gauge, fixed donor weapon, second weapon choice, stat bonus or extra
-ability/command entry is added. Unequipping the style restores native behavior.
-
-INI defaults:
-  dual_b_spell_fx = on
-  idle_speed = 0.75
-  offhand_only_test = off
-  remove_dual_wield = off
-To remove our seven entries: set remove_dual_wield on; launch/load/save with
-v34; close; disable the mod and Build again. DLL/INI changes need a full restart.
+Anti 122, Dual C 121, Single C 120. Unequipping restores native behavior.
+INI defaults: dual_b_spell_fx=on, idle_speed=0.75, offhand_only_test=off,
+remove_dual_wield=off. DLL/INI changes require a full game restart.
+To remove our entries, set remove_dual_wield on; launch/load/save with v35;
+close; disable the mod and Build again.
 
 VALIDATION AND LIMITS
-507 tests pass across 31 suites (161 style tests). Windows x64 release, PE
-interface, 109 source/preservation checks, 11 native anchors and seven protected
-model metadata checks pass. ZIP CRC, independent extraction, every packaged
-entry hash and saved-copy identity/bytes are verified.
+507 tests pass across 31 suites (160 style tests). Windows x64 release build,
+four exports/eight imports, 98 source/preservation checks, 11 native anchors
+and seven protected model metadata checks pass. Both test and Windows builds
+use RUSTFLAGS=-C codegen-units=1 for this local toolchain. Package checks cover
+ZIP CRC, independent extraction, every entry hash and saved-copy bytes/identity.
 
-New synthetic fixtures cover exact ground/air order and native combo modifiers,
-separate 209-bone Riku/237-bone Sora source identity, roots/contact preservation,
-invalid source rejection, finite guard geometry with no damage, stale cast/
-spell/generation rejection, 194/195 finite actions and all seven cast routes.
-The native guard backend itself is unchanged; only a scoped wrapper calls it.
+Synthetic fixtures exercise source selection, distinct Riku/Sora rigs and
+weapon pose identity, full root/contact preservation except the requested
+182 tail, native combo modifiers, finite/no-input termination and rejection
+of missing/invalid source data before output mutation. The measured five-hit
+148-frame fixture ends at 138 without resampling or losing any hit.
 
-No actual v34 game/GPU test or installed clip execution was run here. Live
-mixed-pose transitions, Triangle input and guard/projectile behavior need the
-fresh-process game test. Existing v32 success is the admitted baseline.
-Source patch (34 derivative commits), pinned upstream, credits/licences and
-validation receipts are included. No game executable, extracted asset,
-recording or disassembly ships. Rules/confidence: docs/combat-model.md Stage 373.
+No actual v35 game/GPU test or installed animation playback was run here.
+Live visual transitions and the exact tail cut need your fresh-process test.
+The v34 aerial guard/contact/cast/effect runtime is unchanged. Source patch
+(35 derivative commits), pinned upstream, credits/licences and validation
+receipts are included. Rules/confidence: docs/combat-model.md Stage 374.
+No game executable, extracted asset, recording or disassembly ships.
