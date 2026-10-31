@@ -1,17 +1,17 @@
 {
-  "name": "KH1FM Five Styles Prototype v22",
-  "stage": "s361",
-  "source_commit": "e8adeee0f5ab7c1c47610181d20e3bea3e88f79e",
+  "name": "KH1FM Five Styles Prototype v23",
+  "stage": "s362",
+  "source_commit": "323d3843dfaa7751a5eedcf5d5a97d8c14cbc0ba",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4793527,
-  "dll_sha256": "843fb872c219a4d552689b8ed8fa3c30eae7444d8cfcef756da365a1f96f4692",
-  "source_patch_sha256": "030f8c1986ba5c3f86485bf1b896be287dc7afb27c7b14c03ebb26aa2cc7ccb0",
-  "tests_passed": 443,
+  "dll_bytes": 4796740,
+  "dll_sha256": "bf5e008692777de7207d05587ff8782c27b55d47da23548f70b799d2ce26ebd4",
+  "source_patch_sha256": "c06555c85478ff2e49d15d1cf7c7e17d21ac324d26c3037814860e64076a60c0",
+  "tests_passed": 446,
   "tests_failed": 0,
   "test_cache": "Linux test cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 27,
-  "style_tests": 142,
+  "style_tests": 144,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -29,11 +29,11 @@
     "api-ms-win-core-synch-l1-2-0.dll",
     "bcryptprimitives.dll"
   ],
-  "new_native_anchor_checks": 10,
-  "source_scope_checks": 63,
+  "new_native_anchor_checks": 14,
+  "source_scope_checks": 70,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v22_game_or_gpu_test": false,
+  "live_v23_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "prepared native Square arbitration and committed-action priority; header-verified Fire recovery including reused buffers; bounded handoff diagnostics"
+  "new_behavior": "replace only the native committed Guard branch; leave moving Roll selection native; wait for Fire recovery queue consumption before sampling its new clock"
 }

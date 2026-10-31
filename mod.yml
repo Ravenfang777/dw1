@@ -1,9 +1,9 @@
-title: KH1FM Five Styles Prototype v22
+title: KH1FM Five Styles Prototype v23
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Correct Dual B Guard versus Quick Run selection using KH1's prepared
-  input direction. Keep Fire on its KH2 cast through verified native
-  recovery headers. Retain Single B Guard and all five exclusive styles.
+  Repair Dual B dodge regression by replacing only native committed Guard.
+  Leave native moving Roll selection to the existing Wisdom Quick Run hook.
+  Keep KH2 Fire recovery through the native queue/clock publication handoff.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

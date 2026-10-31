@@ -62,27 +62,35 @@
     "all_committed_defensive_sessions_block_legacy_fallback": true,
     "fire_recovery_transition_is_reported_without_effect_restart": true,
     "native_row_diagnostics_are_bounded_without_caching_rows": true,
-    "prepared_selector_hook_installed_with_complete_prologue": true
+    "prepared_selector_hook_installed_with_complete_prologue": true,
+    "native_guard_branch_has_semantic_call_and_epilogue_guards": true,
+    "only_committed_guard_callback_requests_dual_guard": true,
+    "native_guard_context_is_resolved_from_original_lea": true,
+    "declined_guard_restores_original_argument_setup": true,
+    "accepted_guard_skips_native_context_and_blocking_flag": true,
+    "fire_phase_waits_for_recovery_queue_consumption": true,
+    "native_bridge_has_real_win64_execution_regression": true
   },
   "source_sha256": {
     "crates/kh1-hook/src/win/native_spell_fx.rs": "050fdac5d3475a3b09b9229430a6624a69ec073a509a4c10536cf2c953fc7743",
     "crates/kh1-hook/src/win/dual_magic_fx.rs": "8a4fe92ea7414680179fac6b7c232efb94b629bf778ac84a65426a0984149346",
     "crates/kh1-hook/src/win/form.rs": "6fb676f44e1e2114b9051324aba5fe23372481cbae79f3cebdd77acf00e3d3df",
-    "crates/kh1-hook/src/win/dual.rs": "4e7d65d44cbbd2fba33d34e00babc05a95d81aec4f6db02a85740680e720fe95",
-    "crates/kh1-hook/src/win/dual_actions.rs": "40c10cc12533f99cacc4f4bdc6af6866f5f960b8cc7d042417e1233b9a6f433f",
+    "crates/kh1-hook/src/win/dual.rs": "a43f57eb4897a7c1d3a38ad6b1b552d138eb3445567f76557b57fbc96b3ddfc2",
+    "crates/kh1-hook/src/win/dual_actions.rs": "aecb8a78f8a5523fdc3ff14ec91c4c237f6fbaaceefcb756755bd61df884b111",
     "crates/kh1-hook/src/win/pose.rs": "19cfb396129d57ef1d68411d07a4e282c1ebb832730bc440074e05bc06aa6306",
-    "crates/kh1-hook/src/win/takeover.rs": "f7f5aa9ad207619bfd564eefb975793ae2ff23be54c769a725933e6e4ea3f384",
+    "crates/kh1-hook/src/win/takeover.rs": "8583dc12b054021b910e121390ae6cacc591da9da92766d6856b5e98c81b5333",
     "crates/kh1-hook/src/win/combat.rs": "4c5c04eaa2ccb53a772411dcac4b3ee0b97c7d99037c76b0a17a7c6c3faf848a",
-    "crates/kh1-hook/src/win/dual_cast.rs": "9f8547b784fb9ac55705ca4a11cc229cd5c34226569a9e0fbede6429446fb96e",
-    "crates/kh1-hook/src/win/steam_map.in": "1010c56e757df0ee35206c11c92ac1851ee809b8ce684b21b83ece984f45d403",
-    "crates/kh1-hook/src/dual_wield.rs": "d2afe39e98d9d58501f92aa87a07e87081790c08e52ea15c3234ebf71c1d1271",
-    "crates/kh1-hook/src/lib.rs": "03415c2ce122482d1843d34130fd4691bfb054613623181a3e92fe642c18438a",
-    "crates/kh1-hook/src/win/mod.rs": "581a80ef9b3f94aad27560ce6084d2bbc7764ae1a4070317b851226b30aa0fef"
+    "crates/kh1-hook/src/win/dual_cast.rs": "78f1cfb435a088ead8aa3c0e0666f9fa2178a11f3364c55a54e3de42b5e92740",
+    "crates/kh1-hook/src/defensive_bridge.rs": "a723fbfd1704261a4529cde4ea7915a639d672666edce1cffe40e68634880c76",
+    "crates/kh1-hook/src/win/steam_map.in": "ea65f1275af0d7b62bdfe31045c0ffac28a1840828f6427f1e74f08a6597cfaa",
+    "crates/kh1-hook/src/dual_wield.rs": "56ee676fcc6a366ff080679e8a898ff65b5c643834512f98569fa4e4042d0b58",
+    "crates/kh1-hook/src/lib.rs": "c631ca69090e210997bcb474a5915687dddcbb94a7504b80adb346bff64c5cd7",
+    "crates/kh1-hook/src/win/mod.rs": "3a5991f3eaed1abc497c129431c30660db0385ad746b3b67064fabd6465f59d0"
   },
   "kind": "static source scope audit plus separately recorded controller/executable validation",
   "native_spell_gameplay": "KH1",
   "new_contact_sources": "Wisdom object script shots and Anti real body windows; Dual B real displayed blades",
   "live_game_or_gpu_test_performed": false,
-  "style": "v22",
-  "stage": "s361"
+  "style": "v23",
+  "stage": "s362"
 }
