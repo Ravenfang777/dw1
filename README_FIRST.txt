@@ -1,84 +1,102 @@
-KH1FM FIVE STYLES -- PROTOTYPE v25 (s364)
+KH1FM SIX STYLES -- PROTOTYPE v26 (s365)
 
 INSTALL
-1. Fully close KH1FM. Disable v24 and all older Dual Wield prototypes.
-2. Import this ZIP into OpenKH, enable ONLY v25, then Build and Run.
+1. Fully close KH1FM. Disable v25 and all older Dual Wield prototypes.
+2. Import this ZIP into OpenKH, enable ONLY v26, then Build and Run.
    Panacea and your installed KH2FM are required. F1 cannot reload a DLL.
-3. Confirm s364 / PROTOTYPE v25 in kh1-dual-wield.log beside the game EXE.
+3. Confirm s365 / PROTOTYPE v26 in kh1-dual-wield.log beside the game EXE.
 
-This is an OpenKH native DLL mod, not a script. Keep the full KH2 Combat
+This is an OpenKH native DLL mod, not Lua. Keep the full KH2 Combat
 overhaul, older offhand/moveset Lua and duplicate Sora model mods disabled.
 Use normal Sora. No game assets are supplied.
 
-STANDARD GLIDE ONLY
-This update addresses Dual A's disappearing/teleporting offhand during
-regular Glide. The duplicate now follows the current rendered palm joint
-instead of an unskinned helper or a reconstructed native root/local chain.
-Its held calibration is local to the palm and current model/weapon binding.
-If Glide is the first action after loading, a fallback calibrates from
-verified skinned primary weapon/palm data. Stale and invalid samples are
-rejected. Only the standard-Glide duplicate ignores native weapon stow/fade;
-Sora's body, primary draw state and Glide movement remain native.
+DUAL A STANDARD GLIDE COLOR
+Your recording shows the v25 offhand attachment is stable but pale. This
+build keeps that palm attachment and removes the private forced-white
+weapon color. The duplicate copies the current primary's native draw
+colors. If the native draw omits its weapon, it uses only this binding's
+previously visible held weapon color plus current body lighting. No
+constant white palette or previous map/model/weapon colors are reused.
+The visual result still requires your fresh in-game test.
 
-SUPERGLIDE'S WORKING ATTACK FINISHER IS PRESERVED. The new attachment path
-explicitly excludes native Superglide's subtype and every owned action.
-The finisher start/controller and donor attack logic match v24 exactly.
-No attack, damage, trail window or timing has been changed.
+A'S WORKING SUPERGLIDE ATTACK FINISHER AND B'S FIX ARE PRESERVED.
+No change to the actual A finisher start, donor attack, movement or
+contacts. B keeps its working Quick Run, both weapon models, Guard and
+Fire recovery. The shared attack controller adds only C's donor choice.
 
-DUAL B IS PRESERVED. Your confirmed Quick Run/weapon appearance fix remains
-as in v24, including the shared visibility for both blades. No changes to
-its controller, donor rig, movement, Fire, Guard or spell effects.
+NEW: STYLE: DUAL C (0 AP, initially disabled)
+Uses the PLAYABLE dual-wield Roxas profile from KH2's prologue: object
+803/P_EX110_BTLF. Its real installed object entry supplies the motion
+filename and moveset id, including both weapon motion tracks.
 
-FIRST TEST -- FRESH GAME PROCESS, NO ENEMIES NEEDED
-1. Equip Style: Dual A and use STANDARD Glide straight, then turn left
-   and right repeatedly. Check the offhand stays in his palm and visible.
-2. Land, repeat and change map. Try gliding soon after loading as well.
-3. Check that Superglide still performs the working Valor attack finisher.
-4. Switch to Dual B and check its already-working Quick Run briefly.
+- Authored base ground/air combos, with both blades' real hit windows.
+- Matching idle, walk/run, jump/fall/landing, item, damage, ledge and
+  interaction poses where that Roxas motion bank has them.
+- Missing visual slots, magic, Guard and Dodge Roll retain KH1 behavior.
+- Native KH1 Glide/Superglide with held blades; no special C glide attack.
+- Current equipped weapon duplicated. No fixed Oathkeeper/Oblivion models.
+- Normal KH1 Sora model. No costume, Drive state/gauge, stats or extra
+  ability grant. No boss Roxas AI, reaction command or spell package.
+- Native KH1 attack abilities keep their existing combo lane. Native
+  Combo Plus/Air Combo Plus modifiers carry into the imported base combo.
 
-If regular Glide still fails, send the FULL fresh kh1-dual-wield.log from
-beside KINGDOM HEARTS FINAL MIX.exe, including startup, before restarting.
-The new bounded notes begin DUAL A STANDARD GLIDE and report either the
-palm calibration source or the exact rejected prerequisite. A recording
-of the same Glide turn helps match the visual sample. The previously
-supplied numbered (3) log is s362/v23; it is not a v24 or v25 test log.
+C is exclusive with all other custom styles. Equipping any one disables
+the other five; unequipping returns native behavior and removes the
+extra blade. Existing styles keep their IDs and save entries.
+
+FRESH-PROCESS TEST
+1. A: regular Glide straight and turning; compare offhand color to the
+   primary, then check its already-working Superglide attack finisher.
+2. B: briefly check its already-working Quick Run with both blades.
+3. C: check idle/run, ground and air combos on one enemy, then magic,
+   items, normal ability attacks and map changes. Unequip C and switch
+   to another style to check exclusivity and normal restoration.
+
+Look for DUAL C DONOR LOADED and DUAL C DATA with attack_adapter=true in
+kh1-dual-wield.log beside KINGDOM HEARTS FINAL MIX.exe. The loader validates
+its actual body/weapon rig. If its assets/layout are missing or rejected,
+it logs DUAL C DONOR UNAVAILABLE and retains native action behavior.
+It never substitutes Valor's combos and calls them Roxas.
+
+If C is rejected or anything still looks wrong, return the FULL fresh
+log including startup, before restarting. Glide diagnostics now begin
+HELD GLIDE DRAW and HELD GLIDE COLORS. A short recording helps match it.
 
 RETAINED
-Five exclusive 0-AP IDs: Dual A 126 (Valor), Dual B 125 (Final),
-Single A 124 (base KH2 Sora), Single B 123 (Wisdom), Anti 122 (unarmed).
-Only Dual styles duplicate the currently equipped weapon. Native attack
-abilities retain their native combo lane. No second weapon selection,
-Drive gauge/state, costume, stat bonus, extra ability or party removal.
+Six exclusive 0-AP IDs: Dual A 126 (Valor), Dual B 125 (Final),
+Single A 124 (base KH2 Sora), Single B 123 (Wisdom), Anti 122 (unarmed),
+Dual C 121 (playable dual Roxas). Only A/B/C duplicate the equipped weapon.
 Single B Run at .75 and KH2 Guard, Anti's weaponless movement/combat/aura
-and magic/item/summon restrictions remain. Native ability gates remain.
+and magic/item/summon restrictions remain. No party removal.
 
-Both B styles retain their KH2 Fire/Blizzard/Thunder/Cure effects at
-native levels and the existing native visual filter. Gravity/Stop/Aero
-retain native effects; Single A retains KH2 cast poses with KH1 effects.
-Native KH1 damage/healing, levels, acceptance and costs are unchanged.
-The working Fire recovery handoff is retained. KH2 multi-stage spell
-combos are still not part of the native-cast overlay.
+Both B styles retain existing KH2 Fire/Blizzard/Thunder/Cure effects at
+native levels and the native visual filter. Gravity/Stop/Aero retain
+native effects; Single A retains KH2 cast poses with KH1 effects.
+C uses native KH1 spells and costs. Native damage/healing and levels
+remain. KH2 multi-stage spell combos are not added in this build.
 
-Your existing kh1-dual-wield.ini beside the EXE is preserved. Defaults:
+Your existing kh1-dual-wield.ini is preserved. Defaults:
   dual_b_spell_fx = on
   idle_speed = 0.75
   offhand_only_test = off
   remove_dual_wield = off
 Offhand-only testing affects Dual weapon contacts, not spells or party.
 To remove custom entries: set remove_dual_wield on; launch/load/save with
-v25; close; disable the mod and Build again. Only the five entries are
-removed. DLL/INI changes require a full restart.
+v26; close; disable the mod and Build again. Only the six custom entries
+are removed. DLL/INI changes require a full restart.
 
-VALIDATION
-450 tests pass across 27 suites (148 style tests), including current-palm
-turning fixtures, first-Glide calibration without helper matrices, subtype
-and scene/binding rejection, and the retained real Win64 Guard bridge and
-Quick Run lifecycle tests. Windows x64 release, PE interface, eight native
-appearance anchors, seven model metadata checks and 102 scope/preservation
-checks pass. ZIP CRC, extraction and saved-copy entry hashes are verified.
+VALIDATION AND LIMITS
+467 tests pass across 31 suites (151 style tests), including object-profile
+resolution/rejection, C's two-weapon ground/air controller, six-way equip
+and native-color/binding fixtures. Existing Fire, Quick Run, finisher
+and actual Win64 Guard bridge tests remain. Windows x64 release, PE
+interface, 11 native anchors, seven model metadata checks and 127 scope/
+preservation checks pass. ZIP CRC/extraction and saved-copy entry hashes
+are verified.
 
-No live v25 game/GPU rendering test was performed. Offline checks do not
-prove the visual symptom resolved; use the standard Glide checks above.
+No live v26 game/GPU test or installed Roxas asset execution was performed
+here. Offline fixtures do not prove that the installed bank is admitted,
+that all C animations render correctly or that the pale color resolved.
 Source patch, pinned upstream, credits, licences and validation receipts
 are included. No game executable, recording, extracted asset or
 disassembly is distributed.

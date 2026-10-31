@@ -339,7 +339,7 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v25_checks": [
+  "v26_checks": [
     {
       "anchor": "native_show_weapon_prologue",
       "steam_rva": "0x2a2e30",
@@ -379,12 +379,27 @@
       "anchor": "native_show_visibility_flag",
       "steam_rva": "0x2a2ea1",
       "matches": true
+    },
+    {
+      "anchor": "native_primary_body_color_at_param_20",
+      "steam_rva": "0x2a181c",
+      "matches": true
+    },
+    {
+      "anchor": "native_weapon_color_read_from_object",
+      "steam_rva": "0x2a182d",
+      "matches": true
+    },
+    {
+      "anchor": "native_weapon_color_at_param_24",
+      "steam_rva": "0x2a1832",
+      "matches": true
     }
   ],
-  "v25_new_hook_sites": 0,
-  "v25_uses_existing_native_visibility_routine": true,
-  "live_v25_game_test": false,
-  "v25_private_skeleton_metadata_checks": {
+  "v26_new_hook_sites": 0,
+  "v26_uses_existing_native_visibility_routine": true,
+  "live_v26_game_test": false,
+  "v26_private_skeleton_metadata_checks": {
     "normal_sora_293_bones": true,
     "helper_hand_206_is_unskinned": true,
     "left_palm_218_is_skinned": true,
@@ -393,6 +408,6 @@
     "grip_helpers_are_unskinned": true,
     "left_palm_base_at_hand": true
   },
-  "v25_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
-  "v25_scope": "Dual A regular Glide draw only; no Superglide or Dual B controller changes"
+  "v26_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v26_scope": "Dual A native Glide colors; optional playable Roxas data donor; no new native hooks"
 }

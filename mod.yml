@@ -1,8 +1,9 @@
-title: KH1FM Five Styles Prototype v25
+title: KH1FM Six Styles Prototype v26
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Dual A standard Glide offhand follows the currently rendered palm.
-  Preserve the working Superglide attack finisher and confirmed Dual B fix.
+  Match Dual A held Glide weapon colors while keeping its stable attachment.
+  Add Style Dual C using playable dual Roxas combos and matching animations.
+  Preserve Dual A Superglide finisher and the confirmed Dual B fix.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll
