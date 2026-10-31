@@ -339,7 +339,7 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v24_checks": [
+  "v25_checks": [
     {
       "anchor": "native_show_weapon_prologue",
       "steam_rva": "0x2a2e30",
@@ -381,7 +381,18 @@
       "matches": true
     }
   ],
-  "v24_new_hook_sites": 0,
-  "v24_uses_existing_native_visibility_routine": true,
-  "live_v24_game_test": false
+  "v25_new_hook_sites": 0,
+  "v25_uses_existing_native_visibility_routine": true,
+  "live_v25_game_test": false,
+  "v25_private_skeleton_metadata_checks": {
+    "normal_sora_293_bones": true,
+    "helper_hand_206_is_unskinned": true,
+    "left_palm_218_is_skinned": true,
+    "right_palm_114_is_skinned": true,
+    "blade_chain_282_to_291_are_skinned": true,
+    "grip_helpers_are_unskinned": true,
+    "left_palm_base_at_hand": true
+  },
+  "v25_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v25_scope": "Dual A regular Glide draw only; no Superglide or Dual B controller changes"
 }

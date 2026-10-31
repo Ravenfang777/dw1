@@ -1,17 +1,17 @@
 {
-  "name": "KH1FM Five Styles Prototype v24",
-  "stage": "s363",
-  "source_commit": "b442c5e428eba192d7b59fb6a363605a13371b1a",
+  "name": "KH1FM Five Styles Prototype v25",
+  "stage": "s364",
+  "source_commit": "3c3675cdb9ba275358c29ab47f5e967c83c0b1eb",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4801636,
-  "dll_sha256": "7d9b2f1c12c9cf3b282f2d48b0299d112d331f094fac1be23e69dcd42409c155",
-  "source_patch_sha256": "26a97666d278f8d8918be6121ef20f9cb6167b13d08acacdad13561698615159",
-  "tests_passed": 449,
+  "dll_bytes": 4808717,
+  "dll_sha256": "8ace05d77e1bab0a1a3b2d69ea82fccc041752668bf101e36eafea21cd45b192",
+  "source_patch_sha256": "44be946199ab834a87a9a42bdb31304fda857276aa8db0ef521590f4dfe9f7d4",
+  "tests_passed": 450,
   "tests_failed": 0,
   "test_cache": "Linux test cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 27,
-  "style_tests": 147,
+  "style_tests": 148,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -30,10 +30,12 @@
     "bcryptprimitives.dll"
   ],
   "new_native_anchor_checks": 8,
-  "source_scope_checks": 80,
+  "source_scope_checks": 102,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v24_game_or_gpu_test": false,
+  "live_v25_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "Dual A native-local glide attachment snapshot before body queue; keep both Dual B Quick Run weapon meshes out; native visibility/appearance initialization"
+  "new_behavior": "Dual A standard Glide follows current skinned palm with scoped duplicate visibility; owned Superglide finisher and fixed Dual B preserved from v24",
+  "model_metadata_checks": 7,
+  "preserved_v24_commit": "b442c5e428eba192d7b59fb6a363605a13371b1a"
 }

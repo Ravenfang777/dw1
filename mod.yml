@@ -1,9 +1,8 @@
-title: KH1FM Five Styles Prototype v24
+title: KH1FM Five Styles Prototype v25
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Rebuild Dual A native Glide offhand from the current joint hierarchy.
-  Keep both equipped weapon meshes visible through Dual B Quick Run.
-  Retain v23 gameplay, native Guard/dodge choice and Fire recovery fix.
+  Dual A standard Glide offhand follows the currently rendered palm.
+  Preserve the working Superglide attack finisher and confirmed Dual B fix.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

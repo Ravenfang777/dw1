@@ -73,35 +73,88 @@
     "dual_quick_run_overrides_only_donor_visibility": true,
     "primary_visibility_and_grip_share_one_dual_result": true,
     "passive_show_uses_existing_native_appearance_routine": true,
-    "native_glide_uses_parent_local_table_and_current_root": true,
-    "glide_reconstruction_does_not_write_native_body": true,
-    "first_glide_rebuilds_primary_calibration_only_when_needed": true,
     "glide_attachment_snapshot_precedes_original_body_queue": true,
     "duplicate_queue_does_not_resample_glide_after_body": true,
-    "native_attachment_checks_actor_and_exact_frame_on_both_paths": true,
-    "native_root_is_not_applied_twice_and_cycles_are_bounded": true
+    "regular_glide_has_explicit_subtype_and_owner_gate": true,
+    "regular_glide_keeps_scene_script_and_hold_guards": true,
+    "old_helper_fk_route_is_removed": true,
+    "regular_glide_reads_skinned_palm_in_actual_world": true,
+    "runtime_verifies_live_bone_skin_flag": true,
+    "refresh_uses_only_exact_current_binding": true,
+    "refresh_clears_previous_duplicate_before_skin_read": true,
+    "calibration_prefers_admitted_held_idle": true,
+    "first_glide_fallback_requires_primary_skin_palette": true,
+    "first_glide_fallback_does_not_copy_helper_worlds": true,
+    "regular_glide_does_not_lock_pose_state_after_calibration": true,
+    "pose_helper_cannot_overwrite_regular_glide": true,
+    "duplicate_visibility_bypasses_stow_only_in_regular_glide": true,
+    "duplicate_rgba_is_private_and_regular_only": true,
+    "bounded_glide_diagnostics_explain_template_or_rejection": true,
+    "rendered_palm_and_first_glide_fixtures_present": true,
+    "unchanged_v24_dual_actions": true,
+    "unchanged_v24_takeover": true,
+    "unchanged_v24_dual_cast": true,
+    "unchanged_v24_dual_magic_fx": true,
+    "unchanged_v24_native_spell_fx": true,
+    "unchanged_v24_combat": true,
+    "unchanged_v24_dual_hover": true,
+    "unchanged_v24_dual_appearance_and_action_policy": true,
+    "unchanged_v24_dual_b_donor_loader": true,
+    "unchanged_v24_owned_weapon_out": true,
+    "unchanged_v24_native_held_glide": true
   },
   "source_sha256": {
     "crates/kh1-hook/src/win/native_spell_fx.rs": "050fdac5d3475a3b09b9229430a6624a69ec073a509a4c10536cf2c953fc7743",
     "crates/kh1-hook/src/win/dual_magic_fx.rs": "8a4fe92ea7414680179fac6b7c232efb94b629bf778ac84a65426a0984149346",
     "crates/kh1-hook/src/win/form.rs": "6fb676f44e1e2114b9051324aba5fe23372481cbae79f3cebdd77acf00e3d3df",
-    "crates/kh1-hook/src/win/dual.rs": "1e6c50ea9cd2e7a5dd22d9600a8b537ea58773c14813359996bb2d598051ab37",
+    "crates/kh1-hook/src/win/dual.rs": "b09b75cf64038d37ec2d35f4e94ddffe21ed5104ccd997e1deb12a405bfbae63",
     "crates/kh1-hook/src/win/dual_actions.rs": "aecb8a78f8a5523fdc3ff14ec91c4c237f6fbaaceefcb756755bd61df884b111",
-    "crates/kh1-hook/src/win/pose.rs": "1d9bbf66edc16e37d1947a3a639f9005c041fc31ca1c840ed43f231047b6a7f0",
+    "crates/kh1-hook/src/win/pose.rs": "5680a13818e5e330bcf115a60ce981e480844773dc3336e83068e15b0589b83d",
     "crates/kh1-hook/src/win/takeover.rs": "a12731868d344b927c3a17d7176e9bfaedb2db4c69bf02b61c5be74dcdde2d6a",
     "crates/kh1-hook/src/win/combat.rs": "4c5c04eaa2ccb53a772411dcac4b3ee0b97c7d99037c76b0a17a7c6c3faf848a",
     "crates/kh1-hook/src/win/dual_cast.rs": "78f1cfb435a088ead8aa3c0e0666f9fa2178a11f3364c55a54e3de42b5e92740",
-    "crates/kh1-hook/src/win/leftblade.rs": "012106db2e5f7cc8b05caab0b2edf09baeea7ea3dc6834185cfb6a270530ff16",
+    "crates/kh1-hook/src/win/leftblade.rs": "c31709201c87a2eb120f8f654b09899437cd1b9da1871b8aa3df7fdee2fff211",
     "crates/kh1-hook/src/defensive_bridge.rs": "a723fbfd1704261a4529cde4ea7915a639d672666edce1cffe40e68634880c76",
     "crates/kh1-hook/src/win/steam_map.in": "ea65f1275af0d7b62bdfe31045c0ffac28a1840828f6427f1e74f08a6597cfaa",
-    "crates/kh1-hook/src/dual_wield.rs": "573ff25dc02d71f9b8927233df1887e35b42b1b0f6d00272471a616345422470",
-    "crates/kh1-hook/src/lib.rs": "da0a002033d6ed1c2d3320c330af7af8896e805ba01c00c8771e10d9dff1b0b9",
-    "crates/kh1-hook/src/win/mod.rs": "382b68d993697a2274cb7a4ccb63211fcad84a4b2786df62b11177b53917cdaf"
+    "crates/kh1-hook/src/dual_wield.rs": "144a67921e361ea7b67abc5269e067dabdb64453b0c8a930270df755160f7a72",
+    "crates/kh1-hook/src/lib.rs": "dc5fbe70f4821b8a44c53649eef4d85604992113394eb9cc47d987b3ba015ab0",
+    "crates/kh1-hook/src/win/mod.rs": "a70fc76d98bdb0cf5ffe22eeaf9208d2cdcc0c24089f52bbed06f1d7d3fe4ed8"
   },
   "kind": "static source scope audit plus separately recorded controller/executable validation",
   "native_spell_gameplay": "KH1",
   "new_contact_sources": "Wisdom object script shots and Anti real body windows; Dual B real displayed blades",
   "live_game_or_gpu_test_performed": false,
-  "style": "v24",
-  "stage": "s363"
+  "style": "v25",
+  "stage": "s364",
+  "preserved_from_v24_commit": "b442c5e428eba192d7b59fb6a363605a13371b1a",
+  "preserved_files": {
+    "crates/kh1-hook/src/win/dual_actions.rs": {
+      "sha256": "aecb8a78f8a5523fdc3ff14ec91c4c237f6fbaaceefcb756755bd61df884b111",
+      "matches_v24": true
+    },
+    "crates/kh1-hook/src/win/takeover.rs": {
+      "sha256": "a12731868d344b927c3a17d7176e9bfaedb2db4c69bf02b61c5be74dcdde2d6a",
+      "matches_v24": true
+    },
+    "crates/kh1-hook/src/win/dual_cast.rs": {
+      "sha256": "78f1cfb435a088ead8aa3c0e0666f9fa2178a11f3364c55a54e3de42b5e92740",
+      "matches_v24": true
+    },
+    "crates/kh1-hook/src/win/dual_magic_fx.rs": {
+      "sha256": "8a4fe92ea7414680179fac6b7c232efb94b629bf778ac84a65426a0984149346",
+      "matches_v24": true
+    },
+    "crates/kh1-hook/src/win/native_spell_fx.rs": {
+      "sha256": "050fdac5d3475a3b09b9229430a6624a69ec073a509a4c10536cf2c953fc7743",
+      "matches_v24": true
+    },
+    "crates/kh1-hook/src/win/combat.rs": {
+      "sha256": "4c5c04eaa2ccb53a772411dcac4b3ee0b97c7d99037c76b0a17a7c6c3faf848a",
+      "matches_v24": true
+    },
+    "crates/kh1-hook/src/win/dual_hover.rs": {
+      "sha256": "2e62ecd7ceb53a9d94ef5ecfadb67a17e9aa79bdf3aeb33887b1ff1c09c0520a",
+      "matches_v24": true
+    }
+  }
 }
