@@ -1,0 +1,97 @@
+KH1 DARK RIKU -- CAPTURED ANIMATION SLOT INVENTORY
+
+Source: user CSV and s378 log, 20261031-103151.
+These are verified numbered slots/durations, not verified action names.
+No animation/model payload is included. Do not reuse KH2 Riku labels.
+Single D remains pending a playable source/rig/contact mapping.
+
+Dark Riku main bank: xa_ex_1160.mset
+31 readable slots;60 FPS;247 bones;12 helper records.
+Slot | Frames | Seconds | Keyed channels | Helper channels | Action
+00 | 160 | 2.667 | 148 | 21 | Unverified
+01 | 60 | 1.000 | 154 | 28 | Unverified
+02 | 40 | 0.667 | 183 | 28 | Unverified
+03 | 16 | 0.267 | 211 | 26 | Unverified
+04 | 26 | 0.433 | 202 | 28 | Unverified
+05 | 16 | 0.267 | 197 | 27 | Unverified
+06 | 48 | 0.800 | 186 | 22 | Unverified
+07 | 40 | 0.667 | 210 | 28 | Unverified
+08 | 64 | 1.067 | 215 | 27 | Unverified
+09 | 64 | 1.067 | 213 | 28 | Unverified
+10 | 64 | 1.067 | 216 | 27 | Unverified
+11 | 64 | 1.067 | 212 | 27 | Unverified
+12 | 72 | 1.200 | 214 | 31 | Unverified
+13 | 72 | 1.200 | 219 | 29 | Unverified
+14 | 32 | 0.533 | 201 | 25 | Unverified
+15 | 32 | 0.533 | 207 | 27 | Unverified
+16 | 56 | 0.933 | 187 | 26 | Unverified
+17 | 56 | 0.933 | 175 | 27 | Unverified
+18 | 50 | 0.833 | 211 | 33 | Unverified
+19 | 50 | 0.833 | 207 | 33 | Unverified
+20 | 40 | 0.667 | 210 | 30 | Unverified
+21 | 48 | 0.800 | 210 | 29 | Unverified
+22 | 40 | 0.667 | 214 | 29 | Unverified
+23 | 96 | 1.600 | 153 | 24 | Unverified
+24 | 48 | 0.800 | 204 | 26 | Unverified
+25 | 72 | 1.200 | 218 | 30 | Unverified
+26 | 136 | 2.267 | 203 | 26 | Unverified
+27 | 48 | 0.800 | 212 | 26 | Unverified
+28 | 60 | 1.000 | 215 | 32 | Unverified
+29 | 64 | 1.067 | 216 | 34 | Unverified
+30 | 64 | 1.067 | 214 | 30 | Unverified
+
+Dark Riku alternate bank: xa_ex_1168.mset
+1 readable slots;60 FPS;247 bones;12 helper records.
+Slot | Frames | Seconds | Keyed channels | Helper channels | Action
+00 | 160 | 2.667 | 147 | 9 | Unverified
+
+Ansem (Riku) -- separate main bank: xa_ex_1580.mset
+41 readable slots;60 FPS;247 bones;12 helper records.
+Slot | Frames | Seconds | Keyed channels | Helper channels | Action
+00 | 160 | 2.667 | 148 | 21 | Unverified
+01 | 60 | 1.000 | 154 | 28 | Unverified
+02 | 40 | 0.667 | 183 | 28 | Unverified
+03 | 16 | 0.267 | 211 | 26 | Unverified
+04 | 26 | 0.433 | 202 | 28 | Unverified
+05 | 16 | 0.267 | 197 | 27 | Unverified
+06 | 48 | 0.800 | 186 | 22 | Unverified
+07 | 40 | 0.667 | 210 | 28 | Unverified
+08 | 64 | 1.067 | 215 | 27 | Unverified
+09 | 64 | 1.067 | 213 | 28 | Unverified
+10 | 64 | 1.067 | 216 | 27 | Unverified
+11 | 64 | 1.067 | 212 | 27 | Unverified
+12 | 72 | 1.200 | 214 | 31 | Unverified
+13 | 72 | 1.200 | 219 | 29 | Unverified
+14 | 32 | 0.533 | 201 | 25 | Unverified
+15 | 32 | 0.533 | 207 | 27 | Unverified
+16 | 56 | 0.933 | 187 | 26 | Unverified
+17 | 56 | 0.933 | 175 | 27 | Unverified
+18 | 50 | 0.833 | 211 | 33 | Unverified
+19 | 50 | 0.833 | 207 | 33 | Unverified
+20 | 40 | 0.667 | 210 | 30 | Unverified
+21 | 48 | 0.800 | 210 | 29 | Unverified
+22 | 48 | 0.800 | 213 | 26 | Unverified
+23 | 40 | 0.667 | 214 | 29 | Unverified
+24 | 96 | 1.600 | 153 | 24 | Unverified
+25 | 48 | 0.800 | 204 | 26 | Unverified
+26 | 72 | 1.200 | 218 | 30 | Unverified
+27 | 136 | 2.267 | 203 | 26 | Unverified
+28 | 48 | 0.800 | 212 | 26 | Unverified
+29 | 60 | 1.000 | 215 | 32 | Unverified
+30 | 64 | 1.067 | 216 | 34 | Unverified
+31 | 64 | 1.067 | 214 | 30 | Unverified
+32 | 104 | 1.733 | 180 | 29 | Unverified
+33 | 104 | 1.733 | 218 | 29 | Unverified
+34 | 48 | 0.800 | 220 | 33 | Unverified
+35 | 28 | 0.467 | 223 | 32 | Unverified
+36 | 168 | 2.800 | 237 | 32 | Unverified
+37 | 16 | 0.267 | 82 | 0 | Unverified
+38 | 16 | 0.267 | 85 | 0 | Unverified
+39 | 16 | 0.267 | 69 | 0 | Unverified
+40 | 128 | 2.133 | 234 | 32 | Unverified
+
+Ansem (Riku) -- separate alternate bank: xa_ex_1588.mset
+1 readable slots;60 FPS;247 bones;12 helper records.
+Slot | Frames | Seconds | Keyed channels | Helper channels | Action
+00 | 160 | 2.667 | 147 | 9 | Unverified
+

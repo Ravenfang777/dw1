@@ -1,7 +1,8 @@
-title: KH1FM Nine Styles Prototype v39
+title: KH1FM Nine Styles Prototype v40
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Adds playable Master-based Dual D and a source-inventory entry for KH1 Dark Riku Single D.
+  Dual D: offhand during native Superglide and Roll; Master Aerial Dodge on airborne Jump.
+  Regular Glide is replaced; includes numbered Dark Riku metadata inventory.
   Single D retains native moves until original animation data is mapped.
   Requires installed KH2FM and OpenKH Panacea.
 assets:

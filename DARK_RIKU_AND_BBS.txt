@@ -1,23 +1,7 @@
-SINGLE D ANIMATION INVENTORY
-
-The automatic read-only capture checks these distinct original KH1 models:
-xa_ex_1160 / xa_ex_1168: Dark Riku
-xa_ex_1580 / xa_ex_1588: Ansem (Riku), included separately for disambiguation.
-Model-name reference: https://openkh.dev/kh1/dictionary/mdls.html
-
-Do not assign KH2 Riku's numbers or labels to these KH1 banks. Their actual
-animation slots and semantic names have not been observed in this environment.
-The generated CSV is a full numbered source inventory, including empty or
-unreadable slots. Columns: model,bank,slot,status,frames,fps,bones,keyed_channels,
-helper_channels,helpers,seconds. The log prints a bounded metadata summary.
-Action names will need source playback/observation after reading those numbers.
-
-The existing KH1 motion parser evaluates plain forward channels; it does not
-implement the helper/IK pass yet. A proper Dark Riku port needs separate source
-skeleton retargeting, root/control and contact mapping. No boss AI, guessed
-native pointer or foreign model/moveset is installed by this capture version.
-Source banks are read from original/backup packages without saving game assets.
-No user action beyond starting the build is required for the first inventory.
+Dark Riku capture received:31 main +1 alternate; Ansem/Riku41 +1,74 total.
+See DARK_RIKU_ANIMATION_LIST.txt for the full numbered duration list.
+Semantic action names and playable Single D mapping are still pending.
+Metadata is not full animation/skeleton data.
 
 BIRTH BY SLEEP
 

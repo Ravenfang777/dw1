@@ -339,7 +339,7 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v39_checks": [
+  "v40_checks": [
     {
       "anchor": "native_show_weapon_prologue",
       "steam_rva": "0x2a2e30",
@@ -394,12 +394,30 @@
       "anchor": "native_weapon_color_at_param_24",
       "steam_rva": "0x2a1832",
       "matches": true
+    },
+    {
+      "anchor": "master_regular_glide_whole_prologue",
+      "steam_rva": "0x2b26c0",
+      "matches": true
+    },
+    {
+      "anchor": "master_regular_glide_clears_subtype",
+      "steam_rva": "0x2b26dd",
+      "matches": true
+    },
+    {
+      "anchor": "regular_and_super_glide_share_native_initializer",
+      "matches": true
+    },
+    {
+      "anchor": "native_glide_constructor_and_existing_ability_helper_mapping",
+      "matches": true
     }
   ],
-  "v39_new_hook_sites": 0,
-  "v39_uses_existing_native_visibility_routine": true,
-  "live_v39_game_test": false,
-  "v39_private_skeleton_metadata_checks": {
+  "v40_new_hook_sites": 1,
+  "v40_uses_existing_native_visibility_routine": true,
+  "live_v40_game_test": false,
+  "v40_private_skeleton_metadata_checks": {
     "normal_sora_293_bones": true,
     "helper_hand_206_is_unskinned": true,
     "left_palm_218_is_skinned": true,
@@ -408,6 +426,6 @@
     "grip_helpers_are_unskinned": true,
     "left_palm_base_at_hand": true
   },
-  "v39_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
-  "v39_scope": "Master form adapter and Dark Riku read-only inventory; no new native hooks; native backend/renderer/input unchanged"
+  "v40_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v40_scope": "Master held Superglide/Roll and aerial dodge; one new regular Glide constructor hook; native combat backend unchanged"
 }
