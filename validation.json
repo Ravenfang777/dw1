@@ -1,17 +1,17 @@
 {
-  "name": "KH1FM Seven Styles Prototype v33",
-  "stage": "s372",
-  "source_commit": "ba1264d4bd36496eec9053d9e4c8a95e216fa361",
+  "name": "KH1FM Seven Styles Prototype v34",
+  "stage": "s373",
+  "source_commit": "3bfaf8cf0412ca59e8a0251d2f5d8f0a9da59fae",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 5604138,
-  "dll_sha256": "9a4c3b3bec48ebecf36f1474670f074272ada153c5ea40c7771447374a373f1f",
-  "source_patch_sha256": "2687bff5a7f1cbe2fb7c28caa504e984eba0dc9148594aa4f732dc645c55e758",
-  "tests_passed": 505,
+  "dll_bytes": 5632865,
+  "dll_sha256": "9cc999b5abf741f13166bd277b2548af3a3e452dfece0eb7c066bea4b36e11c6",
+  "source_patch_sha256": "f5df700624f1bb06fa506f6da5341906ef3339353a62a9e1b7cfe306f986d8a4",
+  "tests_passed": 507,
   "tests_failed": 0,
   "test_cache": "Linux test cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 31,
-  "style_tests": 160,
+  "style_tests": 161,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -30,12 +30,12 @@
     "bcryptprimitives.dll"
   ],
   "new_native_anchor_checks": 11,
-  "source_scope_checks": 98,
+  "source_scope_checks": 109,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v33_game_or_gpu_test": false,
+  "live_v34_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "Single C air source 181, one-shot airborne Square 193, Wisdom Quick Run, Riku item casts for Cure/Gravity/Stop/Aero, separately retargeted base Sora fallbacks and matching visual-only spell FX",
+  "new_behavior": "Single C ground 152/151/152; air 182/181/base Sora finisher with separate source rigs; aerial Cure/Stop/Aero/Gravity 193 with finite native guard objects; native air Square restored; Triangle ground 195/air 194",
   "model_metadata_checks": 7,
-  "preserved_v32_commit": "65d409e1dd0f1212d6ed27bc1edad5aa61a2ada6"
+  "preserved_v33_commit": "ba1264d4bd36496eec9053d9e4c8a95e216fa361"
 }

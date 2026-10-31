@@ -1,8 +1,8 @@
-title: KH1FM Seven Styles Prototype v33
+title: KH1FM Seven Styles Prototype v34
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Refine Single C: Riku 181 aerial attacks, airborne Square 193, Quick Run,
-  Riku item casts and KH2 base Sora fallback actions and matching spell effects.
+  Single C: exact Riku/Sora combos, guarded 193 aerial casting,
+  native air Square and Triangle 195 on ground / 194 in air.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

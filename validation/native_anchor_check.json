@@ -339,7 +339,7 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v33_checks": [
+  "v34_checks": [
     {
       "anchor": "native_show_weapon_prologue",
       "steam_rva": "0x2a2e30",
@@ -396,10 +396,10 @@
       "matches": true
     }
   ],
-  "v33_new_hook_sites": 0,
-  "v33_uses_existing_native_visibility_routine": true,
-  "live_v33_game_test": false,
-  "v33_private_skeleton_metadata_checks": {
+  "v34_new_hook_sites": 0,
+  "v34_uses_existing_native_visibility_routine": true,
+  "live_v34_game_test": false,
+  "v34_private_skeleton_metadata_checks": {
     "normal_sora_293_bones": true,
     "helper_hand_206_is_unskinned": true,
     "left_palm_218_is_skinned": true,
@@ -408,6 +408,6 @@
     "grip_helpers_are_unskinned": true,
     "left_palm_base_at_hand": true
   },
-  "v33_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
-  "v33_scope": "Single C explicit 181/193 action routing and source-correct Sora fallback/FX; no new native hook sites; protected other styles retained"
+  "v34_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v34_scope": "Single C mixed combos, Triangle and finite native casting guards; no new native hook sites; existing native contact and guard backend reused"
 }

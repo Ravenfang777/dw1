@@ -1,10 +1,11 @@
 {
-  "kind": "Single C v33 action, animation and effect scope",
-  "stage": "s372",
-  "preserved_from_v32_commit": "65d409e1dd0f1212d6ed27bc1edad5aa61a2ada6",
+  "kind": "Single C v34 mixed combos, guarded aerial casts and Triangle actions",
+  "stage": "s373",
+  "preserved_from_v33_commit": "ba1264d4bd36496eec9053d9e4c8a95e216fa361",
   "checks": {
     "unchanged_crates/kh1-hook/src/win/leftblade.rs": true,
-    "unchanged_crates/kh1-hook/src/win/combat.rs": true,
+    "unchanged_crates/kh1-hook/src/win/dual_cast.rs": true,
+    "unchanged_crates/kh1-hook/src/win/native_spell_fx.rs": true,
     "unchanged_crates/kh1-hook/src/win/dualglide.rs": true,
     "unchanged_crates/kh1-hook/src/win/dual_hover.rs": true,
     "unchanged_crates/kh1-hook/src/win/form.rs": true,
@@ -34,17 +35,16 @@
     "pose_function_unchanged_fn dual_keep_native(": true,
     "pose_function_unchanged_pub fn standard_glide_bind(": true,
     "pose_function_unchanged_fn dual_visual_source(": true,
-    "takeover_outside_three_scoped_functions_unchanged": true,
-    "takeover_preserved_unsafe extern \"system\" fn physics(": true,
+    "takeover_outside_scoped_functions_unchanged": true,
     "takeover_preserved_pub fn dual_release(": true,
     "takeover_preserved_pub unsafe fn dual_accept_attack(": true,
     "takeover_preserved_pub fn dual_native_selected(": true,
-    "committed_action_hooks_only_add_single_c_scope_and_press_latch": true,
-    "native_fx_filter_only_extends_style_predicate": true,
-    "cast_witness_fire_recovery_and_native_clock_unchanged": true,
-    "fx_outside_snapshot_step_draw_only_adds_single_c_predicate": true,
-    "fx_resource_admission_unchanged_fn load(": true,
-    "fx_resource_admission_unchanged_fn spell_resource(": true,
+    "takeover_preserved_pub unsafe fn dual_prepare_air(": true,
+    "defensive_hooks_only_remove_old_air_square_latch": true,
+    "entire_native_contact_backend_unchanged_except_two_guard_wrappers": true,
+    "native_guard_step_itself_is_byte_identical": true,
+    "spell_fx_only_changes_single_c_override_timeline": true,
+    "startup_only_adds_module_and_version": true,
     "protected_policy_pub fn abilities(": true,
     "protected_policy_pub fn native_combo(": true,
     "protected_policy_pub fn blocked_command(": true,
@@ -62,48 +62,59 @@
     "protected_policy_pub fn ranged_idle_body(": true,
     "protected_policy_pub fn spin_source(": true,
     "protected_policy_pub fn align_visual_hands(": true,
-    "source_181_is_explicit_and_validated": true,
-    "ground_aliases_not_changed_by_air_refinement": true,
-    "air_contact_windows_are_original_not_guessed": true,
-    "air_pose_aliases_use_actual_riku_source": true,
-    "air_combo_input_waits_after_last_real_contact": true,
-    "air_combo_gravity_hold_is_finite": true,
-    "193_uses_separate_source_qualification": true,
-    "193_shape_and_atkp_must_exist": true,
-    "193_no_magic_script_or_repeat_windows": true,
-    "193_only_one_air_row": true,
-    "air_square_requires_fresh_press_and_free_air": true,
-    "air_square_uses_native_logical_pressed_bits": true,
-    "air_square_can_act_and_water_gates": true,
-    "air_square_event_script_binding_and_loaded_data_gates": true,
-    "air_square_held_latch_cannot_auto_glide": true,
-    "air_square_native_control_original_called_once_then_return": true,
-    "one_shot_controller_started_explicitly": true,
-    "air_session_retired_and_gated": true,
-    "riku_quickrun_uses_dedicated_wisdom_movement_without_shots": true,
-    "native_roll_commit_still_selects_quickrun": true,
-    "riku_item_casts_cover_all_four_spells": true,
-    "other_spell_pose_routes_unchanged": true,
-    "missing_guard_ledge_glide_and_heavy_poses_are_base_sora": true,
-    "riku_and_sora_have_distinct_body_calibrations": true,
-    "riku_owned_wisdom_dodge_uses_sora_calibration": true,
-    "fallback_ledge_hands_keep_native_alignment": true,
-    "sora_fx_anchors_use_displayed_pose_inverse": true,
-    "fx_snapshot_never_treats_riku_indices_as_sora": true,
-    "single_c_uses_base_magic_sub_zero": true,
-    "unmatched_fx_not_replaced": true,
-    "fx_only_native_learned_cast_witnesses": true,
-    "kh2_fx_do_not_add_spell_damage": true,
-    "filter_keeps_native_script_and_object_ownership": true,
-    "no_direct_native_spell_state_writes": true,
-    "item_cast_fx_uses_sora_logical_magic_motion": true,
-    "item_cast_release_is_scaled_not_new_spell_logic": true,
-    "same_seven_style_ids_and_exclusivity": true,
-    "single_c_remains_no_duplicate": true,
-    "only_reviewed_source_and_docs_change": true
+    "protected_policy_pub fn spell_effect_route(": true,
+    "protected_policy_pub fn riku_character_contacts(": true,
+    "protected_policy_pub fn owned_action(": true,
+    "exact_six_sources": true,
+    "sora_finisher_resolves_real_base_row": true,
+    "every_requested_contact_qualifies_before_mutation": true,
+    "real_pose_and_root_identity_preserved": true,
+    "sora_foreign_alias_removed_from_riku_rig": true,
+    "input_continuation_only_on_nonfinal_slots": true,
+    "source_switch_before_animation_and_contacts": true,
+    "no_cross_skeleton_blend": true,
+    "old_sweeps_retired_on_rig_switch": true,
+    "sora_finisher_gets_its_own_battle_records": true,
+    "owned_finisher_uses_separate_sora_calibration": true,
+    "finisher_scope_requires_present_host_not_none_equality": true,
+    "square_override_and_latch_completely_removed": true,
+    "triangle_is_single_c_free_field_only": true,
+    "triangle_exact_ground_and_air_ids": true,
+    "triangle_reads_native_logical_pressed_and_preserves_keyboard": true,
+    "triangle_native_can_act_and_deep_water_gates": true,
+    "triangle_original_control_once_and_buttons_restored": true,
+    "triangle_no_attack_or_event_windows": true,
+    "triangle_finite_scripted_not_attack_combo": true,
+    "ground_special_spells_stay_item_air_use_193": true,
+    "cast_log_mask_handles_more_than_32_variants": true,
+    "cure_fx_release_uses_actual_selected_motion_length": true,
+    "guard_requires_real_shapes_and_atkp": true,
+    "guard_dimensions_and_offsets_must_be_finite": true,
+    "guard_clip_has_no_damage_or_events": true,
+    "guard_window_is_finite_visible_source_interval": true,
+    "guard_only_for_accepted_aerial_193_cast": true,
+    "guard_snapshot_after_successful_final_pose_write": true,
+    "guard_draw_witness_requires_same_cast_and_spell": true,
+    "guard_draw_witness_rejects_stale_future_or_changed_binding": true,
+    "guard_clock_and_motion_bounded": true,
+    "guard_rejects_teleports": true,
+    "guard_uses_actual_displayed_body_and_weapon": true,
+    "native_guard_output_has_zero_attacks_and_no_invulnerability": true,
+    "guard_runtime_never_steps_controller_or_strike_pipeline": true,
+    "guard_wrapper_only_runs_existing_guard_backend": true,
+    "native_pure_guard_priority_and_clash_type_unchanged": true,
+    "native_pure_guard_has_zero_power": true,
+    "guard_cleanup_verifies_actor_and_unique_private_handle": true,
+    "guard_state_reuses_one_data_allocation": true,
+    "guard_retires_when_cast_or_display_is_missing": true,
+    "guard_retires_on_binding_and_style_change": true,
+    "guard_checked_before_and_after_native_physics": true,
+    "no_new_hurt_drive_spell_hooks": true,
+    "other_style_spell_fx_and_native_filter_unchanged": true,
+    "only_reviewed_files_changed": true
   },
   "source_sha256": {
-    "AGENTS.md": "dafa0ded1d86bc05f3c862cf1880bdce4d47f531a107b986c53c51344cfd955b",
+    "AGENTS.md": "45a8d5941fa23c1e088fe03404f71e2bf3362d7cb787fb5bbc991a1d2d88f5f7",
     "Cargo.lock": "8c5b397f888850e59fbc65d0e866243567ad67111ae5c7d264eed0310990823e",
     "Cargo.toml": "013c041e8545b9056f491c3ee248b21049997b09d8366d9f71cc4e0d8ab2fe97",
     "crates/kh1-data/src/inverse.rs": "1fc966dd555d40b8543d2059dc221a87370b005ecce60da91f31988f3603fa6d",
@@ -111,101 +122,106 @@
     "crates/kh1-data/src/retarget/source.rs": "86ba661c5b94ebd80ae6a470755e3956ef52b8910c2af30eb7ac52bec649b949",
     "crates/kh1-data/src/secondary.rs": "735404d84bcdfba62f55a12144c09e0002b9c0979bb29947fe43c308cd9d678b",
     "crates/kh1-hook/src/defensive_bridge.rs": "a723fbfd1704261a4529cde4ea7915a639d672666edce1cffe40e68634880c76",
-    "crates/kh1-hook/src/dual_wield.rs": "c42d09ba17625b5fa19875a31c10eff191212ba35562f46756c5916c09087903",
-    "crates/kh1-hook/src/lib.rs": "628aa2c531d073d39fd9bf4caeae1d6340e0fb44aa781bee6b9f251b8c1ef1a3",
-    "crates/kh1-hook/src/win/combat.rs": "4c5c04eaa2ccb53a772411dcac4b3ee0b97c7d99037c76b0a17a7c6c3faf848a",
-    "crates/kh1-hook/src/win/dual.rs": "367e31f1a17202bfa4309aa44931e64d328f7a55dd77a90854f340e5813bfc6d",
-    "crates/kh1-hook/src/win/dual_actions.rs": "1b533bf076066d9fb9fe5d7efbb5975ef76848f32c135f792846371a0387b88e",
+    "crates/kh1-hook/src/dual_wield.rs": "badfc44eec1a684fe364cb8a27c7f35d2d1ea5c6417f5b2506fea96490a13c15",
+    "crates/kh1-hook/src/lib.rs": "5fd919eb2cf9b10736bbe6d5f4d9e3786fc863204a683e812dde29e4dccaa7b2",
+    "crates/kh1-hook/src/win/combat.rs": "3f6a464e78ec9c67c562334018cecb30c75733839d13099424a7b934e1fe4a11",
+    "crates/kh1-hook/src/win/dual.rs": "69edcc1d3764ccde8045a89d45791268c50dedaf7df000ad10183facfd4a76f0",
+    "crates/kh1-hook/src/win/dual_actions.rs": "46c14d8bf1aaab06d9d8a41083ca3b8eb62aeae4c91948920533d81faadb3f1e",
     "crates/kh1-hook/src/win/dual_cast.rs": "19170e6d222f1dd3ab98686184b9e855b61673a478d15820d298094c438e8281",
     "crates/kh1-hook/src/win/dual_hover.rs": "2e62ecd7ceb53a9d94ef5ecfadb67a17e9aa79bdf3aeb33887b1ff1c09c0520a",
-    "crates/kh1-hook/src/win/dual_magic_fx.rs": "5b0b91b4ea6cfa587d805acdd672416cb61c59c7197ae8b0bad8e2f2b5b82f9b",
+    "crates/kh1-hook/src/win/dual_magic_fx.rs": "c35275e9c59517c0229151132b9abc7182e82176aa118d10df6d3e564e9c664e",
     "crates/kh1-hook/src/win/dualglide.rs": "3d2e55437ac7346f3d87736cb445595b962aeddafe4f2517a2dc55d7b0a904b5",
     "crates/kh1-hook/src/win/form.rs": "6fb676f44e1e2114b9051324aba5fe23372481cbae79f3cebdd77acf00e3d3df",
     "crates/kh1-hook/src/win/formmagic.rs": "9ef238f04ca6b6859ead3999116c46071e45d2c046e7d348011ffd56acfc8b32",
     "crates/kh1-hook/src/win/leftblade.rs": "092726dd96ed8ec8e4ef0ce11fd4e27d115eaec7daa0c7306bbee616c6386d99",
-    "crates/kh1-hook/src/win/mod.rs": "289498ff6cd47d57beb6d12ac539b01ff895da28acad7f2b7f3a63d9f3d3e54a",
+    "crates/kh1-hook/src/win/mod.rs": "07394a2ea6783f765a3f45a481e61e3a2fb52e458af11bd63cbbeddd677b74fb",
     "crates/kh1-hook/src/win/native_spell_fx.rs": "8c81fb0dd8745a9f12e7ca6d12fbf185abca172a9326557bdad2555f4e9a79c7",
-    "crates/kh1-hook/src/win/pose.rs": "81d91e530adef0a3afe33a65aa204c45a72d775a804469a2b1b5fcffd62eac9f",
+    "crates/kh1-hook/src/win/pose.rs": "fd9f8e5308407ba2c4e1df2250c896968e26cbc079ac43152098480d6769266c",
+    "crates/kh1-hook/src/win/single_c_guard.rs": "68420c520bb7de7ba7c62ea86ad7fc5601292a4687da154902b4f84261601753",
     "crates/kh1-hook/src/win/steam_map.in": "ea65f1275af0d7b62bdfe31045c0ffac28a1840828f6427f1e74f08a6597cfaa",
-    "crates/kh1-hook/src/win/takeover.rs": "babff59250515fd4c60a7a2e08afccd22baaa135eab71b6856abbf2bd44a8a86",
+    "crates/kh1-hook/src/win/takeover.rs": "42fd4c1b75b7e0044e3dc6ad6d73236542095cc2cec74a40037af14f05dd1dde",
     "crates/kh2-data/src/lib.rs": "027e049a7442d3ccd64a3e8baadac7033dd685ee8652d7ec57f22ede7b006e83",
-    "crates/kh2-data/src/riku.rs": "f966fa9f5957f61f425751c3b9257c11cae8db83e39311b795f7c85e599ee8b4",
-    "crates/kh2-data/src/riku/combo.rs": "bacda7169d0becc71b73538fb735656f2a0a6a0cf3477fbd68db580803e6fd17",
+    "crates/kh2-data/src/riku.rs": "6a976eb59be612f08b306ef7267b13ebacc1f146c46fda200c0ce42a6edeb9ac",
+    "crates/kh2-data/src/riku/combo.rs": "57ba64bbb79e4a932d0b8363c3d13b05c0b4319230d3616516d497a0ea405d60",
     "crates/kh2-data/src/roxas.rs": "6657e9ca220a7e8841453feb18fdf27a4cd5ea13834a80a413df75dd2f9757e6",
     "crates/kh2-data/src/sora.rs": "6c557fea5859dfd76600c4fd46846d0fdfed74390dc2239aca3cdd10175a0ba5",
-    "docs/combat-model.md": "4023411a1f3ad64c542df8484901b84433b94cfc592642d291416433cbf22804"
+    "docs/combat-model.md": "c93e046c5aa7cba365f101218d58e6a340f517bedf7baec86a50a6f9cde7145d"
   },
   "preserved_files": {
     "crates/kh1-hook/src/win/leftblade.rs": {
       "sha256": "092726dd96ed8ec8e4ef0ce11fd4e27d115eaec7daa0c7306bbee616c6386d99",
-      "matches_v32": true
+      "matches_v33": true
     },
-    "crates/kh1-hook/src/win/combat.rs": {
-      "sha256": "4c5c04eaa2ccb53a772411dcac4b3ee0b97c7d99037c76b0a17a7c6c3faf848a",
-      "matches_v32": true
+    "crates/kh1-hook/src/win/dual_cast.rs": {
+      "sha256": "19170e6d222f1dd3ab98686184b9e855b61673a478d15820d298094c438e8281",
+      "matches_v33": true
+    },
+    "crates/kh1-hook/src/win/native_spell_fx.rs": {
+      "sha256": "8c81fb0dd8745a9f12e7ca6d12fbf185abca172a9326557bdad2555f4e9a79c7",
+      "matches_v33": true
     },
     "crates/kh1-hook/src/win/dualglide.rs": {
       "sha256": "3d2e55437ac7346f3d87736cb445595b962aeddafe4f2517a2dc55d7b0a904b5",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh1-hook/src/win/dual_hover.rs": {
       "sha256": "2e62ecd7ceb53a9d94ef5ecfadb67a17e9aa79bdf3aeb33887b1ff1c09c0520a",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh1-hook/src/win/form.rs": {
       "sha256": "6fb676f44e1e2114b9051324aba5fe23372481cbae79f3cebdd77acf00e3d3df",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh1-hook/src/win/formmagic.rs": {
       "sha256": "9ef238f04ca6b6859ead3999116c46071e45d2c046e7d348011ffd56acfc8b32",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh1-hook/src/win/steam_map.in": {
       "sha256": "ea65f1275af0d7b62bdfe31045c0ffac28a1840828f6427f1e74f08a6597cfaa",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh1-hook/src/defensive_bridge.rs": {
       "sha256": "a723fbfd1704261a4529cde4ea7915a639d672666edce1cffe40e68634880c76",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh1-data/src/retarget.rs": {
       "sha256": "814680f2fce5f00f7baa20dcefdfc10c5a1b87170183dfe298f20b378c489fe4",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh1-data/src/retarget/source.rs": {
       "sha256": "86ba661c5b94ebd80ae6a470755e3956ef52b8910c2af30eb7ac52bec649b949",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh1-data/src/inverse.rs": {
       "sha256": "1fc966dd555d40b8543d2059dc221a87370b005ecce60da91f31988f3603fa6d",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh1-data/src/secondary.rs": {
       "sha256": "735404d84bcdfba62f55a12144c09e0002b9c0979bb29947fe43c308cd9d678b",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh2-data/src/sora.rs": {
       "sha256": "6c557fea5859dfd76600c4fd46846d0fdfed74390dc2239aca3cdd10175a0ba5",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh2-data/src/roxas.rs": {
       "sha256": "6657e9ca220a7e8841453feb18fdf27a4cd5ea13834a80a413df75dd2f9757e6",
-      "matches_v32": true
+      "matches_v33": true
     },
     "crates/kh2-data/src/lib.rs": {
       "sha256": "027e049a7442d3ccd64a3e8baadac7033dd685ee8652d7ec57f22ede7b006e83",
-      "matches_v32": true
+      "matches_v33": true
     },
     "Cargo.toml": {
       "sha256": "013c041e8545b9056f491c3ee248b21049997b09d8366d9f71cc4e0d8ab2fe97",
-      "matches_v32": true
+      "matches_v33": true
     },
     "Cargo.lock": {
       "sha256": "8c5b397f888850e59fbc65d0e866243567ad67111ae5c7d264eed0310990823e",
-      "matches_v32": true
+      "matches_v33": true
     }
   },
   "live_game_or_gpu_test_performed": false,
-  "native_spell_gameplay": "KH1 MP/heal/damage/levels unchanged; matching visual-only base Sora FX; unmatched native effects retained",
-  "new_contact_sources": "explicit Riku 193 real physical body group only; 181 retains actual weapon contacts; no spell contacts added"
+  "native_spell_gameplay": "KH1 spells retained; finite native guard objects only for visible 193 aerial casts; no hurt/HP/MP takeover",
+  "new_contact_sources": "actual Riku and base Sora aerial finisher weapon windows; guard-only 193; visual-only Triangle 194/195"
 }
