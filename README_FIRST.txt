@@ -1,106 +1,95 @@
-KH1FM FIVE STYLES -- PROTOTYPE v20 (s359)
+KH1FM FIVE STYLES -- PROTOTYPE v21 (s360)
 
-INSTALL -- REPLACES BROKEN v19
-1. Fully close KH1FM. Disable v19, v18 and every older Dual Wield prototype.
-2. Install this ZIP as one OpenKH mod. Enable ONLY v20, then Build and Run.
+INSTALL
+1. Fully close KH1FM. Disable v20 and every older Dual Wield prototype.
+2. Install this ZIP as one OpenKH mod. Enable ONLY v21; Build and Run.
    Panacea is required. F1 cannot reload a native DLL.
-3. Confirm s359 and PROTOTYPE v20 in kh1-dual-wield.log next to the game EXE.
+3. Check s360 / PROTOTYPE v21 in kh1-dual-wield.log next to the game EXE.
 
-The five IDs remain Dual A 126, Dual B 125, Single A 124, Single B 123,
-Anti 122. All are 0 AP and exclusive. Only Dual styles duplicate the
-currently equipped weapon. There is no second weapon menu or Drive state.
-Keep old offhand/moveset Lua, duplicate model mods and the full KH2 Combat
-overhaul disabled. Normal Sora and your installed KH2FM are required.
-This mod goes in OpenKH, not the Lua scripts folder. No game assets supplied.
+Five exclusive 0-AP IDs remain: Dual A 126, Dual B 125, Single A 124,
+Single B 123, Anti 122. Only Dual styles duplicate the equipped weapon.
+Normal Sora and your installed KH2FM are required; no game assets supplied.
+Keep old offhand/moveset Lua, duplicate Sora model mods and the full KH2
+Combat overhaul disabled. This mod goes in OpenKH, not the scripts folder.
 
-CORRECTIONS
-v19 wrongly rejected actor +160 bit 100 hex. KH1 actually sets this bit
-when it consumes a motion change; it is a first-frame notification, not a
-special animation-bank selector. This could discard an accepted attack
-and clear an observed cast before its KH2 pose/effect was admitted.
+WHAT CHANGED
+Single B Guard after Fire: the old code confused native Guard ROW 0x3D
+with MOTION 0x3D, which is also Fire recovery. That raw map is removed.
+An observer now records the actual native Guard row start and the motion
+its original code requests. Only that exact, current witness can draw
+KH2 Sora's guard press. Native blocking, context, effects and eligibility
+remain. The same correction applies to Single A. No Guard ability is added.
 
-v20 permits that normal first frame through its shared field/cast scope
-and removes the passive pose's one-frame blanking check too. Real actor/
-body binding, event/script, movement, native ability priority, cast header/
-clock and ownership lifetime guards remain. The native flag is never
-patched. Accepted landing/interrupt attacks and the bounded cast recovery
-bridge remain, with the incorrect notification gate removed.
+Fire endings: ground Fire is natively 0x36 then 0x3D; air Fire is 0x83
+then 0x8A. Both phases now share one continuous KH2 donor cast timeline,
+using the installed native durations/FPS. They keep one cast/effect ID,
+so the follow-up does not restart a spell or its effects. Other motions
+and spells are not linked. Actor, scene, header, pointer, repeat and
+lifetime guards remain. Native costs, damage, targeting and recovery stay.
 
-v19 also added an early B Roll selector before actual native commitment.
-That selector and its generic control override are removed. Both B styles
-again start Quick Run only from the committed native Roll-start hook,
-through the existing Single B host-action path. This restores the entry
-route reported working for Single B before v19. Release, loaded finite
-timing and the end clip remain. Native Dodge Roll eligibility still gates
-the action; no Quick Run/growth ability is added to the save.
-
-Dual B uses the same path and Wisdom 203/204 body data with both Final idle
-blade tracks. Its native Roll symptom predates v19; the exact earlier
-cause is not established without a fresh native log. The new build records
-actual hook installation and action admission/start/fallback details so
-that the next result can distinguish those paths. Do not treat the offline
-checks as a verified in-game Dual B fix.
-
-Retained: Anti's base KH2 Sora Glide/Superglide body pose and weaponless
-Dodge Roll instead of intrinsic Anti Glide; finite combo Side Spin, aura,
-and no magic/items/summons. Single B keeps base KH2 Sora's guard-press
-animation with native blocking. A finisher Superglide, .75 Wisdom Run,
-existing spell draw filtering, all native stats/party and style exclusivity
-remain. No gauge, outfit, stat bonus, partner change or extra ability.
+Dual B Quick Run: a standalone Wisdom dodge profile now supplies the
+actual 203/204 body animation, controller clips and movement parameters.
+It no longer relies on Final combo/Guard adapter admission. Both equipped
+Keyblades remain represented by Final idle blade tracks (or standard bind
+pose fallback if an optional idle track is absent). No attack/shot/cast
+events or hitboxes run during this dodge, and no growth ability is granted.
+It still enters only after native Dodge Roll is committed. Single B's
+working entry path is retained. This is a new live test of that independent
+Wisdom route; offline checks do not prove the earlier Dual B admission cause.
 
 FIRST TEST
-1. Test an ordinary ground and air attack, including immediately after
-   landing. Native attack abilities still retain their native combo lane.
-2. In Dual B and Single B cast Fire, Blizzard, Thunder and Cure, including
-   repeated casts. Check KH2 poses/effects and normal MP/damage/healing.
-3. Test Single B Quick Run separately: with native Dodge Roll equipped,
-   move and tap Square, then hold and release it. Check completion and
-   return to normal movement. Repeat after a style/map/menu change.
-4. Repeat that test in Dual B. If it still rolls, or either Quick Run
-   glitches, return the FULL fresh kh1-dual-wield.log from this run. It is
-   next to KINGDOM HEARTS FINAL MIX.exe, not in the scripts folder.
-   Include startup; do not restart the game before copying that log.
+1. Single B: with native Guard equipped, stop moving and press Square.
+   Check KH2 guard press and actual blocking. It must not appear after Fire.
+2. Single B and Dual B: Fire on the ground and in the air, including
+   repeated casts. Check smooth cast endings and return to idle/fall.
+3. Dual B: with native Dodge Roll equipped, hold a direction and tap
+   Square, then hold/release it. Check Wisdom Quick Run, both blades,
+   completion, normal movement and a second independent dodge.
+4. Repeat after menu/style/map changes. Recheck basic combos and Single B
+   Quick Run. Native attack abilities still retain their native combo lane.
 
-Useful log markers:
-  STYLE COMMITTED ROLL HOOK: installed=true
-  DUAL B ACTION DATA: quick_run_ready
-  STYLE NATIVE ROLL ENTRY: style=Ranged or SingleB
+If a problem remains, include the FULL fresh kh1-dual-wield.log, including
+startup, from beside KINGDOM HEARTS FINAL MIX.exe before another restart.
+Useful markers:
+  STYLE GUARD ROW HOOK: installed=true
+  STYLE NATIVE GUARD WITNESS: row=0x3D resolved_motion=...
+  STYLE FIRE SEQUENCE: 0x36->0x3D or 0x83->0x8A
+  DUAL B WISDOM DODGE DATA: adapter=true growth=true
+  STYLE COMMITTED ROLL HOOK / STYLE NATIVE ROLL ENTRY
   DUAL B QUICK RUN REQUEST / DUAL B QUICK RUN START
-  SINGLE B QUICK RUN REQUEST / SINGLE B QUICK RUN START
   STYLE QUICK RUN ADMISSION FAILED / COMMITTED DODGE START FAILED
-  STYLE KH2 CAST: ... motion_changed=true
-  STYLE ACCEPTED ATTACK HANDOFF
-A first-frame motion_changed=true is legitimate and must not discard a cast.
-An old log does not establish which current DLL or action route ran.
 
-SPELL COVERAGE / SETTINGS
-KH2 effect packages cover Fire, Blizzard, Thunder and Cure at all three
-native levels in Dual B/Single B. Gravity, Stop and Aero retain native FX.
-Single A uses KH2 cast poses with native KH1 effects. KH1 spell logic,
-damage, healing, costs and levels remain authoritative.
+RETAINED
+A finisher Superglide; Anti weaponless base KH2 Sora glides/Dodge Roll,
+body combat, aura and no magic/items/summons; Single B .75 Run; all five
+styles/exclusivity; native stats and party. No Drive state, gauge, outfit,
+stat bonus, extra ability or second weapon selection.
 
-kh1-dual-wield.ini is next to the EXE and is preserved. Missing keys use:
+KH2 effect packages cover Fire, Blizzard, Thunder and Cure (all native
+levels) in both B styles. Gravity/Stop/Aero retain native effects. Single A
+uses KH2 cast poses with native KH1 effects. Native spell logic, damage,
+healing, costs and levels remain authoritative. Existing effect filtering
+is retained; this update does not claim new target-effect suppression.
+
+kh1-dual-wield.ini next to the EXE is preserved. Missing keys use:
   dual_b_spell_fx = on
   idle_speed = 0.75
   offhand_only_test = off
   remove_dual_wield = off
-Single B Run is fixed at .75. offhand_only_test isolates left imported
-contacts in Dual styles; single/Anti contacts, spells and party damage
-are unaffected. For uninstall, set remove_dual_wield on, launch/load/save
-with v20, close, disable the mod and Build again. Only the five custom
-entries are removed. Native DLL/INI changes require a full game restart.
+Single B Run is fixed at .75. Offhand-only testing affects left imported
+contacts in Dual styles, not singles/Anti, spells or party damage.
+For uninstall: remove_dual_wield on, launch/load/save with v21, close,
+disable mod and Build again. Only the five custom entries are removed.
+Native DLL/INI edits require a full game restart.
 
 VALIDATION / LIMITS
-435 portable tests pass across 27 suites, including 134 style tests. New
-fixtures cover native first-frame notifications through attack/cast/effect
-admission and both B Quick Runs held/released through completion. Windows
-x64 release, expected PE imports/exports, 43 source-scope checks and seven
-additional native motion-update/notification anchors pass. Earlier native
-action, renderer and spell-filter checks are retained. The source audit
-explicitly rejects the discarded flag gate and early B Roll selector.
+440 portable tests pass across 27 suites (139 style tests). Windows x64
+release, PE interface, 55 source-scope checks and 12 new native row/Fire
+anchors pass. New tests cover Guard versus Fire identity, both phases,
+rates, header publication lag, interruption/repeat rejection and Wisdom
+movement without Final combo rows, events, contacts or saved growth.
 
-These are offline checks. No fresh game/GPU execution was performed. The
-user's video/report identifies the live v19 regression; current animation,
-spell, dodge and interruption behavior must be tested in a fresh process.
-Source patch, provenance, licences and validation receipts are included;
-no recording, game assets, executable or disassembly is distributed.
+No fresh game/GPU execution was performed. Fire release/FX synchronization,
+actual Guard and Dual B dodge behavior need the fresh-process test above.
+Source patch, provenance, licences and validation receipts are included.
+No game assets, executable, recording or disassembly is distributed.

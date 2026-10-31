@@ -1,17 +1,17 @@
 {
-  "name": "KH1FM Five Styles Prototype v20",
-  "stage": "s359",
-  "source_commit": "aa58907bef0088de8c8369140790f27db1e77eb2",
+  "name": "KH1FM Five Styles Prototype v21",
+  "stage": "s360",
+  "source_commit": "6dc03e62beec76d9f5a3825f4a92536832704c37",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4779894,
-  "dll_sha256": "147e33383f65a2f3b2bf5ed87a90ee7043ac70ce43d3843cad8231c064520423",
-  "source_patch_sha256": "5887bd447e78590355c1ef6ea98ca52292cd938af483e36ac65fe28512f89f3a",
-  "tests_passed": 435,
+  "dll_bytes": 4789701,
+  "dll_sha256": "402847ea706be3898bc7474cbab75f146c7ed50c8ffd2bf89c1eec02387a3a1d",
+  "source_patch_sha256": "815f2ec03244e68b4d5872afb90fa02e3b2486109d3a6266352c9e39a7e20d6c",
+  "tests_passed": 440,
   "tests_failed": 0,
-  "test_cache": "fresh Linux cache, RUSTFLAGS=-C codegen-units=1",
+  "test_cache": "Linux test cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 27,
-  "style_tests": 134,
+  "style_tests": 139,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -29,11 +29,11 @@
     "api-ms-win-core-synch-l1-2-0.dll",
     "bcryptprimitives.dll"
   ],
-  "new_native_anchor_checks": 7,
-  "source_scope_checks": 43,
+  "new_native_anchor_checks": 12,
+  "source_scope_checks": 55,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v20_game_or_gpu_test": false,
+  "live_v21_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "repair native first-frame action/cast rejection; remove early B Roll selector and restore native control pulse; retain Anti/Guard changes"
+  "new_behavior": "complete Fire startup/recovery; native Guard row witness; standalone Wisdom dodge character and rig for Dual B"
 }

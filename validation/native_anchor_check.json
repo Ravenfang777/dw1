@@ -272,5 +272,71 @@
   "v20_new_hook_sites": 0,
   "v20_motion_flags_are_read_only": true,
   "v20_no_precontrol_b_roll_selector": true,
-  "live_v20_game_test": false
+  "live_v20_game_test": false,
+  "v21_checks": [
+    {
+      "anchor": "native_row_start_prologue",
+      "steam_rva": "0x2a3980",
+      "matches": true
+    },
+    {
+      "anchor": "native_row_table_stride",
+      "steam_rva": "0x2a39ac",
+      "matches": true
+    },
+    {
+      "anchor": "native_row_resolves_actual_motion",
+      "steam_rva": "0x2a39c4",
+      "matches": true
+    },
+    {
+      "anchor": "native_row_calls_motion_setter",
+      "steam_rva": "0x2a39db",
+      "matches": true
+    },
+    {
+      "anchor": "guard_selector_uses_row_3d",
+      "steam_rva": "0x2a7c63",
+      "matches": true
+    },
+    {
+      "anchor": "guard_selector_calls_row_start",
+      "steam_rva": "0x2a7c6b",
+      "matches": true
+    },
+    {
+      "anchor": "fire_ground_initial_motion",
+      "steam_rva": "0x2a3eb2",
+      "matches": true
+    },
+    {
+      "anchor": "fire_ground_recovery_motion",
+      "steam_rva": "0x2a3ebf",
+      "matches": true
+    },
+    {
+      "anchor": "fire_ground_appends_recovery",
+      "steam_rva": "0x2a3ec7",
+      "matches": true
+    },
+    {
+      "anchor": "fire_air_initial_motion",
+      "steam_rva": "0x2a4221",
+      "matches": true
+    },
+    {
+      "anchor": "fire_air_recovery_motion",
+      "steam_rva": "0x2a422e",
+      "matches": true
+    },
+    {
+      "anchor": "fire_air_appends_recovery",
+      "steam_rva": "0x2a4236",
+      "matches": true
+    }
+  ],
+  "v21_new_hook_sites": 1,
+  "v21_guard_observer_preserves_original_once": true,
+  "v21_row_hook_whole_position_independent_prologue_bytes": 5,
+  "live_v21_game_test": false
 }
