@@ -1,8 +1,8 @@
-title: KH1FM Six Styles Prototype v28
+title: KH1FM Six Styles Prototype v29
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Validate Dual C Roxas by measured bind geometry instead of identical Sora parents.
-  Preserve the confirmed Glide fix and existing styles/gameplay.
+  Give Dual C a separate Roxas body map using real hand joints and measured hierarchy.
+  Preserve the confirmed Glide fix and working styles/gameplay.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

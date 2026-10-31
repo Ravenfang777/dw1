@@ -339,7 +339,7 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v28_checks": [
+  "v29_checks": [
     {
       "anchor": "native_show_weapon_prologue",
       "steam_rva": "0x2a2e30",
@@ -396,10 +396,10 @@
       "matches": true
     }
   ],
-  "v28_new_hook_sites": 0,
-  "v28_uses_existing_native_visibility_routine": true,
-  "live_v28_game_test": false,
-  "v28_private_skeleton_metadata_checks": {
+  "v29_new_hook_sites": 0,
+  "v29_uses_existing_native_visibility_routine": true,
+  "live_v29_game_test": false,
+  "v29_private_skeleton_metadata_checks": {
     "normal_sora_293_bones": true,
     "helper_hand_206_is_unskinned": true,
     "left_palm_218_is_skinned": true,
@@ -408,6 +408,6 @@
     "grip_helpers_are_unskinned": true,
     "left_palm_base_at_hand": true
   },
-  "v28_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
-  "v28_scope": "Roxas bind-geometry admission only; v27 Glide, filename and native gameplay code unchanged"
+  "v29_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v29_scope": "Roxas separately indexed body map only; v28 Glide, filename and native gameplay code unchanged"
 }

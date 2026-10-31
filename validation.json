@@ -1,13 +1,13 @@
 {
-  "name": "KH1FM Six Styles Prototype v28",
-  "stage": "s367",
-  "source_commit": "086fe58e130d3f95daf3cd5a273aeae97a6cbee8",
+  "name": "KH1FM Six Styles Prototype v29",
+  "stage": "s368",
+  "source_commit": "c439c37b9538015ca25dc4d46a8676cba36ba572",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4847206,
-  "dll_sha256": "88cbc298be971ace0998b890a9ef424a9f2e4c0091a075561a847fa9aa0f253d",
-  "source_patch_sha256": "af16d9e2918bc886b9b05e37a07e6b287c6b5550446aaee2138ace7873129110",
-  "tests_passed": 472,
+  "dll_bytes": 4922193,
+  "dll_sha256": "10b0c31e91d97d645a2fa7a9c650dd0663f1b846b5c6f30a71abcf6c34b65d5b",
+  "source_patch_sha256": "8bf27ee4f9dfd5110b34b4dcd099a20f081627e0a985b214b8167d42c41798be",
+  "tests_passed": 477,
   "tests_failed": 0,
   "test_cache": "Linux test cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 31,
@@ -30,12 +30,12 @@
     "bcryptprimitives.dll"
   ],
   "new_native_anchor_checks": 11,
-  "source_scope_checks": 148,
+  "source_scope_checks": 164,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v28_game_or_gpu_test": false,
+  "live_v29_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "admit compatible Roxas bind positions and body frames despite different source parents; preserve existing retarget methods, confirmed Glide and gameplay",
+  "new_behavior": "separate Roxas body landmark map from real hand attachments, ordered hierarchy and bind; preserve raw animation/weapon/contact indices and confirmed styles/Glide",
   "model_metadata_checks": 7,
-  "preserved_v27_commit": "4a6711b6da264ba03da5f665ad1402c4f1a33749"
+  "preserved_v28_commit": "086fe58e130d3f95daf3cd5a273aeae97a6cbee8"
 }
