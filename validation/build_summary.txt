@@ -1,6 +1,6 @@
 Windows x64 release: PASSED
 RUSTFLAGS=-C codegen-units=1
-    Finished `release` profile [optimized] target(s) in 46.86s
-DLL SHA256 786fb2549bec3a4ebadc693538e0491fc921fcf62a995a7532daa121493e025f
-Source e8e0f5036fb27d55200628def51cb9bc7537e338
-530 tests passed across31 suites;172 style tests. No live v42 game/GPU test. Single D mapping pending.
+    Finished `release` profile [optimized] target(s) in 40.98s
+DLL SHA256 3f49ee47b04f27c8cb250ca05f2b4e0f383e23cd25a9924a924a135d7d2d06d1
+Source 9fc83b0362acaba9c948502ccaba6e524e31f3da
+531 tests passed across31 suites;173 style tests. No live v43 game/GPU test. Single D mapping pending.

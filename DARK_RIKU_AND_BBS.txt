@@ -1,7 +1,8 @@
 Dark Riku capture received:31 main +1 alternate; Ansem/Riku41 +1,74 total.
 See DARK_RIKU_ANIMATION_LIST.txt for the full numbered duration list.
 Semantic action names and playable Single D mapping are still pending.
-Metadata is not full animation/skeleton data.
+Main1160 MDLS/MSET payload has now been received and validated.
+Arm/leg helper/IK evaluation and playable mapping remain pending.
 
 BIRTH BY SLEEP
 
