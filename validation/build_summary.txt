@@ -1,6 +1,6 @@
    Compiling kh1-hook v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh1-hook)
-    Finished `release` profile [optimized] target(s) in 26.14s
+    Finished `release` profile [optimized] target(s) in 24.99s
 
-DLL SHA256 cbee8eb5d6cff353eb46d64952360b02a35102c63f336b7df49720471afd41f8
-Source 0d490cbefcefe9152df3b54618c00a01e0f15049
-432 tests passed; no live v19 game/GPU test.
+DLL SHA256 147e33383f65a2f3b2bf5ed87a90ee7043ac70ce43d3843cad8231c064520423
+Source aa58907bef0088de8c8369140790f27db1e77eb2
+435 tests passed; no live v20 game/GPU test.

@@ -1,10 +1,10 @@
-title: KH1FM Five Styles Prototype v19
+title: KH1FM Five Styles Prototype v20
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Five exclusive 0-AP styles. Cast and landing/interrupt attack handoffs;
-  Dual B Quick Run selector; Anti weaponless base Sora Glide and Dodge Roll;
-  Single B base KH2 Guard press. Existing single/dual combos, KH2 spell
-  visuals and Anti darkness retained. No Drive gauge or extra abilities.
+  Repairs v19 first-frame attack/cast rejection. Removes its early B Roll
+  selector and restores the native control pulse and committed Quick Run
+  path. Retains five exclusive 0-AP styles, Anti weaponless base glide/roll,
+  Single B KH2 guard press, spell visuals and Anti darkness. No Drive gauge.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

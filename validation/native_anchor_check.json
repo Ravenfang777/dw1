@@ -231,5 +231,46 @@
   ],
   "v19_new_hook_sites": 0,
   "v19_reuses_original_roll_trampoline_and_existing_setter": true,
-  "live_v19_game_test": false
+  "live_v19_game_test": false,
+  "v20_checks": [
+    {
+      "anchor": "animation_update_clears_change_notification",
+      "steam_rva": "0x29f245",
+      "matches": true
+    },
+    {
+      "anchor": "consumes_queued_motion_before_notification",
+      "steam_rva": "0x29f277",
+      "matches": true
+    },
+    {
+      "anchor": "clears_pending_motion_bit",
+      "steam_rva": "0x29f285",
+      "matches": true
+    },
+    {
+      "anchor": "sets_motion_change_notification_bit_8",
+      "steam_rva": "0x29f288",
+      "matches": true
+    },
+    {
+      "anchor": "writes_motion_change_notification",
+      "steam_rva": "0x29f28c",
+      "matches": true
+    },
+    {
+      "anchor": "native_effect_checks_motion_change_notification",
+      "steam_rva": "0x2ae9a5",
+      "matches": true
+    },
+    {
+      "anchor": "native_attack_checks_motion_change_notification",
+      "steam_rva": "0x2b493e",
+      "matches": true
+    }
+  ],
+  "v20_new_hook_sites": 0,
+  "v20_motion_flags_are_read_only": true,
+  "v20_no_precontrol_b_roll_selector": true,
+  "live_v20_game_test": false
 }

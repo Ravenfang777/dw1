@@ -1,17 +1,17 @@
 {
-  "name": "KH1FM Five Styles Prototype v19",
-  "stage": "s358",
-  "source_commit": "0d490cbefcefe9152df3b54618c00a01e0f15049",
+  "name": "KH1FM Five Styles Prototype v20",
+  "stage": "s359",
+  "source_commit": "aa58907bef0088de8c8369140790f27db1e77eb2",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4780400,
-  "dll_sha256": "cbee8eb5d6cff353eb46d64952360b02a35102c63f336b7df49720471afd41f8",
-  "source_patch_sha256": "a66d20063f609ab05ac2084b748e6752f3453a2e241e825667442967fe853482",
-  "tests_passed": 432,
+  "dll_bytes": 4779894,
+  "dll_sha256": "147e33383f65a2f3b2bf5ed87a90ee7043ac70ce43d3843cad8231c064520423",
+  "source_patch_sha256": "5887bd447e78590355c1ef6ea98ca52292cd938af483e36ac65fe28512f89f3a",
+  "tests_passed": 435,
   "tests_failed": 0,
   "test_cache": "fresh Linux cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 27,
-  "style_tests": 131,
+  "style_tests": 134,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -29,11 +29,11 @@
     "api-ms-win-core-synch-l1-2-0.dll",
     "bcryptprimitives.dll"
   ],
-  "new_native_anchor_checks": 6,
-  "source_scope_checks": 45,
+  "new_native_anchor_checks": 7,
+  "source_scope_checks": 43,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v19_game_or_gpu_test": false,
+  "live_v20_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "cast/accepted-attack handoffs; Dual B early Quick Run; Anti base-body glide/roll; Single B guard press"
+  "new_behavior": "repair native first-frame action/cast rejection; remove early B Roll selector and restore native control pulse; retain Anti/Guard changes"
 }
