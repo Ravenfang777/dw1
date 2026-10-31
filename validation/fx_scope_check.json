@@ -91,29 +91,29 @@
     "duplicate_rgba_is_private_and_regular_only": true,
     "bounded_glide_diagnostics_explain_template_or_rejection": true,
     "rendered_palm_and_first_glide_fixtures_present": true,
-    "unchanged_v26_dual_actions": true,
-    "unchanged_v26_dual_cast": true,
-    "unchanged_v26_dual_magic_fx": true,
-    "unchanged_v26_native_spell_fx": true,
-    "unchanged_v26_combat": true,
-    "unchanged_v26_dual_hover": true,
-    "unchanged_v26_dualglide": true,
-    "takeover_fully_unchanged_from_v26": true,
-    "unchanged_v26_wisdom_dual_dodge": true,
-    "unchanged_v26_port_anti_locomotion": true,
-    "unchanged_v26_load_form_mode": true,
-    "unchanged_v26_dual_visual_motion": true,
-    "unchanged_v26_request_roll": true,
-    "unchanged_v26_request_finisher": true,
-    "unchanged_v26_action_data": true,
-    "unchanged_v26_owned_weapon_out": true,
-    "unchanged_v26_valor_superglide_character": true,
-    "unchanged_v26_valor_air_finisher": true,
-    "unchanged_v26_dual_b_character": true,
-    "unchanged_v26_quick_run_character": true,
-    "unchanged_v26_passive_hit": true,
-    "unchanged_v26_standard_glide_pose": true,
-    "unchanged_v26_standard_glide_template": true,
+    "unchanged_v27_dual_actions": true,
+    "unchanged_v27_dual_cast": true,
+    "unchanged_v27_dual_magic_fx": true,
+    "unchanged_v27_native_spell_fx": true,
+    "unchanged_v27_combat": true,
+    "unchanged_v27_dual_hover": true,
+    "unchanged_v27_dualglide": true,
+    "takeover_fully_unchanged_from_v27": true,
+    "unchanged_v27_wisdom_dual_dodge": true,
+    "unchanged_v27_port_anti_locomotion": true,
+    "unchanged_v27_load_form_mode": true,
+    "unchanged_v27_dual_visual_motion": true,
+    "unchanged_v27_request_roll": true,
+    "unchanged_v27_request_finisher": true,
+    "unchanged_v27_action_data": true,
+    "unchanged_v27_owned_weapon_out": true,
+    "unchanged_v27_valor_superglide_character": true,
+    "unchanged_v27_valor_air_finisher": true,
+    "unchanged_v27_dual_b_character": true,
+    "unchanged_v27_quick_run_character": true,
+    "unchanged_v27_passive_hit": true,
+    "unchanged_v27_standard_glide_pose": true,
+    "unchanged_v27_standard_glide_template": true,
     "glide_attachment_geometry_after_admission_unchanged": true,
     "six_style_ids_and_mutual_exclusivity_use_shared_list": true,
     "dual_c_resolves_only_playable_object": true,
@@ -127,30 +127,39 @@
     "held_glide_color_has_no_hardcoded_white_palette": true,
     "held_glide_palette_retires_with_existing_binding": true,
     "dual_c_does_not_enable_drive_modules": true,
-    "fully_unchanged_v26_crates/kh1-hook/src/win/leftblade.rs": true,
-    "fully_unchanged_v26_crates/kh1-hook/src/dual_wield.rs": true,
-    "fully_unchanged_v26_crates/kh2-data/src/lib.rs": true,
-    "fully_unchanged_v26_crates/kh2-data/src/sora.rs": true,
+    "fully_unchanged_v27_crates/kh1-hook/src/win/leftblade.rs": true,
+    "fully_unchanged_v27_crates/kh1-hook/src/dual_wield.rs": true,
+    "fully_unchanged_v27_crates/kh2-data/src/lib.rs": true,
+    "fully_unchanged_v27_crates/kh2-data/src/sora.rs": true,
     "dual_runtime_only_changes_version_label": true,
     "startup_only_changes_version_label": true,
-    "pose_only_changes_donor_success_log": true,
+    "pose_only_changes_dual_c_loader": true,
     "empty_override_resolves_the_same_playable_model": true,
     "full_mset_names_are_not_double_extended": true,
     "unusable_override_never_becomes_a_resource_path": true,
     "normalization_and_exact_model_fallback_regressions_present": true,
     "resource_errors_report_resolved_path_and_source": true,
-    "rig_errors_preserve_original_loader_reason": true
+    "rig_errors_preserve_original_loader_reason": true,
+    "all_preexisting_retarget_code_and_tests_unchanged": true,
+    "roxas_filename_resolver_fully_unchanged": true,
+    "geometry_validator_is_called_only_from_dual_c_loader": true,
+    "no_equal_parent_gate_remains_in_c_loader": true,
+    "source_geometry_uses_actual_fk_and_runtime_layout": true,
+    "core_landmark_and_frame_guards_remain": true,
+    "reparented_source_is_tested_through_the_real_retarget": true,
+    "actual_asset_and_geometry_diagnostics_precede_admission": true
   },
   "source_sha256": {
     "crates/kh1-hook/src/win/native_spell_fx.rs": "050fdac5d3475a3b09b9229430a6624a69ec073a509a4c10536cf2c953fc7743",
     "crates/kh1-hook/src/win/dual_magic_fx.rs": "8a4fe92ea7414680179fac6b7c232efb94b629bf778ac84a65426a0984149346",
     "crates/kh1-hook/src/win/form.rs": "6fb676f44e1e2114b9051324aba5fe23372481cbae79f3cebdd77acf00e3d3df",
-    "crates/kh1-hook/src/win/dual.rs": "7ab5c981f9972a8d6910ca63a14f5a65784dced663edbec04c193cf025e1ad1c",
+    "crates/kh1-hook/src/win/dual.rs": "58a41c1bd183cc6bb65dcdee847dcd43d6838dff77067b47d8e694897564825b",
     "crates/kh1-hook/src/win/dual_actions.rs": "aecb8a78f8a5523fdc3ff14ec91c4c237f6fbaaceefcb756755bd61df884b111",
-    "crates/kh1-hook/src/win/pose.rs": "2ada09a90ef604e92e63817a63aef7a7421a778d386674afb85b51c9f5bc1b6e",
+    "crates/kh1-hook/src/win/pose.rs": "48c2827e06e42c58f694b64d74344c7d252173632ce8ce6f04833c811e9ea201",
     "crates/kh1-hook/src/win/takeover.rs": "833bdb8c8f87958ba810c844bcc5bfb9eda3a11b7d317d4581dbf2e6d5876a44",
     "crates/kh1-hook/src/win/combat.rs": "4c5c04eaa2ccb53a772411dcac4b3ee0b97c7d99037c76b0a17a7c6c3faf848a",
     "crates/kh1-hook/src/win/dual_cast.rs": "78f1cfb435a088ead8aa3c0e0666f9fa2178a11f3364c55a54e3de42b5e92740",
+    "crates/kh1-data/src/retarget.rs": "19d5f5c1aa5993044031dbdd1ef45160e199616afa4a679e6f1855da3ebd0fc5",
     "crates/kh2-data/src/roxas.rs": "6657e9ca220a7e8841453feb18fdf27a4cd5ea13834a80a413df75dd2f9757e6",
     "crates/kh2-data/src/sora.rs": "6c557fea5859dfd76600c4fd46846d0fdfed74390dc2239aca3cdd10175a0ba5",
     "crates/kh2-data/src/lib.rs": "294efbef16c7ee60636a30774749483dce1619f8ef08c495493633b98699e115",
@@ -158,64 +167,64 @@
     "crates/kh1-hook/src/defensive_bridge.rs": "a723fbfd1704261a4529cde4ea7915a639d672666edce1cffe40e68634880c76",
     "crates/kh1-hook/src/win/steam_map.in": "ea65f1275af0d7b62bdfe31045c0ffac28a1840828f6427f1e74f08a6597cfaa",
     "crates/kh1-hook/src/dual_wield.rs": "b633943a9a2fd0b79401af90d9a5e75ef762f310d31bdcc5f523c8bfdac3b5e2",
-    "crates/kh1-hook/src/lib.rs": "9b12da43e3de453ddcca4cc68357877b8c146e00f009a6511b5ea856a061bf8a",
-    "crates/kh1-hook/src/win/mod.rs": "870879080341c88f35dfb49e348321c506fae4b6328ce96c74e93ee7ae371f64"
+    "crates/kh1-hook/src/lib.rs": "57fe132b1561f6a13cc0505934578b4d257d3992232b7839a7cd6ed0b1f1766b",
+    "crates/kh1-hook/src/win/mod.rs": "76f97f05e42ed29f8c7166ee498564e2a671726adef4adb92d8e9d0ed333b9d2"
   },
   "kind": "static source scope audit plus separately recorded controller/executable validation",
   "native_spell_gameplay": "KH1",
-  "new_contact_sources": "none in v27; existing authored style weapon windows, Wisdom shots and Anti body windows retained",
+  "new_contact_sources": "none in v28; existing authored style weapon windows, Wisdom shots and Anti body windows retained",
   "live_game_or_gpu_test_performed": false,
-  "style": "v27",
-  "stage": "s366",
-  "preserved_from_v26_commit": "378bcbd4d9042c77a8143982714186e87d41abaa",
+  "style": "v28",
+  "stage": "s367",
+  "preserved_from_v27_commit": "4a6711b6da264ba03da5f665ad1402c4f1a33749",
   "preserved_files": {
     "crates/kh1-hook/src/win/dual_actions.rs": {
       "sha256": "aecb8a78f8a5523fdc3ff14ec91c4c237f6fbaaceefcb756755bd61df884b111",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh1-hook/src/win/dual_cast.rs": {
       "sha256": "78f1cfb435a088ead8aa3c0e0666f9fa2178a11f3364c55a54e3de42b5e92740",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh1-hook/src/win/dual_magic_fx.rs": {
       "sha256": "8a4fe92ea7414680179fac6b7c232efb94b629bf778ac84a65426a0984149346",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh1-hook/src/win/native_spell_fx.rs": {
       "sha256": "050fdac5d3475a3b09b9229430a6624a69ec073a509a4c10536cf2c953fc7743",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh1-hook/src/win/combat.rs": {
       "sha256": "4c5c04eaa2ccb53a772411dcac4b3ee0b97c7d99037c76b0a17a7c6c3faf848a",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh1-hook/src/win/dual_hover.rs": {
       "sha256": "2e62ecd7ceb53a9d94ef5ecfadb67a17e9aa79bdf3aeb33887b1ff1c09c0520a",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh1-hook/src/win/dualglide.rs": {
       "sha256": "3d2e55437ac7346f3d87736cb445595b962aeddafe4f2517a2dc55d7b0a904b5",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh1-hook/src/win/takeover.rs": {
       "sha256": "833bdb8c8f87958ba810c844bcc5bfb9eda3a11b7d317d4581dbf2e6d5876a44",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh1-hook/src/win/leftblade.rs": {
       "sha256": "33877b73de72661aead50af0db9bd0bcbe526f9d1a77feeff720c9a4269afe3e",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh1-hook/src/dual_wield.rs": {
       "sha256": "b633943a9a2fd0b79401af90d9a5e75ef762f310d31bdcc5f523c8bfdac3b5e2",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh2-data/src/lib.rs": {
       "sha256": "294efbef16c7ee60636a30774749483dce1619f8ef08c495493633b98699e115",
-      "matches_v26": true
+      "matches_v27": true
     },
     "crates/kh2-data/src/sora.rs": {
       "sha256": "6c557fea5859dfd76600c4fd46846d0fdfed74390dc2239aca3cdd10175a0ba5",
-      "matches_v26": true
+      "matches_v27": true
     }
   }
 }

@@ -1,8 +1,8 @@
-title: KH1FM Six Styles Prototype v27
+title: KH1FM Six Styles Prototype v28
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Fix Dual C animation filename resolution so its Roxas bank can load.
-  Preserve the confirmed Glide attachment/colors and existing gameplay.
+  Validate Dual C Roxas by measured bind geometry instead of identical Sora parents.
+  Preserve the confirmed Glide fix and existing styles/gameplay.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll
