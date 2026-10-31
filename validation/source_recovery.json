@@ -1,7 +1,6 @@
 {
-  "delivered_v13_commit": "2b58a7bcb76711325f484d3d84905cf0a2e26be1",
-  "reconstructed_v13_commit": "0c9b7dfd31ec8d74b6ae47df2a28850324af35b4",
-  "patch_sha256": "22c0fbfb807dd732e12db2f08d06038a743c9a9a9e2506351db002b656887bda",
-  "final_touched_file_blobs_verified": 22,
-  "final_blobs_match_patch": true
+  "v44_original_commit": "a1c16c23694ef7b1aeb970cbf2ad40014536f2fd",
+  "v44_recovered_commit": "556694a0e69d30b4986ff62ac160029c417ffa1f",
+  "exact_tree": "e6d7efed1cbfad8e93019a012e9c992ed1d42f9b",
+  "all_44_patches_applied": true
 }

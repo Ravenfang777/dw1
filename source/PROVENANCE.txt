@@ -1,11 +1,14 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v44 source: a1c16c23694ef7b1aeb970cbf2ad40014536f2fd
+Derivative v45 source: 558f2464036fde23f1b3a5eb2cebe2095e411182
 Branch: dual-wield-prototype
-NineStyles_v44.patch contains 44 derivative commits; apply with git am.
-Includes original project credits, NOTICE and MIT/Apache licences.
-Runtime uses the user's own installed KH1/KH2 resources; no game assets or dumps.
-Historical source recovery: original v13 2b58a7bcb76711325f484d3d84905cf0a2e26be1; reconstructed 0c9b7dfd31ec8d74b6ae47df2a28850324af35b4.
-All 22 touched-file blobs matched the source-patch index hashes.
-Current behavior and confidence: docs/combat-model.md Stage 383 in the source patch.
-Single D main1160 authored pose solver and source admission implemented; playable retarget remains pending.
+NineStyles_v45.patch contains 45 derivative commits; apply with git am.
+Original v44 source: a1c16c23694ef7b1aeb970cbf2ad40014536f2fd
+Recovered v44 source: 556694a0e69d30b4986ff62ac160029c417ffa1f
+Both v44 source trees: e6d7efed1cbfad8e93019a012e9c992ed1d42f9b
+The v44 working checkout had reverted; its delivered source patch restores the
+exact tree. Commit identities changed during git am; source bytes did not.
+Earlier v13 recovery is documented by Stage 352 and the delivered v44 patch.
+All licences/credits retained. No game assets, native byte dumps or pose streams.
+Runtime reads the user's own installed KH1/KH2 resources.
+Current rules/confidence: docs/combat-model.md Stage 384.

@@ -1,0 +1,27 @@
+{
+  "build_passed": true,
+  "machine": "x86_64",
+  "dll_bytes": 4521624,
+  "dll_sha256": "9520590efc3f82c41b7b15ef565ac68d9f53615e11f4897d64445d5a623825ac",
+  "exports": [
+    "DirectInput8Create",
+    "DllMain",
+    "OnFrame",
+    "OnInit"
+  ],
+  "imports": [
+    "KERNEL32.dll",
+    "msvcrt.dll",
+    "ntdll.dll",
+    "USERENV.dll",
+    "WINMM.dll",
+    "WS2_32.dll",
+    "api-ms-win-core-synch-l1-2-0.dll",
+    "bcryptprimitives.dll"
+  ],
+  "unchanged_exports_and_runtime_imports": true,
+  "new_runtime_dependencies": 0,
+  "preexisting_warning_count": 1384,
+  "rust_toolchain": "1.85.0",
+  "new_live_game_test": false
+}

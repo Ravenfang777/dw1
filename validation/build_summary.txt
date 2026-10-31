@@ -1,6 +1,6 @@
 Windows x64 release: PASSED
-RUSTFLAGS=-C codegen-units=1
-    Finished `release` profile [optimized] target(s) in 38.82s
-DLL SHA256 63d149f0d26e74420a1ca129757277710f298bb77afb3d7127996df046639acb
-Source a1c16c23694ef7b1aeb970cbf2ad40014536f2fd
-542 tests passed across 31 suites;173 style tests. No live v44 game/GPU test. Single D mapping pending.
+Rust 1.85.0 / MinGW x64 / RUSTFLAGS=-C codegen-units=1
+578 tests passed across 31 suites; 173 existing style tests; 12 new tests.
+DLL SHA256 9520590efc3f82c41b7b15ef565ac68d9f53615e11f4897d64445d5a623825ac
+Source 558f2464036fde23f1b3a5eb2cebe2095e411182
+No live v45 game/GPU test. First Single D movement mapping test only.
