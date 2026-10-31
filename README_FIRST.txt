@@ -1,79 +1,73 @@
-KH1FM FIVE STYLES -- PROTOTYPE v23 (s362)
+KH1FM FIVE STYLES -- PROTOTYPE v24 (s363)
 
 INSTALL
-1. Fully close KH1FM. Disable v22 and every older Dual Wield prototype.
-2. Import this ZIP into OpenKH. Enable ONLY v23, then Build and Run.
+1. Fully close KH1FM. Disable v23 and every older Dual Wield prototype.
+2. Import this ZIP into OpenKH, enable ONLY v24, then Build and Run.
    Panacea and your installed KH2FM are required. F1 cannot reload a DLL.
-3. Confirm s362 / PROTOTYPE v23 in kh1-dual-wield.log beside the game EXE.
+3. Confirm s363 / PROTOTYPE v24 in kh1-dual-wield.log beside the game EXE.
 
 This is an OpenKH native DLL mod, not a script. Keep the full KH2 Combat
-overhaul, old offhand/moveset Lua and duplicate Sora model mods disabled.
+overhaul, older offhand/moveset Lua and duplicate Sora model mods disabled.
 Use normal Sora. No game assets are supplied.
 
-WHAT THE CURRENT LOG SHOWED
-Dual B: v22 captured eight Square attempts as Guard and never reached
-its native Roll hook. Single B Quick Run still worked five times. v23
-removes Dual action selection from that early hook. KH1 now finishes its
-own movement callback and Guard-versus-Roll decision. The imported Guard
-starts only from the actual selected Guard branch. Moving Square takes
-the native Roll route and the existing Wisdom Quick Run replacement.
-The early selector retains only Anti's existing unarmed override.
+VISUAL CHANGES
+Dual A regular Glide: the duplicate now follows a hand rebuilt from the
+native body's current root and parent-local joints, instead of trusting
+a cached/blended helper hand-world matrix. This avoids applying the actor
+placement twice and refreshes the held attachment before the body queue.
+The duplicate keeps a hand-local calibration, with actor/model/weapon and
+current-frame guards. A rejected sample is not drawn at a stale location.
+Sora's native body and glide movement are not rewritten. A's actual
+finisher Superglide retains its imported attack poses and contacts.
 
-The new Guard bridge admits one imported action or resumes native Guard
-with its original arguments. An admitted replacement creates no native
-Guard context, motion, voice or blocking flag. Single B's confirmed KH2
-Guard still observes its actual native Guard row. The older Square
-fallback cannot reinterpret a committed Guard/Quick Run/finisher press.
-Dual B Guard/Quick Run retain native Guard/Dodge Roll ability gates;
-no ability is granted by the style.
+Dual B Quick Run: the current log shows 40 successful starts and 28
+put-away calls while Dual B is active. Wisdom's field movement rule was
+stowing the weapon during Quick Run/end, which also removed the duplicate
+and requested a colored vanish effect. Owned Dual actions now keep both
+real equipped meshes out through that movement and its ending. The
+primary grip renderer uses the same visibility result. The dodge's body,
+movement, timing and lack of hitboxes stay as in the working v23 path.
 
-Fire: the new log records the exact clock failure. Recovery's header
-appears while the old startup clock is still present, then KH1 resets
-that clock to zero. v22 treated this as a reversal and dropped the KH2
-pose. v23 holds the last donor sample until the recovery request leaves
-the native queue, then starts its recovery clock. Both phases keep one
-cast/effect identity. Actual repeat casts still get a fresh identity.
-The handoff is bounded and retains header, scene, binding and time guards.
+Passive weapon admission now uses KH1's normal show-weapon routine when
+needed, restoring its normal colour/alpha along with its visibility flag.
+No palette, texture or weapon appearance file is replaced. Both blades
+remain copies of the weapon currently equipped.
 
-KH2 FIRE COMBO STAGES
-The current style overlay uses the first KH2 ground/air Fire cast clip.
-It does not yet advance through KH2's spell-combo stages or finisher.
-That needs separate combo tracking and donor selection. This update
-repairs the recorded recovery-clock failure; it does not add new casts,
-spell finishers or finisher damage. KH1 still owns costs, damage, levels,
-acceptance and repeated-cast timing.
+FIRST TEST -- FRESH GAME PROCESS, NO ENEMIES NEEDED
+1. Dual A: use regular Glide straight, then turn both ways repeatedly.
+   Check the offhand stays in the palm without jumping or disappearing.
+   Land, repeat, change map and try again. Check Superglide still starts
+   A's actual finisher normally.
+2. Dual B: outside battle, Quick Run with short taps, holds/releases and
+   repeated direction changes. Check TWO normally textured Keyblades
+   through the run and its ending, with no colored put-away outline.
+3. Check one Guard and Fire cast afterward, retaining v23's working
+   action selection and smooth Fire recovery.
 
-FIRST TEST -- FRESH GAME PROCESS
-1. Dual B: equip native Guard and Dodge Roll. Stop and tap Square for
-   Guard spin. Hold a direction and tap Square for Wisdom Quick Run.
-   Check hold/release, completion, movement and a second independent run.
-2. Single B: check its confirmed KH2 Guard and existing Quick Run.
-3. Both B styles: cast Fire separately and repeatedly, on ground and in
-   air. Check the recovery and return to idle/fall for any KH1 flash.
-4. Recheck basic combos, native attack abilities and map/style changes.
-
-If something remains wrong, send the FULL current kh1-dual-wield.log
-including startup from beside KINGDOM HEARTS FINAL MIX.exe before the
-next restart. New/updated markers:
-  STYLE COMMITTED GUARD BRANCH: installed=true
-  STYLE NATIVE ROLL ENTRY / STYLE NATIVE DODGE REPLACED
+If a visual issue remains, send the FULL fresh kh1-dual-wield.log including
+startup, from beside KINGDOM HEARTS FINAL MIX.exe, before another restart.
+Relevant notes:
+  DUAL A GLIDE ATTACHMENT: current native root/local hierarchy...
   DUAL B QUICK RUN REQUEST / DUAL B QUICK RUN START
-  STYLE FIRE RECOVERY: native_clock=... queued=...
-  STYLE CAST REQUEST / STYLE CAST HANDOFF / STYLE CAST END
+  Keyblade put away: ... (should not occur during Dual B Quick Run)
+  STYLE COMMITTED GUARD BRANCH / STYLE FIRE RECOVERY
+A short recording of the same turn/dodge helps match the visual sample.
 
 RETAINED
 Five exclusive 0-AP IDs: Dual A 126 (Valor), Dual B 125 (Final),
 Single A 124 (base KH2 Sora), Single B 123 (Wisdom), Anti 122 (unarmed).
-Only Dual styles duplicate the currently equipped weapon. No second weapon
-selection, Drive state/gauge, outfit, stat bonus, extra ability or partner
-removal. Native attack abilities keep their native combo lane. A finisher
-Superglide, Single B .75 Run and Anti's weaponless base movement, body
-combat, darkness aura and magic/item/summon restrictions remain.
+Only Dual styles duplicate the equipped weapon. Native attack abilities
+keep their native combo lane. No second weapon choice, Drive state/gauge,
+outfit, stat bonus, extra ability or party removal. Single B .75 Run and
+Guard, A finisher Superglide, Anti's weaponless movement/body combat/aura
+and magic/item/summon restrictions remain. Native ability gates remain.
 
 Both B styles retain KH2 Fire/Blizzard/Thunder/Cure effects at native
-levels and existing native visual filtering. Gravity/Stop/Aero retain
-native effects. Single A retains KH2 cast poses with native KH1 effects.
-Native KH1 damage, healing, levels and costs remain authoritative.
+levels and the existing native visual filter. Gravity/Stop/Aero retain
+native effects; Single A retains KH2 cast poses with native KH1 effects.
+Native KH1 damage, healing, levels, acceptance and costs remain. The v23
+Fire queue/clock handoff is retained; KH2 spell-combo stage chaining is
+still not part of the isolated native-cast overlay.
 
 Your existing kh1-dual-wield.ini beside the EXE is preserved. Defaults:
   dual_b_spell_fx = on
@@ -82,21 +76,21 @@ Your existing kh1-dual-wield.ini beside the EXE is preserved. Defaults:
   remove_dual_wield = off
 Single B Run uses .75 independently. Offhand-only testing is for Dual
 styles, not spells, companions or Single/Anti. To remove custom entries,
-set remove_dual_wield on, launch/load/save with v23, close the game,
-disable the mod and Build again. Only the five custom entries are removed.
+set remove_dual_wield on, launch/load/save with v24, close, disable the
+mod and Build again. Only the five custom entries are removed.
 DLL/INI changes require a full restart.
 
 VALIDATION AND LIVE LIMIT
-446 tests pass across 27 suites (144 style tests). The new Guard bridge
-executes both branches in a Win64 ABI harness using the native frame
-layout; restored arguments, callback/fallback counts and returns pass.
-The new Fire replay covers the recorded old-clock -> zero sequence,
-multiple model passes, both families, buffer reuse and retirement guards.
-Windows x64 release, PE interface, 14 native anchors and 70 source-scope
-checks pass. ZIP CRC, extraction and saved-copy hashes are verified.
+449 tests pass across 27 suites (147 style tests), including the real
+Win64 Guard bridge test retained from v23. New fixtures cover 80 turning/
+translated native roots, root-local duplication, invalid hierarchies and
+the real Quick Run/end lifecycle with its donor field-stow classification.
+Windows x64 release, PE interface, eight native appearance anchors and
+80 source-scope checks pass. ZIP CRC/extraction and saved-copy entry
+hashes are verified.
 
-No fresh v23 game/GPU execution was performed. Native action selection,
-Fire presentation and synchronization still need the live check above.
+No fresh v24 game/GPU rendering test was performed. These checks do not
+prove the two visual symptoms resolved; use the live checks above.
 Source patch, pinned upstream, credits, licences and validation receipts
 are included. No game executable, recording, extracted asset or
 disassembly is distributed.

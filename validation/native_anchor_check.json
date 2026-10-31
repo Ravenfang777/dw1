@@ -339,80 +339,49 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v23_checks": [
+  "v24_checks": [
     {
-      "anchor": "native_guard_argument_prefix",
-      "steam_rva": "0x2a7c51",
+      "anchor": "native_show_weapon_prologue",
+      "steam_rva": "0x2a2e30",
       "matches": true
     },
     {
-      "anchor": "guard_original_context_call",
-      "steam_rva": "0x2a7c5e",
+      "anchor": "native_show_resolves_weapon_object",
+      "steam_rva": "0x2a2e3f",
       "matches": true
     },
     {
-      "anchor": "guard_row_3d_original_call",
-      "steam_rva": "0x2a7c6b",
+      "anchor": "native_show_checks_existing_visibility",
+      "steam_rva": "0x2a2e4f",
       "matches": true
     },
     {
-      "anchor": "guard_original_queue_call",
-      "steam_rva": "0x2a7c7b",
+      "anchor": "native_show_red",
+      "steam_rva": "0x2a2e62",
       "matches": true
     },
     {
-      "anchor": "guard_native_blocking_flag",
-      "steam_rva": "0x2a7c8b",
+      "anchor": "native_show_green",
+      "steam_rva": "0x2a2e71",
       "matches": true
     },
     {
-      "anchor": "guard_complete_native_epilogue",
-      "steam_rva": "0x2a7c8f",
+      "anchor": "native_show_blue",
+      "steam_rva": "0x2a2e80",
       "matches": true
     },
     {
-      "anchor": "roll_tail_precedes_guard_branch",
-      "steam_rva": "0x2a7c4c",
+      "anchor": "native_show_alpha",
+      "steam_rva": "0x2a2e9e",
       "matches": true
     },
     {
-      "anchor": "native_guard_context_constructor",
-      "steam_rva": "0x2a3b00",
-      "matches": true
-    },
-    {
-      "anchor": "request_published_before_application",
-      "steam_rva": "0x29fd44",
-      "matches": true
-    },
-    {
-      "anchor": "motion_application_before_queue_pop",
-      "steam_rva": "0x29fec3",
-      "matches": true
-    },
-    {
-      "anchor": "model_callback_before_clock_publication",
-      "steam_rva": "0x2a0574",
-      "matches": true
-    },
-    {
-      "anchor": "clock_published_after_model_callback",
-      "steam_rva": "0x2a05d9",
-      "matches": true
-    },
-    {
-      "anchor": "queue_pop_after_motion_application",
-      "steam_rva": "0x29fec8",
-      "matches": true
-    },
-    {
-      "anchor": "queue_count_commit",
-      "steam_rva": "0x29fef7",
+      "anchor": "native_show_visibility_flag",
+      "steam_rva": "0x2a2ea1",
       "matches": true
     }
   ],
-  "v23_new_hook_sites": 1,
-  "v23_declined_guard_branch_preserves_native_once": true,
-  "v23_guard_branch_complete_setup_bytes": 10,
-  "live_v23_game_test": false
+  "v24_new_hook_sites": 0,
+  "v24_uses_existing_native_visibility_routine": true,
+  "live_v24_game_test": false
 }

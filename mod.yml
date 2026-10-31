@@ -1,9 +1,9 @@
-title: KH1FM Five Styles Prototype v23
+title: KH1FM Five Styles Prototype v24
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Repair Dual B dodge regression by replacing only native committed Guard.
-  Leave native moving Roll selection to the existing Wisdom Quick Run hook.
-  Keep KH2 Fire recovery through the native queue/clock publication handoff.
+  Rebuild Dual A native Glide offhand from the current joint hierarchy.
+  Keep both equipped weapon meshes visible through Dual B Quick Run.
+  Retain v23 gameplay, native Guard/dodge choice and Fire recovery fix.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

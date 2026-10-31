@@ -1,17 +1,17 @@
 {
-  "name": "KH1FM Five Styles Prototype v23",
-  "stage": "s362",
-  "source_commit": "323d3843dfaa7751a5eedcf5d5a97d8c14cbc0ba",
+  "name": "KH1FM Five Styles Prototype v24",
+  "stage": "s363",
+  "source_commit": "b442c5e428eba192d7b59fb6a363605a13371b1a",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4796740,
-  "dll_sha256": "bf5e008692777de7207d05587ff8782c27b55d47da23548f70b799d2ce26ebd4",
-  "source_patch_sha256": "c06555c85478ff2e49d15d1cf7c7e17d21ac324d26c3037814860e64076a60c0",
-  "tests_passed": 446,
+  "dll_bytes": 4801636,
+  "dll_sha256": "7d9b2f1c12c9cf3b282f2d48b0299d112d331f094fac1be23e69dcd42409c155",
+  "source_patch_sha256": "26a97666d278f8d8918be6121ef20f9cb6167b13d08acacdad13561698615159",
+  "tests_passed": 449,
   "tests_failed": 0,
   "test_cache": "Linux test cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 27,
-  "style_tests": 144,
+  "style_tests": 147,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -29,11 +29,11 @@
     "api-ms-win-core-synch-l1-2-0.dll",
     "bcryptprimitives.dll"
   ],
-  "new_native_anchor_checks": 14,
-  "source_scope_checks": 70,
+  "new_native_anchor_checks": 8,
+  "source_scope_checks": 80,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v23_game_or_gpu_test": false,
+  "live_v24_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "replace only the native committed Guard branch; leave moving Roll selection native; wait for Fire recovery queue consumption before sampling its new clock"
+  "new_behavior": "Dual A native-local glide attachment snapshot before body queue; keep both Dual B Quick Run weapon meshes out; native visibility/appearance initialization"
 }

@@ -1,8 +1,8 @@
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
    Compiling kh1-hook v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh1-hook)
-    Finished `release` profile [optimized] target(s) in 24.64s
+    Finished `release` profile [optimized] target(s) in 27.35s
 
-DLL SHA256 bf5e008692777de7207d05587ff8782c27b55d47da23548f70b799d2ce26ebd4
-Source 323d3843dfaa7751a5eedcf5d5a97d8c14cbc0ba
-446 tests passed; no live v23 game/GPU test.
+DLL SHA256 7d9b2f1c12c9cf3b282f2d48b0299d112d331f094fac1be23e69dcd42409c155
+Source b442c5e428eba192d7b59fb6a363605a13371b1a
+449 tests passed; no live v24 game/GPU test.
