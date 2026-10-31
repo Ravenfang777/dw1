@@ -1,9 +1,9 @@
-title: KH1FM Nine Styles Prototype v43
+title: KH1FM Nine Styles Prototype v44
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Single A/C and Dual C/D: Master Aerial Dodge replaces regular Glide,
-  with twice its original travel and original animation/guard timing.
-  Existing Superglide routes retained. Single D limb IK/retarget pending.
+  Dark Riku authored pose solver and startup main-bank validation.
+  Single D gameplay retarget/action mapping remains pending; native moves retained.
+  Preserves the confirmed v43 Glide and Aerial Dodge changes and other styles.
   Requires installed KH2FM and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

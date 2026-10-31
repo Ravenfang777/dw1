@@ -1,91 +1,69 @@
-KH1FM NINE STYLES -- PROTOTYPE v43 (s382)
+KH1FM NINE STYLES -- PROTOTYPE v44 (s383)
 
 INSTALL
-1. Fully close KH1FM. Disable v42 and every older Dual Wield prototype.
-2. Import this ZIP into OpenKH, enable ONLY v43, then Build and Run.
+1. Fully close KH1FM. Disable v43 and every older Dual Wield prototype.
+2. Import this ZIP into OpenKH, enable ONLY v44, then Build and Run.
    Panacea and installed KH2FM are required. F1 cannot reload a DLL.
-3. Confirm s382 / PROTOTYPE v43 in kh1-dual-wield.log beside the game EXE.
+3. Confirm s383 / PROTOTYPE v44 in kh1-dual-wield.log beside the game EXE.
 Use normal Sora. Keep the full KH2 Combat overhaul, older offhand/moveset Lua
 and duplicate Sora model mods disabled. Existing INI/save settings are retained.
 
-AERIAL DODGE -- TWICE THE ORIGINAL DISTANCE
-The same Master Aerial Dodge now replaces REGULAR Glide for:
-  Style: Single A
-  Style: Single C
-  Style: Dual C
-  Style: Dual D
+DARK RIKU SOLVER
+This version implements the authored pose solver needed for Single D's main
+bank, xa_ex_1160. It handles constant channels, native fixed-tick curves,
+helper transforms, look-at/orientation constraints and one-/two-link limbs.
+Those stages were missing from the old FK-only reader. The legacy reader is
+preserved for existing styles; the new solver is an independent data path.
 
-It requests2x its original travel (rise and directional movement), reduced
-from v42's3x. Animation/controller speed and guard duration stay original.
-Jump normally, release Jump/Circle, then press it again in free air.
-One use per airtime; land to rearm. Requires the existing native Glide ability.
-Circle is default; KH1's confirm/jump swap remains respected.
-Holding/releasing uses the original dodge rules. Repeated taps cannot extend
-it forever. Walls, ceilings, landing, damage and native commands still apply.
-No offensive hit, spell, added invulnerability or growth ability is granted.
+The Rust output was compared offline against KH1's original evaluator for
+2139 poses across all 31 clips, covering every integer animation frame plus
+fractional, endpoint and quantization cases. All 205 active bone matrices,
+12 helper matrices and the separate root channel were checked in each pose.
+Maximum observed joint-position difference: 0.0018071 game units.
+This is authored animation validation, not a live game/GPU or floor-IK test.
+A separate half-speed skeleton GIF shows the old reader and corrected solver.
 
-Single A/C retain one weapon; Dual C/D retain their equipped-weapon duplicate.
-The C variants use Master/Sora body calibration during this action, then return
-to their normal Riku/Roxas rigs. Master body, source weapon tracks, attachment
-binds and body size are selected together for the shared action.
-If complete replacement data fails admission, native control is retained.
+CURRENT IN-GAME STATUS
+Single D STILL USES NATIVE KH1 MOVES and one weapon. The source pose solver is
+implemented; mapping those poses onto Sora and assigning actions/contacts are
+next. No boss AI, raw animation pointers, attacks or extra abilities are added.
 
-SUPERGLIDE AND OTHER STYLES
-Superglide keeps its current behavior for every style, including Single A and
-Dual A's actual attack-finisher paths. This change affects regular Glide only.
-Dual A, Dual B, Single B, Single D and Anti receive no new Aerial Dodge route.
-Quick Run, Guard, attacks, magic and items retain their current routes.
-Dual D retains its Wisdom Quick Run, held Superglide weapon and KH2 Sora Guard.
-Dual A's stable standard Glide grip/color and finisher remain.
-Single C keeps ground152/151/Vicinity Break, its mixed air combo with77-frame
-Riku182,193 air casts/parry, Quick Run and native Square/Triangle behavior.
+At startup a background worker reads your original main bank and checks all
+1829 integer/end poses. Look for:
+  SINGLE D SOLVER READY: source=xa_ex_1160 bones=247 motions=31 checked_poses=1829
+The line also states that gameplay retarget/action routing is pending.
+No battle, attacks or Single D equip are needed for this check.
+If it reports SINGLE D SOLVER UNAVAILABLE, return the complete fresh log.
+The original bank was already received; no additional source capture is needed.
+Existing diagnostic CSV/source capture remains available. Its generated source
+ZIP is NOT an OpenKH mod: do not install that capture ZIP.
 
-FIRST TEST
-For Single A, Single C, Dual C and Dual D separately:
-- Jump, release/repress Circle in free air; compare timing and increased travel.
-- Try neutral and directional input, tap/hold/release, steering and landing.
-- Confirm Single styles show one weapon and Dual styles show both correctly.
-- Land, attack and cast; test Quick Run/Guard where available and Superglide.
-- Switch styles and change maps, then repeat.
-Useful log markers: STYLE AERIAL DODGE HOOK / DATA / START
-The START marker includes style, distance=2x, timing=original and duplicate.
-Return the full fresh kh1-dual-wield.log if the action fails or poses are wrong.
+PRESERVED FROM THE USER-CONFIRMED v43
+Regular Glide remains the 2x-distance, normal-speed Aerial Dodge for Single A,
+Single C, Dual C and Dual D. Single styles keep one weapon; Dual styles copy
+what is equipped. All current Superglide routes remain, including the actual
+Single A/Dual A finisher. Quick Run, Guard, magic, attacks, native attack-ability
+priority and every other style's input/visual/contact behavior are preserved.
+Menu order remains Single A/B/C/D, Dual A/B/C/D, Anti; all 9 exclusive, 0 AP.
+No gauge, outfit, party, stat or other ability changes.
 
-SINGLE D -- MAIN DARK RIKU SOURCE RECEIVED
-The supplied main1160 source ZIP is valid:247 bones,31 clips,12 helpers each,
-no parser warnings. The source files are now available for adapter development.
-No additional capture is needed for this work.
-Offline FK inspection confirms that the arm/leg IK chain joints have no direct
-keyed channels in any31 clips. The current FK evaluator leaves those limbs
-straight; a proper helper/constraint solver is needed before retargeting moves.
-Single D therefore STILL USES NATIVE KH1 MOVES. Its playable adapter is pending.
-No slot names, hit windows, boss AI or raw animation pointers were guessed.
-The source remains xa_ex_1160; alternate1168 and Ansem/Riku banks are excluded.
-The automatic local source capture remains available for diagnostic use.
-Its generated ZIP is source data, NOT an OpenKH mod; do not install it.
-No game assets, poses, skeleton dumps, recordings or original files ship here.
-DARK_RIKU_ANIMATION_LIST.txt retains the earlier numbered74-slot inventory.
-
-PRESERVED CONFIGURATION
-Menu order: Single A/B/C/D, Dual A/B/C/D, Anti. All9 entries are exclusive,0 AP.
-IDs: Singles A124/B123/C120/D119; Duals A126/B125/C121/D118; Anti122.
-Only Dual styles duplicate the currently equipped weapon. No second selection,
-gauge, outfit, party, stat or extra ability changes. Native attack-ability
-priority, existing B Fire/effects/Quick Run and Anti restrictions are preserved.
 INI defaults: dual_b_spell_fx=on, idle_speed=0.75, offhand_only_test=off,
 remove_dual_wield=off. DLL/INI changes require a full restart.
-To remove entries: set remove_dual_wield on; launch/load/save with v43;
+To remove entries: set remove_dual_wield on; launch/load/save with v44;
 close; disable the mod and Build again.
 
 VALIDATION AND LIMITS
-531 tests across31 suites, including173 style tests, pass. Windows x64 release,
-4 exports/8 imports,90 source-scope checks,15 native anchors and7 model checks
-pass. Builds use -C codegen-units=1. No new native hook/address/dependency.
-Tests cover2x travel with original frame/state/guard timing, steering,
-tap/hold/release, terminal/ground behavior, exact four-style eligibility,
-C calibration routing and unchanged single/dual weapon policy.
-The existing ordinary animation sampler and native world mover remain.
+542 tests across 31 suites, 173 style tests and 11 new solver tests pass.
+Windows x64 release, 4 exports/8 imports, 55 source-scope checks, 15 native anchors
+and 7 model checks pass. No new game hook/address or Cargo/runtime dependency.
+The DLL does not require Python, Unicorn, Ghidra or an external ZIP program.
+Native comparison checked 7426608 float components. Root channel matched exactly;
+maximum basis component difference 0.00003803, helper difference 0.00006676.
+Nearly straight limbs produce the largest float-rounding differences.
+See README_SOLVER.txt and validation/native_solver_validation.json for method,
+limits and an optional reproducible reference harness.
 Installer ZIP CRC, extraction and every entry hash are verified.
-No actual v43 game/GPU test here; please test all four styles in a fresh process.
-Source patch (43 derivative commits), credits/licences and validation included.
-Rules/confidence: docs/combat-model.md Stage382.
+Source patch (44 derivative commits), credits/licences and validation included.
+Rules/confidence: docs/combat-model.md Stage 383.
+No original game executables, model/animation files, decompiler output or pose
+streams ship in this installer. No actual v44 game/GPU/Sora-retarget test here.

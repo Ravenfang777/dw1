@@ -339,7 +339,7 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v43_checks": [
+  "v44_checks": [
     {
       "anchor": "native_show_weapon_prologue",
       "steam_rva": "0x2a2e30",
@@ -414,10 +414,10 @@
       "matches": true
     }
   ],
-  "v43_new_hook_sites": 0,
-  "v43_uses_existing_native_visibility_routine": true,
-  "live_v43_game_test": false,
-  "v43_private_skeleton_metadata_checks": {
+  "v44_new_hook_sites": 0,
+  "v44_uses_existing_native_visibility_routine": true,
+  "live_v44_game_test": false,
+  "v44_private_skeleton_metadata_checks": {
     "normal_sora_293_bones": true,
     "helper_hand_206_is_unskinned": true,
     "left_palm_218_is_skinned": true,
@@ -426,6 +426,6 @@
     "grip_helpers_are_unskinned": true,
     "left_palm_base_at_hand": true
   },
-  "v43_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
-  "v43_scope": "Shared Master2x travel at original timing for Single A/C and Dual C/D; no new native hooks; no new native hooks; prior constructor and combat backend unchanged"
+  "v44_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v44_scope": "Dark Riku authored pose solver/startup admission; all gameplay hooks preserved; no new native hooks; prior constructor and combat backend unchanged"
 }
