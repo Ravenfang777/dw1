@@ -196,5 +196,40 @@
     5
   ],
   "v18_all_originals_run_once": true,
-  "v18_target_visuals_live_tested": false
+  "v18_target_visuals_live_tested": false,
+  "v19_checks": [
+    {
+      "anchor": "mapped_native_motion_setter_prologue",
+      "steam_rva": "0x29f980",
+      "matches": true
+    },
+    {
+      "anchor": "setter_tests_control_bit_24",
+      "steam_rva": "0x29f98d",
+      "matches": true
+    },
+    {
+      "anchor": "setter_consumes_control_bit_24",
+      "steam_rva": "0x29f996",
+      "matches": true
+    },
+    {
+      "anchor": "original_roll_motion_request",
+      "steam_rva": "0x2c9e7f",
+      "matches": true
+    },
+    {
+      "anchor": "original_roll_calls_native_setter",
+      "steam_rva": "0x2c9e87",
+      "matches": true
+    },
+    {
+      "anchor": "existing_native_control_prologue",
+      "steam_rva": "0x2a6220",
+      "matches": true
+    }
+  ],
+  "v19_new_hook_sites": 0,
+  "v19_reuses_original_roll_trampoline_and_existing_setter": true,
+  "live_v19_game_test": false
 }
