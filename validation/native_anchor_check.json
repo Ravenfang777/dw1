@@ -339,7 +339,7 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v26_checks": [
+  "v27_checks": [
     {
       "anchor": "native_show_weapon_prologue",
       "steam_rva": "0x2a2e30",
@@ -396,10 +396,10 @@
       "matches": true
     }
   ],
-  "v26_new_hook_sites": 0,
-  "v26_uses_existing_native_visibility_routine": true,
-  "live_v26_game_test": false,
-  "v26_private_skeleton_metadata_checks": {
+  "v27_new_hook_sites": 0,
+  "v27_uses_existing_native_visibility_routine": true,
+  "live_v27_game_test": false,
+  "v27_private_skeleton_metadata_checks": {
     "normal_sora_293_bones": true,
     "helper_hand_206_is_unskinned": true,
     "left_palm_218_is_skinned": true,
@@ -408,6 +408,6 @@
     "grip_helpers_are_unskinned": true,
     "left_palm_base_at_hand": true
   },
-  "v26_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
-  "v26_scope": "Dual A native Glide colors; optional playable Roxas data donor; no new native hooks"
+  "v27_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v27_scope": "Roxas filename resolution only; v26 Glide and native gameplay hooks unchanged"
 }

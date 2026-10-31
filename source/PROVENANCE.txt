@@ -1,10 +1,10 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v26 source: 378bcbd4d9042c77a8143982714186e87d41abaa
+Derivative v27 source: 4a6711b6da264ba03da5f665ad1402c4f1a33749
 Branch: dual-wield-prototype
-SixStyles_v26.patch contains 26 derivative commits; apply with git am.
+SixStyles_v27.patch contains 27 derivative commits; apply with git am.
 Includes original project credits, NOTICE and MIT/Apache licences.
 Runtime uses only the user's own installed KH2 resources; no game assets or dumps.
 Historical source recovery: original v13 2b58a7bcb76711325f484d3d84905cf0a2e26be1; reconstructed 0c9b7dfd31ec8d74b6ae47df2a28850324af35b4.
 All 22 touched-file blobs matched the source-patch index hashes.
-Current behavior and confidence: docs/combat-model.md Stage 365 in the source patch.
+Current behavior and confidence: docs/combat-model.md Stage 366 in the source patch.

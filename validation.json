@@ -1,13 +1,13 @@
 {
-  "name": "KH1FM Six Styles Prototype v26",
-  "stage": "s365",
-  "source_commit": "378bcbd4d9042c77a8143982714186e87d41abaa",
+  "name": "KH1FM Six Styles Prototype v27",
+  "stage": "s366",
+  "source_commit": "4a6711b6da264ba03da5f665ad1402c4f1a33749",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4830996,
-  "dll_sha256": "8010b5519c54df5cc515821ab7abb3e445aa62a741016b66bd5db2723f32b124",
-  "source_patch_sha256": "b8d3c5c763de06b2d04dbdf14fc36697b9fe58102795759bfb907f69436e057a",
-  "tests_passed": 467,
+  "dll_bytes": 4835471,
+  "dll_sha256": "1f403abe30b911fc9e49450ee4953dfa8bc66cb655c8546006d5183cd11fbc96",
+  "source_patch_sha256": "62c6a9c0b85659fea5882305cb473a7fd9e26097684ee4ba7dfa10e7b64f6b8f",
+  "tests_passed": 469,
   "tests_failed": 0,
   "test_cache": "Linux test cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 31,
@@ -30,12 +30,12 @@
     "bcryptprimitives.dll"
   ],
   "new_native_anchor_checks": 11,
-  "source_scope_checks": 127,
+  "source_scope_checks": 140,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v26_game_or_gpu_test": false,
+  "live_v27_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "native-matched held Glide colors with stable v25 palm attachment; sixth exclusive Dual C using playable dual Roxas data; existing A finisher and B defensive/magic behavior preserved",
+  "new_behavior": "Dual C filename resolution: normalize usable animation overrides or read the same playable model bank; confirmed v26 Glide and gameplay paths unchanged",
   "model_metadata_checks": 7,
-  "preserved_v25_commit": "3c3675cdb9ba275358c29ab47f5e967c83c0b1eb"
+  "preserved_v26_commit": "378bcbd4d9042c77a8143982714186e87d41abaa"
 }

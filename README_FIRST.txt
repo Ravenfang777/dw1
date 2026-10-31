@@ -1,79 +1,62 @@
-KH1FM SIX STYLES -- PROTOTYPE v26 (s365)
+KH1FM SIX STYLES -- PROTOTYPE v27 (s366)
 
 INSTALL
-1. Fully close KH1FM. Disable v25 and all older Dual Wield prototypes.
-2. Import this ZIP into OpenKH, enable ONLY v26, then Build and Run.
+1. Fully close KH1FM. Disable v26 and all older Dual Wield prototypes.
+2. Import this ZIP into OpenKH, enable ONLY v27, then Build and Run.
    Panacea and your installed KH2FM are required. F1 cannot reload a DLL.
-3. Confirm s365 / PROTOTYPE v26 in kh1-dual-wield.log beside the game EXE.
+3. Confirm s366 / PROTOTYPE v27 in kh1-dual-wield.log beside the game EXE.
 
 This is an OpenKH native DLL mod, not Lua. Keep the full KH2 Combat
 overhaul, older offhand/moveset Lua and duplicate Sora model mods disabled.
 Use normal Sora. No game assets are supplied.
 
-DUAL A STANDARD GLIDE COLOR
-Your recording shows the v25 offhand attachment is stable but pale. This
-build keeps that palm attachment and removes the private forced-white
-weapon color. The duplicate copies the current primary's native draw
-colors. If the native draw omits its weapon, it uses only this binding's
-previously visible held weapon color plus current body lighting. No
-constant white palette or previous map/model/weapon colors are reused.
-The visual result still requires your fresh in-game test.
+DUAL C LOADER FIX
+Your s365/v26 log confirms the Dual C entry equipped, but the Roxas donor
+was rejected before loading: dual Roxas motion filename invalid.
+The log then reports attack_adapter=false and native KH1 attack rows.
+The held-blade Glide path is independent, which explains why it worked
+without Roxas's actual animations and attacks.
 
-A'S WORKING SUPERGLIDE ATTACK FINISHER AND B'S FIX ARE PRESERVED.
-No change to the actual A finisher start, donor attack, movement or
-contacts. B keeps its working Quick Run, both weapon models, Guard and
-Fire recovery. The shared attack controller adds only C's donor choice.
+v27 accepts an absent animation override by reading the playable dual
+model's own P_EX110_BTLF.mset. Complete archive names are normalized once,
+without double prefixes/extensions. An unusable override is never passed
+as a path: only that same known dual Roxas model's bank is attempted.
+Playable-object identity, actual moveset, both weapon tracks and valid
+body/combo/motion checks still apply. No Valor or boss substitute.
 
-NEW: STYLE: DUAL C (0 AP, initially disabled)
-Uses the PLAYABLE dual-wield Roxas profile from KH2's prologue: object
-803/P_EX110_BTLF. Its real installed object entry supplies the motion
-filename and moveset id, including both weapon motion tracks.
+The original rejected string was not printed by v26, so its exact value
+is not established. New diagnostics include declared name, resolved path,
+source/origin and moveset, including original rig-reader failures.
 
-- Authored base ground/air combos, with both blades' real hit windows.
-- Matching idle, walk/run, jump/fall/landing, item, damage, ledge and
-  interaction poses where that Roxas motion bank has them.
-- Missing visual slots, magic, Guard and Dodge Roll retain KH1 behavior.
-- Native KH1 Glide/Superglide with held blades; no special C glide attack.
-- Current equipped weapon duplicated. No fixed Oathkeeper/Oblivion models.
-- Normal KH1 Sora model. No costume, Drive state/gauge, stats or extra
-  ability grant. No boss Roxas AI, reaction command or spell package.
-- Native KH1 attack abilities keep their existing combo lane. Native
-  Combo Plus/Air Combo Plus modifiers carry into the imported base combo.
+CONFIRMED GLIDE FIX IS UNCHANGED
+The full Glide attachment/color renderer and policy match delivered v26.
+No change to A's actual Superglide attack finisher, B's working Quick Run,
+Guard, Fire/effects, C's combo adapter/controller or ability selection.
 
-C is exclusive with all other custom styles. Equipping any one disables
-the other five; unequipping returns native behavior and removes the
-extra blade. Existing styles keep their IDs and save entries.
+FIRST TEST
+1. Fresh game process; equip Style: Dual C.
+2. Check idle/run and jumping, then one ground and one air combo.
+3. Check startup in kh1-dual-wield.log for BOTH:
+   DUAL C DONOR LOADED ... motion_file=... origin=...
+   DUAL C DATA ... playable dual Roxas=true attack_adapter=true
+Equipping the menu ability alone does not prove its donor loaded.
+If its data is rejected or attacks remain native, return the FULL fresh
+log including startup before restarting. The resolved file and next
+failed prerequisite will now be recorded.
 
-FRESH-PROCESS TEST
-1. A: regular Glide straight and turning; compare offhand color to the
-   primary, then check its already-working Superglide attack finisher.
-2. B: briefly check its already-working Quick Run with both blades.
-3. C: check idle/run, ground and air combos on one enemy, then magic,
-   items, normal ability attacks and map changes. Unequip C and switch
-   to another style to check exclusivity and normal restoration.
-
-Look for DUAL C DONOR LOADED and DUAL C DATA with attack_adapter=true in
-kh1-dual-wield.log beside KINGDOM HEARTS FINAL MIX.exe. The loader validates
-its actual body/weapon rig. If its assets/layout are missing or rejected,
-it logs DUAL C DONOR UNAVAILABLE and retains native action behavior.
-It never substitutes Valor's combos and calls them Roxas.
-
-If C is rejected or anything still looks wrong, return the FULL fresh
-log including startup, before restarting. Glide diagnostics now begin
-HELD GLIDE DRAW and HELD GLIDE COLORS. A short recording helps match it.
+Native KH1 attack abilities deliberately retain their normal combo lane.
+Missing Roxas visual slots, spells, Guard and Roll retain native behavior.
 
 RETAINED
 Six exclusive 0-AP IDs: Dual A 126 (Valor), Dual B 125 (Final),
 Single A 124 (base KH2 Sora), Single B 123 (Wisdom), Anti 122 (unarmed),
-Dual C 121 (playable dual Roxas). Only A/B/C duplicate the equipped weapon.
-Single B Run at .75 and KH2 Guard, Anti's weaponless movement/combat/aura
-and magic/item/summon restrictions remain. No party removal.
-
-Both B styles retain existing KH2 Fire/Blizzard/Thunder/Cure effects at
-native levels and the native visual filter. Gravity/Stop/Aero retain
-native effects; Single A retains KH2 cast poses with KH1 effects.
-C uses native KH1 spells and costs. Native damage/healing and levels
-remain. KH2 multi-stage spell combos are not added in this build.
+Dual C 121 (playable dual Roxas). Equipping any style cancels the others.
+Only A/B/C duplicate the currently equipped weapon. No second weapon
+selection, costume, Drive state/gauge, stat reward, extra ability or
+party removal. C uses authored base ground/air two-blade contacts and
+matching poses when the installed donor is admitted. Existing native
+Combo Plus/Air Combo Plus policy remains. Single B Run .75/Guard, Anti's
+weaponless moves/aura and magic/item/summon restrictions remain.
 
 Your existing kh1-dual-wield.ini is preserved. Defaults:
   dual_b_spell_fx = on
@@ -82,21 +65,21 @@ Your existing kh1-dual-wield.ini is preserved. Defaults:
   remove_dual_wield = off
 Offhand-only testing affects Dual weapon contacts, not spells or party.
 To remove custom entries: set remove_dual_wield on; launch/load/save with
-v26; close; disable the mod and Build again. Only the six custom entries
+v27; close; disable the mod and Build again. Only the six custom entries
 are removed. DLL/INI changes require a full restart.
 
 VALIDATION AND LIMITS
-467 tests pass across 31 suites (151 style tests), including object-profile
-resolution/rejection, C's two-weapon ground/air controller, six-way equip
-and native-color/binding fixtures. Existing Fire, Quick Run, finisher
-and actual Win64 Guard bridge tests remain. Windows x64 release, PE
-interface, 11 native anchors, seven model metadata checks and 127 scope/
-preservation checks pass. ZIP CRC/extraction and saved-copy entry hashes
-are verified.
+469 tests pass across 31 suites (151 style tests), including absent and
+complete filename resolution, exact-model fallback without forwarding
+unsafe paths, and retained six-style/controller/Glide/Fire/Quick Run/
+finisher/Win64 Guard bridge regressions. Windows x64 release, PE interface,
+11 native anchors, seven model metadata checks and 140 scope/preservation
+checks pass. ZIP CRC/extraction and saved-copy entry hashes are verified.
 
-No live v26 game/GPU test or installed Roxas asset execution was performed
-here. Offline fixtures do not prove that the installed bank is admitted,
-that all C animations render correctly or that the pale color resolved.
+No live v27 game/GPU test or installed Roxas asset execution was performed.
+Offline tests do not prove that your installed donor passes all remaining
+admission checks or that its poses render correctly. Use the startup and
+moveset checks above.
 Source patch, pinned upstream, credits, licences and validation receipts
 are included. No game executable, recording, extracted asset or
 disassembly is distributed.

@@ -1,9 +1,8 @@
-title: KH1FM Six Styles Prototype v26
+title: KH1FM Six Styles Prototype v27
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Match Dual A held Glide weapon colors while keeping its stable attachment.
-  Add Style Dual C using playable dual Roxas combos and matching animations.
-  Preserve Dual A Superglide finisher and the confirmed Dual B fix.
+  Fix Dual C animation filename resolution so its Roxas bank can load.
+  Preserve the confirmed Glide attachment/colors and existing gameplay.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

@@ -1,4 +1,5 @@
     Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
    Compiling kh2-data v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh2-data)
    Compiling kh2-rig v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh2-rig)
    Compiling kh1-hook v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh1-hook)
@@ -12,106 +13,106 @@ warning: unused import: `Env`
 
 warning: `kh1-hook` (lib test) generated 1 warning (run `cargo fix --lib -p kh1-hook --tests` to apply 1 suggestion)
    Compiling kh1-data v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh1-data)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 20.21s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 20.35s
      Running unittests src/lib.rs (local/styles_v19_test_target/debug/deps/character_core-2fe3b2ac348f65fc)
 
 running 21 tests
-test drive::tests::anti_chance_follows_the_counter ... ok
-test combo::tests::height_and_facing_windows ... ok
-test drive::tests::hits_add_drive_truncated ... ok
 test combo::tests::table_order_finishers_and_alternation ... ok
-test controller::tests::arc_peaks_at_height_and_is_continuous ... ok
 test drive::tests::form_gauge_lasts_level_plus_three_bars_and_drains ... ok
+test drive::tests::anti_chance_follows_the_counter ... ok
+test drive::tests::hits_add_drive_truncated ... ok
 test drive::tests::levels_follow_the_table ... ok
-test drive::tests::points_fill_bars_and_cap ... ok
-test drive::tests::refill_fills_the_drive_or_the_form_gauge ... ok
-test reaction::tests::blow_brakes_to_the_floor_speed ... ok
-test npc::tests::walks_by_root_motion_and_attacks_with_windows ... ok
-test npc::tests::magnet_pulls_into_an_orbit_then_drops ... ok
-test npc::tests::launch_flies_then_lands_into_the_down_motion ... ok
-test npc::tests::small_hit_flinches_and_slides_back ... ok
-test reaction::tests::clash_table ... ok
+test controller::tests::arc_peaks_at_height_and_is_continuous ... ok
 test drive::tests::spending_keeps_a_part_bar_unless_full ... ok
+test combo::tests::height_and_facing_windows ... ok
+test drive::tests::refill_fills_the_drive_or_the_form_gauge ... ok
+test npc::tests::small_hit_flinches_and_slides_back ... ok
+test npc::tests::magnet_pulls_into_an_orbit_then_drops ... ok
+test reaction::tests::blow_brakes_to_the_floor_speed ... ok
+test npc::tests::launch_flies_then_lands_into_the_down_motion ... ok
+test reaction::tests::categories ... ok
+test npc::tests::walks_by_root_motion_and_attacks_with_windows ... ok
+test drive::tests::points_fill_bars_and_cap ... ok
+test reaction::tests::front_and_back_flinches ... ok
 test reaction::tests::heavier_bodies_move_less ... ok
 test reaction::tests::hit_back_uses_knockback_or_defaults ... ok
+test reaction::tests::clash_table ... ok
 test reaction::tests::launch_faces_the_attacker_and_uses_knockback_as_speed ... ok
-test reaction::tests::categories ... ok
-test reaction::tests::front_and_back_flinches ... ok
 
 test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
 
      Running tests/sim.rs (local/styles_v19_test_target/debug/deps/sim-90be974119a06ed3)
 
 running 70 tests
-test a_double_tap_of_the_roll_is_no_quick_run ... ok
 test a_pushed_scripted_motion_follows_without_a_gap ... ok
 test a_blocked_glide_is_noted_not_started ... ok
-test aerial_dodge_after_rolling_off_a_ledge ... ok
+test a_double_tap_of_the_roll_is_no_quick_run ... ok
 test action_button_mid_dodge_glides ... ok
-test aerial_dodge_once_per_airtime ... ok
-test aerial_recovery_rights_sora_mid_launch ... ok
-test air_attack_lands_into_the_landing ... ok
+test aerial_dodge_after_rolling_off_a_ledge ... ok
 test air_cast_sinks_at_its_share_of_gravity ... ok
 test a_tall_grounded_target_gets_the_ground_combo ... ok
-test air_reflect_holds_as_final_forms ... ok
+test air_attack_lands_into_the_landing ... ok
+test air_cast_stops_the_fall_one_frame_then_falls ... ok
 test air_combo_ends_before_the_landing_however_slow_the_presses ... ok
+test aerial_dodge_once_per_airtime ... ok
+test aerial_recovery_rights_sora_mid_launch ... ok
+test air_reflect_holds_as_final_forms ... ok
 test carried_into_the_air_falls_on_at_its_speed ... ok
+test attack_moves_in_its_allow_movement_range ... ok
 test an_early_attack_press_is_not_kept ... ok
 test air_spell_combo_ends_on_landing ... ok
-test attack_moves_in_its_allow_movement_range ... ok
-test combo_keeps_its_direction ... ok
-test air_cast_stops_the_fall_one_frame_then_falls ... ok
 test dodge_roll_uses_root_motion_and_level_iframes ... ok
-test finishing_reflect_as_the_first_finisher_then_a_finisher ... ok
 test falling_air_cast_lands_into_the_landing ... ok
-test finishing_reflect_as_the_second_finisher ... ok
-test drive_in_the_air_holds_and_swaps_carry_movement ... ok
-test finishing_reflect_twice_then_the_combo_ends_after_it ... ok
 test glide_in_place_hovers ... ok
-test glide_needs_height_and_held_button ... ok
+test finishing_reflect_as_the_first_finisher_then_a_finisher ... ok
+test finishing_reflect_as_the_second_finisher ... ok
+test finishing_reflect_twice_then_the_combo_ends_after_it ... ok
 test glide_on_the_action_button ... ok
-test ground_inertia_slides_to_a_stop ... ok
+test glide_needs_height_and_held_button ... ok
 test grabs_a_ledge_after_the_apex_and_hangs ... ok
+test drive_in_the_air_holds_and_swaps_carry_movement ... ok
+test combo_keeps_its_direction ... ok
 test guard_faces_the_locked_target ... ok
+test holding_toward_the_wall_grabs_then_a_fresh_push_climbs ... ok
+test ground_inertia_slides_to_a_stop ... ok
+test ground_combo_buffers_and_ends_with_finisher ... ok
+test horizontal_slash_is_part_of_the_air_combo ... ok
+test holding_through_the_roll_turns_it_into_quick_run ... ok
 test guard_row_attack_launches_from_square ... ok
 test guard_row_move_plays_from_square_without_a_guard ... ok
-test ground_combo_buffers_and_ends_with_finisher ... ok
-test holding_through_the_roll_turns_it_into_quick_run ... ok
-test holding_toward_the_wall_grabs_then_a_fresh_push_climbs ... ok
-test jump_out_of_the_landing_hold ... ok
 test jump_also_climbs_from_a_hang ... ok
+test jump_out_of_the_landing_hold ... ok
 test jump_has_takeoff_frames_and_reaches_height ... ok
 test jump_height_depends_on_hold ... ok
-test horizontal_slash_is_part_of_the_air_combo ... ok
 test kh1_spells_take_one_slot_each ... ok
-test lock_on_picks_nearest_and_releases ... ok
-test landing_keeps_running_with_the_stick_and_stops_dead_without ... ok
-test moving_air_attack_steers_and_falls ... ok
-test neutral_aerial_dodge_goes_straight_up ... ok
 test no_cast_during_the_landing ... ok
-test no_grab_when_the_ledge_is_too_close_to_the_ground ... ok
+test landing_keeps_running_with_the_stick_and_stops_dead_without ... ok
+test neutral_aerial_dodge_goes_straight_up ... ok
+test lock_on_picks_nearest_and_releases ... ok
+test moving_air_attack_steers_and_falls ... ok
 test no_finishing_reflect_after_a_missed_finisher ... ok
-test quick_run_ends_on_release_and_roll_chains_into_it ... ok
-test no_magic_buffered_through_a_finisher ... ok
-test quick_run_ends_only_on_release ... ok
+test no_grab_when_the_ledge_is_too_close_to_the_ground ... ok
 test quick_run_ends_in_the_landing ... ok
+test quick_run_ends_only_on_release ... ok
+test quick_run_ends_on_release_and_roll_chains_into_it ... ok
+test quick_run_from_a_standstill_goes_along_the_facing ... ok
 test runs_at_run_speed_and_turns_at_capped_rate ... ok
+test quick_run_out_of_the_roll_with_guard_equipped ... ok
 test reflect_cannot_follow_the_last_finisher ... ok
 test reflect_mid_combo_is_one_step ... ok
-test second_finisher_after_a_finisher_without_a_window ... ok
-test quick_run_from_a_standstill_goes_along_the_facing ... ok
-test quick_run_out_of_the_roll_with_guard_equipped ... ok
-test sora_is_launched_lands_and_gets_up ... ok
-test sora_flinches_and_is_pushed_back_by_a_small_hit ... ok
+test no_magic_buffered_through_a_finisher ... ok
+test magnet_burst_with_foes_beside ... ok
 test spell_cast_from_the_swing_combo_window ... ok
+test sora_flinches_and_is_pushed_back_by_a_small_hit ... ok
+test sora_is_launched_lands_and_gets_up ... ok
 test spell_mid_combo_is_a_step_of_it ... ok
-test wall_hit_without_a_repelled_motion_doesnt_loop ... ok
 test square_priority_for_every_equipped_combination ... ok
-test wisdom_keeps_momentum_in_the_air_and_on_landing ... ok
+test wall_hit_without_a_repelled_motion_doesnt_loop ... ok
 test whiffed_swings_do_not_advance_the_combo ... ok
+test second_finisher_after_a_finisher_without_a_window ... ok
 test square_swing_in_a_ground_combo ... ok
 test vicinity_break_when_surrounded_only ... ok
-test magnet_burst_with_foes_beside ... ok
+test wisdom_keeps_momentum_in_the_air_and_on_landing ... ok
 test wisdom_shots_landing_carry_the_combo ... ok
 
 test result: ok. 70 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
@@ -120,52 +121,52 @@ test result: ok. 70 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fin
 
 running 18 tests
 test hit::tests::bounds_and_immunity ... ok
-test hit::tests::basic_physical_hit ... ok
 test hit::tests::combo_boost_adds_per_hit ... ok
 test hit::tests::cure_heals_allies_only ... ok
+test hit::tests::basic_physical_hit ... ok
 test hit::tests::interval_gating ... ok
-test hit::tests::same_team_is_not_a_target ... ok
 test hit::tests::magic_and_difficulty ... ok
-test hit::tests::revenge_and_guard ... ok
-test record::tests::same_group_counts_up_and_new_group_resets ... ok
+test hit::tests::same_team_is_not_a_target ... ok
 test record::tests::interval_allows_a_rehit ... ok
+test record::tests::same_group_counts_up_and_new_group_resets ... ok
 test record::tests::timer_blocks_other_groups ... ok
 test shape::tests::columns_are_vertical_and_centred ... ok
-test shape::tests::sphere_against_column_narrows_past_the_end ... ok
-test shape::tests::ellipsoid_uses_summed_axes ... ok
 test shape::tests::cubes_never_hit ... ok
+test hit::tests::revenge_and_guard ... ok
+test shape::tests::ellipsoid_uses_summed_axes ... ok
+test shape::tests::sphere_against_column_narrows_past_the_end ... ok
 test shape::tests::spheres ... ok
 test shape::tests::sweep_steps_one_radius_until_within_one_and_a_half ... ok
 test shape::tests::volume_sweeps_from_the_second_frame ... ok
 
-test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
      Running unittests src/lib.rs (local/styles_v19_test_target/debug/deps/kh1_data-f4f0990f16b96b65)
 
 running 21 tests
-test jiggle::tests::a_warp_restarts_the_chain ... ok
 test jiggle::skip_tests::a_skipped_chain_is_left_as_posed ... ok
 test jiggle::cap_tests::swing_capped ... ok
-test jiggle::tests::moving_chain_trails_then_settles ... ok
-test jiggle::hang_tests::a_free_chain_hangs_down ... ok
-test jiggle::tests::still_pose_stays_put ... ok
 test retarget::tests::each_kh1_bone_has_one_part ... ok
+test jiggle::tests::a_warp_restarts_the_chain ... ok
+test secondary::tests::matches_from_the_binds ... ok
 test secondary::tests::parts_cover_their_bones ... ok
 test secondary::tests::a_hood_turned_into_the_back_is_pushed_off_it ... ok
-test jiggle::down_tests::hangs_down_in_a_y_down_world ... ok
 test secondary::tests::a_spike_turns_as_kh2_s_relative_to_the_head ... ok
-test texmap::tests::eyes_become_solid_blobs_and_shut_frames_stay_shut ... ok
-test texmap::tests::colours_follow_the_surface ... ok
-test texmap::tests::islands_are_found_by_a_point ... ok
-test texmap::tests::frames_are_found_and_rebuilt ... ok
-test secondary::tests::the_chain_hangs_as_kh2_s_from_kh1_s_pommel ... ok
-test texmap::tests::strips_make_triangles ... ok
+test jiggle::tests::moving_chain_trails_then_settles ... ok
+test jiggle::tests::still_pose_stays_put ... ok
 test secondary::tests::a_spike_turned_into_the_head_is_held_back ... ok
-test texmap::tests::back_facing_counts_as_further ... ok
+test texmap::tests::eyes_become_solid_blobs_and_shut_frames_stay_shut ... ok
+test texmap::tests::frames_are_found_and_rebuilt ... ok
+test texmap::tests::colours_follow_the_surface ... ok
+test texmap::tests::strips_make_triangles ... ok
 test secondary::tests::the_hood_folds_as_kh2_s ... ok
-test secondary::tests::matches_from_the_binds ... ok
+test texmap::tests::islands_are_found_by_a_point ... ok
+test texmap::tests::back_facing_counts_as_further ... ok
+test jiggle::hang_tests::a_free_chain_hangs_down ... ok
+test secondary::tests::the_chain_hangs_as_kh2_s_from_kh1_s_pommel ... ok
+test jiggle::down_tests::hangs_down_in_a_y_down_world ... ok
 
-test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
 
      Running tests/local_inverse.rs (local/styles_v19_test_target/debug/deps/local_inverse-e7242fc2f6f012ad)
 
@@ -184,247 +185,247 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running unittests src/lib.rs (local/styles_v19_test_target/debug/deps/dinput8-e5e330956bf8ded8)
 
 running 239 tests
-test cure::tests::kh1_magic ... ok
-test cure::tests::kh2_rule ... ok
 test cure::tests::kh1_sora ... ok
+test cure::tests::kh2_rule ... ok
 test defensive_bridge::tests::guard_bridge_executes_both_paths_with_the_native_win64_frame_and_arguments ... ok
 test drivegauge::tests::costs_are_kh2s ... ok
-test drivegauge::tests::drops_follow_the_weights ... ok
 test drivegauge::tests::damage_drive ... ok
-test drivegauge::tests::form_level_is_its_growth_ability ... ok
+test drivegauge::tests::drops_follow_the_weights ... ok
+test cure::tests::kh1_magic ... ok
 test drivegauge::tests::forms_and_reflect_dont_raise_it ... ok
+test drivegauge::tests::form_level_is_its_growth_ability ... ok
 test drivegauge::tests::maximum_grows_with_the_six_fights_to_nine ... ok
 test drivegauge::tests::save_bytes_are_checked ... ok
-test drivegauge::tests::shown_with_the_first_form ... ok
-test drivegauge::tests::the_hud_follows_the_form_gauge_length ... ok
-test driveitems::tests::chests ... ok
 test driveitems::tests::drop_rolls ... ok
+test drivegauge::tests::the_hud_follows_the_form_gauge_length ... ok
 test driveitems::tests::drop_tiers ... ok
-test driveitems::tests::ids_unused_by_kh1 ... ok
+test drivegauge::tests::shown_with_the_first_form ... ok
 test driveitems::tests::prices ... ok
+test driveitems::tests::ids_unused_by_kh1 ... ok
+test driveitems::tests::chests ... ok
 test driveitems::tests::record_fields ... ok
 test driveitems::tests::usable_rule ... ok
 test driveitems::tests::shop ... ok
-test dual_wield::tests::a_prior_spell_visual_cannot_hide_a_new_unadmitted_cast_or_another_binding ... ok
-test dual_wield::tests::accepted_attack_survives_landing_and_interrupt_poses_but_passive_inspection_does_not ... ok
 test dual_wield::tests::a_real_repeated_fire_starts_a_fresh_clock_even_on_the_recovery_motion ... ok
-test dual_wield::tests::adds_only_dual_disabled_in_one_empty_slot ... ok
+test dual_wield::tests::accepted_attack_survives_landing_and_interrupt_poses_but_passive_inspection_does_not ... ok
 test dual_wield::tests::actual_spell_effect_packages_are_only_four_existing_b_spells_at_real_levels ... ok
+test dual_wield::tests::adds_only_dual_disabled_in_one_empty_slot ... ok
 test dual_wield::tests::a_cast_without_weapon_hits_uses_real_base_attack_metadata_for_both_spins ... ok
-test dual_wield::tests::anti_entry_starts_disabled_and_uninstall_removes_only_custom_ids ... ok
+test dual_wield::tests::a_prior_spell_visual_cannot_hide_a_new_unadmitted_cast_or_another_binding ... ok
 test dual_wield::tests::anti_ledge_uses_the_upper_ankle_and_rejects_remote_or_invalid_targets_without_moving_pose ... ok
-test dual_wield::tests::all_six_styles_switch_exclusively_in_both_directions_without_changing_native_abilities ... ok
-test dual_wield::tests::anti_darkness_uses_only_authored_looping_body_elements_without_arrival_bursts ... ok
-test dual_wield::tests::anti_retains_intrinsic_hop_body_shapes_and_motion_but_never_weapon_or_ability_rows ... ok
-test dual_wield::tests::anti_ground_and_air_play_real_finite_body_contacts_with_no_spell_events ... ok
-test dual_wield::tests::all_six_accepted_attacks_advance_through_native_first_frame_and_landing_notification ... ok
 test dual_wield::tests::anti_rejects_magic_items_summons_in_top_lists_targets_and_shortcut_record_kinds ... ok
-test dual_wield::tests::bad_or_distant_ledge_targets_cannot_partially_mutate_the_visual ... ok
-test dual_wield::tests::base_filter_keeps_valor_air_without_unlocking_ground_hops_or_abilities ... ok
+test dual_wield::tests::anti_entry_starts_disabled_and_uninstall_removes_only_custom_ids ... ok
+test dual_wield::tests::anti_retains_intrinsic_hop_body_shapes_and_motion_but_never_weapon_or_ability_rows ... ok
 test dual_wield::tests::anti_square_glide_is_removed_but_combo_side_spin_remains ... ok
+test dual_wield::tests::bad_or_distant_ledge_targets_cannot_partially_mutate_the_visual ... ok
 test dual_wield::tests::anti_side_spin_consumes_a_combo_slot_and_does_not_become_an_unlimited_square_finisher ... ok
+test dual_wield::tests::base_filter_keeps_valor_air_without_unlocking_ground_hops_or_abilities ... ok
+test dual_wield::tests::all_six_accepted_attacks_advance_through_native_first_frame_and_landing_notification ... ok
 test dual_wield::tests::both_committed_quick_runs_release_or_time_out_without_a_held_input_restart ... ok
-test dual_wield::tests::both_native_jump_pairs_continue_into_rise_without_restarting_the_donor ... ok
 test dual_wield::tests::cast_handoff_does_not_latch_a_pending_repeat_cast_or_survive_its_deadline ... ok
-test dual_wield::tests::cosmetic_duplicate_can_draw_with_a_hidden_primary_but_never_a_stale_pose ... ok
+test dual_wield::tests::both_native_jump_pairs_continue_into_rise_without_restarting_the_donor ... ok
+test dual_wield::tests::all_six_styles_switch_exclusively_in_both_directions_without_changing_native_abilities ... ok
 test dual_wield::tests::cast_handoff_holds_only_the_last_pose_while_its_original_header_remains ... ok
-test dual_wield::tests::collapsed_primary_or_nonfinite_hand_cannot_poison_cosmetic_calibration ... ok
+test dual_wield::tests::anti_ground_and_air_play_real_finite_body_contacts_with_no_spell_events ... ok
+test dual_wield::tests::cosmetic_duplicate_can_draw_with_a_hidden_primary_but_never_a_stale_pose ... ok
 test dual_wield::tests::committed_roll_starts_without_a_second_square_press_with_a_target_and_cannot_chain ... ok
-test dual_wield::tests::dedicated_wisdom_dodge_has_no_final_rows_events_or_saved_growth_dependency ... ok
-test dual_wield::tests::default_combo_policy_still_blocks_a_missed_followup_outside_the_ranged_adapter ... ok
 test dual_wield::tests::cosmetic_hold_follows_the_current_native_hand_without_primary_weapon_bones ... ok
+test dual_wield::tests::dedicated_wisdom_dodge_has_no_final_rows_events_or_saved_growth_dependency ... ok
+test dual_wield::tests::collapsed_primary_or_nonfinite_hand_cannot_poison_cosmetic_calibration ... ok
 test dual_wield::tests::donor_root_travel_cannot_displace_the_drawn_body_from_the_native_actor ... ok
-test dual_wield::tests::dual_a_superglide_starts_one_real_finisher_with_root_motion_and_blade_contacts ... ok
+test dual_wield::tests::anti_darkness_uses_only_authored_looping_body_elements_without_arrival_bursts ... ok
+test dual_wield::tests::default_combo_policy_still_blocks_a_missed_followup_outside_the_ranged_adapter ... ok
 test dual_wield::tests::dual_b_guard_uses_one_spin_without_cast_or_basic_combo_followup ... ok
 test dual_wield::tests::dual_b_keeps_authored_melee_roots_and_filters_abilities_and_guard_sub_links ... ok
-test dual_wield::tests::dual_b_uses_a_finite_quick_run_without_spin_contacts_or_a_granted_ability ... ok
 test dual_wield::tests::dual_b_keeps_both_weapon_meshes_visible_through_real_quick_run_and_end ... ok
+test dual_wield::tests::dual_b_uses_a_finite_quick_run_without_spin_contacts_or_a_granted_ability ... ok
+test dual_wield::tests::dual_a_superglide_starts_one_real_finisher_with_root_motion_and_blade_contacts ... ok
 test dual_wield::tests::donor_repeat_interval_prevents_per_frame_glide_damage_for_each_blade ... ok
-test dual_wield::tests::dual_c_keeps_authored_two_weapon_combos_without_specials_scripts_or_ability_grants ... ok
-test dual_wield::tests::equipping_either_style_disables_only_the_previous_style_in_place ... ok
-test dual_wield::tests::dual_c_ground_and_air_emit_both_authored_blades_and_end_with_no_spell_events ... ok
+test dual_wield::tests::dual_b_uses_final_base_combo_and_never_auto_selects_the_spin_guard ... ok
 test dual_wield::tests::final_cast_without_melee_windows_still_starts_a_moving_spin_with_real_base_attack_metadata ... ok
 test dual_wield::tests::every_recognized_scene_idle_uses_the_same_slow_combat_clip_and_clock ... ok
+test dual_wield::tests::dual_c_keeps_authored_two_weapon_combos_without_specials_scripts_or_ability_grants ... ok
+test dual_wield::tests::dual_c_ground_and_air_emit_both_authored_blades_and_end_with_no_spell_events ... ok
+test dual_wield::tests::fire_ground_and_air_cover_both_native_phases_in_one_monotonic_donor_timeline ... ok
 test dual_wield::tests::fire_queue_publication_does_not_latch_the_previous_phase_clock ... ok
 test dual_wield::tests::fire_recovery_accepts_a_reused_header_buffer_but_never_an_old_header ... ok
+test dual_wield::tests::equipping_either_style_disables_only_the_previous_style_in_place ... ok
 test dual_wield::tests::fire_recovery_is_not_inferred_for_another_spell_or_arbitrary_motion ... ok
+test dual_wield::tests::fire_sequence_uses_actual_phase_rates_and_rejects_repeats_or_an_unseen_initial_phase ... ok
 test dual_wield::tests::fire_recovery_motion_is_never_a_guard_without_a_native_row_witness ... ok
 test dual_wield::tests::first_frame_cast_notification_reaches_kh2_pose_and_same_cast_visual_admission ... ok
-test dual_wield::tests::dual_b_uses_final_base_combo_and_never_auto_selects_the_spin_guard ... ok
-test dual_wield::tests::fire_ground_and_air_cover_both_native_phases_in_one_monotonic_donor_timeline ... ok
-test dual_wield::tests::fire_sequence_uses_actual_phase_rates_and_rejects_repeats_or_an_unseen_initial_phase ... ok
+test dual_wield::tests::first_standard_glide_calibrates_from_skinned_primary_without_any_helper_world ... ok
+test dual_wield::tests::full_list_keeps_all_existing_abilities ... ok
+test dual_wield::tests::glide_collision_follows_the_full_blade_and_the_rotated_offhand_grip ... ok
+test dual_wield::tests::glide_donors_do_not_change_other_visuals_or_grant_growth ... ok
+test dual_wield::tests::glide_filter_excludes_body_guards_swapped_and_unrelated_windows ... ok
+test dual_wield::tests::glide_colors_match_the_current_primary_and_only_reuse_the_same_bindings_visible_palette ... ok
+test dual_wield::tests::glide_geometry_rejects_bad_lengths_axes_and_nonfinite_data ... ok
+test dual_wield::tests::glide_pose_requires_current_actor_weapon_room_and_fresh_display ... ok
+test dual_wield::tests::glide_subtype_comes_from_native_work_not_equipped_growth ... ok
+test dual_wield::tests::ground_filter_preserves_order_and_rejects_added_ability_air_and_hop_rows ... ok
+test dual_wield::tests::glide_keeps_per_blade_attack_ids_across_loops_and_both_native_variants ... ok
+test dual_wield::tests::ground_placeholder_cannot_start_a_ground_ability_during_imported_air ... ok
 test dual_wield::tests::fragmented_lists_are_not_repaired_or_activated ... ok
 test dual_wield::tests::floating_legacy_admission_does_not_loosen_held_valor_weapon_checks ... ok
-test dual_wield::tests::glide_collision_follows_the_full_blade_and_the_rotated_offhand_grip ... ok
-test dual_wield::tests::glide_colors_match_the_current_primary_and_only_reuse_the_same_bindings_visible_palette ... ok
-test dual_wield::tests::glide_filter_excludes_body_guards_swapped_and_unrelated_windows ... ok
-test dual_wield::tests::first_standard_glide_calibrates_from_skinned_primary_without_any_helper_world ... ok
-test dual_wield::tests::glide_donors_do_not_change_other_visuals_or_grant_growth ... ok
-test dual_wield::tests::glide_geometry_rejects_bad_lengths_axes_and_nonfinite_data ... ok
-test dual_wield::tests::glide_keeps_per_blade_attack_ids_across_loops_and_both_native_variants ... ok
-test dual_wield::tests::glide_pose_requires_current_actor_weapon_room_and_fresh_display ... ok
-test dual_wield::tests::full_list_keeps_all_existing_abilities ... ok
-test dual_wield::tests::ground_filter_preserves_order_and_rejects_added_ability_air_and_hop_rows ... ok
-test dual_wield::tests::glide_subtype_comes_from_native_work_not_equipped_growth ... ok
-test dual_wield::tests::ground_placeholder_cannot_start_a_ground_ability_during_imported_air ... ok
-test dual_wield::tests::guard_selection_rejects_airborne_special_states_menus_jumps_and_bad_vectors ... ok
-test dual_wield::tests::idle_speed_is_adjustable_and_bad_values_use_the_default ... ok
 test dual_wield::tests::guard_attack_uses_donor_launch_both_blades_and_trail_without_granting_guard ... ok
-test dual_wield::tests::idle_uses_authored_time_and_loops_without_native_clip_progress ... ok
-test dual_wield::tests::invalid_scene_children_fall_back_atomically ... ok
+test dual_wield::tests::guard_selection_rejects_airborne_special_states_menus_jumps_and_bad_vectors ... ok
 test dual_wield::tests::hand_basis_does_not_carry_either_skeletons_arm_spacing_into_the_grip ... ok
-test dual_wield::tests::incomplete_or_changed_native_jump_data_falls_back_instead_of_guessing_phase ... ok
-test dual_wield::tests::imported_clip_keeps_both_weapons_own_contact_windows ... ok
+test dual_wield::tests::idle_speed_is_adjustable_and_bad_values_use_the_default ... ok
+test dual_wield::tests::idle_uses_authored_time_and_loops_without_native_clip_progress ... ok
+test dual_wield::tests::invalid_loop_data_rejects_the_pose_and_retires_its_clock ... ok
+test dual_wield::tests::invalid_scene_children_fall_back_atomically ... ok
+test dual_wield::tests::known_damage_and_item_requests_choose_visuals_without_owning_actions ... ok
 test dual_wield::tests::item_damage_and_scene_poses_follow_native_pause_and_completion ... ok
 test dual_wield::tests::jump_pair_phase_accounts_for_different_native_clip_rates ... ok
-test dual_wield::tests::known_damage_and_item_requests_choose_visuals_without_owning_actions ... ok
-test dual_wield::tests::invalid_loop_data_rejects_the_pose_and_retires_its_clock ... ok
-test dual_wield::tests::loop_discontinuities_new_donors_and_ownership_resets_do_not_catch_up ... ok
 test dual_wield::tests::ledge_alignment_keeps_the_native_hand_midpoint_without_changing_pose_axes ... ok
-test dual_wield::tests::missing_guard_data_or_defensive_donors_keep_the_native_guard_route ... ok
 test dual_wield::tests::missing_final_hand_can_use_a_real_final_finisher_without_inventing_attack_ids ... ok
-test dual_wield::tests::native_actions_select_the_corresponding_valor_visual_only ... ok
-test dual_wield::tests::native_action_abilities_preserve_the_entire_affected_combo_lane ... ok
-test dual_wield::tests::moving_roll_spin_requires_its_real_idle_and_spin_donor_data ... ok
-test dual_wield::tests::narrow_glide_shapes_cover_between_native_points_and_sweep_the_spinning_tip ... ok
-test dual_wield::tests::native_clock_pause_freezes_visuals_and_landing_never_wraps ... ok
-test dual_wield::tests::native_draw_refresh_rejects_other_rooms_models_weapons_and_bad_hand_coordinates ... ok
-test dual_wield::tests::native_and_imported_weapon_poses_publish_the_same_world_coordinates ... ok
-test dual_wield::tests::moving_roll_spin_matches_guard_contacts_and_moves_without_a_hop_or_extra_ability ... ok
-test dual_wield::tests::native_cast_observation_needs_no_spell_level_or_overhaul_table ... ok
-test dual_wield::tests::native_casts_reactions_and_other_movement_never_enter_attack_or_idle ... ok
+test dual_wield::tests::imported_clip_keeps_both_weapons_own_contact_windows ... ok
+test dual_wield::tests::loop_discontinuities_new_donors_and_ownership_resets_do_not_catch_up ... ok
 test dual_wield::tests::looping_visuals_keep_native_phase_and_one_shots_hold_their_end ... ok
+test dual_wield::tests::incomplete_or_changed_native_jump_data_falls_back_instead_of_guessing_phase ... ok
+test dual_wield::tests::missing_guard_data_or_defensive_donors_keep_the_native_guard_route ... ok
+test dual_wield::tests::native_action_abilities_preserve_the_entire_affected_combo_lane ... ok
+test dual_wield::tests::native_actions_select_the_corresponding_valor_visual_only ... ok
+test dual_wield::tests::native_cast_observation_needs_no_spell_level_or_overhaul_table ... ok
+test dual_wield::tests::native_and_imported_weapon_poses_publish_the_same_world_coordinates ... ok
+test dual_wield::tests::narrow_glide_shapes_cover_between_native_points_and_sweep_the_spinning_tip ... ok
+test dual_wield::tests::moving_roll_spin_matches_guard_contacts_and_moves_without_a_hop_or_extra_ability ... ok
+test dual_wield::tests::moving_roll_spin_requires_its_real_idle_and_spin_donor_data ... ok
+test dual_wield::tests::native_clock_pause_freezes_visuals_and_landing_never_wraps ... ok
+test dual_wield::tests::native_casts_reactions_and_other_movement_never_enter_attack_or_idle ... ok
 test dual_wield::tests::native_glide_draw_refresh_follows_the_hand_across_body_update_gaps ... ok
+test dual_wield::tests::native_draw_refresh_rejects_other_rooms_models_weapons_and_bad_hand_coordinates ... ok
+test dual_wield::tests::native_glide_fallbacks_do_not_invent_passive_contacts ... ok
 test dual_wield::tests::native_guard_requires_equipped_guard_and_preserves_dodge_roll_selection ... ok
 test dual_wield::tests::native_guard_and_roll_selection_are_exclusive_and_keep_the_original_ability_gates ... ok
-test dual_wield::tests::native_glide_fallbacks_do_not_invent_passive_contacts ... ok
-test dual_wield::tests::native_spell_filter_requires_matching_package_level_and_ownership_and_never_hides_native_only_spells ... ok
 test dual_wield::tests::native_jump_enters_valor_air_and_finishes_back_in_free_air ... ok
+test dual_wield::tests::native_spell_filter_requires_matching_package_level_and_ownership_and_never_hides_native_only_spells ... ok
 test dual_wield::tests::native_motion_change_notification_does_not_revoke_field_ownership ... ok
+test dual_wield::tests::native_square_uses_the_prepared_direction_and_only_one_defensive_owner ... ok
+test dual_wield::tests::native_table_records_are_exact_and_only_dual_record_added ... ok
+test dual_wield::tests::native_time_step_makes_idle_rate_independent_of_render_rate ... ok
 test dual_wield::tests::no_growth_or_action_abilities_added ... ok
+test dual_wield::tests::next_physics_step_translates_both_blades_and_rejects_teleports ... ok
 test dual_wield::tests::offered_spell_is_not_a_cast_until_native_motion_or_queue_actually_changes ... ok
 test dual_wield::tests::old_room_weapon_menu_and_trail_owner_copies_cannot_reuse_a_pose ... ok
-test dual_wield::tests::next_physics_step_translates_both_blades_and_rejects_teleports ... ok
-test dual_wield::tests::native_table_records_are_exact_and_only_dual_record_added ... ok
-test dual_wield::tests::native_square_uses_the_prepared_direction_and_only_one_defensive_owner ... ok
-test dual_wield::tests::native_time_step_makes_idle_rate_independent_of_render_rate ... ok
 test dual_wield::tests::only_dual_b_defensive_spins_suppress_the_extra_native_attack_voice ... ok
 test dual_wield::tests::only_exact_equipped_byte_enables ... ok
-test dual_wield::tests::passive_contact_bookkeeping_cannot_start_an_attack_from_any_donor_row ... ok
-test dual_wield::tests::ordinary_attack_cannot_auto_select_the_guard_hop_or_its_old_sub_row ... ok
 test dual_wield::tests::passive_filter_admits_only_explicit_valor_guard_hop_and_severs_attack_fallbacks ... ok
-test dual_wield::tests::placement_uses_current_actor_not_old_root_or_pass_translation ... ok
 test dual_wield::tests::passive_final_hits_require_a_real_weapon_window_and_never_admit_body_or_scene_damage ... ok
-test dual_wield::tests::ranged_blocks_physical_commands_and_followups_but_keeps_native_field_and_spell_menus ... ok
-test dual_wield::tests::ranged_aerial_combo_holds_height_from_rise_or_fall_through_all_three_spins ... ok
-test dual_wield::tests::ranged_attack_ends_without_input_and_never_casts_or_moves_by_donor_root ... ok
-test dual_wield::tests::ranged_attack_adapter_has_only_aero_visuals_and_real_weapon_windows ... ok
-test dual_wield::tests::ranged_cast_clock_rejects_rebind_interruption_stale_headers_and_invalid_time ... ok
-test dual_wield::tests::ranged_regular_glide_stops_descending_at_the_floor_without_lift_or_superglide_changes ... ok
-test dual_wield::tests::ranged_idle_body_keeps_both_spinning_weapon_tracks_and_removes_only_idle_root ... ok
+test dual_wield::tests::placement_uses_current_actor_not_old_root_or_pass_translation ... ok
 test dual_wield::tests::ranged_attack_rejects_missing_or_invalid_aero_donors ... ok
+test dual_wield::tests::ranged_attack_ends_without_input_and_never_casts_or_moves_by_donor_root ... ok
+test dual_wield::tests::ordinary_attack_cannot_auto_select_the_guard_hop_or_its_old_sub_row ... ok
+test dual_wield::tests::passive_contact_bookkeeping_cannot_start_an_attack_from_any_donor_row ... ok
+test dual_wield::tests::ranged_attack_adapter_has_only_aero_visuals_and_real_weapon_windows ... ok
+test dual_wield::tests::ranged_blocks_physical_commands_and_followups_but_keeps_native_field_and_spell_menus ... ok
+test dual_wield::tests::ranged_cast_clock_rejects_rebind_interruption_stale_headers_and_invalid_time ... ok
 test dual_wield::tests::ranged_cast_clock_waits_for_native_consumption_then_tracks_that_exact_cast ... ok
-test dual_wield::tests::ranged_repeated_attacks_count_combo_slots_and_end_at_the_finisher ... ok
+test dual_wield::tests::ranged_idle_body_keeps_both_spinning_weapon_tracks_and_removes_only_idle_root ... ok
+test dual_wield::tests::ranged_regular_glide_stops_descending_at_the_floor_without_lift_or_superglide_changes ... ok
 test dual_wield::tests::ranged_uses_final_for_every_existing_action_and_all_seven_ground_and_air_casts ... ok
-test dual_wield::tests::raw_square_cannot_start_the_new_attack_without_native_guard_ownership ... ok
-test dual_wield::tests::rejected_weapon_pose_does_not_publish_bad_or_doubly_transformed_bones ... ok
-test dual_wield::tests::repeated_aero_attack_cannot_reuse_the_previous_swing_endpoint ... ok
-test dual_wield::tests::ranged_whiff_and_held_attack_do_not_create_an_automatic_infinite_combo ... ok
-test dual_wield::tests::request_control_bits_do_not_index_a_different_or_missing_motion ... ok
-test dual_wield::tests::repeat_draws_pause_and_combat_to_scene_idle_keep_one_phase ... ok
 test dual_wield::tests::removal_preserves_other_states_order_and_duplicates ... ok
-test dual_wield::tests::right_calibration_reused_on_left_stays_in_current_hand_frame ... ok
+test dual_wield::tests::rejected_weapon_pose_does_not_publish_bad_or_doubly_transformed_bones ... ok
+test dual_wield::tests::ranged_aerial_combo_holds_height_from_rise_or_fall_through_all_three_spins ... ok
+test dual_wield::tests::raw_square_cannot_start_the_new_attack_without_native_guard_ownership ... ok
+test dual_wield::tests::ranged_whiff_and_held_attack_do_not_create_an_automatic_infinite_combo ... ok
+test dual_wield::tests::repeat_draws_pause_and_combat_to_scene_idle_keep_one_phase ... ok
+test dual_wield::tests::ranged_repeated_attacks_count_combo_slots_and_end_at_the_finisher ... ok
+test dual_wield::tests::request_control_bits_do_not_index_a_different_or_missing_motion ... ok
 test dual_wield::tests::scene_children_retain_native_expression_under_a_retargeted_parent ... ok
+test dual_wield::tests::repeated_aero_attack_cannot_reuse_the_previous_swing_endpoint ... ok
+test dual_wield::tests::request_descriptors_are_u32_with_flags_and_reject_absent_records ... ok
+test dual_wield::tests::right_calibration_reused_on_left_stays_in_current_hand_frame ... ok
 test dual_wield::tests::scene_only_draws_a_recognized_standing_idle_and_never_an_event_gesture ... ok
 test dual_wield::tests::single_b_guard_uses_base_sora_press_and_anti_roll_stays_weaponless ... ok
 test dual_wield::tests::single_style_entries_append_disabled_and_uninstall_preserves_every_native_byte ... ok
-test dual_wield::tests::request_descriptors_are_u32_with_flags_and_reject_absent_records ... ok
-test dual_wield::tests::single_styles_use_their_own_donors_and_retain_native_ability_priority ... ok
-test dual_wield::tests::spells_items_combos_and_reactions_never_get_a_movement_overlay ... ok
 test dual_wield::tests::spell_attack_identity_requires_an_exact_real_row_and_level_not_an_interior_pointer ... ok
+test dual_wield::tests::spells_items_combos_and_reactions_never_get_a_movement_overlay ... ok
 test dual_wield::tests::standard_glide_refresh_excludes_superglide_and_other_styles ... ok
 test dual_wield::tests::single_weapon_combos_keep_their_actual_tracks_and_only_wisdom_shot_events ... ok
-test dual_wield::tests::standard_glide_skin_pose_rejects_bad_binding_coordinates_and_skin_data ... ok
-test dual_wield::tests::standard_glide_uses_the_drawn_palm_while_helpers_and_local_roots_are_bad ... ok
-test dual_wield::tests::styles_resolve_ambiguous_saves_and_remove_both_without_touching_native_entries ... ok
 test dual_wield::tests::styles_migrate_the_existing_entry_and_add_only_disabled_ranged ... ok
-test dual_wield::tests::trail_requires_same_tick_attack_and_same_tick_pose_without_an_enemy ... ok
+test dual_wield::tests::standard_glide_skin_pose_rejects_bad_binding_coordinates_and_skin_data ... ok
+test dual_wield::tests::styles_resolve_ambiguous_saves_and_remove_both_without_touching_native_entries ... ok
+test dual_wield::tests::single_styles_use_their_own_donors_and_retain_native_ability_priority ... ok
 test dual_wield::tests::unconsumed_fire_recovery_has_a_deadline_and_cannot_survive_rebind_or_an_old_header ... ok
-test dual_wield::tests::unknown_or_ability_rows_reach_native_outside_an_imported_air_combo ... ok
 test dual_wield::tests::two_style_table_preserves_native_records_padding_and_separate_text_handles ... ok
+test dual_wield::tests::unknown_or_ability_rows_reach_native_outside_an_imported_air_combo ... ok
 test dual_wield::tests::unloaded_state_never_changes_list ... ok
-test growth::tests::bonus_ap_follows_the_learned_abilities ... ok
+test dual_wield::tests::standard_glide_uses_the_drawn_palm_while_helpers_and_local_roots_are_bad ... ok
 test dual_wield::tests::wisdom_quick_run_uses_loaded_growth_without_equipping_it_and_ends_on_release ... ok
-test dual_wield::tests::wisdom_run_clock_plays_at_three_quarters_without_native_cycle_resets_or_render_acceleration ... ok
-test growth::tests::early_gifts_keep_one_copy ... ok
+test dual_wield::tests::trail_requires_same_tick_attack_and_same_tick_pose_without_an_enemy ... ok
 test dual_wield::tests::wisdom_run_clock_resets_on_new_action_style_and_discontinuity ... ok
+test growth::tests::bonus_ap_follows_the_learned_abilities ... ok
+test growth::tests::early_gifts_keep_one_copy ... ok
 test growth::tests::grants_follow_level_and_lists ... ok
-test growth::tests::kh1_menu_maps ... ok
+test dual_wield::tests::wisdom_run_clock_plays_at_three_quarters_without_native_cycle_resets_or_render_acceleration ... ok
+test growth::tests::fresh_save_has_nothing ... ok
+test growth::tests::full_finished_save_makes_room ... ok
+test growth::tests::list_ends_at_first_empty ... ok
 test growth::tests::level_ups_give_kh2_abilities_once ... ok
 test growth::tests::kh1_grants_wait_for_the_mods_schedule ... ok
-test growth::tests::full_finished_save_makes_room ... ok
-test growth::tests::fresh_save_has_nothing ... ok
-test growth::tests::list_ends_at_first_empty ... ok
+test growth::tests::kh1_menu_maps ... ok
 test growth::tests::modes_parse ... ok
-test growth::tests::menu_abilities_work_when_equipped ... ok
 test growth::tests::one_of_each_only ... ok
-test growth::tests::menu_ids_are_distinct_and_new ... ok
+test growth::tests::room_comes_from_spare_copies_then_the_least_missed ... ok
+test growth::tests::menu_abilities_work_when_equipped ... ok
 test growth::tests::unequipped_abilities_do_nothing ... ok
+test growth::tests::menu_ids_are_distinct_and_new ... ok
+test growth::tests::support_abilities_count_per_equipped_copy ... ok
 test keys::tests::names ... ok
 test keys::tests::other_keys ... ok
-test growth::tests::room_comes_from_spare_copies_then_the_least_missed ... ok
 test keys::tests::unknown ... ok
-test keys::tests::page_down_and_off ... ok
-test menujump::tests::a_press_logged_once ... ok
-test growth::tests::support_abilities_count_per_equipped_copy ... ok
 test menujump::tests::backing_out_two_levels_holds_both_presses ... ok
+test menujump::tests::the_top_level_jumps_as_normal ... ok
+test menujump::tests::a_press_logged_once ... ok
+test keys::tests::page_down_and_off ... ok
 test menujump::tests::the_press_that_closes_a_submenu_never_reaches_kh2 ... ok
 test mercy::tests::a_new_hit_after_it_starts_it_again ... ok
-test menujump::tests::the_top_level_jumps_as_normal ... ok
-test mercy::tests::a_short_flinch ... ok
+test mercy::tests::a_slam_and_its_shockwave ... ok
 test mercy::tests::held_through_the_reaction_then_30_frames ... ok
 test mercy::tests::kh1_having_him_counts_down ... ok
-test mercy::tests::nothing_without_a_hit ... ok
-test mercy::tests::a_slam_and_its_shockwave ... ok
-test mercy::tests::repeats_are_told_apart ... ok
 test mercy::tests::missed_frames_do_not_stretch_it ... ok
-test mercy::tests::the_same_frame_lands_once ... ok
+test mercy::tests::a_short_flinch ... ok
+test mercy::tests::nothing_without_a_hit ... ok
+test mercy::tests::repeats_are_told_apart ... ok
+test partners::tests::a_guest_doesnt_stand_in ... ok
 test partners::tests::alone_only_limit ... ok
 test partners::tests::knocked_out_counts_as_gone ... ok
+test mercy::tests::the_same_frame_lands_once ... ok
 test partners::tests::the_full_party_opens_every_form ... ok
-test partners::tests::vanishing::a_kh1_reset_while_away_is_still_ours ... ok
-test partners::tests::vanishing::left_for_good ... ok
-test partners::tests::vanishing::a_new_actor_comes_in_whole ... ok
-test partners::tests::vanishing::kh1s_own_hide_is_left_alone ... ok
 test partners::tests::the_reason_names_the_partner ... ok
 test partners::tests::the_table ... ok
-test partners::tests::a_guest_doesnt_stand_in ... ok
-test partners::tests::vanishing::our_exact_bits_are_ours ... ok
-test partners::tests::vanishing::restored_bits ... ok
+test partners::tests::vanishing::a_new_actor_comes_in_whole ... ok
+test partners::tests::vanishing::left_for_good ... ok
+test partners::tests::vanishing::kh1s_own_hide_is_left_alone ... ok
 test partners::tests::vanishing::shown_by_kh1_clears_ours ... ok
-test partners::tests::vanishing::shown_once_then_kh1s ... ok
-test partners::tests::vanishing::the_log_names_the_bits ... ok
-test partners::tests::vanishing::the_old_net_missed_it ... ok
-test partners::tests::who_vanishes ... ok
+test partners::tests::vanishing::restored_bits ... ok
 test partners::tests::vanishing::taken_and_back ... ok
-test story::tests::bits_change_with_each_flag ... ok
-test story::tests::each_tier_alone ... ok
-test story::tests::drive_gauge_fights ... ok
-test story::tests::every_choice_gets_every_form_once ... ok
+test partners::tests::vanishing::shown_once_then_kh1s ... ok
+test partners::tests::vanishing::the_old_net_missed_it ... ok
+test partners::tests::vanishing::our_exact_bits_are_ours ... ok
 test story::tests::master_and_final ... ok
+test partners::tests::vanishing::a_kh1_reset_while_away_is_still_ours ... ok
+test story::tests::bits_change_with_each_flag ... ok
 test story::tests::nothing_before_guard_armor ... ok
+test partners::tests::vanishing::the_log_names_the_bits ... ok
+test partners::tests::who_vanishes ... ok
 test story::tests::rod ... ok
-test story::tests::shield ... ok
-test story::tests::unknown_choice_is_the_swords ... ok
-test story::tests::reflect_levels ... ok
+test story::tests::drive_gauge_fights ... ok
+test story::tests::each_tier_alone ... ok
+test story::tests::every_choice_gets_every_form_once ... ok
 test story::tests::read_thresholds ... ok
 test story::tests::sword ... ok
-test support::tests::drive_converter_turns_munny_into_orbs ... ok
-test support::tests::rates_per_copy ... ok
-test support::tests::packs_and_tells_changes ... ok
+test story::tests::unknown_choice_is_the_swords ... ok
 test support::tests::damage_control_halves_at_low_hp ... ok
+test support::tests::drive_converter_turns_munny_into_orbs ... ok
+test support::tests::packs_and_tells_changes ... ok
+test story::tests::reflect_levels ... ok
+test support::tests::rates_per_copy ... ok
+test story::tests::shield ... ok
 
-test result: ok. 239 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+test result: ok. 239 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
 
      Running tests/steam_map.rs (local/styles_v19_test_target/debug/deps/steam_map-157e3e2360fa29ce)
 
@@ -461,30 +462,32 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 
 running 6 tests
 test program::tests::header_and_triggers ... ok
-test vm::tests::arithmetic_and_puti ... ok
-test vm::tests::calls_and_returns ... ok
-test vm::tests::floats_branches_and_locals ... ok
-test vm::tests::work_memory_and_trap_returns ... ok
 test vm::tests::trig_wraps_like_the_game ... ok
+test vm::tests::work_memory_and_trap_returns ... ok
+test vm::tests::calls_and_returns ... ok
+test vm::tests::arithmetic_and_puti ... ok
+test vm::tests::floats_branches_and_locals ... ok
 
 test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
      Running unittests src/lib.rs (local/styles_v19_test_target/debug/deps/kh2_data-6243f4512e6a512f)
 
-running 4 tests
+running 6 tests
+test roxas::tests::absent_motion_override_reads_the_playable_dual_models_own_mset ... ok
+test roxas::tests::dual_roxas_rejects_wrong_objects_and_tables_and_never_forwards_unsafe_paths ... ok
+test roxas::tests::native_animation_filename_forms_normalize_to_one_archive_path ... ok
 test roxas::tests::dual_roxas_uses_object_moveset_and_motion_name_instead_of_valor_defaults ... ok
 test sora::tests::shape_groups_count_what_a_window_switches_on ... ok
 test tests::repairs_pasted_paths ... ok
-test roxas::tests::dual_roxas_rejects_boss_single_npc_bad_tables_and_motion_paths ... ok
 
-test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
      Running tests/install.rs (local/styles_v19_test_target/debug/deps/install-5721500ccee1bbad)
 
 running 4 tests
-test loads_battle_tables ... ok
 test lvpm_level_99_defense_matches_community_example ... ok
 test power_is_a_percentage ... ok
+test loads_battle_tables ... ok
 test sora_rig_loads_and_poses ... ok
 
 test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
@@ -492,11 +495,11 @@ test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running tests/local_shapes.rs (local/styles_v19_test_target/debug/deps/local_shapes-de81f1e00c9fbd83)
 
 running 5 tests
-test collision_shapes_and_guard_groups_load ... ok
-test drive_forms_load ... ok
 test every_attack_group_has_a_shape ... ok
-test sora_field_motions ... ok
+test drive_forms_load ... ok
 test the_shadow_loads_with_its_attacks_and_hurt_shapes ... ok
+test collision_shapes_and_guard_groups_load ... ok
+test sora_field_motions ... ok
 
 test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
@@ -505,64 +508,64 @@ test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 running 42 tests
 test draw::tests::colour_modulation ... ok
 test camera::tests::look_at_axes ... ok
-test effects::tests::transform_follows_bone ... ok
-test draw::tests::model_programs_key_layouts ... ok
 test camera::tests::y_up_view_flips ... ok
+test draw::tests::model_programs_key_layouts ... ok
 test draw::tests::wood_frame_keeps_root_up_and_faces_screen ... ok
+test math::tests::table_angles ... ok
 test effects::tests::camera_element_sits_in_view_space ... ok
 test math::tests::rotation_conventions ... ok
+test effects::tests::transform_follows_bone ... ok
 test math::tests::trs_scales_axes ... ok
-test math::tests::table_angles ... ok
+test megabirth::tests::view_matrix_modes ... ok
 test megabirth::tests::update_moves_and_fades ... ok
 test output::tests::blend_equations ... ok
-test output::tests::batching_and_sorting ... ok
-test megabirth::tests::view_matrix_modes ... ok
 test output::tests::colour_bytes ... ok
+test output::tests::batching_and_sorting ... ok
 test output::tests::d3d_factors ... ok
-test player::tests::angle_loop_wraps_and_move_loop_holds_in_fast_forward ... ok
 test player::tests::born6_angles_face_the_vertex ... ok
 test player::tests::ke_d_mat_keeps_the_view_matrix ... ok
-test player::tests::ke_mat_sn_rotates_by_the_angle_change ... ok
-test player::tests::loop_resets_keep_the_scroll_position ... ok
-test player::tests::no_rot_matrix_faces_the_camera ... ok
-test player::tests::par_mat_r_inherits_rotation_without_scale ... ok
-test player::tests::point_loop_runs_on_across_a_loop ... ok
-test player::tests::vt_mime_morphs_and_truncates ... ok
-test player::tests::vt_mime_integrates_t ... ok
-test player::tests::supported_set ... ok
-test player::tests::work_access ... ok
-test player::tests::random_vectors ... ok
-test rng::tests::msvc_sequence ... ok
-test rng::tests::rand01_range ... ok
-test shipoly::tests::spline_passes_through_points ... ok
-test shipoly::tests::records_and_builds_edges ... ok
-test tail::tests::tail2_animation_reads_current_step ... ok
+test player::tests::angle_loop_wraps_and_move_loop_holds_in_fast_forward ... ok
 test player::tests::born_rnd6_spawns_at_vertices_with_angles ... ok
-test tail::tests::tail3_sprites_jitter_and_step ... ok
-test tail::tests::tail3_ring_and_colours ... ok
-test tail::tests::walk_spaces_sprites_along_history ... ok
-test tail::tests::walk_shrinks_size_and_spacing ... ok
+test player::tests::loop_resets_keep_the_scroll_position ... ok
+test player::tests::ke_mat_sn_rotates_by_the_angle_change ... ok
+test player::tests::par_mat_r_inherits_rotation_without_scale ... ok
+test player::tests::no_rot_matrix_faces_the_camera ... ok
+test player::tests::supported_set ... ok
 test player::tests::tail3_draw_time_and_distortion_strength ... ok
-test library::tests::decode_atlas_from_pages ... ok
+test player::tests::vt_mime_morphs_and_truncates ... ok
+test player::tests::point_loop_runs_on_across_a_loop ... ok
+test player::tests::vt_mime_integrates_t ... ok
+test player::tests::work_access ... ok
+test rng::tests::msvc_sequence ... ok
+test player::tests::random_vectors ... ok
+test rng::tests::rand01_range ... ok
+test tail::tests::tail3_ring_and_colours ... ok
+test shipoly::tests::records_and_builds_edges ... ok
+test shipoly::tests::spline_passes_through_points ... ok
+test tail::tests::walk_shrinks_size_and_spacing ... ok
+test tail::tests::tail3_sprites_jitter_and_step ... ok
+test tail::tests::walk_spaces_sprites_along_history ... ok
 test library::tests::decode_packed_page ... ok
+test tail::tests::tail2_animation_reads_current_step ... ok
+test library::tests::decode_atlas_from_pages ... ok
 
-test result: ok. 42 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+test result: ok. 42 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
 
      Running tests/synthetic.rs (local/styles_v19_test_target/debug/deps/synthetic-24652b39914ffe4d)
 
 running 10 tests
+test spell_packages_fully_supported ... ok
+test texture_decodes ... ok
+test start_wait_delays_drawing ... ok
 test bound_effect_follows_bone_and_fades_on_end ... ok
 test billboard_faces_any_camera ... ok
 test billboard_sprite_lifetime_and_colour ... ok
-test shape_trail_3x_follows_the_shot ... ok
-test texture_decodes ... ok
+test wood_billboard_stays_upright ... ok
 test shape_trail_2x_shrinks_and_fades ... ok
 test world_matrix_stays_where_it_was_spawned ... ok
-test spell_packages_fully_supported ... ok
-test start_wait_delays_drawing ... ok
-test wood_billboard_stays_upright ... ok
+test shape_trail_3x_follows_the_shot ... ok
 
-test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
 
      Running unittests src/lib.rs (local/styles_v19_test_target/debug/deps/kh2_magic-66bef073e1459755)
 
@@ -575,25 +578,25 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 
 running 4 tests
 test sonic_rave_runs_with_its_follow_ups ... ok
+test infinity_runs_its_combo_and_shots ... ok
 test last_arcanum_runs_its_combo ... ok
 test strike_raid_throws_the_keyblade ... ok
-test infinity_runs_its_combo_and_shots ... ok
 
 test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
      Running tests/spells.rs (local/styles_v19_test_target/debug/deps/spells-51b452e0ff4c8e9c)
 
 running 8 tests
-test reflect_chain_counters_from_the_last_cast ... ok
 test reflect_barrier_held ... ok
-test wisdom_fires_a_homing_shot ... ok
-test reflect_pop_frame_ignores_hit_count ... ok
 test reflect_counters_what_it_blocked ... ok
+test reflect_pop_frame_ignores_hit_count ... ok
+test reflect_chain_counters_from_the_last_cast ... ok
 test every_spell_runs ... ok
-test wisdom_spells_run_at_their_sub ... ok
 test reflect_pops_once_for_two_hits ... ok
+test wisdom_spells_run_at_their_sub ... ok
+test wisdom_fires_a_homing_shot ... ok
 
-test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
      Running unittests src/lib.rs (local/styles_v19_test_target/debug/deps/kh2_rig-acebd7c448001703)
 
@@ -620,7 +623,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 running 1 test
 test crates/combat-core/src/lib.rs - (line 20) ... ok
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
 
    Doc-tests kh1_data
 
@@ -652,7 +655,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 running 1 test
 test crates/kh2-fx/src/lib.rs - (line 9) - compile ... ok
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
 
    Doc-tests kh2_magic
 
