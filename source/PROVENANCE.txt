@@ -1,11 +1,11 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v41 source: 556df9b445290448a58b4b05bc2f1b23282af859
+Derivative v42 source: e8e0f5036fb27d55200628def51cb9bc7537e338
 Branch: dual-wield-prototype
-NineStyles_v41.patch contains 41 derivative commits; apply with git am.
+NineStyles_v42.patch contains 42 derivative commits; apply with git am.
 Includes original project credits, NOTICE and MIT/Apache licences.
 Runtime uses the user's own installed KH1/KH2 resources; no game assets or dumps.
 Historical source recovery: original v13 2b58a7bcb76711325f484d3d84905cf0a2e26be1; reconstructed 0c9b7dfd31ec8d74b6ae47df2a28850324af35b4.
 All 22 touched-file blobs matched the source-patch index hashes.
-Current behavior and confidence: docs/combat-model.md Stage378 in the source patch.
-Single D is a pending inventory/mapping entry, not a completed Dark Riku moveset.
+Current behavior and confidence: docs/combat-model.md Stage381 in the source patch.
+Single D main1160 source capture is implemented; playable Dark Riku retarget remains pending.
