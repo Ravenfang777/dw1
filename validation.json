@@ -1,17 +1,17 @@
 {
-  "name": "KH1FM Six Styles Prototype v29",
-  "stage": "s368",
-  "source_commit": "c439c37b9538015ca25dc4d46a8676cba36ba572",
+  "name": "KH1FM Seven Styles Prototype v30",
+  "stage": "s369",
+  "source_commit": "059e04b42613386dbab6ef03583faeaa9b50e750",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 4922193,
-  "dll_sha256": "10b0c31e91d97d645a2fa7a9c650dd0663f1b846b5c6f30a71abcf6c34b65d5b",
-  "source_patch_sha256": "8bf27ee4f9dfd5110b34b4dcd099a20f081627e0a985b214b8167d42c41798be",
-  "tests_passed": 477,
+  "dll_bytes": 4981854,
+  "dll_sha256": "ddd196f9051bc9c2e6e3a930f776c5ead95ea21d608314aa9feb8a3ab32501c5",
+  "source_patch_sha256": "a562fa8fb63b1369e2460a692aa926bc9210c9e20d4c754eb1a834739db935c4",
+  "tests_passed": 488,
   "tests_failed": 0,
   "test_cache": "Linux test cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 31,
-  "style_tests": 151,
+  "style_tests": 155,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -33,9 +33,9 @@
   "source_scope_checks": 164,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v29_game_or_gpu_test": false,
+  "live_v30_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "separate Roxas body landmark map from real hand attachments, ordered hierarchy and bind; preserve raw animation/weapon/contact indices and confirmed styles/Glide",
+  "new_behavior": "native-blocking KH2 Sora Guard overlay for Dual C; seventh exclusive Single C using final-battle playable Riku and a separate one-weapon rig/body map; confirmed Roxas combos and Glide retained",
   "model_metadata_checks": 7,
-  "preserved_v28_commit": "086fe58e130d3f95daf3cd5a273aeae97a6cbee8"
+  "preserved_v29_commit": "c439c37b9538015ca25dc4d46a8676cba36ba572"
 }

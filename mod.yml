@@ -1,8 +1,8 @@
-title: KH1FM Six Styles Prototype v29
+title: KH1FM Seven Styles Prototype v30
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Give Dual C a separate Roxas body map using real hand joints and measured hierarchy.
-  Preserve the confirmed Glide fix and working styles/gameplay.
+  Add KH2 Sora Guard for Dual C and Style Single C using playable endgame Riku.
+  Separate one-weapon Riku body/weapon calibration; confirmed Roxas combos and Glide retained.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll
