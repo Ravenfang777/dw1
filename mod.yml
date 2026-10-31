@@ -1,8 +1,8 @@
-title: KH1FM Seven Styles Prototype v30
+title: KH1FM Seven Styles Prototype v31
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Add KH2 Sora Guard for Dual C and Style Single C using playable endgame Riku.
-  Separate one-weapon Riku body/weapon calibration; confirmed Roxas combos and Glide retained.
+  Fix Single C data-profile admission: native PLAYER classification is not required.
+  Keep exact Riku identity, real rig/motion/combo checks and all existing gameplay.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

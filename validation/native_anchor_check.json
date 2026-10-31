@@ -339,7 +339,7 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v30_checks": [
+  "v31_checks": [
     {
       "anchor": "native_show_weapon_prologue",
       "steam_rva": "0x2a2e30",
@@ -396,10 +396,10 @@
       "matches": true
     }
   ],
-  "v30_new_hook_sites": 0,
-  "v30_uses_existing_native_visibility_routine": true,
-  "live_v30_game_test": false,
-  "v30_private_skeleton_metadata_checks": {
+  "v31_new_hook_sites": 0,
+  "v31_uses_existing_native_visibility_routine": true,
+  "live_v31_game_test": false,
+  "v31_private_skeleton_metadata_checks": {
     "normal_sora_293_bones": true,
     "helper_hand_206_is_unskinned": true,
     "left_palm_218_is_skinned": true,
@@ -408,6 +408,6 @@
     "grip_helpers_are_unskinned": true,
     "left_palm_base_at_hand": true
   },
-  "v30_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
-  "v30_scope": "Dual C native Guard style extension and Riku data-only Single C; no new hooks; confirmed Glide/defensive/magic paths retained"
+  "v31_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v31_scope": "Riku data-profile classification and bounded diagnostics only; no new hooks or gameplay changes"
 }

@@ -1,106 +1,95 @@
-KH1FM SEVEN STYLES -- PROTOTYPE v30 (s369)
+KH1FM SEVEN STYLES -- PROTOTYPE v31 (s370)
 
 INSTALL
-1. Fully close KH1FM. Disable v29 and every older Dual Wield prototype.
-2. Import this ZIP into OpenKH, enable ONLY v30, then Build and Run.
+1. Fully close KH1FM. Disable v30 and every older Dual Wield prototype.
+2. Import this ZIP into OpenKH, enable ONLY v31, then Build and Run.
    Panacea and your installed KH2FM are required. F1 cannot reload a DLL.
-3. Confirm s369 / PROTOTYPE v30 in kh1-dual-wield.log beside the game EXE.
+3. Confirm s370 / PROTOTYPE v31 in kh1-dual-wield.log beside the game EXE.
 
-This is an OpenKH native DLL mod. Keep the full KH2 Combat overhaul,
-older offhand/moveset Lua and duplicate Sora model mods disabled. Use
-normal Sora. Existing kh1-dual-wield.ini is preserved. No game assets ship.
+Keep the full KH2 Combat overhaul, older offhand/moveset Lua and duplicate
+Sora model mods disabled. Use normal Sora. Existing INI/save style entries
+are preserved. No game assets ship; this is an OpenKH native DLL mod.
 
-DUAL C: KH2 SORA GUARD
-The user confirmed v29's playable Roxas moveset works. Its resource loader,
-two-hand body map and authored combo adapter are unchanged. Dual C now uses
-base KH2 Sora's actual Guard press animation when KH1 commits Guard.
-Equip KH1's Guard normally; this style does not grant the ability.
-Native blocking, timing, ability gates and Guard/Roll choice remain KH1's.
+WHY SINGLE C DID NOT WORK
+The supplied s369/v30 log says:
+  SINGLE C DONOR UNAVAILABLE: final-battle Riku object is not PLAYER
+  SINGLE C DATA: playable final-battle Riku=false attack_adapter=false
+The ability equipped, but Riku was rejected before any animation/rig read.
+V30 required native object type zero. That was an incorrect condition for
+this data-only importer. The actual type was nonzero; v30 did not print its
+value, so the log does not establish which specific native class it uses.
 
-Guard has a separate Sora body calibration, so its bones are never measured
-as Roxas's. The duplicate follows the final drawn hand without an imported
-Guard attack/hitbox. Native held-attachment initialization uses the correct
-selected Roxas/Valor idle rig and a separate cache. Confirmed Glide draw,
-alignment/colors, Dual A Superglide finisher and Dual B actions are retained.
+V31 CHANGE
+Admit the exact unique 2257/P_EH000_LAST body data profile independently of
+its native object type. Apply the same data-only identity rule to exact
+791/W_EH000 weapon geometry. No KH2 actor, control class, AI, script or
+form is instantiated or changed. Other actor IDs/models remain rejected.
 
-NEW: STYLE: SINGLE C
-New ability id 120, 0 AP, initially disabled. Equipping it cancels every
-other style. It uses playable final-battle Riku, P_EH000_LAST (2257), with
-his actual declared/shared motion bank, NeoMoveset and SKLT hand metadata.
-The rig reads his W_EH000 weapon skeleton/collision and WMST motion tracks.
-You still see Sora and your equipped KH1 weapon. There is no duplicate,
-Riku model, forced Way to Dawn, gauge, costume, stat bonus or extra ability.
+All bank/path/NeoMoveset, WMST/SKLT, one-weapon rig/attachment, anatomical
+map/core-frame, motion and authored melee checks remain. There is no alternate
+Riku/party/boss/Sora substitution, guessed bank/table, remapped gameplay or
+new ability. Native type/subtype are retained as diagnostic metadata.
 
-Riku has a separate mapped body calibration. An available free-hand SKLT
-joint is used only as a body landmark; otherwise a mirrored finger-bearing
-palm is inferred and checked by the complete existing body map. Weapon leaf
-helpers may calibrate from nearby palms. Actual weapon attachments, motion
-channels and collision bones keep their native indices. No Sora-indexed
-hair/hood map is applied to Riku; weapon-chain secondary motion is retained.
-
-Base ground/aerial melee uses Riku's authored primary-weapon rows and timing.
-Only native KH1 Combo Plus/Air Combo Plus policy carries into those attacks;
-equipped native attack abilities keep the established native combo priority.
-Matching idle/run/walk/jump/fall/land/ledge/item/damage/scene/Roll poses overlay
-where present. Riku Guard press is optional and retains native blocking.
-
-KH1 spell casts and normal Glide/Superglide remain native for Single C.
-Missing Riku slots also remain native. Dark Aura, limits, party AI, special
-commands and donor effect scripts are not added in this test build.
+Startup now prints the raw profile before resource reads, including actual
+type/subtype, original/resolved bank, NeoMoveset, SKLT and native form. Bad
+bank/table errors include that context. After resources load, a bounded
+combo summary reports row kinds/motions/air flags/abilities/sub-links and
+hit-weapon masks before map/adapter admission. This will expose a later
+resource/map/adapter rejection without assuming it has already happened.
 
 FIRST TEST
-1. Fresh process: equip Dual C and native Guard. Try Guard, ground and aerial
-   combos, then standard Glide. Dual C should keep the working Roxas attacks.
-2. Equip Style: Single C. Confirm the other style switches off and there is
-   only one equipped weapon. Test idle/run/jump and ground/aerial combos.
-3. Test a native spell, Guard, an area change and unequipping Single C.
-4. Startup should report:
-   SINGLE C ASSETS READ ... primary_hand=... free_hand_metadata=...
+1. Fresh game process. Stand idle briefly, then equip Style: Single C.
+2. Check idle/run/jump, then a basic ground and aerial combo.
+3. Expected startup progression:
+   SINGLE C PROFILE READ ... native_type=... NeoMoveset=... SKLT=...
+   SINGLE C ASSETS READ ...
+   SINGLE C COMBO METADATA ...
    SINGLE C RIG MAP ADMITTED ... core_parts=17 ...
-   SINGLE C DONOR LOADED ... ground_rows=... air_rows=...
+   SINGLE C DONOR LOADED ...
    SINGLE C DATA ... playable final-battle Riku=true attack_adapter=true
-The menu entry alone does not prove donor admission. Return the full fresh
-log including startup if Riku stays native, a pose is wrong or it crashes.
-Resource/map rejection logs an exact reason; no other moveset substitutes.
+4. If still native, a pose is wrong or it crashes, return the full fresh
+   kh1-dual-wield.log including startup. The entry alone is not admission.
 
-RETAINED
-Seven exclusive 0-AP IDs: Dual A 126 (Valor), Dual B 125 (Final),
-Single A 124 (base KH2 Sora), Single B 123 (Wisdom), Anti 122 (unarmed),
-Dual C 121 (playable dual Roxas), Single C 120 (playable final-battle Riku).
-Only the three Dual styles duplicate the currently equipped weapon.
-A's actual Superglide finisher, B's Quick Run/Guard/Fire/FX, Single B Run .75,
-Anti's aura/restrictions and the confirmed Glide fix remain.
+The next resource/map/combo stage still needs actual installed-game testing.
+V31 corrects the observed pre-resource rejection; offline tests do not prove
+that every following asset/rig check will pass or every pose renders correctly.
+
+PRESERVED
+All gameplay policy, ability IDs/exclusivity, body maps/inference, controllers,
+contacts, Roxas loading/combos, Dual C Sora Guard, complete offhand attachment
+and Glide/color draw, A's actual Superglide finisher and B's Quick Run/Guard/
+Fire/magic paths are byte-identical to v30. Only Riku data-profile admission,
+bounded diagnostics and version labels change.
+
+Seven exclusive 0-AP IDs: Dual A 126 (Valor), Dual B 125 (Final), Single A 124
+(base KH2 Sora), Single B 123 (Wisdom), Anti 122, Dual C 121 (dual Roxas),
+Single C 120 (endgame Riku). Only the Dual styles duplicate the equipped weapon.
+Single C remains one equipped KH1 weapon, with matching Riku base melee/poses
+when admitted; native KH1 spells, normal Glide/Superglide and missing slots.
+No Riku costume, fixed weapon, gauge, stat bonus, special commands, extra
+abilities or donor scripts are added. Native attack abilities keep priority.
 
 INI defaults:
   dual_b_spell_fx = on
   idle_speed = 0.75
   offhand_only_test = off
   remove_dual_wield = off
-Offhand-only testing affects Dual weapon contacts. Single C has no offhand.
 To remove custom entries: set remove_dual_wield on; launch/load/save with
-v30; close; disable the mod and Build again. Only our seven custom entries
+v31; close; disable the mod and Build again. Only our seven custom entries
 are removed. DLL/INI changes require a full restart.
 
 VALIDATION AND LIMITS
-488 tests pass across 31 suites (155 style tests). New coverage includes
-seven-way exclusivity and uninstall, exact playable Riku profile/shared bank,
-nonplayer/path rejection, free palms/weapon helpers, separate canonical Guard
-and mapped combo outputs, row-11 preservation, primary-only ground/air contact
-lifetime and no special-script/ability grants. The existing Win64 Guard bridge,
-Glide, Fire and Quick Run tests remain. Windows x64 release, PE interface,
-164 scope/preservation checks, 11 native anchors and seven protected-model
+490 tests pass across 31 suites (155 style tests). Two new cases cover
+nonzero native classifications on the exact Riku identity and raw metadata
+in invalid-bank/table errors. Wrong actor/model, ambiguous records, unsafe
+paths and missing tables still fail. Existing rig/Guard/Glide/Fire/Quick Run/
+contact/controller tests remain. Windows x64 release, PE interface, 132
+source/preservation checks, 11 native anchors and seven protected-model
 metadata checks pass. ZIP CRC, independent extraction and saved-copy hashes
 are verified.
 
-No live v30 game/GPU test or actual installed Riku asset execution was run
-here. Synthetic fixtures do not prove that your Riku bank/map is admitted or
-every pose renders correctly. Free-hand matching bounds are our inference
-rules, not KH2 constants. The supplied build is ready for that game test.
-Source patch, pinned upstream, credits/licences and validation receipts are
-included. No game executable, recording, extracted asset or disassembly ships.
-
-Data identity/format sources (OpenKH):
-https://openkh.dev/kh2/dictionary/obj.html
-https://openkh.dev/kh2/file/type/00objentry.html
-https://openkh.dev/kh2/file/type/03system.html
-Detailed rules/confidence: docs/combat-model.md Stage 369 in the source patch.
+No live v31 game/GPU test or actual installed Riku asset execution was run
+here. Source patch, pinned upstream, credits/licences and validation receipts
+are included. No game executable, recording, extracted asset or disassembly
+ships. Detailed rules/confidence: docs/combat-model.md Stage 370 in the patch.
+Object metadata layout: https://openkh.dev/kh2/file/type/00objentry.html
