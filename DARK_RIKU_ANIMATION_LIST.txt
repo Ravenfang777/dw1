@@ -3,7 +3,7 @@ KH1 DARK RIKU -- CAPTURED ANIMATION SLOT INVENTORY
 Source: user CSV and s378 log, 20261031-103151.
 These are verified numbered slots/durations, not verified action names.
 No animation/model payload is included. Do not reuse KH2 Riku labels.
-v46 enables body mapping and first field movement; attack/contact mapping pending.
+v47 enables body mapping and first field movement; attack/contact mapping pending.
 
 Dark Riku main bank: xa_ex_1160.mset
 31 readable slots; 60 FPS; 247 bones; 12 helper records.

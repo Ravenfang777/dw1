@@ -1,7 +1,7 @@
-V46 NOTE: historical calibration/solver method below. Current runtime uses
-checked secondary rest, not live cache locals. See README_SECONDARY_FIX.txt.
+V47 NOTE: source solver unchanged. Current target mapping/timing is described
+in README_MAPPING.txt; the native-CPU solver reference below is historical.
 
-DARK RIKU AUTHORED POSE SOLVER -- v44 REFERENCE RETAINED IN v45
+DARK RIKU AUTHORED POSE SOLVER -- v44 REFERENCE RETAINED IN v47
 
 The pipeline now includes model defaults -> constant channels -> native fixed-
 tick curves -> helper hierarchy -> authored bone constraints. It is stateless
@@ -13,8 +13,8 @@ The bank has 247 bones, 205 native-active joints per clip and 12 helpers. Inacti
 joints are explicitly marked; their identity matrices are not solved landmarks.
 The separate root-motion channel is returned as data, never applied to the actor.
 The solver does not run terrain/floor IK, gameplay, AI, events or hit detection.
-v45 adds body mapping and a first field movement test; action/contact mapping remains pending.
-The supplied v45 GIF compares the source rig with Sora; it is not gameplay video.
+v47 refines the body/movement mapping; combat/contact mapping remains pending.
+The earlier skeleton preview was offline, not gameplay video.
 
 REFERENCE METHOD
 The original captured Steam pose evaluator was run inside isolated Unicorn CPU
@@ -33,7 +33,7 @@ See validation/native_solver_validation_v44.json for the per-clip error report.
 No actual game/GPU or Sora-retarget validation has run here.
 
 OPTIONAL REPRODUCTION FROM SOURCE
-Apply source/NineStyles_v46.patch to the pinned upstream using git am (see
+Apply source/NineStyles_v47.patch to the pinned upstream using git am (see
 source/PROVENANCE.txt). Use your own captured xa_ex_1160.mdls/.mset and the exact
 reference executable version. Those files are deliberately not included.
 The Rust example emits a private binary pose stream:

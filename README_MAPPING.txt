@@ -1,44 +1,40 @@
-V46 NOTE: historical calibration/solver method below. Current runtime uses
-checked secondary rest, not live cache locals. See README_SECONDARY_FIX.txt.
+DARK RIKU TO SORA BODY MAP -- v47
 
-DARK RIKU TO SORA BODY MAP -- v45
+Source: original main1160,247 bones,31 clips; v44 validated authored solver.
+Target: current native Sora293-bone table read at runtime.103 target joints
+use101 distinct active source joints. Primary palm202->101; free palm99->206.
+Inactive source tips, cape, hair and sword are not copied. One equipped weapon.
 
-Source: captured xa_ex_1160 (247 bones), using v44's validated authored solver.
-Target: current native Sora (293 bones); runtime reads the actual bone table.
-Mapped body/finger joints: 103 target / 101 distinct active source.
-Primary palm: Dark Riku 202 -> Sora 101. Free palm: 99 -> 206.
-Source inactive endpoints, cape, hair and sword are not retargeted.
+Most mapped turns are solved source rotation * inverse(source bind rotation),
+applied to Sora's own bind basis. Child offsets retain Sora's own geometry.
+Source3's authored basis did not place the hips along their solved separation.
+For that pelvis turn, form a frame from hip39->5 and the perpendicular torso86
+above their midpoint; forward is side cross up. Use the posed/bind frame turn.
+The same actual target hip width and bone lengths remain. No guessed outward
+translation or copied source limb length. Collapsed source landmarks reject.
+Only the pelvis and its descendants change from v46; all228 other matrices
+stay byte-identical over the full2139-pose probe.
 
-Global turn = solved source rotation * inverse(source bind rotation).
-Target rotation = global turn * target bind rotation. Target child placement
-uses Sora's own parent-relative bind offset. This is a separate KH1-to-KH1
-calibration; the existing KH2 position-frame retarget is untouched.
-Unmapped target children keep valid native locals. Native unused/non-affine
-locals use their own bind fallback. The source's root travel is subtracted
-before root-height scaling; model-to-world placement stays independent.
+Secondary joints use v46's checked immutable rest/bind, preserving own bind
+scale. No live local cache enters Single D. Check complete private output and
+final skin bases after existing floor/weapon handling, before publication.
+Source travel is subtracted; model-to-world placement stays independent.
+Script/event/hold/current-request/header/native field guards remain intact.
+No boss AI, source gameplay scripts, events or hit windows run.
 
-Admission checks bone counts, hierarchy, limb geometry, hand sides, source
-activity and affine finite transforms. It produces a whole private pose before
-any existing render publication. Failure leaves native posing in place.
-Only current regular-bank field locomotion is drawn in this stage. A matching
-locomotion request is also required, so an accepted attack/cast cannot retain
-an obsolete walking/landing overlay during its header handoff. No event,
-script or hold can borrow an overlay. No source AI/events/hit windows run.
+Current action policy:0 idle,1 walk,2 run,6 all airborne phases,7 land.
+Air source6 plays once then holds its end. One per-Sora pause-aware game-frame
+clock spans native takeoff/rise/fall; native clocks cannot restart it. Drawing
+and pauses add no time. Native/ground/style/instance handoff resets it. Other
+movement retains existing clocks. All Single D combat actions remain native.
 
 REPRODUCTION
-Apply source/NineStyles_v46.patch to pinned upstream using git am.
-Use your own source main model/bank and Sora model; no input assets are bundled.
-
+Apply source/NineStyles_v47.patch to the pinned upstream with git am.
+Use your own original models and main bank; no source assets are bundled.
 cargo run --locked -p kh1-data --example dark_riku_map -- DARK.mdls DARK.mset SORA.mdls OUTPUT.bin
-
-The probe samples every integer/end frame plus fractional/quantization points
-and emits a private binary pose stream. Do not install/distribute that stream.
-validation/mapping_validation.json contains the 2139-pose independent matrix
-comparison and invariant results. Those are not native-solver or GPU parity.
-The legacy native-solver comparison remains in the separate v44 receipt.
-Source profiles/rules/confidence are in docs/combat-model.md Stage 384.
-
-The eight movement slot roles are inferred from solved pose sequences. The
-remaining clips are numerically mapped, but their semantic names, attack
-ownership, timing and contacts are not inferred from slot numbers alone.
-That action/contact integration is the next stage after live body alignment.
+The private probe samples every integer/end plus fractional/quantization points
+on all31 clips. Do not distribute/install the raw matrix output.
+validation/mapping_validation.json is the current v47 matrix/invariant result.
+The v45 baseline and v44 source-solver/native-CPU proofs are labelled history.
+None establishes live game/GPU skin parity. See combat-model Stage386 for
+sources/confidence, observed stance discrepancy and exact scope.

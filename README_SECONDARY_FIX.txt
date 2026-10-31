@@ -1,3 +1,6 @@
+HISTORICAL V46 REPAIR, RETAINED IN V47. Read README_MAPPING.txt for the new
+pelvis placement and airborne hold; those are the only mapping-policy changes.
+
 SINGLE D SECONDARY REST REPAIR -- v46
 
 The s384 log rejects target joints 9, 29, 112 and 259. All are outside the 103

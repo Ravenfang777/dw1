@@ -1,9 +1,8 @@
-title: KH1FM Nine Styles Prototype v46
+title: KH1FM Nine Styles Prototype v47
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Repairs Single D movement dropouts and secondary-joint distortion in v45.
-  Checked immutable rest, preserved bind scale and final skin-basis validation.
-  Existing movement assignments, native combat/magic and other styles retained.
+  Single D solved-hip placement and airborne source6 play-once/hold.
+  Retains checked secondary rest, skin validation and existing other styles.
   Requires installed KH2FM and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

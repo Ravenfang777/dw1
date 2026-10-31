@@ -1,8 +1,7 @@
 Windows x64 release: PASSED
-Rust 1.85.0 / MinGW x64 / RUSTFLAGS=-C codegen-units=1
-584 tests / 31 suites / 173 existing style tests / 13 map tests (6 new).
-Fresh nonincremental portable test target used after stale zero-length cached
-test executable; full suite passed. Runtime DLL release was not incremental.
-DLL SHA256 cb4a4ff60663724eb30e5b73c2538ae4c8e7b1817b24adcf803f78b4bd05ae48
-Source b70e3f640d965b654dd707de44ad48e5575205f6
-No live v46 game/GPU test.
+Rust1.85.0 / MinGW x64 / codegen-units=1 / nonincremental
+590 tests /31 suites /173 existing style /16 map /8 D policy-clock.
+22 scope checks,286 other tracked files exact.2139 poses/31 clips pass.
+DLL SHA256 8ad772848e927b9149fbcc20b1ff00d94e7e2bdb217a690658caff16aeb66764
+Source e30fb9f0340725347bc6fde4bc57a94e955b6826
+No actual v47 game/GPU test.

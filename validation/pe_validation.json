@@ -1,8 +1,8 @@
 {
   "build_passed": true,
   "machine": "x86_64",
-  "dll_bytes": 4529558,
-  "dll_sha256": "cb4a4ff60663724eb30e5b73c2538ae4c8e7b1817b24adcf803f78b4bd05ae48",
+  "dll_bytes": 4532420,
+  "dll_sha256": "8ad772848e927b9149fbcc20b1ff00d94e7e2bdb217a690658caff16aeb66764",
   "exports": [
     "DirectInput8Create",
     "DllMain",
@@ -23,5 +23,5 @@
   "new_runtime_dependencies": 0,
   "preexisting_warning_count": 1384,
   "rust_toolchain": "1.85.0",
-  "live_v46_game_test": false
+  "live_v47_game_test": false
 }
