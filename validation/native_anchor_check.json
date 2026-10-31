@@ -338,5 +338,61 @@
   "v21_new_hook_sites": 1,
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
-  "live_v21_game_test": false
+  "live_v21_game_test": false,
+  "v22_checks": [
+    {
+      "anchor": "direction_built_before_action_selection",
+      "steam_rva": "0x2a6255",
+      "matches": true
+    },
+    {
+      "anchor": "prepared_direction_is_third_argument",
+      "steam_rva": "0x2a6288",
+      "matches": true
+    },
+    {
+      "anchor": "control_calls_native_action_selector",
+      "steam_rva": "0x2a6295",
+      "matches": true
+    },
+    {
+      "anchor": "action_selector_complete_prologue",
+      "steam_rva": "0x2a7b30",
+      "matches": true
+    },
+    {
+      "anchor": "selector_uses_third_argument",
+      "steam_rva": "0x2a7b43",
+      "matches": true
+    },
+    {
+      "anchor": "guard_requires_native_ability",
+      "steam_rva": "0x2a7bfb",
+      "matches": true
+    },
+    {
+      "anchor": "selector_resolves_native_stats",
+      "steam_rva": "0x2a7c06",
+      "matches": true
+    },
+    {
+      "anchor": "selector_reads_native_threshold",
+      "steam_rva": "0x2a7c0b",
+      "matches": true
+    },
+    {
+      "anchor": "selector_compares_prepared_tilt",
+      "steam_rva": "0x2a7c10",
+      "matches": true
+    },
+    {
+      "anchor": "moving_roll_uses_existing_committed_entry",
+      "steam_rva": "0x2a7c4c",
+      "matches": true
+    }
+  ],
+  "v22_new_hook_sites": 1,
+  "v22_action_selector_preserves_original_once": true,
+  "v22_selector_hook_whole_position_independent_prologue_bytes": 5,
+  "live_v22_game_test": false
 }
