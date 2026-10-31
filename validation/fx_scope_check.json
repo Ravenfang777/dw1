@@ -91,51 +91,59 @@
     "duplicate_rgba_is_private_and_regular_only": true,
     "bounded_glide_diagnostics_explain_template_or_rejection": true,
     "rendered_palm_and_first_glide_fixtures_present": true,
-    "fully_unchanged_v30_dual_actions": true,
-    "fully_unchanged_v30_leftblade": true,
-    "fully_unchanged_v30_takeover": true,
-    "fully_unchanged_v30_dual_cast": true,
-    "fully_unchanged_v30_combat": true,
-    "fully_unchanged_v30_dual_magic_fx": true,
-    "fully_unchanged_v30_native_spell_fx": true,
-    "fully_unchanged_v30_dualglide": true,
-    "fully_unchanged_v30_dual_hover": true,
-    "fully_unchanged_v30_form": true,
-    "fully_unchanged_v30_crates/kh1-hook/src/dual_wield.rs": true,
-    "fully_unchanged_v30_crates/kh1-hook/src/defensive_bridge.rs": true,
-    "fully_unchanged_v30_crates/kh1-hook/src/win/steam_map.in": true,
-    "fully_unchanged_v30_crates/kh1-data/src/retarget.rs": true,
-    "fully_unchanged_v30_crates/kh1-data/src/retarget/source.rs": true,
-    "fully_unchanged_v30_crates/kh1-data/src/secondary.rs": true,
-    "fully_unchanged_v30_crates/kh1-data/src/inverse.rs": true,
-    "fully_unchanged_v30_crates/kh2-data/src/roxas.rs": true,
-    "fully_unchanged_v30_crates/kh2-data/src/sora.rs": true,
-    "fully_unchanged_v30_crates/kh2-data/src/lib.rs": true,
+    "fully_unchanged_v31_dual_actions": true,
+    "fully_unchanged_v31_takeover": true,
+    "fully_unchanged_v31_dual_cast": true,
+    "fully_unchanged_v31_combat": true,
+    "fully_unchanged_v31_dual_magic_fx": true,
+    "fully_unchanged_v31_native_spell_fx": true,
+    "fully_unchanged_v31_dualglide": true,
+    "fully_unchanged_v31_dual_hover": true,
+    "fully_unchanged_v31_form": true,
+    "fully_unchanged_v31_crates/kh1-hook/src/defensive_bridge.rs": true,
+    "fully_unchanged_v31_crates/kh1-hook/src/win/steam_map.in": true,
+    "fully_unchanged_v31_crates/kh1-data/src/retarget.rs": true,
+    "fully_unchanged_v31_crates/kh1-data/src/retarget/source.rs": true,
+    "fully_unchanged_v31_crates/kh1-data/src/secondary.rs": true,
+    "fully_unchanged_v31_crates/kh1-data/src/inverse.rs": true,
+    "fully_unchanged_v31_crates/kh2-data/src/roxas.rs": true,
+    "fully_unchanged_v31_crates/kh2-data/src/sora.rs": true,
+    "fully_unchanged_v31_crates/kh2-data/src/lib.rs": true,
     "dual_runtime_only_changes_version_label": true,
     "startup_only_changes_version_label": true,
-    "all_pose_code_outside_riku_loader_fully_unchanged": true,
-    "riku_loader_only_adds_bounded_readonly_diagnostics": true,
-    "rig_and_weapon_loader_only_removes_control_class_gate": true,
-    "safe_motion_name_resolution_fully_unchanged": true,
-    "exact_final_riku_identity_still_required": true,
-    "exact_weapon_identity_still_required": true,
-    "native_class_has_no_admission_predicate": true,
-    "profile_keeps_native_type_as_metadata": true,
-    "unique_record_and_real_table_checks_remain": true,
-    "class_fix_does_not_create_a_native_actor_or_load_ai": true,
-    "motion_table_errors_keep_raw_profile_context": true,
-    "profile_diagnostic_names_class_bank_table_joint_and_form": true,
-    "profile_diagnostic_precedes_all_asset_reads": true,
-    "raw_combo_diagnostics_are_bounded_and_before_qualification": true,
-    "combo_diagnostics_preserve_kind_ability_link_and_weapon_evidence": true,
-    "actual_motion_rig_map_and_melee_guards_unchanged": true,
-    "nonzero_native_class_regression_uses_exact_profile": true,
-    "wrong_profile_ids_models_and_ambiguity_still_rejected": true,
-    "raw_context_has_error_regression": true
+    "all_pose_data_rendering_and_other_loaders_outside_riku_unchanged": true,
+    "confirmed_roxas_loader_unchanged": true,
+    "all_other_production_style_policy_and_guard_glide_rules_unchanged": true,
+    "complete_draw_attachment_glide_colors_and_other_trails_unchanged": true,
+    "riku_profile_and_asset_loader_only_add_combo_module_export": true,
+    "empty_ptya_uses_dedicated_actual_riku_clip_adapter": true,
+    "no_sora_table_or_rig_borrowed_for_melee": true,
+    "otherwise_admitted_visuals_survive_missing_melee": true,
+    "attack_ready_result_is_preserved_without_old_row_only_recheck": true,
+    "single_c_optional_motion_slots_do_not_reject_whole_donor": true,
+    "actual_rig_and_atkp_required_for_candidate_hits": true,
+    "spell_and_movement_slots_not_inferred_as_basic_melee": true,
+    "explicitly_gated_attack_clips_not_unlocked": true,
+    "body_stored_primary_requires_every_shape_on_real_hand": true,
+    "other_body_and_second_weapon_contacts_excluded": true,
+    "riku_body_contacts_need_explicit_qualified_groups": true,
+    "source_pose_and_root_not_relabelled_or_fabricated": true,
+    "unused_host_slots_never_overwrite_source_motion": true,
+    "finisher_priority_and_alternating_native_count_rows": true,
+    "authored_air_and_finisher_information_preferred": true,
+    "missing_followup_is_after_real_hit_not_earliest_animation_frame": true,
+    "final_host_strike_cannot_restart_from_its_combo_window": true,
+    "stripped_scripts_and_events_do_not_start_magic_or_ai": true,
+    "trail_fallback_is_same_authored_contact_interval": true,
+    "single_c_trails_read_aliased_clip_clock": true,
+    "adapter_diagnostics_report_choices_and_source_inventory": true,
+    "zero_table_and_real_controller_progression_regressions": true,
+    "strike_timing_root_and_pose_alias_identity_are_checked": true,
+    "real_no_input_and_invalid_contact_lifetimes_tested": true,
+    "qualified_hand_and_other_body_groups_tested": true
   },
   "source_sha256": {
     "crates/kh1-hook/src/win/dual_actions.rs": "ceb5b91b254b0b269447ce2526a809df5ef38cf58d01bad4b831be826f6866e8",
-    "crates/kh1-hook/src/win/leftblade.rs": "046abb6b04c9a5401bb80463a29a3067304848ea97d61f7b0fe172422a31df3e",
     "crates/kh1-hook/src/win/takeover.rs": "d923b10773675049ed83d98779bd57c18dcdc63af6ae1b779244ec7faddd5f33",
     "crates/kh1-hook/src/win/dual_cast.rs": "78f1cfb435a088ead8aa3c0e0666f9fa2178a11f3364c55a54e3de42b5e92740",
     "crates/kh1-hook/src/win/combat.rs": "4c5c04eaa2ccb53a772411dcac4b3ee0b97c7d99037c76b0a17a7c6c3faf848a",
@@ -144,7 +152,6 @@
     "crates/kh1-hook/src/win/dualglide.rs": "3d2e55437ac7346f3d87736cb445595b962aeddafe4f2517a2dc55d7b0a904b5",
     "crates/kh1-hook/src/win/dual_hover.rs": "2e62ecd7ceb53a9d94ef5ecfadb67a17e9aa79bdf3aeb33887b1ff1c09c0520a",
     "crates/kh1-hook/src/win/form.rs": "6fb676f44e1e2114b9051324aba5fe23372481cbae79f3cebdd77acf00e3d3df",
-    "crates/kh1-hook/src/dual_wield.rs": "166fabee39f230f87f8e376acccacd80fde671df5fa9617cd0835d81ec591d33",
     "crates/kh1-hook/src/defensive_bridge.rs": "a723fbfd1704261a4529cde4ea7915a639d672666edce1cffe40e68634880c76",
     "crates/kh1-hook/src/win/steam_map.in": "ea65f1275af0d7b62bdfe31045c0ffac28a1840828f6427f1e74f08a6597cfaa",
     "crates/kh1-data/src/retarget.rs": "814680f2fce5f00f7baa20dcefdfc10c5a1b87170183dfe298f20b378c489fe4",
@@ -154,99 +161,94 @@
     "crates/kh2-data/src/roxas.rs": "6657e9ca220a7e8841453feb18fdf27a4cd5ea13834a80a413df75dd2f9757e6",
     "crates/kh2-data/src/sora.rs": "6c557fea5859dfd76600c4fd46846d0fdfed74390dc2239aca3cdd10175a0ba5",
     "crates/kh2-data/src/lib.rs": "027e049a7442d3ccd64a3e8baadac7033dd685ee8652d7ec57f22ede7b006e83",
-    "crates/kh1-hook/src/win/dual.rs": "a8b0ef95889108f7c6801423f2de9ff9d23e57edf4d79a64647d5f8b7cb08ba6",
-    "crates/kh1-hook/src/win/mod.rs": "cf79dfa82d5918905afae98115624a0f1d796f4d820b6ee728865ef0c13f78ed",
-    "crates/kh1-hook/src/lib.rs": "053457c94693f7232b6f2c44893593c31d003be05753e02c7ca6cf06611ee8d0",
-    "crates/kh1-hook/src/win/pose.rs": "8af59f28fdeacae4dcf033f0f89fc5bd3a737446ba9359ac7b3eb79b8503b837",
-    "crates/kh2-data/src/riku.rs": "f349f147f7d37d7219ec7405c941dcaf58ee1cd75ef807d64ce09922928f6c4a"
+    "crates/kh1-hook/src/win/dual.rs": "e78141b3b278439b1f87b04302be8c121b3a49443050993955d2a34e2056c9d6",
+    "crates/kh1-hook/src/win/mod.rs": "b47420c48f266875396d58ff278190a5d78d313bd50922bd165a1565688a73a4",
+    "crates/kh1-hook/src/lib.rs": "fdb3429162d6923e6bc347e3241e11918de5c45c3e2409fbc2d8ab8ab09e110c",
+    "crates/kh1-hook/src/win/pose.rs": "6b4771226fde883947f432376b2e68637dd817de236700ff15530882920563bb",
+    "crates/kh1-hook/src/win/leftblade.rs": "092726dd96ed8ec8e4ef0ce11fd4e27d115eaec7daa0c7306bbee616c6386d99",
+    "crates/kh1-hook/src/dual_wield.rs": "5445c82ca0a3b8d0535ae63f3b205f51953a9ab069af3eb5f647773286aa8314",
+    "crates/kh2-data/src/riku.rs": "cd3efa5f223802c9b4ccba18e8a287316f7d5c8e257393d63f7a67117367755a",
+    "crates/kh2-data/src/riku/combo.rs": "655844deec69a87176f5c893952bf76dd645f9f97727189a2f39a5721d256a32"
   },
   "kind": "source scope/preservation audit plus separately recorded tests/native/build validation",
-  "style": "v31",
-  "stage": "s370",
+  "style": "v32",
+  "stage": "s371",
   "native_spell_gameplay": "KH1",
-  "new_contact_sources": "none; data-profile classification and diagnostic changes only",
+  "new_contact_sources": "only actual Riku physical melee clips, primary weapon or qualified primary-hand groups; no invented hit intervals/ATKP or new hooks",
   "live_game_or_gpu_test_performed": false,
-  "preserved_from_v30_commit": "059e04b42613386dbab6ef03583faeaa9b50e750",
+  "preserved_from_v31_commit": "a1d50aaca80e87404e1630b3d1d4127ab778a2fa",
   "preserved_files": {
     "crates/kh1-hook/src/win/dual_actions.rs": {
       "sha256": "ceb5b91b254b0b269447ce2526a809df5ef38cf58d01bad4b831be826f6866e8",
-      "matches_v30": true
-    },
-    "crates/kh1-hook/src/win/leftblade.rs": {
-      "sha256": "046abb6b04c9a5401bb80463a29a3067304848ea97d61f7b0fe172422a31df3e",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/win/takeover.rs": {
       "sha256": "d923b10773675049ed83d98779bd57c18dcdc63af6ae1b779244ec7faddd5f33",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/win/dual_cast.rs": {
       "sha256": "78f1cfb435a088ead8aa3c0e0666f9fa2178a11f3364c55a54e3de42b5e92740",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/win/combat.rs": {
       "sha256": "4c5c04eaa2ccb53a772411dcac4b3ee0b97c7d99037c76b0a17a7c6c3faf848a",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/win/dual_magic_fx.rs": {
       "sha256": "8a4fe92ea7414680179fac6b7c232efb94b629bf778ac84a65426a0984149346",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/win/native_spell_fx.rs": {
       "sha256": "050fdac5d3475a3b09b9229430a6624a69ec073a509a4c10536cf2c953fc7743",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/win/dualglide.rs": {
       "sha256": "3d2e55437ac7346f3d87736cb445595b962aeddafe4f2517a2dc55d7b0a904b5",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/win/dual_hover.rs": {
       "sha256": "2e62ecd7ceb53a9d94ef5ecfadb67a17e9aa79bdf3aeb33887b1ff1c09c0520a",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/win/form.rs": {
       "sha256": "6fb676f44e1e2114b9051324aba5fe23372481cbae79f3cebdd77acf00e3d3df",
-      "matches_v30": true
-    },
-    "crates/kh1-hook/src/dual_wield.rs": {
-      "sha256": "166fabee39f230f87f8e376acccacd80fde671df5fa9617cd0835d81ec591d33",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/defensive_bridge.rs": {
       "sha256": "a723fbfd1704261a4529cde4ea7915a639d672666edce1cffe40e68634880c76",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-hook/src/win/steam_map.in": {
       "sha256": "ea65f1275af0d7b62bdfe31045c0ffac28a1840828f6427f1e74f08a6597cfaa",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-data/src/retarget.rs": {
       "sha256": "814680f2fce5f00f7baa20dcefdfc10c5a1b87170183dfe298f20b378c489fe4",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-data/src/retarget/source.rs": {
       "sha256": "86ba661c5b94ebd80ae6a470755e3956ef52b8910c2af30eb7ac52bec649b949",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-data/src/secondary.rs": {
       "sha256": "735404d84bcdfba62f55a12144c09e0002b9c0979bb29947fe43c308cd9d678b",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh1-data/src/inverse.rs": {
       "sha256": "1fc966dd555d40b8543d2059dc221a87370b005ecce60da91f31988f3603fa6d",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh2-data/src/roxas.rs": {
       "sha256": "6657e9ca220a7e8841453feb18fdf27a4cd5ea13834a80a413df75dd2f9757e6",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh2-data/src/sora.rs": {
       "sha256": "6c557fea5859dfd76600c4fd46846d0fdfed74390dc2239aca3cdd10175a0ba5",
-      "matches_v30": true
+      "matches_v31": true
     },
     "crates/kh2-data/src/lib.rs": {
       "sha256": "027e049a7442d3ccd64a3e8baadac7033dd685ee8652d7ec57f22ede7b006e83",
-      "matches_v30": true
+      "matches_v31": true
     }
   }
 }

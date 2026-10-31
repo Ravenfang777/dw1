@@ -1,8 +1,8 @@
    Compiling kh2-data v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh2-data)
    Compiling kh1-hook v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh1-hook)
    Compiling kh2-rig v0.1.0 (/workspace/scratch/937acfd405fe/work/dual_wield_native/crates/kh2-rig)
-    Finished `release` profile [optimized] target(s) in 44.03s
+    Finished `release` profile [optimized] target(s) in 33.03s
 
-DLL SHA256 99344f1e736f7c0cf08be8d38a40d01b51169c716ce0398c357011df98d4ac9d
-Source a1d50aaca80e87404e1630b3d1d4127ab778a2fa
-490 tests passed; no live v31 game/GPU test.
+DLL SHA256 47341f80fd4a5f9dddcd9b3a847b1722b03bd73c12701b0b642ac398bcd1f4b5
+Source 65d409e1dd0f1212d6ed27bc1edad5aa61a2ada6
+498 tests passed; no live v32 game/GPU test.

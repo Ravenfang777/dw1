@@ -1,8 +1,8 @@
-title: KH1FM Seven Styles Prototype v31
+title: KH1FM Seven Styles Prototype v32
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Fix Single C data-profile admission: native PLAYER classification is not required.
-  Keep exact Riku identity, real rig/motion/combo checks and all existing gameplay.
+  Build Single C melee routing from real Riku clips when its native PTYA is empty.
+  Admit passive Riku visuals independently; preserve the other six styles.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

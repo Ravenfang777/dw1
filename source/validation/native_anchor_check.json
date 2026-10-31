@@ -1,0 +1,413 @@
+{
+  "exe_sha256": "d790746245d26159f3ee0e1060e33b2fa2de06941850a4ac724f598722884bac",
+  "exe_stamp": 1721645006,
+  "new_native_checks": [
+    {
+      "anchor": "native_effect_constructor",
+      "steam_rva": "0x1e0100",
+      "matches": true
+    },
+    {
+      "anchor": "native_effect_vm",
+      "steam_rva": "0x31c4f0",
+      "matches": true
+    },
+    {
+      "anchor": "unconditional_effect_update_callback",
+      "steam_rva": "0x31c73d",
+      "matches": true
+    },
+    {
+      "anchor": "native_effect_draw_argument_gate",
+      "steam_rva": "0x31c740",
+      "matches": true
+    },
+    {
+      "anchor": "gated_draw_callback",
+      "steam_rva": "0x31c754",
+      "matches": true
+    },
+    {
+      "anchor": "spell_resource_section_offset",
+      "steam_rva": "0x28f783",
+      "matches": true
+    }
+  ],
+  "trampolines": [
+    {
+      "anchor": "native_effect_constructor",
+      "whole_position_independent_bytes": 5
+    },
+    {
+      "anchor": "native_effect_vm",
+      "whole_position_independent_bytes": 5
+    }
+  ],
+  "draw_semantics": "original VM update continues once; its existing draw argument alone becomes zero for attributed ready replacements",
+  "epic_hook_addresses_inferred": false,
+  "live_game_checked": false,
+  "retained_v15_action_and_renderer_anchors": [
+    {
+      "anchor": "roll_prologue",
+      "steam_rva": "0x2c9e60",
+      "matches": true
+    },
+    {
+      "anchor": "roll_flag",
+      "steam_rva": "0x2c9e76",
+      "matches": true
+    },
+    {
+      "anchor": "roll_motion",
+      "steam_rva": "0x2c9e80",
+      "matches": true
+    },
+    {
+      "anchor": "superglide_prologue",
+      "steam_rva": "0x2b2750",
+      "matches": true
+    },
+    {
+      "anchor": "superglide_subtype",
+      "steam_rva": "0x2b276d",
+      "matches": true
+    },
+    {
+      "anchor": "spell_world_pass",
+      "steam_rva": "0x1ecf30",
+      "matches": true
+    },
+    {
+      "anchor": "hook_trampolines",
+      "whole_instruction_lengths": [
+        6,
+        9,
+        15
+      ],
+      "no_relative_instructions_stolen": true
+    }
+  ],
+  "new_v17_native_checks": [
+    {
+      "anchor": "spell_factory_prologue",
+      "steam_rva": "0x28f5e0",
+      "matches": true
+    },
+    {
+      "anchor": "scheduled_spell_vm_prologue",
+      "steam_rva": "0x28f6d0",
+      "matches": true
+    },
+    {
+      "anchor": "caster_store",
+      "steam_rva": "0x28f62a",
+      "matches": true
+    },
+    {
+      "anchor": "resource_store",
+      "steam_rva": "0x28f643",
+      "matches": true
+    },
+    {
+      "anchor": "vm_store",
+      "steam_rva": "0x28f698",
+      "matches": true
+    },
+    {
+      "anchor": "work_result",
+      "steam_rva": "0x28f68f",
+      "matches": true
+    },
+    {
+      "anchor": "caster_decode",
+      "steam_rva": "0x28f6d9",
+      "matches": true
+    },
+    {
+      "anchor": "vm_load",
+      "steam_rva": "0x28f6f7",
+      "matches": true
+    },
+    {
+      "anchor": "asynchronous_vm_call",
+      "steam_rva": "0x28f709",
+      "matches": true
+    },
+    {
+      "anchor": "not_caster_flags_pointer",
+      "steam_rva": "0x1e0237",
+      "matches": true
+    }
+  ],
+  "v17_whole_position_independent_prologues": [
+    5,
+    6
+  ],
+  "v17_live_game_checked": false,
+  "new_v18_checks": [
+    {
+      "anchor": "shared_attack_constructor_prologue",
+      "steam_rva": "0x2b2dc0",
+      "matches": true
+    },
+    {
+      "anchor": "target_spark_prologue",
+      "steam_rva": "0x2b4320",
+      "matches": true
+    },
+    {
+      "anchor": "attack_constructor_owner_store",
+      "steam_rva": "0x2b2e79",
+      "matches": true
+    },
+    {
+      "anchor": "attack_constructor_data_store",
+      "steam_rva": "0x2b300b",
+      "matches": true
+    },
+    {
+      "anchor": "attack_wrapper_shared_constructor_call",
+      "steam_rva": "0x2b327d",
+      "matches": true
+    },
+    {
+      "anchor": "contact_target_spark_call",
+      "steam_rva": "0x2b429c",
+      "matches": true
+    },
+    {
+      "anchor": "contact_sound_separate_call",
+      "steam_rva": "0x2b42de",
+      "matches": true
+    },
+    {
+      "anchor": "spark_reads_attack_data",
+      "steam_rva": "0x2b4348",
+      "matches": true
+    },
+    {
+      "anchor": "spark_creates_effect_tail",
+      "steam_rva": "0x2b43db",
+      "matches": true
+    }
+  ],
+  "new_v18_position_independent_prologues": [
+    5,
+    5
+  ],
+  "v18_all_originals_run_once": true,
+  "v18_target_visuals_live_tested": false,
+  "v19_checks": [
+    {
+      "anchor": "mapped_native_motion_setter_prologue",
+      "steam_rva": "0x29f980",
+      "matches": true
+    },
+    {
+      "anchor": "setter_tests_control_bit_24",
+      "steam_rva": "0x29f98d",
+      "matches": true
+    },
+    {
+      "anchor": "setter_consumes_control_bit_24",
+      "steam_rva": "0x29f996",
+      "matches": true
+    },
+    {
+      "anchor": "original_roll_motion_request",
+      "steam_rva": "0x2c9e7f",
+      "matches": true
+    },
+    {
+      "anchor": "original_roll_calls_native_setter",
+      "steam_rva": "0x2c9e87",
+      "matches": true
+    },
+    {
+      "anchor": "existing_native_control_prologue",
+      "steam_rva": "0x2a6220",
+      "matches": true
+    }
+  ],
+  "v19_new_hook_sites": 0,
+  "v19_reuses_original_roll_trampoline_and_existing_setter": true,
+  "live_v19_game_test": false,
+  "v20_checks": [
+    {
+      "anchor": "animation_update_clears_change_notification",
+      "steam_rva": "0x29f245",
+      "matches": true
+    },
+    {
+      "anchor": "consumes_queued_motion_before_notification",
+      "steam_rva": "0x29f277",
+      "matches": true
+    },
+    {
+      "anchor": "clears_pending_motion_bit",
+      "steam_rva": "0x29f285",
+      "matches": true
+    },
+    {
+      "anchor": "sets_motion_change_notification_bit_8",
+      "steam_rva": "0x29f288",
+      "matches": true
+    },
+    {
+      "anchor": "writes_motion_change_notification",
+      "steam_rva": "0x29f28c",
+      "matches": true
+    },
+    {
+      "anchor": "native_effect_checks_motion_change_notification",
+      "steam_rva": "0x2ae9a5",
+      "matches": true
+    },
+    {
+      "anchor": "native_attack_checks_motion_change_notification",
+      "steam_rva": "0x2b493e",
+      "matches": true
+    }
+  ],
+  "v20_new_hook_sites": 0,
+  "v20_motion_flags_are_read_only": true,
+  "v20_no_precontrol_b_roll_selector": true,
+  "live_v20_game_test": false,
+  "v21_checks": [
+    {
+      "anchor": "native_row_start_prologue",
+      "steam_rva": "0x2a3980",
+      "matches": true
+    },
+    {
+      "anchor": "native_row_table_stride",
+      "steam_rva": "0x2a39ac",
+      "matches": true
+    },
+    {
+      "anchor": "native_row_resolves_actual_motion",
+      "steam_rva": "0x2a39c4",
+      "matches": true
+    },
+    {
+      "anchor": "native_row_calls_motion_setter",
+      "steam_rva": "0x2a39db",
+      "matches": true
+    },
+    {
+      "anchor": "guard_selector_uses_row_3d",
+      "steam_rva": "0x2a7c63",
+      "matches": true
+    },
+    {
+      "anchor": "guard_selector_calls_row_start",
+      "steam_rva": "0x2a7c6b",
+      "matches": true
+    },
+    {
+      "anchor": "fire_ground_initial_motion",
+      "steam_rva": "0x2a3eb2",
+      "matches": true
+    },
+    {
+      "anchor": "fire_ground_recovery_motion",
+      "steam_rva": "0x2a3ebf",
+      "matches": true
+    },
+    {
+      "anchor": "fire_ground_appends_recovery",
+      "steam_rva": "0x2a3ec7",
+      "matches": true
+    },
+    {
+      "anchor": "fire_air_initial_motion",
+      "steam_rva": "0x2a4221",
+      "matches": true
+    },
+    {
+      "anchor": "fire_air_recovery_motion",
+      "steam_rva": "0x2a422e",
+      "matches": true
+    },
+    {
+      "anchor": "fire_air_appends_recovery",
+      "steam_rva": "0x2a4236",
+      "matches": true
+    }
+  ],
+  "v21_new_hook_sites": 1,
+  "v21_guard_observer_preserves_original_once": true,
+  "v21_row_hook_whole_position_independent_prologue_bytes": 5,
+  "live_v21_game_test": false,
+  "v32_checks": [
+    {
+      "anchor": "native_show_weapon_prologue",
+      "steam_rva": "0x2a2e30",
+      "matches": true
+    },
+    {
+      "anchor": "native_show_resolves_weapon_object",
+      "steam_rva": "0x2a2e3f",
+      "matches": true
+    },
+    {
+      "anchor": "native_show_checks_existing_visibility",
+      "steam_rva": "0x2a2e4f",
+      "matches": true
+    },
+    {
+      "anchor": "native_show_red",
+      "steam_rva": "0x2a2e62",
+      "matches": true
+    },
+    {
+      "anchor": "native_show_green",
+      "steam_rva": "0x2a2e71",
+      "matches": true
+    },
+    {
+      "anchor": "native_show_blue",
+      "steam_rva": "0x2a2e80",
+      "matches": true
+    },
+    {
+      "anchor": "native_show_alpha",
+      "steam_rva": "0x2a2e9e",
+      "matches": true
+    },
+    {
+      "anchor": "native_show_visibility_flag",
+      "steam_rva": "0x2a2ea1",
+      "matches": true
+    },
+    {
+      "anchor": "native_primary_body_color_at_param_20",
+      "steam_rva": "0x2a181c",
+      "matches": true
+    },
+    {
+      "anchor": "native_weapon_color_read_from_object",
+      "steam_rva": "0x2a182d",
+      "matches": true
+    },
+    {
+      "anchor": "native_weapon_color_at_param_24",
+      "steam_rva": "0x2a1832",
+      "matches": true
+    }
+  ],
+  "v32_new_hook_sites": 0,
+  "v32_uses_existing_native_visibility_routine": true,
+  "live_v32_game_test": false,
+  "v32_private_skeleton_metadata_checks": {
+    "normal_sora_293_bones": true,
+    "helper_hand_206_is_unskinned": true,
+    "left_palm_218_is_skinned": true,
+    "right_palm_114_is_skinned": true,
+    "blade_chain_282_to_291_are_skinned": true,
+    "grip_helpers_are_unskinned": true,
+    "left_palm_base_at_hand": true
+  },
+  "v32_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v32_scope": "Riku data-only empty-PTYA melee adaptation and independent passive admission; no new native hooks; other style gameplay retained"
+}
