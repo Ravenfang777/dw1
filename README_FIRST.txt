@@ -1,91 +1,77 @@
-KH1FM NINE STYLES -- PROTOTYPE v45 (s384)
+KH1FM NINE STYLES -- PROTOTYPE v46 (s385)
 
-FIRST DARK RIKU TO SORA MAPPING TEST
-Single D now draws Dark Riku's solved body poses on Sora for idle, walking,
-running, takeoff, rise/apex, falling and landing. This is the first movement
-mapping test. Attacks, magic, items, damage, Guard, Roll, ledges and glides
-still use native KH1 execution/poses for Single D. Attack timing/contact mapping
-is the next stage after body alignment. Every other style is preserved.
+SINGLE D STABILITY FIX
+Targets v45's intermittent Dark Riku movement and stretched model/blob.
+The log admits the solver and map, but rejects secondary helper joints and
+returns to KH1. v45 also allowed oversized finite skin bases through its final
+origin-only check. This version removes live secondary-cache inputs from Single
+D, uses checked immutable Sora rest/bind transforms, preserves their bind scale
+and validates the final bone bases before drawing. Invalid rest helpers recover
+individually instead of dropping the whole valid mapped body.
 
 INSTALL
-1. Fully close KH1FM. Disable v44 and every older Dual Wield prototype.
-2. Import THIS ZIP in OpenKH, enable only v45, then Build and Run.
-   OpenKH Panacea and the installed KH2FM resources are required.
-   Keep the full KH2 Combat overhaul, older moveset/offhand Lua and duplicate
-   Sora model mods disabled. F1 cannot reload a native DLL.
-3. Confirm s384 / PROTOTYPE v45 in kh1-dual-wield.log beside the game EXE.
-   Normal Sora; existing INI and save settings remain in use.
+1. Fully close KH1FM. Disable v45 and every older Dual Wield prototype.
+2. Import THIS ZIP into OpenKH, enable only v46, then Build and Run.
+   Panacea and installed KH2FM resources are required. F1 cannot reload a DLL.
+   Keep the full KH2 Combat overhaul, older offhand/moveset Lua and duplicate
+   Sora model mods disabled. Existing INI/save settings remain in use.
+3. Confirm s385 / PROTOTYPE v46 in kh1-dual-wield.log beside the game EXE.
+A fresh game process is required to clear the old DLL and pose/simulation state.
 
 TEST
-1. Equip Style: Single D (exclusive, one equipped weapon, no extra abilities).
-2. Stand idle, then walk, run and turn. Inspect both arms, knees, fingers and
-   the primary Keyblade grip from several camera angles.
-3. Jump and land several times. No enemy is needed.
-4. Change map and enter/leave battle; check the stance and movement return.
-   Native attacks/casts are expected during this first mapping test.
-5. Unequip Single D and check normal movement returns. Other styles retain
-   their existing behavior, including the confirmed 2x Aerial Dodge changes.
-Return the complete fresh kh1-dual-wield.log and describe any twist, stretching,
-weapon offset, body drift or movement action that stayed native.
-The source bank is already received: no additional source ZIP is needed.
+Use normal Sora and equip Style: Single D.
+Stand idle, walk, run, turn, jump, fall and land repeatedly. Then change map,
+enter/leave battle and repeat. Check that the Dark Riku movement keeps appearing
+and the model, fingers and equipped Keyblade stay intact. No enemy is needed
+for the movement test. Unequip Single D to check normal movement returns.
+Return the complete fresh kh1-dual-wield.log and describe any remaining dropout,
+stretch, blob or grip offset. Source files are already received; no new capture.
 
 EXPECTED LOG
-SINGLE D SOLVER READY -- installed main bank admitted as in v44 (1829 poses).
-SINGLE D MAP READY -- current Sora rig admitted: mapped=103 source_joints=101.
-SINGLE D MOVEMENT ACTIVE -- once per movement kind, with source slot/frame.
-SINGLE D MAPPING WAIT -- bounded diagnostic when an action stays native;
-  a transient line during a scene, input lock or handoff can be expected.
-MAP UNAVAILABLE / MAPPING POSE REJECTED leaves the current native pose in place.
+SINGLE D SOLVER READY -- original main bank checked (as in v44/v45).
+SINGLE D MAP READY -- mapped=103 source_joints=101; secondary_rest=N/190;
+  checked immutable Sora rest; live secondary cache disabled; final skin-basis
+  guard; one equipped weapon. Unseeded rest entries use their own bind.
+SINGLE D MOVEMENT ACTIVE -- once per movement kind.
+MAPPING WAIT during a scene/control lock/handoff can be normal. The script and
+native action guards are preserved. MAP UNAVAILABLE, MAPPING POSE REJECTED or
+FINAL POSE REJECTED should be returned in the complete log.
 
-WHAT THE MAP DOES
-101 active Dark Riku source joints turn 103 of Sora's 293 joints. Sora keeps
-his own body proportions, secondary local motion and one equipped weapon.
-The primary/free hand correspondence is explicit; no second blade is created.
-Dark Riku's root travel is removed; KH1 owns actor movement and collision.
-The live Sora bone table supplies calibration each instance; it is not a raw
-boss skeleton or animation-pointer swap. No boss AI, scripts or source sword.
-
-First main-bank assignments (movement labels inferred from solved sequences):
-Native action       | Dark Riku source slot
-Idle                | 0
-Walk                | 1
-Run                 | 2
-Takeoff             | 3
-Rise/apex           | 4 then 5 on the same native phase
-Fall                | 6
-Landing             | 7
-Idle uses idle_speed (default 0.75) on the pause-aware game clock.
-Other movement follows the native clip phase. One-shots hold their end.
+MAPPING TEST SCOPE
+Same movement assignments as v45: idle 0, walk 1, run 2, takeoff 3,
+rise/apex 4 then 5, fall 6, landing 7. Idle uses idle_speed (default 0.75),
+other movement uses native phase; one-shots hold their end.
+Hair, cloth and keychain use the checked rest while mapped Single D movement
+is active. The shared secondary simulation is paused there to isolate this
+repair. Other styles retain their existing secondary motion.
+Single D attacks, magic, items, Guard, Roll, damage, ledges and glides still
+use native KH1 execution/poses during this first body-mapping test.
+Sora retains his own proportions and one equipped weapon. No extra blade.
 
 PRESERVED
-Single A/B/C/D, Dual A/B/C/D, Anti: nine exclusive entries, all 0 AP.
-Single A/C and Dual C/D keep the confirmed 2x-distance, original-speed Master
-Aerial Dodge in regular Glide. All existing Superglide routes, Dual A's real
-finisher, Quick Run, Guard, spell effects, attack abilities and contacts remain.
-No gauge, outfit, party, stats, weapon-selection menu or other ability grant.
-INI defaults remain dual_b_spell_fx=on, idle_speed=0.75,
-offhand_only_test=off, remove_dual_wield=off. Restart after DLL/INI changes.
-To remove the entries: set remove_dual_wield on; launch/load/save with v45;
-close, disable the mod and Build again.
+The solver, anatomical correspondence, field/script/hold guards and movement
+sampling are unchanged. All other styles, attacks, spell effects, contacts,
+Quick Run, Superglide/finishers and the confirmed 2x Aerial Dodge routes remain.
+Nine exclusive style entries, all 0 AP; no other ability, stat, outfit, party,
+gauge or weapon-selection change. INI defaults remain dual_b_spell_fx=on,
+idle_speed=0.75, offhand_only_test=off, remove_dual_wield=off.
+Restart after DLL/INI changes. Removal: set remove_dual_wield on, launch/load/
+save with v46, close, disable the mod and Build again.
 
 VALIDATION
-578 tests / 31 suites pass: 173 existing style tests, 7 new body-map tests,
-5 new movement-route tests. Windows x64 release passes, same 4 exports and
-8 runtime imports. No new game hook, address or runtime/Cargo dependency.
-25 source checks preserve 282 other tracked files, the existing KH2 retarget,
-the v44 authored solver and all prior gameplay policies/controllers.
-All 31 clips map offline over 2139 sampled poses (10,027,632 float components).
-Independent matrix-reference maximum position difference: 0.0001121 units.
-Maximum limb-length error: 0.0000191 units; native bind-grip error: 0.0000263.
-The separate skeleton GIF illustrates source and Sora proportions. It is an
-offline numeric preview, not game video or proof of final skin/grip alignment.
-Actual v45 game/GPU validation remains pending.
+584 tests / 31 suites pass, including 173 existing style tests and 13 body-map
+tests (six new). Windows x64 release: same 4 exports and 8 runtime imports.
+25 source checks preserve 287 other tracked files. No new native hook/address,
+Cargo or runtime dependency. The original solver and action policies are exact.
+All 2139 mapped poses / 31 clips are byte-identical to v45's clean offline output.
+A same-rig comparison reproduces v45 pose drops and 100x finite skin scales;
+all 12 injected secondary faults recover with normal scale in v46.
+These tests reproduce code defects. The user's failing live matrix values were
+not captured. Actual v46 game/GPU/skin validation remains pending.
 
-Source patch (45 commits), licences, credits and validation receipts included.
-README_MAPPING.txt explains the calibration, limits and reproduction.
-README_SOLVER.txt retains the v44 native-source comparison method. Its
-native parity/anchor receipts are inherited evidence: no new native CPU
-comparison was required because the source solver and hook sites are unchanged.
+README_SECONDARY_FIX.txt explains the repair. Source patch (46 commits),
+licences, credits and validation receipts included. Original source-solver and
+v45 mapping comparisons are retained as labelled historical evidence.
 Installer CRC, extraction and every file hash are verified before delivery.
-No original game executables, model/animation files, raw skeleton dumps,
-decompiler output or pose streams ship in this installer.
+No original game executables, model/animation files, decompiler output,
+raw live caches or pose streams ship in this installer.

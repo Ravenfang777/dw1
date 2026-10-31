@@ -1,3 +1,6 @@
+V46 NOTE: historical calibration/solver method below. Current runtime uses
+checked secondary rest, not live cache locals. See README_SECONDARY_FIX.txt.
+
 DARK RIKU AUTHORED POSE SOLVER -- v44 REFERENCE RETAINED IN v45
 
 The pipeline now includes model defaults -> constant channels -> native fixed-
@@ -30,7 +33,7 @@ See validation/native_solver_validation_v44.json for the per-clip error report.
 No actual game/GPU or Sora-retarget validation has run here.
 
 OPTIONAL REPRODUCTION FROM SOURCE
-Apply source/NineStyles_v45.patch to the pinned upstream using git am (see
+Apply source/NineStyles_v46.patch to the pinned upstream using git am (see
 source/PROVENANCE.txt). Use your own captured xa_ex_1160.mdls/.mset and the exact
 reference executable version. Those files are deliberately not included.
 The Rust example emits a private binary pose stream:

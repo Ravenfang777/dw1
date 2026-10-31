@@ -1,3 +1,6 @@
+V46 NOTE: historical calibration/solver method below. Current runtime uses
+checked secondary rest, not live cache locals. See README_SECONDARY_FIX.txt.
+
 DARK RIKU TO SORA BODY MAP -- v45
 
 Source: captured xa_ex_1160 (247 bones), using v44's validated authored solver.
@@ -23,7 +26,7 @@ an obsolete walking/landing overlay during its header handoff. No event,
 script or hold can borrow an overlay. No source AI/events/hit windows run.
 
 REPRODUCTION
-Apply source/NineStyles_v45.patch to pinned upstream using git am.
+Apply source/NineStyles_v46.patch to pinned upstream using git am.
 Use your own source main model/bank and Sora model; no input assets are bundled.
 
 cargo run --locked -p kh1-data --example dark_riku_map -- DARK.mdls DARK.mset SORA.mdls OUTPUT.bin

@@ -1,9 +1,9 @@
-title: KH1FM Nine Styles Prototype v45
+title: KH1FM Nine Styles Prototype v46
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  First Dark Riku to Sora body mapping: Single D idle, walk, run, jump,
-  fall and landing. Native combat and magic retained for this mapping test.
-  Preserves existing styles and the confirmed Glide/Aerial Dodge changes.
+  Repairs Single D movement dropouts and secondary-joint distortion in v45.
+  Checked immutable rest, preserved bind scale and final skin-basis validation.
+  Existing movement assignments, native combat/magic and other styles retained.
   Requires installed KH2FM and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

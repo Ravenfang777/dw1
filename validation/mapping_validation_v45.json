@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "poses": 2139,
+  "clips": 31,
+  "source_bones": 247,
+  "target_bones": 293,
+  "mapped_target_joints": 103,
+  "active_source_joints_used": 101,
+  "float_components": 10027632,
+  "double_precision_reference_max_position_error": 0.00011201689174587279,
+  "double_precision_reference_max_basis_error": 2.009048529760804e-06,
+  "max_limb_length_error": 1.9073486328125e-05,
+  "max_native_bind_grip_error": 2.6226043701171875e-05,
+  "max_target_radius": 274.4021301269531,
+  "source_solver_unchanged_from_v44": true,
+  "native_source_parity_inherited_from_v44": true,
+  "target_comparison_is_native_solver_parity": false,
+  "live_game_or_gpu_test": false,
+  "target_note": "Offline existing 293-bone Sora source fixture; runtime recalibrates from the live Sora bone table.",
+  "runtime_scope": [
+    "idle",
+    "walk",
+    "run",
+    "takeoff",
+    "rise/apex",
+    "fall",
+    "landing"
+  ],
+  "runtime_combat_mapping": false,
+  "map_source_sha256": "a7344775ed621301cb179ffb568011053fc1b0cf0ab6c241bf14b416d7b3c57b",
+  "pose_stream_sha256": "b5d86fe1b447c290ea7a649390401086fdc8f92e095078d17c3cada777be3460",
+  "final_probe_byte_identical": true
+}
