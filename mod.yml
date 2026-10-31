@@ -1,8 +1,8 @@
-title: KH1FM Seven Styles Prototype v32
+title: KH1FM Seven Styles Prototype v33
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Build Single C melee routing from real Riku clips when its native PTYA is empty.
-  Admit passive Riku visuals independently; preserve the other six styles.
+  Refine Single C: Riku 181 aerial attacks, airborne Square 193, Quick Run,
+  Riku item casts and KH2 base Sora fallback actions and matching spell effects.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

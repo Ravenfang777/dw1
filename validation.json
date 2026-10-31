@@ -1,17 +1,17 @@
 {
-  "name": "KH1FM Seven Styles Prototype v32",
-  "stage": "s371",
-  "source_commit": "65d409e1dd0f1212d6ed27bc1edad5aa61a2ada6",
+  "name": "KH1FM Seven Styles Prototype v33",
+  "stage": "s372",
+  "source_commit": "ba1264d4bd36496eec9053d9e4c8a95e216fa361",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
-  "dll_bytes": 5081916,
-  "dll_sha256": "47341f80fd4a5f9dddcd9b3a847b1722b03bd73c12701b0b642ac398bcd1f4b5",
-  "source_patch_sha256": "73186f1894630136d5168abdc7856f2b5f217ce3e8110cc173259093ad30603b",
-  "tests_passed": 498,
+  "dll_bytes": 5604138,
+  "dll_sha256": "9a4c3b3bec48ebecf36f1474670f074272ada153c5ea40c7771447374a373f1f",
+  "source_patch_sha256": "2687bff5a7f1cbe2fb7c28caa504e984eba0dc9148594aa4f732dc645c55e758",
+  "tests_passed": 505,
   "tests_failed": 0,
   "test_cache": "Linux test cache, RUSTFLAGS=-C codegen-units=1",
   "test_suites": 31,
-  "style_tests": 156,
+  "style_tests": 160,
   "windows_release_cross_build_passed": true,
   "exports": [
     "DirectInput8Create",
@@ -30,12 +30,12 @@
     "bcryptprimitives.dll"
   ],
   "new_native_anchor_checks": 11,
-  "source_scope_checks": 141,
+  "source_scope_checks": 98,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v32_game_or_gpu_test": false,
+  "live_v33_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "adapt real Riku motion-trigger melee contacts when PTYA is empty; host-defined input-driven combo routing with source poses/windows/ATKP; passive donor readiness independent of melee; preserve other styles",
+  "new_behavior": "Single C air source 181, one-shot airborne Square 193, Wisdom Quick Run, Riku item casts for Cure/Gravity/Stop/Aero, separately retargeted base Sora fallbacks and matching visual-only spell FX",
   "model_metadata_checks": 7,
-  "preserved_v31_commit": "a1d50aaca80e87404e1630b3d1d4127ab778a2fa"
+  "preserved_v32_commit": "65d409e1dd0f1212d6ed27bc1edad5aa61a2ada6"
 }
