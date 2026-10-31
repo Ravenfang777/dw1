@@ -1,8 +1,8 @@
-title: KH1FM Seven Styles Prototype v36
+title: KH1FM Seven Styles Prototype v37
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Single C: repair named Sora strike validation and independent combo admission;
-  keep Vicinity Break and Sora/Horizontal Slash/Riku aerial mapping.
+  Single C: end Riku 182 at frame 92, after the middle strike window;
+  preserve the working v36 combos, casting and source admission.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

@@ -339,7 +339,7 @@
   "v21_guard_observer_preserves_original_once": true,
   "v21_row_hook_whole_position_independent_prologue_bytes": 5,
   "live_v21_game_test": false,
-  "v36_checks": [
+  "v37_checks": [
     {
       "anchor": "native_show_weapon_prologue",
       "steam_rva": "0x2a2e30",
@@ -396,10 +396,10 @@
       "matches": true
     }
   ],
-  "v36_new_hook_sites": 0,
-  "v36_uses_existing_native_visibility_routine": true,
-  "live_v36_game_test": false,
-  "v36_private_skeleton_metadata_checks": {
+  "v37_new_hook_sites": 0,
+  "v37_uses_existing_native_visibility_routine": true,
+  "live_v37_game_test": false,
+  "v37_private_skeleton_metadata_checks": {
     "normal_sora_293_bones": true,
     "helper_hand_206_is_unskinned": true,
     "left_palm_218_is_skinned": true,
@@ -408,6 +408,6 @@
     "grip_helpers_are_unskinned": true,
     "left_palm_base_at_hand": true
   },
-  "v36_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
-  "v36_scope": "Single C named Sora source qualification and independent combo lanes; no new native hooks; guard/contact/renderer/input unchanged"
+  "v37_model_sha256": "697fd74bf2dec0a5b0410436e88b1b3131cfa7c122f1f180fd5f05af161bf4cf",
+  "v37_scope": "Single C Riku182 tail shortened to middle-strike boundary; no new native hooks; guard/contact/renderer/input unchanged"
 }
