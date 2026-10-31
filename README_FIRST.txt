@@ -1,75 +1,69 @@
-KH1FM SEVEN STYLES -- PROTOTYPE v37 (s376)
+KH1FM SEVEN STYLES -- PROTOTYPE v38 (s377)
 
 INSTALL
-1. Fully close KH1FM. Disable v36 and every older Dual Wield prototype.
-2. Import this ZIP into OpenKH, enable ONLY v37, then Build and Run.
+1. Fully close KH1FM. Disable v37 and every older Dual Wield prototype.
+2. Import this ZIP into OpenKH, enable ONLY v38, then Build and Run.
    Panacea and installed KH2FM are required. F1 cannot reload a DLL.
-3. Confirm s376 / PROTOTYPE v37 in kh1-dual-wield.log beside the game EXE.
-
+3. Confirm s377 / PROTOTYPE v38 in kh1-dual-wield.log beside the game EXE.
 Use normal Sora. Keep the full KH2 Combat overhaul, older offhand/moveset Lua
 and duplicate Sora model mods disabled. Existing INI/save entries are preserved.
 
-SINGLE C -- END RIKU 182 ON THE MIDDLE SLASH
-You confirmed v36 works and clarified that the desired endpoint is the large
-downward slash near the middle of 182. The proposed 50-frame additional cut
-would end at 88, crossing a source hit window. This test ends at frame 92,
-after that complete hit window, removing the later follow-up.
+SINGLE C -- REMOVE THE REMAINING 182 FOLLOW-UP
+v37 ended at frame 92 and still showed a brief unwanted horizontal swing.
+v38 ends 182 at frame 77, fifteen frames earlier, after the preceding hit.
+Original source: 148 frames. Total tail removed: 71. Playback speed, original
+pose/weapon data and root prefix are preserved. Only this host finisher changes.
 
-Original source: 148 frames.
-v36: 138 frames.
-v37: 92 frames (56 removed from original; 46 more than v36).
-Playback speed, root prefix and original body/weapon poses are preserved.
-Only the Single C air-finisher alias changes; raw installed assets do not.
+Keep contact windows 17..34, 45..55 and 69..77. Remove both 82..92 and108..122.
+All hit/trail/hold windows end with the visible clip. Discarded damage is not
+shifted or amplified into earlier hits. The original installed bank is unchanged.
 
-Four complete source contacts remain: 17..34, 45..55, 69..77 and 82..92.
-The final 108..122 contact is removed. All hit/trail/hold windows end with the
-visible clip; removed damage is not shifted or amplified into earlier hits.
-This boundary is inferred from the source contact timing near your suggested
-cutoff. The actual downward-slash pose was not viewed here, so please check
-that 92 is the exact visual endpoint you mean in the fresh game test.
+Your s376 log confirms both combo lanes load and records 182 through84/85 then
+normal fall, without a sampled Horizontal Slash restart. The remaining82..92
+source portion is the candidate unwanted follow-up. Periodic logging does not
+identify every visual frame, so please check the new endpoint in game.
 
-COMBOS AND OTHER FEATURES PRESERVED FROM WORKING v36
-Ground: Riku 152 -> Riku 151 -> KH2 Vicinity Break.
-Air: KH2 Sora first air hit -> Horizontal Slash -> shortened Riku 182.
-Ground/air Combo Plus retain their normal input-driven continuation rules.
-Native KH1 attack abilities retain priority; temporarily unequip relevant
-attack modifiers if needed to isolate this listed base sequence.
+The added real-controller test repeatedly presses Attack through the full air
+combo and20 recovery frames. It verifies Sora first hit -> Horizontal Slash ->
+Riku182 and no extra attack afterward. No engine/input/blend/native hook change.
 
-Keep the confirmed named-Sora source validation and independent ground/air
-admission. Triangle commands remain removed; no custom aerial Square action.
-Aerial Cure/Stop/Aero/Gravity keep Riku 193 and the existing scoped native
-casting guard/parry; ground versions keep item-use pose 9. Quick Run, Sora
-fallback poses, matching KH2 spell effects and native KH1 spell behavior remain.
-The other six styles, equipment/appearance, Glide attachment/colors and Dual A
-Superglide finisher are unchanged. No new ability, gauge or command is added.
-Only Dual A/B/C duplicate the equipped weapon; Single C keeps one weapon.
+PRESERVED
+Ground: Riku152 -> Riku151 -> Vicinity Break.
+Air: KH2 Sora first air hit -> Horizontal Slash -> shortened Riku182.
+Horizontal Slash remains the normal second air-combo step. Combo Plus and
+Air Combo Plus keep input-driven continuation. Native KH1 attack abilities
+retain priority; unequip relevant modifiers to isolate this base sequence.
+Keep confirmed v36 source validation and independent ground/air admission,
+separate Riku/Sora rigs/battle/retargets, native Square/Triangle, Quick Run,
+aerial193 Cure/Stop/Aero/Gravity casting/parry, grounded item casts and spell FX.
+All other six styles, equipment/appearance, Glide attachment/colors and Dual A
+Superglide finisher are preserved. Only Dual A/B/C duplicate the equipped weapon.
 
 FIRST TEST
-Equip Style: Single C and perform the three-hit air combo. Confirm Riku 182
-ends after the intended downward slash, without the later follow-up or extra
-late trail/damage. The log should show ground_ready=true, air_ready=true,
-Riku182_length=92 and trimmed_tail=56 in SINGLE C COMBO MAP.
-If the cutoff is still off, a short recording of 182 will help identify the
-precise pose boundary. If admission fails, return the full fresh log including
-SINGLE C SORA SOURCE, SINGLE C COMBO MAP and any LANE UNAVAILABLE messages.
+Equip Style: Single C and perform the complete air combo. Confirm182 ends on
+the intended downward slash and no unwanted extra horizontal swing appears.
+The log should show ground_ready=true, air_ready=true, Riku182_length=77 and
+trimmed_tail=71 in SINGLE C COMBO MAP. If the endpoint remains off, a short
+recording will help identify the exact last pose. Return the fresh full log
+if admission or input behavior fails.
 
-IDs (exclusive, 0 AP): Dual A126, Dual B125, Single A124, Single B123,
+IDs (exclusive,0 AP): Dual A126, Dual B125, Single A124, Single B123,
 Anti122, Dual C121, Single C120. Unequipping restores native behavior.
 INI defaults: dual_b_spell_fx=on, idle_speed=0.75, offhand_only_test=off,
 remove_dual_wield=off. DLL/INI changes require a full game restart.
-To remove our entries, set remove_dual_wield on; launch/load/save with v37;
+To remove entries: set remove_dual_wield on; launch/load/save with v38;
 close; disable the mod and Build again.
 
 VALIDATION AND LIMITS
-510 tests / 31 suites / 161 style tests pass. Windows x64 release, the existing
-four exports/eight imports, 109 source checks, 11 native anchors and seven
-protected model metadata checks pass. Builds use -C codegen-units=1.
-Existing controller tests verify the 92-frame root prefix, four exact hits,
-omission of the fifth hit and bounded trail/hold/contact windows. Source
-checks preserve the complete working v36 policy and native runtime paths.
+511 tests /31 suites /161 style tests pass. Windows x64 release, existing
+four exports/eight imports,109 source checks,11 native anchors and seven
+protected model checks pass. Builds use -C codegen-units=1. Existing tests
+verify the77-frame root prefix, three exact hits, no late contact/trail/hold,
+source identity and native ability rules; the added test covers repeated input.
 ZIP CRC, independent extraction, every entry hash and saved-copy checks pass.
-No actual v37 game/GPU or installed animation playback was run here.
+No actual v38 game/GPU or installed animation playback was run here. The exact
+visual downward-slash endpoint still needs the fresh game test.
 
-Source patch (37 derivative commits), pinned upstream, credits/licences and
+Source patch (38 derivative commits), pinned upstream, credits/licences and
 validation receipts are included. Rules/confidence: docs/combat-model.md
-Stage 376. No game executable, extracted asset, recording or disassembly ships.
+Stage377. No game executable, extracted asset, recording or disassembly ships.

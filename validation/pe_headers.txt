@@ -8,7 +8,7 @@ Characteristics 0x2226
 	debugging information removed
 	DLL
 
-Time/Date		Sat Oct 31 05:04:09 2026
+Time/Date		Sat Oct 31 05:17:59 2026
 Magic			020b	(PE32+)
 MajorLinkerVersion	2
 MinorLinkerVersion	41
@@ -29,7 +29,7 @@ MinorSubsystemVersion	2
 Win32Version		00000000
 SizeOfImage		00355000
 SizeOfHeaders		00000400
-CheckSum		0040ba2f
+CheckSum		0040d666
 Subsystem		00000003	(Windows CUI)
 DllCharacteristics	00000160
 					HIGH_ENTROPY_VA
@@ -318,7 +318,7 @@ There is an export table in .edata at 0x18034d000
 The Export Tables (interpreted .edata section contents)
 
 Export Flags 			0
-Time/Date stamp 		6ae5af09
+Time/Date stamp 		6ae5b247
 Major/Minor 			0/0
 Name 				000000000034d050 dinput8.dll
 Ordinal Base 			1
@@ -47137,117 +47137,117 @@ Virtual Address: 002d7000 Chunk size 132 (0x84) Number of fixups 62
 	reloc   38 offset  940 [2d7940] DIR64
 	reloc   39 offset  980 [2d7980] DIR64
 	reloc   40 offset  9a8 [2d79a8] DIR64
-	reloc   41 offset  bb0 [2d7bb0] DIR64
-	reloc   42 offset  c18 [2d7c18] DIR64
-	reloc   43 offset  c28 [2d7c28] DIR64
-	reloc   44 offset  c38 [2d7c38] DIR64
-	reloc   45 offset  c48 [2d7c48] DIR64
-	reloc   46 offset  c58 [2d7c58] DIR64
-	reloc   47 offset  c68 [2d7c68] DIR64
-	reloc   48 offset  d48 [2d7d48] DIR64
-	reloc   49 offset  d98 [2d7d98] DIR64
-	reloc   50 offset  dd0 [2d7dd0] DIR64
-	reloc   51 offset  e20 [2d7e20] DIR64
-	reloc   52 offset  e28 [2d7e28] DIR64
-	reloc   53 offset  e30 [2d7e30] DIR64
-	reloc   54 offset  ef0 [2d7ef0] DIR64
-	reloc   55 offset  ef8 [2d7ef8] DIR64
-	reloc   56 offset  f00 [2d7f00] DIR64
-	reloc   57 offset  f10 [2d7f10] DIR64
-	reloc   58 offset  f48 [2d7f48] DIR64
-	reloc   59 offset  f50 [2d7f50] DIR64
-	reloc   60 offset  f58 [2d7f58] DIR64
+	reloc   41 offset  bb8 [2d7bb8] DIR64
+	reloc   42 offset  c20 [2d7c20] DIR64
+	reloc   43 offset  c30 [2d7c30] DIR64
+	reloc   44 offset  c40 [2d7c40] DIR64
+	reloc   45 offset  c50 [2d7c50] DIR64
+	reloc   46 offset  c60 [2d7c60] DIR64
+	reloc   47 offset  c70 [2d7c70] DIR64
+	reloc   48 offset  d50 [2d7d50] DIR64
+	reloc   49 offset  da0 [2d7da0] DIR64
+	reloc   50 offset  dd8 [2d7dd8] DIR64
+	reloc   51 offset  e28 [2d7e28] DIR64
+	reloc   52 offset  e30 [2d7e30] DIR64
+	reloc   53 offset  e38 [2d7e38] DIR64
+	reloc   54 offset  ef8 [2d7ef8] DIR64
+	reloc   55 offset  f00 [2d7f00] DIR64
+	reloc   56 offset  f08 [2d7f08] DIR64
+	reloc   57 offset  f18 [2d7f18] DIR64
+	reloc   58 offset  f50 [2d7f50] DIR64
+	reloc   59 offset  f58 [2d7f58] DIR64
+	reloc   60 offset  f60 [2d7f60] DIR64
 	reloc   61 offset    0 [2d7000] ABSOLUTE
 
 Virtual Address: 002d8000 Chunk size 184 (0xb8) Number of fixups 88
-	reloc    0 offset   38 [2d8038] DIR64
-	reloc    1 offset   c8 [2d80c8] DIR64
-	reloc    2 offset  178 [2d8178] DIR64
-	reloc    3 offset  1e8 [2d81e8] DIR64
-	reloc    4 offset  1f0 [2d81f0] DIR64
-	reloc    5 offset  1f8 [2d81f8] DIR64
-	reloc    6 offset  288 [2d8288] DIR64
-	reloc    7 offset  298 [2d8298] DIR64
-	reloc    8 offset  2a8 [2d82a8] DIR64
-	reloc    9 offset  2b8 [2d82b8] DIR64
-	reloc   10 offset  2c8 [2d82c8] DIR64
-	reloc   11 offset  2d8 [2d82d8] DIR64
-	reloc   12 offset  2e8 [2d82e8] DIR64
-	reloc   13 offset  2f8 [2d82f8] DIR64
-	reloc   14 offset  308 [2d8308] DIR64
-	reloc   15 offset  318 [2d8318] DIR64
-	reloc   16 offset  328 [2d8328] DIR64
-	reloc   17 offset  338 [2d8338] DIR64
-	reloc   18 offset  348 [2d8348] DIR64
-	reloc   19 offset  478 [2d8478] DIR64
-	reloc   20 offset  488 [2d8488] DIR64
-	reloc   21 offset  498 [2d8498] DIR64
-	reloc   22 offset  4a8 [2d84a8] DIR64
-	reloc   23 offset  4b8 [2d84b8] DIR64
-	reloc   24 offset  4c8 [2d84c8] DIR64
-	reloc   25 offset  4d8 [2d84d8] DIR64
-	reloc   26 offset  4e8 [2d84e8] DIR64
-	reloc   27 offset  4f8 [2d84f8] DIR64
-	reloc   28 offset  508 [2d8508] DIR64
-	reloc   29 offset  518 [2d8518] DIR64
-	reloc   30 offset  528 [2d8528] DIR64
-	reloc   31 offset  538 [2d8538] DIR64
-	reloc   32 offset  548 [2d8548] DIR64
-	reloc   33 offset  558 [2d8558] DIR64
-	reloc   34 offset  568 [2d8568] DIR64
-	reloc   35 offset  578 [2d8578] DIR64
-	reloc   36 offset  588 [2d8588] DIR64
-	reloc   37 offset  598 [2d8598] DIR64
-	reloc   38 offset  5a8 [2d85a8] DIR64
-	reloc   39 offset  5b8 [2d85b8] DIR64
-	reloc   40 offset  790 [2d8790] DIR64
-	reloc   41 offset  7a0 [2d87a0] DIR64
-	reloc   42 offset  7b0 [2d87b0] DIR64
-	reloc   43 offset  7c0 [2d87c0] DIR64
-	reloc   44 offset  7d0 [2d87d0] DIR64
-	reloc   45 offset  7e0 [2d87e0] DIR64
-	reloc   46 offset  7f0 [2d87f0] DIR64
-	reloc   47 offset  800 [2d8800] DIR64
-	reloc   48 offset  810 [2d8810] DIR64
-	reloc   49 offset  820 [2d8820] DIR64
-	reloc   50 offset  830 [2d8830] DIR64
-	reloc   51 offset  840 [2d8840] DIR64
-	reloc   52 offset  850 [2d8850] DIR64
-	reloc   53 offset  860 [2d8860] DIR64
-	reloc   54 offset  870 [2d8870] DIR64
-	reloc   55 offset  880 [2d8880] DIR64
-	reloc   56 offset  890 [2d8890] DIR64
-	reloc   57 offset  8a0 [2d88a0] DIR64
-	reloc   58 offset  8b0 [2d88b0] DIR64
-	reloc   59 offset  8c0 [2d88c0] DIR64
-	reloc   60 offset  8d0 [2d88d0] DIR64
-	reloc   61 offset  8e0 [2d88e0] DIR64
-	reloc   62 offset  8f0 [2d88f0] DIR64
-	reloc   63 offset  900 [2d8900] DIR64
-	reloc   64 offset  910 [2d8910] DIR64
-	reloc   65 offset  920 [2d8920] DIR64
-	reloc   66 offset  930 [2d8930] DIR64
-	reloc   67 offset  940 [2d8940] DIR64
-	reloc   68 offset  950 [2d8950] DIR64
-	reloc   69 offset  9a8 [2d89a8] DIR64
-	reloc   70 offset  9e8 [2d89e8] DIR64
-	reloc   71 offset  a80 [2d8a80] DIR64
-	reloc   72 offset  a98 [2d8a98] DIR64
-	reloc   73 offset  ab0 [2d8ab0] DIR64
-	reloc   74 offset  ca0 [2d8ca0] DIR64
-	reloc   75 offset  cf0 [2d8cf0] DIR64
-	reloc   76 offset  d08 [2d8d08] DIR64
-	reloc   77 offset  d20 [2d8d20] DIR64
-	reloc   78 offset  d90 [2d8d90] DIR64
-	reloc   79 offset  d98 [2d8d98] DIR64
-	reloc   80 offset  db0 [2d8db0] DIR64
-	reloc   81 offset  db8 [2d8db8] DIR64
-	reloc   82 offset  dc0 [2d8dc0] DIR64
-	reloc   83 offset  e50 [2d8e50] DIR64
-	reloc   84 offset  e90 [2d8e90] DIR64
-	reloc   85 offset  eb0 [2d8eb0] DIR64
-	reloc   86 offset  ee8 [2d8ee8] DIR64
-	reloc   87 offset  f00 [2d8f00] DIR64
+	reloc    0 offset   40 [2d8040] DIR64
+	reloc    1 offset   d0 [2d80d0] DIR64
+	reloc    2 offset  180 [2d8180] DIR64
+	reloc    3 offset  1f0 [2d81f0] DIR64
+	reloc    4 offset  1f8 [2d81f8] DIR64
+	reloc    5 offset  200 [2d8200] DIR64
+	reloc    6 offset  290 [2d8290] DIR64
+	reloc    7 offset  2a0 [2d82a0] DIR64
+	reloc    8 offset  2b0 [2d82b0] DIR64
+	reloc    9 offset  2c0 [2d82c0] DIR64
+	reloc   10 offset  2d0 [2d82d0] DIR64
+	reloc   11 offset  2e0 [2d82e0] DIR64
+	reloc   12 offset  2f0 [2d82f0] DIR64
+	reloc   13 offset  300 [2d8300] DIR64
+	reloc   14 offset  310 [2d8310] DIR64
+	reloc   15 offset  320 [2d8320] DIR64
+	reloc   16 offset  330 [2d8330] DIR64
+	reloc   17 offset  340 [2d8340] DIR64
+	reloc   18 offset  350 [2d8350] DIR64
+	reloc   19 offset  480 [2d8480] DIR64
+	reloc   20 offset  490 [2d8490] DIR64
+	reloc   21 offset  4a0 [2d84a0] DIR64
+	reloc   22 offset  4b0 [2d84b0] DIR64
+	reloc   23 offset  4c0 [2d84c0] DIR64
+	reloc   24 offset  4d0 [2d84d0] DIR64
+	reloc   25 offset  4e0 [2d84e0] DIR64
+	reloc   26 offset  4f0 [2d84f0] DIR64
+	reloc   27 offset  500 [2d8500] DIR64
+	reloc   28 offset  510 [2d8510] DIR64
+	reloc   29 offset  520 [2d8520] DIR64
+	reloc   30 offset  530 [2d8530] DIR64
+	reloc   31 offset  540 [2d8540] DIR64
+	reloc   32 offset  550 [2d8550] DIR64
+	reloc   33 offset  560 [2d8560] DIR64
+	reloc   34 offset  570 [2d8570] DIR64
+	reloc   35 offset  580 [2d8580] DIR64
+	reloc   36 offset  590 [2d8590] DIR64
+	reloc   37 offset  5a0 [2d85a0] DIR64
+	reloc   38 offset  5b0 [2d85b0] DIR64
+	reloc   39 offset  5c0 [2d85c0] DIR64
+	reloc   40 offset  798 [2d8798] DIR64
+	reloc   41 offset  7a8 [2d87a8] DIR64
+	reloc   42 offset  7b8 [2d87b8] DIR64
+	reloc   43 offset  7c8 [2d87c8] DIR64
+	reloc   44 offset  7d8 [2d87d8] DIR64
+	reloc   45 offset  7e8 [2d87e8] DIR64
+	reloc   46 offset  7f8 [2d87f8] DIR64
+	reloc   47 offset  808 [2d8808] DIR64
+	reloc   48 offset  818 [2d8818] DIR64
+	reloc   49 offset  828 [2d8828] DIR64
+	reloc   50 offset  838 [2d8838] DIR64
+	reloc   51 offset  848 [2d8848] DIR64
+	reloc   52 offset  858 [2d8858] DIR64
+	reloc   53 offset  868 [2d8868] DIR64
+	reloc   54 offset  878 [2d8878] DIR64
+	reloc   55 offset  888 [2d8888] DIR64
+	reloc   56 offset  898 [2d8898] DIR64
+	reloc   57 offset  8a8 [2d88a8] DIR64
+	reloc   58 offset  8b8 [2d88b8] DIR64
+	reloc   59 offset  8c8 [2d88c8] DIR64
+	reloc   60 offset  8d8 [2d88d8] DIR64
+	reloc   61 offset  8e8 [2d88e8] DIR64
+	reloc   62 offset  8f8 [2d88f8] DIR64
+	reloc   63 offset  908 [2d8908] DIR64
+	reloc   64 offset  918 [2d8918] DIR64
+	reloc   65 offset  928 [2d8928] DIR64
+	reloc   66 offset  938 [2d8938] DIR64
+	reloc   67 offset  948 [2d8948] DIR64
+	reloc   68 offset  958 [2d8958] DIR64
+	reloc   69 offset  9b0 [2d89b0] DIR64
+	reloc   70 offset  9f0 [2d89f0] DIR64
+	reloc   71 offset  a88 [2d8a88] DIR64
+	reloc   72 offset  aa0 [2d8aa0] DIR64
+	reloc   73 offset  ab8 [2d8ab8] DIR64
+	reloc   74 offset  ca8 [2d8ca8] DIR64
+	reloc   75 offset  cf8 [2d8cf8] DIR64
+	reloc   76 offset  d10 [2d8d10] DIR64
+	reloc   77 offset  d28 [2d8d28] DIR64
+	reloc   78 offset  d98 [2d8d98] DIR64
+	reloc   79 offset  da0 [2d8da0] DIR64
+	reloc   80 offset  db8 [2d8db8] DIR64
+	reloc   81 offset  dc0 [2d8dc0] DIR64
+	reloc   82 offset  dc8 [2d8dc8] DIR64
+	reloc   83 offset  e58 [2d8e58] DIR64
+	reloc   84 offset  e98 [2d8e98] DIR64
+	reloc   85 offset  eb8 [2d8eb8] DIR64
+	reloc   86 offset  ef0 [2d8ef0] DIR64
+	reloc   87 offset  f08 [2d8f08] DIR64
 
 Virtual Address: 002d9000 Chunk size 152 (0x98) Number of fixups 72
 	reloc    0 offset  330 [2d9330] DIR64

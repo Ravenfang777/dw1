@@ -1,8 +1,8 @@
-title: KH1FM Seven Styles Prototype v37
+title: KH1FM Seven Styles Prototype v38
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Single C: end Riku 182 at frame 92, after the middle strike window;
-  preserve the working v36 combos, casting and source admission.
+  Single C: end Riku 182 at frame 77, before the residual follow-up;
+  preserve confirmed source admission, casting and other combos.
   Requires KH2FM in the same installation and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

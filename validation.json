@@ -1,13 +1,13 @@
 {
-  "name": "KH1FM Seven Styles Prototype v37",
-  "stage": "s376",
-  "source_commit": "346d04597a655502b88bdb1b88bcbd8f7e981053",
+  "name": "KH1FM Seven Styles Prototype v38",
+  "stage": "s377",
+  "source_commit": "509390e251bbed945fe3224e1eb8d697c1f15f99",
   "upstream_commit": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
   "target": "x86_64-pc-windows-gnu",
   "dll_bytes": 4229927,
-  "dll_sha256": "d91dc56bfe60eaa6481f607035b4a480fe4b713dd5097d1c34488916d1f56baf",
-  "source_patch_sha256": "d8c7e936009c33ad60dd40dddb76ee5ff1b2f37a32ac1ff1b08fbe18123ba1b1",
-  "tests_passed": 510,
+  "dll_sha256": "849199867676570ea5b91a1482ea09c415a979276b39c9f2fbfdb37f7fe72af2",
+  "source_patch_sha256": "a5470377330944ea0ce59d8f33654687f630e0bf151c80e38272c01da771e6c0",
+  "tests_passed": 511,
   "tests_failed": 0,
   "test_suites": 31,
   "style_tests": 161,
@@ -35,8 +35,8 @@
   "model_metadata_checks": 7,
   "native_hook_anchor_checks_passed": true,
   "fx_scope_checks_passed": true,
-  "live_v37_game_or_gpu_test": false,
+  "live_v38_game_or_gpu_test": false,
   "no_game_assets": true,
-  "new_behavior": "Shorten Single C Riku182 host air finisher to92, retaining four complete source hits and removing final followup; preserve confirmed v36 source/lane admission, both combos and all other styles",
-  "preserved_v36_commit": "6aa4c100b93a554d14ce5bb804d227f1b6111d7e"
+  "new_behavior": "End Single C Riku182 at77 after third contact, before residual followup; retain three hits, remove two later hits; verify no terminal Horizontal Slash requeue under repeated Attack; preserve other v37 behavior",
+  "preserved_v37_commit": "346d04597a655502b88bdb1b88bcbd8f7e981053"
 }
