@@ -1,11 +1,11 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v48 source: d606d241349c15bc2a442da279dc7a3e22aad6dd
-Source tree: 7095eeebe4b03494dbc8f5af1516aa66b4995f45
-Branch: styles-v48
-The workspace was pruned; v47 was recovered from the delivered 47-commit
-source patch, reproducing tree50ac22282f4d7dc683e53035c7d885c9f270c050 exactly.
-Current NineStyles_v48.patch contains48 derivative commits; apply with git am.
-All licences and credits retained. No game assets, executables, raw pose streams,
-live caches or decompiler output. Uses the user's own installed game resources.
-Rules/confidence: docs/combat-model.md Stage387.
+Derivative v49 source: 441a1a00797ecfb70ff2af2a5f4f0bd96815bd38
+Source tree: 26a7d7e5f921aeed4447576b95f392cc497eca38
+Parent v48: d606d241349c15bc2a442da279dc7a3e22aad6dd
+Branch: styles-v49
+NineStyles_v49.patch contains49 derivative commits; apply with git am.
+All licences/credits retained. No original game assets/executables, raw pose
+streams, caches or decompiler output. Reads the user's own installed resources.
+Previous v47 source recovery is documented in source_recovery_v48.json.
+Rules/confidence: docs/combat-model.md Stage388.

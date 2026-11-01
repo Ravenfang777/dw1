@@ -1,0 +1,17 @@
+SINGLE D INITIAL BASIC COMBO ANIMATION MAP -- v49
+
+Native motion | KH1 role | Dark Riku source | Source frames
+C8 / CA | Ground first/variant |18 |50
+C9 | Ground second |19 |50
+CB | Ground finisher |20 |40
+CC | Air first |18 |50
+CD | Air second |19 |50
+CE | Air finisher |21 |48
+
+Our adapter ordering, not verified native boss script ordering/action names.
+Native normalized phase samples each complete source clip and holds its end;
+never loop an attack or privately queue follow-ups. Native combo modifiers,
+ability-selected moves, contact timing and damage remain. Source root travel
+is removed. No boss movement, voice, script, hit window or extra ability runs.
+Jump uses Single C's actual Riku jump with matching calibration. Fall/land
+remain Dark Riku6/7. Test and refine these choices using the fresh gameplay log.

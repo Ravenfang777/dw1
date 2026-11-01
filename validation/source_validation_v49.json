@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "source_sha256": {
+    "xa_ex_1160.mdls": "ef243b6ffe6d5234a1c4b795946f82db34cafb5f427ab816c8090b89379d91e3",
+    "xa_ex_1160.mset": "b50be471d376786a80caabbdaf08e861985d0d957e914552dc98180aa6c4d2a8"
+  },
+  "source_poses_solved": 2139,
+  "source_clips": 31,
+  "candidate_combo_sources": [
+    18,
+    19,
+    20,
+    21
+  ],
+  "candidate_source_frames": {
+    "18": 50,
+    "19": 50,
+    "20": 40,
+    "21": 48
+  },
+  "candidate_pose_samples": 232,
+  "source_action_names_inferred_visually": true,
+  "boss_contact_windows_imported": false,
+  "native_kh1_hit_timing_retained": true,
+  "fresh_body_map_reference_rerun": false,
+  "body_map_unchanged_from_validated_v47": true,
+  "actual_v49_game_or_gpu_test": false
+}

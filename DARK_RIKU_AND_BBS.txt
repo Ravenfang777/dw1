@@ -1,3 +1,6 @@
+V49 CURRENT SCOPE: see README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
+The original solver/secondary notes below are retained as historical method.
+
 Dark Riku capture received: 31 main + 1 alternate; Ansem/Riku 41 + 1, 74 total.
 See DARK_RIKU_ANIMATION_LIST.txt for the full numbered duration list.
 Full semantic action names and Single D combat/contact mapping are still pending.

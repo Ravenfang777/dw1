@@ -1,8 +1,8 @@
-title: KH1FM Nine Styles Prototype v48
+title: KH1FM Nine Styles Prototype v49
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Restores Single D jump takeoff; only rise/fall use the airborne hold.
-  Retains v47 hip alignment, checked rest and all other styles.
+  Single D uses Single C jump plus initial Dark Riku basic combo animations.
+  Native KH1 combo selection, hit timing, damage and abilities remain.
   Requires installed KH2FM and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

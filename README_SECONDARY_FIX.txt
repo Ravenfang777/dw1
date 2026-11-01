@@ -1,4 +1,7 @@
-HISTORICAL V46 REPAIR, RETAINED IN V48. Read README_MAPPING.txt for the new
+V49 CURRENT SCOPE: see README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
+The original solver/secondary notes below are retained as historical method.
+
+HISTORICAL V46 REPAIR, RETAINED IN V49. Read README_MAPPING.txt for the new
 pelvis placement and airborne hold; those are the only mapping-policy changes.
 
 SINGLE D SECONDARY REST REPAIR -- v46

@@ -1,14 +1,23 @@
 {
   "passed": true,
-  "v48_body_map_and_native_solver_unchanged_from_v47": true,
+  "v49_body_map_and_native_solver_unchanged": true,
   "v47_offline_pose_count_inherited": 2139,
   "v47_clip_count_inherited": 31,
-  "v48_geometry_reference_rerun": false,
+  "v49_geometry_reference_rerun": false,
   "map_source_sha256": "8a6f4a315eca62134d76e26e6425ae2ad0073fbd63617d3c20fc70f4a9c3e53c",
   "source_reference": "mapping_validation_v47.json",
-  "takeoff_source_slot": 3,
-  "airborne_source_slot": 6,
-  "takeoff_uses_native_phase": true,
-  "air_clock_starts_only_on_rise_or_fall": true,
-  "actual_v48_game_or_gpu_test": false
+  "jump_donor": "Single C KH2 playable Riku; matching source layout and native paired clock",
+  "ground_source_slots": [
+    18,
+    19,
+    20
+  ],
+  "air_source_slots": [
+    18,
+    19,
+    21
+  ],
+  "native_kh1_combo_hit_timing_damage_retained": true,
+  "boss_contact_events_imported": false,
+  "actual_v49_game_or_gpu_test": false
 }

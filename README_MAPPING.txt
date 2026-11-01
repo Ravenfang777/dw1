@@ -1,26 +1,30 @@
-DARK RIKU TO SORA BODY MAP -- v48
+DARK RIKU TO SORA BODY MAP -- v49
 
-Body map/solver/secondary guards are unchanged from v47.103 Sora target joints
-use101 active source joints. The pelvis uses solved source hips5/39 and torso86
-relative to their bind frame, retaining Sora's own hip width and limb lengths.
-Other rotations use the authored source/bind turn. Only checked immutable
-secondary rest/bind is used; validate complete and final skin bases before
-the existing publication. Source travel is removed; placement is independent.
-Native request/header/field/script/event guards remain. One equipped weapon.
+The original247-bone authored solver and103-target/101-source body map are
+unchanged. Corrected solved-hip/torso frame retains Sora's own hip width and
+lengths. Checked immutable rest/bind preserves scale; complete/final skin bases
+are checked before publication. Source travel is removed; placement independent.
 
-Corrected Single D movement policy:
-Idle0, walk1, run2; takeoff3 (restored native phase); rise/fall6; landing7.
-Only rise/fall enter the pause-aware play-once/hold clock. Takeoff does not
-start or consume it. First rise/fall begins source6 at zero; continue once,
-then hold its end until native landing or interruption. No gameplay, input,
-velocity, damage, collision or jump-height changes. All combat mapping remains
-pending; native KH1 combat is retained. Other styles and attachment routes stay.
+D's native basic ground slots C8/CA,C9,CB map to18,19,20; air CC,CD,CE map to
+18,19,21. Each uses actual source length and current native normalized phase,
+clamped at its end. Exact current/requested attack slot, field lane, actor,
+binding, header and scene/script/hold checks are required. Other native action
+abilities remain native. KH1 owns combo progression, hit timing and damage.
+No new attack controller, callback, hit window, HP write or boss event import.
 
-Apply source/NineStyles_v48.patch to the pinned upstream with git am.
-The offline example and v47 mapping calibration are unchanged:
+Only Jump borrows Single C: same Riku donor/motion, paired native takeoff/rise
+clock and source-layout/rest calibration. A separate per-Sora retarget avoids
+changing D's base retarget/map. No raw Riku matrices reach base-Sora secondary
+or effect maps. D's fall6/landing7 remain; the fall interval starts on fall.
+
+Apply source/NineStyles_v49.patch to pinned upstream using git am.
+Original source probe (raw inputs/output stay private):
+cargo run --locked -p kh1-data --example native_mset_solve -- DARK.mdls DARK.mset OUTPUT.bin
+Original target mapping probe is unchanged:
 cargo run --locked -p kh1-data --example dark_riku_map -- DARK.mdls DARK.mset SORA.mdls OUTPUT.bin
-Use only your own original model/motion inputs. Do not distribute raw outputs.
-validation/mapping_validation_v47.json retains the original2139-pose reference;
-current mapping_validation.json documents exact source inheritance. v45/v44
-reference files are historical. None is new v48 GPU/skin validation.
-Source/confidence: docs/combat-model.md Stage387.
+validation/source_validation_v49.json records fresh source checks. Current
+mapping_validation.json documents source inheritance and action scope; the
+v47 target-matrix receipt and v44 native-CPU receipt are labelled history.
+None establishes new v49 GPU/skin or authored boss-contact parity.
+See SINGLE_D_COMBO_MAP.txt and combat-model Stage388 for exact choices,
+confidence, native timing limits and test instructions.
