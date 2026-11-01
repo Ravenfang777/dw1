@@ -9,7 +9,7 @@
   "jump_donor": "Single C KH2 playable Riku; matching source layout and native paired clock",
   "ground_source_slots": [
     29,
-    30,
+    28,
     28
   ],
   "air_source_slots": [
@@ -44,12 +44,28 @@
   "actual_v50_game_or_gpu_test": false,
   "v51_body_map_and_native_solver_unchanged": true,
   "jump_preserved_exactly_from_v50": true,
-  "source_requests": [
+  "source_request_admission_matches_captured_bank": true,
+  "script_linked_weapon_attack_identity": true,
+  "actual_v51_game_or_gpu_test": false,
+  "v52_body_map_and_native_solver_unchanged": true,
+  "jump_preserved_exactly_from_v51": true,
+  "guard_source_slot": 30,
+  "guard_requires_native_row_and_current_header": true,
+  "native_guard_blocking_and_timing_retained": true,
+  "new_finisher_implemented": false,
+  "new_air_combo_implemented": false,
+  "extra_bank_installed": false,
+  "extra_source_capture_filename": "kh1-dual-wield-dark-riku-extra.zip",
+  "actual_v52_game_or_gpu_test": false,
+  "ground_source_requests": [
+    231,
+    230,
+    230
+  ],
+  "air_source_requests": [
     231,
     232,
     230
   ],
-  "source_request_admission_matches_captured_bank": true,
-  "script_linked_weapon_attack_identity": true,
-  "actual_v51_game_or_gpu_test": false
+  "guard_source_request": 232
 }

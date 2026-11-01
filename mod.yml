@@ -1,8 +1,8 @@
-title: KH1FM Nine Styles Prototype v51
+title: KH1FM Nine Styles Prototype v52
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Replaces Single D's incorrectly identified combo poses with Dark Riku's
-  script-linked weapon attack motions. Preserves the working Single C jump.
+  Single D Guard uses the former second ground attack; ground hit two uses
+  the former finisher. Exports extra Dark Riku source for further combo research.
   Requires installed KH2FM and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

@@ -1,9 +1,8 @@
 Windows x64 release: PASSED
-Rust1.85.0 / MinGW13-posix / nonincremental / codegen-units=1
-597 tests/31 suites;174 style,16 map,14 D policy.
-23 source checks;286 protected files; working jump exact.
-Original source script links the selected requests to native weapon attacks.
-Source request admission matches the supplied main MSET.
-DLL SHA256 baa44e4d050e55cbf154372232c0cef529c893ad91ac22fefe06fed9b20ea4a6
-Source c0651778d1f4dd29df5b08abe9a4aa892c245e0f
-Fresh v51 game/GPU appearance and contact timing pending.
+599 tests/31 suites;174 style,16 map,15 D policy.
+31 source checks;283 protected files; working jump and solver/map exact.
+Guard30 from native witness; second ground28.
+New finisher/air pending returned1580 source. Extra source is not executed.
+DLL SHA256 6872d92bc011e0a7dd5909af67350344249547960d2ce8f3c7a9c98ccfdb1dbb
+Source 54d18b73d6b4359476e97a887332fefcc44a5cdd
+Fresh v52 game/blocking/timing test pending.

@@ -1,3 +1,7 @@
+V52 CURRENT SCOPE: README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
+Historical method/inventory notes follow. Guard30; ground second28; new
+finisher/air choices pending the extra-bank capture.
+
 V51 CURRENT SCOPE: README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
 The solver/secondary/source notes below are retained as historical method.
 

@@ -1,17 +1,13 @@
-DARK RIKU TO SORA BODY MAP -- v51
+DARK RIKU TO SORA BODY MAP -- v52
 
-The source solver, geometric hip frame, anatomical map, own lengths/scales,
-immutable secondary rest and final skin guards are unchanged. The working
-Single C jump and its source layout/calibration/paired timeline remain exact.
+Guard samples former second attack30 from a committed native Guard witness.
+Second ground hit samples former finisher28. The main1160 solver, geometric
+hip frame, anatomical map, own lengths/scales, immutable rest, skin guards and
+working Single C jump/calibration/paired clock remain exact.
 
-The old combo clips were misidentified. Both D lanes now use main29/30/28,
-linked to native weapon attacks in the original script. Source admission
-checks that its loaded request table resolves231/232/230 to those clips.
-Sora's decoded98..104 current-bank admission and full existing guards remain.
-Native phase samples the complete selected source; source travel stays removed.
-Boss AI/contact/projectile events are not executed. KH1 combat remains native.
-
-No new target/GPU reference run was possible here. Historical v44 source-solver,
-v45/v47 mapped-pose and v49 source-pose receipts remain labelled as history.
-Current tests/source evidence verify selection and admission. Fresh game
-appearance, grip and native-contact timing still require the user's test.
+Interim ground29/28/28 and existing air29/30/28 are explicit. The new finisher
+and air chain require the returned extra source. This build exports original
+1580 MDLS/MSET independently without switching rigs or executing its scripts.
+No1580 pose or damage/event/effect data is published. Main1160 admission does
+not depend on export permissions or success. Historical geometry proofs remain
+labelled history; fresh game Guard appearance/blocking/timing needs testing.

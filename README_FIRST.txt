@@ -1,60 +1,70 @@
-KH1FM NINE STYLES -- PROTOTYPE v51 (s390)
+KH1FM NINE STYLES -- PROTOTYPE v52 (s391)
 
-SINGLE D: REPLACE THE WRONG COMBO ANIMATIONS
-The prior18/19/20/21 choices were misidentified from body-only thumbnails.
-v51 uses main Dark Riku clips29 ->30 ->28 for both basic combo lanes.
-The captured original battle script links these to native weapon attacks;
-the main MSET request table independently resolves231/232/230 to those clips.
-This establishes attack association, not a live test of the adapted player.
-The playable order is our choice; named boss techniques/order remain unverified.
+IMPLEMENTED FOR SINGLE D
+- Guard animation: former second ground attack, main clip30/request232.
+- Second ground hit: former ground finisher, main clip28/request230.
+Guard keeps KH1's original ability selection, blocking objects and timing.
+This changes the body animation; it does not add a damaging Guard attack.
+The working Single C jump remains.
+
+NEW FINISHER AND AIR COMBO: SOURCE INSPECTION PENDING
+Only three weapon attacks are verified in the captured main1160 bank.
+Other tempting clips include a confirmed clash-recoil response. Additional
+attack requests in the shared script are absent from the captured main bank.
+The separate second-fight1580 bank has41 inventory entries, but its source
+poses have not yet been available for inspection here.
+
+This build exports that extra source automatically. It does NOT claim a new
+finisher/air chain. Interim ground29/28/28 repeats28 in slots two and three;
+air remains29/30/28. Return the new ZIP so the remaining choices can be checked.
+The extra bank's rig, AI, scripts, events and poses are not installed/executed.
 
 INSTALL
-1. Fully close KH1FM. Disable v50 and every older Dual Wield prototype.
-2. Import THIS ZIP through OpenKH, enable only v51, then Build and Run.
+1. Fully close KH1FM. Disable v51 and every older Dual Wield prototype.
+2. Import THIS ZIP through OpenKH, enable only v52, then Build and Run.
    Panacea and installed KH2FM resources are required. F1 cannot reload a DLL.
    Keep the full KH2 Combat overhaul, old offhand/moveset Lua and duplicate
    Sora model mods disabled. Existing INI/save settings remain.
-3. Confirm s390 / PROTOTYPE v51 in kh1-dual-wield.log beside the game EXE.
+3. Confirm s391 / PROTOTYPE v52 in kh1-dual-wield.log beside the game EXE.
 
-TEST
-Equip Style: Single D. Check the first swing, second swing and finisher on
-the ground, then all three in the air. Start with whiffs, then one enemy.
-Recheck the working Single C jump, landing, interruptions and a map change.
-Native attack abilities retain priority; unequip their replacements only if
-you want to isolate the basic mapped combo. Return the fresh log if a selected
-clip still looks wrong or fails. No additional source capture is needed.
+TEST AND RETURN
+Equip Style: Single D and the native Guard ability. Stand still and use Guard;
+it should show the former second attack and still block normally. Test ground
+hits one/two, jump, normal interruptions and a map change. Native attack ability
+replacements retain priority; unequip them only to isolate the basic combo.
 
-EXPECTED LOG
-SINGLE D MELEE SOURCE VERIFIED: source requests231/232/230 -> clips29/30/28.
-SINGLE D BASIC COMBO ACTIVE: current native request/decoded bank/signature,
-source_slot, source_frame, native_phase and source_request, once per action kind.
-Ground/air first29, second30, finisher28. SINGLE D SINGLE C JUMP READY confirms
-the preserved jump route. Report unexpected source/map/final-pose rejection.
-An absent/changed/unreadable source request mapping safely retains native moves.
+Wait for SINGLE D EXTRA SOURCE CAPTURE COMPLETE in the log. No battle or
+special ability is needed for capture. Send BOTH files from the game folder:
+  kh1-dual-wield-dark-riku-extra.zip
+  kh1-dual-wield.log
+The ZIP contains original xa_ex_1580.mdls/mset and diagnostics. Do not install
+or extract it; just return it. If a different extra ZIP already existed, use
+the timestamped path named by the capture-complete line. There is no automatic
+upload. If capture fails, return the log; main1160 gameplay remains independent.
 
-SCOPE
-Both lanes reuse the same three boss weapon attacks. This is a pose adapter,
-not a full boss combat/event importer or a distinct authored player air combo.
-KH1 keeps combo progression/count/repeats, Combo Plus, attack ability priority,
-actor movement, hit timing, contacts, damage, sounds/trails and native feedback.
-Original boss hit windows/projectiles/AI/scripts/damage values are not imported.
-Adapted animation-to-native-contact timing still needs the game test.
+EXPECTED DIAGNOSTICS
+STYLE NATIVE GUARD WITNESS: original row0x3D, actual resolved motion.
+SINGLE D GUARD ACTIVE: source30/frame/native phase; original blocking retained.
+SINGLE D BASIC COMBO ACTIVE: second ground source28. Existing native request
+C8..CE -> bank98..104 admission is retained. A raw Square press/request number
+cannot authorize a Guard overlay; stale/foreign/header-mismatched states retire.
 
-v50's request-to-bank fix remains. Single C jump/calibration/paired timeline,
-D idle/walk/run/fall/landing, hip alignment, checked rest and skin guards remain.
-Other D actions retain native KH1 animation pending later mapping. One equipped
-weapon. Every other style, contact/FX route, Quick Run, Superglide/finishers and
-confirmed2x Aerial Dodge routes remain. Nine exclusive0-AP abilities; no ability
-grants, gauge, stats, outfit or party change.
+RETAINED SCOPE
+KH1 owns combo progression/repeats/modifiers/ability priority, movement, contacts,
+damage, hit timing and native feedback. No boss damage/contact/projectile events
+are imported. Same D solver, body map, hip alignment, held fall and skin guards.
+One equipped weapon. Other styles, Quick Run, glide/Superglide finishers and
+confirmed2x Aerial Dodge routes remain. Nine exclusive0-AP style abilities;
+no new ability grants, gauge, stats, outfit or party changes.
 
 VALIDATION
-597 tests/31 suites pass (174 style,16 body-map,14 D policy). Windows x64
-release succeeds with the existing4 exports/8 imports.23 scope checks protect
-286 other tracked files and exact working jump/publication/controller routes.
-New source admission checks require the actual source request mappings;
-the captured main bank passes. Source script findings are in validation;
-no bytecode/table dump ships. Solver/body-map metrics retained from earlier
-versions are historical geometry evidence, not a new game/GPU appearance test.
-The51-commit source patch, ZIP CRC/extraction and file hashes are checked.
+599 tests/31 suites pass (174 style,16 body map,15 D policy). Windows x64
+release passes with the existing4 exports/8 imports.31 scope checks protect
+283 other tracked files and exact working jump/solver/controllers/contacts.
+New tests cover the committed Guard witness and independent extra ZIP decoding,
+binary payload preservation, CRC and parse-failure diagnostics. Additional
+source bytes and live Guard/blocking/timing still require your returned test.
+Historical solver/map metrics in validation remain historical. The52-commit
+source patch, ZIP CRC/extraction and each file hash are checked before delivery.
 Restart after DLL/INI changes. Removal: set remove_dual_wield on, launch/load/
-save with v51, close, disable the mod and Build again.
+save with v52, close, disable the mod and Build again.

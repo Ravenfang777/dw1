@@ -1,0 +1,33 @@
+{
+  "source_model_sha256": "ef243b6ffe6d5234a1c4b795946f82db34cafb5f427ab816c8090b89379d91e3",
+  "source_mset_sha256": "b50be471d376786a80caabbdaf08e861985d0d957e914552dc98180aa6c4d2a8",
+  "guard_source_clip": 30,
+  "guard_source_request": 232,
+  "ground_second_source_clip": 28,
+  "ground_second_source_request": 230,
+  "interim_ground_order": [
+    29,
+    28,
+    28
+  ],
+  "existing_air_order": [
+    29,
+    30,
+    28
+  ],
+  "new_finisher_implemented": false,
+  "new_air_combo_implemented": false,
+  "source_213_is_referenced_as_clash_reaction": true,
+  "extra_attack_context_requests_missing_from_main": [
+    238,
+    241
+  ],
+  "extra_source_name": "xa_ex_1580",
+  "extra_source_payload_available_here": false,
+  "extra_inventory_motions": 41,
+  "extra_capture_filename": "kh1-dual-wield-dark-riku-extra.zip",
+  "extra_bank_installed_or_executed": false,
+  "main_source_solver_unchanged": true,
+  "live_v52_game_or_gpu_test": false,
+  "findings": "Only plain-language/source-identity facts; no bytecode or extracted table. Further finisher/air selection requires the returned extra source pair."
+}

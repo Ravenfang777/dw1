@@ -1,25 +1,22 @@
-SINGLE D BASIC COMBO MAP -- v51
+SINGLE D POSE MAP -- v52
 
-Native request | Native regular bank | Role | Dark Riku request | Main clip
-C8 /200 |98 | Ground first |231 |29 (64 frames)
-C9 /201 |99 | Ground second |232 |30 (64)
-CA /202 |100 | Ground first variant |231 |29 (64)
-CB /203 |101 | Ground finisher |230 |28 (60)
-CC /204 |102 | Air first |231 |29 (64)
-CD /205 |103 | Air second |232 |30 (64)
-CE /206 |104 | Air finisher |230 |28 (60)
+Action | Native source | Dark Riku request | Main clip | Status
+Guard | Committed original Guard row/current header |232 |30 | Requested swap
+Ground first/variant | C8/CA -> bank98/100 |231 |29 | Retained
+Ground second | C9 -> bank99 |230 |28 | Former finisher
+Ground finisher | CB -> bank101 |230 |28 | Interim repeat; new choice pending
+Air first | CC -> bank102 |231 |29 | Retained pending new air selection
+Air second | CD -> bank103 |232 |30 | Retained pending new air selection
+Air finisher | CE -> bank104 |230 |28 | Retained pending new air selection
 
-Both lanes:29 ->30 ->28, sampled over native normalized clip phase, once/clamped.
-These source requests are linked to weapon attacks by the original main1160
-script and resolved through the original MSET. Our order is an adapter choice,
-not a verified named boss combo or separate authored aerial chain. Previous
-18..21 candidate selections are withdrawn. No boss scripts/events are executed.
+Source1160 remains the only live mapped KH1 rig. Guard uses the same native
+field/binding/scene/script/hold eligibility plus a current original Guard-row
+witness. Exact resolved native request/header and bounded witness age must agree.
+Native KH1 blocking/timing stays; source30's boss attack events do not execute.
+Ground/air combo selection, repeats, hit timing and damage remain native KH1.
 
-Source request IDs, source main-bank clips, Sora's native requests and Sora's
-regular bank indices are four separate domains. Source admission checks its
-loaded descriptors; native pose admission still verifies the decoded current
-record/header, actor/binding, ground/air lane, scene/script/control and handoffs.
-Native abilities/specials retain priority and cannot borrow an old basic pose.
-KH1 owns combo repeats/count, movement, contacts, hit timing, damage/feedback.
-Original boss contact events are not imported. Fresh game timing check needed.
-Working Single C jump and every other style remain unchanged.
+The requested new finisher and air combo are NOT yet implemented. The exporter
+creates kh1-dual-wield-dark-riku-extra.zip with the original second-fight1580
+model and motions for offline inspection. Its41-slot numbering must be checked;
+neither a matching bone count nor a body-only thumbnail qualifies a new move.
+Return that ZIP and kh1-dual-wield.log. Do not install the source capture.
