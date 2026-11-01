@@ -1,17 +1,11 @@
-title: KH1FM Aqua Motion Test v1
-game: kh1
-originalAuthor: Raven Fang concept; conversion by OpenAI Codex
+title: KH1FM Nine Styles Prototype v52
+originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Experimental Aqua ground and aerial attack motions, Barrier body pose,
-  and Cartwheel on normal-world Sora and the Olympus moveset.
-  Native KH1 combat rules and timings remain. Standalone test;
-  disable Nine Styles / Dual Wield v52 and other moveset replacements.
+  Single D Guard uses the former second ground attack; ground hit two uses
+  the former finisher. Exports extra Dark Riku source for further combo research.
+  Requires installed KH2FM and OpenKH Panacea.
 assets:
-- name: xa_ex_0010.mset
+- name: dll/kh1-dual-wield.dll
   method: copy
   source:
-  - name: assets/xa_ex_0010.mset
-- name: xa_ex_0010_he.mset
-  method: copy
-  source:
-  - name: assets/xa_ex_0010_he.mset
+  - name: kh1-dual-wield.dll

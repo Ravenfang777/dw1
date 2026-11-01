@@ -1,47 +1,70 @@
-KH1FM AQUA MOTION TEST v1
-For your KH1 Final Mix PC / Steam setup with OpenKH Panacea
+KH1FM NINE STYLES -- PROTOTYPE v52 (s391)
 
-This is the first standalone body-animation test for the BBS Aqua concept.
-It targets ordinary Sora and his Olympus moveset. It is not yet a selectable
-style inside Nine Styles / Dual Wield v52.
+IMPLEMENTED FOR SINGLE D
+- Guard animation: former second ground attack, main clip30/request232.
+- Second ground hit: former ground finisher, main clip28/request230.
+Guard keeps KH1's original ability selection, blocking objects and timing.
+This changes the body animation; it does not add a damaging Guard attack.
+The working Single C jump remains.
 
-INSTALL AND TEST
-1. Fully exit the game. In OpenKH, select Kingdom Hearts 1 and import this ZIP.
-   If your manager requires a folder, extract it into a mod folder with mod.yml
-   directly inside that folder.
-2. Disable Nine Styles / Dual Wield v52 and other mods that replace Sora's
-   animations, character model, or combat motions. Enable Aqua Motion Test v1.
-3. Use Mod Loader > Build and Run. Load a save with Guard and Dodge Roll
-   equipped. No new ability or style selection is needed.
-4. Start in a normal-Sora world such as Traverse Town. Temporarily unequip
-   combo modifiers/extra finishers for the first basic-combo check. Try ground
-   attacks, aerial attacks, Guard, and Dodge Roll. Then check Olympus.
+NEW FINISHER AND AIR COMBO: SOURCE INSPECTION PENDING
+Only three weapon attacks are verified in the captured main1160 bank.
+Other tempting clips include a confirmed clash-recoil response. Additional
+attack requests in the shared script are absent from the captured main bank.
+The separate second-fight1580 bank has41 inventory entries, but its source
+poses have not yet been available for inspection here.
 
-IN THIS BUILD
-- Four basic ground-motion slots use Aqua clips 300 / 301 / 302 / 304.
-- Three basic air-motion slots use Aqua clips 305 / 306 / 309.
-- Guard startup/hold/recovery use phases of Aqua clip 400 (Barrier body).
-- Dodge Roll uses Aqua clip 009 (Cartwheel).
+This build exports that extra source automatically. It does NOT claim a new
+finisher/air chain. Interim ground29/28/28 repeats28 in slots two and three;
+air remains29/30/28. Return the new ZIP so the remaining choices can be checked.
+The extra bank's rig, AI, scripts, events and poses are not installed/executed.
 
-The attack ordering is an initial mapping for gameplay review. Source motions
-are fitted to KH1's existing clip lengths. Damage, attack/contact events,
-movement distance, guard rules, and invulnerability timing remain native KH1.
-This means a new swing may need later tuning to match its damage window.
-Barrier's bubble effects and BBS-style defense behavior are not included.
-Halloween Town and Atlantica use other character/motion variants and are
-outside this build. No new DLL or save patch is included.
+INSTALL
+1. Fully close KH1FM. Disable v51 and every older Dual Wield prototype.
+2. Import THIS ZIP through OpenKH, enable only v52, then Build and Run.
+   Panacea and installed KH2FM resources are required. F1 cannot reload a DLL.
+   Keep the full KH2 Combat overhaul, old offhand/moveset Lua and duplicate
+   Sora model mods disabled. Existing INI/save settings remain.
+3. Confirm s391 / PROTOTYPE v52 in kh1-dual-wield.log beside the game EXE.
 
-PLEASE SEND BACK
-A short video of a ground combo, an air combo, Guard taking a hit, and several
-Cartwheels, with the world name and whether lock-on is active. Show any twisted
-limbs, floating feet, unusual travel, missing animations, or crash. This build
-has passed offline decoding/pose checks; it has not been run in the game here.
+TEST AND RETURN
+Equip Style: Single D and the native Guard ability. Stand still and use Guard;
+it should show the former second attack and still block normally. Test ground
+hits one/two, jump, normal interruptions and a map change. Native attack ability
+replacements retain priority; unequip them only to isolate the basic combo.
 
-TO REMOVE
-Disable this mod, fully close the game, and rebuild in OpenKH. Re-enable v52
-when you want to return to that separate test.
+Wait for SINGLE D EXTRA SOURCE CAPTURE COMPLETE in the log. No battle or
+special ability is needed for capture. Send BOTH files from the game folder:
+  kh1-dual-wield-dark-riku-extra.zip
+  kh1-dual-wield.log
+The ZIP contains original xa_ex_1580.mdls/mset and diagnostics. Do not install
+or extract it; just return it. If a different extra ZIP already existed, use
+the timestamped path named by the capture-complete line. There is no automatic
+upload. If capture fails, return the log; main1160 gameplay remains independent.
 
-DETAILS
-validation.json and validation_olympus.json record structural and pose checks.
-preview/ contains offline skeleton diagnostics, not gameplay footage.
-source/ contains the converter, tests, rebuild instructions, and format credits.
+EXPECTED DIAGNOSTICS
+STYLE NATIVE GUARD WITNESS: original row0x3D, actual resolved motion.
+SINGLE D GUARD ACTIVE: source30/frame/native phase; original blocking retained.
+SINGLE D BASIC COMBO ACTIVE: second ground source28. Existing native request
+C8..CE -> bank98..104 admission is retained. A raw Square press/request number
+cannot authorize a Guard overlay; stale/foreign/header-mismatched states retire.
+
+RETAINED SCOPE
+KH1 owns combo progression/repeats/modifiers/ability priority, movement, contacts,
+damage, hit timing and native feedback. No boss damage/contact/projectile events
+are imported. Same D solver, body map, hip alignment, held fall and skin guards.
+One equipped weapon. Other styles, Quick Run, glide/Superglide finishers and
+confirmed2x Aerial Dodge routes remain. Nine exclusive0-AP style abilities;
+no new ability grants, gauge, stats, outfit or party changes.
+
+VALIDATION
+599 tests/31 suites pass (174 style,16 body map,15 D policy). Windows x64
+release passes with the existing4 exports/8 imports.31 scope checks protect
+283 other tracked files and exact working jump/solver/controllers/contacts.
+New tests cover the committed Guard witness and independent extra ZIP decoding,
+binary payload preservation, CRC and parse-failure diagnostics. Additional
+source bytes and live Guard/blocking/timing still require your returned test.
+Historical solver/map metrics in validation remain historical. The52-commit
+source patch, ZIP CRC/extraction and each file hash are checked before delivery.
+Restart after DLL/INI changes. Removal: set remove_dual_wield on, launch/load/
+save with v52, close, disable the mod and Build again.
