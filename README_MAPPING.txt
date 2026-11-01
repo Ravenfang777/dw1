@@ -1,30 +1,24 @@
-DARK RIKU TO SORA BODY MAP -- v49
+DARK RIKU TO SORA BODY MAP -- v50
 
-The original247-bone authored solver and103-target/101-source body map are
-unchanged. Corrected solved-hip/torso frame retains Sora's own hip width and
-lengths. Checked immutable rest/bind preserves scale; complete/final skin bases
-are checked before publication. Source travel is removed; placement independent.
+The source solver, geometric hip frame, body map and secondary/skin guards are
+unchanged. This fixes combo admission only: v49 treated native requestsC8..CE
+as bank indices; the regular request table actually resolves them to98..104.
 
-D's native basic ground slots C8/CA,C9,CB map to18,19,20; air CC,CD,CE map to
-18,19,21. Each uses actual source length and current native normalized phase,
-clamped at its end. Exact current/requested attack slot, field lane, actor,
-binding, header and scene/script/hold checks are required. Other native action
-abilities remain native. KH1 owns combo progression, hit timing and damage.
-No new attack controller, callback, hit window, HP write or boss event import.
+D resolves the requested basic bank record, verifies every existing current
+header field, then requires exact current/requested record equality and the
+native field/binding/lane/scene/script/hold gates. Nonbasic locomotion keeps
+its known signature aliases. Other actions cannot borrow an old attack pose.
+No global request decoder, signature map or native gameplay callback changes.
 
-Only Jump borrows Single C: same Riku donor/motion, paired native takeoff/rise
-clock and source-layout/rest calibration. A separate per-Sora retarget avoids
-changing D's base retarget/map. No raw Riku matrices reach base-Sora secondary
-or effect maps. D's fall6/landing7 remain; the fall interval starts on fall.
+Ground bank98/100,99,101 -> source18,19,20. Air102,103,104 ->18,19,21.
+Same native phase/clamp and actual source lengths. Working Single C/Riku jump
+route, matching calibration, paired clock and raw-pose isolation are exact.
+All native combo selection/ability/contact/damage and other style code remain.
+Original boss contact windows are not imported by this animation adapter.
 
-Apply source/NineStyles_v49.patch to pinned upstream using git am.
-Original source probe (raw inputs/output stay private):
-cargo run --locked -p kh1-data --example native_mset_solve -- DARK.mdls DARK.mset OUTPUT.bin
-Original target mapping probe is unchanged:
-cargo run --locked -p kh1-data --example dark_riku_map -- DARK.mdls DARK.mset SORA.mdls OUTPUT.bin
-validation/source_validation_v49.json records fresh source checks. Current
-mapping_validation.json documents source inheritance and action scope; the
-v47 target-matrix receipt and v44 native-CPU receipt are labelled history.
-None establishes new v49 GPU/skin or authored boss-contact parity.
-See SINGLE_D_COMBO_MAP.txt and combat-model Stage388 for exact choices,
-confidence, native timing limits and test instructions.
+Apply source/NineStyles_v50.patch to the pinned upstream with git am.
+validation/log_findings_v50.json contains plain extracted observations only;
+the raw log is not distributed. Current scope/test/PE receipts cover this fix.
+Source/geometry receipts named v44/v45/v47/v49 remain labelled history. No new
+v50 native-CPU, GPU/skin or boss contact parity is claimed. Rules/confidence:
+docs/combat-model.md Stage389; exact request/bank roles in SINGLE_D_COMBO_MAP.txt.

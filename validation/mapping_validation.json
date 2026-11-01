@@ -19,5 +19,27 @@
   ],
   "native_kh1_combo_hit_timing_damage_retained": true,
   "boss_contact_events_imported": false,
-  "actual_v49_game_or_gpu_test": false
+  "actual_v49_game_or_gpu_test": false,
+  "v50_body_map_and_native_solver_unchanged": true,
+  "jump_preserved_exactly_from_v49": true,
+  "native_request_ids": [
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206
+  ],
+  "decoded_basic_bank_records": [
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "requested_record_resolves_signature_aliases": true,
+  "actual_v50_game_or_gpu_test": false
 }

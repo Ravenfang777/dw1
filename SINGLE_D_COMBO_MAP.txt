@@ -1,17 +1,21 @@
-SINGLE D INITIAL BASIC COMBO ANIMATION MAP -- v49
+SINGLE D BASIC COMBO MAP -- v50
 
-Native motion | KH1 role | Dark Riku source | Source frames
-C8 / CA | Ground first/variant |18 |50
-C9 | Ground second |19 |50
-CB | Ground finisher |20 |40
-CC | Air first |18 |50
-CD | Air second |19 |50
-CE | Air finisher |21 |48
+Native request | Decoded regular bank | Role | Dark Riku source (frames)
+C8 /200 |98 | Ground first |18 (50)
+C9 /201 |99 | Ground second |19 (50)
+CA /202 |100 | Ground first variant |18 (50)
+CB /203 |101 | Ground finisher |20 (40)
+CC /204 |102 | Air first |18 (50)
+CD /205 |103 | Air second |19 (50)
+CE /206 |104 | Air finisher |21 (48)
 
-Our adapter ordering, not verified native boss script ordering/action names.
-Native normalized phase samples each complete source clip and holds its end;
-never loop an attack or privately queue follow-ups. Native combo modifiers,
-ability-selected moves, contact timing and damage remain. Source root travel
-is removed. No boss movement, voice, script, hit window or extra ability runs.
-Jump uses Single C's actual Riku jump with matching calibration. Fall/land
-remain Dark Riku6/7. Test and refine these choices using the fresh gameplay log.
+Request IDs and animation-bank records are separate numbering domains.
+v50 resolves the actual requested basic record and checks its current header.
+Counts-only signatures can alias, so their first guess is not authoritative
+for the basic attack. Unknown header/request, wrong state/lane or scene/script/
+hold still prevents admission. Native ability/special motions remain native.
+
+Ground18->19->20; air18->19->21 are our initial adapter ordering, not verified
+boss combo/event names. Native normalized phase samples the source once and
+holds its end; KH1 owns selection, repeats, hit timing, contacts and damage.
+The working Single C jump and all other style behavior remain unchanged.

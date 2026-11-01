@@ -1,10 +1,10 @@
-V49 CURRENT SCOPE: see README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
+V50 CURRENT SCOPE: see README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
 The original solver/secondary notes below are retained as historical method.
 
-V49 NOTE: source solver unchanged. Current target mapping/timing is described
+V50 NOTE: source solver unchanged. Current target mapping/timing is described
 in README_MAPPING.txt; the native-CPU solver reference below is historical.
 
-DARK RIKU AUTHORED POSE SOLVER -- v44 REFERENCE RETAINED IN v49
+DARK RIKU AUTHORED POSE SOLVER -- v44 REFERENCE RETAINED IN v50
 
 The pipeline now includes model defaults -> constant channels -> native fixed-
 tick curves -> helper hierarchy -> authored bone constraints. It is stateless
@@ -36,7 +36,7 @@ See validation/native_solver_validation_v44.json for the per-clip error report.
 No actual game/GPU or Sora-retarget validation has run here.
 
 OPTIONAL REPRODUCTION FROM SOURCE
-Apply source/NineStyles_v49.patch to the pinned upstream using git am (see
+Apply source/NineStyles_v50.patch to the pinned upstream using git am (see
 source/PROVENANCE.txt). Use your own captured xa_ex_1160.mdls/.mset and the exact
 reference executable version. Those files are deliberately not included.
 The Rust example emits a private binary pose stream:

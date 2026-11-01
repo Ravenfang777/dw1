@@ -1,7 +1,7 @@
 Windows x64 release: PASSED
 Rust1.85.0 / MinGW13-posix / nonincremental / codegen-units=1
-594 tests/31 suites;174 style,16 map,11 D policy. Fresh portable target.
-25 scope checks;285 protected files exact.2139 source poses/31 clips solve.
-DLL SHA256 59e6e59740306c9b629539fb010dc5dcc4cabfb62f0a8f46204c72f0fe7fb7be
-Source 441a1a00797ecfb70ff2af2a5f4f0bd96815bd38
-Live v49 jump/combo/skin/contact alignment pending.
+596 tests/31 suites;174 style,16 map,13 D policy.
+26 source checks;287 protected files and complete working jump exact.
+DLL SHA256 414426c5dfb589a579b6685450ff9217100365d2e49e6478c60f5130e5d26f33
+Source ebf3c7bf1adf6059c358973e4599404c27a4b0fe
+Fresh v50 gameplay validation pending.
