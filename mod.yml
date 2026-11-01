@@ -1,8 +1,8 @@
-title: KH1FM Nine Styles Prototype v47
+title: KH1FM Nine Styles Prototype v48
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Single D solved-hip placement and airborne source6 play-once/hold.
-  Retains checked secondary rest, skin validation and existing other styles.
+  Restores Single D jump takeoff; only rise/fall use the airborne hold.
+  Retains v47 hip alignment, checked rest and all other styles.
   Requires installed KH2FM and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

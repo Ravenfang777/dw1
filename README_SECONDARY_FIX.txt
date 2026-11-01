@@ -1,4 +1,4 @@
-HISTORICAL V46 REPAIR, RETAINED IN V47. Read README_MAPPING.txt for the new
+HISTORICAL V46 REPAIR, RETAINED IN V48. Read README_MAPPING.txt for the new
 pelvis placement and airborne hold; those are the only mapping-policy changes.
 
 SINGLE D SECONDARY REST REPAIR -- v46

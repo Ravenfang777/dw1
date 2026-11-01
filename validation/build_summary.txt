@@ -1,7 +1,7 @@
 Windows x64 release: PASSED
-Rust1.85.0 / MinGW x64 / codegen-units=1 / nonincremental
-590 tests /31 suites /173 existing style /16 map /8 D policy-clock.
-22 scope checks,286 other tracked files exact.2139 poses/31 clips pass.
-DLL SHA256 8ad772848e927b9149fbcc20b1ff00d94e7e2bdb217a690658caff16aeb66764
-Source e30fb9f0340725347bc6fde4bc57a94e955b6826
-No actual v47 game/GPU test.
+Rust1.85.0 / MinGW13-posix / nonincremental / codegen-units=1
+591 tests/31 suites;173 style,16 map,9 D policy tests.
+21 source checks;287 protected files exact. No new native dependency.
+DLL SHA256 cb8a70116d2ca1430810f02b2abb59f9b37459cdc8ce20d3aeebe298f240e9a9
+Source d606d241349c15bc2a442da279dc7a3e22aad6dd
+Actual v48 game test pending.

@@ -1,35 +1,14 @@
 {
   "passed": true,
-  "offline_pose_count": 2139,
-  "clip_count": 31,
-  "float_components": 10027632,
-  "metrics": {
-    "max_position_error": 0.00011201689174587279,
-    "max_basis_error": 2.009048529760804e-06,
-    "max_limb_length_error": 1.9073486328125e-05,
-    "max_grip_error": 2.6226043701171875e-05,
-    "max_hip_span_error": 5.72205457061159e-06,
-    "max_hip_direction_error": 7.299555727513507e-05,
-    "max_radius": 274.4021301269531,
-    "max_unaffected_joint_difference": 0.0
-  },
-  "only_target_pelvis_descendants_changed": true,
-  "changed_joint_count": 65,
-  "unchanged_joint_count": 228,
-  "v46_wrong_side_movement_samples": 49,
-  "v47_wrong_side_movement_samples": 0,
-  "movement_samples": 494,
-  "mapped_target_joints": 103,
-  "active_source_joints_used": 101,
-  "pelvis_source_landmarks": [
-    5,
-    39,
-    86
-  ],
-  "bind_lengths_scales_and_hand_grip_preserved": true,
-  "original_native_solver_unchanged": true,
-  "source_solver_native_reference_inherited_from_v44": true,
-  "actual_v47_game_or_gpu_test": false,
+  "v48_body_map_and_native_solver_unchanged_from_v47": true,
+  "v47_offline_pose_count_inherited": 2139,
+  "v47_clip_count_inherited": 31,
+  "v48_geometry_reference_rerun": false,
   "map_source_sha256": "8a6f4a315eca62134d76e26e6425ae2ad0073fbd63617d3c20fc70f4a9c3e53c",
-  "pose_stream_sha256": "76e4aa6b4b35e13e48119a70bd73a99c11999b0c60189af10478f3d19c4a4754"
+  "source_reference": "mapping_validation_v47.json",
+  "takeoff_source_slot": 3,
+  "airborne_source_slot": 6,
+  "takeoff_uses_native_phase": true,
+  "air_clock_starts_only_on_rise_or_fall": true,
+  "actual_v48_game_or_gpu_test": false
 }
