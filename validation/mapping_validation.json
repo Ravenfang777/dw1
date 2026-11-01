@@ -8,14 +8,14 @@
   "source_reference": "mapping_validation_v47.json",
   "jump_donor": "Single C KH2 playable Riku; matching source layout and native paired clock",
   "ground_source_slots": [
-    18,
-    19,
-    20
+    29,
+    30,
+    28
   ],
   "air_source_slots": [
-    18,
-    19,
-    21
+    29,
+    30,
+    28
   ],
   "native_kh1_combo_hit_timing_damage_retained": true,
   "boss_contact_events_imported": false,
@@ -41,5 +41,15 @@
     104
   ],
   "requested_record_resolves_signature_aliases": true,
-  "actual_v50_game_or_gpu_test": false
+  "actual_v50_game_or_gpu_test": false,
+  "v51_body_map_and_native_solver_unchanged": true,
+  "jump_preserved_exactly_from_v50": true,
+  "source_requests": [
+    231,
+    232,
+    230
+  ],
+  "source_request_admission_matches_captured_bank": true,
+  "script_linked_weapon_attack_identity": true,
+  "actual_v51_game_or_gpu_test": false
 }

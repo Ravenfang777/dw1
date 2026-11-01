@@ -1,3 +1,6 @@
+V51 CURRENT SCOPE: README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
+The solver/secondary/source notes below are retained as historical method.
+
 V50 CURRENT SCOPE: see README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
 The original solver/secondary notes below are retained as historical method.
 

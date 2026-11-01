@@ -1,12 +1,14 @@
-V50 CURRENT SCOPE: see README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
-The original solver/secondary notes below are retained as historical method.
+V51 CURRENT SCOPE: README_FIRST.txt and SINGLE_D_COMBO_MAP.txt.
 
 KH1 DARK RIKU -- CAPTURED ANIMATION SLOT INVENTORY
 
 Source: user CSV and s378 log, 20261031-103151.
-These are verified numbered slots/durations, not verified action names.
+Numbered slots/durations are verified. Main1160 clips28/29/30 are now
+linked to weapon attacks by the original battle script. Other action names
+remain unverified; do not transfer these labels to the separate1580 bank.
 No animation/model payload is included. Do not reuse KH2 Riku labels.
-v50 enables body mapping and first field movement; attack/contact mapping pending.
+v51 maps D movement, the borrowed Single C jump and basic weapon-attack
+poses29/30/28. Native KH1 contacts remain; donor attack events are not imported.
 
 Dark Riku main bank: xa_ex_1160.mset
 31 readable slots; 60 FPS; 247 bones; 12 helper records.
@@ -39,9 +41,9 @@ Slot | Frames | Seconds | Keyed channels | Helper channels | Action
 25 | 72 | 1.200 | 218 | 30 | Unverified
 26 | 136 | 2.267 | 203 | 26 | Unverified
 27 | 48 | 0.800 | 212 | 26 | Unverified
-28 | 60 | 1.000 | 215 | 32 | Unverified
-29 | 64 | 1.067 | 216 | 34 | Unverified
-30 | 64 | 1.067 | 214 | 30 | Unverified
+28 | 60 | 1.000 | 215 | 32 | Script-linked weapon attack
+29 | 64 | 1.067 | 216 | 34 | Script-linked weapon attack
+30 | 64 | 1.067 | 214 | 30 | Script-linked weapon attack
 
 Dark Riku alternate bank: xa_ex_1168.mset
 1 readable slots; 60 FPS; 247 bones; 12 helper records.

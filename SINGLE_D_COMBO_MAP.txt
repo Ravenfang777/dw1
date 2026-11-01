@@ -1,21 +1,25 @@
-SINGLE D BASIC COMBO MAP -- v50
+SINGLE D BASIC COMBO MAP -- v51
 
-Native request | Decoded regular bank | Role | Dark Riku source (frames)
-C8 /200 |98 | Ground first |18 (50)
-C9 /201 |99 | Ground second |19 (50)
-CA /202 |100 | Ground first variant |18 (50)
-CB /203 |101 | Ground finisher |20 (40)
-CC /204 |102 | Air first |18 (50)
-CD /205 |103 | Air second |19 (50)
-CE /206 |104 | Air finisher |21 (48)
+Native request | Native regular bank | Role | Dark Riku request | Main clip
+C8 /200 |98 | Ground first |231 |29 (64 frames)
+C9 /201 |99 | Ground second |232 |30 (64)
+CA /202 |100 | Ground first variant |231 |29 (64)
+CB /203 |101 | Ground finisher |230 |28 (60)
+CC /204 |102 | Air first |231 |29 (64)
+CD /205 |103 | Air second |232 |30 (64)
+CE /206 |104 | Air finisher |230 |28 (60)
 
-Request IDs and animation-bank records are separate numbering domains.
-v50 resolves the actual requested basic record and checks its current header.
-Counts-only signatures can alias, so their first guess is not authoritative
-for the basic attack. Unknown header/request, wrong state/lane or scene/script/
-hold still prevents admission. Native ability/special motions remain native.
+Both lanes:29 ->30 ->28, sampled over native normalized clip phase, once/clamped.
+These source requests are linked to weapon attacks by the original main1160
+script and resolved through the original MSET. Our order is an adapter choice,
+not a verified named boss combo or separate authored aerial chain. Previous
+18..21 candidate selections are withdrawn. No boss scripts/events are executed.
 
-Ground18->19->20; air18->19->21 are our initial adapter ordering, not verified
-boss combo/event names. Native normalized phase samples the source once and
-holds its end; KH1 owns selection, repeats, hit timing, contacts and damage.
-The working Single C jump and all other style behavior remain unchanged.
+Source request IDs, source main-bank clips, Sora's native requests and Sora's
+regular bank indices are four separate domains. Source admission checks its
+loaded descriptors; native pose admission still verifies the decoded current
+record/header, actor/binding, ground/air lane, scene/script/control and handoffs.
+Native abilities/specials retain priority and cannot borrow an old basic pose.
+KH1 owns combo repeats/count, movement, contacts, hit timing, damage/feedback.
+Original boss contact events are not imported. Fresh game timing check needed.
+Working Single C jump and every other style remain unchanged.

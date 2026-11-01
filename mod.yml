@@ -1,8 +1,8 @@
-title: KH1FM Nine Styles Prototype v50
+title: KH1FM Nine Styles Prototype v51
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Fixes Single D combo admission by resolving requests to regular bank slots.
-  Preserves working Single C jump and native KH1 combo/contact behavior.
+  Replaces Single D's incorrectly identified combo poses with Dark Riku's
+  script-linked weapon attack motions. Preserves the working Single C jump.
   Requires installed KH2FM and OpenKH Panacea.
 assets:
 - name: dll/kh1-dual-wield.dll

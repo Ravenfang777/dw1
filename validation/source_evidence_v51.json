@@ -1,0 +1,37 @@
+{
+  "kind": "Plain-language findings from bounded static inspection of the supplied original source, not a bytecode/table dump",
+  "source_model_sha256": "ef243b6ffe6d5234a1c4b795946f82db34cafb5f427ab816c8090b89379d91e3",
+  "source_mset_sha256": "b50be471d376786a80caabbdaf08e861985d0d957e914552dc98180aa6c4d2a8",
+  "source_requests": [
+    230,
+    231,
+    232
+  ],
+  "resolved_main_clips": [
+    28,
+    29,
+    30
+  ],
+  "script_weapon_action_routines": 3,
+  "shared_attack_selector_constructor_call_sites": 5,
+  "source_motion_dispatch_cases": 6,
+  "weapon_attached_attack_records": 10,
+  "native_script_constructor_identity": "Existing native RE: table0 entry23",
+  "playable_ground_order": [
+    29,
+    30,
+    28
+  ],
+  "playable_air_order": [
+    29,
+    30,
+    28
+  ],
+  "old_candidate_assignment_withdrawn": true,
+  "source_request_admission_matches_captured_bank": true,
+  "donor_script_executed": false,
+  "donor_contact_events_imported": false,
+  "actual_v51_game_or_gpu_test": false,
+  "public_format_reference": "Some1fromthedark/KH1_BD_Parser@3c71cffa8cf2338ac788099140481e77098a7615",
+  "confidence": "Original script links selected requests to native weapon attacks; playable order is our adapter choice; named boss techniques and live appearance/timing unverified"
+}

@@ -1,7 +1,9 @@
 Windows x64 release: PASSED
 Rust1.85.0 / MinGW13-posix / nonincremental / codegen-units=1
-596 tests/31 suites;174 style,16 map,13 D policy.
-26 source checks;287 protected files and complete working jump exact.
-DLL SHA256 414426c5dfb589a579b6685450ff9217100365d2e49e6478c60f5130e5d26f33
-Source ebf3c7bf1adf6059c358973e4599404c27a4b0fe
-Fresh v50 gameplay validation pending.
+597 tests/31 suites;174 style,16 map,14 D policy.
+23 source checks;286 protected files; working jump exact.
+Original source script links the selected requests to native weapon attacks.
+Source request admission matches the supplied main MSET.
+DLL SHA256 baa44e4d050e55cbf154372232c0cef529c893ad91ac22fefe06fed9b20ea4a6
+Source c0651778d1f4dd29df5b08abe9a4aa892c245e0f
+Fresh v51 game/GPU appearance and contact timing pending.
