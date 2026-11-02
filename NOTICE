@@ -37,3 +37,9 @@ runtime instead of being embedded.
 
 Kingdom Hearts is a trademark of Disney and Square Enix. This project is not
 affiliated with or endorsed by them, and contains no game assets or code.
+
+Single E / Aqua integration (Styles v53): the native adapter is project code
+from the user's Aqua v21 test setup. Generated character-animation payloads
+are excluded from source control and remain Disney / Square Enix material;
+the packaged test binary/rebuild inputs contain the user's fitted motion data.
+No ownership of those character or animation assets is claimed.

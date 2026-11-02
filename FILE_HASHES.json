@@ -1,0 +1,23 @@
+{
+  "CREDITS.md": "54ad997a7f2ec8480ec2406e2ff81866a673b1deeeee6744ef27e0d44f888577",
+  "LICENSE-APACHE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+  "LICENSE-MIT": "a77e53d0147f1a3782acfd9ca7b886c35adca34784d891ec65d2a7f3380b713c",
+  "NOTICE": "00b4b96cba107da878e48fe878324b8e19eec05966234b251187f6ea4fe246ca",
+  "README_FIRST.txt": "80fb87443f04b92b268934553fff8a3786c7d9be6bf94df3c5c62d186bc04220",
+  "kh1-dual-wield.dll": "9c0a92045b61d5c804cc914971c67f4474931cebcdc712dac06f71df9717322e",
+  "mod.yml": "3ee84bd46dfb1a8fe57b283e7c133dee2c96d999e4806d830c943e837e51037c",
+  "source/PROVENANCE.txt": "173699e037d10042689a32efd7d61a9316a240bae43eb93e636477fded775c27",
+  "source/REBUILD.txt": "c0f90b1da3f7e1f3c8cde68f1f064d8b4ef3d7cf7fd08785f5ef03bcf4f35507",
+  "source/SINGLE_E.md": "ad5ba21fe2dec227c4b5a743e364fc34f504a6323346f7d44ecd3decb12768e3",
+  "source/TenStyles_v53.patch": "25ed1a41ec97fc570f99f71dafa99067def62ce1d465158efba01e709df7c4b0",
+  "source/native-adapter-tests/test_bridge.c": "2b7b51dc7276bedcbc003a6e9e6bbbe4b0a064b0412538c98ece66fa0b78d226",
+  "source/native-adapter-tests/test_runtime.py": "1e69ac893ac16c0a8ab963ac4ee84a53d307b9ea8042c8cb9c9c01d063a1fd4d",
+  "source/rebuild-inputs/aqua_data.h": "d24fec6979f485da25f88b27c8b4b1aa517c35ce1748645ba8970a40fa7ae3dc",
+  "validation/integrated_pe_tests.json": "38f6b4383a6b649457818037ec14d9db5ad491cf4f815aa80d4d6060b35c689a",
+  "validation/integrated_pe_tests.log": "23055d526462f51e405015e0fd1f6f50196d5c04860172f90908165db9ee1e82",
+  "validation/main_payload.json": "d98fd936dc054190699bebbeaf20671f4e909a2547ead8f2ccc3ac1a2ff61921",
+  "validation/native_anchor_validation.json": "614016262f1960d1ef803c2ed05130d0a4c884d14a92a1807397ffc4e2791e4b",
+  "validation/rust_tests.json": "c99cb557540937290f7af230ff1d35a907864ddbdeb9d7a678752f6b1a1270ce",
+  "validation/rust_tests.log": "a197d540d91081a7744f87da22e7da745e4b90249da8af302e8b488dd8038956",
+  "validation.json": "1b3608c0aea3a7d4b5fea62a0ad69c095827dcbd0e55cc61fa86edc3062993f7"
+}

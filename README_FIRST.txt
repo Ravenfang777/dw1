@@ -1,70 +1,50 @@
-KH1FM NINE STYLES -- PROTOTYPE v52 (s391)
+KH1FM TEN STYLES -- PROTOTYPE v53 (s392)
 
-IMPLEMENTED FOR SINGLE D
-- Guard animation: former second ground attack, main clip30/request232.
-- Second ground hit: former ground finisher, main clip28/request230.
-Guard keeps KH1's original ability selection, blocking objects and timing.
-This changes the body animation; it does not add a damaging Guard attack.
-The working Single C jump remains.
-
-NEW FINISHER AND AIR COMBO: SOURCE INSPECTION PENDING
-Only three weapon attacks are verified in the captured main1160 bank.
-Other tempting clips include a confirmed clash-recoil response. Additional
-attack requests in the shared script are absent from the captured main bank.
-The separate second-fight1580 bank has41 inventory entries, but its source
-poses have not yet been available for inspection here.
-
-This build exports that extra source automatically. It does NOT claim a new
-finisher/air chain. Interim ground29/28/28 repeats28 in slots two and three;
-air remains29/30/28. Return the new ZIP so the remaining choices can be checked.
-The extra bank's rig, AI, scripts, events and poses are not installed/executed.
+Single E is the main Aqua v21 ability setup in the Dual Wield style system.
 
 INSTALL
-1. Fully close KH1FM. Disable v51 and every older Dual Wield prototype.
-2. Import THIS ZIP through OpenKH, enable only v52, then Build and Run.
-   Panacea and installed KH2FM resources are required. F1 cannot reload a DLL.
-   Keep the full KH2 Combat overhaul, old offhand/moveset Lua and duplicate
-   Sora model mods disabled. Existing INI/save settings remain.
-3. Confirm s391 / PROTOTYPE v52 in kh1-dual-wield.log beside the game EXE.
+1. Close the game completely. Disable v52/older Dual Wield builds and the
+   standalone Aqua Animation Test. Use only this v53 package.
+2. Import this ZIP in OpenKH, enable it, Build and Run with Panacea.
+   Keep your existing KH2FM resources/settings for the older styles.
+3. Load a save. Equip Style: Single E (0 AP). New entries start unequipped.
+   The other nine style entries and their saved IDs are retained.
+4. Confirm s392 / PROTOTYPE v53 and SINGLE E READY in kh1-dual-wield.log
+   beside the game executable. Restart after DLL changes; F1 cannot reload it.
 
-TEST AND RETURN
-Equip Style: Single D and the native Guard ability. Stand still and use Guard;
-it should show the former second attack and still block normally. Test ground
-hits one/two, jump, normal interruptions and a map change. Native attack ability
-replacements retain priority; unequip them only to isolate the basic combo.
+SINGLE E
+- Main Aqua v21 only; one equipped weapon. No numbered Aqua test entries.
+- Ground combo300/301/366; air305/407/353.
+- Second ground attack ends at source30; finisher begins at source15.
+- Circle/Jump tap in free air starts504: 1.5x animation/movement speed,
+  same travel distance and slight lift; once per airtime, reset on landing.
+- Ordinary held Glide is replaced. Native Superglide remains usable.
+- Normal and High Jump height +25 percent.
+- Guard400 forward/reverse, source30fps; wider all-angle native shield,
+  plus12 native ticks of release/parry grace. Native Guard must be equipped.
+- Same Aqua casting, idle/run/item/fall poses and visual corrections as v21.
+  Magic/effects use the native keyblade tip. Blizzard keeps its native spell
+  logic/events with the Fire visual. Native KH1 damage reactions retained.
+- Native Guard, Dodge Roll, High Jump and Superglide abilities are not granted
+  by this style; equip the native abilities needed for the actions you test.
 
-Wait for SINGLE D EXTRA SOURCE CAPTURE COMPLETE in the log. No battle or
-special ability is needed for capture. Send BOTH files from the game folder:
-  kh1-dual-wield-dark-riku-extra.zip
-  kh1-dual-wield.log
-The ZIP contains original xa_ex_1580.mdls/mset and diagnostics. Do not install
-or extract it; just return it. If a different extra ZIP already existed, use
-the timestamped path named by the capture-complete line. There is no automatic
-upload. If capture fails, return the log; main1160 gameplay remains independent.
+SWITCHING / TEST
+Finish the current action and stand idle to complete a pending style switch.
+The native bodies and cast lookup restore before another style takes control.
+Test Single E combos, magic, Guard from behind, jump, one air dodge followed by
+another press (blocked until landing), Superglide, and switching back to your
+previous style. Also try a room change and both your normal/Olympus saves.
+Return kh1-dual-wield.log with any issue. No live KH1 playtest was possible here.
 
-EXPECTED DIAGNOSTICS
-STYLE NATIVE GUARD WITNESS: original row0x3D, actual resolved motion.
-SINGLE D GUARD ACTIVE: source30/frame/native phase; original blocking retained.
-SINGLE D BASIC COMBO ACTIVE: second ground source28. Existing native request
-C8..CE -> bank98..104 admission is retained. A raw Square press/request number
-cannot authorize a Guard overlay; stale/foreign/header-mismatched states retire.
+VALIDATION / SOURCE
+622 Rust tests in29 nonempty suites plus46 final-PE adapter checks pass.
+Windows x64 release builds,4 exports/8 imported DLLs. Shared Rust dispatch is
+mocked in the PE tests; native event/jump/Glide excerpts are executed offline.
+See validation and source/SINGLE_E.md for limits, source patch and rebuilding.
+Single E's adapter targets verified Steam Global; older style Epic routes remain.
+Keep older packages as rollback. Do not run a second Aqua/Dual Wield DLL.
 
-RETAINED SCOPE
-KH1 owns combo progression/repeats/modifiers/ability priority, movement, contacts,
-damage, hit timing and native feedback. No boss damage/contact/projectile events
-are imported. Same D solver, body map, hip alignment, held fall and skin guards.
-One equipped weapon. Other styles, Quick Run, glide/Superglide finishers and
-confirmed2x Aerial Dodge routes remain. Nine exclusive0-AP style abilities;
-no new ability grants, gauge, stats, outfit or party changes.
-
-VALIDATION
-599 tests/31 suites pass (174 style,16 body map,15 D policy). Windows x64
-release passes with the existing4 exports/8 imports.31 scope checks protect
-283 other tracked files and exact working jump/solver/controllers/contacts.
-New tests cover the committed Guard witness and independent extra ZIP decoding,
-binary payload preservation, CRC and parse-failure diagnostics. Additional
-source bytes and live Guard/blocking/timing still require your returned test.
-Historical solver/map metrics in validation remain historical. The52-commit
-source patch, ZIP CRC/extraction and each file hash are checked before delivery.
-Restart after DLL/INI changes. Removal: set remove_dual_wield on, launch/load/
-save with v52, close, disable the mod and Build again.
+UNINSTALL
+Set remove_dual_wield=on in your existing kh1-dual-wield.ini, load/save with
+v53, close the game, disable the package and Build again. It removes only the
+custom style IDs117..126 and keeps native abilities. Other INI settings remain.

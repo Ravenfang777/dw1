@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "exe_sha256": "d790746245d26159f3ee0e1060e33b2fa2de06941850a4ac724f598722884bac",
+  "anchors": [
+    {
+      "name": "air_move_prefix",
+      "rva": "0x2af6a0",
+      "bytes": 16,
+      "passed": true
+    },
+    {
+      "name": "air_state_prefix",
+      "rva": "0x2b1960",
+      "bytes": 14,
+      "passed": true
+    },
+    {
+      "name": "air_can_bytes",
+      "rva": "0x297870",
+      "bytes": 32,
+      "passed": true
+    },
+    {
+      "name": "air_queue_prefix",
+      "rva": "0x29f980",
+      "bytes": 13,
+      "passed": true
+    },
+    {
+      "name": "guard_motion_prefix",
+      "rva": "0x29f0a0",
+      "bytes": 15,
+      "passed": true
+    },
+    {
+      "name": "guard_angle_prefix",
+      "rva": "0x2b4640",
+      "bytes": 15,
+      "passed": true
+    },
+    {
+      "name": "guard_pool_prefix",
+      "rva": "0x2b47a0",
+      "bytes": 15,
+      "passed": true
+    },
+    {
+      "name": "create_prefix",
+      "rva": "0x2b3270",
+      "bytes": 13,
+      "passed": true
+    },
+    {
+      "name": "free_prefix",
+      "rva": "0x2b3560",
+      "bytes": 11,
+      "passed": true
+    },
+    {
+      "name": "mask_prefix",
+      "rva": "0x2b3760",
+      "bytes": 8,
+      "passed": true
+    },
+    {
+      "name": "jump_prefix",
+      "rva": "0x2afda0",
+      "bytes": 18,
+      "passed": true
+    }
+  ]
+}

@@ -34,3 +34,9 @@ This project stands on other people's research. Licences are kept; see `NOTICE`.
 | [benilla](https://github.com/samwhosung/benilla) | Reference layout for a Rust rewrite with format readers | see repo |
 
 Kingdom Hearts © Disney / Square Enix. This repository contains no game files, extracted data or decompiled code.
+
+Single E (Styles v53) integrates the user's Aqua Animation Test v21 main
+profile adapter and fitter output, developed in this project with OpenAI
+Codex. No additional third-party runtime code is ported. Generated motion
+payloads are build inputs outside this repository; Kingdom Hearts character
+and animation assets remain © Disney / Square Enix.

@@ -1,9 +1,12 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Derivative v52 source: 54d18b73d6b4359476e97a887332fefcc44a5cdd
-Source tree: e04af764002b7f760769174ae8dae110861f9bfa
-Parent v51: c0651778d1f4dd29df5b08abe9a4aa892c245e0f
-Branch: styles-v52
-NineStyles_v52.patch contains52 derivative commits; apply with git am.
-All licences/credits retained. No original game assets/executables, bytecode,
-raw game tables/logs or pose streams. Source/confidence: combat-model Stage391.
+Reconstructed v52 tree: e04af764002b7f760769174ae8dae110861f9bfa
+Derivative v53 commit: 7940a952dd7455c9948f099b7d323d47fe204a7c
+Derivative v53 tree: a256a99a6eab5aab654b5e7ac6f05e67d98469ad
+TenStyles_v53.patch contains53 derivative commits; apply with git am.
+Aqua main source: KH1FM_Aqua_Animation_Test_v21.zip, Library ID
+libfile_186d43426ee88191b8fcf5baf094f895
+Aqua v21 package SHA256: d4ce6dec3444f3dc9b7c7c9be745c0ac587d263584f31e3ee887cc3553dfb5f9
+Generated fitted motion data lives in rebuild-inputs; never add it to Git.
+All licences/credits retained. No original executable, battle-script bytecode,
+Ghidra output or raw tables are added to the source patch.

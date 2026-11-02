@@ -1,0 +1,13 @@
+Clone the pinned public upstream in PROVENANCE.txt, then git am TenStyles_v53.patch.
+Copy source/rebuild-inputs/aqua_data.h to ignored local/single_e/aqua_data.h.
+Install Rust's x86_64-pc-windows-gnu target plus MinGW GCC/binutils.
+CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 cargo build -p kh1-hook --release --target x86_64-pc-windows-gnu
+Rename target/x86_64-pc-windows-gnu/release/dinput8.dll to kh1-dual-wield.dll.
+Build stamp and PE timestamp may differ between rebuilds.
+
+Policy tests:
+cargo test --workspace --exclude kh2-bevy --exclude kh2-combat-cli
+
+Optional final-PE adapter tests require the Aqua v21 source fixtures and Linux GCC:
+python source/native-adapter-tests/test_runtime.py <aqua-v21-source> <built-dll>
+Shared Rust dispatch is mocked; the C adapter executes from that built PE.
