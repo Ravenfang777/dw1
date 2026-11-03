@@ -1,6 +1,7 @@
 {
   "passed": true,
-  "tests_passed": 624,
+  "tests_passed": 627,
   "nonempty_suites": 30,
-  "source_fixture_tests_retain_upstream_missing_source_skips": true
+  "total_suites": 40,
+  "failures": 0
 }

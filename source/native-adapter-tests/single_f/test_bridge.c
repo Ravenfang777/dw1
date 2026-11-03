@@ -184,3 +184,5 @@ void adapter_observe(uintptr_t fn,uintptr_t actor){((void(ABI*)(uintptr_t))fn)(a
 int call_int0(uintptr_t fn){return ((int(ABI*)(void))fn)();}
 uintptr_t call_ptr1(uintptr_t fn,uintptr_t a){return ((uintptr_t(ABI*)(uintptr_t))fn)(a);}
 void call_void1(uintptr_t fn,uintptr_t a){((void(ABI*)(uintptr_t))fn)(a);}
+
+uintptr_t call_ptr2(uintptr_t fn,uintptr_t a,uintptr_t b){return ((uintptr_t(ABI*)(uintptr_t,uintptr_t))fn)(a,b);}

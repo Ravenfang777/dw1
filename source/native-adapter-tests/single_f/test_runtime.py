@@ -275,7 +275,7 @@ class Host:
         self.control(state=2,request=6)
 
 BaseHost=Host
-for name,args,ret in [('adapter_init',[C.c_size_t,C.c_size_t,C.c_int],C.c_int),('adapter_frame',[C.c_size_t,C.c_size_t,C.c_int,C.c_uint64],C.c_int),('adapter_control',[C.c_size_t]*3,None),('adapter_observe',[C.c_size_t]*2,None),('call_int0',[C.c_size_t],C.c_int),('call_ptr1',[C.c_size_t]*2,C.c_size_t),('call_void1',[C.c_size_t]*2,None)]:
+for name,args,ret in [('adapter_init',[C.c_size_t,C.c_size_t,C.c_int],C.c_int),('adapter_frame',[C.c_size_t,C.c_size_t,C.c_int,C.c_uint64],C.c_int),('adapter_control',[C.c_size_t]*3,None),('adapter_observe',[C.c_size_t]*2,None),('call_int0',[C.c_size_t],C.c_int),('call_ptr1',[C.c_size_t]*2,C.c_size_t),('call_void1',[C.c_size_t]*2,None),('call_ptr2',[C.c_size_t]*3,C.c_size_t)]:
  f=getattr(bridge,name);f.argtypes=args;f.restype=ret
 class Host(BaseHost):
  def __init__(self,*args,**kwargs):
@@ -312,7 +312,7 @@ class Host(BaseHost):
   for line in (Path(os.environ.get('STYLES_MENU_ANCHORS',str(Path(__file__).resolve().parents[2]/'src/single_f/styles_menu_anchors.h')))).read_text().splitlines():
    if line.startswith('{0x'):
     values=line.split(',',6);r=int(values[0][1:],16);n=int(values[1]);anchors.append((r,n));put(self.game+r,raw(r,n))
-  for r,n in [(0x2dae20,15),(0x311c56,16),(0x2d0970,21)]:put(self.game+r,raw(r,n))
+  for r,n in [(0x2dae20,15),(0x311c56,16),(0x2d0970,21),(0x311f9e,15),(0x310d26,5),(0x31127c,5)]:put(self.game+r,raw(r,n))
   for r,f in [(0x52af20,0x2d3840),(0x5490f0,0x310ef0),(0x5490c0,0x310b60),(0x549090,0x310a90)]:w64(self.game+r,self.game+f)
   # Relocate native definition/callback tables as a normal loaded executable.
   for r,n in [(0x52ad40,32),(0x52ad60,64),(0x52ada0,64),(0x52ade0,32),(0x52afb8,32)]:
@@ -420,7 +420,7 @@ class RuntimeTests(unittest.TestCase):
     def test_default_superglide_alias_exact_and_scoped_in_both_banks(self):
      for bank in [98,60]:
       h=Host(slot=bank,encoded_fields=True);h.prepare_slide();slot=10 if bank==98 else h.record_by_slot[10]['olympus_slot'];old=r32(h.array+slot*4);h.tap_slide()
-      alias=r32(h.array+slot*4);self.assertEqual(h.decode(alias),h.native_glide_motions[76]);self.assertNotEqual(old,alias)
+      alias=r32(h.array+slot*4);self.assertEqual(h.decode(alias),r64(h.symbols['slide_native_copy']));self.assertNotEqual(h.decode(alias),h.native_glide_motions[76]);self.assertNotEqual(old,alias)
       h.clock(39);h.control();self.assertEqual(r32(h.array+slot*4),old)
     def test_once_per_airtime_survives_completion_release_damage_and_style_toggle(self):
      h=Host();h.prepare_slide();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),1)
@@ -431,20 +431,23 @@ class RuntimeTests(unittest.TestCase):
     def test_landing_while_other_style_selected_restores_budget(self):
      h=Host();h.prepare_slide();h.tap_slide();h.clock(39);h.control();h.equip(False);w32(h.actor+0x164,0);h.frame()
      h.control(state=0,request=0,height=0);h.observe();h.equip(True);h.frame();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),2)
-    def test_foreign_native_superglide_body_prevents_alias_and_does_not_spend_dash(self):
-     h=Host();h.prepare_slide();motion=h.native_glide_motions[76];at=r32(motion+40);old=C.string_at(motion+at,1);put(motion+at,bytes([old[0]^1]));h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),0)
-     put(motion+at,old);h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),1)
+    def test_private_native_superglide_copy_does_not_reuse_live_sampler_caches(self):
+        h=Host();h.prepare_slide();motion=h.native_glide_motions[76];at=r32(motion+40);old=C.string_at(motion+at,1);put(motion+at,bytes([old[0]^1]));h.tap_slide()
+        self.assertEqual(bridge.bridge_queue_calls(),1);self.assertNotEqual(h.decode(r32(h.array+40)),motion)
+        self.assertEqual(C.string_at(motion+at,1),bytes([old[0]^1]))
     def test_ui_installer_checks_actual_executable_anchors_and_expands_all_tables(self):
      h=Host();anchors=h.ui_seed();self.assertTrue(h.ui_init());self.assertTrue(bridge.call_int0(h.symbols['StylesMenuReady']))
      h.ui_call('styles_root_init');storage=r64(h.symbols['styles_storage']);count=r32(h.game+0x2e1f4c8);self.assertEqual(count,9)
      self.assertEqual(list((C.c_uint*9).from_address(storage)),[0,1,2,8,3,4,5,6,7])
      self.assertEqual(r32(storage+0x40+8*4),0xff00);self.assertEqual(r64(storage+0x80+8*8),r64(storage+0x80+2*8));self.assertEqual(r64(storage+0xd0+8*8),h.symbols['styles_enter'])
     def test_ui_last_anchor_or_protection_failure_publishes_nothing(self):
-     for kind in ['anchor','protect']:
+     for kind in ['anchor','ap_column','ap_create','protect']:
       h=Host();anchors=h.ui_seed()
       if kind=='anchor':put(h.game+anchors[-1][0],b'\xcc')
+      elif kind=='ap_column':put(h.game+0x311f9e,b'\xcc')
+      elif kind=='ap_create':put(h.game+0x310d26,b'\xcc')
       else:bridge.bridge_magic_modes(0,0,2)
-      sites=[(r,n) for r,n in anchors]+[(0x2dae20,15),(0x311c56,16),(0x2d0970,21),(0x52af20,8)]
+      sites=[(r,n) for r,n in anchors]+[(0x2dae20,15),(0x311c56,16),(0x2d0970,21),(0x52af20,8),(0x311f9e,15),(0x310d26,5),(0x31127c,5)]
       before=[C.string_at(h.game+r,n) for r,n in sites];self.assertFalse(h.ui_init());self.assertEqual(before,[C.string_at(h.game+r,n) for r,n in sites])
     def test_ui_normal_abilities_filters_only_styles_and_native_row_write_commits_correct_id(self):
      h=Host();h.ui_seed();self.assertTrue(h.ui_init());put(h.save+0x44,bytes([6,117,0x97,6,21])+bytes(43));w=h.ui_window();h.ui_call('abilities_enter',w)
@@ -523,6 +526,45 @@ class RuntimeTests(unittest.TestCase):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());data=bytes([6]*47+[0]);put(h.save+0x44,data);w=h.ui_window();h.ui_call('styles_enter',w)
         put(h.game+0x311c66,bytes.fromhex('418074244580')+h.ui_tail);h.ui_call('styles_list',w);self.assertEqual(h.abilities(),data)
         self.assertEqual(C.c_ubyte.from_address(h.symbols['styles_shadow']+0x44+5).value,244)
+
+    def test_repeated_landings_rearm_f_and_reset_private_superglide_playback_data(self):
+        for bank in [98,60]:
+            h=Host(slot=bank,encoded_fields=True);h.prepare_slide();slot=10 if bank==98 else h.record_by_slot[10]['olympus_slot'];original=r32(h.array+slot*4)
+            source=(ROOT/'fixtures/native_glide_s076.bin').read_bytes()
+            for count in range(1,9):
+                h.control(state=0,request=0,height=-.05);h.control(state=2,request=6)
+                h.control(down=0x900010,pressed=0x900010,state=2,request=6,x=1,tilt=1)
+                self.assertEqual(bridge.bridge_queue_calls(),count)
+                copy=h.decode(r32(h.array+slot*4));self.assertEqual(copy,r64(h.symbols['slide_native_copy']))
+                normalized=bytearray(C.string_at(copy,len(source)))
+                for field in [20,28,36,40,48,56,60,68,76]:
+                    off=struct.unpack_from('<I',source,field)[0]
+                    if off:self.assertEqual(h.decode(r32(copy+field)),copy+off);struct.pack_into('<I',normalized,field,off)
+                self.assertEqual(bytes(normalized),source)
+                # Native playback may keep scratch state; a new use rebuilds it.
+                w32(copy,0x12345678);h.clock(39.);h.control();self.assertEqual(r32(h.array+slot*4),original)
+                h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),count)
+    def test_f_pointer_rollback_preserves_updated_body_caches(self):
+        h=Host();h.prepare_slide();original=r32(h.array+40);h.tap_slide();motion=h.motions[10];key=motion+r32(motion+40);value=C.string_at(key,1);put(key,bytes([value[0]^1]))
+        h.clock(39.);h.control();self.assertEqual(r32(h.array+40),original);self.assertEqual(C.string_at(key,1),bytes([value[0]^1]))
+    def test_styles_hides_native_ap_column_but_normal_abilities_runs_original_path(self):
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window()
+        # Execute the real ability prologue, record bridge, and AP-column bridge.
+        save_rbx=bytes.fromhex('48899c2490000000');load_rbx=bytes.fromhex('488b9c2490000000')
+        put(h.game+0x311c66,save_rbx+bytes.fromhex('bb0200000048b8')+struct.pack('<Q',h.game+0x311f9e)+bytes.fromhex('ffe0'))
+        put(h.game+0x311fad,bytes.fromhex('4889c8')+load_rbx+h.ui_tail[3:])
+        put(h.game+0x31206b,bytes.fromhex('4889d8')+load_rbx+h.ui_tail[3:])
+        h.ui_call('abilities_enter',w);self.assertEqual(bridge.call_ptr1(h.game+0x311c20,w),h.game+40)
+        h.ui_call('styles_enter',w);self.assertEqual(bridge.call_ptr1(h.game+0x311c20,w),1)
+    def test_native_ap_box_is_not_created_only_in_styles(self):
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window()
+        put(h.game+0x2e5a40,bytes.fromhex('b855000000c3'))
+        for site in [0x310d26,0x31127c]:
+            shim=h.buffer(bytes.fromhex('4883ec2848b8')+struct.pack('<Q',h.game+site)+bytes.fromhex('ffe0'))
+            put(h.game+site+5,bytes.fromhex('4883c428c3'))
+            h.ui_call('abilities_enter',w);self.assertEqual(bridge.call_ptr2(shim,h.game+0x548f40,6),0x55)
+            h.ui_call('styles_enter',w);self.assertEqual(bridge.call_ptr2(shim,h.game+0x548f40,6),0)
+            self.assertEqual(bridge.call_ptr2(shim,h.game+0x549090,6),0x55)
 
 if __name__=='__main__':
  result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(RuntimeTests))

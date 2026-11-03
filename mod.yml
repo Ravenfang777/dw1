@@ -1,9 +1,9 @@
-title: KH1FM Styles v54 - Single F and Styles Menu
+title: KH1FM Styles v55 - Menu and Action Refinements
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Adds Terra as Style Single F, native Superglide air-dash animation once per
-  airtime, and a dedicated native Styles menu. Normal Abilities hides styles.
-  Existing ten styles retained. New features require KH1FM Steam Global.
+  Short style names and Styles-only AP display removal. Aerial dodge visuals
+  at 75 percent speed with unchanged travel. Anti items, Single F rearming,
+  and Single E ground-combo recovery fixes. Requires KH1FM Steam Global.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

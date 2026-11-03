@@ -111,6 +111,24 @@
       "passed": true
     },
     {
+      "name": "ap_column_bytes",
+      "rva": "0x311f9e",
+      "bytes": 15,
+      "passed": true
+    },
+    {
+      "name": "ap_create_member_bytes",
+      "rva": "0x310d26",
+      "bytes": 5,
+      "passed": true
+    },
+    {
+      "name": "ap_create_page_bytes",
+      "rva": "0x31127c",
+      "bytes": 5,
+      "passed": true
+    },
+    {
       "name": "slide_state_prefix",
       "rva": "0x2b1960",
       "bytes": 14,

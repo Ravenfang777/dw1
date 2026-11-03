@@ -1,10 +1,10 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous v53 commit: 7940a952dd7455c9948f099b7d323d47fe204a7c
-v54 commit: 44fcf96c4bcfb5939f0bc24bbe90d89439041323
-v54 source tree: 7501f25084304483f089b95301abe3bf44267fa9
-Styles_v54.patch contains54 derivative commits, applied with git am.
-The incremental bundle requires the previous v53 history.
+Previous v54 commit: 44fcf96c4bcfb5939f0bc24bbe90d89439041323
+v55 commit: c3312b5e2c5e07db501b6fd2097b8dcc1572b367
+v55 source tree: 0c1adf48da01c65915d6bd521d6e67f16d8d8d2e
+Styles_v55.patch contains55 derivative commits, applied with git am.
+The incremental bundle requires the previous v54 history.
 Terra source: KH1FM_Terra_Animation_Test_v4.zip, Library ID
 libfile_7805f6432560819188166dc30f72622c
 Terra v4 package SHA256:0496c1d7208fd5df2f93d08ad8f9b6334f897d0f1ea9393910fad2e96cef911c

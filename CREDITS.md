@@ -48,3 +48,8 @@ project code derived from the supplied KH1 Steam Global binary's interfaces.
 Terra/Aqua character and original game assets remain Square Enix/Disney assets;
 generated private payloads and user fixtures are excluded from Git. Existing
 upstream licenses, acknowledgements and author credits remain unchanged.
+
+Styles v55 uses the project's existing native-curve fitter to retime the user's
+serialized Aqua301 poses, and project code for scoped AP rendering, native item
+policy and independent dodge visuals. Original game assets remain private and
+excluded from Git. Existing upstream licenses and credits are retained.

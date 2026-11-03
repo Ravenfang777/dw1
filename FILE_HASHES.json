@@ -1,130 +1,38 @@
 {
-  "CREDITS.md": {
-    "bytes": 7631,
-    "sha256": "2138a452918e7a941ae5e97449dc71eb765ea9efb44c3f69d378c959014e531f"
-  },
-  "LICENSE-APACHE": {
-    "bytes": 10174,
-    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
-  },
-  "LICENSE-MIT": {
-    "bytes": 1080,
-    "sha256": "a77e53d0147f1a3782acfd9ca7b886c35adca34784d891ec65d2a7f3380b713c"
-  },
-  "NOTICE": {
-    "bytes": 3226,
-    "sha256": "d53a8289f08d1cd27eccec8948cdd4f4fd36d8674ae70143a04c6d1dda4f235f"
-  },
-  "README_FIRST.txt": {
-    "bytes": 3356,
-    "sha256": "2a9adec5a8e76d7d202726bdbce4ed8e3c409d109d68fe39c4515530582fab8b"
-  },
-  "kh1-dual-wield.dll": {
-    "bytes": 9187954,
-    "sha256": "035628b8320ed7b31c16797c55f0b43b0f6ff7e050bb1326625174b5bfa32343"
-  },
-  "mod.yml": {
-    "bytes": 462,
-    "sha256": "b30b4e38c005155ac5a41b854776e594e8eefb75ae9d64f898de90667223fd6f"
-  },
-  "source/PROVENANCE.txt": {
-    "bytes": 892,
-    "sha256": "0bc350d34948df181ae9621b28608d69f534a2faf9d78357f60049d1b22095b8"
-  },
-  "source/REBUILD.txt": {
-    "bytes": 1217,
-    "sha256": "f58587e33dd5fbe04146728b7110130530fc610d9aa60a95b62d92f0719c4257"
-  },
-  "source/SINGLE-E.MD": {
-    "bytes": 5369,
-    "sha256": "ad5ba21fe2dec227c4b5a743e364fc34f504a6323346f7d44ecd3decb12768e3"
-  },
-  "source/SINGLE-F.MD": {
-    "bytes": 5939,
-    "sha256": "0c1bc0fd87ee1fc9ba543d261b92b76c883e76ec6b9633c968e6cb56d9f3c158"
-  },
-  "source/Styles_v54.patch": {
-    "bytes": 2906149,
-    "sha256": "fb9a184a15a165ca273366c5476bd46e033c24b1cff84e05e3b273433b0b9289"
-  },
-  "source/Styles_v54_from_v53.bundle": {
-    "bytes": 49667,
-    "sha256": "0a1473d0c4991dcc5f021802fd8e1dfe30017e2e012c3a8097b26d3102bacab7"
-  },
-  "source/native-adapter-tests/single_e/test_bridge.c": {
-    "bytes": 14695,
-    "sha256": "798569c83e70d4544a2a69549510115e3b3982403b5eb5e21dbfd965734ef233"
-  },
-  "source/native-adapter-tests/single_e/test_runtime.py": {
-    "bytes": 50919,
-    "sha256": "7ab54865b7fba5ed285dceb998fd66073d8bbf08b8c304f2992be728cf93ff5c"
-  },
-  "source/native-adapter-tests/single_f/styles_menu_anchors.h": {
-    "bytes": 1378,
-    "sha256": "bb5f6c743a4db67b29b0de32b09617fe15aaa585565deb693eb962bc343c5ad6"
-  },
-  "source/native-adapter-tests/single_f/test_bridge.c": {
-    "bytes": 14308,
-    "sha256": "c3e5b07556c03e1f28bd7675d0a3780a4a37e5b50cbd0a9b21e59bf34bd32ade"
-  },
-  "source/native-adapter-tests/single_f/test_runtime.py": {
-    "bytes": 44829,
-    "sha256": "c7ad19a1a99bb605566279785a340bc841775bbf8f819fb15c306b5835dff845"
-  },
-  "source/rebuild-inputs/single_e/aqua_data.h": {
-    "bytes": 4890940,
-    "sha256": "d24fec6979f485da25f88b27c8b4b1aa517c35ce1748645ba8970a40fa7ae3dc"
-  },
-  "source/rebuild-inputs/single_f/terra_data.h": {
-    "bytes": 4868723,
-    "sha256": "d4014ce6129ebdd484aecc1784076278c7ad9a20b91b31e2d0f259bfcad000cb"
-  },
-  "validation/native_menu_anchor_validation.json": {
-    "bytes": 2543,
-    "sha256": "f5e0b07f5a1a16f6a7f09941cc8905b29897049f07623f422eae4fafa6c6d7b0"
-  },
-  "validation/rust_tests.json": {
-    "bytes": 138,
-    "sha256": "b1c6641711ba34d3d963ebdcea40a103ad3d1b3ae16f81e35239a724bc4db5bd"
-  },
-  "validation/rust_tests.log": {
-    "bytes": 52783,
-    "sha256": "36cfd1a03b5cbd22243732ec6aae6f7183561917484dcccc384c5a869679ae85"
-  },
-  "validation/single_e_payload.json": {
-    "bytes": 425,
-    "sha256": "d98fd936dc054190699bebbeaf20671f4e909a2547ead8f2ccc3ac1a2ff61921"
-  },
-  "validation/single_e_pe_tests.json": {
-    "bytes": 269,
-    "sha256": "38f6b4383a6b649457818037ec14d9db5ad491cf4f815aa80d4d6060b35c689a"
-  },
-  "validation/single_e_pe_tests.log": {
-    "bytes": 7843,
-    "sha256": "cced6920b3205f5e723656e63768b2abe6564f8be004c4d40607277c3e315dc0"
-  },
-  "validation/single_f_payload.json": {
-    "bytes": 364,
-    "sha256": "5be1574c777de22ae73ebd0f90076b05b03768d76bd43a38bd62d9006815bc1b"
-  },
-  "validation/single_f_pe_tests.json": {
-    "bytes": 322,
-    "sha256": "76e5cd8696657bfae2a92e5f29ece672e9262a92ae1a5fc182ad0c55b3058cd6"
-  },
-  "validation/single_f_pe_tests.log": {
-    "bytes": 5935,
-    "sha256": "ae093a6c64f9e5436dae1e62866daa3a1620a8a036dd94369ceecb9bfeea2e55"
-  },
-  "validation/source_apply_validation.json": {
-    "bytes": 274,
-    "sha256": "7e43469bddb2b8f3634904dd1fc9a5cc43cd52f64c51259f7315332be483be2c"
-  },
-  "validation/windows_pe.json": {
-    "bytes": 345,
-    "sha256": "0b29bb9cdfbd37b85aeb7bf2741d06e18b1cade3e077690036d9066c6570ab0f"
-  },
-  "validation.json": {
-    "bytes": 2403,
-    "sha256": "1b7c69b372738a593550c392b70dc48a5269c0897e775bf6ab5534be5003ea21"
-  }
+  "CREDITS.md": "cf084f8d843255e037907717e0776f7c732d4fbdcd051784e9e3bc5f853ba595",
+  "LICENSE-APACHE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+  "LICENSE-MIT": "a77e53d0147f1a3782acfd9ca7b886c35adca34784d891ec65d2a7f3380b713c",
+  "NOTICE": "0f79b534171b58223879616d07f0853ee898477f0399843acda1db75a0e0f10e",
+  "README_FIRST.txt": "a5073d8e4e72233fb0cd9bfcfc8645560f491e4c879a14c2097332e9e6dbfe79",
+  "kh1-dual-wield.dll": "dd02a0734f9e15b27fc84ff09f8053e31a135edcf6b1e42ff754f7cb3a751a2a",
+  "mod.yml": "251e6581ffeb3790f3d7da242a49a3e4b45d523819dcecde89e491f477b85302",
+  "source/PROVENANCE.txt": "af1e1579b2ee8a4eea76e1d0ef53c3462b7d0cb034c3a5e15fe11063bdec43c3",
+  "source/REBUILD.txt": "93ab3cae06b94ea9800a584a1f20f228d2cef9739006b05ca326937f0135331d",
+  "source/SINGLE-E.MD": "ad5ba21fe2dec227c4b5a743e364fc34f504a6323346f7d44ecd3decb12768e3",
+  "source/SINGLE-F.MD": "0c1bc0fd87ee1fc9ba543d261b92b76c883e76ec6b9633c968e6cb56d9f3c158",
+  "source/STYLES-V55.MD": "2becc79a2b9d89880d34c6f557981dc0b461d181055322c305f4fe0034983d3e",
+  "source/Styles_v55.patch": "8d600e1f2e0f8fa5da4e14af75946008943361a8b6fb1219a429e1d6cd8000f0",
+  "source/Styles_v55_from_v54.bundle": "2c603afb9b8924bb35b696994f3d5886d0432e6bf2bdbf2c3c211c6fcdda9625",
+  "source/native-adapter-tests/single_e/test_bridge.c": "798569c83e70d4544a2a69549510115e3b3982403b5eb5e21dbfd965734ef233",
+  "source/native-adapter-tests/single_e/test_runtime.py": "cf6f4a071582a9d01e3f2e3442b88adc2aeca5e662284784a1cf200bd8eef872",
+  "source/native-adapter-tests/single_f/styles_menu_anchors.h": "bb5f6c743a4db67b29b0de32b09617fe15aaa585565deb693eb962bc343c5ad6",
+  "source/native-adapter-tests/single_f/test_bridge.c": "a79002cdd18e347279e095ed9c90a79ab7d3d5ba87a13c2169a57ce42b989c68",
+  "source/native-adapter-tests/single_f/test_runtime.py": "b49e89362dc01af475ddd8cc3f5f1c48aec41aab6fd4abdd9809a50c2388ecc0",
+  "source/rebuild-inputs/single_e/aqua_data.h": "17011c36c9a16897f4db03c952e610722ed18e3bf4692a31cc1d697ea54932f6",
+  "source/rebuild-inputs/single_f/terra_data.h": "d4014ce6129ebdd484aecc1784076278c7ad9a20b91b31e2d0f259bfcad000cb",
+  "validation/bundle-verify.log": "d2018afd6c592131e4e4fa41233e0802686cc8b5e119355a325f9b42cea6f156",
+  "validation/native_menu_anchor_validation.json": "91c7df68795fe04bf8a0b9a1f1001cc1f9cb405b809b9455a165c4c2b560b9bc",
+  "validation/rust_tests.json": "b64e5e4e1d004fbfc90d64c4fedadf281928d1aefbf312d58e09b9c8762576b1",
+  "validation/rust_tests.log": "2b1ac88860f39eb353e05dc612fadddbf878bbc591f27d1c30d01f7a83c7038d",
+  "validation/single_e_payload.json": "d98fd936dc054190699bebbeaf20671f4e909a2547ead8f2ccc3ac1a2ff61921",
+  "validation/single_e_pe_tests.json": "2a1986c7ad303ecb04236fb4ce49ee5a76037a57bd348fdb91ae80cb4fcab777",
+  "validation/single_e_pe_tests.log": "cc3a1bb3f6a399ca0d703fa8a7f49e640626fde32fcaec906cc8959f1b2b9a18",
+  "validation/single_e_retime.json": "b62b95434d23962a1777c7c3b74e01a70ec61ce45e084eea5bf12956ab40c87d",
+  "validation/single_f_payload.json": "5be1574c777de22ae73ebd0f90076b05b03768d76bd43a38bd62d9006815bc1b",
+  "validation/single_f_pe_tests.json": "56a748355239e1f9a405d86b5b441a629022d9a27cbe561b089729285733747a",
+  "validation/single_f_pe_tests.log": "13763f9d25e7811048df1f788b3702def9b6a71ced18c4e36b5086069083ab19",
+  "validation/source-apply.log": "f10560cdcdf5a6cd78787948ed7576f008dd89da9f744a8d795521214c601851",
+  "validation/windows_build.log": "c05e3796854ba6e117b04ec5beb816f3e47e7f2e60af02822cecfe64b78ce316",
+  "validation/windows_pe.json": "0b29bb9cdfbd37b85aeb7bf2741d06e18b1cade3e077690036d9066c6570ab0f",
+  "validation.json": "8069bb412583999ecb640721b3019544779b73091f76923ab5f7d25e22d50011"
 }
