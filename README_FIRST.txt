@@ -1,50 +1,57 @@
-KH1FM TEN STYLES -- PROTOTYPE v53 (s392)
-
-Single E is the main Aqua v21 ability setup in the Dual Wield style system.
+KH1FM STYLES v54 / s393 - TEST BUILD
 
 INSTALL
-1. Close the game completely. Disable v52/older Dual Wield builds and the
-   standalone Aqua Animation Test. Use only this v53 package.
-2. Import this ZIP in OpenKH, enable it, Build and Run with Panacea.
-   Keep your existing KH2FM resources/settings for the older styles.
-3. Load a save. Equip Style: Single E (0 AP). New entries start unequipped.
-   The other nine style entries and their saved IDs are retained.
-4. Confirm s392 / PROTOTYPE v53 and SINGLE E READY in kh1-dual-wield.log
-   beside the game executable. Restart after DLL changes; F1 cannot reload it.
+1. Close KH1. Disable the previous main Styles/Dual Wield package, standalone
+   Terra/Aqua animation tests, and the full KH2 Combat DLL.
+2. Import this ZIP into OpenKH Mod Manager. Enable it, Build, launch with
+   Panacea. Keep existing KH2FM resources/settings needed by older styles.
+3. Pause > Styles > Style: Single F (0 AP) selects Terra. Styles appears
+   immediately after Abilities. The normal Abilities screen contains normal
+   abilities; style choices are shown only in Styles. Select an enabled style
+   again to turn it off. Only one style can be active.
+4. Log beside the executable: kh1-dual-wield.log. Confirm s393 / v54,
+   STYLES MENU READY and SINGLE F READY. Restart after DLL changes.
 
-SINGLE E
-- Main Aqua v21 only; one equipped weapon. No numbered Aqua test entries.
-- Ground combo300/301/366; air305/407/353.
-- Second ground attack ends at source30; finisher begins at source15.
-- Circle/Jump tap in free air starts504: 1.5x animation/movement speed,
-  same travel distance and slight lift; once per airtime, reset on landing.
-- Ordinary held Glide is replaced. Native Superglide remains usable.
-- Normal and High Jump height +25 percent.
-- Guard400 forward/reverse, source30fps; wider all-angle native shield,
-  plus12 native ticks of release/parry grace. Native Guard must be equipped.
-- Same Aqua casting, idle/run/item/fall poses and visual corrections as v21.
-  Magic/effects use the native keyblade tip. Blizzard keeps its native spell
-  logic/events with the Fire visual. Native KH1 damage reactions retained.
-- Native Guard, Dodge Roll, High Jump and Superglide abilities are not granted
-  by this style; equip the native abilities needed for the actions you test.
+SINGLE F / TERRA
+- Main Terra v4 setup retained: ground300/411/332; air305/306/353.
+- Fire/Blizzard/Gravity315 ground,316 air. Cure/Thunder/Aero/Stop317 ground,
+  318 air, including corresponding recovery animations.
+- Guard354; items399; ground slide009; idle skull tilted up15 degrees.
+- Fresh airborne Square: same tested direction/distance/speed as Terra v4,
+  now using KH1's original Superglide animation. One dash per airtime.
+  Completion, release, damage or changing styles cannot refill it; land first.
+- Replaces held Superglide. Ordinary held Glide stays usable.
+- Native damage/knockback, collision, hit/magic events and keyblade-tip effects
+  remain. Native Guard/Dodge Roll abilities are not granted by this style.
 
-SWITCHING / TEST
-Finish the current action and stand idle to complete a pending style switch.
-The native bodies and cast lookup restore before another style takes control.
-Test Single E combos, magic, Guard from behind, jump, one air dodge followed by
-another press (blocked until landing), Superglide, and switching back to your
-previous style. Also try a room change and both your normal/Olympus saves.
-Return kh1-dual-wield.log with any issue. No live KH1 playtest was possible here.
+STYLES MENU
+Singles A-F, Duals A-D, Anti: eleven zero-AP choices. Existing style IDs and
+saved choices are retained. Style rows use a private view. Saves keep one
+hidden style token instead of many style entries, preserving native copies,
+equip flags and AP. Donald/Goofy's normal Abilities retain their native view.
+A completely full47-native-ability list cannot persist a new style token;
+it is never evicted to make room. Malformed native tails are also retained.
+Only the main Terra profile is integrated; numbered Terra tests stay separate.
+
+TEST / REPORT
+Finish an action and stand idle to complete a pending style switch. Test menu
+entry/back navigation, native ability equip/unequip, Single F combos/magic,
+one Square dash followed by a second press before landing, and another dash
+after landing. Try Terra > Aqua > another style, a room change, and both your
+normal/Olympus saves. Return the log with issues.
+The native menu's final layout/navigation and live game transitions still need
+your in-game check. No Windows game/GPU session was available here.
 
 VALIDATION / SOURCE
-622 Rust tests in29 nonempty suites plus46 final-PE adapter checks pass.
-Windows x64 release builds,4 exports/8 imported DLLs. Shared Rust dispatch is
-mocked in the PE tests; native event/jump/Glide excerpts are executed offline.
-See validation and source/SINGLE_E.md for limits, source patch and rebuilding.
-Single E's adapter targets verified Steam Global; older style Epic routes remain.
-Keep older packages as rollback. Do not run a second Aqua/Dual Wield DLL.
+624 Rust tests in30 nonempty suites;36 final-PE Terra/menu checks and46 Aqua
+regressions pass. Includes native ability-record prologue execution, body and
+request restoration, UI filtering/equip commits, native Superglide source
+admission, dash budgets and resource transitions. Rendering/shared Rust
+routing are mocked in the C harness. Windows x64 release:4 exports,8 DLL imports.
+Source patch, incremental git bundle, rebuild inputs and receipts are included.
+New adapters/menu target verified Steam Global. Older Epic routes remain.
 
 UNINSTALL
-Set remove_dual_wield=on in your existing kh1-dual-wield.ini, load/save with
-v53, close the game, disable the package and Build again. It removes only the
-custom style IDs117..126 and keeps native abilities. Other INI settings remain.
+Set remove_dual_wield=on in kh1-dual-wield.ini, load/save with this DLL, close
+KH1, disable the package and Build again. Only custom IDs116..126 are removed;
+native abilities remain. Do not run standalone Terra/Aqua alongside this DLL.

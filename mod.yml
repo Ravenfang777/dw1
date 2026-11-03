@@ -1,9 +1,9 @@
-title: KH1FM Ten Styles Prototype v53
+title: KH1FM Styles v54 - Single F and Styles Menu
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Adds Single E using main Aqua v21: native combos, casting, all-angle Guard,
-  faster once-per-airtime dodge, higher jump and native Superglide.
-  Existing nine styles retained. Single E requires KH1FM Steam Global.
+  Adds Terra as Style Single F, native Superglide air-dash animation once per
+  airtime, and a dedicated native Styles menu. Normal Abilities hides styles.
+  Existing ten styles retained. New features require KH1FM Steam Global.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

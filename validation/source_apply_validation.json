@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "patch_commits": 54,
+  "apply_base": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
+  "expected_tree": "7501f25084304483f089b95301abe3bf44267fa9",
+  "reconstructed_tree": "7501f25084304483f089b95301abe3bf44267fa9",
+  "incremental_bundle_verified": true
+}

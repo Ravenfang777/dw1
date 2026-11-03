@@ -40,3 +40,11 @@ profile adapter and fitter output, developed in this project with OpenAI
 Codex. No additional third-party runtime code is ported. Generated motion
 payloads are build inputs outside this repository; Kingdom Hearts character
 and animation assets remain © Disney / Square Enix.
+
+Single F / native Styles page (Styles v54): integrates the user's Terra Animation
+Test v4 main profile, retaining its project-code calibration and native-event
+handling. Native Superglide visual, airborne budget and menu integration are
+project code derived from the supplied KH1 Steam Global binary's interfaces.
+Terra/Aqua character and original game assets remain Square Enix/Disney assets;
+generated private payloads and user fixtures are excluded from Git. Existing
+upstream licenses, acknowledgements and author credits remain unchanged.

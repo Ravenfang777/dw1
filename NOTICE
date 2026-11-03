@@ -43,3 +43,11 @@ from the user's Aqua v21 test setup. Generated character-animation payloads
 are excluded from source control and remain Disney / Square Enix material;
 the packaged test binary/rebuild inputs contain the user's fitted motion data.
 No ownership of those character or animation assets is claimed.
+
+Single F / native Styles page (Styles v54): integrates the user's Terra Animation
+Test v4 main profile, retaining its project-code calibration and native-event
+handling. Native Superglide visual, airborne budget and menu integration are
+project code derived from the supplied KH1 Steam Global binary's interfaces.
+Terra/Aqua character and original game assets remain Square Enix/Disney assets;
+generated private payloads and user fixtures are excluded from Git. Existing
+upstream licenses, acknowledgements and author credits remain unchanged.
