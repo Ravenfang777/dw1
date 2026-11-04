@@ -23,6 +23,12 @@ bridge.bridge_guard_angle.argtypes=[C.c_size_t,C.c_size_t,C.c_size_t];bridge.bri
 bridge.bridge_guard_pool.argtypes=[C.c_size_t];bridge.bridge_guard_pool.restype=C.c_int
 bridge.bridge_glide_eligible.argtypes=[C.c_int];bridge.bridge_glide_eligible.restype=None
 bridge.bridge_motion_delta.argtypes=[];bridge.bridge_motion_delta.restype=C.c_float
+bridge.bridge_after_register.argtypes=[C.c_size_t];bridge.bridge_after_register.restype=C.c_int
+bridge.bridge_after_calls.argtypes=[];bridge.bridge_after_calls.restype=C.c_uint
+bridge.bridge_after_actor.argtypes=[];bridge.bridge_after_actor.restype=C.c_size_t
+bridge.bridge_after_delta.argtypes=[];bridge.bridge_after_delta.restype=C.c_float
+bridge.bridge_after_original_delta.argtypes=[];bridge.bridge_after_original_delta.restype=C.c_float
+
 libc=C.CDLL(None);libc.mmap.argtypes=[C.c_void_p,C.c_size_t,C.c_int,C.c_int,C.c_int,C.c_long];libc.mmap.restype=C.c_void_p
 
 libc.munmap.argtypes=[C.c_void_p,C.c_size_t];libc.munmap.restype=C.c_int
@@ -304,7 +310,7 @@ class Host(BaseHost):
             value,section=struct.unpack_from('<Ih',data,at+8)
             if section>0:symbols[name.decode(errors='replace')]=p+sections[section-1]+value
             i+=1+data[at+17]
-        self.ffi={k:symbols[k] for k in ['SingleEInit','SingleEFrame','SingleEControl','SingleEGuardRow','SingleESuppressGlide','SingleESuperglide','SingleEMove']}
+        self.ffi={k:symbols[k] for k in ['SingleEAfterMotion','SingleEInit','SingleEFrame','SingleEControl','SingleEGuardRow','SingleESuppressGlide','SingleESuperglide','SingleEMove']}
         self.shared_before={r:C.string_at(self.game+r,l) for r,l in [(0x2a6220,17),(0x2a3980,15),(0x2b26c0,14),(0x2b2750,14)]}
         self.adapter_ready=bridge.single_e_init(self.ffi['SingleEInit'],self.game,1)
         self.shared_after={r:C.string_at(self.game+r,len(v)) for r,v in self.shared_before.items()}
@@ -329,6 +335,15 @@ class Host(BaseHost):
         return self.clean
 
 class RuntimeTests(unittest.TestCase):
+    def test_shared_post_motion_callback_runs_after_original_once_and_preserves_return_and_delta(self):
+        h=Host();self.assertTrue(h.adapter_ready)
+        self.assertEqual(bridge.bridge_after_register(h.ffi['SingleEAfterMotion']),1)
+        result=bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,.75)
+        self.assertEqual(result,0x5678);self.assertEqual(bridge.bridge_after_calls(),1)
+        self.assertEqual(bridge.bridge_after_actor(),h.actor)
+        self.assertAlmostEqual(bridge.bridge_after_delta(),.75)
+        self.assertAlmostEqual(bridge.bridge_after_original_delta(),.75)
+
     def test_main_guard_runs_the_complete_forward_reverse_at_thirty_source_fps(self):
         h=Host(guard=True,encoded_fields=True);h.frame();h.equip(True);h.frame()
         self.assertEqual(bridge.bridge_guard_row(h.game+0x2a3980,h.actor,0x3d),0x1234)

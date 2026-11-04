@@ -8,7 +8,8 @@ import ctypes as C,json,struct,subprocess,sys,unittest,os,math,re
 ROOT=Path(os.environ['TERRA_SOURCE']).resolve()
 TEST_ROOT=Path(__file__).resolve().parent
 NUMBERED_HEADER=Path(os.environ.get('NUMBERED_PASSIVES_HEADER',str(TEST_ROOT/'numbered_passives.h' if (TEST_ROOT/'numbered_passives.h').exists() else TEST_ROOT.parents[1]/'src/single_f/numbered_passives.h')))
-TEST_COUNT=int(re.search(r'#define VENTUS_TEST_COUNT (\d+)u',NUMBERED_HEADER.read_text()).group(1))
+TEST_COUNT=int(re.search(r'#define ANIMATION_TEST_COUNT (\d+)u',NUMBERED_HEADER.read_text()).group(1))
+VENTUS_COUNT=int(re.search(r'#define VENTUS_TEST_COUNT (\d+)u',NUMBERED_HEADER.read_text()).group(1))
 TEST_MASK=(1<<TEST_COUNT)-1
 ALL_NUMBERED=((1<<51)-1)&~(1<<49)
 subprocess.run(['gcc','-std=c11','-O2','-shared','-fPIC',str(TEST_ROOT/'test_bridge.c'),'-o',str(TEST_ROOT/'test_bridge.so'),'-lm'],cwd=ROOT,check=True)
@@ -69,6 +70,9 @@ class Host:
         put(self.game+0x394770,(ROOT/'fixtures/native_event_at.bin').read_bytes())
         put(self.game+0x38adc0,b'\x48\xb8'+struct.pack('<Q',bridge.bridge_symbol(b'NativeDecode'))+b'\xff\xe0')
         self.all_records=json.loads((ROOT/'curve_validation.json').read_text())['motions']
+        if os.environ.get('VENTUS_SOURCE'):
+            known={r['normal_slot'] for r in self.all_records}
+            self.all_records += [r for r in json.loads((Path(os.environ['VENTUS_SOURCE'])/'curve_validation.json').read_text())['motions'] if r['normal_slot'] not in known]
         self.activate_bank(slot==60,encoded_fields)
         # Native pointer-to-handle helper uses the ABI of the existing reference.
         put(self.game+0x38ad90,b'\x48\xb8'+struct.pack('<Q',bridge.bridge_symbol(b'NativeHandle'))+b'\xff\xe0')
@@ -125,7 +129,7 @@ class Host:
         self.slot=60 if olympus else 98
         self.records=[r for r in self.all_records if not olympus or r['olympus_slot']!=0xffffffff]
         self.record_by_slot={r['normal_slot']:r for r in self.records}
-        raw={r['normal_slot']:(ROOT/f"fixtures/original_{r['fixture_stem']}.bin").read_bytes() for r in self.records}
+        raw={r['normal_slot']:self.original_path(r).read_bytes() for r in self.records}
         packed=bytearray();offsets={}
         for record in self.records:
             key=record['normal_slot'];packed.extend(bytes((-len(packed))%16));offsets[key]=len(packed);packed.extend(raw[key])
@@ -150,6 +154,8 @@ class Host:
             slot=record['olympus_slot'] if olympus else record['normal_slot'];w32(self.array+slot*4,bridge.bridge_encode(motion))
         self.native_glide_motions={};self.native_glide_originals={}
         for slot,data in glide_raw.items():
+            if slot in self.motions:
+                self.native_glide_motions[slot]=self.motions[slot];self.native_glide_originals[slot]=self.runtime_originals[slot];continue
             motion=region+glide_offsets[slot]
             if encoded_fields:
                 for off in [20,28,36,40,48,56,60,68,76]:
@@ -224,23 +230,28 @@ class Host:
     def equip(self,on,profile=0):
         id_=116+profile;data=bytearray(self.abilities());i=next(i for i,v in enumerate(data) if v&127==id_);data[i]=id_ if on else id_|128;put(self.save+0x44,bytes(data))
     def decode(self,h):return r64(self.game+0x2ee3980+((h&0x7fffffff)>>25)*8)+(h&0x1ffffff)
+    def original_path(self,r):
+        p=ROOT/f"fixtures/original_{r['fixture_stem']}.bin"
+        return p if p.exists() else Path(os.environ['VENTUS_SOURCE'])/f"fixtures/original_{r['fixture_stem']}.bin"
     def body(self,slot=98):return C.string_at(self.motions[slot],len(self.runtime_originals[slot]))
     def expected(self,slot,on):
         r=self.record_by_slot[slot];folder=ROOT/'fixtures'
         if int(on)==2 and os.environ.get('VENTUS_SOURCE'):
             return self.expected_from(slot,Path(os.environ['VENTUS_SOURCE'])/f"fixtures/ventus_{r['fixture_stem']}.bin")
         if int(on)>=3 and os.environ.get('VENTUS_TEST_SOURCE'):
-            folder=Path(os.environ['VENTUS_TEST_SOURCE'])/f'p{int(on)+63}'/'fixtures' if slot in range(98,105) else Path(os.environ['VENTUS_SOURCE'])/'fixtures'
-            return self.expected_from(slot,folder/f"ventus_{r['fixture_stem']}.bin")
+            folder=Path(os.environ['VENTUS_TEST_SOURCE'])/f'p{int(on)+63}'/'fixtures' if slot in range(98,105) else Path(os.environ['VENTUS_TEST_SOURCE'])/'common/fixtures'
+            path=folder/f"ventus_{r['fixture_stem']}.bin"
+            return self.expected_from(slot,path if path.exists() else self.original_path(r))
         if int(on)>1:
             candidate=ROOT/f'sets/p{int(on)-1}/fixtures'
             if (candidate/f"terra_{r['fixture_stem']}.bin").exists():folder=candidate
             elif (ROOT/f"sets/shared_v2/fixtures/terra_{r['fixture_stem']}.bin").exists():folder=ROOT/'sets/shared_v2/fixtures'
-        return self.expected_from(slot,folder/f"{'terra' if on else 'original'}_{r['fixture_stem']}.bin")
+        path=folder/f"{'terra' if on else 'original'}_{r['fixture_stem']}.bin"
+        return self.expected_from(slot,path if path.exists() else self.original_path(r))
     def expected_from(self,slot,path):
         r=self.record_by_slot[slot];data=bytearray(path.read_bytes())
         data[:80]=self.runtime_originals[slot][:80]
-        event_at=struct.unpack_from('<I',(ROOT/f"fixtures/original_{r['fixture_stem']}.bin").read_bytes(),60)[0]
+        event_at=struct.unpack_from('<I',self.original_path(r).read_bytes(),60)[0]
         while struct.unpack_from('<I',data,event_at)[0]!=0xffffffff:
             data[event_at+8:event_at+12]=self.runtime_originals[slot][event_at+8:event_at+12];event_at+=12
         return bytes(data)
@@ -407,11 +418,96 @@ class Host(BaseHost):
   self.ui_page_frame(page,0x4000);self.ui_page_frame(page,0x20);return root,page
 
 class RuntimeTests(unittest.TestCase):
+    def g_prepare(self,bank=98):
+        h=Host(slot=bank,encoded_fields=True);h.want=2;h.frame();h.control(state=0,request=0,height=0);h.control();return h
+    def g_variant(self,h,kind,slot):
+        return h.expected_from(slot,Path(os.environ['VENTUS_SOURCE'])/f"variants/{kind}/fixtures/ventus_s{slot:03}.bin")
+
+    def test_type_g_dash330_has_half_f_distance_native_collision_and_one_use_until_landing(self):
+        for bank in [98,60]:
+            for dt in [.5,1.,2.5]:
+                h=self.g_prepare(bank);h.tap_slide();self.assertEqual(h.body(10),self.g_variant(h,'dash',10))
+                distance=0.
+                while r32(h.symbols['slide_active']):
+                    distance+=h.move(dt)[0][0]
+                self.assertAlmostEqual(distance,312.,places=4);self.assertEqual(h.body(10),h.expected(10,2))
+                calls=bridge.bridge_queue_calls();h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),calls)
+                h.control(state=0,request=0,height=0);h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),calls+1)
+
+    def test_type_g_circle410_has_lift_once_per_airtime_and_retains_held_glide038(self):
+        h=self.g_prepare();h.control(down=6,pressed=6,tilt=1,x=1)
+        self.assertEqual(h.body(10),self.g_variant(h,'dodge',10));self.assertEqual(bridge.call_ptr1(h.symbols['SingleGAction'],h.actor),2)
+        lift=0.
+        while r32(h.symbols['slide_active']):lift+=h.move()[0][1]
+        self.assertAlmostEqual(lift,-29.25);self.assertEqual(h.body(10),h.expected(10,2))
+        h.control();calls=bridge.bridge_queue_calls();h.control(down=6,pressed=6)
+        self.assertEqual(bridge.bridge_queue_calls(),calls);self.assertEqual(bridge.bridge_control_word(0)&6,6)
+        self.assertEqual(bridge.call_ptr1(h.symbols['SingleFSuppressGlide'],h.actor),0)
+        self.assertEqual(h.body(75),h.expected(75,2))
+        h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),calls+1)
+
+    def test_type_g_both_air_buttons_exclude_shortcuts_grounding_damage_and_scripted_actions(self):
+        for button in [6,0x10]:
+            for flags in ['shortcut','ground','damage','script']:
+                h=self.g_prepare()
+                if flags=='script':w32(h.actor+0x444,1)
+                h.control(down=button|(0x40000 if flags=='shortcut' else 0),pressed=button,state=0 if flags=='ground' else 2,request=0x6e if flags=='damage' else 6,height=0 if flags=='ground' else 100,x=1,tilt=1)
+                self.assertEqual(bridge.bridge_queue_calls(),0);self.assertEqual(r32(h.symbols['slide_active']),0)
+                self.assertEqual(h.body(10),h.expected(10,2))
+
+    def test_type_g_dash_faces_the_initial_direction_through_release_and_steering(self):
+        h=self.g_prepare();h.tap_slide(x=1,z=0)
+        for x,z in [(-1,0),(0,1),(0,0)]:
+            h.control(tilt=1,x=x,z=z);self.assertEqual(h.move()[0],[8.,0.,0.,8.])
+            self.assertAlmostEqual(C.c_float.from_address(h.actor+0x30).value,1.)
+            self.assertAlmostEqual(C.c_float.from_address(h.actor+0x38).value,0.)
+
+    def test_type_g_ground_jump_press_requires_release_before_circle_dodge(self):
+        h=self.g_prepare();h.control(down=6,pressed=6,state=0,request=0,height=0)
+        h.control(down=6,pressed=6,state=1,request=4,height=100)
+        self.assertEqual(bridge.bridge_queue_calls(),0)
+        h.control();h.control(down=6,pressed=6)
+        self.assertEqual(bridge.bridge_queue_calls(),1)
+
+    def test_type_g_cast_recovery_uses416_417_only_for_fire_blizzard_gravity(self):
+        h=self.g_prepare()
+        for start,recovery,slot,kind,wanted in [(0x36,0x3d,57,'ground_cast',True),(0x37,0x3d,57,'ground_cast',True),(0x3a,0x3d,57,'ground_cast',True),(0x38,0x3d,57,'ground_cast',False),(0x83,0x8a,82,'air_cast',True),(0x84,0x8a,82,'air_cast',True),(0x87,0x8a,82,'air_cast',True),(0x85,0x8a,82,'air_cast',False)]:
+            h.control(request=start);h.control(request=recovery)
+            self.assertEqual(h.body(slot),self.g_variant(h,kind,slot) if wanted else h.expected(slot,2))
+        h.control(state=0,request=0,height=0);h.want=0;h.frame();h.assert_all(self,0)
+
+    def test_type_g_contact_timing_changes_only_float_timestamps_and_restores_on_exit(self):
+        h=self.g_prepare()
+        for slot in [99,100,101,104]:
+            original=self.original_for_events(h,slot);current=h.body(slot);at=struct.unpack_from('<I',original,60)[0];changed=0
+            while struct.unpack_from('<I',original,at)[0]!=0xffffffff:
+                kind,n,keys=struct.unpack_from('<3I',original,at)
+                for i in range(n):
+                    off=keys+i*16;self.assertEqual(current[off+4:off+16],original[off+4:off+16]);changed+=current[off:off+4]!=original[off:off+4]
+                at+=12
+            self.assertGreater(changed,0)
+        h.control(state=0,request=0,height=0);h.want=1;h.frame();h.assert_all(self,1)
+    def original_for_events(self,h,slot):return h.original_path(h.record_by_slot[slot]).read_bytes()
+
+    def test_type_g_event_descriptor_corruption_blocks_all_body_writes(self):
+        h=self.g_prepare();h.control(state=0,request=0,height=0);slot=99;raw=self.original_for_events(h,slot);at=struct.unpack_from('<I',raw,60)[0]
+        desc=r32(h.motions[slot]+60);desc=h.decode(desc) if desc&0x80000000 else h.motions[slot]+desc
+        w32(desc,r32(desc)^1);before=h.snapshot();h.want=1;h.frame();self.assertEqual(h.snapshot(),before)
+
+    def test_dark_riku_test_passives_use101_104_and_clear_stance_and_ventus_tests(self):
+        h=Host();root,page=h.passive_setup([6,119]);h.ui_choose(page,1)
+        for index in range(4):
+            text=h.ui_choose(page,1+35+index)
+            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),0)
+            self.assertEqual(bridge.call_ptr1(h.symbols['DarkTestChoice'],0),index+1)
+            self.assertEqual(r64(h.symbols['numbered_bits']),1<<(35+index));self.assertEqual(h.ability_count(119),0)
+            self.assertIn('Dark Riku',text)
+
     def test_ventus_numbered_profiles_apply_all_records_and_restore_both_banks(self):
         if not os.environ.get('VENTUS_TEST_SOURCE'):self.skipTest('Provide numbered Ventus test fixtures')
         for bank in [98,60]:
             h=Host(slot=bank,encoded_fields=True)
-            for choice in range(3,3+TEST_COUNT):
+            for choice in range(3,3+VENTUS_COUNT):
                 h.want=choice;h.frame();h.assert_all(self,choice)
                 self.assertEqual(r32(h.symbols['cache_choice']),choice);self.assertEqual(r32(h.symbols['action_variant_mask']),0)
                 h.want=0;self.assertTrue(h.frame());h.assert_all(self,0)
@@ -439,7 +535,8 @@ class RuntimeTests(unittest.TestCase):
         for index in range(TEST_COUNT):
             h.ui_choose(page,1+index)
             self.assertEqual(r64(h.symbols['numbered_bits']),1<<index)
-            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),3+index)
+            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),3+index if index<VENTUS_COUNT else 0)
+            self.assertEqual(bridge.call_ptr1(h.symbols['DarkTestChoice'],0),0 if index<VENTUS_COUNT else 1+index-VENTUS_COUNT)
             self.assertEqual(h.abilities()[:3],bytes([6,245,0]))
         h.ui_choose(page,TEST_COUNT)
         self.assertEqual(r64(h.symbols['numbered_bits']),0);self.assertEqual(h.abilities()[:3],bytes([6,245,0]))
@@ -459,8 +556,8 @@ class RuntimeTests(unittest.TestCase):
                 self.assertEqual(r32(h.symbols['cache_choice']),2);self.assertEqual(r32(h.symbols['action_variant_mask']),0)
                 h.want=0;self.assertTrue(h.frame());h.assert_all(self,0)
 
-    def test_ventus_air_square_is_native_and_does_not_activate_terra_dash(self):
-        h=Host(encoded_fields=True);h.want=2;h.frame();h.control(down=0x10,pressed=0x10,tilt=1,x=1)
+    def test_ventus_numbered_air_square_is_native_and_does_not_activate_main_dash(self):
+        h=Host(encoded_fields=True);h.want=3;h.frame();h.control(down=0x10,pressed=0x10,tilt=1,x=1)
         self.assertEqual(r32(h.symbols['slide_active']),0);self.assertEqual(bridge.bridge_queue_calls(),0)
         self.assertEqual(bridge.bridge_control_word(0)&0x10,0x10);self.assertEqual(h.move()[0],[1.,2.,3.,4.])
         self.assertEqual(bridge.call_ptr1(h.symbols['SingleFSuppressSuperglide'],h.actor),0)

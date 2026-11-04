@@ -1,83 +1,91 @@
-KH1FM STYLES v65 / s404 - EXCLUSIVE VENTUS ANIMATION TESTS
+KH1FM STYLES v66 / s405 - TYPE G ACTIONS AND DARK RIKU PREVIEWS
 
 INSTALL
-1. Close KH1. Disable v64 or any older main Styles/Dual Wield package.
-   Keep standalone Aqua/Terra tests and the full KH2 Combat DLL disabled.
-2. Import this ZIP into OpenKH Mod Manager. Enable v65, Build and launch
-   with Panacea. Keep existing KH2FM resources/settings for older stances.
-3. Confirm s404 / STANCES v65 in kh1-dual-wield.log beside the executable.
-   The native UI/body adapter targets the supplied Steam Global build.
+Close KH1 and disable v65 or any older main Styles package. Import this ZIP
+into OpenKH Mod Manager, enable v66, Build and launch with Panacea. Keep the
+existing KH2FM resources/settings required by earlier stances. Standalone
+Aqua/Terra tests and the full KH2 Combat DLL remain disabled.
+Confirm s405 / STANCES v66 in kh1-dual-wield.log. The new native adapter is
+for the supplied Steam Global build.
 
-ANIMATION TESTS: CUSTOMIZE -> PASSIVES -> 66..100
-All187 distinct unused Ventus clips are available across35 numbered tests.
-Each passive replaces three ground hits and three air hits and costs0 AP.
-The alternate native second ground hit shares the listed second animation.
+TYPE G
+Ground combo:300,379,411. Air combo:305,306,482.
+Item, ground and air:395. Held Glide:038.
+Ground Cure/Aero/Thunder/Stop:390. Air:508.
+Ground Fire/Blizzard/Gravity:416. Air:417.
+Casting/recovery spans and native record durations are in VENTUS_ANIMATIONS.csv.
 
-Equipping a test UNEQUIPS ALL STANCES and the previously selected test.
-Equipping ANY STANCE clears the animation test. Only one test can be active.
-Normal passives remain available with their normal AP behavior.
-Selecting the current test again disables it; no stance is auto-equipped.
-After closing the menu, stand idle for the body data to switch safely.
+Square in the air starts330 in the initial stick/facing direction. It replaces
+Superglide, travels half Type F's unobstructed distance (312 vs624 native units),
+and keeps the original direction through release/steering. Native collision
+can shorten either dash. Each enemy directly touched by the actual Keyblade
+can take one native physical hit during the dash; there is no area hitbox.
 
-VENTUS_TESTS.txt lists the ground/air set for every numbered test.
-VENTUS_TESTS.csv adds source frames/ranges, native durations/slots/requests
-and duplicate source archive aliases. VENTUS_ANIMATIONS.csv remains the
-main Type G mapping. Numeric animations are source labels, not move names.
+A fresh airborne Circle plays410 with a small lift. Ground Jump must be released
+before that aerial tap. Holding Circle can use Glide038 after410 finishes.
+Square dash and Circle dodge each have one use per actual airtime; landing
+resets them. L1/shortcut spells, casts, damage and scripts do not start them.
 
-Some complex clips are split into labeled inclusive frame ranges across
-several test hits. Every source frame is covered; shared boundary frames
-keep the ranges continuous. Exact duplicate archive copies are shown once.
-Tests retain KH1 hitboxes, events, action rules, combo timing and movement.
-These are visual previews, not full BBS commands or guaranteed suitable moves.
+379,411 and482 get an additional direct-blade contact on the second pass.
+Their native first-contact/action timing allows that pass before ending.
+The first finisher pass flinches; the last can apply native finisher knockback.
+Actual damage, enemy defenses, effects and sounds use the native pipeline.
+A second hit requires an enemy to remain in contact with the blade.
+Watch TYPE G BLADE CONTACT in the log for native contact damage records.
 
-TYPE G REVERSE KEYBLADE
-Main Type G and its numbered tests now hold the Keyblade reversed at the
-same hilt. The weapon is rebuilt from Sora's native wrist/local matrices
-for each pose pass; body, fingers and native local data are unchanged.
-Wooden/dream weapons are excluded. Verify blade and keychain appearance in
-game, especially during combos, casts, Guard and Glide/Superglide.
+Reverse grip is refreshed after the full native actor blend/update as well as
+the skeleton/IK passes. Missing unskinned grip/palm matrices use immutable
+fallback. This targets the brief normal-grip transitions; verify appearance
+in game. Body, fingers, hair and native local matrices are not edited by it.
 
-SETTINGS / SAVE BEHAVIOR
-Tests use kh1-numbered-abilities.ini beside the executable and are mod-wide.
-Old no-effect flags66..100 are cleared on upgrade to avoid autoactivating
-previews. Flags101..114/127 remain visible, free, and unassigned. Former115
-is Type G; its retired test bit cannot activate it. ID127 remains bit50.
-When another save loads with an equipped stance, that stance wins the
-conflict and clears the test; select a test again for that save if desired.
+DARK RIKU TESTS - CUSTOMIZE -> PASSIVES
+101: ground3,4,5; air8,9,10.
+102: ground11,12,13; air14,15,16.
+103: ground17,18,19; air20,21,22.
+104: ground23,24,25; air26,27,27 (last27 is filler).
 
-All12 stance IDs, main G combos (300/301/302;305/306/307), E/F actions,
-normal/High Jump behavior, native Glide/Superglide and AP footer remain.
-Stances still require one hidden native learned-list token; tests need no
-native ability slot. No new game buffer capacity is claimed.
+These cover all23 unused clips of the available main1160 bank. They are visual
+previews using native Sora combo behavior, without guessed move names or donor
+AI/events. Main Type D's assignments remain. DARK_RIKU_TESTS.csv adds durations.
+The separate1580 bank is not part of this gallery.
 
-Scan, Dodge Roll, Guard, Glide, Superglide, High Jump and Mermaid Kick retain
-their built-in no-AP/no-slot behavior with native action/room gates and stance
-replacements. As requested previously, non-Sora member1..9 ability arrays
-are removed; saving retains that removal. Uninstall does not recreate them.
+Passives66..100 retain the existing187-clip Ventus gallery and its guide.
+Every test costs0 AP. Equipping any test unequips all stances/other tests;
+equipping a stance clears the test. Normal passives keep normal AP behavior.
+After closing the menu, stand idle for a safe native-data handoff.
+Selecting the current test again disables it, without auto-equipping a stance.
+Enable Combo Master if you want to preview complete chains without a target.
 
-VALIDATION
-636 Rust tests/30 nonempty suites and150 final-PE checks pass (103 shared
-F/G/tests/menu and47 E). All35 tests apply/restore in normal and Olympus
-banks; checks cover all12 stances in both equip directions, one test at a
-time, full native lists, zero AP, ordinary AP costs and old flag migration.
-Reverse-grip geometry tests cover hilt preservation, axis reversal, segment
-lengths, invalid input and repeated skeleton/IK-pass idempotence.
+Old no-effect101..104 flags cannot autoactivate a new preview. Existing Ventus
+selections and unused105..114/127 flags retain their meaning. The mod-wide
+kh1-numbered-abilities.ini stores test selections. A saved equipped stance wins
+a conflict when another save loads. Stance IDs and native48-byte capacity stay.
 
-All245 test records meet existing fitting bounds across52,185 sampled poses:
-max position error4.688 model units, basis0.105, segment below3.9e-11,
-zero scale error and zero native root-helper error. All190 old original/
-Terra/G/variant payload parts and both E/F action controllers are retained.
-Windows x64 DLL builds with the existing4 exports/8 imported DLLs.
+RETAINED BEHAVIOR
+All35 Ventus previews, previous Terra payload parts and Single E payload remain
+exact. Type F retains its existing dash. Other stance mappings, native passive
+AP costs, the readable footer and larger white spent/max AP stay.
+Scan, Dodge Roll, Guard, Glide, Superglide, High Jump and Mermaid Kick remain
+built-in without AP/slots, subject to native gates and stance replacements.
+As requested previously, non-Sora ability lists are cleared; saving persists
+that removal, and uninstall does not recreate those partner abilities.
 
-Windows APIs, rendering and shared Rust dispatch are substituted in the
-harness. Actual game/Windows/GPU execution and final appearance/contact feel
-remain for your test. See validation.json and source/STYLES-V65.MD for the
-current receipts. Historical reports describe earlier builds. The full65-
-commit source patch and exact private payload headers support rebuilding.
+VALIDATION / TEST
+644 Rust tests in30 nonempty suites;160 final-PE checks (112 shared,48 E).
+Type G's38 records/4 variants meet the established curve bounds, including
+zero scale error and zero native root-helper error. All2139 original Dark Riku
+mapped pose samples pass. Exact source reconstruction and package hashes are
+included with validation.json and source/STYLES-V66.MD.
 
-UNINSTALL / ROLLBACK
-Set remove_dual_wield=on in kh1-dual-wield.ini, load/save with v65, close KH1,
-disable the package and Build again. The hidden stance token is removed.
-Built-in normal entries are restored where capacity permits, without evicting
-another ability: Sora Scan/Guard/Roll off, shared movement on. Partner ability
-lists remain removed. Numbered flags stop applying when the mod is removed.
+The PE harness substitutes Windows APIs, rendering and shared Rust dispatch.
+No actual Windows/game/GPU session or live new enemy contact was run here.
+Test both banks, grip transitions, casts/items, both combos, dash damage,
+shortcuts, landing resets, held Glide and stance/test switching. Contact-window
+alignment and combat feel remain provisional until your game test.
+
+UNINSTALL
+Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v66, close KH1,
+disable the package and Build. The hidden stance token is removed. Built-in
+normal entries restore where capacity permits without eviction (Sora entries
+off, shared movement on). Partner ability lists stay removed; numbered flags
+stop applying when the mod is removed.

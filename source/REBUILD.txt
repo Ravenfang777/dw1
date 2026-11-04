@@ -1,5 +1,5 @@
-Clone the pinned public upstream, then git am Styles_v65.patch.
-Alternatively, fetch Styles_v65_from_v64.bundle into the recorded v64 checkout.
+Clone the pinned public upstream, then git am Styles_v66.patch.
+Alternatively, fetch Styles_v66_from_v65.bundle into the recorded v65 checkout.
 Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h.
 Copy rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
 These included headers are exact final build inputs. Never add generated
@@ -34,6 +34,15 @@ Type G is profile2; all35 test profiles3..37 are in the shared terra_data.h.
 Optional regeneration is documented in SINGLE-G.MD; keep private game assets
 out of Git. Set VENTUS_SOURCE to the converted work directory when running
 the F/G final-PE tests.
+
+Set VENTUS_TEST_SOURCE to the converted numbered test work directory when
+running the full current F/G tests. The portable test directory includes its
+numbered_passives.h configuration, or set NUMBERED_PASSIVES_HEADER explicitly.
+See SINGLE-G.MD for optional regeneration of main G and every numbered test.
+
+The current main G and action variants require the v66 regeneration sequence
+in SINGLE-G.MD; preserve the old G work for unchanged numbered galleries.
+Dark Riku tests use the admitted main1160 source read from the original game.
 
 Set VENTUS_TEST_SOURCE to the converted numbered test work directory when
 running the full current F/G tests. The portable test directory includes its

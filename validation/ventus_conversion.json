@@ -1,12 +1,17 @@
 {
   "passed": true,
-  "parts_compared": 190,
-  "all_native_terra_and_variant_bytes_unchanged": true,
-  "ventus_motions": 37,
-  "source_bones": 53,
-  "max_pose_error": 2.4442371509405865,
-  "max_basis_error": 0.04974144526928795,
-  "max_length_error": 4.0461856087858905e-11,
+  "main_records": 38,
+  "action_variants": 4,
+  "max_position_error": 4.921277104700673,
+  "max_basis_error": 0.10458153525344889,
+  "max_segment_length_error": 3.04751779367507e-11,
   "max_scale_error": 0.0,
-  "native_root_travel_error": 0.0
+  "max_native_root_error": 0.0,
+  "validated_pose_samples": 9450,
+  "timestamp_adjusted_slots": [
+    99,
+    100,
+    101,
+    104
+  ]
 }

@@ -1,87 +1,82 @@
-# Type G: BBS Ventus native-body test
+# Type G: BBS Ventus in KH1FM Styles v66
 
-Type G uses the user's returned p01ex00 model and original p01ex PAM animation
-channels. The main p01base bank is canonical where numeric names have variants.
-The source rig has53 bones; Sora has293. The existing named anatomical mapping,
-bind-length calibration, wrist pivots, bounded arm/leg clearance and native-body
-fitter are reused from the original Terra tooling. Ventus's actual named rig is
-checked before sampling; it is not interpreted as Terra's51-bone layout.
+The original53-bone Ventus p01ex00 model and PAM sources are fitted to Sora's
+293-bone native body. Native headers, allocations, helper travel and action
+selection remain. Type G is ID115/runtime12, Single/I, zero AP. Profile1 remains
+Terra,2 is main Ventus and3..37 are the unchanged numbered Ventus previews.
+Dark Riku previews use internal runtime14 and their own existing pose map.
 
-The new stance is ID115/code12, Single/I, zero AP. It shares the checked native
-body adapter as profile2. Profile1 remains Terra, including its own Square dash
-and cast variants. Type G supplies no new input or movement controller, spell
-damage, defensive objects, invulnerability, aerial dodge or weapon model.
+| Action | Source |
+| --- | --- |
+| Idle / combat idle | 001 / 002 |
+| Walk / combat walk | 003 / 012 |
+| Run / combat run | 004 / 013 |
+| Jump / high jump | 005 / 014 |
+| Fall / land | 006 / 007 |
+| Ledge hang / climb | 020 / 021 |
+| Ground combo | 300 / 379 / 411 |
+| Air combo | 305 / 306 / 482 |
+| Guard / Dodge Roll | 400 / 009 |
+| Ground Fire / Blizzard / Gravity | 416 |
+| Air Fire / Blizzard / Gravity | 417 |
+| Ground other magic | 390 |
+| Air other magic | 508 |
+| Ground / air item | 395 |
+| Held Glide | 038 |
+| Square dash / Circle aerial dodge | 330 / 410 |
 
-| Action | BBS animation | Source frames | Source range |
-| --- | --- | --- | --- |
-| Idle / combat idle | 001 / 002 | 90 / 110 | Full, loop closed |
-| Walk / combat walk | 003 / 012 | 36 / 32 | Full, loop closed |
-| Run / combat run | 004 / 013 | 16 / 20 | Full, loop closed |
-| Jump takeoff / rise | 005 | 14 | 0..9 / 9..13 |
-| Fall | 006 | 15 | 7..14, loop closed |
-| Landing | 007 | 14 | Full |
-| High jump takeoff / rise | 014 | 32 | 0..16 / 16..31 |
-| Ledge hang | 020 | 95 | 55..94 |
-| Ledge climb start / finish | 021 | 14 | 0..4 / 4..13 |
-| Ledge landing recovery | 007 | 14 | Full, normal bank only |
-| Ground combo | 300 / 301 / 302 | 28 / 34 / 32 | Full |
-| Air combo | 305 / 306 / 307 | 21 / 29 / 31 | Full |
-| Ground cast / recovery | 354 | 36 | 0..23 / 23..35 |
-| Air cast / recovery | 355 | 40 | 0..27 / 27..39 |
-| Item, ground and air | 600 | 44 | Full |
-| Guard | 400 | 40 | Full |
-| Dodge Roll | 009 | 19 | Full |
+All listed source clips are30fps. The delivered VENTUS_ANIMATIONS.csv includes
+native record numbers, durations and source spans. Main G now adds held Glide
+record75, for38 mapped records. Native entry/exit/travel remain. Casting uses
+scoped family recovery bodies while native release events and effects remain.
 
-All listed BBS clips are30fps. The existing KH1 records retain their durations,
-event keys, helper travel, headers and capacities. Body playback is retimed to
-those records; this is an initial animation selection and native-timing test,
-not a claim that the complete BBS action controller or command deck is ported.
-Glide, Superglide, damage reactions, hitboxes, spell origins/effects and actual
-Guard defense/roll movement remain native. v65 adds a reverse Keyblade grip in the native pose path for Type G and its
-numbered tests. Grip/contact alignment still needs an in-game check.
+Square330 replaces Superglide at half Type F's unobstructed distance, with a
+locked initial direction and native collision. Circle410 has a small lift and
+allows held038 Glide after completion. Each is once per real airtime. Shortcuts,
+casts, damage and scripted states cannot start an air action. Numbered previews
+retain their prior native controls. See styles-v66.md for exact controls/scopes.
+
+Main G's dash and second379/411/482 passes use the actual equipped blade against
+native enemy body parts. Native physical rows supply damage/feedback. First
+finisher knockback waits until pass two through a scoped native record reaction.
+Selected native first-contact/action timestamps are admitted and restored as
+float-only changes; donor scripts/event payloads are never installed. Game feel,
+window alignment and actual contact damage still need an in-game test.
+
+The reverse grip is rebuilt from native wrist/local data and refreshed after
+the complete actor update as well as skeleton/IK callbacks. Missing unskinned
+palm/grip matrices use bind-relative fallback. Only weapon280..292 is written;
+the transform remains idempotent. Other stances/body/hair/fingers stay separate.
 
 ## Rebuilding
 
-Apply the full source patch and use its included exact private payload headers
-to rebuild the DLL directly. For optional G fixture regeneration, provide the
-user's extracted Ventus capture Sources directory and a separate writable work
-directory containing the original xa_ex_0010.mdls, xa_ex_0010.mset and
-xa_ex_0010_he.mset used for the existing Terra fixtures. Python needs NumPy,
-SciPy and Pillow for the reused tools.
+Normal rebuilding uses the exact included private aqua_data.h and terra_data.h
+headers; no asset regeneration is needed. Apply the full source patch, copy the
+headers to local/single_e and local/single_f and use the documented Windows x64
+build. Generated private data must never enter Git.
+
+For optional full regeneration from the user's original Ventus capture, provide
+Sources and separate work directories containing the original Sora model,
+normal/Olympus MSETs used for Terra. Python requires NumPy, SciPy and Pillow.
+The original main-G work is retained for the existing v65 gallery; the new main
+work supplies current G actions. Commands:
 
 ```
-python3 tools/ventus-retarget/build_ventus.py VENTUS_CAPTURE/Sources WORK --workers 4
-python3 tools/ventus-retarget/build_ventus_tests.py VENTUS_CAPTURE/Sources WORK TEST_WORK --workers 6
-python3 crates/kh1-hook/src/single_f/generate_data.py TERRA_V4_SOURCE local/single_f WORK TEST_WORK
+python3 tools/ventus-retarget/build_ventus.py CAPTURE/Sources OLD_G_WORK --workers 6
+python3 tools/ventus-retarget/build_ventus_tests.py CAPTURE/Sources OLD_G_WORK TEST_WORK --workers 6
+python3 tools/ventus-retarget/build_ventus_v66.py CAPTURE/Sources OLD_G_WORK NEW_G_WORK --workers 6
+python3 crates/kh1-hook/src/single_f/generate_data.py TERRA_V4_SOURCE local/single_f NEW_G_WORK TEST_WORK OLD_G_WORK
 ```
 
-The first command emits main G fixtures, source inventory and validation. The
-second builds all numbered tests, splitting only fixed-capacity failures. The
-third retains Terra as profile1, G as2 and tests as3..37. No native event stream
-is a write destination.
-Use VENTUS_SOURCE=WORK alongside the previously documented Terra/native EXE
-variables when running the final-PE F/G adapter tests. The exact included
-terra_data.h already contains all37 profiles and requires no regeneration.
+The gallery builder also stores its common original G fixtures under
+TEST_WORK/common/fixtures. It covers all187 distinct originally unused clips;
+fixed-capacity failures split into labeled contiguous source ranges. Its35
+profiles stay byte-identical to v65. Set VENTUS_SOURCE=NEW_G_WORK and
+VENTUS_TEST_SOURCE=TEST_WORK for the current F/G final-PE tests, along with the
+existing TERRA_SOURCE, STYLES_DLL and KH1_EXE variables.
 
-The generated before/Terra/Ventus/variant byte blocks are compared with v64,
-including all190 parts. Both bank mappings, request handles and root helper
-trajectories remain checked. See styles-v65.md for bounds and live limitations.
-Source tools are derived from this project's original Terra v4 retarget tools;
-ARC/PAM/PMO format references are documented in bbs_source_inspector.py.
-
-## v65 numbered previews and reverse grip
-
-Passives66..100 add35 exclusive test profiles, including every187 unused
-source clip. Equipping one unequips stances and the previous test; selecting a
-stance clears tests. The main G action mapping above remains unchanged. Type G
-and tests reverse the weapon at the same hilt without changing the body pose.
-See styles-v65.md and the package VENTUS_TESTS.txt/CSV for frame-range details.
-
-The commands above regenerate the full current shared payload.
-
-The test builder reuses successful fits, subdivides fixed-capacity failures
-and verifies complete source-frame coverage. Keep all generated assets private.
-The compile-time profile guard requires all35 test profiles in the current
-header. Set VENTUS_TEST_SOURCE=TEST_WORK as well as VENTUS_SOURCE=WORK when
-running the current F/G final-PE tests. The included exact header is sufficient
-for normal rebuilding; conversion regeneration is optional.
+All190 old original/Terra/variant parts, all35 existing Ventus gallery profiles
+and E's private payload remain exact. Source identity, fitting, timestamp
+admission and validation limits are recorded in styles-v66.md. The original
+retarget tools derive from this project's Terra tooling; ARC/PAM/PMO references
+remain credited in bbs_source_inspector.py.

@@ -64,9 +64,9 @@ warning: unused variable: `actor`
     |                                         ^^^^^ help: if this is intentional, prefix it with an underscore: `_actor`
 
 warning: function `monitor` is never used
-   --> crates/kh1-hook/src/win/mod.rs:181:27
+   --> crates/kh1-hook/src/win/mod.rs:182:27
     |
-181 | unsafe extern "system" fn monitor(_: *mut c_void) -> u32 {
+182 | unsafe extern "system" fn monitor(_: *mut c_void) -> u32 {
     |                           ^^^^^^^
     |
     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
@@ -654,34 +654,42 @@ warning: methods `targets` and `barrier_meet` are never used
      |                   ^^^^^^^^^^^^
 
 warning: function `kh1_spell_data` is never used
-    --> crates/kh1-hook/src/win/combat.rs:1984:8
+    --> crates/kh1-hook/src/win/combat.rs:1985:8
      |
-1984 | pub fn kh1_spell_data(spell: u8, level: u8) -> Option<i32> {
+1985 | pub fn kh1_spell_data(spell: u8, level: u8) -> Option<i32> {
      |        ^^^^^^^^^^^^^^
 
 warning: constant `ITEM_COMMAND_TYPE` is never used
-    --> crates/kh1-hook/src/win/combat.rs:2217:7
+    --> crates/kh1-hook/src/win/combat.rs:2229:7
      |
-2217 | const ITEM_COMMAND_TYPE: u8 = 3;
+2229 | const ITEM_COMMAND_TYPE: u8 = 3;
      |       ^^^^^^^^^^^^^^^^^
 
 warning: constant `MENU_ROOT_RVA` is never used
-    --> crates/kh1-hook/src/win/combat.rs:2223:7
+    --> crates/kh1-hook/src/win/combat.rs:2235:7
      |
-2223 | const MENU_ROOT_RVA: Rva = Rva(0x2D543F0);
+2235 | const MENU_ROOT_RVA: Rva = Rva(0x2D543F0);
      |       ^^^^^^^^^^^^^
 
 warning: constant `SUMMON_MENU_RVA` is never used
-    --> crates/kh1-hook/src/win/combat.rs:2225:7
+    --> crates/kh1-hook/src/win/combat.rs:2237:7
      |
-2225 | const SUMMON_MENU_RVA: Rva = Rva(0x5296A8);
+2237 | const SUMMON_MENU_RVA: Rva = Rva(0x5296A8);
      |       ^^^^^^^^^^^^^^^
 
 warning: function `spell_not_yet` is never used
-    --> crates/kh1-hook/src/win/combat.rs:2262:11
+    --> crates/kh1-hook/src/win/combat.rs:2274:11
      |
-2262 | unsafe fn spell_not_yet(menu: usize, entry: i32) -> bool {
+2274 | unsafe fn spell_not_yet(menu: usize, entry: i32) -> bool {
      |           ^^^^^^^^^^^^^
+
+warning: method `clear` is never used
+    --> crates/kh1-hook/src/win/combat.rs:2434:12
+     |
+2433 | impl NativeBladeContacts{
+     | ------------------------ method in this implementation
+2434 |     pub fn clear(&mut self){*self=Self::default();}
+     |            ^^^^^
 
 warning: constant `TEXT_RVA` is never used
   --> crates/kh1-hook/src/win/config.rs:28:7
@@ -7560,15 +7568,15 @@ warning: function `setm2` is never used
     |                           ^^^^^
 
 warning: function `list_actors` is never used
-   --> crates/kh1-hook/src/win/probe.rs:587:11
+   --> crates/kh1-hook/src/win/probe.rs:588:11
     |
-587 | unsafe fn list_actors() {
+588 | unsafe fn list_actors() {
     |           ^^^^^^^^^^^
 
 warning: function `install` is never used
-   --> crates/kh1-hook/src/win/probe.rs:610:15
+   --> crates/kh1-hook/src/win/probe.rs:611:15
     |
-610 | pub unsafe fn install() {
+611 | pub unsafe fn install() {
     |               ^^^^^^^
 
 warning: function `CreateToolhelp32Snapshot` is never used
@@ -8619,5 +8627,5 @@ warning: function `GetWindowThreadProcessId` is never used
 39 |     pub fn GetWindowThreadProcessId(window: *mut c_void, pid: *mut u32) -> u32;
    |            ^^^^^^^^^^^^^^^^^^^^^^^^
 
-warning: `kh1-hook` (lib) generated 1384 warnings (run `cargo fix --lib -p kh1-hook` to apply 10 suggestions)
-    Finished `release` profile [optimized] target(s) in 27.58s
+warning: `kh1-hook` (lib) generated 1385 warnings (run `cargo fix --lib -p kh1-hook` to apply 10 suggestions)
+    Finished `release` profile [optimized] target(s) in 12.70s

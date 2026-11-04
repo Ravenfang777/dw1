@@ -1,4 +1,4 @@
-VENTUS ANIMATION TESTS - STYLES v65 / s404
+VENTUS ANIMATION TESTS - STYLES v66 / s405 (unchanged gallery)
 
 Customize -> Passives -> 66..100. Each test costs 0 AP.
 Equipping a test unequips all stances and any previous animation test.
@@ -6,7 +6,7 @@ Equipping a stance clears the active test. Normal passives remain usable.
 Stand idle after closing the menu so native body data can switch safely.
 Selecting the same test again disables it; no stance is auto-equipped.
 
-All187 distinct unused source clips are covered. Duplicate archive copies
+All187 distinct clips from the original v65 unused gallery remain covered. Duplicate archive copies
 with identical SHA256 are represented once. Brackets mean source frame
 ranges (inclusive); split clips continue in other rows. No frames omitted.
 All clips are30fps in BBS and retimed into existing KH1 combo durations.
@@ -60,6 +60,7 @@ local matrices remain untouched by that runtime grip transform.
 
 Settings use kh1-numbered-abilities.ini beside the game executable. Old
 no-effect placeholder flags66..100 are cleared during upgrade to prevent
-accidental animation previews. Flags101..114/127 retain no assigned effect.
+accidental animation previews. Passives101..104 now preview Dark Riku;
+105..114/127 remain unassigned.
 Tests are mod-wide. A saved equipped stance wins a conflict when another
 save is loaded; select a test again if wanted for that save.

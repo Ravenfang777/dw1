@@ -97,6 +97,13 @@ static uintptr_t ABI native_guard_row(uintptr_t actor,uint32_t row){
 static uintptr_t ABI native_motion_advance(uintptr_t actor,float delta){
     motion_calls++;last_motion_delta=delta;*(float*)(actor+0x16c)+=delta;return 0x5678;
 }
+static unsigned after_calls;static uintptr_t after_actor;static float after_delta,after_original_delta;
+static void ABI after_motion(uintptr_t actor,float delta){after_calls++;after_actor=actor;after_delta=delta;after_original_delta=last_motion_delta;}
+int bridge_after_register(uintptr_t f){after_calls=0;after_actor=0;after_delta=after_original_delta=-1234.f;return ((int(ABI*)(uintptr_t))f)((uintptr_t)after_motion);}
+unsigned bridge_after_calls(void){return after_calls;}
+uintptr_t bridge_after_actor(void){return after_actor;}
+float bridge_after_delta(void){return after_delta;}
+float bridge_after_original_delta(void){return after_original_delta;}
 static int ABI native_guard_angle(uintptr_t first,uintptr_t second){
     (void)first;angle_calls++;return *(float*)(second+0x10)>=0.f;
 }

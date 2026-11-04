@@ -37,6 +37,7 @@ test_required_controller_failure_never_publishes_aqua_bodies (__main__.RuntimeTe
 test_same_epoch_selection_is_immediate_and_repeated_callbacks_do_not_tick_twice (__main__.RuntimeTests.test_same_epoch_selection_is_immediate_and_repeated_callbacks_do_not_tick_twice) ... ok
 test_second_ground_attack_has_no_held_recovery_and_keeps_contact_time (__main__.RuntimeTests.test_second_ground_attack_has_no_held_recovery_and_keeps_contact_time) ... ok
 test_shared_entry_points_are_never_hooked_twice_by_adapter (__main__.RuntimeTests.test_shared_entry_points_are_never_hooked_twice_by_adapter) ... ok
+test_shared_post_motion_callback_runs_after_original_once_and_preserves_return_and_delta (__main__.RuntimeTests.test_shared_post_motion_callback_runs_after_original_once_and_preserves_return_and_delta) ... ok
 test_slower_dodge_visual_retains_exact_26_tick_path_and_terminal_velocity (__main__.RuntimeTests.test_slower_dodge_visual_retains_exact_26_tick_path_and_terminal_velocity) ... ok
 test_switch_waits_for_attacks_casts_jumping_and_walking_to_finish (__main__.RuntimeTests.test_switch_waits_for_attacks_casts_jumping_and_walking_to_finish) ... ok
 test_unequip_during_guard_waits_until_idle_then_restores_every_record (__main__.RuntimeTests.test_unequip_during_guard_waits_until_idle_then_restores_every_record) ... ok
@@ -47,6 +48,6 @@ test_unrelated_collision_pairs_do_not_query_or_validate_soras_guard (__main__.Ru
 test_wider_guard_creates_one_native_body_capsule_covering_front_sides_and_rear (__main__.RuntimeTests.test_wider_guard_creates_one_native_body_capsule_covering_front_sides_and_rear) ... ok
 
 ----------------------------------------------------------------------
-Ran 47 tests in 4.438s
+Ran 48 tests in 6.390s
 
 OK

@@ -1,9 +1,9 @@
-title: KH1FM Styles v65 - Exclusive Ventus Animation Tests
+title: KH1FM Styles v66 - Type G Actions and Dark Riku Tests
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Passives66..100 preview all187 unused Ventus clips. Tests and stances
-  unequip each other; one test at a time. Type G uses a reverse Keyblade grip.
-  Existing stances, native passive AP behavior and built-ins retained.
+  Type G revised combos, casting, items, Glide, finite blade dash and aerial dodge.
+  Reverse grip refresh through blends and second-pass blade contacts.
+  Dark Riku unused main-bank animations on Passives101..104; galleries exclusive with stances.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

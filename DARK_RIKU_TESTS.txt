@@ -1,0 +1,10 @@
+DARK RIKU ANIMATION TESTS - v66
+Customize -> Passives ->101..104,0 AP. Each unequips all stances/other tests.
+The source is main1160, not the unreturned separate1580 bank.
+These are body previews with native Sora combo behavior, not named moves.
+Main Type D stays unchanged. Last air slot of104 repeats27 as filler.
+
+101: ground 3,4,5; air 8,9,10
+102: ground 11,12,13; air 14,15,16
+103: ground 17,18,19; air 20,21,22
+104: ground 23,24,25; air 26,27,27
