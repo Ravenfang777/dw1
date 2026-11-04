@@ -420,7 +420,7 @@ class RuntimeTests(unittest.TestCase):
     def test_default_superglide_alias_exact_and_scoped_in_both_banks(self):
      for bank in [98,60]:
       h=Host(slot=bank,encoded_fields=True);h.prepare_slide();slot=10 if bank==98 else h.record_by_slot[10]['olympus_slot'];old=r32(h.array+slot*4);h.tap_slide()
-      alias=r32(h.array+slot*4);self.assertEqual(h.decode(alias),r64(h.symbols['slide_native_copy']));self.assertNotEqual(h.decode(alias),h.native_glide_motions[76]);self.assertNotEqual(old,alias)
+      alias=r32(h.array+slot*4);self.assertEqual(h.decode(alias),h.native_glide_motions[76]);self.assertNotEqual(old,alias)
       h.clock(39);h.control();self.assertEqual(r32(h.array+slot*4),old)
     def test_once_per_airtime_survives_completion_release_damage_and_style_toggle(self):
      h=Host();h.prepare_slide();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),1)
@@ -431,10 +431,52 @@ class RuntimeTests(unittest.TestCase):
     def test_landing_while_other_style_selected_restores_budget(self):
      h=Host();h.prepare_slide();h.tap_slide();h.clock(39);h.control();h.equip(False);w32(h.actor+0x164,0);h.frame()
      h.control(state=0,request=0,height=0);h.observe();h.equip(True);h.frame();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),2)
-    def test_private_native_superglide_copy_does_not_reuse_live_sampler_caches(self):
-        h=Host();h.prepare_slide();motion=h.native_glide_motions[76];at=r32(motion+40);old=C.string_at(motion+at,1);put(motion+at,bytes([old[0]^1]));h.tap_slide()
-        self.assertEqual(bridge.bridge_queue_calls(),1);self.assertNotEqual(h.decode(r32(h.array+40)),motion)
-        self.assertEqual(C.string_at(motion+at,1),bytes([old[0]^1]))
+    def test_native_superglide_runtime_header_is_retained_but_foreign_curves_are_rejected(self):
+        h=Host();h.prepare_slide();motion=h.native_glide_motions[76];w32(motion,1);h.tap_slide()
+        self.assertEqual(bridge.bridge_queue_calls(),1);self.assertEqual(h.decode(r32(h.array+40)),motion);self.assertEqual(r32(motion),1)
+        h.clock(39);h.control();h.control(state=0,request=0,height=0)
+        keys=h.decode(r32(motion+40)) if r32(motion+40)&0x80000000 else motion+r32(motion+40)
+        old=C.string_at(keys,1);put(keys,bytes([old[0]^1]));h.tap_slide()
+        self.assertEqual(bridge.bridge_queue_calls(),1);self.assertEqual(C.string_at(keys,1),bytes([old[0]^1]))
+
+    def test_dash_needs_no_new_handle_or_animation_allocation(self):
+        for bank in [98,60]:
+            h=Host(slot=bank,encoded_fields=True);h.prepare_slide()
+            # Reproduce unavailable pointer registration and deny allocations
+            # after adapter setup. The existing native record still works.
+            put(h.game+0x38ad90,bytes.fromhex('31c0c3'))
+            bridge.bridge_magic_modes(1,1,0)
+            banks=C.string_at(h.game+0x2ee3980,64*8);h.tap_slide()
+            self.assertEqual(bridge.bridge_queue_calls(),1)
+            self.assertEqual(C.string_at(h.game+0x2ee3980,64*8),banks)
+            total=0.
+            for tick in range(39):total+=h.move()[0][0]
+            self.assertEqual(total,624.)
+
+    def test_dash_survives_full_pointer_bank_table_in_both_banks(self):
+        data=Path(os.environ['KH1_EXE']).read_bytes();pe=struct.unpack_from('<I',data,60)[0];sh=pe+24+struct.unpack_from('<H',data,pe+20)[0]
+        for i in range(struct.unpack_from('<H',data,pe+6)[0]):
+            vs,va,rs,rp=struct.unpack_from('<4I',data,sh+i*40+8)
+            if va<=0x38aee0 and 0x38af36<=va+rs:
+                encoder=data[rp+0x38aee0-va:rp+0x38af36-va];break
+        else:raise AssertionError('Native pointer encoder unavailable')
+        for bank in [98,60]:
+            h=Host(slot=bank,encoded_fields=True);h.prepare_slide()
+            # Execute the original encoder's leaf body. Its two RIP-relative
+            # references still resolve to the host's bank table at the same RVA.
+            put(h.game+0x38aee0,encoder)
+            put(h.game+0x38ad90,bytes.fromhex('4889ca48b8')+struct.pack('<Q',h.game+0x38aee0)+bytes.fromhex('ffe0'))
+            for i in range(64):
+                at=h.game+0x2ee3980+i*8
+                if not r64(at):w64(at,0x600000000000+i*0x2000000)
+            before=C.string_at(h.game+0x2ee3980,64*8)
+            missing=0x5fffabcdef10;encoded=bridge.call_ptr2(h.game+0x38aee0,0,missing)
+            self.assertNotEqual(h.decode(encoded),missing)
+            for count in range(1,4):
+                h.control(state=0,request=0,height=-.05);h.tap_slide()
+                self.assertEqual(bridge.bridge_queue_calls(),count)
+                h.clock(39.);h.control()
+            self.assertEqual(C.string_at(h.game+0x2ee3980,64*8),before)
     def test_ui_installer_checks_actual_executable_anchors_and_expands_all_tables(self):
      h=Host();anchors=h.ui_seed();self.assertTrue(h.ui_init());self.assertTrue(bridge.call_int0(h.symbols['StylesMenuReady']))
      h.ui_call('styles_root_init');storage=r64(h.symbols['styles_storage']);count=r32(h.game+0x2e1f4c8);self.assertEqual(count,9)
@@ -527,7 +569,7 @@ class RuntimeTests(unittest.TestCase):
         put(h.game+0x311c66,bytes.fromhex('418074244580')+h.ui_tail);h.ui_call('styles_list',w);self.assertEqual(h.abilities(),data)
         self.assertEqual(C.c_ubyte.from_address(h.symbols['styles_shadow']+0x44+5).value,244)
 
-    def test_repeated_landings_rearm_f_and_reset_private_superglide_playback_data(self):
+    def test_repeated_landings_rearm_f_and_reuse_native_superglide_with_runtime_header(self):
         for bank in [98,60]:
             h=Host(slot=bank,encoded_fields=True);h.prepare_slide();slot=10 if bank==98 else h.record_by_slot[10]['olympus_slot'];original=r32(h.array+slot*4)
             source=(ROOT/'fixtures/native_glide_s076.bin').read_bytes()
@@ -535,13 +577,14 @@ class RuntimeTests(unittest.TestCase):
                 h.control(state=0,request=0,height=-.05);h.control(state=2,request=6)
                 h.control(down=0x900010,pressed=0x900010,state=2,request=6,x=1,tilt=1)
                 self.assertEqual(bridge.bridge_queue_calls(),count)
-                copy=h.decode(r32(h.array+slot*4));self.assertEqual(copy,r64(h.symbols['slide_native_copy']))
+                copy=h.decode(r32(h.array+slot*4));self.assertEqual(copy,h.native_glide_motions[76])
                 normalized=bytearray(C.string_at(copy,len(source)))
+                normalized[:4]=source[:4]
                 for field in [20,28,36,40,48,56,60,68,76]:
                     off=struct.unpack_from('<I',source,field)[0]
                     if off:self.assertEqual(h.decode(r32(copy+field)),copy+off);struct.pack_into('<I',normalized,field,off)
                 self.assertEqual(bytes(normalized),source)
-                # Native playback may keep scratch state; a new use rebuilds it.
+                # Reuse preserves the native player's header state.
                 w32(copy,0x12345678);h.clock(39.);h.control();self.assertEqual(r32(h.array+slot*4),original)
                 h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),count)
     def test_f_pointer_rollback_preserves_updated_body_caches(self):

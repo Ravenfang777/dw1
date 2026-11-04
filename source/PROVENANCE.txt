@@ -1,15 +1,13 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous v54 commit: 44fcf96c4bcfb5939f0bc24bbe90d89439041323
-v55 commit: c3312b5e2c5e07db501b6fd2097b8dcc1572b367
-v55 source tree: 0c1adf48da01c65915d6bd521d6e67f16d8d8d2e
-Styles_v55.patch contains55 derivative commits, applied with git am.
-The incremental bundle requires the previous v54 history.
-Terra source: KH1FM_Terra_Animation_Test_v4.zip, Library ID
-libfile_7805f6432560819188166dc30f72622c
-Terra v4 package SHA256:0496c1d7208fd5df2f93d08ad8f9b6334f897d0f1ea9393910fad2e96cef911c
-Aqua source: KH1FM_Aqua_Animation_Test_v21.zip, Library ID
-libfile_186d43426ee88191b8fcf5baf094f895
-Private payloads belong in ignored local directories. No original executable,
-raw extracted table, Ghidra output or asset payload is added to the Git patch.
-Licenses/credits are retained.
+Previous delivered v55 commit: c3312b5e2c5e07db501b6fd2097b8dcc1572b367
+v56 commit: 1378d6d85823dbf043b2325dee740ea5b04875c7
+v56 source tree: 98f0a9708b45e38e8f2639c4e77a16bfc08e785b
+Styles_v56.patch contains56 derivative commits, applied with git am.
+Styles_v56_from_v55.bundle requires the exact previous v55 commit above.
+The original v55 commit identity was recovered from its delivered bundle;
+its tree matches the reconstructed55-commit source patch exactly. Local
+history-parent replacement used for reconstruction is not shipped to users.
+Both private payload headers match the delivered v55 build inputs byte for byte.
+Terra v4 and Aqua v21 source origins/credits remain in the included older notes.
+No original executable, model, extracted table or decompiled code enters Git.

@@ -1,9 +1,9 @@
-title: KH1FM Styles v55 - Menu and Action Refinements
+title: KH1FM Styles v56 - Single F Air Dash Fix
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Short style names and Styles-only AP display removal. Aerial dodge visuals
-  at 75 percent speed with unchanged travel. Anti items, Single F rearming,
-  and Single E ground-combo recovery fixes. Requires KH1FM Steam Global.
+  Fixes Single F air dash admission using the existing native Superglide
+  animation handle, once per airtime with landing reset. Retains all v55
+  menu, Anti item, aerial dodge visual and Single E combo changes.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

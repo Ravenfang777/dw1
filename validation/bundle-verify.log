@@ -1,6 +1,6 @@
-local/dist/KH1FM_Styles_v55/source/Styles_v55_from_v54.bundle is okay
+/workspace/scratch/ac59123af99a/styles_v56_work/local/dist/KH1FM_Styles_v56/source/Styles_v56_from_v55.bundle is okay
 The bundle contains this ref:
-c3312b5e2c5e07db501b6fd2097b8dcc1572b367 HEAD
+1378d6d85823dbf043b2325dee740ea5b04875c7 HEAD
 The bundle requires this ref:
-44fcf96c4bcfb5939f0bc24bbe90d89439041323 
+c3312b5e2c5e07db501b6fd2097b8dcc1572b367 
 The bundle uses this hash algorithm: sha1

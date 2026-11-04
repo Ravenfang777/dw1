@@ -47,6 +47,6 @@ test_unrelated_collision_pairs_do_not_query_or_validate_soras_guard (__main__.Ru
 test_wider_guard_creates_one_native_body_capsule_covering_front_sides_and_rear (__main__.RuntimeTests.test_wider_guard_creates_one_native_body_capsule_covering_front_sides_and_rear) ... ok
 
 ----------------------------------------------------------------------
-Ran 47 tests in 3.023s
+Ran 47 tests in 5.617s
 
 OK

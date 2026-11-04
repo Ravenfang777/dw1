@@ -1,5 +1,5 @@
-Clone the pinned public upstream, then git am Styles_v55.patch.
-Alternatively, fetch Styles_v55_from_v54.bundle into the recorded v54 checkout.
+Clone the pinned public upstream, then git am Styles_v56.patch.
+Alternatively, fetch Styles_v56_from_v55.bundle into the recorded v55 checkout.
 Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h.
 Copy rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
 These included headers are exact final build inputs. Never add generated
