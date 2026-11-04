@@ -1,13 +1,14 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v65 commit: 0485d8c1eec28e39b595b1fb847a44296fd853d3
-v66 commit: 06fb6c97619f5b98c572178e9eaca28695ba572f
-v66 source tree: 57a6b4958c67972249a292f1d39e34b016c8d401
-Styles_v66.patch contains66 derivative commits, applied with git am.
-Styles_v66_from_v65.bundle requires the exact previous v65 commit above.
-All190 old original/Terra/variant parts and all35 old Ventus galleries match v65.
-Single E payload is unchanged; E forwards a shared post-motion callback.
-The scoped G controller/contact extensions retain F behavior.
+Previous delivered v66 commit: 06fb6c97619f5b98c572178e9eaca28695ba572f
+v67 commit: d81b10c4ea23f01d1062bfdd4c825cdec55fbc2d
+v67 source tree: 6d5144b8ac82c9b4c07350dfcdb91318a22e253b
+Styles_v67.patch contains67 derivative commits, applied with git am.
+Styles_v67_from_v66.bundle requires the exact previous v66 commit above.
+All37 live records/profiles/variants match v66; live Glide75 is not patched.
+Glide038 uses a separate immutable copy of the same converted clip.
+All35 Ventus previews, Dark Riku tests and E's private payload remain.
 Native profile1 is Terra,2 main Ventus,3..37 tests66..100.
-The full source patch reconstructs the same tree as the delivery history.
+Actual Rust Glide callbacks are exercised by a portable regression.
+Full source reconstruction must match the source tree above.
 No original executable, model, extracted table or decompiled code enters Git.

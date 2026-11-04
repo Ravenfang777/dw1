@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "samples": 131,
+  "bones": 293,
+  "max_rust_python_position_error": 6.274502359633909e-05,
+  "max_rust_python_basis_error": 9.340637043830924e-07,
+  "live_glide_bytes_written": false
+}

@@ -1,0 +1,4 @@
+   Compiling kh1-data v0.1.0 (/workspace/scratch/ac59123af99a/styles_v56_work/crates/kh1-data)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.51s
+     Running `target/debug/examples/native_mset_solve local/ventus_v66/xa_ex_0010.mdls local/v67-tests/glide038.mset local/v67-tests/glide038-poses.bin`
+Solved 131 poses from 1 slots on 293 bones

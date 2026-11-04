@@ -1,5 +1,5 @@
-Clone the pinned public upstream, then git am Styles_v66.patch.
-Alternatively, fetch Styles_v66_from_v65.bundle into the recorded v65 checkout.
+Clone the pinned public upstream, then git am Styles_v67.patch.
+Alternatively, fetch Styles_v67_from_v66.bundle into the recorded v66 checkout.
 Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h.
 Copy rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
 These included headers are exact final build inputs. Never add generated
@@ -48,3 +48,8 @@ Set VENTUS_TEST_SOURCE to the converted numbered test work directory when
 running the full current F/G tests. The portable test directory includes its
 numbered_passives.h configuration, or set NUMBERED_PASSIVES_HEADER explicitly.
 See SINGLE-G.MD for optional regeneration of main G and every numbered test.
+
+v67 generates37 reversible body records plus an immutable038 container from
+the same NEW_G_WORK fixtures. No new original source is needed. The included
+private headers reproduce this arrangement without asset regeneration.
+See STYLES-V67.MD for the Rust dispatch regression and live validation limits.

@@ -1,4 +1,4 @@
-# Type G: BBS Ventus in KH1FM Styles v66
+# Type G: BBS Ventus in KH1FM Styles v67
 
 The original53-bone Ventus p01ex00 model and PAM sources are fitted to Sora's
 293-bone native body. Native headers, allocations, helper travel and action
@@ -26,15 +26,17 @@ Dark Riku previews use internal runtime14 and their own existing pose map.
 | Square dash / Circle aerial dodge | 330 / 410 |
 
 All listed source clips are30fps. The delivered VENTUS_ANIMATIONS.csv includes
-native record numbers, durations and source spans. Main G now adds held Glide
-record75, for38 mapped records. Native entry/exit/travel remain. Casting uses
+native record numbers, durations and source spans. Main G uses37 reversible
+body records and a separate immutable038 held-Glide visual. The live Glide75
+record is never patched or required for body admission. Native entry/exit/travel remain. Casting uses
 scoped family recovery bodies while native release events and effects remain.
 
 Square330 replaces Superglide at half Type F's unobstructed distance, with a
 locked initial direction and native collision. Circle410 has a small lift and
 allows held038 Glide after completion. Each is once per real airtime. Shortcuts,
 casts, damage and scripted states cannot start an air action. Numbered previews
-retain their prior native controls. See styles-v66.md for exact controls/scopes.
+retain their prior native controls. v67 fixes G's actual Rust constructor gates;
+see styles-v67.md for the dispatch/exit fix and styles-v66.md for action scopes.
 
 Main G's dash and second379/411/482 passes use the actual equipped blade against
 native enemy body parts. Native physical rows supply damage/feedback. First
@@ -43,9 +45,9 @@ Selected native first-contact/action timestamps are admitted and restored as
 float-only changes; donor scripts/event payloads are never installed. Game feel,
 window alignment and actual contact damage still need an in-game test.
 
-The reverse grip is rebuilt from native wrist/local data and refreshed after
-the complete actor update as well as skeleton/IK callbacks. Missing unskinned
-palm/grip matrices use bind-relative fallback. Only weapon280..292 is written;
+The reverse grip uses the skinned wrist and immutable palm/grip offsets. It is
+refreshed after actor update, skeleton/IK and at final field model submission.
+Unskinned helper locals are not trusted for attachment. Only weapon280..292 is written;
 the transform remains idempotent. Other stances/body/hair/fingers stay separate.
 
 ## Rebuilding
@@ -77,6 +79,6 @@ existing TERRA_SOURCE, STYLES_DLL and KH1_EXE variables.
 
 All190 old original/Terra/variant parts, all35 existing Ventus gallery profiles
 and E's private payload remain exact. Source identity, fitting, timestamp
-admission and validation limits are recorded in styles-v66.md. The original
+admission and validation limits are recorded in styles-v66.md and styles-v67.md. The original
 retarget tools derive from this project's Terra tooling; ARC/PAM/PMO references
 remain credited in bbs_source_inspector.py.

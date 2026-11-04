@@ -72,7 +72,7 @@ class Host:
         self.all_records=json.loads((ROOT/'curve_validation.json').read_text())['motions']
         if os.environ.get('VENTUS_SOURCE'):
             known={r['normal_slot'] for r in self.all_records}
-            self.all_records += [r for r in json.loads((Path(os.environ['VENTUS_SOURCE'])/'curve_validation.json').read_text())['motions'] if r['normal_slot'] not in known]
+            self.all_records += [r for r in json.loads((Path(os.environ['VENTUS_SOURCE'])/'curve_validation.json').read_text())['motions'] if r['normal_slot'] not in known and r['normal_slot']!=75]
         self.activate_bank(slot==60,encoded_fields)
         # Native pointer-to-handle helper uses the ABI of the existing reference.
         put(self.game+0x38ad90,b'\x48\xb8'+struct.pack('<Q',bridge.bridge_symbol(b'NativeHandle'))+b'\xff\xe0')
@@ -443,7 +443,7 @@ class RuntimeTests(unittest.TestCase):
         h.control();calls=bridge.bridge_queue_calls();h.control(down=6,pressed=6)
         self.assertEqual(bridge.bridge_queue_calls(),calls);self.assertEqual(bridge.bridge_control_word(0)&6,6)
         self.assertEqual(bridge.call_ptr1(h.symbols['SingleFSuppressGlide'],h.actor),0)
-        self.assertEqual(h.body(75),h.expected(75,2))
+        self.assertEqual(C.string_at(h.native_glide_motions[75],len(h.native_glide_originals[75])),h.native_glide_originals[75])
         h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),calls+1)
 
     def test_type_g_both_air_buttons_exclude_shortcuts_grounding_damage_and_scripted_actions(self):
@@ -488,6 +488,36 @@ class RuntimeTests(unittest.TestCase):
             self.assertGreater(changed,0)
         h.control(state=0,request=0,height=0);h.want=1;h.frame();h.assert_all(self,1)
     def original_for_events(self,h,slot):return h.original_path(h.record_by_slot[slot]).read_bytes()
+
+    def test_type_g_live_glide_stream_changes_cannot_block_entry_exit_or_terra(self):
+        # Reproduce the user's rejected request71/field20 without weakening
+        # admission for any mapped combo, cast or travel record.
+        for bank in [98,60]:
+            h=Host(slot=bank,encoded_fields=True);p=h.native_glide_motions[75]
+            flags=h.decode(r32(p+20));w32(flags,r32(flags)^0x01000000)
+            changed=C.string_at(p,len(h.native_glide_originals[75]))
+            h.want=2;h.frame();h.assert_all(self,2)
+            self.assertEqual(bridge.call_ptr1(h.symbols['SingleGActive'],h.actor),1)
+            h.want=0;self.assertTrue(h.frame());h.assert_all(self,0)
+            h.want=1;h.frame();h.assert_all(self,1)
+            h.want=0;self.assertTrue(h.frame());h.assert_all(self,0)
+            self.assertEqual(C.string_at(p,len(changed)),changed)
+
+    def test_failed_type_g_entry_does_not_hold_native_or_another_style_hostage(self):
+        h=Host(encoded_fields=True);raw=h.snapshot();p=h.motions[98]
+        flags=h.decode(r32(p+20));before=r32(flags);w32(flags,before^1)
+        h.want=2;h.frame();self.assertEqual(r32(h.symbols['body_owned']),0)
+        h.want=0;self.assertTrue(h.frame())
+        # The unrelated bad stream remains untouched. Once the game reloads
+        # it, an ordinary Terra admission still works.
+        self.assertEqual(r32(flags),before^1);w32(flags,before)
+        h.want=1;h.frame();h.assert_all(self,1)
+
+    def test_immutable_glide038_matches_converted_source_without_live_record_writes(self):
+        h=Host();p=bridge.call_ptr1(h.symbols['SingleGGlideData'],0);n=bridge.call_ptr1(h.symbols['SingleGGlideBytes'],0)
+        source=(Path(os.environ['VENTUS_SOURCE'])/'fixtures/ventus_s075.bin').read_bytes()
+        data=C.string_at(p,n);self.assertEqual(data[:8],struct.pack('<2I',1,8));self.assertEqual(data[8:12],b'MMTN')
+        self.assertEqual(data[8+72:],source)
 
     def test_type_g_event_descriptor_corruption_blocks_all_body_writes(self):
         h=self.g_prepare();h.control(state=0,request=0,height=0);slot=99;raw=self.original_for_events(h,slot);at=struct.unpack_from('<I',raw,60)[0]

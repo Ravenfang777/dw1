@@ -1,9 +1,9 @@
-title: KH1FM Styles v66 - Type G Actions and Dark Riku Tests
+title: KH1FM Styles v67 - Type G Dispatch and Switching Fix
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Type G revised combos, casting, items, Glide, finite blade dash and aerial dodge.
-  Reverse grip refresh through blends and second-pass blade contacts.
-  Dark Riku unused main-bank animations on Passives101..104; galleries exclusive with stances.
+  Repair Type G air-action dispatch and stance switching after failed admission.
+  Immutable Glide038 visual and final-draw reverse grip. Preserve all stance
+  mappings, blade contacts and working Ventus/Dark Riku numbered Passives.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

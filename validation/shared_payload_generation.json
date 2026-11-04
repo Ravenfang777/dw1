@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "motions": 38,
+  "motions": 37,
   "profiles": 37,
   "ventus_profile": true,
   "ventus_test_profiles": 35,
@@ -15,6 +15,8 @@
     101,
     104
   ],
+  "immutable_glide038_bytes": 17024,
+  "live_glide_streams_written": false,
   "all_changes_inside_existing_body_helper_tables": true,
-  "unique_data_blocks": 1233
+  "unique_data_blocks": 1226
 }

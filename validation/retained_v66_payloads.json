@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "unchanged_shared_records": 37,
+  "all37_profiles_and_all_variants_byte_exact": true,
+  "ventus_preview_profiles_unchanged": 35,
+  "dark_riku_test_code_unchanged": true,
+  "removed_live_glide_record": 75,
+  "immutable_glide_source_unchanged": true,
+  "single_e_payload_unchanged": true
+}
