@@ -1,13 +1,11 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v61 commit: eb6a187d293c1e9a34b4f5132db473b2a3400d23
-v62 commit: eb7d20f36b7e34174d0d2dffb91ec024d8f2dccf
-v62 source tree: f03186d73cf1b7a6aa6c755157d2761c13f787b4
-Styles_v62.patch contains62 derivative commits, applied with git am.
-Styles_v62_from_v61.bundle requires the exact previous v61 commit above.
-Both private payload headers match delivered v61 inputs byte for byte.
-Both action-controller headers and animation payloads are unchanged from v61.
-The Terra adapter adds the numbered registry and direct Sora-only menu.
-The full source patch reconstructs the same final tree as the delivery history;
-source-apply.log records the independent checkout comparison.
+Previous delivered v62 commit: eb7d20f36b7e34174d0d2dffb91ec024d8f2dccf
+v63 commit: 2ebb7bc941cbc9e19f503dcc3572a5c095957b05
+v63 source tree: f3833c6d0f8e8793d42438a1a2cda29c70e1a64d
+Styles_v63.patch contains63 derivative commits, applied with git am.
+Styles_v63_from_v62.bundle requires the exact previous v62 commit above.
+Both private payload headers and E/F action controllers match delivered v62.
+Type G remains pending original Ventus source assets; only the collector is new.
+The full source patch reconstructs the same tree as the delivery history.
 No original executable, model, extracted table or decompiled code enters Git.

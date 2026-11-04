@@ -1,60 +1,67 @@
-KH1FM STYLES v62 / s401 - NUMBERED SORA PASSIVES
+KH1FM STYLES v63 / s402 - SPENT AP AND VENTUS SOURCE PREPARATION
 
 INSTALL
-1. Close KH1. Disable v61 or any older main Styles/Dual Wield package.
+1. Close KH1. Disable v62 or any older main Styles/Dual Wield package.
    Keep standalone Aqua/Terra tests and the full KH2 Combat DLL disabled.
-2. Import this ZIP into OpenKH Mod Manager. Enable v62, Build and launch
-   with Panacea. Keep your existing KH2FM resources/settings for older stances.
-3. Confirm s401 / STANCES v62 in kh1-dual-wield.log beside the executable.
+2. Import this ZIP into OpenKH Mod Manager. Enable v63, Build and launch
+   with Panacea. Keep existing KH2FM resources/settings for older stances.
+3. Confirm s402 / STANCES v63 in kh1-dual-wield.log beside the executable.
    The native menu/ability adapter targets the supplied Steam Global build.
 
-ALL UNUSED ABILITY IDS
-Passives now includes all51 previously blank IDs:66 through115, then127.
-Each is named its decimal number and costs0 AP. The existing native definitions
-and stance names/IDs remain. These numbered entries are test placeholders;
-no combat effects are assigned yet. Confirm toggles their equipped marker.
-They are all available immediately, regardless of Sora's level or learned-list
-space. Existing normal abilities keep their names and native AP costs.
+AP USED / MAXIMUM
+Customize -> Passives and Customize -> Limits now show AP Used <spent> / <max>
+in the lower information area. Both show Sora's current native AP budget.
+Limits is still empty and uses the same budget; it has no separate AP pool.
+Equipping/removing normal passives updates the total immediately. Numbered
+zero-AP abilities and stances do not spend AP. Stance and Outfits omit this
+display. Native AP costs and insufficient-AP checks remain unchanged.
 
-The numbered flags are stored in kh1-numbered-abilities.ini beside the game
-executable. These are MOD-WIDE test settings shared between saves. They use
-no native learned slots. With the game closed, delete that file to reset them.
-The file is created when a selection changes; unchanged frames do not write it.
-Enabled legacy numeric entries in Sora's list migrate into these settings.
+VENTUS / TYPE G - SOURCE REQUIRED
+Type G is NOT playable or listed in this build. Ventus's original skeleton
+and motion banks have not been received. Existing Aqua/Terra poses cannot
+establish Ventus's mappings, and no other stance is relabeled as Ventus.
 
-DIRECT SORA PASSIVES
+To provide the missing files:
+1. Extract the Ventus_Source_Locator folder from this ZIP somewhere writable.
+2. Run Ventus_Source_Locator/RUN_ME.cmd.
+3. Select the broad EXTRACTED BBS data folder containing arc AND chara.
+   Selecting only pc_ven misses the shared p01base archive and p01ex00 model.
+4. Upload the generated Ventus_Source_Capture_....zip beside the collector.
+
+It reads the original files and writes a separate timestamped capture. There
+is no automatic upload or game-file edit. It includes the source model,
+named gameplay/command banks, relative paths, header inventory and file hashes.
+Read/size-limit notes are retained even if no matching banks are copied.
+Windows PowerShell5.1+ is required; no Python or administrator access needed.
+Packed game containers must already be extracted. The new collector has not
+been run on Windows here. See its README_FIRST.txt for details.
+
+RETAINED v62 BEHAVIOR
 Main menu: Items -> Customize -> Equipment -> Shortcuts, then native options.
-Customize categories: Stance, Passives, Limits, Outfits.
-Choose Passives to enter Sora's ability list immediately. The Sora/Donald/Goofy/
-Shared selector is skipped entirely. Sora's learned native entries come first,
-followed by all51 numbered entries. Scroll down to reach115 and127.
-Eight rows show at once; the list supports up to99 rows without enlarging the
-48-byte native save array. Existing full native lists can toggle flags without
-adding a new token; new stance insertion still requires free native space.
+Customize categories: Stance, Passives, Limits, Outfits. Passives opens Sora's
+list directly, without the Sora/Donald/Goofy/Shared selector. Confirm toggles
+the selected row; Back returns to categories, then to the main menu.
 
-Confirm directly equips/removes the selected row. Normal abilities use native
-AP cost/free-AP queries, and equipping is refused if AP is insufficient.
-Their native descriptions and AP budget are shown. Numbered rows showAP0 and
-can all be selected with zero available AP. The native equip/sort popup is
-replaced by direct toggling. Back returns to Customize's category column;
-Back again returns to the main menu. Stance selection and scroll are retained.
-Limits and Outfits remain empty. Original native Customize is still Shortcuts.
+All51 numbered abilities66..115 and127 remain visible, zero AP and without
+assigned combat effects. Their mod-wide test selections are stored beside
+the executable in kh1-numbered-abilities.ini and shared between game saves.
+They use no native learned slots. With the game closed, delete that file to
+reset test flags. Normal Sora abilities keep their names and native AP costs.
+The eight-row viewport supports up to99 rows without enlarging the48-byte
+native learned array. Existing full arrays can toggle flags; adding a new
+stance token still requires free native capacity.
 
-PARTNER ABILITY REMOVAL
-All learned abilities for non-Sora member IDs1..9 are automatically removed,
-including inactive partners. Their equipped ability queries return0. Abilities
-awarded later are blocked immediately and removed on the next update.
-Only the learned-ability arrays are cleared. HP/MP, experience, stats, equipment,
-items and AI/customize settings are retained; basic commands/spells are not
-separately deleted. Saving retains this removal. Uninstall DOES NOT reconstruct
-the deleted partner ability lists. Their arrays are not repurposed as storage.
+Non-Sora member IDs1..9 have their learned abilities automatically removed
+and equipped-ability queries suppressed, including inactive partners. Saving
+retains this removal; uninstall does not reconstruct their ability lists.
+Only the learned arrays are cleared. Stats, experience, items, equipment and
+AI/customize settings are retained. Basic commands/spells are not separately
+deleted. Partner arrays are not reused for Sora or numeric-ability storage.
 
-BUILT-IN ABILITIES / COMBAT
 Scan, Dodge Roll, Guard, High Jump, Mermaid Kick, Glide and Superglide remain
-available without AP or learned slots, even with no stance equipped. Normal
-room/action/swimming restrictions and stance movement replacements still apply.
-Both animation payloads and E/F action controllers match v61. All eleven stance
-names, existing combos, spell effects and dash/shortcut behavior are retained.
+active without AP or learned slots. Native room/action/swimming gates and
+stance movement replacements still apply. All eleven existing stance labels,
+combos, magic effects, E/F controllers and animation payloads match v62.
 
 STANCE LABELS                WEAPONS   MAGIC
 Single A -> Type A           Single    I
@@ -69,36 +76,33 @@ Dual C   -> Type K?          Dual      I
 Dual D   -> Type L?          Dual      I
 Anti     -> Type M?          None      0
 Question marks are intentional. I means KH1 spell execution, II KH2,0 no magic.
-Current armed stances execute KH1 spells; imported cast poses/FX are visual.
 
 TEST / REPORT
-Open Customize -> Passives. It should enter Sora's scrollable list with no
-member selector. Check normal ability names/AP, then scroll through every
-number from66..115 and127. Toggle numbered entries, including127. Their AP
-cost must be0 and ordinary AP availability should not change. Restart to check
-the mod-wide test selections. Check Stance/Back transitions and normal combat.
-Partners should have no learned abilities. The seven built-ins should work
-with no stance equipped and retain each stance's existing replacements.
-Return the new kh1-dual-wield.log and a screenshot/video if a problem remains.
+Check AP Used in Passives before/after equipping a normal ability. Limits
+should show the same current total. Numbered entries must not alter spending.
+Check zero/max AP and Back navigation. Return the new kh1-dual-wield.log and
+a screenshot if positioning or totals are incorrect. For Type G, return the
+collector's Ventus_Source_Capture ZIP so the original motions can be inspected
+and retargeted with native KH1 action timing.
 
 VALIDATION
-631 Rust tests/30 nonempty suites and137 final-PE checks pass:90 F/menu/ability,
-47 E. All51 numeric IDs and flags,99-row lists, zero-AP toggles, native AP
-queries, original paging beyond48, partner boundaries, migration, settings
-serialization and callback payloads are checked. The Windows x64 DLL builds
-with4 exports and8 imported DLLs. Source and exact rebuild inputs are included.
-The harness substitutes Windows APIs, rendering and shared Rust dispatch.
-Actual Windows file replacement, native graphics, focus and gameplay remain
-for a live game test. Current receipts are in validation.json; older files
-are historical. STYLES-V62.MD explains scope, sources and limitations.
+631 Rust tests/30 nonempty suites and139 final-PE adapter checks pass:
+92 F/menu/ability and47 E. New checks cover zero, partial, exhausted and
+zero-max AP; updates after equip/remove; no-cost numeric rows; matching
+Passives/Limits; and no AP display in Stance/Outfits. Existing native paging,
+all51 flags, full lists, partner boundaries and both combat adapters pass.
+The Windows x64 release builds with4 exports/8 imported DLLs. Source patch,
+exact rebuild inputs and current receipts are included. Most rendering,
+Windows APIs and shared Rust dispatch are substituted by the harness.
+Actual game/GPU execution and the new Windows collector are untested here.
+See validation.json and source/STYLES-V63.MD; older receipts are historical.
 
 UNINSTALL OR ROLL BACK
-Use v62's uninstall path before disabling it or reverting: set
-remove_dual_wield=on in kh1-dual-wield.ini, load/save with v62, close KH1,
-disable the package and Build again. The style token is removed. Missing
-normal built-in entries are restored where space permits: Sora's Scan/Guard/
-Roll UNEQUIPPED to preserve AP, shared movement equipped. No unrelated ability
-is evicted to make room; any shortfall is logged. Partner abilities stay
-removed. Numbered flags stop overriding queries and are not written into the
-save. Keep or delete kh1-numbered-abilities.ini as desired.
-Never enable two versions of the Styles DLL together.
+Use v63's uninstall path before disabling or reverting: set
+remove_dual_wield=on in kh1-dual-wield.ini, load/save with v63, close KH1,
+disable the package and Build again. The hidden stance token is removed.
+Missing normal built-in entries are restored where capacity permits: Sora's
+Scan/Guard/Roll unequipped to preserve AP, shared movement equipped. No other
+ability is evicted. Cleared partner abilities stay removed. Numbered flags
+stop overriding queries and are not written into the save. Keep or delete
+kh1-numbered-abilities.ini as desired. Never enable two Styles DLLs together.

@@ -415,7 +415,7 @@ class RuntimeTests(unittest.TestCase):
 
     def test_direct_passives_native_ap_checks_equipping_removing_and_duplicate_rows(self):
         h=Host();root,page=h.passive_setup([0x86,0x87,117]);w32(h.game+0x2e942c4,3)
-        text=h.ui_choose(page,0);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]));self.assertIn('AP 0 / 3',text)
+        text=h.ui_choose(page,0);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]));self.assertIn('AP Used 3 / 3',text)
         h.ui_choose(page,1);self.assertEqual(bridge.bridge_menu_sound(),4);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]))
         h.ui_choose(page,0);h.ui_choose(page,1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]));self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1)
         h.ui_choose(page,2);self.assertEqual(h.ability_count(66),1);self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]))
@@ -423,7 +423,29 @@ class RuntimeTests(unittest.TestCase):
     def test_passives_preserves_native_names_and_help_while_numbered_names_are_decimal(self):
         h=Host();root,page=h.passive_setup([6,117]);text=h.ui_page_frame(page)
         self.assertIn('Native 6',text);self.assertIn('Native help.',text);self.assertIn('|66|AP 0|',text);self.assertNotIn('Type E',text)
-        self.assertIn('AP 27 / 30',text);self.assertEqual(bridge.bridge_menu_rect_count(),8)
+        self.assertIn('AP Used 3 / 30',text);self.assertEqual(bridge.bridge_menu_rect_count(),8)
+
+    def test_passives_and_limits_show_the_same_spent_ap_and_refresh_after_toggles(self):
+        h=Host();root,page=h.passive_setup([0x86,0x87,117]);before=h.abilities()
+        self.assertIn('AP Used 0 / 30',h.ui_page_frame(page))
+        self.assertIn('AP Used 3 / 30',h.ui_choose(page,0))
+        self.assertIn('AP Used 5 / 30',h.ui_choose(page,1))
+        self.assertIn('AP Used 5 / 30',h.ui_choose(page,2))  # Numeric66 is free.
+        h.ui_page_frame(page,0x40);text=h.ui_page_frame(page,0x4000)
+        self.assertIn('AP Used 5 / 30',text);self.assertIn('No entries available yet',text)
+        h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
+        self.assertIn('AP Used 2 / 30',h.ui_choose(page,0))
+        self.assertIn('AP Used 0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before)
+        h.ui_page_frame(page,0x40);self.assertIn('AP Used 0 / 30',h.ui_page_frame(page,0x4000))
+
+    def test_spent_ap_zero_max_overbudget_and_category_scope(self):
+        h=Host();root,page=h.passive_setup([6,7,117]);w32(h.game+0x2e942c4,3)
+        self.assertIn('AP Used 3 / 3',h.ui_page_frame(page))  # Native clamps overspend.
+        w32(h.game+0x2e942c4,0);self.assertIn('AP Used 0 / 0',h.ui_page_frame(page))
+        h.ui_page_frame(page,0x40);self.assertIn('AP Used 0 / 0',h.ui_page_frame(page,0x4000))
+        self.assertNotIn('AP Used',h.ui_page_frame(page,0x4000))  # Outfits.
+        h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x1000)
+        self.assertNotIn('AP Used',h.ui_page_frame(page,0x1000))  # Stance.
 
     def test_passives_toggles_an_existing_full_list_with_and_without_a_style_token(self):
         for entries in [[6]*48,[6]*47+[117]]:
