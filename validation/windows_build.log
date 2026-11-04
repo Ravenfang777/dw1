@@ -8620,4 +8620,4 @@ warning: function `GetWindowThreadProcessId` is never used
    |            ^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: `kh1-hook` (lib) generated 1384 warnings (run `cargo fix --lib -p kh1-hook` to apply 10 suggestions)
-    Finished `release` profile [optimized] target(s) in 15.82s
+    Finished `release` profile [optimized] target(s) in 15.97s

@@ -50,7 +50,7 @@ Applying: Styles v49: borrow Single C jump and map Dark Riku basic combo poses
 Applying: Styles v50: resolve native combo requests to regular animation bank records
 Applying: Styles v51: select script-linked Dark Riku weapon attacks for both combos
 Applying: Styles v52: move Single D second attack to native Guard and capture extra source
-Applying: Styles v53: integrate main Aqua v21 as Sin/workspace/scratch/ac59123af99a/styles_v56_work/.git/worktrees/v57-applycheck/rebase-apply/patch:1008: new blank line at EOF.
+Applying: Styles v53: integrate main Aqua v21 as Sin/workspace/scratch/ac59123af99a/styles_v56_work/.git/worktrees/v58-applycheck/rebase-apply/patch:1008: new blank line at EOF.
 +
 warning: 1 line adds whitespace errors.
 gle E with shared native hooks
@@ -58,3 +58,4 @@ Applying: Add Terra Single F and a dedicated native Styles menu
 Applying: Refine Styles menu, dodge visuals and native action reuse (v55)
 Applying: Restore Single F air dash with its existing native animation handle (v56)
 Applying: Repair Single F dash reuse and make Styles green below Customize (v57)
+Applying: Styles v58: lock Single F dash facing and add equipment-style slots

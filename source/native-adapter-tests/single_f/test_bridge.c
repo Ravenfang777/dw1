@@ -79,7 +79,7 @@ static void ABI native_queue(uintptr_t actor,uint32_t request,float frame){
     *(uint32_t*)(actor+0x178)=1;*(uint32_t*)(actor+0x17c)=request;*(float*)(actor+0x184)=frame;
 }
 static void ABI native_control(uintptr_t actor,uintptr_t dir){
-    (void)dir;control_calls++;uint32_t*pad=(uint32_t*)(game_base+0x298ca90);
+    control_calls++;uint32_t*pad=(uint32_t*)(game_base+0x298ca90);
     unsigned fields[4]={1,2,4,5};for(unsigned i=0;i<4;i++)control_words[i]=pad[fields[i]];
     if(control_mode==1)pad[2]^=0x40000000u;
     if(control_mode!=3)bridge_commit(actor);
@@ -87,6 +87,11 @@ static void ABI native_control(uintptr_t actor,uintptr_t dir){
         *(uint32_t*)(actor+0x70)=21;*(uint32_t*)(actor+0x164)=0x71;*(uint32_t*)(actor+0x178)=0;
     }
     if(control_mode==2)*(uint32_t*)(actor+0x164)=0xcc;
+    if(control_mode==7&&((const float*)dir)[3]>.15f){
+        const float*v=(const float*)dir;float yaw=atan2f(v[0],v[2]);
+        *(float*)(actor+0x30)=v[0];*(float*)(actor+0x34)=0;*(float*)(actor+0x38)=v[2];
+        *(float*)(actor+0x3c)=yaw;*(float*)(actor+0x150)=yaw;
+    }
     /* Native control0x2A630C clears its command record after dispatch. */
     *(uint64_t*)(game_base+0x2d53a40)=0;*(uint32_t*)(game_base+0x2d53a48)=0;
 }
@@ -141,7 +146,33 @@ static uint32_t ABI native_set_state(uintptr_t actor,uint32_t state){
 float bridge_move(uintptr_t f,uintptr_t actor,float*out){return ((float(ABI*)(uintptr_t,float*))f)(actor,out);}
 unsigned bridge_move_calls(void){return move_calls;}
 static float ABI native_sinf(float x){return sinf(x);}
+static char menu_drawn[4096];static unsigned menu_text_count,menu_panels,menu_last_sound;
+void bridge_menu_reset(void){menu_drawn[0]=0;menu_text_count=menu_panels=menu_last_sound=0;}
+const char* bridge_menu_text(void){return menu_drawn;}
+unsigned bridge_menu_panel_count(void){return menu_panels;}
+unsigned bridge_menu_sound(void){return menu_last_sound;}
+static void ABI native_menu_sound(unsigned id){menu_last_sound=id;}
+static void ABI native_menu_panel(uintptr_t w){(void)w;menu_panels++;}
+static void ABI native_menu_text(uintptr_t w,int palette,int flags,int x,int y,int width,const unsigned char*text){
+    (void)w;(void)palette;(void)flags;(void)x;(void)y;(void)width;
+    if(menu_text_count++&&strlen(menu_drawn)+1<sizeof(menu_drawn))strcat(menu_drawn,"|");
+    size_t at=strlen(menu_drawn);
+    while(*text&&at+1<sizeof(menu_drawn)){
+        unsigned char c=*text++;menu_drawn[at++]=c==1?' ':c>=0x2b&&c<=0x44?(char)('A'+c-0x2b):c>=0x45&&c<=0x5e?(char)('a'+c-0x45):'?';
+    }menu_drawn[at]=0;
+}
+static void ABI native_menu_nav(uintptr_t w){
+    uintptr_t input=*(uintptr_t*)(game_base+0x2e95940);unsigned count=*(uint16_t*)(w+0xf8),row=*(uint16_t*)(w+0xfe)/16u;
+    if(!input||!count)return;uint32_t pressed=*(uint32_t*)(input+8);
+    if(pressed&0x1000u)row=(row+count-1u)%count;
+    if(pressed&0x4000u)row=(row+1u)%count;
+    *(uint16_t*)(w+0xfe)=(uint16_t)(row*16u);
+}
 uintptr_t bridge_symbol(const char*n){
+    if(!strcmp(n,"NativeMenuText"))return (uintptr_t)native_menu_text;
+    if(!strcmp(n,"NativeMenuPanel"))return (uintptr_t)native_menu_panel;
+    if(!strcmp(n,"NativeMenuSound"))return (uintptr_t)native_menu_sound;
+    if(!strcmp(n,"NativeMenuNav"))return (uintptr_t)native_menu_nav;
     if(!strcmp(n,"NativeSinf"))return (uintptr_t)native_sinf;
     if(!strcmp(n,"NativeGuardCreate"))return (uintptr_t)native_guard_create;
     if(!strcmp(n,"NativeGuardMask"))return (uintptr_t)native_guard_mask;

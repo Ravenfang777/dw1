@@ -1,51 +1,60 @@
-KH1FM STYLES v57 / s396
+KH1FM STYLES v58 / s397
 
 INSTALL
-1. Close KH1. Disable v56 (or any older main Styles/Dual Wield package).
+1. Close KH1. Disable v57 (or any older main Styles/Dual Wield package).
    Keep standalone Terra/Aqua tests and the full KH2 Combat DLL disabled.
-2. Import this ZIP into OpenKH Mod Manager. Enable v57, Build, and launch
+2. Import this ZIP into OpenKH Mod Manager. Enable v58, Build, and launch
    with Panacea. Keep existing KH2FM resources/settings for older styles.
-3. Confirm s396 / v57 in kh1-dual-wield.log beside the executable.
+3. Confirm s397 / v58 in kh1-dual-wield.log beside the executable.
+   This native menu/Single F adapter targets the supplied Steam Global build.
 
-STYLES MENU
-Styles now appears directly below Customize. Its windows use KH1's native
-GREEN palette, including borders/shadows. Other screens retain their normal
-palette. Names, saved style IDs, the AP-free Styles view and normal native
-Abilities behavior are retained.
+STYLES SLOTS
+Styles remains directly below Customize and uses the normal blue menu palette.
+Primary shows the equipped style. Select it to list all eleven styles plus None.
+Confirming a style equips it exclusively; None returns to the normal moveset.
+Secondary and Tertiary show Empty and are reserved for future customization.
+They do not offer style choices or have an effect yet.
+Cancel from the picker returns to the slots without changing the selection;
+cancel from the slots returns to the party menu. Native button-swap settings apply.
+Normal Abilities retains its native abilities and AP, with custom styles hidden.
+Native equipment/items and AP are not used for the new reserved slots.
 
 SINGLE F AIR DASH
-The log confirms a landing reset followed by rejected animation admission.
-V57 retains the verified native Superglide binding across uses and checks its
-identity/layout instead of comparing playback/cache data with the unplayed file
-on every tap. The source animation is never written by this adapter.
-The finite movement timer runs for39 ticks at speed16 (distance624), even if
-Sora's falling animation already has a running clock. Native collision remains.
-Fresh airborne Square starts one dash. Landing alone rearms it. Releasing the
-button, completion, damage or changing styles cannot grant another use midair.
-Normal Glide remains usable. Native state/request changes still cancel a dash.
+A fresh airborne Square tap starts one dash. Sora keeps facing the initial
+stick direction throughout it; neutral stick uses his initial facing.
+Opposite stick input during the dash cannot turn him. Movement remains39 ticks
+at speed16, requested distance624, with native collision and Superglide visual.
+Landing alone refills the once-per-airtime use. Normal Glide remains available.
+L1/LB + Square and the active magic-shortcut menu do not dash or consume the
+use. Native casting retains its Square input. Release Square after a shortcut
+before making a genuine dash press. Damage/casting/end release the facing lock.
 
 TEST / REPORT
-Check that Styles is below Customize and green, then return to the party menu
-and normal Abilities to check their usual colors/AP display.
-For Single F: jump, tap Square, try another tap before landing, land, jump and
-tap Square again. Repeat several times; try a tap later during a long fall too.
-If the dash still fails, return the new kh1-dual-wield.log. Bounded messages now
-identify start, native commit, first movement and end.
+- In Styles, choose Primary and a style, then None. Secondary/Tertiary stay Empty.
+- Check normal Abilities and Equipment for their usual behavior and AP display.
+- With Single F, jump and cast with L1/LB + Square: magic should not dash.
+- Release the buttons, then tap airborne Square toward a direction. Move the
+  stick elsewhere during the dash: Sora should keep the initial facing.
+- Try another tap before landing, then land/jump/dash again several times.
+If an issue remains, send the new kh1-dual-wield.log and describe the action.
 
 RETAINED SETUP
-All other confirmed v55/v56 changes remain: short style names, Styles-only AP
-removal, Anti items with combat idle,75% aerial-dodge visual rate in A/C/E and
-Dual C/D, Single E's smoother second ground hit, existing combos/magic/Guard
+Other confirmed changes remain: short style names, Styles-only AP removal,
+Anti items with combat idle,75% aerial-dodge visual rate in Singles A/C/E and
+Duals C/D, Single E's smoother second ground hit, existing combos/magic/Guard
 and jump settings. Both generated animation payload headers are unchanged.
 
 VALIDATION
-627 Rust tests in30 nonempty suites and94 final-PE checks pass:47 F/menu and47 E.
-The original native palette-selection block is executed for green and normal
-fallback. Tests cover source-cache changes between dashes, inherited/looping
-animation clocks, repeated landings, exact distance and native cursor IDs.
-The delivered v56 DLL fails the two new dash reproduction cases.
-Native rendering, Windows startup and final in-game behavior are not run here.
+627 Rust tests in30 nonempty suites and100 final-PE checks pass:53 F/menu,47 E.
+Original native focus, selected-row, confirm and close-chain routines execute
+in the harness. Tests cover turning, magic shortcuts, slot selection/None,
+reserved slots, cancellation, swapped buttons, native abilities/AP, source reuse,
+exact dash distance and repeated landings. The delivered v57 binary fails the
+new facing and shortcut reproduction cases. Windows x64 release builds with
+four exports/eight imported DLLs. Rendering/navigation and Rust dispatch are
+mocked; Windows startup and final in-game visuals/feel are not run here.
 Source, rebuild inputs, incremental bundle, licenses and receipts are included.
+Older validation files are historical; current results are in validation.json.
 
 UNINSTALL
 Set remove_dual_wield=on in kh1-dual-wield.ini, load/save with this DLL, close

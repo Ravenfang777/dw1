@@ -1,9 +1,9 @@
-title: KH1FM Styles v57 - Green Styles Menu and Air Dash Repair
+title: KH1FM Styles v58 - Style Slots and Single F Dash Facing
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Green Styles screen below Customize. Repairs Single F native animation
-  reuse and makes finite dash travel independent of its animation clock.
-  One Square dash per airtime; landing rearms it. Prior style setup retained.
+  Equipment-style Primary, Secondary and Tertiary slots in Styles below Customize.
+  Primary selects a combat style; later customization slots stay empty.
+  Single F dash locks initial facing and excludes L1/LB magic shortcuts.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy
