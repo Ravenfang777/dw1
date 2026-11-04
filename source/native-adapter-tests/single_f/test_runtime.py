@@ -367,8 +367,123 @@ class Host(BaseHost):
   return bridge.bridge_menu_text().decode()
  def ui_choose(self,w,row):
   C.c_ushort.from_address(w+0xfc).value=max(0,row-7)*16;C.c_ushort.from_address(w+0xfe).value=min(row,7)*16;return self.ui_page_frame(w,0x20)
+ def intrinsic_seed(self):
+  if not hasattr(self,'ui_raw'):self.ui_seed()
+  put(self.game+0x284be0,self.ui_raw(0x284be0,0x4b))
+ def intrinsic_init(self,enabled=True):return bridge.call_ptr1(self.symbols['IntrinsicAbilitiesInit'],int(enabled))
+ def intrinsic_frame(self,enabled=True):bridge.call_void1(self.symbols['IntrinsicAbilitiesFrame'],int(enabled))
+ def ability_count(self,id,member=0):return bridge.bridge_ability_count(self.game+0x284be0,id,member)
 
 class RuntimeTests(unittest.TestCase):
+    def test_native_save_ability_append_stops_at_48_for_sora_and_shared(self):
+        h=Host();h.ui_seed();put(h.game+0x284e10,h.ui_raw(0x284e10,0x4e))
+        for member,offset in [(0,0x44),(11,0x599)]:
+            put(h.save+offset,bytes(48));put(h.save+offset+48,b'\x5a')
+            for i in range(48):bridge.call_ptr2(h.game+0x284e10,6,member)
+            self.assertEqual(C.string_at(h.save+offset,48),bytes([0x86]*48))
+            before=C.string_at(h.save+offset,49);bridge.call_ptr2(h.game+0x284e10,7,member);self.assertEqual(C.string_at(h.save+offset,49),before)
+
+    def test_native_7bit_definition_lookup_resolves_enabled_and_disabled_id127(self):
+        h=Host();h.intrinsic_seed();put(h.game+0x28f8f0,h.ui_raw(0x28f8f0,0x19));table=h.buffer(bytes(127*12));w64(h.game+0x2d36d48,table)
+        for raw in [127,255]:self.assertEqual(bridge.call_ptr1(h.game+0x28f8f0,raw),table+126*12)
+        put(h.save+0x44,bytes([127,255])+bytes(46));self.assertTrue(h.intrinsic_init());self.assertEqual(h.ability_count(127),1)
+
+    def test_intrinsic_seven_abilities_work_without_any_learned_entry(self):
+        h=Host();h.intrinsic_seed();put(h.save+0x44,bytes(48));put(h.save+0x599,bytes(48));before=C.string_at(h.save,0x1000)
+        self.assertTrue(h.intrinsic_init())
+        for id in [21,22,26]:self.assertEqual(h.ability_count(id),1)
+        for id in [1,2,3,4]:self.assertEqual(h.ability_count(id,11),1)
+        self.assertEqual(C.string_at(h.save,0x1000),before)
+
+    def test_intrinsic_compaction_preserves_other_entries_flags_duplicates_and_save_fields(self):
+        h=Host();h.intrinsic_seed();put(h.save+0x44,bytes([21,0x95,22,0x96,26,0x9a,6,6,0x87,117])+bytes(38));put(h.save+0x599,bytes([1,0x81,2,0x82,3,0x83,4,0x84,9,0x8a])+bytes(38))
+        before=bytearray(C.string_at(h.save,0x1000));self.assertTrue(h.intrinsic_init());after=bytearray(C.string_at(h.save,0x1000))
+        self.assertEqual(h.abilities()[:5],bytes([6,6,0x87,117,0]));self.assertEqual(C.string_at(h.save+0x599,48),bytes([9,0x8a])+bytes(46))
+        for off in [0x44,0x599]:before[off:off+48]=bytes(48);after[off:off+48]=bytes(48)
+        self.assertEqual(after,before);h.intrinsic_frame();self.assertEqual(h.ability_count(6),2)
+
+    def test_intrinsic_counter_relocated_fallback_preserves_other_party_and_shared_counts(self):
+        h=Host();h.intrinsic_seed();put(h.save+0x44,bytes([21,6,6,0x86,117])+bytes(43));put(h.save+0x599,bytes([1,9,9,0x89])+bytes(44))
+        for member in [1,9]:put(h.save+member*0x74+0x44,bytes([21,21,0x96,26])+bytes(44))
+        self.assertTrue(h.intrinsic_init())
+        self.assertEqual(h.ability_count(6),2);self.assertEqual(h.ability_count(117),1);self.assertEqual(h.ability_count(9,11),2)
+        for member in [1,9]:
+            self.assertEqual(h.ability_count(21,member),2);self.assertEqual(h.ability_count(22,member),0);self.assertEqual(h.ability_count(26,member),1)
+        for member in [0,1]:self.assertEqual(h.ability_count(1,member),0)
+        self.assertEqual(h.ability_count(1,10),1)
+
+    def test_intrinsic_native_ap_accounting_refunds_only_sora_builtin_entries(self):
+        h=Host();h.intrinsic_seed();put(h.game+0x2e8660,h.ui_raw(0x2e8660,0x86));put(h.game+0x28f8f0,h.ui_raw(0x28f8f0,0x19))
+        table=bytearray(127*12)
+        for id,cost in [(21,2),(22,1),(26,1),(6,3)]:table[(id-1)*12]=cost
+        w64(h.game+0x2d36d48,h.buffer(table));w32(h.game+0x2e942c4,30);w32(h.game+0x2e943c4,30)
+        put(h.save+0x44,bytes([21,22,26,6])+bytes(44));put(h.save+0x74+0x44,bytes([21,22,26])+bytes(45))
+        ap=lambda member:bridge.call_ptr1(h.game+0x2e8660,member)
+        self.assertEqual(ap(0),23);self.assertEqual(ap(1),26);self.assertTrue(h.intrinsic_init())
+        self.assertEqual(ap(0),27);self.assertEqual(ap(1),26)
+
+    def test_intrinsic_native_ability_cache_builds_guard_roll_and_shared_movement_bits(self):
+        h=Host();h.intrinsic_seed();put(h.save+0x44,bytes(48));self.assertTrue(h.intrinsic_init())
+        put(h.game+0x2a6380,h.ui_raw(0x2a6380,0x548));bridge.call_void1(h.game+0x2a6380,0)
+        self.assertEqual(r32(h.game+0x2d5ec10),0x3f0)
+        # Native restrictions still gate physical actions; the mod does not OR
+        # cache bits after the original cache builder has made its decision.
+        w32(h.game+0x298c9a0,1);bridge.call_void1(h.game+0x2a6380,0)
+        self.assertEqual(r32(h.game+0x2d5ec10),0x40)
+
+    def test_intrinsic_native_scan_cache_sets_the_original_actor_flag(self):
+        h=Host();h.intrinsic_seed();self.assertTrue(h.intrinsic_init());work=h.glide_work;w32(work+0x184,0x400)
+        # Execute the original Scan cache block with its native query and
+        # actor-work decode, preserving the host's nonvolatile registers.
+        put(h.game+0x2a64a2,h.ui_raw(0x2a64a2,0x2c));put(h.game+0x2a64ce,bytes.fromhex('4883c4205e5f5bc3'))
+        shim=h.buffer(bytes.fromhex('5357564883ec204889cf89d6b91a00000048b8')+struct.pack('<Q',h.game+0x2a64a2)+bytes.fromhex('ffe0'))
+        bridge.call_ptr2(shim,h.actor,0);self.assertEqual(r32(work+0x184),0x420)
+
+    def test_intrinsic_full_48_entry_lists_compact_without_writing_following_fields(self):
+        h=Host();h.intrinsic_seed();put(h.save+0x44,bytes([6]*45+[21,22,26]));put(h.save+0x599,bytes([9]*44+[1,2,3,4]));put(h.save+0x74,b'\xa5');put(h.save+0x5c9,b'\x5a')
+        self.assertTrue(h.intrinsic_init());self.assertEqual(h.abilities(),bytes([6]*45)+bytes(3));self.assertEqual(C.string_at(h.save+0x599,48),bytes([9]*44)+bytes(4))
+        self.assertEqual(C.string_at(h.save+0x74,1),b'\xa5');self.assertEqual(C.string_at(h.save+0x5c9,1),b'\x5a')
+
+    def test_intrinsic_full_list_without_targets_and_malformed_lists_are_preserved(self):
+        for sora,shared in [(bytes([6]*48),bytes([9]*48)),(bytes([21,0,6])+bytes(45),bytes(48)),(bytes([21])+bytes(47),bytes([1,0,9])+bytes(45))]:
+            h=Host();h.intrinsic_seed();put(h.save+0x44,sora);put(h.save+0x599,shared);before=C.string_at(h.save,0x1000)
+            self.assertTrue(h.intrinsic_init());self.assertEqual(C.string_at(h.save,0x1000),before)
+
+    def test_intrinsic_admission_checks_the_whole_counter_and_failed_install_keeps_save(self):
+        for offset in [0,0x29,0x4a]:
+            h=Host();h.intrinsic_seed();put(h.save+0x44,bytes([21,22,26])+bytes(45));put(h.game+0x284be0+offset,bytes([h.ui_raw(0x284be0+offset,1)[0]^1]))
+            before=C.string_at(h.save,0x1000);code=C.string_at(h.game+0x284be0,0x4b)
+            self.assertFalse(h.intrinsic_init());h.intrinsic_frame();self.assertEqual(C.string_at(h.save,0x1000),before);self.assertEqual(C.string_at(h.game+0x284be0,0x4b),code)
+
+    def test_intrinsic_allocation_and_protection_failure_leave_native_counter_and_lists(self):
+        for alloc,protect in [(1,0),(0,1)]:
+            h=Host();h.intrinsic_seed();put(h.save+0x44,bytes([21,22,26])+bytes(45));before=C.string_at(h.save,0x1000)
+            bridge.bridge_magic_modes(1,alloc,protect);self.assertFalse(h.intrinsic_init());h.intrinsic_frame()
+            self.assertEqual(C.string_at(h.save,0x1000),before);self.assertEqual(C.string_at(h.game+0x284be0,0x4b),h.ui_raw(0x284be0,0x4b))
+
+    def test_intrinsic_uninstall_restores_native_entries_without_spending_ap(self):
+        h=Host();h.intrinsic_seed();put(h.save+0x44,bytes([6])+bytes(47));put(h.save+0x599,bytes([9])+bytes(47));self.assertTrue(h.intrinsic_init());h.intrinsic_frame(False)
+        self.assertEqual(h.abilities()[:5],bytes([6,0x95,0x96,0x9a,0]));self.assertEqual(C.string_at(h.save+0x599,6),bytes([9,1,2,3,4,0]))
+        self.assertEqual(h.ability_count(21),0);self.assertEqual(h.ability_count(1,11),1)
+        before=C.string_at(h.save,0x1000);h.intrinsic_frame(False);self.assertEqual(C.string_at(h.save,0x1000),before)
+        h.intrinsic_frame(True);self.assertEqual(h.abilities()[:2],bytes([6,0]));self.assertEqual(h.ability_count(21),1)
+
+    def test_intrinsic_uninstall_never_evicts_a_full_native_list(self):
+        h=Host();h.intrinsic_seed();put(h.save+0x44,bytes([6]*47+[0]));self.assertTrue(h.intrinsic_init());before=h.abilities();h.intrinsic_frame(False)
+        self.assertEqual(h.abilities(),before);self.assertIn(b'could not be restored',bridge.bridge_log());self.assertEqual(h.ability_count(21),0)
+
+    def test_intrinsic_switches_save_identity_and_reclaims_reawarded_entries(self):
+        h=Host();h.intrinsic_seed();self.assertTrue(h.intrinsic_init());old=C.string_at(h.save,0x1000)
+        new=h.buffer(bytes(0x1000));put(new+4,b'\x01\x02\x03');put(new+0x44,bytes([26,6])+bytes(46));put(new+0x599,bytes([4,9])+bytes(46));w64(h.game+0x2868ba0,new)
+        h.intrinsic_frame();self.assertEqual(C.string_at(new+0x44,3),bytes([6,0,0]));self.assertEqual(C.string_at(new+0x599,3),bytes([9,0,0]));self.assertEqual(C.string_at(h.save,0x1000),old)
+        put(new+0x45,bytes([0x95]));h.intrinsic_frame();self.assertEqual(C.string_at(new+0x44,3),bytes([6,0,0]))
+        put(new+4,b'\0');self.assertEqual(h.ability_count(21),0)
+
+    def test_intrinsic_cleanup_and_customize_keep_one_stance_and_native_passives(self):
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());h.intrinsic_seed();put(h.save+0x44,bytes([21,22,26,6,117])+bytes(43));put(h.save+0x599,bytes([1,2,3,4])+bytes(44));self.assertTrue(h.intrinsic_init())
+        h.ui_call('StylesMenuFrame');root=h.ui_window();h.ui_call('styles_enter',root);parent=r64(h.symbols['styles_custom_page']);h.ui_page_frame(parent);h.ui_page_frame(parent,0x4000);h.ui_page_frame(parent,0x20)
+        self.assertEqual(C.string_at(h.symbols['styles_shadow']+0x44,3),bytes([6,0,0]));self.assertEqual(h.abilities()[:3],bytes([6,117,0]));self.assertEqual(h.ability_count(21),1)
+
     def test_slide_fresh_square_plays009_and_release_does_not_shorten_it(self):
         for bank in [98,60]:
             h=Host(slot=bank,encoded_fields=True,air=True);h.prepare_slide();h.tap_slide()

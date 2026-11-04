@@ -1,12 +1,13 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v59 commit: 6bd251c28d7ebda2637784c50d1c582b0d0770d1
-v60 commit: 9f54b19ac220fd46b9e7181a3f584622919100b3
-v60 source tree: 5a28c33274534499a4f6612207845e0f4ffad7ab
-Styles_v60.patch contains60 derivative commits, applied with git am.
-Styles_v60_from_v59.bundle requires the exact previous v59 commit above.
-Both private payload headers match delivered v59 inputs byte for byte.
-All combat/action sources are unchanged from v59.
+Previous delivered v60 commit: 9f54b19ac220fd46b9e7181a3f584622919100b3
+v61 commit: eb6a187d293c1e9a34b4f5132db473b2a3400d23
+v61 source tree: 561d8c11b5914372a0b7a1e40f831f1766631064
+Styles_v61.patch contains61 derivative commits, applied with git am.
+Styles_v61_from_v60.bundle requires the exact previous v60 commit above.
+Both private payload headers match delivered v60 inputs byte for byte.
+Both action-controller headers and animation payloads are unchanged from v60.
+The Terra adapter includes the new independent built-in-ability module.
 The full source patch reconstructs the same final tree as the delivery history;
 source-apply.log records the independent checkout comparison.
 No original executable, model, extracted table or decompiled code enters Git.

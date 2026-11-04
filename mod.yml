@@ -1,9 +1,8 @@
-title: KH1FM Styles v60 - Customize Passives and Native Panels
+title: KH1FM Styles v61 - Seven Built-in Abilities
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Customize contains Stance, Passives, Limits and Outfits.
-  Abilities moves from the main menu into Passives with native AP behavior.
-  Stance weapon and magic metadata uses aligned native AP panels.
+  Scan, Guard, Dodge Roll and shared movement are always available without AP
+  or learned slots. Retains Customize Stance, Passives, Limits and Outfits.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy
