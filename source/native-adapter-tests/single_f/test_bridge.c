@@ -146,29 +146,62 @@ static uint32_t ABI native_set_state(uintptr_t actor,uint32_t state){
 float bridge_move(uintptr_t f,uintptr_t actor,float*out){return ((float(ABI*)(uintptr_t,float*))f)(actor,out);}
 unsigned bridge_move_calls(void){return move_calls;}
 static float ABI native_sinf(float x){return sinf(x);}
-static char menu_drawn[4096];static unsigned menu_text_count,menu_panels,menu_last_sound;
-void bridge_menu_reset(void){menu_drawn[0]=0;menu_text_count=menu_panels=menu_last_sound=0;}
+static char menu_drawn[4096];static unsigned menu_text_count,menu_panels,menu_last_sound,menu_rects,menu_glyphs,menu_scrolls;
+static int menu_clip_on,menu_clip_top,menu_clip_bottom,menu_rect_data[32][5];
+void bridge_menu_reset(void){menu_drawn[0]=0;menu_text_count=menu_panels=menu_last_sound=menu_rects=menu_glyphs=menu_scrolls=0;menu_clip_on=0;}
 const char* bridge_menu_text(void){return menu_drawn;}
 unsigned bridge_menu_panel_count(void){return menu_panels;}
 unsigned bridge_menu_sound(void){return menu_last_sound;}
+unsigned bridge_menu_rect_count(void){return menu_rects;}
+unsigned bridge_menu_glyph_count(void){return menu_glyphs;}
+unsigned bridge_menu_scroll_count(void){return menu_scrolls;}
+int bridge_menu_rect_word(unsigned row,unsigned field){return row<menu_rects&&field<5?menu_rect_data[row][field]:-1;}
+static int menu_clipped(int y){return menu_clip_on&&(y>=menu_clip_bottom||y+26<=menu_clip_top);}
 static void ABI native_menu_sound(unsigned id){menu_last_sound=id;}
 static void ABI native_menu_panel(uintptr_t w){(void)w;menu_panels++;}
 static void ABI native_menu_text(uintptr_t w,int palette,int flags,int x,int y,int width,const unsigned char*text){
     (void)w;(void)palette;(void)flags;(void)x;(void)y;(void)width;
+    if(menu_clipped(y))return;
     if(menu_text_count++&&strlen(menu_drawn)+1<sizeof(menu_drawn))strcat(menu_drawn,"|");
     size_t at=strlen(menu_drawn);
     while(*text&&at+1<sizeof(menu_drawn)){
-        unsigned char c=*text++;menu_drawn[at++]=c==1?' ':c>=0x2b&&c<=0x44?(char)('A'+c-0x2b):c>=0x45&&c<=0x5e?(char)('a'+c-0x45):'?';
+        unsigned char c=*text++;menu_drawn[at++]=c==1?' ':c>=0x21&&c<=0x2a?(char)('0'+c-0x21):c>=0x2b&&c<=0x44?(char)('A'+c-0x2b):c>=0x45&&c<=0x5e?(char)('a'+c-0x45):'?';
     }menu_drawn[at]=0;
 }
+static void ABI native_menu_pill(uintptr_t w,int kind,int flags,int x,int y,int width,int text_x,uintptr_t color,const unsigned char*text,int font){
+    (void)kind;(void)color;(void)font;if(menu_clipped(y))return;menu_panels++;
+    native_menu_text(w,0,flags,text_x,y,width-x+text_x,text);
+}
+static void ABI native_menu_rect(uintptr_t w,int x,int y,int width,int height,uint32_t color){
+    (void)w;if(menu_clipped(y)||menu_rects>=32)return;
+    int*row=menu_rect_data[menu_rects++];row[0]=x;row[1]=y;row[2]=width;row[3]=height;row[4]=(int)color;
+}
+static void ABI native_menu_glyph(uintptr_t w,int x,int y,int width,int code,unsigned alpha){
+    (void)w;(void)x;(void)width;(void)code;(void)alpha;if(!menu_clipped(y))menu_glyphs++;
+}
+static void ABI native_menu_clip(uintptr_t w){
+    menu_clip_on=1;menu_clip_top=(*(int32_t*)(w+0xe0)-0x7400)/16;
+    menu_clip_bottom=menu_clip_top+*(int16_t*)(w+0xfa)**(int16_t*)(w+0xf0)/16-*(int16_t*)(w+0xf4)/16;
+}
+static void ABI native_menu_unclip(void){menu_clip_on=0;}
+static void ABI native_menu_scroll(uintptr_t w){if(*(uint16_t*)(w+0xf8)>*(uint16_t*)(w+0xfa))menu_scrolls++;}
 static void ABI native_menu_nav(uintptr_t w){
-    uintptr_t input=*(uintptr_t*)(game_base+0x2e95940);unsigned count=*(uint16_t*)(w+0xf8),row=*(uint16_t*)(w+0xfe)/16u;
+    uintptr_t input=*(uintptr_t*)(game_base+0x2e95940);unsigned count=*(uint16_t*)(w+0xf8),visible=*(uint16_t*)(w+0xfa),top=*(uint16_t*)(w+0xfc)/16u,row=top+*(uint16_t*)(w+0xfe)/16u;
     if(!input||!count)return;uint32_t pressed=*(uint32_t*)(input+8);
     if(pressed&0x1000u)row=(row+count-1u)%count;
     if(pressed&0x4000u)row=(row+1u)%count;
-    *(uint16_t*)(w+0xfe)=(uint16_t)(row*16u);
+    if(pressed&0x400u){row=row>visible?row-visible:0;}
+    if(pressed&0x800u){row=row+visible<count?row+visible:count-1u;}
+    if(row<top)top=row;if(row>=top+visible)top=row-visible+1u;
+    *(uint16_t*)(w+0xfc)=(uint16_t)(top*16u);*(uint16_t*)(w+0xfe)=(uint16_t)((row-top)*16u);
 }
 uintptr_t bridge_symbol(const char*n){
+    if(!strcmp(n,"NativeMenuPill"))return (uintptr_t)native_menu_pill;
+    if(!strcmp(n,"NativeMenuRect"))return (uintptr_t)native_menu_rect;
+    if(!strcmp(n,"NativeMenuGlyph"))return (uintptr_t)native_menu_glyph;
+    if(!strcmp(n,"NativeMenuClip"))return (uintptr_t)native_menu_clip;
+    if(!strcmp(n,"NativeMenuUnclip"))return (uintptr_t)native_menu_unclip;
+    if(!strcmp(n,"NativeMenuScroll"))return (uintptr_t)native_menu_scroll;
     if(!strcmp(n,"NativeMenuText"))return (uintptr_t)native_menu_text;
     if(!strcmp(n,"NativeMenuPanel"))return (uintptr_t)native_menu_panel;
     if(!strcmp(n,"NativeMenuSound"))return (uintptr_t)native_menu_sound;

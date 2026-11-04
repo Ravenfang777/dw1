@@ -1,9 +1,9 @@
-title: KH1FM Styles v58 - Style Slots and Single F Dash Facing
+title: KH1FM Styles v59 - Customize Stance Menu
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Equipment-style Primary, Secondary and Tertiary slots in Styles below Customize.
-  Primary selects a combat style; later customization slots stay empty.
-  Single F dash locks initial facing and excludes L1/LB magic shortcuts.
+  Customize follows Items; native Customize is relabeled Shortcuts.
+  Abilities-style Stance list with Type names and weapon/magic columns.
+  Limit, Outfit and ??? are empty categories for future customization.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

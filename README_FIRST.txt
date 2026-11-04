@@ -1,58 +1,74 @@
-KH1FM STYLES v58 / s397
+KH1FM STYLES v59 / s398 - CUSTOMIZE STANCE MENU
 
 INSTALL
-1. Close KH1. Disable v57 (or any older main Styles/Dual Wield package).
+1. Close KH1. Disable v58 (or any older main Styles/Dual Wield package).
    Keep standalone Terra/Aqua tests and the full KH2 Combat DLL disabled.
-2. Import this ZIP into OpenKH Mod Manager. Enable v58, Build, and launch
-   with Panacea. Keep existing KH2FM resources/settings for older styles.
-3. Confirm s397 / v58 in kh1-dual-wield.log beside the executable.
+2. Import this ZIP into OpenKH Mod Manager. Enable v59, Build, and launch
+   with Panacea. Keep existing KH2FM resources/settings for older stances.
+3. Confirm s398 / STANCES v59 in kh1-dual-wield.log beside the executable.
    This native menu/Single F adapter targets the supplied Steam Global build.
 
-STYLES SLOTS
-Styles remains directly below Customize and uses the normal blue menu palette.
-Primary shows the equipped style. Select it to list all eleven styles plus None.
-Confirming a style equips it exclusively; None returns to the normal moveset.
-Secondary and Tertiary show Empty and are reserved for future customization.
-They do not offer style choices or have an effect yet.
-Cancel from the picker returns to the slots without changing the selection;
-cancel from the slots returns to the party menu. Native button-swap settings apply.
-Normal Abilities retains its native abilities and AP, with custom styles hidden.
-Native equipment/items and AP are not used for the new reserved slots.
+MENU
+Items -> Customize -> Equipment -> Abilities -> Shortcuts, then native options.
+The new Customize is the previous Styles entry. The original native Customize
+is only visually renamed Shortcuts; it retains its original functionality.
 
-SINGLE F AIR DASH
-A fresh airborne Square tap starts one dash. Sora keeps facing the initial
-stick direction throughout it; neutral stick uses his initial facing.
-Opposite stick input during the dash cannot turn him. Movement remains39 ticks
-at speed16, requested distance624, with native collision and Superglide visual.
-Landing alone refills the once-per-airtime use. Normal Glide remains available.
-L1/LB + Square and the active magic-shortcut menu do not dash or consume the
-use. Native casting retains its Square input. Release Square after a shortcut
-before making a genuine dash press. Damage/casting/end release the facing lock.
+The new Customize screen follows the supplied mockup's Abilities layout:
+- Categories: Stance, Limit, Outfit, ???.
+- Stance: eleven types, eight visible rows, native scrolling/scrollbar and
+  equipped marker. Matching weapon and magic boxes replace the AP display.
+- Limit, Outfit and ???: no entries yet and no current effect.
+
+Open Stance to select a type. Confirm it to equip it exclusively. Confirm the
+currently equipped type again to turn the stance off, like a native ability.
+Cancel returns to the categories; cancel again returns to the party menu.
+The list keeps its scroll position when returning from the categories.
+
+RENAMED STANCES              WEAPONS   MAGIC
+Single A -> Type A           Single    I
+Single B -> Type B           Single    I
+Single C -> Type C           Single    I
+Single D -> Type D           Single    I
+Single E -> Type E           Single    I
+Single F -> Type F           Single    I
+Dual A   -> Type H?          Dual      I
+Dual B   -> Type I?          Dual      I
+Dual C   -> Type K?          Dual      I
+Dual D   -> Type L?          Dual      I
+Anti     -> Type M?          None      0
+
+The question marks are intentional. Magic markers:0 unavailable, I KH1,
+II KH2. Current armed stances execute KH1 magic, including those which overlay
+KH2 casting poses/effects. They therefore show I. II is supported for a future
+actual KH2-magic stance; this revision does not change spell execution.
+Type M? still allows items and blocks magic, as before.
+
+SAVES / RETAINED BEHAVIOR
+Saved stance IDs and the single hidden style token are unchanged. Normal
+Abilities still hides custom stances and retains native AP costs/totals.
+Equipment, inventory, shortcut assignments and other-party abilities are not
+repurposed. Empty categories do not reserve save bytes yet.
+All v58 combat behavior is retained, including Type F's fixed-facing air dash,
+L1/LB + Square shortcut exclusion and once-per-airtime use. Both generated
+animation payload headers and the F action/controller source are unchanged.
 
 TEST / REPORT
-- In Styles, choose Primary and a style, then None. Secondary/Tertiary stay Empty.
-- Check normal Abilities and Equipment for their usual behavior and AP display.
-- With Single F, jump and cast with L1/LB + Square: magic should not dash.
-- Release the buttons, then tap airborne Square toward a direction. Move the
-  stick elsewhere during the dash: Sora should keep the initial facing.
-- Try another tap before landing, then land/jump/dash again several times.
-If an issue remains, send the new kh1-dual-wield.log and describe the action.
-
-RETAINED SETUP
-Other confirmed changes remain: short style names, Styles-only AP removal,
-Anti items with combat idle,75% aerial-dodge visual rate in Singles A/C/E and
-Duals C/D, Single E's smoother second ground hit, existing combos/magic/Guard
-and jump settings. Both generated animation payload headers are unchanged.
+Check the root order, new titles and the normal Shortcuts configuration.
+Open Stance, scroll through all eleven names, equip one, toggle it off and
+select another. Both information boxes should stay aligned with each row.
+Check that Limit, Outfit and ??? contain no stance entries. Check normal
+Abilities/AP and Equipment, then confirm your usual combat still works.
+If an issue remains, return the new kh1-dual-wield.log and a screenshot or
+short video of the action/layout concerned.
 
 VALIDATION
-627 Rust tests in30 nonempty suites and100 final-PE checks pass:53 F/menu,47 E.
-Original native focus, selected-row, confirm and close-chain routines execute
-in the harness. Tests cover turning, magic shortcuts, slot selection/None,
-reserved slots, cancellation, swapped buttons, native abilities/AP, source reuse,
-exact dash distance and repeated landings. The delivered v57 binary fails the
-new facing and shortcut reproduction cases. Windows x64 release builds with
-four exports/eight imported DLLs. Rendering/navigation and Rust dispatch are
-mocked; Windows startup and final in-game visuals/feel are not run here.
+627 Rust tests in30 nonempty suites and104 final-PE checks pass:57 F/menu,47 E.
+Original native paging reaches the last entries and wraps. Native index,
+offset, confirm, normalization and close routines also execute. Tests cover
+root cursor IDs, title routing, row alignment, selection/unequip, reserved
+categories, save boundaries and prior combat regressions. Windows x64 builds
+with four exports/eight imported DLLs. Rendering, Windows startup and Rust
+dispatch are mocked; final in-game appearance/feel remain to be tested.
 Source, rebuild inputs, incremental bundle, licenses and receipts are included.
 Older validation files are historical; current results are in validation.json.
 

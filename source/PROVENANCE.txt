@@ -1,12 +1,12 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v57 commit: 5383ad3838e8c1adc5a227a17d33eec2b4f5f46c
-v58 commit: 17b7b00d6faa39ef7ab679accf85f83e89e21c5d
-v58 source tree: dd47b2b2251371c4056f6846937ec805b44ed115
-Styles_v58.patch contains58 derivative commits, applied with git am.
-Styles_v58_from_v57.bundle requires the exact previous v57 commit above.
-Both private payload headers match the delivered v57 build inputs byte for byte.
-The full source patch reconstructs the same final tree as the original delivery
-history; source-apply.log records the independent checkout comparison.
-Terra v4 and Aqua v21 source origins/credits remain in the included older notes.
+Previous delivered v58 commit: 17b7b00d6faa39ef7ab679accf85f83e89e21c5d
+v59 commit: 6bd251c28d7ebda2637784c50d1c582b0d0770d1
+v59 source tree: 4332a0143840500999ba0e91605682c0118d88e0
+Styles_v59.patch contains59 derivative commits, applied with git am.
+Styles_v59_from_v58.bundle requires the exact previous v58 commit above.
+Both private payload headers match the delivered v58 inputs byte for byte.
+The native F action/controller source is also unchanged from v58.
+The full source patch reconstructs the same final tree as the delivery history;
+source-apply.log records the independent checkout comparison.
 No original executable, model, extracted table or decompiled code enters Git.

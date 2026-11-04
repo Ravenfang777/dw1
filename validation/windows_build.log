@@ -1,3 +1,5 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
    Compiling kh1-hook v0.1.0 (/workspace/scratch/ac59123af99a/styles_v56_work/crates/kh1-hook)
 warning: unused import: `shots_step`
   --> crates/kh1-hook/src/win/form.rs:96:59
@@ -8620,4 +8622,4 @@ warning: function `GetWindowThreadProcessId` is never used
    |            ^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: `kh1-hook` (lib) generated 1384 warnings (run `cargo fix --lib -p kh1-hook` to apply 10 suggestions)
-    Finished `release` profile [optimized] target(s) in 15.97s
+    Finished `release` profile [optimized] target(s) in 10.95s
