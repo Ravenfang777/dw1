@@ -30,6 +30,8 @@ for name,args,ret in [('bridge_menu_reset',[],None),('bridge_menu_text',[],C.c_c
 for name,args,ret in [('bridge_gpu_reset',[],None),('bridge_gpu_count',[],C.c_uint),('bridge_gpu_packet',[C.c_uint],C.c_size_t)]:
     f=getattr(bridge,name);f.argtypes=args;f.restype=ret
 bridge.call_panel.argtypes=[C.c_size_t,C.c_size_t,C.c_int,C.c_int,C.c_uint];bridge.call_panel.restype=None
+bridge.bridge_numbered_saved.argtypes=[];bridge.bridge_numbered_saved.restype=C.c_uint64
+bridge.bridge_numbered_save_calls.argtypes=[];bridge.bridge_numbered_save_calls.restype=C.c_uint
 libc=C.CDLL(None);libc.mmap.argtypes=[C.c_void_p,C.c_size_t,C.c_int,C.c_int,C.c_int,C.c_long];libc.mmap.restype=C.c_void_p
 
 libc.munmap.argtypes=[C.c_void_p,C.c_size_t];libc.munmap.restype=C.c_int
@@ -352,10 +354,10 @@ class Host(BaseHost):
   if ok:
    # Rendering/navigation are mocks; real focus, selected-row, confirmation,
    # and close-chain leaf routines execute from the admitted native EXE.
-   for r,n in [(0x311850,0x150),(0x2e5a40,0x2e3),(0x2e2de0,5),(0x2e2e40,5)]:put(self.game+r,self.ui_raw(r,n))
+   for r,n in [(0x311850,0x150),(0x2e5a40,0x2e3),(0x2e2de0,5),(0x2e2e40,5),(0x28f8f0,0x19),(0x2e8120,0x20),(0x2e8660,0x86)]:put(self.game+r,self.ui_raw(r,n))
    for r,n in [(0x2e5220,34),(0x2ef470,26),(0x2f0340,223),(0x2e3d10,50),(0x2ef440,48),(0x2ef550,11),(0x2ef560,47),(0x2f0510,125)]:put(self.game+r,self.ui_raw(r,n))
    put(self.game+0x2d9920,b'\xc3')
-   for r,name in [(0x2ebcd0,b'NativeMenuPlainText'),(0x2f2430,b'NativeMenuApPanel'),(0x2e7d20,b'NativeMenuPanel'),(0x17a040,b'NativeMenuSound'),(0x2ef670,b'NativeMenuNav'),(0x2f3810,b'NativeMenuPill'),(0x2f3a80,b'NativeMenuRect'),(0x2d5da0,b'NativeMenuGlyph'),(0x2f0cd0,b'NativeMenuClip'),(0x2f0790,b'NativeMenuUnclip'),(0x2f4d10,b'NativeMenuScroll')]:
+   for r,name in [(0x38adc0,b'NativeDecode'),(0x2ebcd0,b'NativeMenuPlainText'),(0x2f2430,b'NativeMenuApPanel'),(0x2e7d20,b'NativeMenuPanel'),(0x17a040,b'NativeMenuSound'),(0x2ef670,b'NativeMenuNav'),(0x2f3810,b'NativeMenuPill'),(0x2f3a80,b'NativeMenuRect'),(0x2d5da0,b'NativeMenuGlyph'),(0x2f0cd0,b'NativeMenuClip'),(0x2f0790,b'NativeMenuUnclip'),(0x2f4d10,b'NativeMenuScroll')]:
     put(self.game+r,b'\x48\xb8'+struct.pack('<Q',bridge.bridge_symbol(name))+b'\xff\xe0')
    self.ui_pad=self.buffer(bytes(24));w64(self.game+0x2e95940,self.ui_pad);w32(self.game+0x5456a0,0x20);w32(self.game+0x5456a4,0x40)
   return ok
@@ -370,11 +372,107 @@ class Host(BaseHost):
  def intrinsic_seed(self):
   if not hasattr(self,'ui_raw'):self.ui_seed()
   put(self.game+0x284be0,self.ui_raw(0x284be0,0x4b))
+  put(self.game+0x38adc0,b'\x48\xb8'+struct.pack('<Q',bridge.bridge_symbol(b'NativeDecode'))+b'\xff\xe0')
  def intrinsic_init(self,enabled=True):return bridge.call_ptr1(self.symbols['IntrinsicAbilitiesInit'],int(enabled))
  def intrinsic_frame(self,enabled=True):bridge.call_void1(self.symbols['IntrinsicAbilitiesFrame'],int(enabled))
  def ability_count(self,id,member=0):return bridge.bridge_ability_count(self.game+0x284be0,id,member)
+ def numbered_init(self,bits=0):bridge.call_ptr2(self.symbols['NumberedPassivesInit'],bits,bridge.bridge_symbol(b'NumberedPersist'))
+ def passive_table(self):
+  def encode(text):return bytes([1 if c==' ' else ord(c)-ord('A')+0x2b if 'A'<=c<='Z' else ord(c)-ord('a')+0x45 if 'a'<=c<='z' else ord(c)-ord('0')+0x21 if '0'<=c<='9' else 0x68 for c in text])+b'\0'
+  text=bytearray(127*192);table=bytearray(127*12)
+  for id in range(1,128):
+   name=str(id) if 66<=id<=115 or id==127 else 'Native '+str(id);help='Native help.'
+   for at,value in [(id*192-192,name),(id*192-96,help)]:
+    encoded=encode(value);text[at:at+len(encoded)]=encoded
+  text_ptr=self.buffer(text)
+  for id in range(1,128):
+   at=(id-1)*12;table[at]={6:3,7:2,23:1}.get(id,0)
+   struct.pack_into('<I',table,at+4,bridge.bridge_encode(text_ptr+(id-1)*192));struct.pack_into('<I',table,at+8,bridge.bridge_encode(text_ptr+(id-1)*192+96))
+  w64(self.game+0x2d36d48,self.buffer(table));w32(self.game+0x2e942c4,30)
+ def passive_setup(self,abilities=None):
+  self.ui_seed();assert self.ui_init();self.passive_table();self.intrinsic_seed();self.numbered_init()
+  if abilities is not None:put(self.save+0x44,bytes(abilities)+bytes(48-len(abilities)))
+  assert self.intrinsic_init();self.ui_call('StylesMenuFrame');root=self.ui_window();self.ui_call('styles_enter',root);page=r64(self.symbols['styles_custom_page']);self.ui_page_frame(page)
+  self.ui_page_frame(page,0x4000);self.ui_page_frame(page,0x20);return root,page
 
 class RuntimeTests(unittest.TestCase):
+    def test_numbered_passives_all_51_ids_are_visible_with_native_rows_without_save_writes(self):
+        h=Host();root,page=h.passive_setup([6]*46+[117]);before=C.string_at(h.save,0x1000);seen=set();expected=set(map(str,list(range(66,116))+[127]))
+        self.assertEqual(C.c_ushort.from_address(page+0xf8).value,97)
+        for row in range(46,97):
+            C.c_ushort.from_address(page+0xfc).value=max(0,row-7)*16;C.c_ushort.from_address(page+0xfe).value=min(row,7)*16;text=h.ui_page_frame(page)
+            seen.update(set(text.split('|'))&expected);self.assertNotIn('Donald',text);self.assertNotIn('Goofy',text);self.assertNotIn('Shared',text)
+        self.assertEqual(seen,expected);self.assertEqual(C.string_at(h.save,0x1000),before);self.assertEqual(bridge.bridge_numbered_save_calls(),0)
+        self.assertEqual(r64(page+0x20),0)
+
+    def test_numbered_all_51_flags_toggle_at_zero_ap_with_full_48_native_list(self):
+        h=Host();root,page=h.passive_setup([6]*48);before=C.string_at(h.save,0x1000);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,99)
+        self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),0)
+        for i,id in enumerate(list(range(66,116))+[127]):h.ui_choose(page,48+i);self.assertEqual(h.ability_count(id),1)
+        self.assertEqual(bridge.bridge_numbered_saved(),(1<<51)-1);self.assertEqual(bridge.bridge_numbered_save_calls(),51);self.assertEqual(C.string_at(h.save,0x1000),before)
+        for i,id in enumerate(list(range(66,116))+[127]):h.ui_choose(page,48+i);self.assertEqual(h.ability_count(id),0)
+        self.assertEqual(bridge.bridge_numbered_saved(),0);self.assertEqual(bridge.bridge_numbered_save_calls(),102);self.assertEqual(C.string_at(h.save,0x1000),before)
+
+    def test_direct_passives_native_ap_checks_equipping_removing_and_duplicate_rows(self):
+        h=Host();root,page=h.passive_setup([0x86,0x87,117]);w32(h.game+0x2e942c4,3)
+        text=h.ui_choose(page,0);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]));self.assertIn('AP 0 / 3',text)
+        h.ui_choose(page,1);self.assertEqual(bridge.bridge_menu_sound(),4);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]))
+        h.ui_choose(page,0);h.ui_choose(page,1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]));self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1)
+        h.ui_choose(page,2);self.assertEqual(h.ability_count(66),1);self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]))
+
+    def test_passives_preserves_native_names_and_help_while_numbered_names_are_decimal(self):
+        h=Host();root,page=h.passive_setup([6,117]);text=h.ui_page_frame(page)
+        self.assertIn('Native 6',text);self.assertIn('Native help.',text);self.assertIn('|66|AP 0|',text);self.assertNotIn('Type E',text)
+        self.assertIn('AP 27 / 30',text);self.assertEqual(bridge.bridge_menu_rect_count(),8)
+
+    def test_passives_toggles_an_existing_full_list_with_and_without_a_style_token(self):
+        for entries in [[6]*48,[6]*47+[117]]:
+            h=Host();root,page=h.passive_setup(entries);before=h.abilities();h.ui_choose(page,0)
+            self.assertEqual(h.abilities(),bytes([0x86])+before[1:]);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,99 if len(set(entries))==1 else 98)
+
+    def test_numbered_state_load_clamps_bits_and_persists_only_changes(self):
+        h=Host();root,page=h.passive_setup([6,117]);h.numbered_init((1<<64)-1);self.assertEqual(bridge.bridge_numbered_save_calls(),0)
+        self.assertEqual(r64(h.symbols['numbered_bits']),(1<<51)-1);self.assertEqual(h.ability_count(66),1);self.assertEqual(h.ability_count(127),1)
+        h.ui_choose(page,51);self.assertEqual(bridge.bridge_numbered_saved(),(1<<50)-1);self.assertEqual(bridge.bridge_numbered_save_calls(),1);self.assertEqual(h.ability_count(127),0)
+        h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),1)
+
+    def test_numbered_test_settings_are_mod_wide_and_not_written_into_a_new_save(self):
+        h=Host();root,page=h.passive_setup([6,117]);h.ui_choose(page,1);self.assertEqual(h.ability_count(66),1)
+        new=h.buffer(bytes(0x1000));put(new+4,b'\x01\x02\x03');w64(h.game+0x2868ba0,new);h.intrinsic_frame();self.assertEqual(h.ability_count(66),1)
+        self.assertEqual(C.string_at(new+0x44,48),bytes(48));self.assertEqual(bridge.bridge_numbered_save_calls(),1)
+
+    def test_numbered_legacy_entries_migrate_once_and_keep_existing_mod_flags(self):
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());h.passive_table();h.intrinsic_seed();h.numbered_init(1<<7)
+        put(h.save+0x44,bytes([66,0xc2,115,255,127,6,117])+bytes(41));self.assertTrue(h.intrinsic_init())
+        self.assertEqual(h.abilities()[:3],bytes([6,117,0]));self.assertEqual(bridge.bridge_numbered_saved(),(1<<0)|(1<<7)|(1<<49)|(1<<50));self.assertEqual(bridge.bridge_numbered_save_calls(),1)
+        h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),1)
+
+    def test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes(self):
+        h=Host();h.intrinsic_seed();put(h.save+0x44,bytes([6,117])+bytes(46))
+        for member in range(1,10):put(h.save+member*0x74+0x44,bytes([6,0x86,21,66,127])*9+bytes([26,22,23]))
+        before=bytearray(C.string_at(h.save,0x1000));self.assertTrue(h.intrinsic_init());after=bytearray(C.string_at(h.save,0x1000))
+        for member in range(1,10):
+            off=member*0x74+0x44;self.assertEqual(after[off:off+48],bytes(48));before[off:off+48]=after[off:off+48]=bytes(48)
+            for id in [6,21,26,66,127]:self.assertEqual(h.ability_count(id,member),0)
+        self.assertEqual(after,before);self.assertEqual(r64(h.symbols['numbered_bits']),0)
+
+    def test_party_reawards_are_blocked_immediately_and_removed_on_next_update(self):
+        h=Host();h.intrinsic_seed();self.assertTrue(h.intrinsic_init());off=h.save+3*0x74+0x44;put(off,bytes([6,21])+bytes(46))
+        self.assertEqual(h.ability_count(6,3),0);h.intrinsic_frame();self.assertEqual(C.string_at(off,48),bytes(48))
+        h.intrinsic_frame(False);put(off,bytes([6])+bytes(47));self.assertEqual(h.ability_count(6,3),1)
+
+    def test_original_native_paging_reaches_id127_beyond_the_48_entry_boundary(self):
+        h=Host();root,page=h.passive_setup([6,117]);put(h.game+0x2ef670,h.ui_raw(0x2ef670,0x870))
+        for r in [0x2eb370,0x2f1100]:put(h.game+r,b'\xc3')
+        put(h.game+0x2eb130,bytes.fromhex('31c0c3'));w32(h.ui_pad+16,0x800);seen=set()
+        for i in range(8):seen.update(h.ui_page_frame(page,0x800).split('|'))
+        self.assertIn('127',seen);self.assertIn('66',seen);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,52);self.assertEqual(h.abilities()[:3],bytes([6,117,0]))
+
+    def test_numbered_uninstall_disables_virtual_flags_and_keeps_partners_removed(self):
+        h=Host();root,page=h.passive_setup([6,117]);h.ui_choose(page,1);self.assertEqual(h.ability_count(66),1);h.intrinsic_frame(False)
+        self.assertEqual(h.ability_count(66),0);self.assertEqual(r64(h.symbols['numbered_bits']),1)
+        for member in range(1,10):self.assertEqual(C.string_at(h.save+member*0x74+0x44,48),bytes(48))
+
     def test_native_save_ability_append_stops_at_48_for_sora_and_shared(self):
         h=Host();h.ui_seed();put(h.game+0x284e10,h.ui_raw(0x284e10,0x4e))
         for member,offset in [(0,0x44),(11,0x599)]:
@@ -402,13 +500,13 @@ class RuntimeTests(unittest.TestCase):
         for off in [0x44,0x599]:before[off:off+48]=bytes(48);after[off:off+48]=bytes(48)
         self.assertEqual(after,before);h.intrinsic_frame();self.assertEqual(h.ability_count(6),2)
 
-    def test_intrinsic_counter_relocated_fallback_preserves_other_party_and_shared_counts(self):
+    def test_intrinsic_counter_preserves_sora_shared_counts_and_suppresses_other_party(self):
         h=Host();h.intrinsic_seed();put(h.save+0x44,bytes([21,6,6,0x86,117])+bytes(43));put(h.save+0x599,bytes([1,9,9,0x89])+bytes(44))
         for member in [1,9]:put(h.save+member*0x74+0x44,bytes([21,21,0x96,26])+bytes(44))
         self.assertTrue(h.intrinsic_init())
         self.assertEqual(h.ability_count(6),2);self.assertEqual(h.ability_count(117),1);self.assertEqual(h.ability_count(9,11),2)
         for member in [1,9]:
-            self.assertEqual(h.ability_count(21,member),2);self.assertEqual(h.ability_count(22,member),0);self.assertEqual(h.ability_count(26,member),1)
+            self.assertEqual(h.ability_count(21,member),0);self.assertEqual(h.ability_count(22,member),0);self.assertEqual(h.ability_count(26,member),0)
         for member in [0,1]:self.assertEqual(h.ability_count(1,member),0)
         self.assertEqual(h.ability_count(1,10),1)
 
@@ -420,7 +518,7 @@ class RuntimeTests(unittest.TestCase):
         put(h.save+0x44,bytes([21,22,26,6])+bytes(44));put(h.save+0x74+0x44,bytes([21,22,26])+bytes(45))
         ap=lambda member:bridge.call_ptr1(h.game+0x2e8660,member)
         self.assertEqual(ap(0),23);self.assertEqual(ap(1),26);self.assertTrue(h.intrinsic_init())
-        self.assertEqual(ap(0),27);self.assertEqual(ap(1),26)
+        self.assertEqual(ap(0),27);self.assertEqual(ap(1),30)
 
     def test_intrinsic_native_ability_cache_builds_guard_roll_and_shared_movement_bits(self):
         h=Host();h.intrinsic_seed();put(h.save+0x44,bytes(48));self.assertTrue(h.intrinsic_init())
@@ -891,27 +989,18 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(C.c_ushort.from_address(w+0xfc).value,0);self.assertIn('Type A|Single|I',text)
         w32(h.ui_pad+16,0)
 
-    def test_passives_nests_native_page_returns_to_customize_and_keeps_stance(self):
-        h=Host();h.ui_seed();self.assertTrue(h.ui_init());put(h.save+0x44,bytes([6,0x97,117])+bytes(45))
-        root=h.ui_window();h.ui_call('styles_enter',root);parent=r64(h.symbols['styles_custom_page']);h.ui_page_frame(parent)
-        w32(h.game+0x2e1f4d0,8);h.ui_page_frame(parent,0x4000);before=h.abilities();h.ui_page_frame(parent,0x20)
-        child=r64(h.symbols['styles_passives_child']);self.assertTrue(child);self.assertEqual(r64(parent+0x20),child)
-        self.assertNotEqual(r64(parent+0x80),r64(child+0x80));self.assertEqual(r64(child+0x80),h.game+0x5490f0)
-        self.assertEqual(r64(h.game+0x2e9cb70),child);self.assertEqual(r32(h.symbols['styles_view']),0)
+    def test_passives_opens_sora_directly_and_returns_without_a_member_selector(self):
+        h=Host();root,page=h.passive_setup([6,0x97,117]);w32(h.game+0x2e1f4d0,8)
+        self.assertEqual(r32(h.symbols['styles_picker']),2);self.assertEqual(r64(page+0x20),0)
+        self.assertEqual(r64(h.game+0x2e9cb70),root);self.assertEqual(r32(h.symbols['styles_view']),0)
+        self.assertEqual(C.c_ushort.from_address(page+0xf8).value,53)
         title=bridge.call_ptr1(h.game+0x2d0970,0x6b)
         self.assertEqual(C.string_at(title,9),bytes([0x3a,0x45,0x57,0x57,0x4d,0x5a,0x49,0x57,0]))
-        # Run the real native record prologue and the existing shadow bridge.
-        leaf=h.ui_window();put(h.game+0x311c66,bytes.fromhex('418074244080')+h.ui_tail);h.ui_call('styles_list',leaf)
-        self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]))
-        # Native Back closes only the nested page, then engine cleanup removes
-        # it from the parent's chain. The Customize page and its title survive.
-        h.ui_call('StylesMenuFrame');bridge.call_void1(h.game+0x2e3d10,child)
-        self.assertFalse(r32(parent+0x68)&1);self.assertFalse(r32(root+0x68)&1)
-        w64(parent+0x20,0);w32(child+0xb8,0);h.ui_page_frame(parent)
-        self.assertFalse(r64(h.symbols['styles_passives_parent']));self.assertEqual(r64(h.game+0x2e9cb70),root)
-        self.assertEqual(r32(h.symbols['styles_view']),1);self.assertIn('Stance|Passives|Limits|Outfits',bridge.bridge_menu_text().decode())
-        self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]));h.ui_page_frame(parent,0x20)
-        self.assertTrue(r64(h.symbols['styles_passives_child']))
+        h.ui_choose(page,0);self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]))
+        text=h.ui_page_frame(page,0x40);self.assertFalse(r32(h.symbols['styles_picker']));self.assertEqual(r64(page+0x20),0)
+        self.assertFalse(r32(root+0x68)&1);self.assertFalse(r32(page+0x68)&1)
+        self.assertIn('Stance|Passives|Limits|Outfits',text);h.ui_page_frame(page,0x20)
+        self.assertEqual(r32(h.symbols['styles_picker']),2);self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]))
 
     def test_removed_root_abilities_selection_redirects_to_customize(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());w32(h.game+0x2e1f4d0,2);h.ui_call('styles_root_init')

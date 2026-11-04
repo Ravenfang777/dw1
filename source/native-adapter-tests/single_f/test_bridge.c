@@ -16,7 +16,11 @@ static int hand_magic=1,air_enabled=1,alloc_failure,protect_failure;
 static unsigned control_calls,control_words[4],control_mode,queue_calls,native_glide_calls;
 static unsigned matrix_code,point_code;static float point_fraction;
 static char output[131072];static size_t used;
-void bridge_reset(uintptr_t game){game_base=game;nranges=queries=protect_calls=0;remove_mode=conflict=0;hand_magic=air_enabled=1;control_calls=control_mode=queue_calls=native_glide_calls=0;glide_eligible=1;memset(control_words,0,sizeof(control_words));alloc_failure=protect_failure=0;matrix_code=point_code=0;used=0;output[0]=0;}
+static uint64_t numbered_saved;static unsigned numbered_save_calls;
+void bridge_reset(uintptr_t game){game_base=game;nranges=queries=protect_calls=0;remove_mode=conflict=0;hand_magic=air_enabled=1;control_calls=control_mode=queue_calls=native_glide_calls=0;glide_eligible=1;memset(control_words,0,sizeof(control_words));alloc_failure=protect_failure=0;matrix_code=point_code=0;used=0;output[0]=0;numbered_saved=0;numbered_save_calls=0;}
+static void ABI numbered_save(uint64_t bits){numbered_saved=bits;numbered_save_calls++;}
+uint64_t bridge_numbered_saved(void){return numbered_saved;}
+unsigned bridge_numbered_save_calls(void){return numbered_save_calls;}
 void bridge_magic_modes(int enabled,int noalloc,int noprotect){hand_magic=enabled;alloc_failure=noalloc;protect_failure=noprotect;}
 void bridge_range(uintptr_t start,size_t size,uint32_t protect){ranges[nranges].start=start;ranges[nranges].size=size;ranges[nranges].protect=protect;nranges++;}
 void bridge_modes(int remove,int other){remove_mode=remove;conflict=other;}
@@ -165,7 +169,7 @@ static void ABI native_menu_text(uintptr_t w,int palette,int flags,int x,int y,i
     if(menu_text_count++&&strlen(menu_drawn)+1<sizeof(menu_drawn))strcat(menu_drawn,"|");
     size_t at=strlen(menu_drawn);
     while(*text&&at+1<sizeof(menu_drawn)){
-        unsigned char c=*text++;menu_drawn[at++]=c==1?' ':c>=0x21&&c<=0x2a?(char)('0'+c-0x21):c>=0x2b&&c<=0x44?(char)('A'+c-0x2b):c>=0x45&&c<=0x5e?(char)('a'+c-0x45):'?';
+        unsigned char c=*text++;menu_drawn[at++]=c==1?' ':c==2?'\n':c==0x68?'.':c==0x66?'/':c>=0x21&&c<=0x2a?(char)('0'+c-0x21):c>=0x2b&&c<=0x44?(char)('A'+c-0x2b):c>=0x45&&c<=0x5e?(char)('a'+c-0x45):'?';
     }menu_drawn[at]=0;
 }
 static void ABI native_menu_pill(uintptr_t w,int kind,int flags,int x,int y,int width,int text_x,uintptr_t color,const unsigned char*text,int font){
@@ -210,6 +214,7 @@ static void ABI native_menu_nav(uintptr_t w){
     *(uint16_t*)(w+0xfc)=(uint16_t)(top*16u);*(uint16_t*)(w+0xfe)=(uint16_t)((row-top)*16u);
 }
 uintptr_t bridge_symbol(const char*n){
+    if(!strcmp(n,"NumberedPersist"))return (uintptr_t)numbered_save;
     if(!strcmp(n,"NativeMenuApPanel"))return (uintptr_t)native_menu_ap_panel;
     if(!strcmp(n,"NativeMenuPlainText"))return (uintptr_t)native_menu_plain_text;
     if(!strcmp(n,"NativeGpuAlloc"))return (uintptr_t)native_gpu_alloc;
