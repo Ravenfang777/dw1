@@ -1,0 +1,2684 @@
+[
+  {
+    "animation": "001",
+    "frames": 90,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "ebd1157ed2276a415f2b90d1326a1c85fb9b8998db0e6361516fe28c7acccb61"
+  },
+  {
+    "animation": "002",
+    "frames": 110,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "9acb5d316db24da3cbaf307e48ec0f92397bd43781439b068f92ccb32de3f08e"
+  },
+  {
+    "animation": "003",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "5404ad22aa362e1f4cc34fec53bb99f18e77e1a2ffafd24f35ae567182dd4d01"
+  },
+  {
+    "animation": "004",
+    "frames": 16,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "9439c86898e36b9e3ac0ca2b3ce7b88a2db86c85a861a39b1f1de40fef66db0e"
+  },
+  {
+    "animation": "005",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "74d74aa8e06faf05cbd39cf6734673e2b94304dfdb124330f79695417b187027"
+  },
+  {
+    "animation": "006",
+    "frames": 15,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "f34eb699cfee2b5ba0fb5b9ff38b153f4db0ed2ad9b6379d11dd00bdd22d34c3"
+  },
+  {
+    "animation": "007",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "8d4d1946ed421aaf23ca654a6277829d37de989020c863c636241715b957dd3d"
+  },
+  {
+    "animation": "008",
+    "frames": 17,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "981cd62438d1ee2bdc386749a715a7bc8b24a666e2c3a0083b1d8dcc99604347"
+  },
+  {
+    "animation": "009",
+    "frames": 19,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "175a04b3f3d97f2da2aac2eae8e8ed75549cd87f622a3c48a036c6666a64d473"
+  },
+  {
+    "animation": "010",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "05dcd7ba24d403cdb52cdc6480a611c4c771126df71cd3c6c5d5cbcc9420f3be"
+  },
+  {
+    "animation": "011",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "4d704de4d4943385108ec58f7fa2cf88055fdfea78d6ba8acf2e30206d6b5b64"
+  },
+  {
+    "animation": "012",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "de0c9f4b2baa22407e82bb7dd0b00aa094bf5a11e88a6aadef5d2e2f3993fc03"
+  },
+  {
+    "animation": "013",
+    "frames": 20,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "412b5c78e4d99be85325a620de2302d01b618f563fa97c5015f75ff186b90b1a"
+  },
+  {
+    "animation": "014",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1d15a424aaeddb2600b50694dfd8291604c5b07abe0b37491c7781a3725315e3"
+  },
+  {
+    "animation": "015",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "67ca88a7d818e4ccfb927d69276efceeb8ee8f431e2d4a56ee4d5bdb8ecc070a"
+  },
+  {
+    "animation": "016",
+    "frames": 16,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "5af67f8ec48bf2bc72a94c9986a758c4730390b623ad23a5d8eed1b49db585c8"
+  },
+  {
+    "animation": "020",
+    "frames": 95,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "b861f1b03026bdb2b1cf5c256b7f52faa815660cfa9ea6ccc3c69bd86caf6d09"
+  },
+  {
+    "animation": "021",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "ebb6a17633bf841d58e3b0f77bd56bb8e9a69b3689c22538d978341368f7fa7d"
+  },
+  {
+    "animation": "024",
+    "frames": 150,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "9293b8ce49107865ebcefaaaaedd1515d5e5bb4acc1e7a34c0e7cd7cf23bcbae"
+  },
+  {
+    "animation": "037",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6450db31921a1029c0a5b9e4ae42496cfed09b067af916122f331dd811b9e5af"
+  },
+  {
+    "animation": "038",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "92b704aca92a61ff348799cacbfd5c33eb9e237bb997cf629ae1f7937a6e3a1e"
+  },
+  {
+    "animation": "039",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "487dab8b3607f2883c2eb65ff3faa38761c9c0c0ff1160f05475451c082f1e85"
+  },
+  {
+    "animation": "040",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6397f2c3fa2004404cadead992254db4be8ebfe83c07b08f861f0e98851d2b70"
+  },
+  {
+    "animation": "041",
+    "frames": 21,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1e2a88427f93472601f242256a84f7af31b189f242401ef9a000b4cc155607df"
+  },
+  {
+    "animation": "042",
+    "frames": 21,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "28f59f9f1fc88436158027195b2c05edc0760b25c1a46e64c23242d29f1f1c30"
+  },
+  {
+    "animation": "043",
+    "frames": 21,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a93b9515125236e0728aae38154084df6fb937086a4c3f1accb528bbc6a63467"
+  },
+  {
+    "animation": "200",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "26c188878156a546d80586a8e85fb1547eb4357504c880d73d2c5566a6af33f2"
+  },
+  {
+    "animation": "202",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "0e45ce4fa13ed0e0a818b888fe7015e8f7e6a5c829bd2e93f48a0ac88721c7d6"
+  },
+  {
+    "animation": "204",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "eaaa9b0e39aef844302182e2d98f24be1c7f8e5d867b3e6ad2af0a952bc10749"
+  },
+  {
+    "animation": "205",
+    "frames": 25,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6b72835a807c703ab239e6265b406b9c60bf809740b3ad5aafad57c09892a630"
+  },
+  {
+    "animation": "206",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1a679428c01d1da30a315655f55ef46ed282e607b63a03785d5ce0fad9db3b58"
+  },
+  {
+    "animation": "207",
+    "frames": 25,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a388b5e9031b8796765970ad46e1177ed2b36c0d9063f2dcc7123eab67fe2f34"
+  },
+  {
+    "animation": "208",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "f14c9521d1dea1a8bb533d7ed8b07ecef22a446ad85b1913359c9427c98f68d6"
+  },
+  {
+    "animation": "209",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "4a19b5b60bdce9c57eb210012d7d251f2f233084aa1dd89b1c479be1e51df864"
+  },
+  {
+    "animation": "212",
+    "frames": 102,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "68ce621e9053fa792f1034db98563bcb9518fce9b9778d89e50c4828992fe8da"
+  },
+  {
+    "animation": "213",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "c73514df2c94e6fc4691667a28cb8b07293a4d4d5897db0fba4bb05fc8604317"
+  },
+  {
+    "animation": "214",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6325bb4f70f9cc12754d81714f9f3b3390153b1fc958ad79bf0aaf58c860d9c2"
+  },
+  {
+    "animation": "215",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "5d422183f356d24d83dc4c07aa63b5acd5b9a4bee0348da383f4e3f739ff01ca"
+  },
+  {
+    "animation": "216",
+    "frames": 55,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6754a765cff51327de7b654ea4bff3c103a65607be54058a124b20d38de46a78"
+  },
+  {
+    "animation": "300",
+    "frames": 28,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "3a9b09bc1b4dd505311d953f621026ad1664eef9b2f7286c3ee32c1e32be37da"
+  },
+  {
+    "animation": "301",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "0aa20a2ec2f612d9032bf8c60effdef862c22d469c15e47ee9dbdf56b6dc4fe5"
+  },
+  {
+    "animation": "302",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1e324634881619e3204a2134c672004b79a21072bbbdb04579b727c3713b9313"
+  },
+  {
+    "animation": "303",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "ad6033eecf27702c26854dbe3fd65a015dcd33bc008c9b6108763717e3f16bcb"
+  },
+  {
+    "animation": "305",
+    "frames": 21,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1dd519cbc1306ee4ae088a3506bc1a0e18f06fbd1f12b4e9201aa522212c3cc9"
+  },
+  {
+    "animation": "306",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a9b96f270ea1b368db53bd028a88b4f68c128e991a792c409b51c983dc818c96"
+  },
+  {
+    "animation": "307",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "7dec7149fc8f8420777194e39356994b0a26d58d8326a418d9fe8aa05a64f7fd"
+  },
+  {
+    "animation": "308",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "3c9b85c6626403062e720f7452d16b6d49ed6d52ec4de6a0421fa9794308e5a2"
+  },
+  {
+    "animation": "320",
+    "frames": 57,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "0efc3adfe5d15168f345ca8d1506da39f9d610c166c2f6004a5b97b8d97a7c83"
+  },
+  {
+    "animation": "354",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a47f67276377ccf97d3d8995e58e65f96a1741a24047a4ac7f736abff68059e8"
+  },
+  {
+    "animation": "355",
+    "frames": 40,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "61fba69acdfe86cb64375a879bd278aa7f996a83eea4f87ed68ac6268671c003"
+  },
+  {
+    "animation": "356",
+    "frames": 49,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a950fedea457b7021e6d4c0b304d58998c5715c1d847cc77598f5747da17a9e3"
+  },
+  {
+    "animation": "400",
+    "frames": 40,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "4129520f6d85ef5c8ea071282684d5e497dde53c5ecedd741aa0ad40bc581786"
+  },
+  {
+    "animation": "408",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "16265f3a1e3bb62d0f3fcc9807dc8a3d4eed455ac0ee0d094b2fdc344b3592b2"
+  },
+  {
+    "animation": "600",
+    "frames": 44,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "ac762f4f856287f7001e155a93b67ca8ef3b96e28e02c312b1dbfd02eddcfa66"
+  },
+  {
+    "animation": "217",
+    "frames": 102,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/etc/dp06TU003.arc",
+    "member": "p01ex_009.pam",
+    "sha256": "b551ea33b820fed71177e8f4219e2836f70dad398af82d5d834cac5259f28336"
+  },
+  {
+    "animation": "218",
+    "frames": 45,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/etc/dp06TU003.arc",
+    "member": "p01ex_009.pam",
+    "sha256": "27250067663515956c4173d284b280985fabd6d51cfe2865b24a06ba9bcb9fd1"
+  },
+  {
+    "animation": "p01ex00029e",
+    "frames": 100,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/etc/dp06TU003.arc",
+    "member": "p01ex00029e.pam",
+    "sha256": "18ff6748f391de126d3d097a2d2160e71ed2208924a653ee37d2d9169937b6d9"
+  },
+  {
+    "animation": "398",
+    "frames": 50,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/etc/dp06TU003.arc",
+    "member": "p01ex_203.pam",
+    "sha256": "5460b52e2cf590f5921eb8e648ea541a4244249c15ef85f8d96d7d55d8a888df"
+  },
+  {
+    "animation": "045",
+    "frames": 74,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/etc/dp06TU003.arc",
+    "member": "p01ex_004.pam",
+    "sha256": "acf8de843349c0605916bea05e2440e9050b633e634c7662d79c155f3e77c873"
+  },
+  {
+    "animation": "045",
+    "frames": 74,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_004.arc",
+    "member": "p01ex_004.pam",
+    "sha256": "acf8de843349c0605916bea05e2440e9050b633e634c7662d79c155f3e77c873"
+  },
+  {
+    "animation": "217",
+    "frames": 102,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_009.arc",
+    "member": "p01ex_009.pam",
+    "sha256": "b551ea33b820fed71177e8f4219e2836f70dad398af82d5d834cac5259f28336"
+  },
+  {
+    "animation": "218",
+    "frames": 45,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_009.arc",
+    "member": "p01ex_009.pam",
+    "sha256": "27250067663515956c4173d284b280985fabd6d51cfe2865b24a06ba9bcb9fd1"
+  },
+  {
+    "animation": "332",
+    "frames": 38,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_101.arc",
+    "member": "p01ex_101.pam",
+    "sha256": "396cd7d3b556d6f03a1609078f14973cd8d067ef7b7fa639a30032701d3b5cf1"
+  },
+  {
+    "animation": "357",
+    "frames": 44,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_102.arc",
+    "member": "p01ex_102.pam",
+    "sha256": "4b8a8457ec887a6cd60829db8121260271025f3302ee0db1132844cca9f011de"
+  },
+  {
+    "animation": "330",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_105.arc",
+    "member": "p01ex_105.pam",
+    "sha256": "0e656197833d02e4ef009a47bfa80bba5cd746f0a5c45f26dba2b16b7bb12fb0"
+  },
+  {
+    "animation": "361",
+    "frames": 20,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_111.arc",
+    "member": "p01ex_111.pam",
+    "sha256": "ef68aec8ba58cf7005c420667b3faf7a2353e86839dc46d53a5cb22be9d54af0"
+  },
+  {
+    "animation": "362",
+    "frames": 37,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_111.arc",
+    "member": "p01ex_111.pam",
+    "sha256": "29c7229f1140a800aaa76385fe837ad424f481578a5cdeb1ba8a7198cb7d201e"
+  },
+  {
+    "animation": "363",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_111.arc",
+    "member": "p01ex_111.pam",
+    "sha256": "69d0d22fdb566fbe129cebcc6d5197033a79693712208baf87827f71fd52ce42"
+  },
+  {
+    "animation": "364",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_115.arc",
+    "member": "p01ex_115.pam",
+    "sha256": "6576d29d9868490ea059a81feb7cbe2766974d8d73578c931b44a25c9022a5d4"
+  },
+  {
+    "animation": "350",
+    "frames": 41,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_116.arc",
+    "member": "p01ex_116.pam",
+    "sha256": "dccfb07d9aa15f90b7014c5f9088525e4b9395f3234dd88c02f6c6b57a29005d"
+  },
+  {
+    "animation": "570",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_122.arc",
+    "member": "p01ex_122.pam",
+    "sha256": "a49825a8a7339171c5850130a649ff798b3d7923ad7e17491d44e699a87a9ed7"
+  },
+  {
+    "animation": "571",
+    "frames": 27,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_122.arc",
+    "member": "p01ex_122.pam",
+    "sha256": "ef01f023172aac5844fc1bfc0f4e799751368c1c0f9fc92a1dd0eb74c201f8fc"
+  },
+  {
+    "animation": "572",
+    "frames": 49,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_122.arc",
+    "member": "p01ex_122.pam",
+    "sha256": "37ced694e30e23a68c9ba9195ba869ff61b3470b738d9591830986c65bb1947a"
+  },
+  {
+    "animation": "365",
+    "frames": 50,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_123.arc",
+    "member": "p01ex_123.pam",
+    "sha256": "23fa4c43675964b551e0ab543271ce02c1c799df290474b69e57f15302789fe1"
+  },
+  {
+    "animation": "370",
+    "frames": 22,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_133.arc",
+    "member": "p01ex_133.pam",
+    "sha256": "c445c0961ebaa2e9dcddae2081ba27ac7345af1f4ba7b8a8cc605e138af2bd3d"
+  },
+  {
+    "animation": "371",
+    "frames": 59,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_133.arc",
+    "member": "p01ex_133.pam",
+    "sha256": "40a1af6297d5d796a5ffc7e5bb0669126daaa8f80e1e2a827a8fa9a4a4519832"
+  },
+  {
+    "animation": "372",
+    "frames": 22,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_137.arc",
+    "member": "p01ex_137.pam",
+    "sha256": "8ebfc8a22481ef8074fd3cb1791800e5a77cad9d53c9cfc190b24e58a5e23864"
+  },
+  {
+    "animation": "373",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_137.arc",
+    "member": "p01ex_137.pam",
+    "sha256": "fd835e1a8cea4056ae02cfae3fc967e67971887066c77863c15961e8b68e0929"
+  },
+  {
+    "animation": "410",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_140.arc",
+    "member": "p01ex_140.pam",
+    "sha256": "6e43584b304d90caf943103834637a2e18a22d287001eb164a092b984a409448"
+  },
+  {
+    "animation": "505",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_150.arc",
+    "member": "p01ex_150.pam",
+    "sha256": "480d8d1267a38861f1111a47ce50dd60abbb525b30d1cedf3764cf1afe36b480"
+  },
+  {
+    "animation": "506",
+    "frames": 12,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_150.arc",
+    "member": "p01ex_150.pam",
+    "sha256": "8a1bc051b32a66fbf49f76f39ab0b32144d4596411e0e626aa5e9f3dcdafd965"
+  },
+  {
+    "animation": "315",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_151.arc",
+    "member": "p01ex_151.pam",
+    "sha256": "13fd091c7699acad20ab75eea886603bd6a6556ef42eff9b61d1cb3d93200a68"
+  },
+  {
+    "animation": "316",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_151.arc",
+    "member": "p01ex_151.pam",
+    "sha256": "3de5e1978a71b9a3c97b3ca70532e8a5b60ebbb0c3b7b38802593cf1e3b11303"
+  },
+  {
+    "animation": "317",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_152.arc",
+    "member": "p01ex_152.pam",
+    "sha256": "269ab39c0a6bf900e7a3caaa195122f32ebd4edc6b29a657edbc12519071a2bf"
+  },
+  {
+    "animation": "318",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_152.arc",
+    "member": "p01ex_152.pam",
+    "sha256": "882cb0d0343370fd7185a2b5a5d6067bcbfd624fd641643b6b9e7427848a7255"
+  },
+  {
+    "animation": "391",
+    "frames": 48,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_153.arc",
+    "member": "p01ex_153.pam",
+    "sha256": "5b955af3d8a608d1e0e0bf5491c2243e20fc34c8b22aabacc21dd47d48ca8dc7"
+  },
+  {
+    "animation": "390",
+    "frames": 48,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_154.arc",
+    "member": "p01ex_154.pam",
+    "sha256": "20a3b526946d10bf5deca43ccfa6b574c513284e01ae5719c3ecbdb143bca12f"
+  },
+  {
+    "animation": "427",
+    "frames": 46,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_154.arc",
+    "member": "p01ex_154.pam",
+    "sha256": "7643d68da45413e02d18c52db715489bd61959b254a2d1c9575aecdc91bc71ff"
+  },
+  {
+    "animation": "392",
+    "frames": 50,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_155.arc",
+    "member": "p01ex_155.pam",
+    "sha256": "4bf492960dbee071bbd8e3e69200d76430564d2163a276ea95170f17fdbaea51"
+  },
+  {
+    "animation": "393",
+    "frames": 37,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_155.arc",
+    "member": "p01ex_155.pam",
+    "sha256": "4d646f4e1b76e37a88474342b1e6f7b4e440b24207674f2e4f0502f9d7695201"
+  },
+  {
+    "animation": "428",
+    "frames": 50,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_156.arc",
+    "member": "p01ex_156.pam",
+    "sha256": "76997af8aa5ff2e437275422f48ec1b7578368fbd61ba601f85c81372475a771"
+  },
+  {
+    "animation": "429",
+    "frames": 11,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_156.arc",
+    "member": "p01ex_156.pam",
+    "sha256": "9838091b0030ef7caad77867c828356103daaf9ec4291d15cb0883b032e82345"
+  },
+  {
+    "animation": "504",
+    "frames": 20,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_157.arc",
+    "member": "p01ex_157.pam",
+    "sha256": "8b0249d208d32ea25ad74c29c6794055e17db3114bfa2aca34eae7369dd17563"
+  },
+  {
+    "animation": "505",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_157.arc",
+    "member": "p01ex_157.pam",
+    "sha256": "480d8d1267a38861f1111a47ce50dd60abbb525b30d1cedf3764cf1afe36b480"
+  },
+  {
+    "animation": "514",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_157.arc",
+    "member": "p01ex_157.pam",
+    "sha256": "b94dcdd34fe38afabc8b12e3831eccaf56d693275ac7288507e794fa1c3380f6"
+  },
+  {
+    "animation": "395",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_200.arc",
+    "member": "p01ex_200.pam",
+    "sha256": "b4d7d43c2f07f69f199a9e84bb63cb1b01ab052aa3f3c382a03619ccd37b4369"
+  },
+  {
+    "animation": "370",
+    "frames": 22,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_204.arc",
+    "member": "p01ex_204.pam",
+    "sha256": "c445c0961ebaa2e9dcddae2081ba27ac7345af1f4ba7b8a8cc605e138af2bd3d"
+  },
+  {
+    "animation": "515",
+    "frames": 5,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_204.arc",
+    "member": "p01ex_204.pam",
+    "sha256": "426dbc15972fabe20ab71c46ea0842166ad9cf797d3d042959429848ce9d83b8"
+  },
+  {
+    "animation": "517",
+    "frames": 17,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_204.arc",
+    "member": "p01ex_204.pam",
+    "sha256": "9b6201bf714a7cb8dc8ec4396a4431732d0cbd6670ccd11f271ac9b1139ddc9e"
+  },
+  {
+    "animation": "550",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_204.arc",
+    "member": "p01ex_204.pam",
+    "sha256": "9f27801f026c5443427525fd5bf06b8896a2499608cdf2394f5578d4f92c134f"
+  },
+  {
+    "animation": "650",
+    "frames": 28,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_205.arc",
+    "member": "p01ex_205.pam",
+    "sha256": "9c7f3d0d6368e595cfa3eb8af42dfd577182143f89dc0295363703234beef98d"
+  },
+  {
+    "animation": "557",
+    "frames": 71,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_206.arc",
+    "member": "p01ex_206.pam",
+    "sha256": "a90fb092e3fa43f5b86c8b788d07e9b0a1e99a0a7dea97a82813c15be4507a16"
+  },
+  {
+    "animation": "411",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_313.arc",
+    "member": "p01ex_313.pam",
+    "sha256": "e4f25deeaa9a624b7094d31caa2daeb0eb69d539dace12af4b1571bb957c4d42"
+  },
+  {
+    "animation": "399",
+    "frames": 140,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_346.arc",
+    "member": "p01ex_346.pam",
+    "sha256": "36da22a4f7d9723b508182535c410e7232954ebf077b04c6da546e45dec81fdf"
+  },
+  {
+    "animation": "352",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_352.arc",
+    "member": "p01ex_352.pam",
+    "sha256": "3fa7950393ab00a7e3a59e3c4f0c6533597d4e4b1f8cbdd9889c0b4ac6da11ec"
+  },
+  {
+    "animation": "353",
+    "frames": 44,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_352.arc",
+    "member": "p01ex_352.pam",
+    "sha256": "aaa785c5fbd957e8d0cfd19cc18a7d4ec2d42a2db2f138abbaa3806560cd4c31"
+  },
+  {
+    "animation": "424",
+    "frames": 50,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_457.arc",
+    "member": "p01ex_457.pam",
+    "sha256": "a13903405e8311c97a432923ca89ad9498c340e43faaa527035cd1823d51d5a6"
+  },
+  {
+    "animation": "425",
+    "frames": 28,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_457.arc",
+    "member": "p01ex_457.pam",
+    "sha256": "a13f9fad94ccf2708c1b7a7db233c9196fab5008876d2fe9c8a949dc194c1165"
+  },
+  {
+    "animation": "500",
+    "frames": 12,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_501.arc",
+    "member": "p01ex_501.pam",
+    "sha256": "6027825ac6496f3f9a156b17af2eb503b96e244ed478257ee95a13a0b96cf6c7"
+  },
+  {
+    "animation": "501",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_501.arc",
+    "member": "p01ex_501.pam",
+    "sha256": "6e748990033ddc85f402a0e25203894340f37d65fc7c8344b367697a01199bb5"
+  },
+  {
+    "animation": "503",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_501.arc",
+    "member": "p01ex_501.pam",
+    "sha256": "a3ebb9953351c7d1b10bf23905a8f7ff6232023b36a871d4b5c796e5330b1372"
+  },
+  {
+    "animation": "510",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_501.arc",
+    "member": "p01ex_501.pam",
+    "sha256": "662b6f45e744f8072c655adb860250fdaf6eb8442bb759d866f21006bdee2f0a"
+  },
+  {
+    "animation": "511",
+    "frames": 27,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_501.arc",
+    "member": "p01ex_501.pam",
+    "sha256": "3eb167fe26fc265b07c566d1b55ef9b96424eca58a1b4b8c14173975cad25377"
+  },
+  {
+    "animation": "512",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_501.arc",
+    "member": "p01ex_501.pam",
+    "sha256": "bdf15e127c815c29bdaac96af8fc1c0228148018a0cc85182992a2c7bd9369a8"
+  },
+  {
+    "animation": "513",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_501.arc",
+    "member": "p01ex_501.pam",
+    "sha256": "1a6b1f53a3e197c8f187bd52dad6298191ccaf1f2862f9552ad003804115830e"
+  },
+  {
+    "animation": "514",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_501.arc",
+    "member": "p01ex_501.pam",
+    "sha256": "b94dcdd34fe38afabc8b12e3831eccaf56d693275ac7288507e794fa1c3380f6"
+  },
+  {
+    "animation": "507",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_506.arc",
+    "member": "p01ex_506.pam",
+    "sha256": "e62daedac2b65fd087b68afc664c7afcf614f4e787a2d29a31db84e350b237d0"
+  },
+  {
+    "animation": "508",
+    "frames": 21,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_506.arc",
+    "member": "p01ex_506.pam",
+    "sha256": "72d1ef2e2f9748384e4eb16503b34c08655d4561df40a34e29ea655eaaf8721b"
+  },
+  {
+    "animation": "514",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_506.arc",
+    "member": "p01ex_506.pam",
+    "sha256": "b94dcdd34fe38afabc8b12e3831eccaf56d693275ac7288507e794fa1c3380f6"
+  },
+  {
+    "animation": "515",
+    "frames": 5,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_511.arc",
+    "member": "p01ex_511.pam",
+    "sha256": "426dbc15972fabe20ab71c46ea0842166ad9cf797d3d042959429848ce9d83b8"
+  },
+  {
+    "animation": "516",
+    "frames": 5,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_511.arc",
+    "member": "p01ex_511.pam",
+    "sha256": "6c0d8c16269704dc23f6f68cd59da41da5b5571d4ae4174f7565c431fbce58ef"
+  },
+  {
+    "animation": "517",
+    "frames": 17,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_511.arc",
+    "member": "p01ex_511.pam",
+    "sha256": "9b6201bf714a7cb8dc8ec4396a4431732d0cbd6670ccd11f271ac9b1139ddc9e"
+  },
+  {
+    "animation": "518",
+    "frames": 19,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_511.arc",
+    "member": "p01ex_511.pam",
+    "sha256": "5cdc9c1f41bc40a4d67c9fcc6352f880501b66812b97233beb8df1aa0f1c26b7"
+  },
+  {
+    "animation": "519",
+    "frames": 38,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_511.arc",
+    "member": "p01ex_511.pam",
+    "sha256": "60ab947ba034430a509bf24a128bcb825779e81e715a0c0960a4ad76730264b6"
+  },
+  {
+    "animation": "607",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_601.arc",
+    "member": "p01ex_601.pam",
+    "sha256": "5e89e1d5673b4e680abc60b289b25b107db2d5988867e63615b8b20bbc29aa5f"
+  },
+  {
+    "animation": "608",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_601.arc",
+    "member": "p01ex_601.pam",
+    "sha256": "62d8e3edb9234d5d0978b383b8b558671eb68fb58654ce4b61b947a528a69c89"
+  },
+  {
+    "animation": "609",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_602.arc",
+    "member": "p01ex_602.pam",
+    "sha256": "76e408b38f85b7c614b607311cb8c48b04fc7d2bf2f3da33f8c0a20d6ec5f63c"
+  },
+  {
+    "animation": "610",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_602.arc",
+    "member": "p01ex_602.pam",
+    "sha256": "d11a2aa90c2cb00c449b4a5a940d9d4fd0a04291d031ac766de52e5950d0bfc6"
+  },
+  {
+    "animation": "611",
+    "frames": 62,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_603.arc",
+    "member": "p01ex_603.pam",
+    "sha256": "9205dbb13863a8f183aa20e8c11b7c6283157b2ff70b403352d6ddf0c868dbdc"
+  },
+  {
+    "animation": "612",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_603.arc",
+    "member": "p01ex_603.pam",
+    "sha256": "754ceaa90e19d6f469c470cd4cd10e76166a61d82a3fe9eca64c26b18570dbd4"
+  },
+  {
+    "animation": "616",
+    "frames": 44,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_605.arc",
+    "member": "p01ex_605.pam",
+    "sha256": "dfd1bf275d1135e9e497853c58d51b8630500bb7307ec84b041672180c8d2eeb"
+  },
+  {
+    "animation": "618",
+    "frames": 20,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_609.arc",
+    "member": "p01ex_609.pam",
+    "sha256": "3e9d66f720ddf1e0f37ce5a97c55be8d00ca3c23e222410e0d5a4724f0308649"
+  },
+  {
+    "animation": "619",
+    "frames": 52,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_609.arc",
+    "member": "p01ex_609.pam",
+    "sha256": "aabb28f74a947eb2bbee6a44e3c8d65f5d6545b6951c44fb3f523c94d4f954ea"
+  },
+  {
+    "animation": "613",
+    "frames": 22,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_620.arc",
+    "member": "p01ex_620.pam",
+    "sha256": "b3eff6039d6a4b62965d1be612c456f8b740786807b67949d374207c9e97a0f8"
+  },
+  {
+    "animation": "602",
+    "frames": 33,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_621.arc",
+    "member": "p01ex_621.pam",
+    "sha256": "e43a21ea1b1b6f4294d302a1a1e9bd846b13ddaa12dcde1a4ba842fe685066d0"
+  },
+  {
+    "animation": "603",
+    "frames": 63,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_621.arc",
+    "member": "p01ex_621.pam",
+    "sha256": "a64632212201ae17f3beb1c00930f4542b3b10904f7af00e35bcb7d394434b98"
+  },
+  {
+    "animation": "604",
+    "frames": 25,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_621.arc",
+    "member": "p01ex_621.pam",
+    "sha256": "a2052c464d185beabbd02f64ae88f9694fe09a838c6dffb05d858163c6fb23c3"
+  },
+  {
+    "animation": "605",
+    "frames": 44,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_621.arc",
+    "member": "p01ex_621.pam",
+    "sha256": "be6fc61c412aadc93f1b147091a63a453d967a34f63c8c4a7da5d8696e094465"
+  },
+  {
+    "animation": "606",
+    "frames": 16,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_621.arc",
+    "member": "p01ex_621.pam",
+    "sha256": "72fa9c55f8d3ae1de6f8afa63a46840551e440187d202caf72117e86374ca8af"
+  },
+  {
+    "animation": "503",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_622.arc",
+    "member": "p01ex_622.pam",
+    "sha256": "a3ebb9953351c7d1b10bf23905a8f7ff6232023b36a871d4b5c796e5330b1372"
+  },
+  {
+    "animation": "617",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_622.arc",
+    "member": "p01ex_622.pam",
+    "sha256": "9128935af56bfc527937b99bad292e2b0400da770e3d69f4011573800dfcae7b"
+  },
+  {
+    "animation": "614",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_624.arc",
+    "member": "p01ex_624.pam",
+    "sha256": "355866507f8d5f1cbe221c45ebde6ef86d005cece478e399afac219d0e069344"
+  },
+  {
+    "animation": "615",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_624.arc",
+    "member": "p01ex_624.pam",
+    "sha256": "a1b3ea69c1cae420304d15df65830f365f6a0f90ab03db85ba2735cd2ee4324a"
+  },
+  {
+    "animation": "570",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_626.arc",
+    "member": "p01ex_626.pam",
+    "sha256": "a49825a8a7339171c5850130a649ff798b3d7923ad7e17491d44e699a87a9ed7"
+  },
+  {
+    "animation": "601",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_628.arc",
+    "member": "p01ex_628.pam",
+    "sha256": "a44116365e9bbedd9f94a75cb5e9f3a989ed12d121e73ee4e7f4f7e45548666e"
+  },
+  {
+    "animation": "519",
+    "frames": 38,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_629.arc",
+    "member": "p01ex_629.pam",
+    "sha256": "60ab947ba034430a509bf24a128bcb825779e81e715a0c0960a4ad76730264b6"
+  },
+  {
+    "animation": "621",
+    "frames": 56,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_629.arc",
+    "member": "p01ex_629.pam",
+    "sha256": "eba6a462939e75d24841e7e2156a3621b2144d14201cb643ea09cb027fdc845b"
+  },
+  {
+    "animation": "622",
+    "frames": 56,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_629.arc",
+    "member": "p01ex_629.pam",
+    "sha256": "d1f15d25d0e391fbef0ea54d878a93251fdb048118dbeb037860c9ed179a8055"
+  },
+  {
+    "animation": "623",
+    "frames": 9,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_629.arc",
+    "member": "p01ex_629.pam",
+    "sha256": "1f7228cc4cacdabd67bb829694a98d399c0ee38d6905bb71c01ece243ea6fc0f"
+  },
+  {
+    "animation": "045",
+    "frames": 74,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "acf8de843349c0605916bea05e2440e9050b633e634c7662d79c155f3e77c873"
+  },
+  {
+    "animation": "220",
+    "frames": 66,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "1555bceafd430356771f71da3db965c9dc8c77fe4d2e04a31112c8bbb0a60b88"
+  },
+  {
+    "animation": "221",
+    "frames": 24,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "0d8564eaa54ff949592e7739c38c126fcd9e80bb343826588c2a5d94ba9343de"
+  },
+  {
+    "animation": "351",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "334dc3868d51dd1afe649c568512c182795fd7b3fa8525bf52b37969d950e405"
+  },
+  {
+    "animation": "353",
+    "frames": 44,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "aaa785c5fbd957e8d0cfd19cc18a7d4ec2d42a2db2f138abbaa3806560cd4c31"
+  },
+  {
+    "animation": "399",
+    "frames": 140,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "36da22a4f7d9723b508182535c410e7232954ebf077b04c6da546e45dec81fdf"
+  },
+  {
+    "animation": "411",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "e4f25deeaa9a624b7094d31caa2daeb0eb69d539dace12af4b1571bb957c4d42"
+  },
+  {
+    "animation": "413",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "f6bb7e30fc61ac17bc7b62178eab738044a63b22151161823e6bec84c9b986d2"
+  },
+  {
+    "animation": "710",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "0c216ad25911350d7c079c4157f6ac52d12729389fa4a3af833a66b151bc6ef2"
+  },
+  {
+    "animation": "711",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p01ex_710.arc",
+    "member": "p01ex_710.pam",
+    "sha256": "bd00aea500f669801fbc7cdfbaef54d1d7923e22f7e5c196ef7eeb9c53be8874"
+  },
+  {
+    "animation": "001",
+    "frames": 90,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "ebd1157ed2276a415f2b90d1326a1c85fb9b8998db0e6361516fe28c7acccb61"
+  },
+  {
+    "animation": "002",
+    "frames": 110,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "9acb5d316db24da3cbaf307e48ec0f92397bd43781439b068f92ccb32de3f08e"
+  },
+  {
+    "animation": "003",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "5404ad22aa362e1f4cc34fec53bb99f18e77e1a2ffafd24f35ae567182dd4d01"
+  },
+  {
+    "animation": "004",
+    "frames": 16,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "9439c86898e36b9e3ac0ca2b3ce7b88a2db86c85a861a39b1f1de40fef66db0e"
+  },
+  {
+    "animation": "005",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "74d74aa8e06faf05cbd39cf6734673e2b94304dfdb124330f79695417b187027"
+  },
+  {
+    "animation": "006",
+    "frames": 15,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "f34eb699cfee2b5ba0fb5b9ff38b153f4db0ed2ad9b6379d11dd00bdd22d34c3"
+  },
+  {
+    "animation": "007",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "8d4d1946ed421aaf23ca654a6277829d37de989020c863c636241715b957dd3d"
+  },
+  {
+    "animation": "008",
+    "frames": 17,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "981cd62438d1ee2bdc386749a715a7bc8b24a666e2c3a0083b1d8dcc99604347"
+  },
+  {
+    "animation": "009",
+    "frames": 19,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "175a04b3f3d97f2da2aac2eae8e8ed75549cd87f622a3c48a036c6666a64d473"
+  },
+  {
+    "animation": "010",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "05dcd7ba24d403cdb52cdc6480a611c4c771126df71cd3c6c5d5cbcc9420f3be"
+  },
+  {
+    "animation": "011",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "4d704de4d4943385108ec58f7fa2cf88055fdfea78d6ba8acf2e30206d6b5b64"
+  },
+  {
+    "animation": "012",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "de0c9f4b2baa22407e82bb7dd0b00aa094bf5a11e88a6aadef5d2e2f3993fc03"
+  },
+  {
+    "animation": "013",
+    "frames": 20,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "412b5c78e4d99be85325a620de2302d01b618f563fa97c5015f75ff186b90b1a"
+  },
+  {
+    "animation": "014",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1d15a424aaeddb2600b50694dfd8291604c5b07abe0b37491c7781a3725315e3"
+  },
+  {
+    "animation": "015",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "67ca88a7d818e4ccfb927d69276efceeb8ee8f431e2d4a56ee4d5bdb8ecc070a"
+  },
+  {
+    "animation": "016",
+    "frames": 16,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "5af67f8ec48bf2bc72a94c9986a758c4730390b623ad23a5d8eed1b49db585c8"
+  },
+  {
+    "animation": "020",
+    "frames": 95,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "b861f1b03026bdb2b1cf5c256b7f52faa815660cfa9ea6ccc3c69bd86caf6d09"
+  },
+  {
+    "animation": "021",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "ebb6a17633bf841d58e3b0f77bd56bb8e9a69b3689c22538d978341368f7fa7d"
+  },
+  {
+    "animation": "024",
+    "frames": 150,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "9293b8ce49107865ebcefaaaaedd1515d5e5bb4acc1e7a34c0e7cd7cf23bcbae"
+  },
+  {
+    "animation": "037",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6450db31921a1029c0a5b9e4ae42496cfed09b067af916122f331dd811b9e5af"
+  },
+  {
+    "animation": "038",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "92b704aca92a61ff348799cacbfd5c33eb9e237bb997cf629ae1f7937a6e3a1e"
+  },
+  {
+    "animation": "039",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "487dab8b3607f2883c2eb65ff3faa38761c9c0c0ff1160f05475451c082f1e85"
+  },
+  {
+    "animation": "040",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6397f2c3fa2004404cadead992254db4be8ebfe83c07b08f861f0e98851d2b70"
+  },
+  {
+    "animation": "041",
+    "frames": 21,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1e2a88427f93472601f242256a84f7af31b189f242401ef9a000b4cc155607df"
+  },
+  {
+    "animation": "042",
+    "frames": 21,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "28f59f9f1fc88436158027195b2c05edc0760b25c1a46e64c23242d29f1f1c30"
+  },
+  {
+    "animation": "043",
+    "frames": 21,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a93b9515125236e0728aae38154084df6fb937086a4c3f1accb528bbc6a63467"
+  },
+  {
+    "animation": "200",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "26c188878156a546d80586a8e85fb1547eb4357504c880d73d2c5566a6af33f2"
+  },
+  {
+    "animation": "202",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "0e45ce4fa13ed0e0a818b888fe7015e8f7e6a5c829bd2e93f48a0ac88721c7d6"
+  },
+  {
+    "animation": "204",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "eaaa9b0e39aef844302182e2d98f24be1c7f8e5d867b3e6ad2af0a952bc10749"
+  },
+  {
+    "animation": "205",
+    "frames": 25,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6b72835a807c703ab239e6265b406b9c60bf809740b3ad5aafad57c09892a630"
+  },
+  {
+    "animation": "206",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1a679428c01d1da30a315655f55ef46ed282e607b63a03785d5ce0fad9db3b58"
+  },
+  {
+    "animation": "207",
+    "frames": 25,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a388b5e9031b8796765970ad46e1177ed2b36c0d9063f2dcc7123eab67fe2f34"
+  },
+  {
+    "animation": "208",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "f14c9521d1dea1a8bb533d7ed8b07ecef22a446ad85b1913359c9427c98f68d6"
+  },
+  {
+    "animation": "209",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "4a19b5b60bdce9c57eb210012d7d251f2f233084aa1dd89b1c479be1e51df864"
+  },
+  {
+    "animation": "212",
+    "frames": 102,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "68ce621e9053fa792f1034db98563bcb9518fce9b9778d89e50c4828992fe8da"
+  },
+  {
+    "animation": "213",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "c73514df2c94e6fc4691667a28cb8b07293a4d4d5897db0fba4bb05fc8604317"
+  },
+  {
+    "animation": "214",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6325bb4f70f9cc12754d81714f9f3b3390153b1fc958ad79bf0aaf58c860d9c2"
+  },
+  {
+    "animation": "215",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "5d422183f356d24d83dc4c07aa63b5acd5b9a4bee0348da383f4e3f739ff01ca"
+  },
+  {
+    "animation": "216",
+    "frames": 55,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "6754a765cff51327de7b654ea4bff3c103a65607be54058a124b20d38de46a78"
+  },
+  {
+    "animation": "300",
+    "frames": 28,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "3a9b09bc1b4dd505311d953f621026ad1664eef9b2f7286c3ee32c1e32be37da"
+  },
+  {
+    "animation": "301",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "0aa20a2ec2f612d9032bf8c60effdef862c22d469c15e47ee9dbdf56b6dc4fe5"
+  },
+  {
+    "animation": "302",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1e324634881619e3204a2134c672004b79a21072bbbdb04579b727c3713b9313"
+  },
+  {
+    "animation": "303",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "ad6033eecf27702c26854dbe3fd65a015dcd33bc008c9b6108763717e3f16bcb"
+  },
+  {
+    "animation": "305",
+    "frames": 21,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "1dd519cbc1306ee4ae088a3506bc1a0e18f06fbd1f12b4e9201aa522212c3cc9"
+  },
+  {
+    "animation": "306",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a9b96f270ea1b368db53bd028a88b4f68c128e991a792c409b51c983dc818c96"
+  },
+  {
+    "animation": "307",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "7dec7149fc8f8420777194e39356994b0a26d58d8326a418d9fe8aa05a64f7fd"
+  },
+  {
+    "animation": "308",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "3c9b85c6626403062e720f7452d16b6d49ed6d52ec4de6a0421fa9794308e5a2"
+  },
+  {
+    "animation": "320",
+    "frames": 57,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "0efc3adfe5d15168f345ca8d1506da39f9d610c166c2f6004a5b97b8d97a7c83"
+  },
+  {
+    "animation": "354",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a47f67276377ccf97d3d8995e58e65f96a1741a24047a4ac7f736abff68059e8"
+  },
+  {
+    "animation": "355",
+    "frames": 40,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "61fba69acdfe86cb64375a879bd278aa7f996a83eea4f87ed68ac6268671c003"
+  },
+  {
+    "animation": "356",
+    "frames": 49,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "a950fedea457b7021e6d4c0b304d58998c5715c1d847cc77598f5747da17a9e3"
+  },
+  {
+    "animation": "400",
+    "frames": 40,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "4129520f6d85ef5c8ea071282684d5e497dde53c5ecedd741aa0ad40bc581786"
+  },
+  {
+    "animation": "408",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "16265f3a1e3bb62d0f3fcc9807dc8a3d4eed455ac0ee0d094b2fdc344b3592b2"
+  },
+  {
+    "animation": "600",
+    "frames": 44,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/p41base.arc",
+    "member": "p01ex_001.pam",
+    "sha256": "ac762f4f856287f7001e155a93b67ca8ef3b96e28e02c312b1dbfd02eddcfa66"
+  },
+  {
+    "animation": "053",
+    "frames": 40,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa006ve.arc",
+    "member": "p01ex_006.pam",
+    "sha256": "9e74470726d76d9efd22bddea63c9b08b5d8ae21ebb507fdf7dbccd4cd8b97de"
+  },
+  {
+    "animation": "054",
+    "frames": 20,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa006ve.arc",
+    "member": "p01ex_006.pam",
+    "sha256": "3bdc05345e2027af8ff75260893676a0a6c05dfd364347a1b155baa1f3856295"
+  },
+  {
+    "animation": "406",
+    "frames": 95,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa006ve.arc",
+    "member": "p01ex_006.pam",
+    "sha256": "551263b7fe3af1ed52da7b3d84ea171ccf3d0e3529c3ff43649bdfa5eefd2f80"
+  },
+  {
+    "animation": "700",
+    "frames": 38,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa007ve.arc",
+    "member": "p01ex_007.pam",
+    "sha256": "8a43ff29fb4b6b1810d875ae5d5f9764141f1f9b59fe9891aaf2b4d2e5a05b74"
+  },
+  {
+    "animation": "701",
+    "frames": 89,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa007ve.arc",
+    "member": "p01ex_007.pam",
+    "sha256": "ea5f033b7a8199a36f7044a11bca00d1b3767f32285c1a09288fd1078c17baaa"
+  },
+  {
+    "animation": "702",
+    "frames": 53,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa010ve.arc",
+    "member": "p01ex_010.pam",
+    "sha256": "fea945eacc6f35ac9bfc80d8252ce8b830ad2f8f1a7473c9ecea7815237c1cac"
+  },
+  {
+    "animation": "703",
+    "frames": 9,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa010ve.arc",
+    "member": "p01ex_010.pam",
+    "sha256": "e3a3a9fd3e952f01f78a721805a78b48730bd80906343fa2bde5a482eaed2a36"
+  },
+  {
+    "animation": "704",
+    "frames": 13,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa010ve.arc",
+    "member": "p01ex_010.pam",
+    "sha256": "fd9221a84ebdd45a47d8c6f7c530fe60a006d1f4ef85debcac0f1203b18db31f"
+  },
+  {
+    "animation": "712",
+    "frames": 74,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa011ve.arc",
+    "member": "p01ex_011.pam",
+    "sha256": "e396bde46d6dd648dfd335ab2edb92286ffb601878f98a1cc4883f6704c55c05"
+  },
+  {
+    "animation": "708",
+    "frames": 60,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa012ve.arc",
+    "member": "p01ex_012.pam",
+    "sha256": "ccb5798c4acb454b49dc6b5d7929ad1c25e5e12490cb5c225029f01a260aefc4"
+  },
+  {
+    "animation": "709",
+    "frames": 82,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xaa012ve.arc",
+    "member": "p01ex_012.pam",
+    "sha256": "5401c82fecea0e6c39723ee875484b291c0e4e8f51f364deaed1b82d200bd61c"
+  },
+  {
+    "animation": "401",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs03ve.arc",
+    "member": "p01ex_403.pam",
+    "sha256": "3e72171f2910d492738108ca1fb683eb9476f8e49b451553aa8c1c9c9826fb12"
+  },
+  {
+    "animation": "402",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs03ve.arc",
+    "member": "p01ex_403.pam",
+    "sha256": "bf27150f1bd4b5da9ba9875bc636b31005bb957e777429331e123145c0d05b70"
+  },
+  {
+    "animation": "403",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs03ve.arc",
+    "member": "p01ex_403.pam",
+    "sha256": "60fae1f6868b614ad2aaa985181fb6433bda1b5fc641ae0f9d817309475ff147"
+  },
+  {
+    "animation": "404",
+    "frames": 39,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs03ve.arc",
+    "member": "p01ex_403.pam",
+    "sha256": "8ed5e2632d5fc10c2624637a95d811b63e9a9ac496b24061079aecacaa10a60a"
+  },
+  {
+    "animation": "405",
+    "frames": 95,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs03ve.arc",
+    "member": "p01ex_403.pam",
+    "sha256": "dc4977e53308d66b899ad0786c665d43723bef9264794391e038fbea93e773c3"
+  },
+  {
+    "animation": "412",
+    "frames": 45,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs04ve.arc",
+    "member": "p01ex_404.pam",
+    "sha256": "2c1ced2438fb1d583057fdfa8b2b600459c53ce3c85b413ae3aa25e1b79332a1"
+  },
+  {
+    "animation": "413",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs04ve.arc",
+    "member": "p01ex_404.pam",
+    "sha256": "f6bb7e30fc61ac17bc7b62178eab738044a63b22151161823e6bec84c9b986d2"
+  },
+  {
+    "animation": "414",
+    "frames": 40,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs04ve.arc",
+    "member": "p01ex_404.pam",
+    "sha256": "0e78f25253be4553540b400c5cdcd4c3f5c904cd367928d0acdf8d5071bf3719"
+  },
+  {
+    "animation": "415",
+    "frames": 80,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs04ve.arc",
+    "member": "p01ex_404.pam",
+    "sha256": "a9afa484356e39963be09ba0204a59c16a90334db775eb9ac6a0851741ec1327"
+  },
+  {
+    "animation": "412",
+    "frames": 45,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs05ve.arc",
+    "member": "p01ex_405.pam",
+    "sha256": "2c1ced2438fb1d583057fdfa8b2b600459c53ce3c85b413ae3aa25e1b79332a1"
+  },
+  {
+    "animation": "413",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs05ve.arc",
+    "member": "p01ex_405.pam",
+    "sha256": "f6bb7e30fc61ac17bc7b62178eab738044a63b22151161823e6bec84c9b986d2"
+  },
+  {
+    "animation": "414",
+    "frames": 40,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs05ve.arc",
+    "member": "p01ex_405.pam",
+    "sha256": "0e78f25253be4553540b400c5cdcd4c3f5c904cd367928d0acdf8d5071bf3719"
+  },
+  {
+    "animation": "426",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs05ve.arc",
+    "member": "p01ex_405.pam",
+    "sha256": "0a031967efa60bbdc4015e5fdfd34c418f3a44d32e1eef70ea025ba7670003f2"
+  },
+  {
+    "animation": "413",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs06ve.arc",
+    "member": "p01ex_406.pam",
+    "sha256": "f6bb7e30fc61ac17bc7b62178eab738044a63b22151161823e6bec84c9b986d2"
+  },
+  {
+    "animation": "416",
+    "frames": 51,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs06ve.arc",
+    "member": "p01ex_406.pam",
+    "sha256": "71d8a8b26ce5369e631e256bccd39052f66deb5dfe1e9ad79c47fc532ffd6bb6"
+  },
+  {
+    "animation": "417",
+    "frames": 48,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs06ve.arc",
+    "member": "p01ex_406.pam",
+    "sha256": "6f3b5a91443656d3458fbbd74fd905f459476f4063d02caae10c573a193bf608"
+  },
+  {
+    "animation": "418",
+    "frames": 81,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs06ve.arc",
+    "member": "p01ex_406.pam",
+    "sha256": "ebc059f781e5ac52c03e0fae609d5d71520685944382834614eb44725e9c9435"
+  },
+  {
+    "animation": "420",
+    "frames": 27,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs07ve.arc",
+    "member": "p01ex_407.pam",
+    "sha256": "5c70b4e013a4e7e0b8814e00d206a4c81b9b0414a69b5c780a7a8eb6b5717a7a"
+  },
+  {
+    "animation": "421",
+    "frames": 33,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs07ve.arc",
+    "member": "p01ex_407.pam",
+    "sha256": "43f4037bac1351ab0d15b787439bac5293a7f81f643537ab207ce9f90e944362"
+  },
+  {
+    "animation": "422",
+    "frames": 27,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs07ve.arc",
+    "member": "p01ex_407.pam",
+    "sha256": "a9aa335417b9bd0fbb2dcc39a4c24fb43c33d13cf236b91cd9997e3e744db069"
+  },
+  {
+    "animation": "423",
+    "frames": 61,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs07ve.arc",
+    "member": "p01ex_407.pam",
+    "sha256": "b2e29fe16072655b86a000fd6ae501f020a7f2072c82d59591495cf14e516ece"
+  },
+  {
+    "animation": "017",
+    "frames": 28,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs09ve.arc",
+    "member": "p01ex_409.pam",
+    "sha256": "df5559cce6e53e1c780fe4d8ca5f8a8db574ec8f12d33d16459479e813b15f93"
+  },
+  {
+    "animation": "414",
+    "frames": 40,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs09ve.arc",
+    "member": "p01ex_409.pam",
+    "sha256": "0e78f25253be4553540b400c5cdcd4c3f5c904cd367928d0acdf8d5071bf3719"
+  },
+  {
+    "animation": "435",
+    "frames": 33,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs09ve.arc",
+    "member": "p01ex_409.pam",
+    "sha256": "6f84121f0374547e22111ec208dc816ce95534311a919c370d80d28d5ae67923"
+  },
+  {
+    "animation": "436",
+    "frames": 13,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs09ve.arc",
+    "member": "p01ex_409.pam",
+    "sha256": "72a9c61b8ac449ae7b2e06fcc051c38ff17a5f0106b411f81b62f95412ff65e8"
+  },
+  {
+    "animation": "437",
+    "frames": 71,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs09ve.arc",
+    "member": "p01ex_409.pam",
+    "sha256": "a121cb3cef8b948d28a14bf36fcba857af6f2abba921b56be44d7552bfe2f6e0"
+  },
+  {
+    "animation": "504",
+    "frames": 20,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs09ve.arc",
+    "member": "p01ex_409.pam",
+    "sha256": "8b0249d208d32ea25ad74c29c6794055e17db3114bfa2aca34eae7369dd17563"
+  },
+  {
+    "animation": "520",
+    "frames": 16,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs09ve.arc",
+    "member": "p01ex_409.pam",
+    "sha256": "7ef1ce02fc7b60ac55294335d57ce3974bf68841e5bb6a787b4fdbf869219044"
+  },
+  {
+    "animation": "608",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs09ve.arc",
+    "member": "p01ex_409.pam",
+    "sha256": "62d8e3edb9234d5d0978b383b8b558671eb68fb58654ce4b61b947a528a69c89"
+  },
+  {
+    "animation": "480",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs12ve.arc",
+    "member": "p01ex_412.pam",
+    "sha256": "b9939308d6cb575a10718cb463e17e8a889d8f8f4d3e6dd898cb565f5dfa096f"
+  },
+  {
+    "animation": "481",
+    "frames": 17,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs12ve.arc",
+    "member": "p01ex_412.pam",
+    "sha256": "fc8ebc21e19dd3ec8648864a8b0d9867b5337ff83d50b07f69f88bad38b90aab"
+  },
+  {
+    "animation": "482",
+    "frames": 17,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs12ve.arc",
+    "member": "p01ex_412.pam",
+    "sha256": "0650a3de10e57202a8d025cf91a95140b49f478d10677f1c0ee479ad8079262f"
+  },
+  {
+    "animation": "483",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs12ve.arc",
+    "member": "p01ex_412.pam",
+    "sha256": "91ca321e88aa66a086606ef7668b60ac3470943600be82a56f926b92e37fb92e"
+  },
+  {
+    "animation": "608",
+    "frames": 31,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs12ve.arc",
+    "member": "p01ex_412.pam",
+    "sha256": "62d8e3edb9234d5d0978b383b8b558671eb68fb58654ce4b61b947a528a69c89"
+  },
+  {
+    "animation": "430",
+    "frames": 35,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs14ve.arc",
+    "member": "p01ex_414.pam",
+    "sha256": "1f439de514825c1d4acd7761096e3e4bda7ba5898dd8fd8bd7bc63c22031d726"
+  },
+  {
+    "animation": "431",
+    "frames": 27,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs14ve.arc",
+    "member": "p01ex_414.pam",
+    "sha256": "e2bfaa483e765224fb9bd3bf1bc34e0ae53c5c92a9d1bf3242e3b27dd7e6610a"
+  },
+  {
+    "animation": "432",
+    "frames": 37,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs14ve.arc",
+    "member": "p01ex_414.pam",
+    "sha256": "808f5a5d71f7e278d833874e0fb80007ea80582641c756e577d67bf671dea5de"
+  },
+  {
+    "animation": "433",
+    "frames": 70,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs14ve.arc",
+    "member": "p01ex_414.pam",
+    "sha256": "0ce67b73f28057ea3f914c647d49556bb8dc8f281a2232080a64472e744cdc7b"
+  },
+  {
+    "animation": "434",
+    "frames": 122,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs14ve.arc",
+    "member": "p01ex_414.pam",
+    "sha256": "0845a46c7404171212ba1af758b051e784e57d57208e3f9e6be63dae42b2b166"
+  },
+  {
+    "animation": "413",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs15ve.arc",
+    "member": "p01ex_415.pam",
+    "sha256": "f6bb7e30fc61ac17bc7b62178eab738044a63b22151161823e6bec84c9b986d2"
+  },
+  {
+    "animation": "426",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xcs15ve.arc",
+    "member": "p01ex_415.pam",
+    "sha256": "0a031967efa60bbdc4015e5fdfd34c418f3a44d32e1eef70ea025ba7670003f2"
+  },
+  {
+    "animation": "358",
+    "frames": 15,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc108ve.arc",
+    "member": "p01ex_108.pam",
+    "sha256": "e1ad4d4e97f49f86dbf1913a632fd365ec5a3455fae8896e1d9a452efe2a4e73"
+  },
+  {
+    "animation": "359",
+    "frames": 28,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc108ve.arc",
+    "member": "p01ex_108.pam",
+    "sha256": "385384ca1688b441bde2f5bfd6dff31d504789fd8a9828b3efff1560639e768a"
+  },
+  {
+    "animation": "360",
+    "frames": 36,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc108ve.arc",
+    "member": "p01ex_108.pam",
+    "sha256": "5370ca93fb26c7910a99caae8ab0b6f3504c936ec16ca200505e03e705af23da"
+  },
+  {
+    "animation": "351",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc119ve.arc",
+    "member": "p01ex_119.pam",
+    "sha256": "334dc3868d51dd1afe649c568512c182795fd7b3fa8525bf52b37969d950e405"
+  },
+  {
+    "animation": "374",
+    "frames": 84,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc121ve.arc",
+    "member": "p01ex_121.pam",
+    "sha256": "20de5c4d3e4c855190c18f499e4668761c2ecf681da74e8949f2cca86d180d21"
+  },
+  {
+    "animation": "375",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc121ve.arc",
+    "member": "p01ex_121.pam",
+    "sha256": "7f4b00ba33cc060b574f0dea85d19b8ff4bd7d51f836ba3130ece12640368cc6"
+  },
+  {
+    "animation": "376",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc121ve.arc",
+    "member": "p01ex_121.pam",
+    "sha256": "f3cd94839677224bf126afe20a2694b1f444c84ec3666de846ffeba1dbe00fb9"
+  },
+  {
+    "animation": "377",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc121ve.arc",
+    "member": "p01ex_121.pam",
+    "sha256": "09edce040d93936ef31b1430d32953cc855263e32beed649a5034ac7ac302093"
+  },
+  {
+    "animation": "378",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc121ve.arc",
+    "member": "p01ex_121.pam",
+    "sha256": "dbc598e307e03351163e879837554c99289ba819ec23d8435c2d7a63429daf61"
+  },
+  {
+    "animation": "379",
+    "frames": 32,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc121ve.arc",
+    "member": "p01ex_121.pam",
+    "sha256": "c8c0aac890c0c1693eac5ec68b80fe0107bb2fb682084816f213e80169dd1dad"
+  },
+  {
+    "animation": "380",
+    "frames": 45,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc121ve.arc",
+    "member": "p01ex_121.pam",
+    "sha256": "d52212734c8232581435c30aeee0a2ba0f9c9607651cbd480960e20722d633c5"
+  },
+  {
+    "animation": "573",
+    "frames": 34,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc131ve.arc",
+    "member": "p01ex_131.pam",
+    "sha256": "65a6e8f99be0cf38303b0447c7a2dc01f0b9dc2411c2c46a2b3b66bd9370b98b"
+  },
+  {
+    "animation": "396",
+    "frames": 144,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc241ve.arc",
+    "member": "p01ex_201.pam",
+    "sha256": "08a98f7e3339ace0992f00045f8457fcb962faff76d9e29c169ae39c49c6ecee"
+  },
+  {
+    "animation": "397",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc257ve.arc",
+    "member": "p01ex_202.pam",
+    "sha256": "8aa823e3eb0e9d0e996ee83d4181a3d10a733aa4cc16ffd1271cadf7f136fca9"
+  },
+  {
+    "animation": "398",
+    "frames": 50,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdc258ve.arc",
+    "member": "p01ex_203.pam",
+    "sha256": "5460b52e2cf590f5921eb8e648ea541a4244249c15ef85f8d96d7d55d8a888df"
+  },
+  {
+    "animation": "017",
+    "frames": 28,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdl17ex.arc",
+    "member": "p01ex_617.pam",
+    "sha256": "df5559cce6e53e1c780fe4d8ca5f8a8db574ec8f12d33d16459479e813b15f93"
+  },
+  {
+    "animation": "500",
+    "frames": 12,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdl17ex.arc",
+    "member": "p01ex_617.pam",
+    "sha256": "6027825ac6496f3f9a156b17af2eb503b96e244ed478257ee95a13a0b96cf6c7"
+  },
+  {
+    "animation": "505",
+    "frames": 26,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdl17ex.arc",
+    "member": "p01ex_617.pam",
+    "sha256": "480d8d1267a38861f1111a47ce50dd60abbb525b30d1cedf3764cf1afe36b480"
+  },
+  {
+    "animation": "520",
+    "frames": 16,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdl17ex.arc",
+    "member": "p01ex_617.pam",
+    "sha256": "7ef1ce02fc7b60ac55294335d57ce3974bf68841e5bb6a787b4fdbf869219044"
+  },
+  {
+    "animation": "705",
+    "frames": 29,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdl17ex.arc",
+    "member": "p01ex_617.pam",
+    "sha256": "a3df75de3fe6fd451161c7a4747cf0d31e6bc44faab7ea9324bad3b94e78699c"
+  },
+  {
+    "animation": "706",
+    "frames": 14,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdl17ex.arc",
+    "member": "p01ex_617.pam",
+    "sha256": "dc5e45eb022c5a02dbe0cd0019c2c16dc9e037b88adc0f8dfd1ea97658832cd8"
+  },
+  {
+    "animation": "707",
+    "frames": 200,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdl17ex.arc",
+    "member": "p01ex_617.pam",
+    "sha256": "5af37bc630f41475998401c0477a74309f079cdebce7b6012a37717105c157d0"
+  },
+  {
+    "animation": "800",
+    "frames": 77,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xdl27ve.arc",
+    "member": "p01ex_627.pam",
+    "sha256": "ca16986a53682029bda7f7081113f23c1dcdde7eb6236c8c0e7efd2aa7a91f51"
+  },
+  {
+    "animation": "504",
+    "frames": 20,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xsl18ve.arc",
+    "member": "p01ex_518.pam",
+    "sha256": "8b0249d208d32ea25ad74c29c6794055e17db3114bfa2aca34eae7369dd17563"
+  },
+  {
+    "animation": "521",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xsl18ve.arc",
+    "member": "p01ex_518.pam",
+    "sha256": "e490a2d55536611cc362cd90756368a12522829f9e07f4f68d6dea279603c6b4"
+  },
+  {
+    "animation": "522",
+    "frames": 18,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc/xsl18ve.arc",
+    "member": "p01ex_518.pam",
+    "sha256": "6a635787cdab4864c6078f759b3ee6d42415a6a53da2ac2732f9ad90764dba0e"
+  },
+  {
+    "animation": "060",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc_ven/p01ex_711.arc",
+    "member": "p01ex_711.pam",
+    "sha256": "9f321d67501cac5d81d04bb29c8778532acd22367191db50175a93dc16eb26ad"
+  },
+  {
+    "animation": "022",
+    "frames": 30,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc_ven/xaa002ve.arc",
+    "member": "p01ex_002.pam",
+    "sha256": "a206a78780ae435599dc6f31c27619bdea541f237f53c44838b6266f6a364a4b"
+  },
+  {
+    "animation": "023",
+    "frames": 90,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc_ven/xaa002ve.arc",
+    "member": "p01ex_002.pam",
+    "sha256": "6029680cc78b61ff2111962ddf5cd32782cbfffc0ab6c731b2416df9a96b625b"
+  },
+  {
+    "animation": "025",
+    "frames": 61,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc_ven/xaa003ve.arc",
+    "member": "p01ex_003.pam",
+    "sha256": "832ab240b1a09e143ce9bb1819371abf9497091d11c196d8cb48b54016390ab0"
+  },
+  {
+    "animation": "026",
+    "frames": 40,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc_ven/xaa003ve.arc",
+    "member": "p01ex_003.pam",
+    "sha256": "7bb2d50e99461fa7c5a9713c2bc758e2afb5ff628887cb52192d789c9fc4300e"
+  },
+  {
+    "animation": "051",
+    "frames": 16,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc_ven/xaa005ve.arc",
+    "member": "p01ex_005.pam",
+    "sha256": "e9153b28a37c7ab9558b0992ab6051cac317b7dd2ee5a28edd3f3f371a5255d6"
+  },
+  {
+    "animation": "052",
+    "frames": 20,
+    "fps": 30,
+    "bones": 53,
+    "source": "arc/pc_ven/xaa005ve.arc",
+    "member": "p01ex_005.pam",
+    "sha256": "32b4ed0567d05ade52feb4b98925e6dfec889695a447eae72dd7bb52893d7dcb"
+  }
+]

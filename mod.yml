@@ -1,9 +1,9 @@
-title: KH1FM Styles v63 - Spent AP and Ventus Source Prep
+title: KH1FM Styles v64 - Footer Fix and Ventus
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Passives and Limits show Sora's spent AP / maximum AP.
-  Includes a Ventus source collector; Type G is pending original BBS assets.
-  All eleven existing stances, numbered slots and built-in abilities retained.
+  Fixed description layout and larger white AP Used/max in Passives and Limits.
+  Ventus Type G uses original BBS bodies, with native Glide and Superglide.
+  Existing stances and built-ins retained; former numbered slot115 is Type G.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

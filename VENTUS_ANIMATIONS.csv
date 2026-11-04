@@ -1,0 +1,38 @@
+action,bbs_animation,source_frames,source_fps,source_start,source_end,source_bank,kh1_request,normal_slot,olympus_slot,native_frames,loop,max_pose_error
+idle,001,90,30,0,89,arc/pc/p01base.arc,0x0,0,0,120,True,1.071558
+combat idle,002,110,30,0,109,arc/pc/p01base.arc,0x0,1,1,170,True,2.444237
+walk,003,36,30,0,35,arc/pc/p01base.arc,0x1,2,2,60,True,0.979314
+walk,003,36,30,0,35,arc/pc/p01base.arc,0x1,3,3,60,True,0.979314
+combat walk,012,32,30,0,31,arc/pc/p01base.arc,0x1,4,4,48,True,0.888004
+run,004,16,30,0,15,arc/pc/p01base.arc,0x2,5,5,36,True,1.135658
+run,004,16,30,0,15,arc/pc/p01base.arc,0x2,6,6,36,True,1.135658
+combat run,013,20,30,0,19,arc/pc/p01base.arc,0x2,7,7,36,True,1.213143
+jump takeoff,005,14,30,0,9,arc/pc/p01base.arc,0x4,8,8,26,False,0.981714
+jump rise,005,14,30,9,13,arc/pc/p01base.arc,0x5,9,9,14,False,0.084913
+fall,006,15,30,7,14,arc/pc/p01base.arc,0x6,10,10,40,True,0.730897
+landing,007,14,30,0,13,arc/pc/p01base.arc,0x7,11,11,28,False,0.901701
+high jump takeoff,014,32,30,0,16,arc/pc/p01base.arc,0x9,12,12,34,False,1.149117
+high jump rise,014,32,30,16,31,arc/pc/p01base.arc,0xa,13,13,26,False,0.952465
+ledge hang,020,95,30,55,94,arc/pc/p01base.arc,0xd,14,14,120,True,0.893262
+ledge climb start,021,14,30,0,4,arc/pc/p01base.arc,0xe,15,15,68,False,0.999966
+ledge climb finish,021,14,30,4,13,arc/pc/p01base.arc,0xf,16,16,28,False,0.788648
+ledge landing recovery,007,14,30,0,13,arc/pc/p01base.arc,0x10,17,,40,False,0.877609
+ground Fire,354,36,30,0,23,arc/pc/p01base.arc,0x36,54,17,28,False,0.816651
+ground Thunder,354,36,30,0,23,arc/pc/p01base.arc,0x37,55,18,86,False,0.814386
+ground other magic,354,36,30,0,23,arc/pc/p01base.arc,0x38,56,19,68,False,0.784452
+ground magic recovery,354,36,30,23,35,arc/pc/p01base.arc,0x3d,57,20,60,False,0.690636
+ground item,600,44,30,0,43,arc/pc/p01base.arc,0x3e,58,21,82,False,0.746452
+air item,600,44,30,0,43,arc/pc/p01base.arc,0x3f,59,22,72,False,0.770089
+air Fire,355,40,30,0,27,arc/pc/p01base.arc,0x83,79,41,28,False,1.273588
+air Thunder,355,40,30,0,27,arc/pc/p01base.arc,0x84,80,42,78,False,1.087141
+air other magic,355,40,30,0,27,arc/pc/p01base.arc,0x85,81,43,68,False,0.951183
+air magic recovery,355,40,30,27,39,arc/pc/p01base.arc,0x8a,82,44,52,False,1.124467
+ground1,300,28,30,0,27,arc/pc/p01base.arc,0xc8,98,60,48,False,1.419708
+ground2,301,34,30,0,33,arc/pc/p01base.arc,0xc9,99,61,48,False,1.120521
+ground alternate2,301,34,30,0,33,arc/pc/p01base.arc,0xca,100,62,64,False,1.458216
+ground finisher,302,32,30,0,31,arc/pc/p01base.arc,0xcb,101,63,80,False,1.245652
+air1,305,21,30,0,20,arc/pc/p01base.arc,0xcc,102,64,40,False,1.375287
+air2,306,29,30,0,28,arc/pc/p01base.arc,0xcd,103,65,42,False,1.38628
+air finisher,307,31,30,0,30,arc/pc/p01base.arc,0xce,104,66,56,False,1.065758
+Guard,400,40,30,0,39,arc/pc/p01base.arc,0xd4,110,72,54,False,0.858192
+Dodge Roll,009,19,30,0,18,arc/pc/p01base.arc,0xdc,117,79,38,False,0.897221

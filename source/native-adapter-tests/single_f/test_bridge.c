@@ -152,7 +152,11 @@ unsigned bridge_move_calls(void){return move_calls;}
 static float ABI native_sinf(float x){return sinf(x);}
 static char menu_drawn[4096];static unsigned menu_text_count,menu_panels,menu_last_sound,menu_rects,menu_glyphs,menu_scrolls;
 static int menu_clip_on,menu_clip_top,menu_clip_bottom,menu_rect_data[32][5];
-void bridge_menu_reset(void){menu_drawn[0]=0;menu_text_count=menu_panels=menu_last_sound=menu_rects=menu_glyphs=menu_scrolls=0;menu_clip_on=0;}
+static unsigned menu_plain_count;static int menu_plain_words[128][4];static unsigned char menu_plain_texts[128][256];
+void bridge_menu_reset(void){menu_drawn[0]=0;menu_text_count=menu_panels=menu_last_sound=menu_rects=menu_glyphs=menu_scrolls=menu_plain_count=0;menu_clip_on=0;}
+unsigned bridge_menu_plain_count(void){return menu_plain_count;}
+int bridge_menu_plain_word(unsigned row,unsigned field){return row<menu_plain_count&&field<4?menu_plain_words[row][field]:-1;}
+uintptr_t bridge_menu_plain_text(unsigned row){return row<menu_plain_count?(uintptr_t)menu_plain_texts[row]:0;}
 const char* bridge_menu_text(void){return menu_drawn;}
 unsigned bridge_menu_panel_count(void){return menu_panels;}
 unsigned bridge_menu_sound(void){return menu_last_sound;}
@@ -184,8 +188,12 @@ static void ABI native_menu_ap_panel(uintptr_t w,int x,int y,uint32_t color){
     native_menu_rect(w,x,y,*(int*)(game_base+0x545370),*(int*)(game_base+0x545380),color);
 }
 static void ABI native_menu_plain_text(uintptr_t w,int flags,int x,int y,const unsigned char*text,int font,uint32_t color,int wrap){
-    (void)font;(void)color;(void)wrap;native_menu_text(w,0,flags,x,y,512,text);
+    (void)wrap;if(!menu_clipped(y)&&menu_plain_count<128){
+      unsigned row=menu_plain_count++;menu_plain_words[row][0]=x;menu_plain_words[row][1]=y;menu_plain_words[row][2]=font;menu_plain_words[row][3]=(int)color;
+      unsigned i=0;for(;i<255&&text[i];i++)menu_plain_texts[row][i]=text[i];menu_plain_texts[row][i]=0;
+    }native_menu_text(w,0,flags,x,y,512,text);
 }
+static int ABI native_menu_width(const unsigned char*text,int font){int width=0;while(*text){unsigned c=*text++;if(c==2||c==3)break;width+=(font+1)/2;}return width;}
 static unsigned char native_gpu_packets[32][4096];static unsigned native_gpu_count;
 void bridge_gpu_reset(void){native_gpu_count=0;memset(native_gpu_packets,0,sizeof(native_gpu_packets));}
 unsigned bridge_gpu_count(void){return native_gpu_count;}
@@ -217,6 +225,7 @@ uintptr_t bridge_symbol(const char*n){
     if(!strcmp(n,"NumberedPersist"))return (uintptr_t)numbered_save;
     if(!strcmp(n,"NativeMenuApPanel"))return (uintptr_t)native_menu_ap_panel;
     if(!strcmp(n,"NativeMenuPlainText"))return (uintptr_t)native_menu_plain_text;
+    if(!strcmp(n,"NativeMenuWidth"))return (uintptr_t)native_menu_width;
     if(!strcmp(n,"NativeGpuAlloc"))return (uintptr_t)native_gpu_alloc;
     if(!strcmp(n,"NativeMenuPill"))return (uintptr_t)native_menu_pill;
     if(!strcmp(n,"NativeMenuRect"))return (uintptr_t)native_menu_rect;

@@ -1,108 +1,102 @@
-KH1FM STYLES v63 / s402 - SPENT AP AND VENTUS SOURCE PREPARATION
+KH1FM STYLES v64 / s403 - FOOTER FIX AND VENTUS TYPE G
 
 INSTALL
-1. Close KH1. Disable v62 or any older main Styles/Dual Wield package.
+1. Close KH1. Disable v63 or any older main Styles/Dual Wield package.
    Keep standalone Aqua/Terra tests and the full KH2 Combat DLL disabled.
-2. Import this ZIP into OpenKH Mod Manager. Enable v63, Build and launch
-   with Panacea. Keep existing KH2FM resources/settings for older stances.
-3. Confirm s402 / STANCES v63 in kh1-dual-wield.log beside the executable.
-   The native menu/ability adapter targets the supplied Steam Global build.
+2. Import this ZIP into OpenKH Mod Manager. Enable v64, Build and launch
+   with Panacea. Retain existing KH2FM resources/settings for older stances.
+3. Confirm s403 / STANCES v64 in kh1-dual-wield.log beside the executable.
+   The new native UI/body adapter targets the supplied Steam Global build.
 
-AP USED / MAXIMUM
-Customize -> Passives and Customize -> Limits now show AP Used <spent> / <max>
-in the lower information area. Both show Sora's current native AP budget.
-Limits is still empty and uses the same budget; it has no separate AP pool.
-Equipping/removing normal passives updates the total immediately. Numbered
-zero-AP abilities and stances do not spend AP. Stance and Outfits omit this
-display. Native AP costs and insufficient-AP checks remain unchanged.
+DESCRIPTION AND AP FOOTER
+Descriptions now use the normal inset, measured word wrapping and fixed line
+spacing. Native leading/font/position commands no longer send later lines
+down the page. Up to three lines fit in the left footer; long help ends in ...
 
-VENTUS / TYPE G - SOURCE REQUIRED
-Type G is NOT playable or listed in this build. Ventus's original skeleton
-and motion banks have not been received. Existing Aqua/Terra poses cannot
-establish Ventus's mappings, and no other stance is relabeled as Ventus.
+Passives and Limits show AP Used in a separate right footer column. The label
+is white at size16 and spent/max numbers are white at size22, compared with
+size12 previously. Long totals shrink only enough to fit the column. The
+display is moved up to avoid clipping at the bottom. Both use Sora's current
+native AP budget and update on equip/remove. Limits remains empty, using the
+same budget; it has no separate AP pool. Stance and Outfits omit the AP total.
 
-To provide the missing files:
-1. Extract the Ventus_Source_Locator folder from this ZIP somewhere writable.
-2. Run Ventus_Source_Locator/RUN_ME.cmd.
-3. Select the broad EXTRACTED BBS data folder containing arc AND chara.
-   Selecting only pc_ven misses the shared p01base archive and p01ex00 model.
-4. Upload the generated Ventus_Source_Capture_....zip beside the collector.
+VENTUS - TYPE G
+Customize -> Stance -> Type G now equips Ventus's initial BBS moveset test.
+It uses the original53-bone model and animation banks from the returned
+Ventus capture, fitted onto Sora's native293-bone body.
 
-It reads the original files and writes a separate timestamped capture. There
-is no automatic upload or game-file edit. It includes the source model,
-named gameplay/command banks, relative paths, header inventory and file hashes.
-Read/size-limit notes are retained even if no matching banks are copied.
-Windows PowerShell5.1+ is required; no Python or administrator access needed.
-Packed game containers must already be extracted. The new collector has not
-been run on Windows here. See its README_FIRST.txt for details.
+Ground combo:300,301,302. Air combo:305,306,307.
+Guard:400. Dodge Roll:009. Ground casting:354. Air casting:355. Items:600.
+Locomotion, combat poses, jumps, ledges, falling and landing are also mapped.
+VENTUS_ANIMATIONS.csv lists all37 mapped native records, source frames/ranges,
+bank names, requests and native durations. All listed BBS clips are30fps.
 
-RETAINED v62 BEHAVIOR
-Main menu: Items -> Customize -> Equipment -> Shortcuts, then native options.
-Customize categories: Stance, Passives, Limits, Outfits. Passives opens Sora's
-list directly, without the Sora/Donald/Goofy/Shared selector. Confirm toggles
-the selected row; Back returns to categories, then to the main menu.
+KH1 retains action selection, hitboxes, spell/item/Guard events, contact timing,
+travel, collision and damage reactions. The bodies are retimed to existing
+KH1 clip durations. Native Glide and Superglide remain available. Terra's
+Square dash and special recovery variants remain confined to Type F.
+This is an initial animation mapping for game testing; source fit checks do
+not establish mesh/grip clearance or matching BBS contact semantics.
 
-All51 numbered abilities66..115 and127 remain visible, zero AP and without
-assigned combat effects. Their mod-wide test selections are stored beside
-the executable in kh1-numbered-abilities.ini and shared between game saves.
-They use no native learned slots. With the game closed, delete that file to
-reset test flags. Normal Sora abilities keep their names and native AP costs.
-The eight-row viewport supports up to99 rows without enlarging the48-byte
-native learned array. Existing full arrays can toggle flags; adding a new
-stance token still requires free native capacity.
+STANCES AND NUMBERED ABILITIES
+Type G is Single/I, zero AP, between Type F and Type H?. It uses former test
+slot115, which is no longer shown as a numeric passive. All previous stance
+names, IDs and saved codes remain. The other50 placeholders66..114 and127
+remain visible and cost0 AP. Their test flags still use the mod-wide
+kh1-numbered-abilities.ini file. The former115 test flag is ignored; it cannot
+equip Type G or shift another flag. ID127 and other saved selections retain
+their meaning. Confirm Type G to equip it explicitly.
 
-Non-Sora member IDs1..9 have their learned abilities automatically removed
-and equipped-ability queries suppressed, including inactive partners. Saving
-retains this removal; uninstall does not reconstruct their ability lists.
-Only the learned arrays are cleared. Stats, experience, items, equipment and
-AI/customize settings are retained. Basic commands/spells are not separately
-deleted. Partner arrays are not reused for Sora or numeric-ability storage.
+Type A..G use one weapon, H?/I?/K?/L? use two, M? uses none. Armed types
+retain KH1 spell execution (I); M? uses0. Original native definitions/AP costs
+remain. Passives opens Sora directly; Confirm toggles the row, Back returns
+to Customize, then the main menu. A stance still uses one hidden native save
+token, and inserting it requires free capacity in the48-byte learned array.
+There are at most98 Passives rows:48 normal native entries plus50 numeric.
 
 Scan, Dodge Roll, Guard, High Jump, Mermaid Kick, Glide and Superglide remain
-active without AP or learned slots. Native room/action/swimming gates and
-stance movement replacements still apply. All eleven existing stance labels,
-combos, magic effects, E/F controllers and animation payloads match v62.
+active without AP or learned slots. Room/action gates and stance replacements
+still apply. All190 retained native/Terra/variant body-part payloads match v63;
+Single E's payload and both E/F action controllers are unchanged.
 
-STANCE LABELS                WEAPONS   MAGIC
-Single A -> Type A           Single    I
-Single B -> Type B           Single    I
-Single C -> Type C           Single    I
-Single D -> Type D           Single    I
-Single E -> Type E           Single    I
-Single F -> Type F           Single    I
-Dual A   -> Type H?          Dual      I
-Dual B   -> Type I?          Dual      I
-Dual C   -> Type K?          Dual      I
-Dual D   -> Type L?          Dual      I
-Anti     -> Type M?          None      0
-Question marks are intentional. I means KH1 spell execution, II KH2,0 no magic.
+As requested in earlier versions, non-Sora member1..9 learned ability arrays
+are removed and their equipped-ability queries suppressed. Saving retains this
+removal. Stats, equipment, items and AI/customize settings remain. Uninstall
+does not reconstruct the removed partner lists or reuse their arrays.
 
 TEST / REPORT
-Check AP Used in Passives before/after equipping a normal ability. Limits
-should show the same current total. Numbered entries must not alter spending.
-Check zero/max AP and Back navigation. Return the new kh1-dual-wield.log and
-a screenshot if positioning or totals are incorrect. For Type G, return the
-collector's Ventus_Source_Capture ZIP so the original motions can be inspected
-and retargeted with native KH1 action timing.
+Check Combo Master's description and a longer description. Lines should stay
+inside the left footer; the larger AP total should be white on the right in
+both Passives and Limits. Check native AP costs and toggles.
+Equip Type G, return to the field and stand idle for the body switch. Test
+movement, both combos, Guard, roll, casting/items, jumps and Glide/Superglide
+in normal Sora and Olympus rooms. Check switching to F/E and back after an
+action. Return kh1-dual-wield.log and a screenshot/video for remaining issues.
 
 VALIDATION
-631 Rust tests/30 nonempty suites and139 final-PE adapter checks pass:
-92 F/menu/ability and47 E. New checks cover zero, partial, exhausted and
-zero-max AP; updates after equip/remove; no-cost numeric rows; matching
-Passives/Limits; and no AP display in Stance/Outfits. Existing native paging,
-all51 flags, full lists, partner boundaries and both combat adapters pass.
-The Windows x64 release builds with4 exports/8 imported DLLs. Source patch,
-exact rebuild inputs and current receipts are included. Most rendering,
-Windows APIs and shared Rust dispatch are substituted by the harness.
-Actual game/GPU execution and the new Windows collector are untested here.
-See validation.json and source/STYLES-V63.MD; older receipts are historical.
+632 Rust tests across30 nonempty suites and145 final-PE adapter checks pass:
+98 F/G/menu/ability and47 E. All37 G records apply/restore in both supported
+banks with raw and relocated pointers; tests check F dash retirement, ordinary
+G Square/movement, native Glide/Superglide eligibility and stable numeric flags.
+Footer tests verify native command operands, line positions, width/truncation,
+white AP color and16/22 font parameters. Existing AP/native paging regressions
+pass. Windows x64 builds with4 exports and8 imported DLLs.
 
-UNINSTALL OR ROLL BACK
-Use v63's uninstall path before disabling or reverting: set
-remove_dual_wield=on in kh1-dual-wield.ini, load/save with v63, close KH1,
-disable the package and Build again. The hidden stance token is removed.
-Missing normal built-in entries are restored where capacity permits: Sora's
-Scan/Guard/Roll unequipped to preserve AP, shared movement equipped. No other
-ability is evicted. Cleared partner abilities stay removed. Numbered flags
-stop overriding queries and are not written into the save. Keep or delete
-kh1-numbered-abilities.ini as desired. Never enable two Styles DLLs together.
+Conversion bounds: max pose error2.445 model units, basis error0.050,
+segment-length error below4.1e-11, zero scale error and zero root-helper error.
+The harness substitutes Windows APIs, rendering submission and shared Rust
+dispatch. Actual Windows/game/GPU execution, mesh/grip alignment, combat feel
+and live switching remain for testing. Current receipts are validation.json
+and source/STYLES-V64.MD; older receipts are historical. Exact rebuild inputs
+and a full64-commit source patch are included. See source/SINGLE-G.MD for
+optional conversion regeneration from the original private source assets.
+
+UNINSTALL / ROLLBACK
+Use the explicit uninstall path before disabling or reverting: set
+remove_dual_wield=on in kh1-dual-wield.ini, load/save with v64, close KH1,
+disable the package and Build again. This removes the hidden stance token,
+including Type G. Built-in normal entries are restored where capacity permits:
+Sora's Scan/Guard/Roll unequipped, shared movement equipped. No unrelated
+ability is evicted. Partner abilities stay removed. Numbered flags stop
+overriding queries and are not written into the game save. Keep/delete the
+numbered settings file as desired. Never enable two Styles DLLs together.

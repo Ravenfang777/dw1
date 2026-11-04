@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "parts_compared": 190,
+  "all_native_terra_and_variant_bytes_unchanged": true,
+  "ventus_motions": 37,
+  "source_bones": 53,
+  "max_pose_error": 2.4442371509405865,
+  "max_basis_error": 0.04974144526928795,
+  "max_length_error": 4.0461856087858905e-11,
+  "max_scale_error": 0.0,
+  "native_root_travel_error": 0.0
+}

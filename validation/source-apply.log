@@ -52,7 +52,7 @@ Applying: Styles v49: borrow Single C jump and map Dark Riku basic combo poses
 Applying: Styles v50: resolve native combo requests to regular animation bank records
 Applying: Styles v51: select script-linked Dark Riku weapon attacks for both combos
 Applying: Styles v52: move Single D second attack to native Guard and capture extra source
-Applying: Styles v53: integrate main Aqua v21 as Sin/workspace/scratch/ac59123af99a/styles_v56_work/.git/worktrees/v63-applycheck/rebase-apply/patch:1008: new blank line at EOF.
+Applying: Styles v53: integrate main Aqua v21 as Sin/workspace/scratch/ac59123af99a/styles_v56_work/.git/worktrees/v64-applycheck/rebase-apply/patch:1008: new blank line at EOF.
 +
 warning: 1 line adds whitespace errors.
 gle E with shared native hooks
@@ -66,6 +66,7 @@ Applying: Fix stance panels and move native abilities into Customize Passives
 Applying: Make seven native abilities intrinsic without AP or save slots
 Applying: Expose all numbered slots in direct Sora Passives and remove partner abilities
 Applying: Show spent AP in Passives and Limits; prepare Ventus source capture
+Applying: Fix Customize footer and add native-body Ventus Type G
 
-Verified source tree: f3833c6d0f8e8793d42438a1a2cda29c70e1a64d
-Full63-commit patch reconstructs the exact delivered tree.
+Verified source tree: b84aaf04682596e6e95b87346abbcd0194be1e98
+Full64-commit patch reconstructs the exact delivered tree.
