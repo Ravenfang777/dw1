@@ -27,6 +27,9 @@ bridge.bridge_glide_eligible.argtypes=[C.c_int];bridge.bridge_glide_eligible.res
 bridge.bridge_motion_delta.argtypes=[];bridge.bridge_motion_delta.restype=C.c_float
 for name,args,ret in [('bridge_menu_reset',[],None),('bridge_menu_text',[],C.c_char_p),('bridge_menu_panel_count',[],C.c_uint),('bridge_menu_sound',[],C.c_uint),('bridge_menu_rect_count',[],C.c_uint),('bridge_menu_glyph_count',[],C.c_uint),('bridge_menu_scroll_count',[],C.c_uint),('bridge_menu_rect_word',[C.c_uint,C.c_uint],C.c_int)]:
     f=getattr(bridge,name);f.argtypes=args;f.restype=ret
+for name,args,ret in [('bridge_gpu_reset',[],None),('bridge_gpu_count',[],C.c_uint),('bridge_gpu_packet',[C.c_uint],C.c_size_t)]:
+    f=getattr(bridge,name);f.argtypes=args;f.restype=ret
+bridge.call_panel.argtypes=[C.c_size_t,C.c_size_t,C.c_int,C.c_int,C.c_uint];bridge.call_panel.restype=None
 libc=C.CDLL(None);libc.mmap.argtypes=[C.c_void_p,C.c_size_t,C.c_int,C.c_int,C.c_int,C.c_long];libc.mmap.restype=C.c_void_p
 
 libc.munmap.argtypes=[C.c_void_p,C.c_size_t];libc.munmap.restype=C.c_int
@@ -325,7 +328,8 @@ class Host(BaseHost):
     values=line.split(',',6);r=int(values[0][1:],16);n=int(values[1]);anchors.append((r,n));put(self.game+r,raw(r,n))
   for r,n in [(0x2dae20,15),(0x311c56,16),(0x2d0970,21),(0x311f9e,15),(0x310d26,5),(0x31127c,5),(0x2e4325,14),(0x2e5220,34)]:put(self.game+r,raw(r,n))
   put(self.game+0x53bd10,raw(0x53bd10,96))
-  for r,f in [(0x52af20,0x2d3840),(0x5490f0,0x310ef0),(0x5490c0,0x310b60),(0x549090,0x310a90)]:w64(self.game+r,self.game+f)
+  for r,f in [(0x52af20,0x2d3840),(0x5490f0,0x310ef0),(0x5490c0,0x310b60),(0x549090,0x310a90)]:
+   data=bytearray(raw(r,48));struct.pack_into('<Q',data,0,self.game+f);struct.pack_into('<Q',data,8,0);put(self.game+r,data)
   # Relocate native definition/callback tables as a normal loaded executable.
   for r,n in [(0x52ad40,32),(0x52ad60,64),(0x52ada0,64),(0x52ade0,32),(0x52afb8,32)]:
    data=bytearray(raw(r,n))
@@ -348,10 +352,10 @@ class Host(BaseHost):
   if ok:
    # Rendering/navigation are mocks; real focus, selected-row, confirmation,
    # and close-chain leaf routines execute from the admitted native EXE.
-   put(self.game+0x311850,b'\xc3')
+   for r,n in [(0x311850,0x150),(0x2e5a40,0x2e3),(0x2e2de0,5),(0x2e2e40,5)]:put(self.game+r,self.ui_raw(r,n))
    for r,n in [(0x2e5220,34),(0x2ef470,26),(0x2f0340,223),(0x2e3d10,50),(0x2ef440,48),(0x2ef550,11),(0x2ef560,47),(0x2f0510,125)]:put(self.game+r,self.ui_raw(r,n))
    put(self.game+0x2d9920,b'\xc3')
-   for r,name in [(0x2d7770,b'NativeMenuText'),(0x2e7d20,b'NativeMenuPanel'),(0x17a040,b'NativeMenuSound'),(0x2ef670,b'NativeMenuNav'),(0x2f3810,b'NativeMenuPill'),(0x2f3a80,b'NativeMenuRect'),(0x2d5da0,b'NativeMenuGlyph'),(0x2f0cd0,b'NativeMenuClip'),(0x2f0790,b'NativeMenuUnclip'),(0x2f4d10,b'NativeMenuScroll')]:
+   for r,name in [(0x2ebcd0,b'NativeMenuPlainText'),(0x2f2430,b'NativeMenuApPanel'),(0x2e7d20,b'NativeMenuPanel'),(0x17a040,b'NativeMenuSound'),(0x2ef670,b'NativeMenuNav'),(0x2f3810,b'NativeMenuPill'),(0x2f3a80,b'NativeMenuRect'),(0x2d5da0,b'NativeMenuGlyph'),(0x2f0cd0,b'NativeMenuClip'),(0x2f0790,b'NativeMenuUnclip'),(0x2f4d10,b'NativeMenuScroll')]:
     put(self.game+r,b'\x48\xb8'+struct.pack('<Q',bridge.bridge_symbol(name))+b'\xff\xe0')
    self.ui_pad=self.buffer(bytes(24));w64(self.game+0x2e95940,self.ui_pad);w32(self.game+0x5456a0,0x20);w32(self.game+0x5456a4,0x40)
   return ok
@@ -534,14 +538,14 @@ class RuntimeTests(unittest.TestCase):
             self.assertEqual(C.string_at(h.game+0x2ee3980,64*8),before)
     def test_ui_installer_checks_actual_executable_anchors_and_expands_all_tables(self):
      h=Host();anchors=h.ui_seed();self.assertTrue(h.ui_init());self.assertTrue(bridge.call_int0(h.symbols['StylesMenuReady']))
-     h.ui_call('styles_root_init');storage=r64(h.symbols['styles_storage']);count=r32(h.game+0x2e1f4c8);self.assertEqual(count,9)
-     self.assertEqual(list((C.c_uint*9).from_address(storage)),[0,8,1,2,3,4,5,6,7])
+     h.ui_call('styles_root_init');storage=r64(h.symbols['styles_storage']);count=r32(h.game+0x2e1f4c8);self.assertEqual(count,8)
+     self.assertEqual(list((C.c_uint*8).from_address(storage)),[0,8,1,3,4,5,6,7])
      self.assertEqual(r32(storage+0x40+8*4),0xff00);self.assertEqual(r64(storage+0x80+8*8),r64(storage+0x80+2*8));self.assertEqual(r64(storage+0xd0+8*8),h.symbols['styles_enter'])
     def test_ui_last_anchor_or_protection_failure_publishes_nothing(self):
      for kind in ['anchor','slots_helper','ap_column','ap_create','protect']:
       h=Host();anchors=h.ui_seed()
       if kind=='anchor':put(h.game+anchors[-1][0],b'\xcc')
-      elif kind=='slots_helper':put(h.game+0x2d7770,b'\xcc')
+      elif kind=='slots_helper':put(h.game+0x2ebcd0,b'\xcc')
       elif kind=='ap_column':put(h.game+0x311f9e,b'\xcc')
       elif kind=='ap_create':put(h.game+0x310d26,b'\xcc')
       else:bridge.bridge_magic_modes(0,0,2)
@@ -555,7 +559,7 @@ class RuntimeTests(unittest.TestCase):
     def test_ui_styles_has_all_eleven_and_selects_single_f_exclusively(self):
      h=Host();h.ui_seed();self.assertTrue(h.ui_init());put(h.save+0x44,bytes([6,117,0x97,21])+bytes(44));w=h.ui_window();h.ui_call('styles_enter',w)
      # Display order is Singles A-F, Duals A-D, Anti; Single F is row5.
-     put(h.game+0x311c66,bytes.fromhex('418074244580')+h.ui_tail);h.ui_call('styles_list',w)
+     w32(h.symbols['styles_customize_active'],0);put(h.game+0x311c66,bytes.fromhex('418074244580')+h.ui_tail);h.ui_call('styles_list',w)
      self.assertEqual(h.abilities()[:5],bytes([6,0x97,21,116,0]));self.assertEqual(r32(h.game+0x2e9cbc8),11)
      p=h.symbols['styles_shadow']+0x44;self.assertEqual(C.string_at(p,11),bytes([252,251,248,247,245,116,254,253,249,246,250]))
      # Unequip and re-equip that same row; both paths must work.
@@ -582,7 +586,7 @@ class RuntimeTests(unittest.TestCase):
     def test_native_menu_title_and_normal_message_lookup(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window();h.ui_call('styles_enter',w);w32(h.game+0x2e1f4d0,8)
         ptr=bridge.call_ptr1(h.game+0x2d0970,0xff00);self.assertEqual(C.string_at(ptr,10),bytes([0x2d,0x59,0x57,0x58,0x53,0x51,0x4d,0x5e,0x49,0]))
-        ptr2=bridge.call_ptr1(h.game+0x2d0970,0xbd);self.assertEqual(ptr,ptr2)
+        ptr2=bridge.call_ptr1(h.game+0x2d0970,0x6b);self.assertEqual(ptr,ptr2)
         offsets=h.buffer(bytes([0,0,3,0]));text=h.buffer(b'abcNative\0');w64(h.game+0x2e1ac50,offsets);w64(h.game+0x2e1ac48,text)
         self.assertEqual(bridge.call_ptr1(h.game+0x2d0970,2),text+3)
 
@@ -601,9 +605,9 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(C.string_at(h.save+0x74+0x44,3),bytes([0x87,0x88,0]));self.assertEqual(h.abilities()[:4],bytes([6,117,0x97,0]))
     def test_root_menu_keeps_last_selected_native_option_after_styles_insert(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());w32(h.game+0x2e1f4d0,6);h.ui_call('styles_root_init');w=h.ui_window();h.ui_call('styles_root',w)
-        self.assertEqual(r32(h.game+0x2e1f4cc),7);self.assertEqual(C.c_ushort.from_address(w+0xfe).value,7<<4);self.assertEqual(C.c_ushort.from_address(w+0xf8).value,9)
+        self.assertEqual(r32(h.game+0x2e1f4cc),6);self.assertEqual(C.c_ushort.from_address(w+0xfe).value,6<<4);self.assertEqual(C.c_ushort.from_address(w+0xf8).value,8)
     def test_external_native_ability_change_cannot_be_overwritten_by_stale_view(self):
-        h=Host();h.ui_seed();self.assertTrue(h.ui_init());put(h.save+0x44,bytes([6,117,0x97])+bytes(45));w=h.ui_window();h.ui_call('styles_enter',w)
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());put(h.save+0x44,bytes([6,117,0x97])+bytes(45));w=h.ui_window();h.ui_call('styles_enter',w);w=r64(h.symbols['styles_custom_page'])
         put(h.symbols['styles_shadow']+0x44+5,bytes([116]));new=bytes([6,117,0x97,42])+bytes(44);put(h.save+0x44,new)
         h.ui_call('styles_page',w);self.assertEqual(h.abilities(),new)
 
@@ -622,7 +626,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(r32(h.game+0x298ca94),0x00900010)
     def test_full_native_list_rejects_style_selection_without_losing_abilities(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());data=bytes([6]*47+[0]);put(h.save+0x44,data);w=h.ui_window();h.ui_call('styles_enter',w)
-        put(h.game+0x311c66,bytes.fromhex('418074244580')+h.ui_tail);h.ui_call('styles_list',w);self.assertEqual(h.abilities(),data)
+        w32(h.symbols['styles_customize_active'],0);put(h.game+0x311c66,bytes.fromhex('418074244580')+h.ui_tail);h.ui_call('styles_list',w);self.assertEqual(h.abilities(),data)
         self.assertEqual(C.c_ubyte.from_address(h.symbols['styles_shadow']+0x44+5).value,244)
 
     def test_repeated_landings_rearm_f_and_reuse_native_superglide_with_runtime_header(self):
@@ -678,25 +682,26 @@ class RuntimeTests(unittest.TestCase):
     def test_customize_is_below_items_with_native_cursor_ids_preserved(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());w32(h.game+0x2e1f4d0,3);h.ui_call('styles_root_init')
         storage=r64(h.symbols['styles_storage'])
-        self.assertEqual(list((C.c_uint*9).from_address(storage)),[0,8,1,2,3,4,5,6,7])
-        self.assertEqual(r32(h.game+0x2e1f4cc),4)
+        self.assertEqual(list((C.c_uint*8).from_address(storage)),[0,8,1,3,4,5,6,7])
+        self.assertEqual(r32(h.game+0x2e1f4cc),3)
 
     def test_styles_keeps_native_blue_without_palette_overrides(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());root=h.ui_window();page=h.ui_window();child=h.ui_window()
         w64(root+0x20,page);w64(page+0x18,root);w64(page+0x20,child);w64(child+0x18,page)
         before=C.string_at(h.game+0x53bd10,96)
-        h.ui_call('styles_enter',root);h.ui_page_frame(page)
+        h.ui_call('styles_enter',root);page=r64(h.symbols['styles_custom_page']);h.ui_page_frame(page)
         for w in [root,page,child]:self.assertEqual(r64(w+0x90),0)
         self.assertEqual(C.string_at(h.game+0x53bd10,96),before)
         self.assertEqual(bridge.bridge_menu_panel_count(),12)
 
     def test_customize_categories_stance_toggle_and_reserved_categories_preserve_save(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());native=bytes([6,0x97,6,21]);put(h.save+0x44,native+bytes([117])+bytes(43))
-        root=h.ui_window();w=h.ui_window();h.ui_call('styles_enter',root)
-        text=h.ui_page_frame(w,0x20);self.assertTrue(text.startswith('Stance|Limit|Outfit|???|'))
+        root=h.ui_window();w=h.ui_window();h.ui_call('styles_enter',root);w=r64(h.symbols['styles_custom_page'])
+        text=h.ui_page_frame(w,0x20);self.assertTrue(text.startswith('Stance|Passives|Limits|Outfits|'))
         self.assertFalse(r32(h.symbols['styles_picker'])) # Entry press cannot enter the list too.
         self.assertIn('Type A|Single|I',text);self.assertIn('Type I?|Dual|I',text);self.assertNotIn('Type K?',text)
-        for row in [1,2,3]:
+        for row in [2,3]:
+            C.c_ushort.from_address(w+0xfe).value=(row-1)*16
             old=C.string_at(h.save,0x1000);text=h.ui_page_frame(w,0x4000)
             self.assertNotIn('Type A',text);self.assertIn('No entries available yet',text)
             h.ui_page_frame(w,0x20);self.assertEqual(bridge.bridge_menu_sound(),4)
@@ -711,7 +716,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(changed[:0x44],old[:0x44]);self.assertEqual(changed[0x74:],old[0x74:])
 
     def test_customize_stance_scroll_reaches_all_eleven_and_keeps_metadata_aligned(self):
-        h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window();h.ui_call('styles_enter',w);h.ui_page_frame(w);h.ui_page_frame(w,0x20)
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window();h.ui_call('styles_enter',w);w=r64(h.symbols['styles_custom_page']);h.ui_page_frame(w);h.ui_page_frame(w,0x20)
         names=set()
         for i in range(11):
             text=h.ui_page_frame(w,0 if i==0 else 0x4000)
@@ -720,7 +725,7 @@ class RuntimeTests(unittest.TestCase):
             rects=[[bridge.bridge_menu_rect_word(j,k) for k in range(4)] for j in range(bridge.bridge_menu_rect_count())]
             self.assertEqual(len(rects),16)
             for j in range(8):
-                self.assertEqual(rects[j*2],[329,71+j*28,52,26]);self.assertEqual(rects[j*2+1],[385,71+j*28,52,26])
+                self.assertEqual(rects[j*2],[327,73+j*28,42,22]);self.assertEqual(rects[j*2+1],[373,73+j*28,42,22])
             self.assertEqual(bridge.bridge_menu_scroll_count(),1)
         self.assertEqual(len(names),11);self.assertIn('Type M?|None|0',text)
         h.ui_page_frame(w,0x20);self.assertEqual(h.abilities()[2],122)
@@ -731,14 +736,14 @@ class RuntimeTests(unittest.TestCase):
 
     def test_customize_cancel_list_then_close_native_menu_chain(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());root=h.ui_window();page=h.ui_window();other=h.ui_window()
-        w64(root+0x20,page);w64(page+0x18,root);w64(h.game+0x2e9cb70,root);h.ui_call('styles_enter',root);h.ui_page_frame(page)
+        w64(root+0x20,page);w64(page+0x18,root);w64(h.game+0x2e9cb70,root);h.ui_call('styles_enter',root);page=r64(h.symbols['styles_custom_page']);h.ui_page_frame(page)
         old=h.abilities();h.ui_page_frame(page,0x20);h.ui_page_frame(page,0x40)
         self.assertFalse(r32(h.symbols['styles_picker']));self.assertEqual(h.abilities(),old);self.assertFalse(r32(page+0x68)&1)
         h.ui_page_frame(page,0x40)
         self.assertTrue(r32(root+0x68)&1);self.assertTrue(r32(page+0x68)&1);self.assertFalse(r32(other+0x68)&1)
 
     def test_customize_confirmation_uses_native_swapped_button_setting(self):
-        h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window();h.ui_call('styles_enter',w);h.ui_page_frame(w)
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window();h.ui_call('styles_enter',w);w=r64(h.symbols['styles_custom_page']);h.ui_page_frame(w)
         w32(h.game+0x5456a0,0x40);w32(h.game+0x5456a4,0x20);h.ui_page_frame(w,0x40)
         self.assertTrue(r32(h.symbols['styles_picker']))
 
@@ -754,11 +759,11 @@ class RuntimeTests(unittest.TestCase):
 
     def test_full_native_save_rejects_new_stance_without_ap_or_equipment_changes(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());put(h.save+0x44,bytes([6]*47+[0]))
-        before=C.string_at(h.save,0x1000);w=h.ui_window();h.ui_call('styles_enter',w);h.ui_page_frame(w);h.ui_page_frame(w,0x20);h.ui_choose(w,5)
+        before=C.string_at(h.save,0x1000);w=h.ui_window();h.ui_call('styles_enter',w);w=r64(h.symbols['styles_custom_page']);h.ui_page_frame(w);h.ui_page_frame(w,0x20);h.ui_choose(w,5)
         self.assertEqual(C.string_at(h.save,0x1000),before);self.assertEqual(bridge.bridge_menu_sound(),4)
 
     def test_original_native_page_scroll_reaches_last_stances_and_wraps(self):
-        h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window();h.ui_call('styles_enter',w);h.ui_page_frame(w);h.ui_page_frame(w,0x20)
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window();h.ui_call('styles_enter',w);w=r64(h.symbols['styles_custom_page']);h.ui_page_frame(w);h.ui_page_frame(w,0x20)
         # Execute the same original navigation code as native Abilities. Only
         # its mouse, sound and cursor-animation tails are host substitutes.
         put(h.game+0x2ef670,h.ui_raw(0x2ef670,0x870))
@@ -770,6 +775,82 @@ class RuntimeTests(unittest.TestCase):
         text=h.ui_page_frame(w,0x800)
         self.assertEqual(C.c_ushort.from_address(w+0xfc).value,0);self.assertIn('Type A|Single|I',text)
         w32(h.ui_pad+16,0)
+
+    def test_passives_nests_native_page_returns_to_customize_and_keeps_stance(self):
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());put(h.save+0x44,bytes([6,0x97,117])+bytes(45))
+        root=h.ui_window();h.ui_call('styles_enter',root);parent=r64(h.symbols['styles_custom_page']);h.ui_page_frame(parent)
+        w32(h.game+0x2e1f4d0,8);h.ui_page_frame(parent,0x4000);before=h.abilities();h.ui_page_frame(parent,0x20)
+        child=r64(h.symbols['styles_passives_child']);self.assertTrue(child);self.assertEqual(r64(parent+0x20),child)
+        self.assertNotEqual(r64(parent+0x80),r64(child+0x80));self.assertEqual(r64(child+0x80),h.game+0x5490f0)
+        self.assertEqual(r64(h.game+0x2e9cb70),child);self.assertEqual(r32(h.symbols['styles_view']),0)
+        title=bridge.call_ptr1(h.game+0x2d0970,0x6b)
+        self.assertEqual(C.string_at(title,9),bytes([0x3a,0x45,0x57,0x57,0x4d,0x5a,0x49,0x57,0]))
+        # Run the real native record prologue and the existing shadow bridge.
+        leaf=h.ui_window();put(h.game+0x311c66,bytes.fromhex('418074244080')+h.ui_tail);h.ui_call('styles_list',leaf)
+        self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]))
+        # Native Back closes only the nested page, then engine cleanup removes
+        # it from the parent's chain. The Customize page and its title survive.
+        h.ui_call('StylesMenuFrame');bridge.call_void1(h.game+0x2e3d10,child)
+        self.assertFalse(r32(parent+0x68)&1);self.assertFalse(r32(root+0x68)&1)
+        w64(parent+0x20,0);w32(child+0xb8,0);h.ui_page_frame(parent)
+        self.assertFalse(r64(h.symbols['styles_passives_parent']));self.assertEqual(r64(h.game+0x2e9cb70),root)
+        self.assertEqual(r32(h.symbols['styles_view']),1);self.assertIn('Stance|Passives|Limits|Outfits',bridge.bridge_menu_text().decode())
+        self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]));h.ui_page_frame(parent,0x20)
+        self.assertTrue(r64(h.symbols['styles_passives_child']))
+
+    def test_removed_root_abilities_selection_redirects_to_customize(self):
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());w32(h.game+0x2e1f4d0,2);h.ui_call('styles_root_init')
+        storage=r64(h.symbols['styles_storage']);entries=list((C.c_uint*8).from_address(storage))
+        self.assertNotIn(2,entries);self.assertEqual(entries[:4],[0,8,1,3])
+        self.assertEqual(r32(h.game+0x2e1f4d0),8);self.assertEqual(r32(h.game+0x2e1f4cc),1)
+
+    def test_full_native_passives_can_toggle_without_allocating_a_style_token(self):
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());put(h.save+0x44,bytes([6]*47+[0]));w=h.ui_window();h.ui_call('abilities_enter',w)
+        put(h.game+0x311c66,bytes.fromhex('418074244080')+h.ui_tail);h.ui_call('styles_list',w)
+        self.assertEqual(h.abilities(),bytes([0x86]+[6]*46+[0]))
+
+    def test_passives_native_dialog_enforces_ap_rejection_and_equips_or_removes(self):
+        # Execute vanilla's complete equip/remove decision callback. Its AP
+        # availability result is an input; rendering/animation are substituted.
+        for initial,blocked,expected,sound in [(0x86,1,0x86,4),(0x86,0,6,5),(6,1,0x86,0x4b)]:
+            h=Host();h.ui_seed();self.assertTrue(h.ui_init());put(h.save+0x44,bytes([initial,117])+bytes(46))
+            root=h.ui_window();h.ui_call('styles_enter',root);parent=r64(h.symbols['styles_custom_page']);h.ui_page_frame(parent)
+            h.ui_page_frame(parent,0x4000);h.ui_page_frame(parent,0x20)
+            put(h.game+0x310650,h.ui_raw(0x310650,0x28b))
+            for r in [0x2e6350,0x2d6aa0,0x34b4f0]:put(h.game+r,b'\xc3')
+            put(h.game+0x2e5510,bytes.fromhex('488b4118c3'))
+            put(h.game+0x2d1160,bytes.fromhex('31c0c3'))
+            definition=bytearray(h.ui_raw(0x549000,48));struct.pack_into('<Q',definition,0,h.game+0x310310);struct.pack_into('<Q',definition,8,0);put(h.game+0x549000,definition)
+            popup=h.ui_window();back=h.ui_window();w64(popup+0x18,back);w32(popup+0x104,1)
+            C.c_ushort.from_address(popup+0xf8).value=3;C.c_ushort.from_address(popup+0xfa).value=3
+            w32(h.game+0x2e9cb7c,0);w32(h.game+0x2e9cb84,0);w32(h.game+0x2e9cb90,initial);w32(h.game+0x2e9cb94,blocked)
+            w64(h.game+0x2e9cb88,h.symbols['styles_shadow']+4);w64(h.game+0x2e941c0,popup);w32(h.ui_pad+8,0x20)
+            bridge.bridge_menu_reset();bridge.call_void1(h.game+0x310650,popup);h.ui_call('styles_commit')
+            self.assertEqual(h.abilities()[:3],bytes([expected,117,0]));self.assertEqual(bridge.bridge_menu_sound(),sound)
+            self.assertEqual(bool(r64(back+0x20)),bool(blocked and initial&0x80))
+
+    def test_native_ap_renderer_geometry_has_one_aligned_panel_and_no_frame_layer(self):
+        h=Host();h.ui_seed();self.assertTrue(h.ui_init());root=h.ui_window();h.ui_call('styles_enter',root);page=r64(h.symbols['styles_custom_page'])
+        # Execute the original AP panel renderer to its finished draw packets.
+        # GPU allocation/submission and color fading are substitutes, not shape math.
+        put(h.game+0x2f2430,h.ui_raw(0x2f2430,0x260))
+        for r in [0x30c2d0,0x316e60,0x28dd40]:put(h.game+r,b'\xc3')
+        put(h.game+0x2e9110,bytes.fromhex('89c8c3'))
+        put(h.game+0x28dcf0,b'\x48\xb8'+struct.pack('<Q',bridge.bridge_symbol(b'NativeGpuAlloc'))+b'\xff\xe0')
+        bridge.bridge_gpu_reset();h.ui_page_frame(page)
+        # Eight visible rows plus the ninth row outside the native scissor,
+        # needed when the list animates between scroll positions.
+        self.assertEqual(bridge.bridge_gpu_count(),18);packets=[]
+        for i in range(18):
+            p=bridge.bridge_gpu_packet(i);packets.append(C.string_at(p,0xd0))
+            x,y,right,bottom=[r32(p+j) for j in [0xa0,0xa4,0xc0,0xc4]]
+            expected_x=327 if i%2==0 else 373;expected_y=73+(i//2)*28
+            self.assertEqual((x-0x7000,y-0x7400,right-x,bottom-y),(expected_x*16,expected_y*16,42*16,22*16))
+        # Same first packet as a direct vanilla AP-box call, including UV/layout.
+        full=h.buffer(C.string_at(page,0x118));w32(full+0xdc,0x7000);w32(full+0xe0,0x7400)
+        bridge.bridge_gpu_reset();bridge.call_panel(h.game+0x2f2430,full,327,73,r32(h.game+0x52a8d0+40))
+        self.assertEqual(C.string_at(bridge.bridge_gpu_packet(0),0xd0),packets[0])
+        self.assertEqual(bridge.bridge_menu_panel_count(),12)
 
     def test_styles_hides_native_ap_column_but_normal_abilities_runs_original_path(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());w=h.ui_window()
@@ -786,8 +867,8 @@ class RuntimeTests(unittest.TestCase):
         for site in [0x310d26,0x31127c]:
             shim=h.buffer(bytes.fromhex('4883ec2848b8')+struct.pack('<Q',h.game+site)+bytes.fromhex('ffe0'))
             put(h.game+site+5,bytes.fromhex('4883c428c3'))
-            h.ui_call('abilities_enter',w);self.assertEqual(bridge.call_ptr2(shim,h.game+0x548f40,6),0x55)
-            h.ui_call('styles_enter',w);self.assertEqual(bridge.call_ptr2(shim,h.game+0x548f40,6),0)
+            w32(h.symbols['styles_view'],0);self.assertEqual(bridge.call_ptr2(shim,h.game+0x548f40,6),0x55)
+            w32(h.symbols['styles_view'],1);self.assertEqual(bridge.call_ptr2(shim,h.game+0x548f40,6),0)
             self.assertEqual(bridge.call_ptr2(shim,h.game+0x549090,6),0x55)
 
 if __name__=='__main__':

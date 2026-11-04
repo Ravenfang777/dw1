@@ -176,6 +176,20 @@ static void ABI native_menu_rect(uintptr_t w,int x,int y,int width,int height,ui
     (void)w;if(menu_clipped(y)||menu_rects>=32)return;
     int*row=menu_rect_data[menu_rects++];row[0]=x;row[1]=y;row[2]=width;row[3]=height;row[4]=(int)color;
 }
+static void ABI native_menu_ap_panel(uintptr_t w,int x,int y,uint32_t color){
+    native_menu_rect(w,x,y,*(int*)(game_base+0x545370),*(int*)(game_base+0x545380),color);
+}
+static void ABI native_menu_plain_text(uintptr_t w,int flags,int x,int y,const unsigned char*text,int font,uint32_t color,int wrap){
+    (void)font;(void)color;(void)wrap;native_menu_text(w,0,flags,x,y,512,text);
+}
+static unsigned char native_gpu_packets[32][4096];static unsigned native_gpu_count;
+void bridge_gpu_reset(void){native_gpu_count=0;memset(native_gpu_packets,0,sizeof(native_gpu_packets));}
+unsigned bridge_gpu_count(void){return native_gpu_count;}
+uintptr_t bridge_gpu_packet(unsigned i){return i<native_gpu_count?(uintptr_t)native_gpu_packets[i]:0;}
+static uintptr_t ABI native_gpu_alloc(unsigned bytes,unsigned align){
+    (void)align;if(bytes>4096||native_gpu_count>=32)return 0;
+    return (uintptr_t)native_gpu_packets[native_gpu_count++];
+}
 static void ABI native_menu_glyph(uintptr_t w,int x,int y,int width,int code,unsigned alpha){
     (void)w;(void)x;(void)width;(void)code;(void)alpha;if(!menu_clipped(y))menu_glyphs++;
 }
@@ -196,6 +210,9 @@ static void ABI native_menu_nav(uintptr_t w){
     *(uint16_t*)(w+0xfc)=(uint16_t)(top*16u);*(uint16_t*)(w+0xfe)=(uint16_t)((row-top)*16u);
 }
 uintptr_t bridge_symbol(const char*n){
+    if(!strcmp(n,"NativeMenuApPanel"))return (uintptr_t)native_menu_ap_panel;
+    if(!strcmp(n,"NativeMenuPlainText"))return (uintptr_t)native_menu_plain_text;
+    if(!strcmp(n,"NativeGpuAlloc"))return (uintptr_t)native_gpu_alloc;
     if(!strcmp(n,"NativeMenuPill"))return (uintptr_t)native_menu_pill;
     if(!strcmp(n,"NativeMenuRect"))return (uintptr_t)native_menu_rect;
     if(!strcmp(n,"NativeMenuGlyph"))return (uintptr_t)native_menu_glyph;
@@ -248,5 +265,6 @@ void adapter_observe(uintptr_t fn,uintptr_t actor){((void(ABI*)(uintptr_t))fn)(a
 int call_int0(uintptr_t fn){return ((int(ABI*)(void))fn)();}
 uintptr_t call_ptr1(uintptr_t fn,uintptr_t a){return ((uintptr_t(ABI*)(uintptr_t))fn)(a);}
 void call_void1(uintptr_t fn,uintptr_t a){((void(ABI*)(uintptr_t))fn)(a);}
+void call_panel(uintptr_t fn,uintptr_t w,int x,int y,uint32_t color){((void(ABI*)(uintptr_t,int,int,uint32_t))fn)(w,x,y,color);}
 
 uintptr_t call_ptr2(uintptr_t fn,uintptr_t a,uintptr_t b){return ((uintptr_t(ABI*)(uintptr_t,uintptr_t))fn)(a,b);}

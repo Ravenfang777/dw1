@@ -1,5 +1,5 @@
-Clone the pinned public upstream, then git am Styles_v59.patch.
-Alternatively, fetch Styles_v59_from_v58.bundle into the recorded v58 checkout.
+Clone the pinned public upstream, then git am Styles_v60.patch.
+Alternatively, fetch Styles_v60_from_v59.bundle into the recorded v59 checkout.
 Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h.
 Copy rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
 These included headers are exact final build inputs. Never add generated
@@ -25,5 +25,7 @@ STYLES_SLOT_ANCHORS to the included styles_slots_anchors.h; run single_f/test_ru
 These variables refer to private local files. You can instead run the test files
 from their original locations inside the patched repository, where both anchor
 paths default to src/single_f automatically.
-The real C adapters execute from the final PE. Rust startup/dispatch and UI
-rendering/navigation are mocked; native excerpt execution is in the receipts.
+The real C adapters execute from the final PE. Rust startup/dispatch, most menu drawing
+and navigation are mocked; native excerpt execution is in the receipts.
+The native AP renderer emits verified draw packets in one test; GPU submission
+and native engine cleanup are still substituted, not executed in Windows.

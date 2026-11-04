@@ -1,30 +1,35 @@
-KH1FM STYLES v59 / s398 - CUSTOMIZE STANCE MENU
+KH1FM STYLES v60 / s399 - CUSTOMIZE PASSIVES AND NATIVE PANELS
 
 INSTALL
-1. Close KH1. Disable v58 (or any older main Styles/Dual Wield package).
+1. Close KH1. Disable v59 or any older main Styles/Dual Wield package.
    Keep standalone Terra/Aqua tests and the full KH2 Combat DLL disabled.
-2. Import this ZIP into OpenKH Mod Manager. Enable v59, Build, and launch
+2. Import this ZIP into OpenKH Mod Manager. Enable v60, Build, and launch
    with Panacea. Keep existing KH2FM resources/settings for older stances.
-3. Confirm s398 / STANCES v59 in kh1-dual-wield.log beside the executable.
+3. Confirm s399 / STANCES v60 in kh1-dual-wield.log beside the executable.
    This native menu/Single F adapter targets the supplied Steam Global build.
 
 MENU
-Items -> Customize -> Equipment -> Abilities -> Shortcuts, then native options.
-The new Customize is the previous Styles entry. The original native Customize
-is only visually renamed Shortcuts; it retains its original functionality.
+Main menu: Items -> Customize -> Equipment -> Shortcuts, then native options.
+The old Abilities main-menu entry has been removed. The original native
+Customize remains visually renamed Shortcuts with its original functionality.
 
-The new Customize screen follows the supplied mockup's Abilities layout:
-- Categories: Stance, Limit, Outfit, ???.
-- Stance: eleven types, eight visible rows, native scrolling/scrollbar and
-  equipped marker. Matching weapon and magic boxes replace the AP display.
-- Limit, Outfit and ???: no entries yet and no current effect.
+Customize categories, in order: Stance, Passives, Limits, Outfits.
+- Stance: eleven types, eight visible rows, native scrolling and equipped
+  marker. Weapon and magic values use a single native AP panel per value.
+  The bright blue frames and second offset capsules are removed. Both boxes
+  have matching native 42x22 geometry and centered labels.
+- Passives: opens the complete normal Abilities menu, starting with Sora.
+  Native party/shared access, scrolling, descriptions, equip/remove dialogs,
+  AP costs and totals are retained. Custom stances stay hidden from its list.
+  Cancel out of that submenu to return to Customize.
+- Limits and Outfits: empty categories reserved for later additions.
 
+The page header reads Customize and becomes Passives inside that submenu.
 Open Stance to select a type. Confirm it to equip it exclusively. Confirm the
-currently equipped type again to turn the stance off, like a native ability.
-Cancel returns to the categories; cancel again returns to the party menu.
-The list keeps its scroll position when returning from the categories.
+currently equipped type again to turn it off. Cancel returns to the categories;
+cancel again returns to the main menu. The stance scroll position is retained.
 
-RENAMED STANCES              WEAPONS   MAGIC
+STANCE LABELS                WEAPONS   MAGIC
 Single A -> Type A           Single    I
 Single B -> Type B           Single    I
 Single C -> Type C           Single    I
@@ -37,40 +42,44 @@ Dual C   -> Type K?          Dual      I
 Dual D   -> Type L?          Dual      I
 Anti     -> Type M?          None      0
 
-The question marks are intentional. Magic markers:0 unavailable, I KH1,
-II KH2. Current armed stances execute KH1 magic, including those which overlay
-KH2 casting poses/effects. They therefore show I. II is supported for a future
-actual KH2-magic stance; this revision does not change spell execution.
-Type M? still allows items and blocks magic, as before.
+Question marks are intentional. Magic markers: 0 unavailable, I KH1, II KH2.
+Current armed stances execute KH1 magic, including those with KH2 casting
+poses/effects, so they show I. II is reserved for a future KH2-magic stance.
+Type M? still allows items and blocks magic.
 
 SAVES / RETAINED BEHAVIOR
-Saved stance IDs and the single hidden style token are unchanged. Normal
-Abilities still hides custom stances and retains native AP costs/totals.
-Equipment, inventory, shortcut assignments and other-party abilities are not
-repurposed. Empty categories do not reserve save bytes yet.
-All v58 combat behavior is retained, including Type F's fixed-facing air dash,
-L1/LB + Square shortcut exclusion and once-per-airtime use. Both generated
-animation payload headers and the F action/controller source are unchanged.
+Saved stance IDs and the hidden style token are unchanged. Native ability
+flags, duplicate entries and AP remain intact. Equipment, inventory and
+shortcut assignments are not repurposed. A full native ability list can still
+toggle its normal entries; selecting a new stance refuses when no token slot
+is available. Limits and Outfits do not allocate save fields yet.
+Combat behavior, all action/controller sources and both generated animation
+payloads match v59, including Type F's fixed-facing once-per-airtime air dash
+and its L1/LB + Square magic-shortcut exclusion.
 
 TEST / REPORT
-Check the root order, new titles and the normal Shortcuts configuration.
-Open Stance, scroll through all eleven names, equip one, toggle it off and
-select another. Both information boxes should stay aligned with each row.
-Check that Limit, Outfit and ??? contain no stance entries. Check normal
-Abilities/AP and Equipment, then confirm your usual combat still works.
+Check the main-menu order and the Shortcuts configuration. Open Customize;
+check its title and all four categories. Scroll through Stance and compare
+both metadata columns: one aligned dark AP-style box behind each value.
+Open Passives, equip/remove a normal Sora ability, check AP and descriptions,
+then cancel back to Customize and confirm the stance remains selected.
+Reopen Passives and check party/shared selection as needed. Limits and
+Outfits should be empty. Confirm your usual combat still works.
 If an issue remains, return the new kh1-dual-wield.log and a screenshot or
 short video of the action/layout concerned.
 
 VALIDATION
-627 Rust tests in30 nonempty suites and104 final-PE checks pass:57 F/menu,47 E.
-Original native paging reaches the last entries and wraps. Native index,
-offset, confirm, normalization and close routines also execute. Tests cover
-root cursor IDs, title routing, row alignment, selection/unequip, reserved
-categories, save boundaries and prior combat regressions. Windows x64 builds
-with four exports/eight imported DLLs. Rendering, Windows startup and Rust
-dispatch are mocked; final in-game appearance/feel remain to be tested.
+627 Rust tests in 30 nonempty suites and 109 final-PE checks pass: 62 F/menu,
+47 E. New tests execute the original native AP renderer to its draw packets,
+the window factory/Abilities constructor and the equip/remove decision
+callback, including insufficient-AP rejection. Existing paging, input,
+selection, save-boundary and combat regression checks continue to pass.
+The Windows x64 DLL builds with four exports and eight imported DLLs.
+GPU allocation/submission, most menu drawing, native cleanup and Rust
+startup/dispatch are harness substitutes. This build has not been run inside
+KH1 on Windows; final appearance, focus transitions and feel need a game test.
 Source, rebuild inputs, incremental bundle, licenses and receipts are included.
-Older validation files are historical; current results are in validation.json.
+Current results are in validation.json; older results are historical.
 
 UNINSTALL
 Set remove_dual_wield=on in kh1-dual-wield.ini, load/save with this DLL, close

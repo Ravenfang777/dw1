@@ -2,6 +2,5 @@
   "passed": true,
   "tests_passed": 627,
   "nonempty_suites": 30,
-  "total_suites": 40,
-  "failures": 0
+  "total_suites": 40
 }

@@ -1,9 +1,9 @@
-title: KH1FM Styles v59 - Customize Stance Menu
+title: KH1FM Styles v60 - Customize Passives and Native Panels
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Customize follows Items; native Customize is relabeled Shortcuts.
-  Abilities-style Stance list with Type names and weapon/magic columns.
-  Limit, Outfit and ??? are empty categories for future customization.
+  Customize contains Stance, Passives, Limits and Outfits.
+  Abilities moves from the main menu into Passives with native AP behavior.
+  Stance weapon and magic metadata uses aligned native AP panels.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy
