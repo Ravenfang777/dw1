@@ -1,12 +1,12 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v63 commit: 2ebb7bc941cbc9e19f503dcc3572a5c095957b05
-v64 commit: bf81784defbf8fd2fb8e0af6b6ae8e9f00ff55a1
-v64 source tree: b84aaf04682596e6e95b87346abbcd0194be1e98
-Styles_v64.patch contains64 derivative commits, applied with git am.
-Styles_v64_from_v63.bundle requires the exact previous v63 commit above.
-Single E payload and E/F action controllers match delivered v63.
-All190 retained native/Terra/variant body-part payloads match v63.
-The shared F/G header includes new converted Ventus bodies as profile2.
+Previous delivered v64 commit: bf81784defbf8fd2fb8e0af6b6ae8e9f00ff55a1
+v65 commit: 0485d8c1eec28e39b595b1fb847a44296fd853d3
+v65 source tree: 59498140d2eef33a25cbcb49d5ff6265507b7f09
+Styles_v65.patch contains65 derivative commits, applied with git am.
+Styles_v65_from_v64.bundle requires the exact previous v64 commit above.
+All190 old original/Terra/Ventus/variant parts match v64.
+Single E payload and E/F action controllers match delivered v64.
+Native profile1 is Terra,2 main Ventus,3..37 tests66..100.
 The full source patch reconstructs the same tree as the delivery history.
 No original executable, model, extracted table or decompiled code enters Git.

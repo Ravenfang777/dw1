@@ -1,7 +1,7 @@
 From 9e614ad104854505e056430577f0ddf13a1d1c35 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Thu, 29 Oct 2026 18:11:57 -0400
-Subject: [PATCH 01/64] Add isolated passive Dual Wield ground prototype
+Subject: [PATCH 01/65] Add isolated passive Dual Wield ground prototype
 
 ---
  AGENTS.md                            |   9 +
@@ -2078,7 +2078,7 @@ index e2e64ab..71d3d30 100644
 From 2904ee76b0d939920306e0d06e16bfe63bad5605 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Thu, 29 Oct 2026 20:25:08 -0400
-Subject: [PATCH 02/64] Retire Dual Wield trails and add Valor air combos and
+Subject: [PATCH 02/65] Retire Dual Wield trails and add Valor air combos and
  idle
 
 ---
@@ -3482,7 +3482,7 @@ index 71d3d30..ea0a040 100644
 From 9f1ff4acd84d844ad3274ff53375f4842ad578d6 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Thu, 29 Oct 2026 21:48:30 -0400
-Subject: [PATCH 03/64] Align the offhand grip and add Valor running and Master
+Subject: [PATCH 03/65] Align the offhand grip and add Valor running and Master
  cast visuals
 
 ---
@@ -4386,7 +4386,7 @@ index ea0a040..78df471 100644
 From 60dabbb4960d12c45a0e22562197c1836b05e061 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Thu, 29 Oct 2026 22:28:48 -0400
-Subject: [PATCH 04/64] Use matching Valor action visuals and restore native
+Subject: [PATCH 04/65] Use matching Valor action visuals and restore native
  KH1 casting
 
 ---
@@ -5374,7 +5374,7 @@ index 78df471..24c755e 100644
 From 640753509f3884ff0563c83d4d715f8b801af4e2 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Fri, 30 Oct 2026 00:09:48 -0400
-Subject: [PATCH 05/64] Preserve native attack abilities and extend Dual Wield
+Subject: [PATCH 05/65] Preserve native attack abilities and extend Dual Wield
  visual coverage
 
 ---
@@ -6249,7 +6249,7 @@ index 24c755e..d5da091 100644
 From d9f53609e26e2e795665be5f065f53182592321a Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Fri, 30 Oct 2026 00:33:27 -0400
-Subject: [PATCH 06/64] Select glide donors and loop slower combat and scene
+Subject: [PATCH 06/65] Select glide donors and loop slower combat and scene
  idle
 
 ---
@@ -6941,7 +6941,7 @@ index d5da091..b4059b6 100644
 From 17c86108a52e55d6663a7d56fdb1105031111e6e Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Fri, 30 Oct 2026 01:08:42 -0400
-Subject: [PATCH 07/64] Share the slowed scene idle and enable Final glide
+Subject: [PATCH 07/65] Share the slowed scene idle and enable Final glide
  blade contacts
 
 ---
@@ -7774,7 +7774,7 @@ index b4059b6..036f471 100644
 From 3cbadf1bf1c9c9ddda7b47825b9524a4bad4d079 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Fri, 30 Oct 2026 02:08:56 -0400
-Subject: [PATCH 08/64] Replace selected native Guard with the Valor rising
+Subject: [PATCH 08/65] Replace selected native Guard with the Valor rising
  attack
 
 ---
@@ -8293,7 +8293,7 @@ index 036f471..eeda00e 100644
 From 66cfd63c7f0298793e1f7dc07f1017abfc35edfa Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Fri, 30 Oct 2026 03:13:22 -0400
-Subject: [PATCH 09/64] Add exclusive Dual Close and Final Dual Ranged styles
+Subject: [PATCH 09/65] Add exclusive Dual Close and Final Dual Ranged styles
 
 ---
  AGENTS.md                            |  14 ++
@@ -9464,7 +9464,7 @@ index eeda00e..db6f089 100644
 From b9a984b2df3053b73419a47910dfc182e22661a6 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Fri, 30 Oct 2026 03:32:59 -0400
-Subject: [PATCH 10/64] Remove uninitialized spell level lookup from Ranged
+Subject: [PATCH 10/65] Remove uninitialized spell level lookup from Ranged
  casting
 
 ---
@@ -9694,7 +9694,7 @@ index db6f089..bc6b50c 100644
 From b3f2fb1fe51eed7f2fc57ae0b4cfaffafac60591 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Fri, 30 Oct 2026 04:23:37 -0400
-Subject: [PATCH 11/64] Add Ranged Aero-pose combos and floor hover with held
+Subject: [PATCH 11/65] Add Ranged Aero-pose combos and floor hover with held
  Close glides
 
 ---
@@ -10548,7 +10548,7 @@ index bc6b50c..cae17a9 100644
 From 5a7ed9a2c2adfbbeca4a5364227868791c3d532a Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Fri, 30 Oct 2026 04:53:32 -0400
-Subject: [PATCH 12/64] Keep Final idle over finite hovering spins and refresh
+Subject: [PATCH 12/65] Keep Final idle over finite hovering spins and refresh
  held glide draws
 
 ---
@@ -11194,7 +11194,7 @@ index cae17a9..19db2b8 100644
 From 6a327ea4569dd8d670790be7870bb2f6935a5124 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Fri, 30 Oct 2026 05:55:00 -0400
-Subject: [PATCH 13/64] Dual styles v13: rename A/B, Final combos, Master dodge
+Subject: [PATCH 13/65] Dual styles v13: rename A/B, Final combos, Master dodge
  and spin Guard
 
 ---
@@ -12050,7 +12050,7 @@ index 19db2b8..d325027 100644
 From b3f46d8a3be1523ec3a9ca7ef3ef0bc43ac7475b Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 14:19:37 -0400
-Subject: [PATCH 14/64] Dual styles v14: Valor finisher glide, silent Guard and
+Subject: [PATCH 14/65] Dual styles v14: Valor finisher glide, silent Guard and
  moving spin
 
 ---
@@ -12825,7 +12825,7 @@ index d325027..301fe63 100644
 From b1793001abb8ba5faca0ccfccb27a26da8603579 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 15:07:48 -0400
-Subject: [PATCH 15/64] Dual styles v15: real finisher, native Roll replacement
+Subject: [PATCH 15/65] Dual styles v15: real finisher, native Roll replacement
  and KH2 spell effects
 
 ---
@@ -13880,7 +13880,7 @@ index 301fe63..babe8cb 100644
 From 33fffeb603aa3f6c4d94bf29d057316a5291246f Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 16:01:19 -0400
-Subject: [PATCH 16/64] Four styles v16: passive Limit and Wisdom, direct
+Subject: [PATCH 16/65] Four styles v16: passive Limit and Wisdom, direct
  dodges and native spell draw filter
 
 ---
@@ -15631,7 +15631,7 @@ index babe8cb..dd94921 100644
 From f10af55d70c9e6c422e8fe15b450053f3c52a08c Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 16:47:32 -0400
-Subject: [PATCH 17/64] Add Anti style and base Sora Single A; repair spin and
+Subject: [PATCH 17/65] Add Anti style and base Sora Single A; repair spin and
  spell ownership
 
 ---
@@ -16896,7 +16896,7 @@ index dd94921..dbca384 100644
 From 27c9b14a5ea518cbb2b5df7c64062450cda68513 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 17:27:49 -0400
-Subject: [PATCH 18/64] Use Quick Run for Dual B; add target FX filtering and
+Subject: [PATCH 18/65] Use Quick Run for Dual B; add target FX filtering and
  Anti darkness
 
 ---
@@ -17554,7 +17554,7 @@ index dbca384..1913b68 100644
 From 96306e5a4511a1b328dc767b3d9eb51c4e0ea228 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 20:05:27 -0400
-Subject: [PATCH 19/64] Fix style motion handoffs and revise defensive
+Subject: [PATCH 19/65] Fix style motion handoffs and revise defensive
  locomotion for v19
 
 ---
@@ -18364,7 +18364,7 @@ index 1913b68..89e8d45 100644
 From 17436f77d617b14448fc196883c0cbb2a3c5da1b Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 20:27:46 -0400
-Subject: [PATCH 20/64] Repair first-frame style admission and restore
+Subject: [PATCH 20/65] Repair first-frame style admission and restore
  committed Quick Run for v20
 
 ---
@@ -18835,7 +18835,7 @@ index 89e8d45..359cb35 100644
 From fb81a2fe5497989d22814caadc85889bdb4ea2c8 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 21:11:40 -0400
-Subject: [PATCH 21/64] Track complete Fire casts and native Guard; isolate
+Subject: [PATCH 21/65] Track complete Fire casts and native Guard; isolate
  Wisdom dodge for v21
 
 ---
@@ -19510,7 +19510,7 @@ index 359cb35..8bf51bd 100644
 From bf9e1df975a0b90b5a374f3da863949194ed8647 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 22:07:29 -0400
-Subject: [PATCH 22/64] Fix style Square arbitration and Fire recovery header
+Subject: [PATCH 22/65] Fix style Square arbitration and Fire recovery header
  handoff (s361)
 
 ---
@@ -20122,7 +20122,7 @@ index 8bf51bd..a877bbe 100644
 From 86fc683f1c88037c778a1b4c47939729cfdc3dcd Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 22:45:32 -0400
-Subject: [PATCH 23/64] Use native committed Guard and consumed Fire recovery
+Subject: [PATCH 23/65] Use native committed Guard and consumed Fire recovery
  clock (s362)
 
 ---
@@ -20646,7 +20646,7 @@ index a877bbe..e9df0ee 100644
 From ecb0a0a9a8fffc40870d4b4efb76aca8cd6d4cfc Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 23:19:11 -0400
-Subject: [PATCH 24/64] Keep Dual weapons visible and rebuild native glide
+Subject: [PATCH 24/65] Keep Dual weapons visible and rebuild native glide
  attachment (s363)
 
 ---
@@ -21121,7 +21121,7 @@ index e9df0ee..ac7c541 100644
 From 71eff99442a45bcbc0c01f5cec0abeb7ab8a7a52 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Fri, 30 Oct 2026 23:49:10 -0400
-Subject: [PATCH 25/64] Fix Dual A regular Glide duplicate using the rendered
+Subject: [PATCH 25/65] Fix Dual A regular Glide duplicate using the rendered
  palm
 
 ---
@@ -21715,7 +21715,7 @@ index ac7c541..5c862c7 100644
 From 439a4814b9ec8f54dd8145bea0b588ff96273ba1 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 00:13:59 -0400
-Subject: [PATCH 26/64] Add exclusive playable Roxas Dual C and match held
+Subject: [PATCH 26/65] Add exclusive playable Roxas Dual C and match held
  Glide weapon colors
 
 ---
@@ -22676,7 +22676,7 @@ index 5c862c7..7b3b3dc 100644
 From 49ef0b63c30877f6dfaa3f9017044d93686583e9 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 00:29:22 -0400
-Subject: [PATCH 27/64] Load Dual C from normalized or model-default Roxas
+Subject: [PATCH 27/65] Load Dual C from normalized or model-default Roxas
  animation names
 
 ---
@@ -22982,7 +22982,7 @@ index 7b3b3dc..bf4a54a 100644
 From a10b1ec181135bcc3e3ab3b2f53265299f06135c Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 00:51:36 -0400
-Subject: [PATCH 28/64] Admit Dual C from measured Roxas bind geometry instead
+Subject: [PATCH 28/65] Admit Dual C from measured Roxas bind geometry instead
  of Sora parents
 
 ---
@@ -23352,7 +23352,7 @@ index bf4a54a..96fc0c5 100644
 From b4a08f5c83274599c8a345efeec17ee14532a731 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 01:18:44 -0400
-Subject: [PATCH 29/64] Map Dual C Roxas body from actual hand anchors and
+Subject: [PATCH 29/65] Map Dual C Roxas body from actual hand anchors and
  hierarchy
 
 ---
@@ -24064,7 +24064,7 @@ index 96fc0c5..db726b7 100644
 From 4bc631d9b59328ab8d80a0cf340340729f9f4611 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 01:42:15 -0400
-Subject: [PATCH 30/64] Add native-blocking Sora Guard for Dual C and playable
+Subject: [PATCH 30/65] Add native-blocking Sora Guard for Dual C and playable
  Riku Single C
 
 ---
@@ -25047,7 +25047,7 @@ index db726b7..ab1f4e0 100644
 From 74686d985d3283dca77e7371281adb554355cf57 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 01:54:49 -0400
-Subject: [PATCH 31/64] Admit exact Riku data donor independently of native
+Subject: [PATCH 31/65] Admit exact Riku data donor independently of native
  control class
 
 ---
@@ -25315,7 +25315,7 @@ index ab1f4e0..3f43310 100644
 From 878c985361e6509c0db7236c8b8cb5fbaa4816c3 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 02:19:31 -0400
-Subject: [PATCH 32/64] Build Riku melee routing from native clips when PTYA is
+Subject: [PATCH 32/65] Build Riku melee routing from native clips when PTYA is
  empty
 
 ---
@@ -25969,7 +25969,7 @@ index 3f43310..cea080b 100644
 From 436e13f1a62061d7e037254b3cbd731233667cb9 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 03:08:19 -0400
-Subject: [PATCH 33/64] Refine Single C aerial actions, item casts, dodge and
+Subject: [PATCH 33/65] Refine Single C aerial actions, item casts, dodge and
  Sora fallbacks
 
 ---
@@ -27001,7 +27001,7 @@ index cea080b..b86e22c 100644
 From f6f12afaea1e05d994e25a15d2d42e7e30c2254b Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 03:59:09 -0400
-Subject: [PATCH 34/64] Map Single C mixed combos, guarded aerial casts and
+Subject: [PATCH 34/65] Map Single C mixed combos, guarded aerial casts and
  Triangle actions
 
 ---
@@ -28208,7 +28208,7 @@ index b86e22c..c02f763 100644
 From 1d3140fd883dbc679c2563b950fc691d6e2be74f Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 04:32:23 -0400
-Subject: [PATCH 35/64] Revise Single C combo sources, trim Riku finisher and
+Subject: [PATCH 35/65] Revise Single C combo sources, trim Riku finisher and
  remove Triangle actions
 
 ---
@@ -28990,7 +28990,7 @@ index c02f763..87929ed 100644
 From 6716455b60fa4e6c190a3e5194468ea038c7f0b9 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 04:49:33 -0400
-Subject: [PATCH 36/64] Repair named Sora strike admission and isolate Single C
+Subject: [PATCH 36/65] Repair named Sora strike admission and isolate Single C
  combo lanes
 
 ---
@@ -29534,7 +29534,7 @@ index 87929ed..913c1a5 100644
 From 6067c08bbae6c6120eff13b4863ee1d4e7a7d3fa Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 05:05:31 -0400
-Subject: [PATCH 37/64] End Single C Riku 182 at the middle strike boundary
+Subject: [PATCH 37/65] End Single C Riku 182 at the middle strike boundary
 
 ---
  AGENTS.md                         | 15 +++++++++++++
@@ -29750,7 +29750,7 @@ index 913c1a5..d8c9284 100644
 From fabaddc7092fd83d2664ecb177be3503715d1a09 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 05:18:45 -0400
-Subject: [PATCH 38/64] Remove residual Riku 182 follow-up and verify terminal
+Subject: [PATCH 38/65] Remove residual Riku 182 follow-up and verify terminal
  air combo input
 
 ---
@@ -29973,7 +29973,7 @@ index d8c9284..0c0b967 100644
 From 2a5d4418b72b60a5f25b203937efd870775a562c Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 06:21:29 -0400
-Subject: [PATCH 39/64] Add Master Dual D and Dark Riku Single D source
+Subject: [PATCH 39/65] Add Master Dual D and Dark Riku Single D source
  inventory
 
 ---
@@ -30983,7 +30983,7 @@ index 0c0b967..3be54c4 100644
 From 138d8f11d7688e09468d501f22b8fba45080baa2 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 06:57:33 -0400
-Subject: [PATCH 40/64] Keep Master offhand in native actions and replace Glide
+Subject: [PATCH 40/65] Keep Master offhand in native actions and replace Glide
  with aerial dodge
 
 ---
@@ -31740,7 +31740,7 @@ index 3be54c4..7050d7c 100644
 From 4062ab0411c302e76d605f0c85ac8e8266dc9af7 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 13:20:38 -0400
-Subject: [PATCH 41/64] Extend Master aerial dodge and add Quick Run with base
+Subject: [PATCH 41/65] Extend Master aerial dodge and add Quick Run with base
  Sora Guard
 
 ---
@@ -32332,7 +32332,7 @@ index 7050d7c..a28450a 100644
 From e6f83b08f04905f520373c031f0e5936973a5eaa Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 14:05:37 -0400
-Subject: [PATCH 42/64] Styles v42: triple Master dodge travel and capture Dark
+Subject: [PATCH 42/65] Styles v42: triple Master dodge travel and capture Dark
  Riku main bank
 
 ---
@@ -32967,7 +32967,7 @@ index a28450a..1058a2d 100644
 From 844df7afdf34f06b9f66ee95eaeb9cd77915ddda Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 14:32:35 -0400
-Subject: [PATCH 43/64] Styles v43: share twofold Master Aerial Dodge with
+Subject: [PATCH 43/65] Styles v43: share twofold Master Aerial Dodge with
  Single A/C and Dual C
 
 ---
@@ -33502,7 +33502,7 @@ index 1058a2d..9904f1a 100644
 From ff9cc63f32b82b2f9c4f8c78fa14ba25a45faf1b Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Sat, 31 Oct 2026 15:28:13 -0400
-Subject: [PATCH 44/64] Styles v44: implement and validate Dark Riku authored
+Subject: [PATCH 44/65] Styles v44: implement and validate Dark Riku authored
  pose solver
 
 ---
@@ -34975,7 +34975,7 @@ index 9904f1a..60a7f73 100644
 From 8b40311b19f7772472aa0513f4f655864a0351d0 Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@local.invalid>
 Date: Sun, 1 Nov 2026 00:37:00 +0300
-Subject: [PATCH 45/64] Styles v45: map Dark Riku authored poses onto Sora and
+Subject: [PATCH 45/65] Styles v45: map Dark Riku authored poses onto Sora and
  test field movement
 
 ---
@@ -36324,7 +36324,7 @@ index 60a7f73..6d23a09 100644
 From 000dfe99292a3c6183fa8bea83b090e27d0bd43a Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@local.invalid>
 Date: Sun, 1 Nov 2026 01:22:06 +0300
-Subject: [PATCH 46/64] Styles v46: isolate Single D secondary rest and
+Subject: [PATCH 46/65] Styles v46: isolate Single D secondary rest and
  validate skin bases
 
 ---
@@ -36914,7 +36914,7 @@ index 6d23a09..d463492 100644
 From c02fb8156dcae8819836bce26c75f0eae43f36e5 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Sun, 1 Nov 2026 01:51:47 +0300
-Subject: [PATCH 47/64] Styles v47: align Single D hips and hold one airborne
+Subject: [PATCH 47/65] Styles v47: align Single D hips and hold one airborne
  pose interval
 
 ---
@@ -37504,7 +37504,7 @@ index d463492..dd2a9e0 100644
 From 26c21c442a452859455672649c238919d1d4dda3 Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@local.invalid>
 Date: Sun, 1 Nov 2026 02:58:44 +0300
-Subject: [PATCH 48/64] Styles v48: restore Single D takeoff before the
+Subject: [PATCH 48/65] Styles v48: restore Single D takeoff before the
  airborne hold
 
 ---
@@ -37770,7 +37770,7 @@ index dd2a9e0..fbe8245 100644
 From 789c0ff3e01e212025f5cd32e10fe55e8e00cef2 Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@local.invalid>
 Date: Sun, 1 Nov 2026 03:38:45 +0300
-Subject: [PATCH 49/64] Styles v49: borrow Single C jump and map Dark Riku
+Subject: [PATCH 49/65] Styles v49: borrow Single C jump and map Dark Riku
  basic combo poses
 
 ---
@@ -38764,7 +38764,7 @@ index fbe8245..816b207 100644
 From 4f53f7125e6e530de611f7b734b397665792993c Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@local.invalid>
 Date: Sun, 1 Nov 2026 04:17:25 +0300
-Subject: [PATCH 50/64] Styles v50: resolve native combo requests to regular
+Subject: [PATCH 50/65] Styles v50: resolve native combo requests to regular
  animation bank records
 
 ---
@@ -39239,7 +39239,7 @@ index 816b207..c95227a 100644
 From efa6ab01a31e6c8837d689ac9d641865fa6cad80 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Sun, 1 Nov 2026 05:03:24 +0300
-Subject: [PATCH 51/64] Styles v51: select script-linked Dark Riku weapon
+Subject: [PATCH 51/65] Styles v51: select script-linked Dark Riku weapon
  attacks for both combos
 
 ---
@@ -39658,7 +39658,7 @@ index c95227a..10ac24a 100644
 From e2075bcf4db3f1513224e245374ccf38006d4fde Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Sun, 1 Nov 2026 05:36:28 +0300
-Subject: [PATCH 52/64] Styles v52: move Single D second attack to native Guard
+Subject: [PATCH 52/65] Styles v52: move Single D second attack to native Guard
  and capture extra source
 
 ---
@@ -40356,7 +40356,7 @@ index 10ac24a..46c8bf5 100644
 From ebc5e04254be76e80b4d50021f4ed12147637347 Mon Sep 17 00:00:00 2001
 From: Codex <codex@local>
 Date: Mon, 2 Nov 2026 12:58:10 -0800
-Subject: [PATCH 53/64] Styles v53: integrate main Aqua v21 as Single E with
+Subject: [PATCH 53/65] Styles v53: integrate main Aqua v21 as Single E with
  shared native hooks
 
 ---
@@ -42179,7 +42179,7 @@ index 0000000..d8d0f85
 From ef2bb08c21819d49c3ca00348d8a73cd23096f4e Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Tue, 3 Nov 2026 01:40:17 -0800
-Subject: [PATCH 54/64] Add Terra Single F and a dedicated native Styles menu
+Subject: [PATCH 54/65] Add Terra Single F and a dedicated native Styles menu
 
 ---
  .gitignore                                    |  10 +
@@ -45537,7 +45537,7 @@ index 0000000..89c3e21
 From c3312b5e2c5e07db501b6fd2097b8dcc1572b367 Mon Sep 17 00:00:00 2001
 From: Codex <codex@openai.com>
 Date: Tue, 3 Nov 2026 06:27:26 -0800
-Subject: [PATCH 55/64] Refine Styles menu, dodge visuals and native action
+Subject: [PATCH 55/65] Refine Styles menu, dodge visuals and native action
  reuse (v55)
 
 ---
@@ -46561,7 +46561,7 @@ index 0000000..c4d7a7a
 From 1378d6d85823dbf043b2325dee740ea5b04875c7 Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@openai.com>
 Date: Tue, 3 Nov 2026 16:16:54 -0500
-Subject: [PATCH 56/64] Restore Single F air dash with its existing native
+Subject: [PATCH 56/65] Restore Single F air dash with its existing native
  animation handle (v56)
 
 ---
@@ -46884,7 +46884,7 @@ index 0000000..aa394b7
 From 5383ad3838e8c1adc5a227a17d33eec2b4f5f46c Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@openai.com>
 Date: Tue, 3 Nov 2026 21:47:41 -0500
-Subject: [PATCH 57/64] Repair Single F dash reuse and make Styles green below
+Subject: [PATCH 57/65] Repair Single F dash reuse and make Styles green below
  Customize (v57)
 
 ---
@@ -47406,7 +47406,7 @@ index 0000000..3a81b37
 From 17b7b00d6faa39ef7ab679accf85f83e89e21c5d Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@openai.com>
 Date: Tue, 3 Nov 2026 23:01:28 -0500
-Subject: [PATCH 58/64] Styles v58: lock Single F dash facing and add
+Subject: [PATCH 58/65] Styles v58: lock Single F dash facing and add
  equipment-style slots
 
 ---
@@ -48219,7 +48219,7 @@ index 0000000..d2803c4
 From 6bd251c28d7ebda2637784c50d1c582b0d0770d1 Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@openai.com>
 Date: Wed, 4 Nov 2026 00:36:26 -0500
-Subject: [PATCH 59/64] Styles v59: add Customize stance categories and weapon
+Subject: [PATCH 59/65] Styles v59: add Customize stance categories and weapon
  magic columns
 
 ---
@@ -49069,7 +49069,7 @@ index 0000000..6c0a46d
 From 9f54b19ac220fd46b9e7181a3f584622919100b3 Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@openai.com>
 Date: Wed, 4 Nov 2026 01:13:47 -0500
-Subject: [PATCH 60/64] Fix stance panels and move native abilities into
+Subject: [PATCH 60/65] Fix stance panels and move native abilities into
  Customize Passives
 
 ---
@@ -49880,7 +49880,7 @@ index 0000000..fb59544
 From eb6a187d293c1e9a34b4f5132db473b2a3400d23 Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@openai.com>
 Date: Wed, 4 Nov 2026 01:41:04 -0500
-Subject: [PATCH 61/64] Make seven native abilities intrinsic without AP or
+Subject: [PATCH 61/65] Make seven native abilities intrinsic without AP or
  save slots
 
 ---
@@ -50445,7 +50445,7 @@ index 0000000..38ff981
 From eb7d20f36b7e34174d0d2dffb91ec024d8f2dccf Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@openai.com>
 Date: Wed, 4 Nov 2026 03:15:14 -0500
-Subject: [PATCH 62/64] Expose all numbered slots in direct Sora Passives and
+Subject: [PATCH 62/65] Expose all numbered slots in direct Sora Passives and
  remove partner abilities
 
 ---
@@ -51531,7 +51531,7 @@ index 0000000..e06c3e6
 From 2ebb7bc941cbc9e19f503dcc3572a5c095957b05 Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@openai.com>
 Date: Wed, 4 Nov 2026 03:55:53 -0500
-Subject: [PATCH 63/64] Show spent AP in Passives and Limits; prepare Ventus
+Subject: [PATCH 63/65] Show spent AP in Passives and Limits; prepare Ventus
  source capture
 
 ---
@@ -52157,7 +52157,7 @@ index 0000000..3fb7a31
 From bf81784defbf8fd2fb8e0af6b6ae8e9f00ff55a1 Mon Sep 17 00:00:00 2001
 From: OpenAI Codex <codex@openai.com>
 Date: Wed, 4 Nov 2026 04:49:10 -0500
-Subject: [PATCH 64/64] Fix Customize footer and add native-body Ventus Type G
+Subject: [PATCH 64/65] Fix Customize footer and add native-body Ventus Type G
 
 ---
  .gitignore                                    |   3 +
@@ -54997,6 +54997,1047 @@ index 0000000..50c556b
 +            local[0,7]+=correction
 +            result[:,1,3]+=correction
 +        return local,result
+-- 
+2.52.0
+
+
+From 0485d8c1eec28e39b595b1fb847a44296fd853d3 Mon Sep 17 00:00:00 2001
+From: OpenAI Codex <codex@openai.com>
+Date: Wed, 4 Nov 2026 05:45:18 -0500
+Subject: [PATCH 65/65] Add exclusive Ventus animation tests and reverse
+ Keyblade grip
+
+---
+ AGENTS.md                                     |  14 +++
+ .../native-tests/single_f/test_runtime.py     |  76 ++++++++++---
+ crates/kh1-hook/src/dual_wield.rs             | 101 +++++++++++++++---
+ crates/kh1-hook/src/lib.rs                    |   2 +-
+ crates/kh1-hook/src/single_f/generate_data.py |  28 ++++-
+ .../src/single_f/intrinsic_abilities.h        |   5 +-
+ .../kh1-hook/src/single_f/numbered_passives.h |  13 ++-
+ crates/kh1-hook/src/single_f/styles_slots.h   |  21 +++-
+ crates/kh1-hook/src/single_f/terra.c          |   5 +-
+ crates/kh1-hook/src/win/dual.rs               |  16 +--
+ crates/kh1-hook/src/win/mod.rs                |   2 +-
+ crates/kh1-hook/src/win/native_styles.rs      |   2 +-
+ crates/kh1-hook/src/win/pose.rs               |  12 +++
+ crates/kh1-hook/src/win/single_f.rs           |   3 +
+ crates/kh1-hook/src/win/takeover.rs           |   2 +-
+ docs/combat-model.md                          |  33 ++++++
+ docs/single-g.md                              |  39 +++++--
+ docs/styles-v65.md                            |  98 +++++++++++++++++
+ tools/ventus-retarget/build_ventus_tests.py   |  98 +++++++++++++++++
+ 19 files changed, 513 insertions(+), 57 deletions(-)
+ create mode 100644 docs/styles-v65.md
+ create mode 100644 tools/ventus-retarget/build_ventus_tests.py
+
+diff --git a/AGENTS.md b/AGENTS.md
+index c50b41f..9259beb 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -32,6 +32,20 @@ KH2_GAME="D:\epic\KH_1.5_2.5\KINGDOM HEARTS II FINAL MIX.exe" cargo test
+ 
+ ## Development log
+ 
++### 2026-11-04: Stage 404 (Styles v65: exclusive Ventus numbered previews)
++- Passives66..100 preview all187 unused distinct Ventus clips across35 tests.
++  Split fixed-capacity failures into labeled contiguous ranges with complete
++  source-frame coverage. Retain original native events/travel/capacities.
++- Equipping a test disables stances and the previous test; equipping any
++  stance clears tests. Native AP/passives remain. Migrate old no-effect flags
++  without autoactivating previews; saved stance wins a cross-save conflict.
++- Type G/tests reverse the Keyblade at its hilt from untouched native locals
++  and the skinned wrist; repeated skeleton/IK passes are idempotent. No body
++  or finger edits. Retain all190 prior F/G parts and both E/F controllers.
++- Sources, confidence, measured bounds and live limits: docs/styles-v65.md.
++- Validation:636 Rust tests/30 nonempty suites;150 PE checks (103 shared F/G/
++  tests/menu,47 E). All35 profiles apply/restore in normal/Olympus banks.
++
+ ### 2026-11-04: Stage 403 (Styles v64: footer layout and Ventus Type G)
+ - Repair the description footer with measured word wrapping, explicit line
+   positions and normalized native leading/font/color commands. Draw a larger
+diff --git a/crates/kh1-hook/native-tests/single_f/test_runtime.py b/crates/kh1-hook/native-tests/single_f/test_runtime.py
+index 130faf6..da7e5e8 100644
+--- a/crates/kh1-hook/native-tests/single_f/test_runtime.py
++++ b/crates/kh1-hook/native-tests/single_f/test_runtime.py
+@@ -4,9 +4,13 @@ Rust DllMain, shared Rust dispatch and rendering are not executed. Private
+ source fixtures are provided through the documented environment variables.
+ """
+ from pathlib import Path
+-import ctypes as C,json,struct,subprocess,sys,unittest,os,math
++import ctypes as C,json,struct,subprocess,sys,unittest,os,math,re
+ ROOT=Path(os.environ['TERRA_SOURCE']).resolve()
+ TEST_ROOT=Path(__file__).resolve().parent
++NUMBERED_HEADER=Path(os.environ.get('NUMBERED_PASSIVES_HEADER',str(TEST_ROOT/'numbered_passives.h' if (TEST_ROOT/'numbered_passives.h').exists() else TEST_ROOT.parents[1]/'src/single_f/numbered_passives.h')))
++TEST_COUNT=int(re.search(r'#define VENTUS_TEST_COUNT (\d+)u',NUMBERED_HEADER.read_text()).group(1))
++TEST_MASK=(1<<TEST_COUNT)-1
++ALL_NUMBERED=((1<<51)-1)&~(1<<49)
+ subprocess.run(['gcc','-std=c11','-O2','-shared','-fPIC',str(TEST_ROOT/'test_bridge.c'),'-o',str(TEST_ROOT/'test_bridge.so'),'-lm'],cwd=ROOT,check=True)
+ bridge=C.CDLL(str(TEST_ROOT/'test_bridge.so'))
+ for name,args,ret in [('bridge_reset',[C.c_size_t],None),('bridge_range',[C.c_size_t,C.c_size_t,C.c_uint],None),('bridge_modes',[C.c_int,C.c_int],None),('bridge_log',[],C.c_char_p),('bridge_queries',[],C.c_uint),('bridge_encode',[C.c_size_t],C.c_uint),('bridge_symbol',[C.c_char_p],C.c_size_t),('bridge_call0',[C.c_size_t],None),('bridge_init',[C.c_size_t],None)]:
+@@ -225,6 +229,9 @@ class Host:
+         r=self.record_by_slot[slot];folder=ROOT/'fixtures'
+         if int(on)==2 and os.environ.get('VENTUS_SOURCE'):
+             return self.expected_from(slot,Path(os.environ['VENTUS_SOURCE'])/f"fixtures/ventus_{r['fixture_stem']}.bin")
++        if int(on)>=3 and os.environ.get('VENTUS_TEST_SOURCE'):
++            folder=Path(os.environ['VENTUS_TEST_SOURCE'])/f'p{int(on)+63}'/'fixtures' if slot in range(98,105) else Path(os.environ['VENTUS_SOURCE'])/'fixtures'
++            return self.expected_from(slot,folder/f"ventus_{r['fixture_stem']}.bin")
+         if int(on)>1:
+             candidate=ROOT/f'sets/p{int(on)-1}/fixtures'
+             if (candidate/f"terra_{r['fixture_stem']}.bin").exists():folder=candidate
+@@ -400,6 +407,49 @@ class Host(BaseHost):
+   self.ui_page_frame(page,0x4000);self.ui_page_frame(page,0x20);return root,page
+ 
+ class RuntimeTests(unittest.TestCase):
++    def test_ventus_numbered_profiles_apply_all_records_and_restore_both_banks(self):
++        if not os.environ.get('VENTUS_TEST_SOURCE'):self.skipTest('Provide numbered Ventus test fixtures')
++        for bank in [98,60]:
++            h=Host(slot=bank,encoded_fields=True)
++            for choice in range(3,3+TEST_COUNT):
++                h.want=choice;h.frame();h.assert_all(self,choice)
++                self.assertEqual(r32(h.symbols['cache_choice']),choice);self.assertEqual(r32(h.symbols['action_variant_mask']),0)
++                h.want=0;self.assertTrue(h.frame());h.assert_all(self,0)
++
++    def test_animation_test_unequips_every_stance_and_preserves_native_flags_ap_and_neighbors(self):
++        for stance in [124,123,120,119,117,116,115,126,125,121,118,122]:
++            h=Host();root,page=h.passive_setup([6,0x87,stance]);before=C.string_at(h.save,0x1000)
++            h.ui_choose(page,2)
++            expected=bytearray(before);expected[0x46]=stance|128
++            self.assertEqual(C.string_at(h.save,0x1000),bytes(expected));self.assertEqual(h.ability_count(66),1)
++            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),3)
++            self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),27)
++            for other in [124,123,120,119,117,116,115,126,125,121,118,122]:self.assertEqual(h.ability_count(other),0)
++
++    def test_equipping_each_stance_clears_test_and_preserves_unassigned_numbered_flag(self):
++        for row in range(12):
++            h=Host();root,page=h.passive_setup([6,117]);h.ui_choose(page,1);h.numbered_init((1<<50)|1)
++            h.ui_page_frame(page,0x40);h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20);h.ui_choose(page,row)
++            self.assertEqual(r64(h.symbols['numbered_bits']),1<<50)
++            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),0)
++            self.assertEqual(sum(h.ability_count(id) for id in [124,123,120,119,117,116,115,126,125,121,118,122]),1)
++
++    def test_only_one_animation_test_can_be_active_and_off_restores_no_stance(self):
++        h=Host();root,page=h.passive_setup([6,117])
++        for index in range(TEST_COUNT):
++            h.ui_choose(page,1+index)
++            self.assertEqual(r64(h.symbols['numbered_bits']),1<<index)
++            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),3+index)
++            self.assertEqual(h.abilities()[:3],bytes([6,245,0]))
++        h.ui_choose(page,TEST_COUNT)
++        self.assertEqual(r64(h.symbols['numbered_bits']),0);self.assertEqual(h.abilities()[:3],bytes([6,245,0]))
++
++    def test_animation_test_selection_rejects_invalid_native_list_without_partial_writes(self):
++        h=Host();root,page=h.passive_setup([6,117]);before=h.abilities()
++        put(h.save+0x44,bytes([6,0,117])+bytes(45));snapshot=C.string_at(h.save,0x1000)
++        h.ui_choose(page,1)
++        self.assertEqual(C.string_at(h.save,0x1000),snapshot);self.assertEqual(r64(h.symbols['numbered_bits']),0)
++
+     def test_ventus_profile_all_records_restore_in_normal_and_olympus_banks(self):
+         if not os.environ.get('VENTUS_SOURCE'):self.skipTest('Provide converted Ventus fixtures')
+         for bank in [98,60]:
+@@ -426,11 +476,11 @@ class RuntimeTests(unittest.TestCase):
+ 
+     def test_type_g_menu_uses115_and_legacy_numbered_flag_cannot_equip_it(self):
+         h=Host();root,page=h.passive_setup([6,117]);h.numbered_init((1<<49)|(1<<50)|3)
+-        self.assertEqual(r64(h.symbols['numbered_bits']),(1<<50)|3);self.assertEqual(h.ability_count(115),0);self.assertEqual(h.ability_count(127),1)
++        self.assertEqual(r64(h.symbols['numbered_bits']),(1<<50)|1);self.assertEqual(h.ability_count(115),0);self.assertEqual(h.ability_count(127),1)
+         h.ui_page_frame(page,0x40);h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
+         text=h.ui_choose(page,6);self.assertIn('Type G|Single|I',text);self.assertEqual(h.ability_count(115),1)
+         self.assertEqual(h.abilities()[:3],bytes([6,115,0]));self.assertEqual(h.ability_count(127),1)
+-        self.assertEqual(r64(h.symbols['numbered_bits']),(1<<50)|3)
++        self.assertEqual(r64(h.symbols['numbered_bits']),1<<50)
+ 
+     def test_numbered_passives_all_50_ids_are_visible_with_native_rows_without_save_writes(self):
+         h=Host();root,page=h.passive_setup([6]*46+[117]);before=C.string_at(h.save,0x1000);seen=set();expected=set(map(str,list(range(66,115))+[127]))
+@@ -445,16 +495,18 @@ class RuntimeTests(unittest.TestCase):
+         h=Host();root,page=h.passive_setup([6]*48);before=C.string_at(h.save,0x1000);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,98)
+         self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),0)
+         for i,id in enumerate(list(range(66,115))+[127]):h.ui_choose(page,48+i);self.assertEqual(h.ability_count(id),1)
+-        self.assertEqual(bridge.bridge_numbered_saved(),((1<<51)-1)&~(1<<49));self.assertEqual(bridge.bridge_numbered_save_calls(),50);self.assertEqual(C.string_at(h.save,0x1000),before)
+-        for i,id in enumerate(list(range(66,115))+[127]):h.ui_choose(page,48+i);self.assertEqual(h.ability_count(id),0)
+-        self.assertEqual(bridge.bridge_numbered_saved(),0);self.assertEqual(bridge.bridge_numbered_save_calls(),100);self.assertEqual(C.string_at(h.save,0x1000),before)
++        self.assertEqual(bridge.bridge_numbered_saved(),(ALL_NUMBERED&~TEST_MASK)|(1<<(TEST_COUNT-1)));self.assertEqual(bridge.bridge_numbered_save_calls(),50);self.assertEqual(C.string_at(h.save,0x1000),before)
++        h.ui_choose(page,48+TEST_COUNT-1)
++        for i in range(TEST_COUNT,50):
++            id=66+i if i<49 else 127;h.ui_choose(page,48+i);self.assertEqual(h.ability_count(id),0)
++        self.assertEqual(bridge.bridge_numbered_saved(),0);self.assertEqual(bridge.bridge_numbered_save_calls(),101-TEST_COUNT);self.assertEqual(C.string_at(h.save,0x1000),before)
+ 
+     def test_direct_passives_native_ap_checks_equipping_removing_and_duplicate_rows(self):
+         h=Host();root,page=h.passive_setup([0x86,0x87,117]);w32(h.game+0x2e942c4,3)
+         text=h.ui_choose(page,0);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]));self.assertIn('AP Used|3 / 3',text)
+         h.ui_choose(page,1);self.assertEqual(bridge.bridge_menu_sound(),4);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]))
+         h.ui_choose(page,0);h.ui_choose(page,1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]));self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1)
+-        h.ui_choose(page,2);self.assertEqual(h.ability_count(66),1);self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]))
++        h.ui_choose(page,2);self.assertEqual(h.ability_count(66),1);self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,245,0]))
+ 
+     def test_passives_preserves_native_names_and_help_while_numbered_names_are_decimal(self):
+         h=Host();root,page=h.passive_setup([6,117]);text=h.ui_page_frame(page)
+@@ -471,7 +523,7 @@ class RuntimeTests(unittest.TestCase):
+         self.assertIn('AP Used|5 / 30',text);self.assertIn('No entries available yet',text)
+         h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
+         self.assertIn('AP Used|2 / 30',h.ui_choose(page,0))
+-        self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before)
++        self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before[:2]+bytes([245])+before[3:])
+         h.ui_page_frame(page,0x40);self.assertIn('AP Used|0 / 30',h.ui_page_frame(page,0x4000))
+ 
+     def test_spent_ap_zero_max_overbudget_and_category_scope(self):
+@@ -521,9 +573,9 @@ class RuntimeTests(unittest.TestCase):
+ 
+     def test_numbered_state_load_clamps_bits_and_persists_only_changes(self):
+         h=Host();root,page=h.passive_setup([6,117]);h.numbered_init((1<<64)-1);self.assertEqual(bridge.bridge_numbered_save_calls(),0)
+-        self.assertEqual(r64(h.symbols['numbered_bits']),((1<<51)-1)&~(1<<49));self.assertEqual(h.ability_count(66),1);self.assertEqual(h.ability_count(127),1)
+-        h.ui_choose(page,50);self.assertEqual(bridge.bridge_numbered_saved(),(1<<49)-1);self.assertEqual(bridge.bridge_numbered_save_calls(),1);self.assertEqual(h.ability_count(127),0)
+-        h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),1)
++        self.assertEqual(r64(h.symbols['numbered_bits']),(ALL_NUMBERED&~TEST_MASK)|1);self.assertEqual(h.ability_count(66),1);self.assertEqual(h.ability_count(127),1)
++        h.ui_choose(page,50);self.assertEqual(bridge.bridge_numbered_saved(),(ALL_NUMBERED&~TEST_MASK&~(1<<50))|1);self.assertEqual(bridge.bridge_numbered_save_calls(),1);self.assertEqual(h.ability_count(127),0)
++        h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),2);self.assertEqual(r64(h.symbols['numbered_bits'])&TEST_MASK,0)
+ 
+     def test_numbered_test_settings_are_mod_wide_and_not_written_into_a_new_save(self):
+         h=Host();root,page=h.passive_setup([6,117]);h.ui_choose(page,1);self.assertEqual(h.ability_count(66),1)
+@@ -533,7 +585,7 @@ class RuntimeTests(unittest.TestCase):
+     def test_numbered_legacy_entries_migrate_once_and_keep_existing_mod_flags(self):
+         h=Host();h.ui_seed();self.assertTrue(h.ui_init());h.passive_table();h.intrinsic_seed();h.numbered_init(1<<7)
+         put(h.save+0x44,bytes([66,0xc2,114,255,127,6,117])+bytes(41));self.assertTrue(h.intrinsic_init())
+-        self.assertEqual(h.abilities()[:3],bytes([6,117,0]));self.assertEqual(bridge.bridge_numbered_saved(),(1<<0)|(1<<7)|(1<<48)|(1<<50));self.assertEqual(bridge.bridge_numbered_save_calls(),1)
++        self.assertEqual(h.abilities()[:3],bytes([6,117,0]));self.assertEqual(bridge.bridge_numbered_saved(),(1<<48)|(1<<50));self.assertEqual(bridge.bridge_numbered_save_calls(),1)
+         h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),1)
+ 
+     def test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes(self):
+diff --git a/crates/kh1-hook/src/dual_wield.rs b/crates/kh1-hook/src/dual_wield.rs
+index 271075f..25c3d4d 100644
+--- a/crates/kh1-hook/src/dual_wield.rs
++++ b/crates/kh1-hook/src/dual_wield.rs
+@@ -29,7 +29,7 @@ pub const DARK_RIKU_ID:u8=119;
+ pub const MASTER_ID:u8=118;
+ pub const VENTUS_ID:u8=115;
+ pub const VENTUS_NAME:&str="Type G";
+-pub const VENTUS_HELP:&str="Ventus movement, combos, magic, Guard and Dodge Roll. Native Glide and Superglide retained.";
++pub const VENTUS_HELP:&str="Ventus movement and combos with a reverse Keyblade grip. Native Glide and Superglide retained.";
+ pub const TERRA_ID:u8=116;
+ pub const TERRA_NAME:&str="Type F";
+ pub const TERRA_HELP:&str="Terra combos, casts and Guard. Square air dash uses native Superglide once until landing.";
+@@ -42,18 +42,42 @@ pub const DARK_RIKU_HELP:&str="Dark Riku movement mapping test. Native combat an
+ pub const MASTER_HELP:&str="Master combos, 2x air dodge travel, Quick Run and KH2 Sora Guard; copied weapon.";
+ pub const SLOTS: usize = 48;
+ 
++/// Rebuild the weapon from untouched native wrist/local matrices. Reading our
++/// previous weapon output here would flip it back on the second skeleton pass.
++pub fn ventus_reverse_grip(world:&[glam::Mat4],local:&[glam::Mat4],bind:&[glam::Mat4],parents:&[i16])->Option<[glam::Mat4;13]>{
++    use glam::Mat4;
++    let valid=|m:Mat4|m.is_finite()&&m.determinant().abs()>1e-6
++        &&m.x_axis.w.abs()<1e-4&&m.y_axis.w.abs()<1e-4&&m.z_axis.w.abs()<1e-4&&(m.w_axis.w-1.).abs()<1e-4;
++    if world.len()<293||local.len()<293||bind.len()<293||parents.len()<293
++        ||parents[101]!=100||parents[280]!=101||!valid(world[100])||!valid(local[101])||!valid(local[280]){return None;}
++    let palm=world[100]*local[101];let grip=palm*local[280];
++    if !valid(grip)||grip.w_axis.truncate().distance(world[100].w_axis.truncate())>150.{return None;}
++    let mut result=[Mat4::IDENTITY;13];result[0]=grip*Mat4::from_rotation_z(std::f32::consts::PI);
++    for bone in 281..293{
++        let parent=parents[bone];if parent<280||parent as usize>=bone{return None;}
++        let relative=if valid(local[bone]){local[bone]}else{
++            if !valid(bind[parent as usize])||!valid(bind[bone]){return None;}
++            bind[parent as usize].inverse()*bind[bone]
++        };
++        let m=result[parent as usize-280]*relative;
++        if !valid(m)||m.w_axis.truncate().abs().max_element()>1e7{return None;}
++        result[bone-280]=m;
++    }
++    Some(result)
++}
++
+ #[derive(Clone,Copy,Debug,Default,PartialEq,Eq)]
+ #[repr(u8)]
+-pub enum Style { #[default] Off=0, Close=1, Ranged=2, SingleA=3, SingleB=4, Anti=5, Roxas=6, Riku=7, DarkRiku=8, Master=9, Aqua=10, Terra=11, Ventus=12 }
++pub enum Style { #[default] Off=0, Close=1, Ranged=2, SingleA=3, SingleB=4, Anti=5, Roxas=6, Riku=7, DarkRiku=8, Master=9, Aqua=10, Terra=11, Ventus=12, AnimationTest=13 }
+ impl Style {
+     pub const ALL:[Self;12]=[Self::SingleA,Self::SingleB,Self::Riku,Self::DarkRiku,Self::Aqua,Self::Terra,Self::Ventus,Self::Close,Self::Ranged,Self::Roxas,Self::Master,Self::Anti];
+     pub fn text(self)->(&'static str,&'static str){match self{
+         Self::Close=>(NAME,HELP),Self::Ranged=>(RANGED_NAME,RANGED_HELP),Self::SingleA=>(SINGLE_A_NAME,SINGLE_A_HELP),
+         Self::SingleB=>(SINGLE_B_NAME,SINGLE_B_HELP),Self::Anti=>(ANTI_NAME,ANTI_HELP),Self::Roxas=>(ROXAS_NAME,ROXAS_HELP),
+-        Self::Riku=>(RIKU_NAME,RIKU_HELP),Self::DarkRiku=>(DARK_RIKU_NAME,DARK_RIKU_HELP),Self::Master=>(MASTER_NAME,MASTER_HELP),Self::Aqua=>(AQUA_NAME,AQUA_HELP),Self::Terra=>(TERRA_NAME,TERRA_HELP),Self::Ventus=>(VENTUS_NAME,VENTUS_HELP),Self::Off=>("","")}}
+-    pub fn from_code(code:u8)->Self {Self::ALL.into_iter().find(|s|*s as u8==code).unwrap_or(Self::Off)}
++        Self::Riku=>(RIKU_NAME,RIKU_HELP),Self::DarkRiku=>(DARK_RIKU_NAME,DARK_RIKU_HELP),Self::Master=>(MASTER_NAME,MASTER_HELP),Self::Aqua=>(AQUA_NAME,AQUA_HELP),Self::Terra=>(TERRA_NAME,TERRA_HELP),Self::Ventus=>(VENTUS_NAME,VENTUS_HELP),Self::AnimationTest=>("Animation Test","Ventus animation testing passive."),Self::Off=>("","")}}
++    pub fn from_code(code:u8)->Self {if code==13{return Self::AnimationTest;}Self::ALL.into_iter().find(|s|*s as u8==code).unwrap_or(Self::Off)}
+     pub fn id(self)->Option<u8>{Some(match self{Self::Close=>ID,Self::Ranged=>RANGED_ID,
+-        Self::SingleA=>SINGLE_A_ID,Self::SingleB=>SINGLE_B_ID,Self::Anti=>ANTI_ID,Self::Roxas=>ROXAS_ID,Self::Riku=>RIKU_ID,Self::DarkRiku=>DARK_RIKU_ID,Self::Master=>MASTER_ID,Self::Aqua=>AQUA_ID,Self::Terra=>TERRA_ID,Self::Ventus=>VENTUS_ID,Self::Off=>return None})}
++        Self::SingleA=>SINGLE_A_ID,Self::SingleB=>SINGLE_B_ID,Self::Anti=>ANTI_ID,Self::Roxas=>ROXAS_ID,Self::Riku=>RIKU_ID,Self::DarkRiku=>DARK_RIKU_ID,Self::Master=>MASTER_ID,Self::Aqua=>AQUA_ID,Self::Terra=>TERRA_ID,Self::Ventus=>VENTUS_ID,Self::AnimationTest|Self::Off=>return None})}
+     pub fn duplicates(self)->bool{matches!(self,Self::Close|Self::Ranged|Self::Roxas|Self::Master)}
+     pub fn casts(self)->bool{matches!(self,Self::Ranged|Self::SingleA|Self::SingleB|Self::Riku|Self::Master)}
+     pub fn finisher_glide(self)->bool{matches!(self,Self::Close|Self::SingleA)}
+@@ -159,6 +183,8 @@ pub fn style_table<const N:usize>(native:&[u8],names:[(u32,u32);N])->Option<Vec<
+ pub const NUMBERED_COUNT:usize=50;
+ // ID115 is now Type G. Keep ID127 at its original bit50 so old test flags
+ // do not shift into a different ability; retire only the former115 bit49.
++pub const VENTUS_TEST_COUNT:usize=35;
++pub const VENTUS_TEST_MASK:u64=(1u64<<VENTUS_TEST_COUNT)-1;
+ pub const NUMBERED_LEGACY_MASK:u64=(1u64<<51)-1;
+ pub const NUMBERED_MASK:u64=NUMBERED_LEGACY_MASK&!(1u64<<49);
+ pub fn numbered_id(slot:usize)->Option<u8>{match slot{0..=48=>Some(slot as u8+66),49=>Some(127),_=>None}}
+@@ -175,7 +201,7 @@ pub fn numbered_table(table:&mut[u8],texts:[(u32,u32);NUMBERED_COUNT])->bool{
+ }
+ /// Numbered rows are mod-wide test settings, separate from KH1 save arrays.
+ pub fn numbered_state(text:&str)->Option<u64>{
+-    let mut state=None;
++    let mut state=None;let current=text.lines().any(|l|l.trim()=="animation_tests=ventus-v1");
+     for line in text.lines(){
+         let line=line.split(';').next()?.trim();
+         let Some((key,value))=line.split_once('=')else{continue;};
+@@ -183,9 +209,15 @@ pub fn numbered_state(text:&str)->Option<u64>{
+         if state.is_some(){return None;}
+         let value=value.trim();let bits=if let Some(v)=value.strip_prefix("0x").or_else(||value.strip_prefix("0X")){u64::from_str_radix(v,16).ok()?}else{value.parse().ok()?};
+         if bits&!NUMBERED_LEGACY_MASK!=0{return None;}state=Some(bits&NUMBERED_MASK);
+-    }state
++    }state.map(|bits|{
++        let bits=if current{bits}else{bits&!VENTUS_TEST_MASK};
++        let tests=bits&VENTUS_TEST_MASK;(bits&!VENTUS_TEST_MASK)|(tests&tests.wrapping_neg())
++    })
++}
++pub fn numbered_state_text(bits:u64)->String{
++ let bits=bits&NUMBERED_MASK;let tests=bits&VENTUS_TEST_MASK;let bits=(bits&!VENTUS_TEST_MASK)|(tests&tests.wrapping_neg());
++ format!("[NumberedAbilities]\nanimation_tests=ventus-v1\nenabled=0x{:013X}\n",bits)
+ }
+-pub fn numbered_state_text(bits:u64)->String{format!("[NumberedAbilities]\nenabled=0x{:013X}\n",bits&NUMBERED_MASK)}
+ 
+ /// Only existing KH1 combo modifiers carry into the imported base combo.
+ /// No growth, guard, recovery, finisher or action ability is granted internally.
+@@ -703,7 +735,7 @@ fn riku_contacts(template:&character_core::Character,hand_groups:&[u8],sora_host
+ }
+ 
+ pub fn style_row(style:Style,motion:Option<i16>,native_abilities:bool,owned_air:bool)->bool{
+-    if matches!(style,Style::Aqua|Style::Terra|Style::Ventus){return false;}
++    if matches!(style,Style::Aqua|Style::Terra|Style::Ventus|Style::AnimationTest){return false;}
+     if style==Style::Anti{return motion.is_some_and(|m|m>=0);}
+     valor_row(motion,native_abilities,owned_air)
+ }
+@@ -755,7 +787,7 @@ impl NativeGuard {
+ }
+ 
+ pub fn owned_action(style:Style,roll:bool,state:character_core::StateName)->bool{
+-    if matches!(style,Style::Aqua|Style::Terra|Style::Ventus){return false;}
++    if matches!(style,Style::Aqua|Style::Terra|Style::Ventus|Style::AnimationTest){return false;}
+     state==character_core::StateName::Attack || quick_run_style(style) && roll
+         && state==character_core::StateName::QuickRun
+         ||aerial_dodge_style(style)&&state==character_core::StateName::AerialDodge
+@@ -1049,7 +1081,7 @@ pub fn action_visual(state:i32,slot:Option<usize>,request:u32,event:bool,scripte
+ }
+ 
+ pub fn style_action_visual(style:Style,state:i32,slot:Option<usize>,request:u32,event:bool,scripted:bool)->Option<Visual>{
+-    if matches!(style,Style::Aqua|Style::Terra|Style::Ventus){return None;}
++    if matches!(style,Style::Aqua|Style::Terra|Style::Ventus|Style::AnimationTest){return None;}
+     action_visual(state,slot,request,event,scripted).or_else(||{
+         if event||scripted||slot.is_none()||state!=0{return None;}
+         match (style,request&0xffff){
+@@ -1438,8 +1470,9 @@ mod tests {
+         for id in 1..=127{let used=id<=65||Style::ALL.into_iter().any(|s|s.id()==Some(id));assert_eq!(ids.contains(&id),!used);}
+     }
+     #[test] fn numbered_test_settings_round_trip_and_reject_ambiguous_or_out_of_range_flags(){
+-        for bits in [0,1,1<<48,1<<50,NUMBERED_MASK]{assert_eq!(numbered_state(&numbered_state_text(bits)),Some(bits));}
+-        assert_eq!(numbered_state("[NumberedAbilities]\nenabled = 3 ; test\n"),Some(3));
++        for bits in [0,1,1<<48,1<<50,NUMBERED_MASK]{let tests=bits&VENTUS_TEST_MASK;let expected=(bits&!VENTUS_TEST_MASK)|(tests&tests.wrapping_neg());assert_eq!(numbered_state(&numbered_state_text(bits)),Some(expected));}
++        assert_eq!(numbered_state("[NumberedAbilities]\nenabled = 3 ; test\n"),Some(0));
++        assert_eq!(numbered_state("animation_tests=ventus-v1\nenabled=3"),Some(1));
+         for text in ["", "enabled=no", "enabled=-1", "enabled=0x8000000000000", "enabled=1\nenabled=2"]{assert_eq!(numbered_state(text),None);}
+     }
+     fn native_field(state:i32,flags:u32)->NativeField{
+@@ -1457,7 +1490,7 @@ mod tests {
+     }
+     #[test] fn all_playable_accepted_attacks_advance_through_native_first_frame_and_landing_notification(){
+         use character_core::{Input,Button,Env,StateName,Event,EventKind};
+-        for style in Style::ALL.into_iter().filter(|s|!matches!(s,Style::DarkRiku|Style::Aqua|Style::Terra|Style::Ventus)){for air in [false,true]{
++        for style in Style::ALL.into_iter().filter(|s|!matches!(s,Style::DarkRiku|Style::Aqua|Style::Terra|Style::Ventus|Style::AnimationTest)){for air in [false,true]{
+             let mut t=final_combo_template();
+             for clip in t.moveset.clips.values_mut(){clip.events.push(Event{frame:1,kind:EventKind::Effect(4)});}
+             let mut c=match style{Style::Anti=>anti_character(&anti_template()).unwrap(),
+@@ -2219,12 +2252,50 @@ mod tests {
+         for command in 0..=255{assert!(!blocked_command(s,command));}
+         for request in [0,0xc8,0xcd,0xd4,0xdc,0x36,0x84]{assert_eq!(style_action_visual(s,0,Some(57),request,false,false),None);}
+         let old=(1u64<<49)|(1u64<<50)|3;
+-        assert_eq!(numbered_state(&format!("enabled={old}")),Some((1u64<<50)|3));
++        assert_eq!(numbered_state(&format!("enabled={old}")),Some(1u64<<50));
+         assert_eq!(numbered_id(48),Some(114));assert_eq!(numbered_id(49),Some(127));
+         let mut list=[0;SLOTS];list[..3].copy_from_slice(&[6,116,115]);
+         assert_eq!(exclusive_style(&mut list,Style::Terra),s);assert_eq!(&list[..3],&[6,244,115]);
+         assert!(remove(&mut list));assert_eq!(&list[..3],&[6,0,0]);
+     }
++    fn reverse_grip_fixture()->(Vec<glam::Mat4>,Vec<glam::Mat4>,Vec<glam::Mat4>,Vec<i16>){
++        use glam::{Mat4,Vec3};
++        let mut local=vec![Mat4::IDENTITY;293];let mut parents=vec![-1;293];
++        parents[101]=100;parents[280]=101;local[101]=Mat4::from_translation(Vec3::new(11.,0.,0.));
++        local[280]=Mat4::from_rotation_y(0.4);
++        let mut bind=vec![Mat4::IDENTITY;293];bind[101]=local[101];bind[280]=bind[101]*local[280];
++        for b in 281..293{parents[b]=(b-1) as i16;local[b]=Mat4::from_translation(Vec3::new(-3.,0.,0.));bind[b]=bind[b-1]*local[b];}
++        let root=Mat4::from_rotation_translation(glam::Quat::from_rotation_y(1.2),Vec3::new(400.,-80.,700.));
++        let mut world=bind.iter().map(|m|root* *m).collect::<Vec<_>>();world[100]=root;(world,local,bind,parents)
++    }
++    #[test] fn ventus_grip_reverses_blade_axis_at_the_same_hilt_without_changing_body_or_lengths(){
++        let (world,local,bind,parents)=reverse_grip_fixture();let before=world.clone();
++        let out=ventus_reverse_grip(&world,&local,&bind,&parents).unwrap();
++        assert!((out[0].w_axis-world[280].w_axis).length()<1e-4);
++        assert!((out[0].x_axis+world[280].x_axis).length()<1e-4);
++        for i in 1..13{assert!((out[i].w_axis.distance(out[i-1].w_axis)-world[i+280].w_axis.distance(world[i+279].w_axis)).abs()<1e-4);}
++        assert_eq!(world,before);
++    }
++    #[test] fn ventus_grip_is_idempotent_across_native_skeleton_and_ik_passes(){
++        let (mut world,local,bind,parents)=reverse_grip_fixture();
++        let once=ventus_reverse_grip(&world,&local,&bind,&parents).unwrap();world[280..293].copy_from_slice(&once);
++        assert_eq!(ventus_reverse_grip(&world,&local,&bind,&parents),Some(once));
++        let mut missing=local.clone();missing[292]=glam::Mat4::ZERO;
++        assert_eq!(ventus_reverse_grip(&world,&missing,&bind,&parents),Some(once));
++    }
++    #[test] fn ventus_grip_rejects_invalid_wrist_attachment_or_parent_before_any_write(){
++        let (mut world,mut local,bind,mut parents)=reverse_grip_fixture();
++        parents[290]=2;assert!(ventus_reverse_grip(&world,&local,&bind,&parents).is_none());parents[290]=289;
++        local[280]=glam::Mat4::ZERO;assert!(ventus_reverse_grip(&world,&local,&bind,&parents).is_none());local[280]=bind[280];
++        world[100]=glam::Mat4::from_cols_array(&[f32::NAN;16]);assert!(ventus_reverse_grip(&world,&local,&bind,&parents).is_none());
++    }
++    #[test] fn ventus_test_runtime_is_separate_from_every_saved_stance(){
++        let s=Style::AnimationTest;assert_eq!(s.id(),None);assert!(!Style::ALL.contains(&s));assert_eq!(Style::from_code(13),s);
++        assert!(!s.duplicates()&&!s.casts()&&!s.finisher_glide());
++        for command in 0..=255{assert!(!blocked_command(s,command));}
++        for state in [character_core::StateName::Attack,character_core::StateName::Guard,character_core::StateName::Air]{assert!(!owned_action(s,false,state));}
++        for i in 0..VENTUS_TEST_COUNT{let bits=(1u64<<i)|(1u64<<50);assert_eq!(numbered_state(&numbered_state_text(bits)),Some(bits));}
++    }
+     #[test] fn single_f_uses_native_body_routes_and_keeps_saved_style_ids(){
+         let s=Style::Terra;assert_eq!(s as u8,11);assert_eq!(s.id(),Some(116));assert_eq!(s.text().0,"Type F");
+         assert_eq!(Style::Aqua.id(),Some(117));assert_eq!(Style::Close.id(),Some(126));
+diff --git a/crates/kh1-hook/src/lib.rs b/crates/kh1-hook/src/lib.rs
+index c94c1ce..406deb6 100644
+--- a/crates/kh1-hook/src/lib.rs
++++ b/crates/kh1-hook/src/lib.rs
+@@ -25,7 +25,7 @@ pub mod support;
+ 
+ /// The mod's version as the user sees it (the Config menu's Camera Style help line, the log):
+ /// the stage of the latest `AGENTS.md` entry, bumped with each build handed out (a test checks).
+-pub const VERSION: &str = "s403";
++pub const VERSION: &str = "s404";
+ 
+ #[cfg(all(windows, target_arch = "x86_64"))]
+ mod win;
+diff --git a/crates/kh1-hook/src/single_f/generate_data.py b/crates/kh1-hook/src/single_f/generate_data.py
+index 9eec75b..e018a12 100644
+--- a/crates/kh1-hook/src/single_f/generate_data.py
++++ b/crates/kh1-hook/src/single_f/generate_data.py
+@@ -4,11 +4,20 @@ import hashlib,json,struct
+ import sys
+ ROOT=Path(sys.argv[1]).resolve();OUT=Path(sys.argv[2]).resolve();OUT.mkdir(parents=True,exist_ok=True)
+ VENTUS=Path(sys.argv[3]).resolve() if len(sys.argv)>3 else None
+-profiles=2 if VENTUS else 1
++TESTS=Path(sys.argv[4]).resolve() if len(sys.argv)>4 else None
++catalogue=json.loads((TESTS/'test_catalogue.json').read_text()) if TESTS else []
++profiles=(2 if VENTUS else 1)+len(catalogue)
+ report=json.loads((ROOT/'curve_validation.json').read_text());assert report['passed'] and len(report['motions'])==37
+ if VENTUS:
+  ven_report=json.loads((VENTUS/'curve_validation.json').read_text());assert ven_report['passed'] and ven_report['source_bones']==53
+  assert [(r['normal_slot'],r['olympus_slot']) for r in ven_report['motions']]==[(r['normal_slot'],r['olympus_slot']) for r in report['motions']]
++if TESTS:
++ assert VENTUS and json.loads((TESTS/'test_validation.json').read_text())['passed']
++ assert [g['passive'] for g in catalogue]==list(range(66,66+len(catalogue)))
++ assert [g['profile'] for g in catalogue]==list(range(3,3+len(catalogue)))
++ for g in catalogue:
++  validation=json.loads((TESTS/f"p{g['passive']}"/'curve_validation.json').read_text())
++  assert validation['passed'] and len(validation['motions'])==7
+ overlays=json.loads((ROOT/'overlays/curve_validation.json').read_text());assert overlays['passed'] and len(overlays['motions'])==3
+ overlay_lookup={r['normal_slot']:r for r in overlays['motions']}
+ u32=lambda d,p:struct.unpack_from('<I',d,p)[0]
+@@ -37,6 +46,12 @@ for r in rows:
+  if VENTUS:
+   if r['normal_slot']!=76:assert (VENTUS/f'fixtures/original_{stem}.bin').read_bytes()==before
+   converted.append(before if r['normal_slot']==76 else (VENTUS/f'fixtures/ventus_{stem}.bin').read_bytes())
++ for g in catalogue:
++  folder=TESTS/f"p{g['passive']}"/'fixtures'
++  if r['normal_slot'] in range(98,105):
++   assert (folder/f'original_{stem}.bin').read_bytes()==before
++   converted.append((folder/f'ventus_{stem}.bin').read_bytes())
++  else:converted.append(converted[1])
+  assert len(converted)==profiles and all(len(c)==len(before) and c[:80]==before[:80] for c in converted)
+  variant=(ROOT/f'overlays/fixtures/terra_{stem}.bin').read_bytes() if r['normal_slot'] in overlay_lookup else None
+  if r['normal_slot']==10:variant=None
+@@ -70,6 +85,15 @@ lines+=['#define TERRA_NATIVE_DASH_BYTES '+str(len(raw_native)),
+  'static const unsigned int terra_native_dash_relocations[]={'+','.join(str(p) for p in sorted(relocations))+'};']
+ lines+=['static const TerraMotion terra_motions[TERRA_MOTION_COUNT]={',',\n'.join(records[:-1]),'};']
+ lines+=['static const TerraMotion terra_native_dash='+records[-1]+';']
++if catalogue:
++ def label(row):
++  span=row.get('source_range');return row['animation']+(f"[{span[0]}-{span[1]}]" if span else '')
++ lines+=['static const char *const terra_test_help[]={']
++ for g in catalogue:
++  text="Ground "+'/'.join(label(r) for r in g['clips'][:3])+'. Air '+'/'.join(label(r) for r in g['clips'][3:])+'.'
++  lines.append(json.dumps(text)+',')
++ lines+=['};']
++else:lines+=['static const char *const terra_test_help[]={"No animation tests built."};']
+ (OUT/'terra_data.h').write_text('\n'.join(lines)+'\n')
+-(OUT/'data_validation.json').write_text(json.dumps({'passed':True,'motions':len(records)-1,'profiles':profiles,'ventus_profile':VENTUS is not None,'main_only_body_variants':2,'native_dash_pointer_alias':True,'numbered_common_payloads_retained_from_v3':0,'headers_counts_and_capacities_unchanged':True,'native_event_and_request_bytes_unchanged':True,'all_changes_inside_existing_body_helper_tables':True,'unique_data_blocks':len(arrays)},indent=2)+'\n')
++(OUT/'data_validation.json').write_text(json.dumps({'passed':True,'motions':len(records)-1,'profiles':profiles,'ventus_profile':VENTUS is not None,'ventus_test_profiles':len(catalogue),'main_only_body_variants':2,'native_dash_pointer_alias':True,'numbered_common_payloads_retained_from_v3':0,'headers_counts_and_capacities_unchanged':True,'native_event_and_request_bytes_unchanged':True,'all_changes_inside_existing_body_helper_tables':True,'unique_data_blocks':len(arrays)},indent=2)+'\n')
+ print('Generated',len(records)-1,'mapped motions, native Superglide source and',profiles,'profiles;',len(arrays),'unique blocks')
+diff --git a/crates/kh1-hook/src/single_f/intrinsic_abilities.h b/crates/kh1-hook/src/single_f/intrinsic_abilities.h
+index dd2350c..65b578b 100644
+--- a/crates/kh1-hook/src/single_f/intrinsic_abilities.h
++++ b/crates/kh1-hook/src/single_f/intrinsic_abilities.h
+@@ -64,7 +64,10 @@ void ABI IntrinsicAbilitiesFrame(int enabled){
+  if(!equal(shared,shared_after,48))copy((void*)(save+0x599u),shared_after,48);
+  if(enabled){
+   u64 bits=numbered_bits;
+-  for(unsigned i=0;i<48&&sora[i];i++){int index=numbered_index(sora[i]&127u);if(index>=0&&!(sora[i]&128u))bits|=1ull<<index;}
++  for(unsigned i=0;i<48&&sora[i];i++){unsigned id=sora[i]&127u;int index=numbered_index(id);if(index>=0&&!numbered_is_test(id)&&!(sora[i]&128u))bits|=1ull<<index;}
++  /* A saved stance wins a conflict introduced by loading another save. New
++     test selection explicitly disables the current save's stance first. */
++  for(unsigned i=0;i<48&&sora_after[i];i++)if(styles_own(sora_after[i])&&!(sora_after[i]&128u)){bits&=~VENTUS_TEST_MASK;break;}
+   for(unsigned i=0;i<9;i++)zeros((void*)(save+(i+1u)*0x74u+0x44u),48);
+   numbered_commit(bits);
+  }
+diff --git a/crates/kh1-hook/src/single_f/numbered_passives.h b/crates/kh1-hook/src/single_f/numbered_passives.h
+index 2ddc541..64e18b4 100644
+--- a/crates/kh1-hook/src/single_f/numbered_passives.h
++++ b/crates/kh1-hook/src/single_f/numbered_passives.h
+@@ -1,13 +1,22 @@
+ /* The50 remaining unused native IDs have mod-wide test equip flags, outside save arrays. */
+ #define NUMBERED_COUNT 50u
+ #define NUMBERED_MASK (((1ull<<51u)-1ull)&~(1ull<<49u))
++#define VENTUS_TEST_FIRST 66u
++#define VENTUS_TEST_COUNT 35u
++#define VENTUS_TEST_MASK ((1ull<<VENTUS_TEST_COUNT)-1ull)
++#if TERRA_PROFILE_COUNT != VENTUS_TEST_COUNT + 2
++#error Regenerate the shared payload with all Ventus numbered test profiles
++#endif
+ static u64 numbered_bits;
+ static void (ABI *numbered_persist)(u64);
+ static int numbered_index(u32 id){return id>=66u&&id<=114u?(int)(id-66u):id==127u?50:-1;}
+ static u8 numbered_id(unsigned index){return index<49u?(u8)(66u+index):index==49u?127u:0u;}
+ static int numbered_equipped(u32 id){int index=numbered_index(id);return index>=0&&(numbered_bits&(1ull<<index))!=0;}
++static int numbered_is_test(u32 id){return id>=VENTUS_TEST_FIRST&&id<VENTUS_TEST_FIRST+VENTUS_TEST_COUNT;}
++static u64 numbered_exclusive(u64 bits){u64 tests=bits&VENTUS_TEST_MASK;return (bits&~VENTUS_TEST_MASK)|(tests&(~tests+1ull));}
+ static void numbered_commit(u64 bits){
+- bits&=NUMBERED_MASK;if(bits==numbered_bits)return;numbered_bits=bits;if(numbered_persist)numbered_persist(bits);
++ bits=numbered_exclusive(bits&NUMBERED_MASK);if(bits==numbered_bits)return;numbered_bits=bits;if(numbered_persist)numbered_persist(bits);
+ }
+-void ABI NumberedPassivesInit(u64 bits,uptr persist){numbered_bits=bits&NUMBERED_MASK;numbered_persist=(void*)persist;}
++void ABI NumberedPassivesInit(u64 bits,uptr persist){numbered_bits=numbered_exclusive(bits&NUMBERED_MASK);numbered_persist=(void*)persist;}
++u32 ABI VentusTestChoice(void){for(unsigned i=0;i<VENTUS_TEST_COUNT;i++)if(numbered_bits&(1ull<<i))return 3u+i;return 0u;}
+ static void numbered_toggle(u32 id){int index=numbered_index(id);if(index>=0)numbered_commit(numbered_bits^(1ull<<index));}
+diff --git a/crates/kh1-hook/src/single_f/styles_slots.h b/crates/kh1-hook/src/single_f/styles_slots.h
+index 1606367..449524c 100644
+--- a/crates/kh1-hook/src/single_f/styles_slots.h
++++ b/crates/kh1-hook/src/single_f/styles_slots.h
+@@ -30,7 +30,21 @@ static int styles_equip_row(unsigned row){
+  if(row>12u||!styles_shadow_save||styles_shadow_mode!=1)return 0;
+  u8 token=row?styles_ids[row-1u]:0;
+  for(unsigned i=0;i<12;i++)styles_shadow[0x44+i]=styles_ids[i]|(styles_ids[i]==token?0u:128u);
+- styles_commit();styles_sync();return styles_equipped_row()==row;
++ styles_commit();styles_sync();int selected=styles_equipped_row()==row;
++ if(selected&&row)numbered_commit(numbered_bits&~VENTUS_TEST_MASK);return selected;
++}
++static int styles_toggle_test(unsigned id){
++ unsigned bit=id-VENTUS_TEST_FIRST;if(bit>=VENTUS_TEST_COUNT)return 0;
++ u64 mask=1ull<<bit;
++ if(numbered_bits&mask){numbered_commit(numbered_bits&~VENTUS_TEST_MASK);return 1;}
++ uptr save=styles_save();if(!save||save!=styles_shadow_save||!equal(styles_before,(void*)(save+0x44),48))return 0;
++ u8 before[48],after[48];copy(before,(void*)(save+0x44),48);copy(after,before,48);
++ if(styles_end(before)<0)return 0;
++ for(unsigned i=0;i<48&&after[i];i++)if(styles_own(after[i]))after[i]|=128u;
++ if(save!=styles_save()||!equal(before,(void*)(save+0x44),48))return 0;
++ copy((void*)(save+0x44),after,48);
++ numbered_commit((numbered_bits&~VENTUS_TEST_MASK)|mask);
++ styles_shadow_save=0;styles_sync();return 1;
+ }
+ static int styles_height(void){int h=(int)r32(base+0x545360u);return h>=16&&h<=32?h:26;}
+ static int styles_gap(void){int g=(int)r32(base+0x545368u);return g>=0&&g<=8?g:2;}
+@@ -156,7 +170,8 @@ static void styles_draw_ap_budget(uptr page){
+ static int styles_passive_toggle(unsigned row){
+  if(!styles_shadow_save||styles_shadow_mode!=0)return 0;
+  unsigned n=styles_passive_native_count();
+- if(row>=n){unsigned index=row-n;if(index>=NUMBERED_COUNT)return 0;numbered_toggle(numbered_id(index));return 1;}
++ if(row>=n){unsigned index=row-n;if(index>=NUMBERED_COUNT)return 0;unsigned id=numbered_id(index);
++  if(numbered_is_test(id))return styles_toggle_test(id);numbered_toggle(id);return 1;}
+  u8 old=styles_shadow[0x44u+row],wanted=old^128u;
+  if((old&128u)&&styles_passive_cost(old&127u)>styles_passive_free())return 0;
+  styles_shadow[0x44u+row]=wanted;styles_commit();styles_sync();
+@@ -186,7 +201,7 @@ static void styles_draw_passives(uptr page,uptr w,int focused){
+  }
+  ((void(ABI*)(void))(base+0x2f0790u))();
+  if(selected<count){
+-  if(selected>=native)styles_footer_text(page,"Reserved ability. No effect assigned.");
++  if(selected>=native){unsigned id=numbered_id(selected-native);styles_footer_text(page,numbered_is_test(id)?terra_test_help[id-VENTUS_TEST_FIRST]:"Reserved ability. No effect assigned.");}
+   else{
+    u8 text[256];unsigned id=styles_shadow[0x44u+selected]&127u;
+    if(styles_passive_text(id,1,text,sizeof(text)))styles_footer_description(page,text,sizeof(text));
+diff --git a/crates/kh1-hook/src/single_f/terra.c b/crates/kh1-hook/src/single_f/terra.c
+index 983a446..365bba3 100644
+--- a/crates/kh1-hook/src/single_f/terra.c
++++ b/crates/kh1-hook/src/single_f/terra.c
+@@ -217,10 +217,11 @@ static void motion_gate(uptr actor,int choice){
+     copy(cached,found,sizeof(cached));cache_actor=actor;cache_array=array;cache_bank=bank;cache_choice=choice;pending_reported=0;reported_wait_array=0;
+     admission_due=frame_serial;
+     if(already_applied){if(rebind_notes++<12u)log_text("TERRA BINDING RECOVERED: all payloads verified; moving actor readmitted without body writes");return;}
+-    log_text(choice==2?"VENTUS MOTIONS ENABLED: Type G native bodies applied; native events, travel, Glide and Superglide retained":choice?"TERRA MOTIONS ENABLED: Terra common body records applied; eleven helper slots and native travel retained":"TERRA MOTIONS DISABLED: all mapped original Sora records restored");
++    log_text(choice>=3?"VENTUS TEST MOTIONS ENABLED: numbered Passive, exclusive with stances; native events and travel retained":choice==2?"VENTUS MOTIONS ENABLED: Type G native bodies applied; native events, travel, Glide and Superglide retained":choice?"TERRA MOTIONS ENABLED: Terra common body records applied; eleven helper slots and native travel retained":"TERRA MOTIONS DISABLED: all mapped original Sora records restored");
+     log_text(bank?"TERRA BANK: normal Sora":"TERRA BANK: Olympus");
+     log_number("TERRA verified motion count=",cache_count);
+-    log_number("NATIVE STYLE binding 0 native 1 Terra 2 Ventus=",(uptr)choice);
++    log_number("NATIVE STYLE binding 0 native 1 Terra 2 Ventus 3+ test=",(uptr)choice);
++    if(choice>=3)log_number("VENTUS ANIMATION TEST passive=",(uptr)choice+63u);
+ }
+ 
+ 
+diff --git a/crates/kh1-hook/src/win/dual.rs b/crates/kh1-hook/src/win/dual.rs
+index 86f020d..65d031a 100644
+--- a/crates/kh1-hook/src/win/dual.rs
++++ b/crates/kh1-hook/src/win/dual.rs
+@@ -48,7 +48,9 @@ pub fn master()->bool{style()==policy::Style::Master}
+ pub fn single_e()->bool{style()==policy::Style::Aqua}
+ pub fn single_f()->bool{style()==policy::Style::Terra}
+ pub fn single_g()->bool{style()==policy::Style::Ventus}
+-pub fn native_body()->bool{single_e()||single_f()||single_g()}
++pub fn animation_testing()->bool{style()==policy::Style::AnimationTest}
++pub fn ventus_body()->bool{single_g()||animation_testing()}
++pub fn native_body()->bool{single_e()||single_f()||ventus_body()}
+ pub fn single_d()->bool{style()==policy::Style::DarkRiku}
+ pub fn floating()->bool{ranged()||master()}
+ pub fn ranged()->bool{style()==policy::Style::Ranged}
+@@ -60,7 +62,7 @@ pub fn single_b()->bool{style()==policy::Style::SingleB}
+ pub fn anti()->bool{style()==policy::Style::Anti}
+ pub fn donor()->policy::Donor{policy::Visual::Idle.donor_for(style())}
+ pub fn data(k:&super::pose::Kh2)->Option<&super::pose::Form>{match style(){
+-    policy::Style::Ventus|policy::Style::Terra|policy::Style::Aqua|policy::Style::DarkRiku=>None,policy::Style::Master=>k.master.as_ref(),policy::Style::Riku=>k.riku.as_ref(),policy::Style::SingleA=>Some(&k.base_form),policy::Style::SingleB=>k.wisdom.as_ref(),
++    policy::Style::AnimationTest|policy::Style::Ventus|policy::Style::Terra|policy::Style::Aqua|policy::Style::DarkRiku=>None,policy::Style::Master=>k.master.as_ref(),policy::Style::Riku=>k.riku.as_ref(),policy::Style::SingleA=>Some(&k.base_form),policy::Style::SingleB=>k.wisdom.as_ref(),
+     policy::Style::Anti=>k.anti.as_ref(),policy::Style::Roxas=>k.roxas.as_ref(),policy::Style::Ranged=>k.final_form.as_ref(),_=>k.valor.as_ref()}}
+ pub fn action_data(k:&super::pose::Kh2)->Option<&super::pose::Form>{
+     if aerial_session(){k.master.as_ref()}else if master()&&roll_session(){k.master_quick_run.as_ref()}else if ranged()&&roll_session(){k.dual_b_dodge.as_ref()}else if single_c()&&roll_session(){k.wisdom.as_ref()}else{data(k)}
+@@ -71,7 +73,7 @@ pub fn finisher_glide()->bool{style().finisher_glide()}
+ pub fn weapon_ready()->bool{!duplicates() || super::leftblade::ready()}
+ pub fn form_data()->Option<&'static super::pose::Form>{data(super::pose::kh2()?)}
+ pub fn attack_ready()->bool{super::pose::kh2().is_some_and(|k|match style(){
+-    policy::Style::Ventus|policy::Style::Terra|policy::Style::Aqua|policy::Style::DarkRiku=>false,policy::Style::Master=>k.master_attack.is_some(),policy::Style::Riku=>k.riku_attack.is_some(),policy::Style::Close=>k.valor.is_some(),policy::Style::Roxas=>k.roxas_attack.is_some(),policy::Style::Ranged=>k.ranged_attack.is_some(),
++    policy::Style::AnimationTest|policy::Style::Ventus|policy::Style::Terra|policy::Style::Aqua|policy::Style::DarkRiku=>false,policy::Style::Master=>k.master_attack.is_some(),policy::Style::Riku=>k.riku_attack.is_some(),policy::Style::Close=>k.valor.is_some(),policy::Style::Roxas=>k.roxas_attack.is_some(),policy::Style::Ranged=>k.ranged_attack.is_some(),
+     policy::Style::SingleA=>k.single_a_attack.is_some(),policy::Style::SingleB=>k.single_b_attack.is_some() && super::dual_magic_fx::wisdom_ready(),policy::Style::Anti=>k.anti_attack.is_some(),_=>false})}
+ fn single_c_lane_ready(air:bool)->bool{
+     super::pose::kh2().and_then(|k|k.riku_attack.as_ref()).is_some_and(|c|
+@@ -188,7 +190,7 @@ pub unsafe fn install(){
+     READY.store(true,Ordering::Relaxed);
+     ensure_table(base);
+     if !super::dual_hover::install(){log("DUAL RANGED HOVER unavailable: native Glide movement retained");}
+-    log(&format!("STYLES v64: Dual A=Valor; Dual B=Final and Quick Run; Single A=KH2 base Sora; Single B=Wisdom, run animation 0.75 and Quick Run; Anti=weaponless Anti; twelve exclusive entries including Dual C/playable dual Roxas, Single C/playable Riku, Dual D/Master and Single D/Dark Riku guard30 and ground second28 and Single C jump test, native attack ability priority; idle_speed={:.2}; offhand_only_test={}",idle_speed(),offhand_test()));
++    log(&format!("STYLES v65: Dual A=Valor; Dual B=Final and Quick Run; Single A=KH2 base Sora; Single B=Wisdom, run animation 0.75 and Quick Run; Anti=weaponless Anti; twelve exclusive entries including Dual C/playable dual Roxas, Single C/playable Riku, Dual D/Master and Single D/Dark Riku guard30 and ground second28 and Single C jump test, native attack ability priority; idle_speed={:.2}; offhand_only_test={}",idle_speed(),offhand_test()));
+ }
+ 
+ /// Called on the game thread. Only our own ability entry may be written.
+@@ -249,7 +251,8 @@ pub unsafe fn frame(){
+         std::ptr::copy_nonoverlapping(list.as_ptr(),(save+0x44) as *mut u8,policy::SLOTS);
+     }
+     CHOICE.store(selected as u8,Ordering::Relaxed);
+-    switch_style(if valid{selected}else{policy::Style::Off},sora);
++    let effective=if selected==policy::Style::Off&&super::single_f::test_choice()>0{policy::Style::AnimationTest}else{selected};
++    switch_style(if valid{effective}else{policy::Style::Off},sora);
+     let on=enabled();
+     if close() {
+         let ground=policy::native_combo(&list,false);let air=policy::native_combo(&list,true);
+@@ -282,13 +285,14 @@ unsafe fn switch_style(next:policy::Style,actor:usize){
+     super::single_e::observe(actor);super::single_f::observe(actor);
+     match style(){
+         policy::Style::Aqua if next!=policy::Style::Aqua=>{if !super::single_e::frame(actor,false){return;}},
+-        policy::Style::Terra|policy::Style::Ventus if next!=style()=>{if !super::single_f::frame(actor,false){return;}},
++        policy::Style::Terra|policy::Style::Ventus|policy::Style::AnimationTest if next!=style()=>{if !super::single_f::frame(actor,false){return;}},
+         _=>{}
+     }
+     set_style(next);
+     if next==policy::Style::Aqua{super::single_e::frame(actor,true);}
+     if next==policy::Style::Terra{super::single_f::frame(actor,true);}
+     if next==policy::Style::Ventus{super::single_f::ventus_frame(actor,true);}
++    if next==policy::Style::AnimationTest{super::single_f::test_frame(actor);}
+ }
+ fn set_style(next:policy::Style){
+     let old=STYLE.swap(next as u8,Ordering::Relaxed);
+diff --git a/crates/kh1-hook/src/win/mod.rs b/crates/kh1-hook/src/win/mod.rs
+index 1e08007..42c739d 100644
+--- a/crates/kh1-hook/src/win/mod.rs
++++ b/crates/kh1-hook/src/win/mod.rs
+@@ -257,7 +257,7 @@ pub unsafe extern "system" fn DllMain(_inst: *mut c_void, reason: u32, _reserved
+         pose::load_kh2();
+         dual_dark::load_inventory();
+         dual_magic_fx::start();
+-        log("STANCES v64: fixed description footer and large white AP Used/max; Type G=Ventus 53-bone source, ground300/301/302 and air305/306/307, native Glide/Superglide; numbered IDs66..114/127 at0 AP, Sora-only direct Passives, non-Sora learned abilities removed; seven built-in abilities without AP or learned-list slots; Customize contains Stance/Passives/Limits/Outfits; root Abilities removed; Passives opens Sora directly with native AP queries; native AP metadata boxes and glyph-only labels; Single F=Terra main with fixed-facing native Superglide Square dash once until landing and magic-shortcut exclusion; Single E=Aqua v21 main native-body setup, ground300/301/366 and air305/407/353, once-per-airtime movement rate1.5 / visual75percent dodge replaces ordinary Glide, native Superglide, jump1.25 and all-angle Guard; Dual D/Master base combos, body3 finisher, matching poses/casts and equipped-weapon duplicate; held offhand in Superglide; Wisdom Quick Run replaces Roll; KH2 Sora Guard retarget; Single A/C and Dual C/D: Master Circle Aerial Dodge travel2x at original movement timing and75percent visual playback replaces regular Glide; Single D/KH1 Dark Riku solved-hip body map, checked rest, Single C jump and guard uses former second ground attack30; second ground hit uses former finisher28; additional finisher/air source capture; native combat/magic retained; existing seven styles and Single C 77-frame finisher preserved; no Drive/gauge/outfit/stat/ability rewards");
++        log("STANCES v65: Passives66..100 test all187 unused Ventus clips; tests and stances mutually exclusive, one test at a time; Type G and tests reverse Keyblade grip; readable footer and large white AP Used/max; Type G=Ventus 53-bone source, ground300/301/302 and air305/306/307, native Glide/Superglide; numbered IDs66..114/127 at0 AP, Sora-only direct Passives, non-Sora learned abilities removed; seven built-in abilities without AP or learned-list slots; Customize contains Stance/Passives/Limits/Outfits; root Abilities removed; Passives opens Sora directly with native AP queries; native AP metadata boxes and glyph-only labels; Single F=Terra main with fixed-facing native Superglide Square dash once until landing and magic-shortcut exclusion; Single E=Aqua v21 main native-body setup, ground300/301/366 and air305/407/353, once-per-airtime movement rate1.5 / visual75percent dodge replaces ordinary Glide, native Superglide, jump1.25 and all-angle Guard; Dual D/Master base combos, body3 finisher, matching poses/casts and equipped-weapon duplicate; held offhand in Superglide; Wisdom Quick Run replaces Roll; KH2 Sora Guard retarget; Single A/C and Dual C/D: Master Circle Aerial Dodge travel2x at original movement timing and75percent visual playback replaces regular Glide; Single D/KH1 Dark Riku solved-hip body map, checked rest, Single C jump and guard uses former second ground attack30; second ground hit uses former finisher28; additional finisher/air source capture; native combat/magic retained; existing seven styles and Single C 77-frame finisher preserved; no Drive/gauge/outfit/stat/ability rewards");
+     }
+     1
+ }
+diff --git a/crates/kh1-hook/src/win/native_styles.rs b/crates/kh1-hook/src/win/native_styles.rs
+index 3d08b02..53bdd5d 100644
+--- a/crates/kh1-hook/src/win/native_styles.rs
++++ b/crates/kh1-hook/src/win/native_styles.rs
+@@ -5,7 +5,7 @@ static ORIGINAL:AtomicUsize=AtomicUsize::new(0);
+ pub fn original()->usize{ORIGINAL.load(Ordering::Acquire)}
+ unsafe extern "system" fn movement(actor:usize,out:usize)->f32{
+  if dual::single_e(){return super::single_e::move_actor(actor,out);}
+- if dual::single_f()||dual::single_g(){return super::single_f::move_actor(actor,out);}
++ if dual::single_f()||dual::ventus_body(){return super::single_f::move_actor(actor,out);}
+  let f:unsafe extern "system" fn(usize,usize)->f32=std::mem::transmute(original());f(actor,out)
+ }
+ pub unsafe fn install(){
+diff --git a/crates/kh1-hook/src/win/pose.rs b/crates/kh1-hook/src/win/pose.rs
+index 61fd5ff..3e00955 100644
+--- a/crates/kh1-hook/src/win/pose.rs
++++ b/crates/kh1-hook/src/win/pose.rs
+@@ -2308,6 +2308,18 @@ pub fn standard_glide_bind(instance:usize)->Option<Vec<Mat4>>{
+ }
+ 
+ unsafe fn dual_keep_native(s:&mut Sora,world:usize,placement:Option<Mat4>,actor:[f32;3]) {
++    if super::dual::ventus_body() && held_weapon().is_some_and(|w|!(0x52..=0x55).contains(&w)){
++        let native:Vec<Mat4>=(0..SORA_BONES as usize).map(|i|mat(world+i*0x40)).collect();
++        let local=ptr(rd::<u32>(s.instance+LOCAL));
++        if local!=0 && super::crash::readable(local+SORA_BONES as usize*0x40-1){
++            let locals:Vec<Mat4>=(0..SORA_BONES as usize).map(|i|mat(local+i*0x40)).collect();
++            if let Some(weapon)=crate::dual_wield::ventus_reverse_grip(&native,&locals,&s.bind,&s.parents){
++                for (i,m) in weapon.iter().enumerate(){
++                    std::ptr::write_unaligned((world+(280+i)*0x40) as *mut [f32;16],m.to_cols_array());
++                }
++            }
++        }
++    }
+     // Standard Glide publishes its duplicate only from the actual body draw's
+     // skinned palm. Never overwrite it with an unskinned helper from a pose pass.
+     if !super::leftblade::native_held_action_active(super::takeover::sora_actor()){
+diff --git a/crates/kh1-hook/src/win/single_f.rs b/crates/kh1-hook/src/win/single_f.rs
+index 549530f..aadd9f5 100644
+--- a/crates/kh1-hook/src/win/single_f.rs
++++ b/crates/kh1-hook/src/win/single_f.rs
+@@ -16,6 +16,7 @@ extern "system" {
+     fn IntrinsicAbilitiesInit(enabled:i32)->i32;
+     fn IntrinsicAbilitiesFrame(enabled:i32);
+     fn NumberedPassivesInit(bits:u64,persist:usize);
++    fn VentusTestChoice()->u32;
+     fn SingleFSuppressSuperglide(actor: usize)->i32;
+     fn SingleFObserve(actor: usize);
+     fn SingleFMove(actor: usize,out: usize)->f32;
+@@ -58,6 +59,8 @@ pub unsafe fn install() {
+ 
+ pub unsafe fn frame(actor:usize,selected:bool)->bool{!READY.load(Ordering::Acquire)||SingleFFrame(actor,selected as i32,takeover::GAME_FRAME.load(Ordering::Relaxed))!=0}
+ pub unsafe fn ventus_frame(actor:usize,selected:bool)->bool{!READY.load(Ordering::Acquire)||SingleFFrame(actor,if selected{2}else{0},takeover::GAME_FRAME.load(Ordering::Relaxed))!=0}
++pub fn test_choice()->u32{if READY.load(Ordering::Acquire){unsafe{VentusTestChoice()}}else{0}}
++pub unsafe fn test_frame(actor:usize)->bool{!READY.load(Ordering::Acquire)||SingleFFrame(actor,test_choice() as i32,takeover::GAME_FRAME.load(Ordering::Relaxed))!=0}
+ pub unsafe fn control(actor:usize,dir:usize,original:usize){
+  if READY.load(Ordering::Acquire){SingleFControl(actor,dir,original);}else{let f:unsafe extern "system" fn(usize,usize)=std::mem::transmute(original);f(actor,dir);}
+ }
+diff --git a/crates/kh1-hook/src/win/takeover.rs b/crates/kh1-hook/src/win/takeover.rs
+index a44c744..46f7d4c 100644
+--- a/crates/kh1-hook/src/win/takeover.rs
++++ b/crates/kh1-hook/src/win/takeover.rs
+@@ -876,7 +876,7 @@ unsafe extern "system" fn control(actor: usize, dir: usize) {
+     if super::dual::single_e(){
+         super::single_e::control(actor,dir,ORIG_CONTROL.load(Ordering::Acquire));return;
+     }
+-    if super::dual::single_f()||super::dual::single_g(){
++    if super::dual::single_f()||super::dual::ventus_body(){
+         super::single_f::control(actor,dir,ORIG_CONTROL.load(Ordering::Acquire));return;
+     }
+     if super::dual_master::control(actor){
+diff --git a/docs/combat-model.md b/docs/combat-model.md
+index 7ab4a0d..cc6e664 100644
+--- a/docs/combat-model.md
++++ b/docs/combat-model.md
+@@ -4909,3 +4909,36 @@ substituted. GPU placement, actual game startup, stance switching and combat
+ feel remain for live testing. Sources: user request/screenshot/Ventus capture,
+ v63, supplied Steam executable, original Terra tooling; see styles-v64.md and
+ single-g.md. No private game assets or disassembly enter version control.
++
++## Stage404 — Styles v65: exclusive Ventus previews and reverse grip
++
++- User request: all unused Ventus clips on numbered Passives, Type G reverse
++  grip, and selecting an animation test must unequip stances. Implement both
++  directions plus one test at once. Native passives/AP remain independent.
++  Source: current user instructions; confidence: explicit requirement.
++- IDs66..100 map to35 test profiles3..37. Runtime code13 is internal only;
++  the12 saved stance IDs remain. UI transactions clear existing enabled stance
++  bytes before selecting a test, without appending entries. Stance selection
++  clears test flags. Source: v64 menu/save adapter and exact native arrays;
++  confidence: offline PE checks, live menu behavior still requires testing.
++- Numbered settings gain a Ventus-test version marker; legacy no-effect flags
++  in newly assigned IDs are cleared. One test survives normalization; saved
++  stance wins a cross-save conflict. Other unused flags and bit50/ID127 remain.
++  Source: existing registry/codec and user mutex goal; confidence: unit/PE checks.
++- The298 captured records contain210 distinct hashes;23 are used by main G.
++  Cover all187 unused distinct clips through210 combo positions/245 native
++  records. Split only fixed-capacity failures into labeled source ranges and
++  verify complete range unions. No capacity increase, source events/scripts or
++  BBS command logic is inferred. Source: supplied original Ventus capture;
++  confidence: hash/coverage/fitting checks, pose suitability remains provisional.
++- Reverse local X using grip-local Z180 at the native hilt. Rebuild weapon
++  subtree280..292 from skinned wrist100, local101/280 and native child locals;
++  bind fallback for absent children. Avoid live weapon feedback so repeated
++  skeleton/IK passes are idempotent. Exclude wooden/dream52..55. Source: original
++  Sora skeleton/hierarchy and current pose-hook contract; confidence: geometry
++  tests and primary-model inspection; rendered game appearance unverified.
++- Retain all190 old before/Terra/G/variant payload parts and both E/F action
++  controllers.636 Rust tests/30 suites and150 final-PE checks pass (103 shared,
++  47 E).52,185 sampled poses stay within existing fit bounds. Shared Rust
++  dispatch/Windows APIs/rendering are substituted; no live game is claimed.
++  Full behavior and rebuild notes: styles-v65.md and single-g.md.
+diff --git a/docs/single-g.md b/docs/single-g.md
+index 1209cd7..008485b 100644
+--- a/docs/single-g.md
++++ b/docs/single-g.md
+@@ -37,8 +37,8 @@ event keys, helper travel, headers and capacities. Body playback is retimed to
+ those records; this is an initial animation selection and native-timing test,
+ not a claim that the complete BBS action controller or command deck is ported.
+ Glide, Superglide, damage reactions, hitboxes, spell origins/effects and actual
+-Guard defense/roll movement remain native. Visual grip and contact alignment
+-must be checked in game before any additional weapon-bone changes are selected.
++Guard defense/roll movement remain native. v65 adds a reverse Keyblade grip in the native pose path for Type G and its
++numbered tests. Grip/contact alignment still needs an in-game check.
+ 
+ ## Rebuilding
+ 
+@@ -51,18 +51,37 @@ SciPy and Pillow for the reused tools.
+ 
+ ```
+ python3 tools/ventus-retarget/build_ventus.py VENTUS_CAPTURE/Sources WORK --workers 4
+-python3 crates/kh1-hook/src/single_f/generate_data.py TERRA_V4_SOURCE local/single_f WORK
++python3 tools/ventus-retarget/build_ventus_tests.py VENTUS_CAPTURE/Sources WORK TEST_WORK --workers 6
++python3 crates/kh1-hook/src/single_f/generate_data.py TERRA_V4_SOURCE local/single_f WORK TEST_WORK
+ ```
+ 
+-The first command emits converted fixtures, complete source inventory and
+-curve_validation.json. The second retains Terra as profile1 and incorporates
+-the checked G records as profile2. No native event stream is a write destination.
++The first command emits main G fixtures, source inventory and validation. The
++second builds all numbered tests, splitting only fixed-capacity failures. The
++third retains Terra as profile1, G as2 and tests as3..37. No native event stream
++is a write destination.
+ Use VENTUS_SOURCE=WORK alongside the previously documented Terra/native EXE
+ variables when running the final-PE F/G adapter tests. The exact included
+-terra_data.h already contains both profiles and requires no regeneration.
++terra_data.h already contains all37 profiles and requires no regeneration.
+ 
+-The generated before/Terra/variant byte blocks are compared with v63, including
+-all190 parts. Both bank mappings, request handles and root helper trajectories
+-remain checked. See styles-v64.md for measured bounds and live test limitations.
++The generated before/Terra/Ventus/variant byte blocks are compared with v64,
++including all190 parts. Both bank mappings, request handles and root helper
++trajectories remain checked. See styles-v65.md for bounds and live limitations.
+ Source tools are derived from this project's original Terra v4 retarget tools;
+ ARC/PAM/PMO format references are documented in bbs_source_inspector.py.
++
++## v65 numbered previews and reverse grip
++
++Passives66..100 add35 exclusive test profiles, including every187 unused
++source clip. Equipping one unequips stances and the previous test; selecting a
++stance clears tests. The main G action mapping above remains unchanged. Type G
++and tests reverse the weapon at the same hilt without changing the body pose.
++See styles-v65.md and the package VENTUS_TESTS.txt/CSV for frame-range details.
++
++The commands above regenerate the full current shared payload.
++
++The test builder reuses successful fits, subdivides fixed-capacity failures
++and verifies complete source-frame coverage. Keep all generated assets private.
++The compile-time profile guard requires all35 test profiles in the current
++header. Set VENTUS_TEST_SOURCE=TEST_WORK as well as VENTUS_SOURCE=WORK when
++running the current F/G final-PE tests. The included exact header is sufficient
++for normal rebuilding; conversion regeneration is optional.
+diff --git a/docs/styles-v65.md b/docs/styles-v65.md
+new file mode 100644
+index 0000000..970fad4
+--- /dev/null
++++ b/docs/styles-v65.md
+@@ -0,0 +1,98 @@
++# Styles v65 / s404: Ventus numbered tests and reverse grip
++
++## Equip rules
++
++Passives66..100 are35 zero-AP Ventus animation tests. Selecting one disables
++all equipped stance tokens in Sora's existing learned array, then selects only
++that test. Selecting a stance clears the active test. Normal native passive
++flags, their AP costs, the other unused numeric flags and all neighboring save
++fields are preserved. Selecting the current test again disables it without
++automatically equipping a stance. The native48-byte capacity is unchanged.
++
++The test transaction admits the current save identity, a valid complete list
++and an unchanged snapshot before writing. It never appends a learned entry or
++evicts a normal ability. A full48-entry list can still select a test. Stance
++selection retains its existing hidden-token capacity requirement.
++
++Numbered settings remain mod-wide in kh1-numbered-abilities.ini. A version
++marker distinguishes actual animation-test selections from older no-effect
++placeholder flags: old flags66..100 are cleared on upgrade, while unassigned
++101..114/127 retain their meaning. A saved equipped stance wins any conflict
++introduced by loading a different save. Former115 bit49 remains retired;
++127 stays at bit50. The same single-test normalization applies on load/write.
++
++Tests use internal runtime code13, with no saved stance ID and no Stance row.
++The shared native adapter uses profile1 for Terra,2 for main Ventus and3..37
++for tests66..100. It restores the previous native body data at idle before
++another adapter runs. Changing tests also waits for the current action to end.
++Only Terra profile1 can use Terra's dash and cast-recovery variants. Tests
++retain KH1 movement, contact, magic/item/Guard events and native travel.
++
++## Animation coverage
++
++The supplied Ventus inventory has298 records but210 distinct source hashes.
++The main G mapping uses23 distinct clips, leaving187 unused distinct clips.
++Every unused clip is assigned to a ground or air combo position in the35 tests.
++Exact duplicate archive copies share one preview; aliases are listed in the
++package CSV. Numeric source labels are not interpreted as move names.
++
++Each test has three ground and three air positions; the native alternate
++second ground hit also uses the listed second ground animation. Every source
++frame range is covered. Complex clips that exceed an existing native record's
++curve capacity are split into contiguous inclusive ranges, with the boundary
++frame shared. Those ranges are labeled in VENTUS_TESTS.txt and the detailed
++VENTUS_TESTS.csv. Splitting preserves coverage without expanding game buffers
++or weakening fitting bounds. No source events, scripts or BBS command behavior
++are imported. All source clips are30fps, retimed into existing KH1 records.
++
++The builder deduplicates by source SHA256, verifies each canonical source,
++checks all frame-range unions and retains the original root helper. The245
++converted records meet the existing limits: position error <=5 model units,
++basis error <=0.12, segment error <=0.01 and native root-helper error <=1e-7.
++Measured maxima are4.688/0.105/below3.9e-11/zero respectively, with zero scale
++error across52,185 quarter-frame pose samples. This bounds approximation error;
++it does not establish mesh clearance, ideal combat timing or move suitability.
++
++The generated shared header keeps all190 original/Terra/Ventus/variant part
++payloads identical to v64. Only the seven combo records differ between main G
++and a numbered profile. Existing E/F action controllers and E payload remain.
++A compile-time guard rejects an incomplete shared test payload.
++
++## Reverse Keyblade grip
++
++Type G and numbered Ventus tests turn the weapon180 degrees about the grip's
++local Z axis, reversing its longitudinal X axis at the same hilt. This differs
++from the old optional X-axis teeth roll. The source is the supplied original
++Sora model: skinned wrist100, palm101, grip280 and weapon subtree281..292.
++
++The native-pose path rebuilds the weapon from fresh wrist100 and untouched
++relative local matrices, with bind-relative fallback for absent weapon-child
++matrices. It never feeds back a previously reversed weapon pose. Both skeleton
++and IK passes therefore produce the same result. Parent topology, affine
++matrices, attachment distance and all output matrices are checked before any
++weapon write. Body, arm, finger, hair, native local and scale data are untouched.
++Wooden/dream weapons52..55 are excluded. Other stances retain their own grips.
++
++## Validation and limits
++
++636 Rust tests pass in30 nonempty suites.150 final-PE checks pass:103 shared
++F/G/test/menu checks and47 Single E regressions. All35 test profiles apply and
++restore every record in normal and Olympus banks using relocated pointers.
++UI checks cover all12 stances in both equip directions, every test selection,
++full native lists, zero AP, invalid lists, native AP behavior, migration and
++ordinary menu regressions. Geometry checks cover blade-axis reversal, hilt
++and segment preservation, repeated-pass idempotence and invalid input.
++
++The Windows x64 DLL retains4 exports/8 imported DLLs. The harness executes the
++final PE's C adapter but substitutes Windows APIs, rendering and shared Rust
++dispatch. Geometry tests exercise pure matrix policy. Actual Windows startup,
++GPU weapon appearance, mesh clearance, contacts and live switching remain for
++the user's game test; no game execution is claimed.
++
++Sources: the user's Ventus capture and requests for unused-animation previews,
++reverse grip and mutual exclusion; delivered v64; original Sora model/MSETs and
++supplied Steam Global executable; this project's original retarget tools.
++Inventory/hash/range, byte-capacity and mathematical findings are high-confidence
++offline results. Suitability of each preview and the final rendered grip remain
++provisional until observed in game. No game assets or generated payloads enter
++Git; exact private rebuild inputs are included only in the delivered package.
+diff --git a/tools/ventus-retarget/build_ventus_tests.py b/tools/ventus-retarget/build_ventus_tests.py
+new file mode 100644
+index 0000000..c040be5
+--- /dev/null
++++ b/tools/ventus-retarget/build_ventus_tests.py
+@@ -0,0 +1,98 @@
++"""Pack every unused distinct Ventus source clip into numbered visual combos."""
++from pathlib import Path
++from concurrent.futures import ProcessPoolExecutor,as_completed
++import argparse,json,hashlib,struct,time
++import build_ventus as core
++
++SLOTS=[(98,0xc8,0),(99,0xc9,1),(100,0xca,1),(101,0xcb,2),(102,0xcc,3),(103,0xcd,4),(104,0xce,5)]
++
++def catalogue(main):
++ inventory=json.loads((main/'animation_inventory.json').read_text())
++ used={m['source_sha256'] for m in json.loads((main/'curve_validation.json').read_text())['motions']}
++ unique={}
++ for row in inventory:
++  if row['sha256'] not in used:unique.setdefault(row['sha256'],row)
++ rows=sorted(unique.values(),key=lambda m:(0,int(m['animation'])) if m['animation'].isdigit() else (1,m['animation']))
++ groups=[]
++ for offset in range(0,len(rows),6):
++  clips=rows[offset:offset+6];padding=6-len(clips);clips=clips+[clips[-1]]*padding
++  groups.append(dict(passive=66+len(groups),profile=3+len(groups),clips=clips,padding=padding))
++ assert len(groups)<=49
++ return groups
++
++def build(job):
++ group,slot,request,index=job;row=group['clips'][index]
++ a,bank,digest=core.ANIMS[row['animation']];assert digest==row['sha256']
++ native=core.BANK['motions'][slot]
++ plan=dict(normal_slot=slot,request=request,action=f"passive{group['passive']} {'ground' if index<3 else 'air'}{index%3+1}",donor=a.name,source_range=row.get('source_range'),loop=False,grounded=False,root='travel',normal_only=False,source_bank=bank,source_sha256=digest)
++ if plan['source_range']:plan['tip_precision']=True
++ folder=core.ROOT/f"p{group['passive']}";fixture=folder/'fixtures';fixture.mkdir(parents=True,exist_ok=True)
++ metric=fixture/f's{slot:03d}_metrics.json'
++ if metric.exists():
++  old=json.loads(metric.read_text())
++  if all(old.get(k)==v for k,v in plan.items()):return group['passive'],old
++ start=time.monotonic();converted,metrics=core.terra_fit.compact(core.MODEL,native,a,core.CAL,plan)
++ stem=f's{slot:03d}';(fixture/f'original_{stem}.bin').write_bytes(native.raw);(fixture/f'ventus_{stem}.bin').write_bytes(converted.raw)
++ hes=[i for i,m in enumerate(core.HE['motions']) if m is not None and m.raw==native.raw];assert len(hes)==1
++ result={**plan,'fixture_stem':stem,'olympus_slot':hes[0],'native_frames':native.frames,'motion_bytes':len(native.raw),'source_frames':a.frame_count,'source_fps':a.fps,**metrics,'fit_seconds':round(time.monotonic()-start,3)}
++ metric.write_text(json.dumps(result,indent=2)+'\n');return group['passive'],result
++
++def split_failures(groups,errors):
++ additions=[]
++ for passive,index in sorted({(e['passive'],next(i for s,r,i in SLOTS if s==e['slot'])) for e in errors}):
++  group=next(g for g in groups if g['passive']==passive);row=group['clips'][index]
++  a,b=row.get('source_range') or [0,row['frames']-1];mid=(a+b)//2
++  if mid<=a or mid>=b:raise ValueError(('Unsplittable source range',row))
++  group['clips'][index]={**row,'source_range':[a,mid]};additions.append({**row,'source_range':[mid,b]})
++ # Padding is explicitly filler, never an additional source clip. Replace it
++ # before allocating another numbered ability. Existing successful slots stay.
++ last=groups[-1];padding=last['padding'];tail=last['clips'][:6-padding]+additions
++ last['clips']=tail[:6];last['padding']=max(0,6-len(last['clips']))
++ last['clips']+=last['clips'][-1:]*last['padding']
++ for offset in range(6,len(tail),6):
++  clips=tail[offset:offset+6];padding=6-len(clips)
++  groups.append(dict(passive=66+len(groups),profile=3+len(groups),clips=clips+clips[-1:]*padding,padding=padding))
++ if len(groups)>49:raise ValueError('Test catalogue exceeds contiguous free numeric IDs')
++ return groups
++
++def coverage(groups,main):
++ expected={r['sha256']:r for g in catalogue(main) for r in g['clips']}
++ spans={key:[] for key in expected}
++ for g in groups:
++  for row in g['clips'][:6-g['padding']]:
++   assert row['sha256'] in expected
++   a,b=row.get('source_range') or [0,row['frames']-1]
++   assert 0<=a<=b<row['frames'];spans[row['sha256']].append((a,b))
++ for key,ranges in spans.items():
++  end=0;assert ranges
++  for a,b in sorted(ranges):assert a<=end;end=max(end,b)
++  assert end==expected[key]['frames']-1
++ return len(expected)
++
++def main():
++ ap=argparse.ArgumentParser();ap.add_argument('source');ap.add_argument('main');ap.add_argument('work');ap.add_argument('--workers',type=int,default=6);ap.add_argument('--refine',action='store_true');args=ap.parse_args()
++ source=Path(args.source).resolve();main=Path(args.main).resolve();work=Path(args.work).resolve();work.mkdir(exist_ok=True)
++ import shutil
++ for n in ['xa_ex_0010.mdls','xa_ex_0010.mset','xa_ex_0010_he.mset']:shutil.copyfile(main/n,work/n)
++ groups=json.loads((work/'test_catalogue.json').read_text()) if args.refine else catalogue(main)
++ if args.refine:groups=split_failures(groups,json.loads((work/'test_validation.json').read_text())['errors'])
++ for attempt in range(6):
++  (work/'test_catalogue.json').write_text(json.dumps(groups,indent=2)+'\n')
++  records={g['passive']:[] for g in groups};errors=[]
++  with ProcessPoolExecutor(max_workers=args.workers,initializer=core.initialize,initargs=(str(work),str(source))) as pool:
++   jobs={pool.submit(build,(g,s,r,i)):(g,s) for g in groups for s,r,i in SLOTS}
++   for future in as_completed(jobs):
++    g,s=jobs[future]
++    try:
++     passive,m=future.result();records[passive].append(m);print(f"PASSIVE{passive} slot{s} source{m['donor']} range={m['source_range']} error={m['max_pose_position_error']:.3f} sec={m['fit_seconds']}",flush=True)
++    except Exception as e:errors.append(dict(passive=g['passive'],slot=s,error=repr(e)));print('FAILED',g['passive'],s,repr(e),flush=True)
++  if not errors:break
++  if any('Fit exceeds bounds' not in e['error'] for e in errors):break
++  print('SPLITTING',len(errors),'failed fixed-capacity fits',flush=True)
++  groups=split_failures(groups,errors)
++ for passive,m in records.items():
++  (work/f'p{passive}'/'curve_validation.json').write_text(json.dumps(dict(passed=len(m)==7,source_bones=53,motions=sorted(m,key=lambda x:x['normal_slot'])),indent=2)+'\n')
++ count=coverage(groups,main)
++ report=dict(passed=not errors,profiles=len(groups),distinct_unused_animations=count,all_source_frame_ranges_covered=True,motions=sum(map(len,records.values())),errors=errors)
++ (work/'test_validation.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report),flush=True);return bool(errors)
++if __name__=='__main__':raise SystemExit(main())
 -- 
 2.52.0
 

@@ -4,9 +4,13 @@ Rust DllMain, shared Rust dispatch and rendering are not executed. Private
 source fixtures are provided through the documented environment variables.
 """
 from pathlib import Path
-import ctypes as C,json,struct,subprocess,sys,unittest,os,math
+import ctypes as C,json,struct,subprocess,sys,unittest,os,math,re
 ROOT=Path(os.environ['TERRA_SOURCE']).resolve()
 TEST_ROOT=Path(__file__).resolve().parent
+NUMBERED_HEADER=Path(os.environ.get('NUMBERED_PASSIVES_HEADER',str(TEST_ROOT/'numbered_passives.h' if (TEST_ROOT/'numbered_passives.h').exists() else TEST_ROOT.parents[1]/'src/single_f/numbered_passives.h')))
+TEST_COUNT=int(re.search(r'#define VENTUS_TEST_COUNT (\d+)u',NUMBERED_HEADER.read_text()).group(1))
+TEST_MASK=(1<<TEST_COUNT)-1
+ALL_NUMBERED=((1<<51)-1)&~(1<<49)
 subprocess.run(['gcc','-std=c11','-O2','-shared','-fPIC',str(TEST_ROOT/'test_bridge.c'),'-o',str(TEST_ROOT/'test_bridge.so'),'-lm'],cwd=ROOT,check=True)
 bridge=C.CDLL(str(TEST_ROOT/'test_bridge.so'))
 for name,args,ret in [('bridge_reset',[C.c_size_t],None),('bridge_range',[C.c_size_t,C.c_size_t,C.c_uint],None),('bridge_modes',[C.c_int,C.c_int],None),('bridge_log',[],C.c_char_p),('bridge_queries',[],C.c_uint),('bridge_encode',[C.c_size_t],C.c_uint),('bridge_symbol',[C.c_char_p],C.c_size_t),('bridge_call0',[C.c_size_t],None),('bridge_init',[C.c_size_t],None)]:
@@ -225,6 +229,9 @@ class Host:
         r=self.record_by_slot[slot];folder=ROOT/'fixtures'
         if int(on)==2 and os.environ.get('VENTUS_SOURCE'):
             return self.expected_from(slot,Path(os.environ['VENTUS_SOURCE'])/f"fixtures/ventus_{r['fixture_stem']}.bin")
+        if int(on)>=3 and os.environ.get('VENTUS_TEST_SOURCE'):
+            folder=Path(os.environ['VENTUS_TEST_SOURCE'])/f'p{int(on)+63}'/'fixtures' if slot in range(98,105) else Path(os.environ['VENTUS_SOURCE'])/'fixtures'
+            return self.expected_from(slot,folder/f"ventus_{r['fixture_stem']}.bin")
         if int(on)>1:
             candidate=ROOT/f'sets/p{int(on)-1}/fixtures'
             if (candidate/f"terra_{r['fixture_stem']}.bin").exists():folder=candidate
@@ -400,6 +407,49 @@ class Host(BaseHost):
   self.ui_page_frame(page,0x4000);self.ui_page_frame(page,0x20);return root,page
 
 class RuntimeTests(unittest.TestCase):
+    def test_ventus_numbered_profiles_apply_all_records_and_restore_both_banks(self):
+        if not os.environ.get('VENTUS_TEST_SOURCE'):self.skipTest('Provide numbered Ventus test fixtures')
+        for bank in [98,60]:
+            h=Host(slot=bank,encoded_fields=True)
+            for choice in range(3,3+TEST_COUNT):
+                h.want=choice;h.frame();h.assert_all(self,choice)
+                self.assertEqual(r32(h.symbols['cache_choice']),choice);self.assertEqual(r32(h.symbols['action_variant_mask']),0)
+                h.want=0;self.assertTrue(h.frame());h.assert_all(self,0)
+
+    def test_animation_test_unequips_every_stance_and_preserves_native_flags_ap_and_neighbors(self):
+        for stance in [124,123,120,119,117,116,115,126,125,121,118,122]:
+            h=Host();root,page=h.passive_setup([6,0x87,stance]);before=C.string_at(h.save,0x1000)
+            h.ui_choose(page,2)
+            expected=bytearray(before);expected[0x46]=stance|128
+            self.assertEqual(C.string_at(h.save,0x1000),bytes(expected));self.assertEqual(h.ability_count(66),1)
+            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),3)
+            self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),27)
+            for other in [124,123,120,119,117,116,115,126,125,121,118,122]:self.assertEqual(h.ability_count(other),0)
+
+    def test_equipping_each_stance_clears_test_and_preserves_unassigned_numbered_flag(self):
+        for row in range(12):
+            h=Host();root,page=h.passive_setup([6,117]);h.ui_choose(page,1);h.numbered_init((1<<50)|1)
+            h.ui_page_frame(page,0x40);h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20);h.ui_choose(page,row)
+            self.assertEqual(r64(h.symbols['numbered_bits']),1<<50)
+            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),0)
+            self.assertEqual(sum(h.ability_count(id) for id in [124,123,120,119,117,116,115,126,125,121,118,122]),1)
+
+    def test_only_one_animation_test_can_be_active_and_off_restores_no_stance(self):
+        h=Host();root,page=h.passive_setup([6,117])
+        for index in range(TEST_COUNT):
+            h.ui_choose(page,1+index)
+            self.assertEqual(r64(h.symbols['numbered_bits']),1<<index)
+            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),3+index)
+            self.assertEqual(h.abilities()[:3],bytes([6,245,0]))
+        h.ui_choose(page,TEST_COUNT)
+        self.assertEqual(r64(h.symbols['numbered_bits']),0);self.assertEqual(h.abilities()[:3],bytes([6,245,0]))
+
+    def test_animation_test_selection_rejects_invalid_native_list_without_partial_writes(self):
+        h=Host();root,page=h.passive_setup([6,117]);before=h.abilities()
+        put(h.save+0x44,bytes([6,0,117])+bytes(45));snapshot=C.string_at(h.save,0x1000)
+        h.ui_choose(page,1)
+        self.assertEqual(C.string_at(h.save,0x1000),snapshot);self.assertEqual(r64(h.symbols['numbered_bits']),0)
+
     def test_ventus_profile_all_records_restore_in_normal_and_olympus_banks(self):
         if not os.environ.get('VENTUS_SOURCE'):self.skipTest('Provide converted Ventus fixtures')
         for bank in [98,60]:
@@ -426,11 +476,11 @@ class RuntimeTests(unittest.TestCase):
 
     def test_type_g_menu_uses115_and_legacy_numbered_flag_cannot_equip_it(self):
         h=Host();root,page=h.passive_setup([6,117]);h.numbered_init((1<<49)|(1<<50)|3)
-        self.assertEqual(r64(h.symbols['numbered_bits']),(1<<50)|3);self.assertEqual(h.ability_count(115),0);self.assertEqual(h.ability_count(127),1)
+        self.assertEqual(r64(h.symbols['numbered_bits']),(1<<50)|1);self.assertEqual(h.ability_count(115),0);self.assertEqual(h.ability_count(127),1)
         h.ui_page_frame(page,0x40);h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
         text=h.ui_choose(page,6);self.assertIn('Type G|Single|I',text);self.assertEqual(h.ability_count(115),1)
         self.assertEqual(h.abilities()[:3],bytes([6,115,0]));self.assertEqual(h.ability_count(127),1)
-        self.assertEqual(r64(h.symbols['numbered_bits']),(1<<50)|3)
+        self.assertEqual(r64(h.symbols['numbered_bits']),1<<50)
 
     def test_numbered_passives_all_50_ids_are_visible_with_native_rows_without_save_writes(self):
         h=Host();root,page=h.passive_setup([6]*46+[117]);before=C.string_at(h.save,0x1000);seen=set();expected=set(map(str,list(range(66,115))+[127]))
@@ -445,16 +495,18 @@ class RuntimeTests(unittest.TestCase):
         h=Host();root,page=h.passive_setup([6]*48);before=C.string_at(h.save,0x1000);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,98)
         self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),0)
         for i,id in enumerate(list(range(66,115))+[127]):h.ui_choose(page,48+i);self.assertEqual(h.ability_count(id),1)
-        self.assertEqual(bridge.bridge_numbered_saved(),((1<<51)-1)&~(1<<49));self.assertEqual(bridge.bridge_numbered_save_calls(),50);self.assertEqual(C.string_at(h.save,0x1000),before)
-        for i,id in enumerate(list(range(66,115))+[127]):h.ui_choose(page,48+i);self.assertEqual(h.ability_count(id),0)
-        self.assertEqual(bridge.bridge_numbered_saved(),0);self.assertEqual(bridge.bridge_numbered_save_calls(),100);self.assertEqual(C.string_at(h.save,0x1000),before)
+        self.assertEqual(bridge.bridge_numbered_saved(),(ALL_NUMBERED&~TEST_MASK)|(1<<(TEST_COUNT-1)));self.assertEqual(bridge.bridge_numbered_save_calls(),50);self.assertEqual(C.string_at(h.save,0x1000),before)
+        h.ui_choose(page,48+TEST_COUNT-1)
+        for i in range(TEST_COUNT,50):
+            id=66+i if i<49 else 127;h.ui_choose(page,48+i);self.assertEqual(h.ability_count(id),0)
+        self.assertEqual(bridge.bridge_numbered_saved(),0);self.assertEqual(bridge.bridge_numbered_save_calls(),101-TEST_COUNT);self.assertEqual(C.string_at(h.save,0x1000),before)
 
     def test_direct_passives_native_ap_checks_equipping_removing_and_duplicate_rows(self):
         h=Host();root,page=h.passive_setup([0x86,0x87,117]);w32(h.game+0x2e942c4,3)
         text=h.ui_choose(page,0);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]));self.assertIn('AP Used|3 / 3',text)
         h.ui_choose(page,1);self.assertEqual(bridge.bridge_menu_sound(),4);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]))
         h.ui_choose(page,0);h.ui_choose(page,1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]));self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1)
-        h.ui_choose(page,2);self.assertEqual(h.ability_count(66),1);self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]))
+        h.ui_choose(page,2);self.assertEqual(h.ability_count(66),1);self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,245,0]))
 
     def test_passives_preserves_native_names_and_help_while_numbered_names_are_decimal(self):
         h=Host();root,page=h.passive_setup([6,117]);text=h.ui_page_frame(page)
@@ -471,7 +523,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn('AP Used|5 / 30',text);self.assertIn('No entries available yet',text)
         h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
         self.assertIn('AP Used|2 / 30',h.ui_choose(page,0))
-        self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before)
+        self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before[:2]+bytes([245])+before[3:])
         h.ui_page_frame(page,0x40);self.assertIn('AP Used|0 / 30',h.ui_page_frame(page,0x4000))
 
     def test_spent_ap_zero_max_overbudget_and_category_scope(self):
@@ -521,9 +573,9 @@ class RuntimeTests(unittest.TestCase):
 
     def test_numbered_state_load_clamps_bits_and_persists_only_changes(self):
         h=Host();root,page=h.passive_setup([6,117]);h.numbered_init((1<<64)-1);self.assertEqual(bridge.bridge_numbered_save_calls(),0)
-        self.assertEqual(r64(h.symbols['numbered_bits']),((1<<51)-1)&~(1<<49));self.assertEqual(h.ability_count(66),1);self.assertEqual(h.ability_count(127),1)
-        h.ui_choose(page,50);self.assertEqual(bridge.bridge_numbered_saved(),(1<<49)-1);self.assertEqual(bridge.bridge_numbered_save_calls(),1);self.assertEqual(h.ability_count(127),0)
-        h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),1)
+        self.assertEqual(r64(h.symbols['numbered_bits']),(ALL_NUMBERED&~TEST_MASK)|1);self.assertEqual(h.ability_count(66),1);self.assertEqual(h.ability_count(127),1)
+        h.ui_choose(page,50);self.assertEqual(bridge.bridge_numbered_saved(),(ALL_NUMBERED&~TEST_MASK&~(1<<50))|1);self.assertEqual(bridge.bridge_numbered_save_calls(),1);self.assertEqual(h.ability_count(127),0)
+        h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),2);self.assertEqual(r64(h.symbols['numbered_bits'])&TEST_MASK,0)
 
     def test_numbered_test_settings_are_mod_wide_and_not_written_into_a_new_save(self):
         h=Host();root,page=h.passive_setup([6,117]);h.ui_choose(page,1);self.assertEqual(h.ability_count(66),1)
@@ -533,7 +585,7 @@ class RuntimeTests(unittest.TestCase):
     def test_numbered_legacy_entries_migrate_once_and_keep_existing_mod_flags(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());h.passive_table();h.intrinsic_seed();h.numbered_init(1<<7)
         put(h.save+0x44,bytes([66,0xc2,114,255,127,6,117])+bytes(41));self.assertTrue(h.intrinsic_init())
-        self.assertEqual(h.abilities()[:3],bytes([6,117,0]));self.assertEqual(bridge.bridge_numbered_saved(),(1<<0)|(1<<7)|(1<<48)|(1<<50));self.assertEqual(bridge.bridge_numbered_save_calls(),1)
+        self.assertEqual(h.abilities()[:3],bytes([6,117,0]));self.assertEqual(bridge.bridge_numbered_saved(),(1<<48)|(1<<50));self.assertEqual(bridge.bridge_numbered_save_calls(),1)
         h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),1)
 
     def test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes(self):

@@ -37,8 +37,8 @@ event keys, helper travel, headers and capacities. Body playback is retimed to
 those records; this is an initial animation selection and native-timing test,
 not a claim that the complete BBS action controller or command deck is ported.
 Glide, Superglide, damage reactions, hitboxes, spell origins/effects and actual
-Guard defense/roll movement remain native. Visual grip and contact alignment
-must be checked in game before any additional weapon-bone changes are selected.
+Guard defense/roll movement remain native. v65 adds a reverse Keyblade grip in the native pose path for Type G and its
+numbered tests. Grip/contact alignment still needs an in-game check.
 
 ## Rebuilding
 
@@ -51,18 +51,37 @@ SciPy and Pillow for the reused tools.
 
 ```
 python3 tools/ventus-retarget/build_ventus.py VENTUS_CAPTURE/Sources WORK --workers 4
-python3 crates/kh1-hook/src/single_f/generate_data.py TERRA_V4_SOURCE local/single_f WORK
+python3 tools/ventus-retarget/build_ventus_tests.py VENTUS_CAPTURE/Sources WORK TEST_WORK --workers 6
+python3 crates/kh1-hook/src/single_f/generate_data.py TERRA_V4_SOURCE local/single_f WORK TEST_WORK
 ```
 
-The first command emits converted fixtures, complete source inventory and
-curve_validation.json. The second retains Terra as profile1 and incorporates
-the checked G records as profile2. No native event stream is a write destination.
+The first command emits main G fixtures, source inventory and validation. The
+second builds all numbered tests, splitting only fixed-capacity failures. The
+third retains Terra as profile1, G as2 and tests as3..37. No native event stream
+is a write destination.
 Use VENTUS_SOURCE=WORK alongside the previously documented Terra/native EXE
 variables when running the final-PE F/G adapter tests. The exact included
-terra_data.h already contains both profiles and requires no regeneration.
+terra_data.h already contains all37 profiles and requires no regeneration.
 
-The generated before/Terra/variant byte blocks are compared with v63, including
-all190 parts. Both bank mappings, request handles and root helper trajectories
-remain checked. See styles-v64.md for measured bounds and live test limitations.
+The generated before/Terra/Ventus/variant byte blocks are compared with v64,
+including all190 parts. Both bank mappings, request handles and root helper
+trajectories remain checked. See styles-v65.md for bounds and live limitations.
 Source tools are derived from this project's original Terra v4 retarget tools;
 ARC/PAM/PMO format references are documented in bbs_source_inspector.py.
+
+## v65 numbered previews and reverse grip
+
+Passives66..100 add35 exclusive test profiles, including every187 unused
+source clip. Equipping one unequips stances and the previous test; selecting a
+stance clears tests. The main G action mapping above remains unchanged. Type G
+and tests reverse the weapon at the same hilt without changing the body pose.
+See styles-v65.md and the package VENTUS_TESTS.txt/CSV for frame-range details.
+
+The commands above regenerate the full current shared payload.
+
+The test builder reuses successful fits, subdivides fixed-capacity failures
+and verifies complete source-frame coverage. Keep all generated assets private.
+The compile-time profile guard requires all35 test profiles in the current
+header. Set VENTUS_TEST_SOURCE=TEST_WORK as well as VENTUS_SOURCE=WORK when
+running the current F/G final-PE tests. The included exact header is sufficient
+for normal rebuilding; conversion regeneration is optional.
