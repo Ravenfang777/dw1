@@ -1,45 +1,50 @@
-KH1FM STYLES v56 / s395 - SINGLE F AIR DASH FIX
+KH1FM STYLES v57 / s396
 
 INSTALL
-1. Close KH1. Disable v55 (or any older main Styles/Dual Wield package).
+1. Close KH1. Disable v56 (or any older main Styles/Dual Wield package).
    Keep standalone Terra/Aqua tests and the full KH2 Combat DLL disabled.
-2. Import this ZIP into OpenKH Mod Manager. Enable v56, Build, and launch
-   with Panacea. Keep existing KH2FM resources/settings for the older styles.
-3. Confirm s395 / v56 in kh1-dual-wield.log beside the executable.
+2. Import this ZIP into OpenKH Mod Manager. Enable v57, Build, and launch
+   with Panacea. Keep existing KH2FM resources/settings for older styles.
+3. Confirm s396 / v57 in kh1-dual-wield.log beside the executable.
 
-SINGLE F FIX
-Fresh airborne Square uses the existing native Superglide animation handle,
-without allocating or registering a copied animation. Only one dash is allowed
-per airtime; landing rearms it. Releasing Square, finishing a dash, taking a
-hit or changing styles cannot refill it in midair. Movement direction, speed,
-distance and native collision are retained. Normal Glide remains usable.
-The adapter preserves the native animation's header state and does not write
-the source record. Unknown curve/event modifications are still rejected.
+STYLES MENU
+Styles now appears directly below Customize. Its windows use KH1's native
+GREEN palette, including borders/shadows. Other screens retain their normal
+palette. Names, saved style IDs, the AP-free Styles view and normal native
+Abilities behavior are retained.
 
-RETAINED FROM V55
-- Single A-F, Dual A-D and Anti names, without Style:.
-- Styles menu hides AP costs and Sora's current/max AP box. Normal Abilities
-  retains its AP display and behavior; saved style IDs/choices are unchanged.
-- Single A/C/E and Dual C/D aerial dodge visuals run at75% of their v54 speed,
-  with the same movement, travel duration and distance. F keeps its slide rate.
-- Anti uses native items with its combat-idle animation.
-- Single E ground hit2 has no held-pose tail and chains into its finisher.
-All other combos, magic, Guard and jump settings stay as delivered in v55.
+SINGLE F AIR DASH
+The log confirms a landing reset followed by rejected animation admission.
+V57 retains the verified native Superglide binding across uses and checks its
+identity/layout instead of comparing playback/cache data with the unplayed file
+on every tap. The source animation is never written by this adapter.
+The finite movement timer runs for39 ticks at speed16 (distance624), even if
+Sora's falling animation already has a running clock. Native collision remains.
+Fresh airborne Square starts one dash. Landing alone rearms it. Releasing the
+button, completion, damage or changing styles cannot grant another use midair.
+Normal Glide remains usable. Native state/request changes still cancel a dash.
 
-PLEASE TEST
-Select Single F. Jump, tap Square once, and try a second tap before landing:
-only the first should dash. Land and jump again; Square should dash again.
-Repeat a few times, and try both your normal/Olympus saves if convenient.
-If it still fails, attach the new kh1-dual-wield.log from this v56 run.
+TEST / REPORT
+Check that Styles is below Customize and green, then return to the party menu
+and normal Abilities to check their usual colors/AP display.
+For Single F: jump, tap Square, try another tap before landing, land, jump and
+tap Square again. Repeat several times; try a tap later during a long fall too.
+If the dash still fails, return the new kh1-dual-wield.log. Bounded messages now
+identify start, native commit, first movement and end.
+
+RETAINED SETUP
+All other confirmed v55/v56 changes remain: short style names, Styles-only AP
+removal, Anti items with combat idle,75% aerial-dodge visual rate in A/C/E and
+Dual C/D, Single E's smoother second ground hit, existing combos/magic/Guard
+and jump settings. Both generated animation payload headers are unchanged.
 
 VALIDATION
-627 Rust tests in30 nonempty suites and89 final-PE adapter checks pass:
-42 F/menu plus47 E. Includes repeated landings in both animation banks,
-full pointer banks with the original native encoder, unavailable new handle/
-allocation paths, exact distance, airtime budget and pointer restoration.
-V55's failure under unavailable allocation/registration is reproduced against
-its delivered DLL. Both payload headers remain byte-identical to v55.
-Final menu rendering, Windows startup and live gameplay are not run here.
+627 Rust tests in30 nonempty suites and94 final-PE checks pass:47 F/menu and47 E.
+The original native palette-selection block is executed for green and normal
+fallback. Tests cover source-cache changes between dashes, inherited/looping
+animation clocks, repeated landings, exact distance and native cursor IDs.
+The delivered v56 DLL fails the two new dash reproduction cases.
+Native rendering, Windows startup and final in-game behavior are not run here.
 Source, rebuild inputs, incremental bundle, licenses and receipts are included.
 
 UNINSTALL

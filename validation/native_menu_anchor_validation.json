@@ -165,6 +165,14 @@
       "rva": "0x549090",
       "pointer_to": "0x310a90",
       "passed": true
+    },
+    {
+      "name": "window_palette_override",
+      "rva": "0x2e4325",
+      "bytes": 14,
+      "passed": true
     }
-  ]
+  ],
+  "native_green_preset_rva": "0x53bd40",
+  "native_palette_selection_executed": true
 }

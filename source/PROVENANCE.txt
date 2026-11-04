@@ -1,13 +1,10 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v55 commit: c3312b5e2c5e07db501b6fd2097b8dcc1572b367
-v56 commit: 1378d6d85823dbf043b2325dee740ea5b04875c7
-v56 source tree: 98f0a9708b45e38e8f2639c4e77a16bfc08e785b
-Styles_v56.patch contains56 derivative commits, applied with git am.
-Styles_v56_from_v55.bundle requires the exact previous v55 commit above.
-The original v55 commit identity was recovered from its delivered bundle;
-its tree matches the reconstructed55-commit source patch exactly. Local
-history-parent replacement used for reconstruction is not shipped to users.
-Both private payload headers match the delivered v55 build inputs byte for byte.
+Previous delivered v56 commit: 1378d6d85823dbf043b2325dee740ea5b04875c7
+v57 commit: 5383ad3838e8c1adc5a227a17d33eec2b4f5f46c
+v57 source tree: ab71127c8f496b45e8c41d1524a9d9329c25f214
+Styles_v57.patch contains57 derivative commits, applied with git am.
+Styles_v57_from_v56.bundle requires the exact previous v56 commit above.
+Both private payload headers match the delivered v56 build inputs byte for byte.
 Terra v4 and Aqua v21 source origins/credits remain in the included older notes.
 No original executable, model, extracted table or decompiled code enters Git.
