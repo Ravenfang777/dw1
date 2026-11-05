@@ -1,113 +1,95 @@
 {
-  "name": "KH1FM Styles v70",
-  "stage": "s409",
-  "source_commit": "d05b5a75bde94cb57611e204462f2e7c3cf42e74",
-  "source_tree": "23eaff65e5fa25aada3cb2f1b34ae285d46001dc",
-  "previous_v69_commit": "720234eda0180e972dc684d73654473336356654",
+  "name": "KH1FM Styles v71",
+  "stage": "s410",
+  "source_commit": "d9a1293f8d46f0352b38a66ef3a411069fd03e4b",
+  "source_tree": "0518700000c4225f48d39d430502141977e5dabb",
+  "previous_v70_commit": "d05b5a75bde94cb57611e204462f2e7c3cf42e74",
   "upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "patch_commits": 70,
+  "patch_commits": 71,
   "changed_source_paths": [
-    ".gitignore",
     "AGENTS.md",
     "crates/kh1-hook/native-tests/single_e/test_runtime.py",
-    "crates/kh1-hook/native-tests/single_f/test_bridge.c",
     "crates/kh1-hook/native-tests/single_f/test_runtime.py",
-    "crates/kh1-hook/src/dual_wield.rs",
     "crates/kh1-hook/src/lib.rs",
-    "crates/kh1-hook/src/native_ventus_tests.rs",
     "crates/kh1-hook/src/overdrive.rs",
     "crates/kh1-hook/src/single_e/aqua_air_dodge.h",
     "crates/kh1-hook/src/single_e/aqua_guard.h",
-    "crates/kh1-hook/src/single_e/swap_cure.py",
+    "crates/kh1-hook/src/single_e/aqua_jump.h",
     "crates/kh1-hook/src/single_f/styles_slots.h",
-    "crates/kh1-hook/src/ventus_style.rs",
-    "crates/kh1-hook/src/win/combat.rs",
     "crates/kh1-hook/src/win/dual.rs",
     "crates/kh1-hook/src/win/dual_magic_fx.rs",
     "crates/kh1-hook/src/win/mod.rs",
     "crates/kh1-hook/src/win/pose.rs",
-    "crates/kh1-hook/src/win/single_e.rs",
     "crates/kh1-hook/src/win/single_f.rs",
-    "crates/kh1-hook/src/win/ventus.rs",
     "docs/combat-model.md",
     "docs/single-e.md",
     "docs/single-f.md",
-    "docs/styles-v70.md"
+    "docs/styles-v71.md"
   ],
-  "f_actual_registered_post_motion_callback_executed": true,
-  "f_ground_and_air_body_contacts": true,
-  "body_radius": 30,
-  "body_height": 120,
-  "body_sweep_spacing": 20,
-  "native_damage_defenses_retained": true,
-  "e_gc2_rate_vs_v69": 0.85,
-  "e_cure_ground": "318",
-  "e_cure_air": "427",
-  "e_dodge_horizontal_distance_ratio": 0.85,
-  "e_dodge_distance": 464.1,
-  "e_dodge_lift": 29.25,
-  "e_dodge_duration": 26,
-  "acl_dodge_visual_rate_ratio": 0.85,
-  "acl_movement_unchanged": true,
-  "k_aerial_dodge_removed": true,
   "overdrives": {
-    "Strength": "Valor",
-    "Will": "Wisdom",
-    "Resistance": "Master",
-    "Prowess": "Final",
-    "Rage": "Anti"
+    "Power": "#FF0000",
+    "Will": "#0000FF",
+    "Resistance": "#FFFF00",
+    "Prowess": "#FFFFFF",
+    "Rage": "#000000"
   },
+  "shared_overdrive_layers": [
+    "Valor",
+    "Wisdom",
+    "Anti"
+  ],
+  "old_strength_choice_id_preserved": true,
+  "custom_colors_persisted": true,
+  "black_alpha_blending": true,
+  "witnessed_effect_pose_max_age_frames": 2,
+  "native_wrist_and_palm_effect_alignment": true,
+  "overdrive_geometry_radius": 350,
   "overdrive_zero_ap_exclusive_and_independent": true,
   "overdrive_stat_boosts": false,
   "overdrive_native_ability_slots_consumed": 0,
   "overdrive_form_assets_loaded_at_runtime": true,
-  "retained_v69_payloads": {
+  "e_jump_height_factor": 1.5,
+  "e_jump_height_ratio_vs_v70": 1.2,
+  "e_jump_arc_time_factor": 1.224744871391589,
+  "e_native_gravity_retained": true,
+  "e_held_jump_input_retained": true,
+  "e_gc2_rate_vs_v70": 0.85,
+  "e_gc2_rate_vs_pre_v70": 0.7225,
+  "other_v70_mappings_and_travel_retained": true,
+  "retained_v70_payloads": {
     "passed": true,
-    "shared_f_g_payload_header_byte_exact": true,
-    "all37_existing_f_g_profiles_and_variants_retained": true,
-    "e_original_parts_byte_exact": true,
-    "e_dodge_blizzard_variants_byte_exact": true,
-    "e_cast_request_tables_byte_exact": true,
-    "e_only_cure_body_parts_changed": {
-      "56": [
-        28,
-        40,
-        56,
-        36
-      ],
-      "81": [
-        28,
-        40,
-        56,
-        36
-      ]
-    },
-    "e_cure_source_map": {
-      "56": "318",
-      "81": "427"
-    },
-    "e_cure_max_fit_position_error": 0.4018686091189316,
-    "native_headers_events_retained": true
+    "headers": {
+      "single_e": {
+        "byte_exact_to_v70": true,
+        "sha256": "e8318f15cf8f1660f25c01829596cb119bae5264351b8f914e816d640b5068fc",
+        "bytes": 4895942
+      },
+      "single_f": {
+        "byte_exact_to_v70": true,
+        "sha256": "ec8c84424ed0f470bc10cbdca30885a36785ff5d2f6639449b820b77da853ff9",
+        "bytes": 25885384
+      }
+    }
   },
-  "rust_tests_passed": 650,
+  "rust_tests_passed": 655,
   "nonempty_rust_suites": 30,
   "shared_adapter_pe_checks": 122,
-  "aqua_pe_checks": 48,
+  "aqua_pe_checks": 49,
   "pe_api_and_rendering_mocked": true,
   "windows_x64_release": true,
   "actual_windows_or_game_execution": false,
-  "live_damage_or_form_effects_verified": false,
+  "live_effect_appearance_or_jump_parity_verified": false,
   "source_apply_check_pending": false,
-  "dll_sha256": "9da124ee97c4c885cf23f096b7e6a9e6a73b25187972096ad81c0ab32b76911a",
+  "dll_sha256": "0a216af7752901d103a144c66e47898ccf59bc4de5dccd1949f4418e92640fc4",
   "private_payload_sha256": {
     "single_e": "e8318f15cf8f1660f25c01829596cb119bae5264351b8f914e816d640b5068fc",
     "single_f": "ec8c84424ed0f470bc10cbdca30885a36785ff5d2f6639449b820b77da853ff9"
   },
   "source_reconstruction": {
     "passed": true,
-    "full_patch_commits": 70,
+    "full_patch_commits": 71,
     "pinned_upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-    "expected_tree": "23eaff65e5fa25aada3cb2f1b34ae285d46001dc",
-    "reconstructed_tree": "23eaff65e5fa25aada3cb2f1b34ae285d46001dc"
+    "expected_tree": "0518700000c4225f48d39d430502141977e5dabb",
+    "reconstructed_tree": "0518700000c4225f48d39d430502141977e5dabb"
   }
 }

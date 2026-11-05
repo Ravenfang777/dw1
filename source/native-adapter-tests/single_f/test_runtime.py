@@ -430,7 +430,7 @@ class RuntimeTests(unittest.TestCase):
     def test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save(self):
         h=Host();root,page=h.passive_setup([6,117]);h.ui_page_frame(page,0x40);text=h.ui_page_frame(page,0x4000)
         self.assertIn('Overdrives',text)
-        for name in ['Strength','Will','Resistance','Prowess','Rage']:self.assertIn(name,text)
+        for name in ['Power','Will','Resistance','Prowess','Rage']:self.assertIn(name,text)
         self.assertEqual(text.count('AP 0'),5);h.ui_page_frame(page,0x20)
         self.assertEqual(r32(h.symbols['styles_picker']),3);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,5)
         before=C.string_at(h.save,0x1000);bits=r64(h.symbols['numbered_bits'])
@@ -729,7 +729,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn('AP Used|5 / 30',h.ui_choose(page,1))
         self.assertIn('AP Used|5 / 30',h.ui_choose(page,2))  # Numeric66 is free.
         h.ui_page_frame(page,0x40);text=h.ui_page_frame(page,0x4000)
-        self.assertIn('AP Used|5 / 30',text);self.assertIn('Strength',text)
+        self.assertIn('AP Used|5 / 30',text);self.assertIn('Power',text)
         h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
         self.assertIn('AP Used|2 / 30',h.ui_choose(page,0))
         self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before[:2]+bytes([245])+before[3:])

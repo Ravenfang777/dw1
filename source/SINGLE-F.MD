@@ -1,5 +1,10 @@
 # Single F and the native Styles menu — v54 / s393
 
+For the current menu/Overdrive implementation, see styles-v71.md: Power, Will,
+Resistance, Prowess and Rage share Valor/Wisdom/Anti cosmetic layers in red,
+blue, yellow, white and black. The following describes the historical v54
+integration; v70 Type F body-dash contacts and all v70 mappings remain in v71.
+
 Single F is the user's tested Terra v4 main profile, integrated into the existing
 Styles DLL. Ability ID116 and runtime code11 are new. The other ten saved IDs
 and all65 native ability definitions remain unchanged. No numbered Terra test

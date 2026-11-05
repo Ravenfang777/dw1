@@ -1,9 +1,12 @@
 # Single E / Aqua v21 — Styles v53
 
-Current changes in v70: ground combo2 animation rate is85% of v69, Cure uses
-318 on the ground and427 in the air, and Circle dodge horizontal distance is
-464.1 units (85% of546). Lift and26-tick movement timing remain. See
-styles-v70.md. The following records the original v53 integration.
+Current v71: ground combo2 is another15% slower than v70 (72.25% of v69).
+Normal/High Jump launch height is1.5x native,20% above v70; native gravity
+remains and held Circle is preserved during takeoff/rise. Cure remains318 on
+the ground and427 in the air. Circle dodge remains464.1 horizontal units,
+29.25 lift and26 native ticks. See styles-v71.md for current evidence and
+limits. The following records the original v53 integration, including its
+historical names, rates and payload instructions.
 
 Single E is the main Aqua v21 profile under the existing Styles ability system.
 Its ID is117 and its menu label is `Style: Single E`; AP cost is0. It starts

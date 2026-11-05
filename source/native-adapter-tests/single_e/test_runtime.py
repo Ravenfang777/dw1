@@ -653,10 +653,10 @@ class RuntimeTests(unittest.TestCase):
         h=Host(air=True,jump=True);h.frame();h.equip(True);h.frame();self.launch_native_jump(h,height=160.)
         duration=C.c_float.from_address(h.actor+0x3b8).value;out=h.buffer(bytes(16))
         put(h.actor+0x3b0,struct.pack('<f',duration));bridge.bridge_move(h.game+0x2af530,h.actor,C.cast(out,C.POINTER(C.c_float)))
-        self.assertAlmostEqual(C.c_float.from_address(out+4).value,-200.,places=4)
+        self.assertAlmostEqual(C.c_float.from_address(out+4).value,-240.,places=4)
         put(h.actor+0x3b0,struct.pack('<f',duration+2.));bridge.bridge_move(h.game+0x2af530,h.actor,C.cast(out,C.POINTER(C.c_float)))
         gravity=struct.unpack('<f',bytes.fromhex(json.loads((ROOT/'fixtures/native_jump_constants.json').read_text())['0x3e9d14'])[:4])[0]
-        self.assertAlmostEqual(C.c_float.from_address(out+4).value,-200.+.5*gravity*4.,places=3)
+        self.assertAlmostEqual(C.c_float.from_address(out+4).value,-240.+.5*gravity*4.,places=3)
 
     def test_jump_boost_waits_for_native_takeoff_and_does_not_compound(self):
         h=Host(air=True,jump=True);h.frame();h.equip(True);h.frame()
@@ -665,10 +665,19 @@ class RuntimeTests(unittest.TestCase):
         w32(h.actor+0x164,5);out=h.buffer(bytes(16));bridge.bridge_move(h.game+0x2afda0,h.actor,C.cast(out,C.POINTER(C.c_float)))
         self.assertEqual(C.c_float.from_address(h.actor+0x3bc).value,height)
 
+    def test_held_jump_input_is_retained_in_takeoff_and_rise_while_glide_stays_suppressed(self):
+        for request in [4,5,9,10]:
+            h=Host(air=True,guard=True);h.arm_air();h.control(down=6,pressed=0,state=1 if request in [4,9] else 2,request=request,height=30)
+            self.assertEqual(bridge.bridge_control_word(0)&6,6)
+            self.assertEqual(r32(h.game+0x298ca94)&6,6)
+            h.native_glide()
+            self.assertEqual(bridge.bridge_native_glide_calls(),0)
+            self.assertEqual(bridge.bridge_queue_calls(),0)
+
     def test_second_ground_attack_has_no_held_recovery_and_slows_fifteen_percent(self):
         for request,slot,rate,first_hit in [(0xc9,99,47./24.,5.4),(0xca,100,63./24.,7.96/1.4)]:
             h=Host(guard=True,encoded_fields=True);h.frame();h.equip(True);h.frame();w32(h.actor+0x164,request)
-            base_rate=rate;rate*=.85
+            base_rate=rate;rate*=.85*.85
             for at in [0.,20.*base_rate,24.*base_rate]:
                 h.clock(at);bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.)
                 self.assertAlmostEqual(bridge.bridge_motion_delta(),rate,places=5)
@@ -676,7 +685,7 @@ class RuntimeTests(unittest.TestCase):
             self.assertEqual(h.event(slot,1,first_hit*base_rate+.01),1)
             self.assertEqual(h.event(slot,5,20.*base_rate+.01),1)
             self.assertEqual(h.event(slot,5,(24.*base_rate)),1)
-            self.assertLess((48. if slot==99 else 64.)/rate-24./.85,.62)
+            self.assertLess((48. if slot==99 else 64.)/rate-24./(.85*.85),.75)
             h.clock(0.);bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,0.)
             self.assertEqual(bridge.bridge_motion_delta(),0.)
 
@@ -704,7 +713,7 @@ class RuntimeTests(unittest.TestCase):
                 for on in [False,True]:
                     h=Host(slot=bank);h.equip(on);h.frame()
                     self.launch_native_jump(h,request,160.)
-                    self.assertAlmostEqual(C.c_float.from_address(h.actor+0x3bc).value,-200. if on else -160.)
+                    self.assertAlmostEqual(C.c_float.from_address(h.actor+0x3bc).value,-240. if on else -160.)
     def test_required_controller_failure_never_publishes_aqua_bodies(self):
         for bad in ['stamp','alloc','protect']:
             h=Host(stamp=0 if bad=='stamp' else 1721645006,fail_alloc=bad=='alloc',fail_protect=1 if bad=='protect' else 0)

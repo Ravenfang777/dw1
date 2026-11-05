@@ -1,4 +1,4 @@
-v70 Type F: airborne Square uses Ventus330, ordinary grip, native Fall10/request6.
+v71 Type F (retained from v70): airborne Square uses Ventus330, ordinary grip, native Fall10/request6.
 Speed24/duration29.25/distance702 before collision, unchanged from v69.
 Ground Dodge Roll/dash009/native DC also receives body-sized contacts.
 Both use radius30/height120 column above feet, swept every20 units between

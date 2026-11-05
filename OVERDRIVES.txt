@@ -1,18 +1,36 @@
 Customize -> Overdrives
-Strength - KH2 Valor Form effects
-Will - KH2 Wisdom Form effects
-Resistance - KH2 Master Form effects
-Prowess - KH2 Final Form effects
-Rage - KH2 Anti Form darkness
+Power - Red #FF0000 (renamed from Strength; same selection ID1)
+Will - Blue #0000FF
+Resistance - Yellow #FFFF00
+Prowess - White #FFFFFF
+Rage - Black #000000
 
-All cost0 AP and consume no native ability slot. Select one, or choose the
-active row again to turn it off. Stance and numbered Passives remain independent.
-Visuals only in this version; stat boosts will be assigned later.
+All five share Valor + Wisdom + Anti body-effect layers, tinted to their color.
+Master/Final archives are not needed. Check OVERDRIVE SHARED LAYER READY for
+all three donors in kh1-dual-wield.log. Missing layers are logged individually.
 
-Donor-owned body effects follow Sora's actual current pose. Bound loops are
-preferred; finite authored arrival body glows may replay after they finish.
-No form controller, weapon/projectile attack script or screen flash is run.
-Type M? plus Rage avoids duplicating the same Anti aura. Choice persists in
-kh1-overdrive.ini. The package does not overwrite an existing selection file.
-Missing form archive/body effect resources are logged; live appearance needs
-a game test with the existing KH2 resources installed.
+Cost0 AP, no native ability slot, one selected at a time. Choose the active
+row again to turn it off. Stance and numbered Passives remain independent.
+Visuals only; stat boosts will be assigned later.
+
+OPTIONAL CUSTOM COLORS
+kh1-overdrive.ini beside other mod settings accepts these values:
+overdrive = 1
+power_color = #FF0000
+will_color = #0000FF
+resistance_color = #FFFF00
+prowess_color = #FFFFFF
+rage_color = #000000
+
+overdrive0 is off;1..5 follow the list above. Use six hexadecimal RGB digits.
+Restart the game after editing colors. Selecting another row preserves custom
+colors and unknown keys. Missing color keys use the requested defaults and
+are appended on the next menu selection save. Existing settings are not
+overwritten by installing this ZIP. Old strength_color is accepted unless
+power_color is also present. No asset extraction/image editing is needed.
+
+Cloned grayscale/alpha-mask textures remove donor color bias; the source
+stance/spell resources stay unchanged. Black uses alpha instead of invisible
+black additive blending. Wrist/palm alignment and bounded aura geometry are
+implemented; final hand tracking, layered brightness and Rage appearance
+still need an in-game check. See source/STYLES-V71.MD for validation scope.

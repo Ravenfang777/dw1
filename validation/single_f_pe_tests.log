@@ -122,6 +122,6 @@ test_ventus_profile_all_records_restore_in_normal_and_olympus_banks (__main__.Ru
 test_ventus_switch_retires_terra_dash_body_and_never_uses_terra_variants (__main__.RuntimeTests.test_ventus_switch_retires_terra_dash_body_and_never_uses_terra_variants) ... ok
 
 ----------------------------------------------------------------------
-Ran 122 tests in 17.893s
+Ran 122 tests in 19.044s
 
 OK

@@ -1,9 +1,9 @@
-title: KH1FM Styles v70 - Body Dashes and Overdrives
+title: KH1FM Styles v71 - Shared Overdrive Colors
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Type F body-contact ground/air dashes. Type E combo, Cure and dodge tuning.
-  Slower A/C/L aerial dodge visuals; K aerial dodge removed. Five exclusive
-  cosmetic Overdrives, independent of Stance and AP. Preserve other mappings.
+  Shared Valor/Wisdom/Anti auras: Power red, Will blue, Resistance yellow,
+  Prowess white, Rage black. Witnessed hand anchors and bounded particles.
+  Higher Type E jump and another15% slower ground2; prior stance behavior retained.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

@@ -1,3 +1,5 @@
+Preparing worktree (detached HEAD 4adb946)
+HEAD is now at 4adb946 s339: KH2-style Cure heals by KH2's rule from KH1's stats, partners in range too
 Applying: Add isolated passive Dual Wield ground prototype
 Applying: Retire Dual Wield trails and add Valor air combos and idle
 Applying: Align the offhand grip and add Valor running and Master cast visuals
@@ -50,7 +52,7 @@ Applying: Styles v49: borrow Single C jump and map Dark Riku basic combo poses
 Applying: Styles v50: resolve native combo requests to regular animation bank records
 Applying: Styles v51: select script-linked Dark Riku weapon attacks for both combos
 Applying: Styles v52: move Single D second attack to native Guard and capture extra source
-Applying: Styles v53: integrate main Aqua v21 as Sin/workspace/scratch/ac59123af99a/styles_v56_work/.git/worktrees/v70-applycheck/rebase-apply/patch:1008: new blank line at EOF.
+Applying: Styles v53: integrate main Aqua v21 as Sin/workspace/scratch/ac59123af99a/styles_v56_work/.git/worktrees/v71-applycheck/rebase-apply/patch:1008: new blank line at EOF.
 +
 warning: 1 line adds whitespace errors.
 gle E with shared native hooks
@@ -71,3 +73,4 @@ Applying: Fix Type G air dispatch and remove Glide admission lockout
 Applying: Bake Ventus reverse grip and fix paired contacts and air travel
 Applying: Copy G damaging air dash330 to Type F with longer travel
 Applying: Add cosmetic Overdrives and body dash contacts; tune stance animations
+Applying: Combine and recolor Overdrive auras; repair anchors and tune Type E

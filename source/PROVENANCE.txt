@@ -1,17 +1,18 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v69 commit: 720234eda0180e972dc684d73654473336356654
-v70 commit: d05b5a75bde94cb57611e204462f2e7c3cf42e74
-v70 source tree: 23eaff65e5fa25aada3cb2f1b34ae285d46001dc
-Styles_v70.patch contains70 derivative commits, applied with git am.
-Styles_v70_from_v69.bundle requires the exact previous v69 commit above.
-All shared F/G/preview profile and variant payloads stay byte exact.
-E changes only Cure56/81 body curves/descriptors; native events/request tables,
-original data, Dodge504 and Blizzard variants stay exact.
-F's actual registered post-motion callback now runs its contact coordinator.
-F ground/air dashes use body-sized swept columns, native damage/defenses.
-Overdrives are cosmetic and independent of stance, AP and native learned slots.
+Previous delivered v70 commit: d05b5a75bde94cb57611e204462f2e7c3cf42e74
+v71 commit: d9a1293f8d46f0352b38a66ef3a411069fd03e4b
+v71 source tree: 0518700000c4225f48d39d430502141977e5dabb
+Styles_v71.patch contains71 derivative commits, applied with git am.
+Styles_v71_from_v70.bundle requires the exact previous v70 commit above.
+Both generated payload headers remain byte exact to v70; no asset regeneration.
+All five Overdrives share cloned Valor/Wisdom/Anti body effects, recolored red,
+blue, yellow, white and black. Strength is renamed Power, keeping selection ID1.
+Witnessed effect poses, actual wrist/palm alignment and bounded aura geometry.
+E native jump-height factor1.5 vs1.25 in v70; preserve held ascent input.
+Both E GC2 variants are another15% slower than v70 (72.25% pre-v70 rate).
+No other stance mappings, generated animation bodies or gameplay boosts change.
 Actual form archives/effects load from the user's existing KH2 resources.
-No Windows/GPU/game execution or finalized enemy HP verification is claimed.
-Historical conversion/pose reports are retained for unchanged prior data.
+No Windows/GPU/game execution or live effect appearance verification is claimed.
+Historical v70 validation is labeled under validation/historical_v70.
 No original executable, model, extracted table or decompiled code enters Git.

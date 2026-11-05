@@ -1,5 +1,5 @@
-Clone the pinned public upstream, then git am Styles_v70.patch.
-Alternatively, fetch Styles_v70_from_v69.bundle into the recorded v69 checkout.
+Clone the pinned public upstream, then git am Styles_v71.patch.
+Alternatively, fetch Styles_v71_from_v70.bundle into the recorded v70 checkout.
 Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h.
 Copy rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
 These included headers are exact final build inputs. Never add generated
@@ -76,3 +76,11 @@ fixture paths remain those of v69. Supplied headers need no asset regeneration.
 Overdrive effects read the existing KH2 form archives at runtime; no new private
 form payload is compiled into the DLL. Selection is kh1-overdrive.ini beside
 other mod settings. See STYLES-V70.MD for limits and current test coverage.
+
+v71 retains both v70 private headers byte exact. No asset regeneration is needed.
+Use the v70 Cure-swapped E fixtures as AQUA_SOURCE; G/gallery fixtures remain
+those of v68/v65. The supplied final-PE harness checks the current v71 DLL.
+Overdrives now use the shared Valor/Wisdom/Anti set. Their own texture copies
+are desaturated/masked and tinted at runtime. The original libraries/textures
+are not modified. Optional #RRGGBB settings live in kh1-overdrive.ini.
+See OVERDRIVES.txt and STYLES-V71.MD for exact colors, scope and limitations.

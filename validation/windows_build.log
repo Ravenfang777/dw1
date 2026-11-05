@@ -72,15 +72,15 @@ warning: function `monitor` is never used
     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
 warning: function `g_action` is never used
-  --> crates/kh1-hook/src/win/single_f.rs:96:15
+  --> crates/kh1-hook/src/win/single_f.rs:98:15
    |
-96 | pub unsafe fn g_action(actor:usize)->u32{if READY.load(Ordering::Acquire){SingleGAction(actor)}else{0}}
+98 | pub unsafe fn g_action(actor:usize)->u32{if READY.load(Ordering::Acquire){SingleGAction(actor)}else{0}}
    |               ^^^^^^^^
 
 warning: function `SingleGAction` is never used
-  --> crates/kh1-hook/src/win/single_f.rs:24:8
+  --> crates/kh1-hook/src/win/single_f.rs:25:8
    |
-24 |     fn SingleGAction(actor:usize)->u32;
+25 |     fn SingleGAction(actor:usize)->u32;
    |        ^^^^^^^^^^^^^
 
 warning: function `mov_rax_rip` is never used
@@ -6008,146 +6008,146 @@ warning: fields `follow`, `param_agree`, `param_ok`, and `jumps` are never read
 571 |     follow: Follow,
     |     ^^^^^^
 ...
-585 |     param_agree: u32,
+586 |     param_agree: u32,
     |     ^^^^^^^^^^^
-586 |     param_ok: bool,
+587 |     param_ok: bool,
     |     ^^^^^^^^
-587 |     /// Pose-derived placements that jumped from the last (kept out unless they persist).
-588 |     jumps: u32,
+588 |     /// Pose-derived placements that jumped from the last (kept out unless they persist).
+589 |     jumps: u32,
     |     ^^^^^
 
 warning: function `on_actor` is never used
-   --> crates/kh1-hook/src/win/pose.rs:659:11
+   --> crates/kh1-hook/src/win/pose.rs:660:11
     |
-659 | unsafe fn on_actor(m: Mat4) -> Mat4 {
+660 | unsafe fn on_actor(m: Mat4) -> Mat4 {
     |           ^^^^^^^^
 
 warning: function `close` is never used
-   --> crates/kh1-hook/src/win/pose.rs:696:4
+   --> crates/kh1-hook/src/win/pose.rs:697:4
     |
-696 | fn close(a: &Mat4, b: &Mat4, units: f32) -> bool {
+697 | fn close(a: &Mat4, b: &Mat4, units: f32) -> bool {
     |    ^^^^^
 
 warning: multiple fields are never read
-   --> crates/kh1-hook/src/win/pose.rs:703:5
+   --> crates/kh1-hook/src/win/pose.rs:704:5
     |
-702 | struct Follow {
+703 | struct Follow {
     |        ------ fields in this struct
-703 |     slot: Option<usize>,
+704 |     slot: Option<usize>,
     |     ^^^^
-704 |     play: Option<Play>,
+705 |     play: Option<Play>,
     |     ^^^^
-705 |     motion: u16,
+706 |     motion: u16,
     |     ^^^^^^
-706 |     field: bool,
+707 |     field: bool,
     |     ^^^^^
-707 |     since: Option<Instant>,
+708 |     since: Option<Instant>,
     |     ^^^^^
-708 |     /// Clip frames per real second (60, or stretched for swings).
-709 |     rate: f32,
+709 |     /// Clip frames per real second (60, or stretched for swings).
+710 |     rate: f32,
     |     ^^^^
-710 |     /// Ground combo swings in a row, and when the last one started.
-711 |     swings: u32,
+711 |     /// Ground combo swings in a row, and when the last one started.
+712 |     swings: u32,
     |     ^^^^^^
-712 |     last_swing: Option<Instant>,
+713 |     last_swing: Option<Instant>,
     |     ^^^^^^^^^^
-713 |     /// Last KH2 pose (model space) and when it was drawn, and the pose blended from on a change.
-714 |     last: Vec<Mat4>,
+714 |     /// Last KH2 pose (model space) and when it was drawn, and the pose blended from on a change.
+715 |     last: Vec<Mat4>,
     |     ^^^^
-715 |     last_at: Option<Instant>,
+716 |     last_at: Option<Instant>,
     |     ^^^^^^^
-716 |     from: Vec<(Vec3, Quat, Vec3)>,
+717 |     from: Vec<(Vec3, Quat, Vec3)>,
     |     ^^^^
-717 |     blend_start: Option<Instant>,
+718 |     blend_start: Option<Instant>,
     |     ^^^^^^^^^^^
-718 |     blend_secs: f32,
+719 |     blend_secs: f32,
     |     ^^^^^^^^^^
-719 |     /// Movement measured from the model origin (world units per second), smoothed.
-720 |     at: Option<(Vec3, Instant)>,
+720 |     /// Movement measured from the model origin (world units per second), smoothed.
+721 |     at: Option<(Vec3, Instant)>,
     |     ^^
-721 |     speed: f32,
+722 |     speed: f32,
     |     ^^^^^
-722 |     climb: f32,
+723 |     climb: f32,
     |     ^^^^^
-723 |     logged: u32,
+724 |     logged: u32,
     |     ^^^^^^
 
 warning: constant `BLEND_MOVE` is never used
-   --> crates/kh1-hook/src/win/pose.rs:729:7
+   --> crates/kh1-hook/src/win/pose.rs:730:7
     |
-729 | const BLEND_MOVE: f32 = 8.0 / 60.0;
+730 | const BLEND_MOVE: f32 = 8.0 / 60.0;
     |       ^^^^^^^^^^
 
 warning: constant `BLEND_GLIDE` is never used
-   --> crates/kh1-hook/src/win/pose.rs:730:7
+   --> crates/kh1-hook/src/win/pose.rs:731:7
     |
-730 | const BLEND_GLIDE: f32 = 16.0 / 60.0;
+731 | const BLEND_GLIDE: f32 = 16.0 / 60.0;
     |       ^^^^^^^^^^^
 
 warning: constant `COMBO_GAP` is never used
-   --> crates/kh1-hook/src/win/pose.rs:732:7
+   --> crates/kh1-hook/src/win/pose.rs:733:7
     |
-732 | const COMBO_GAP: f32 = 1.2;
+733 | const COMBO_GAP: f32 = 1.2;
     |       ^^^^^^^^^
 
 warning: function `sora_world` is never used
-   --> crates/kh1-hook/src/win/pose.rs:741:8
+   --> crates/kh1-hook/src/win/pose.rs:742:8
     |
-741 | pub fn sora_world() -> Option<[f32; 3]> {
+742 | pub fn sora_world() -> Option<[f32; 3]> {
     |        ^^^^^^^^^^
 
 warning: static `CLOCK` is never used
-   --> crates/kh1-hook/src/win/pose.rs:744:8
+   --> crates/kh1-hook/src/win/pose.rs:745:8
     |
-744 | static CLOCK: OnceLock<Instant> = OnceLock::new();
+745 | static CLOCK: OnceLock<Instant> = OnceLock::new();
     |        ^^^^^
 
 warning: function `wanted` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1405:4
+    --> crates/kh1-hook/src/win/pose.rs:1406:4
      |
-1405 | fn wanted(s: &mut Sora, slot: Option<usize>, to_world: &Mat4) -> Option<Vec<Mat4>> {
+1406 | fn wanted(s: &mut Sora, slot: Option<usize>, to_world: &Mat4) -> Option<Vec<Mat4>> {
      |    ^^^^^^
 
 warning: function `kh2_weapon` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1490:4
+    --> crates/kh1-hook/src/win/pose.rs:1491:4
      |
-1490 | fn kh2_weapon(rig: &Rig, motion: u16, frames: f32, looping: bool, body: &[Mat4]) -> Vec<Mat4> {
+1491 | fn kh2_weapon(rig: &Rig, motion: u16, frames: f32, looping: bool, body: &[Mat4]) -> Vec<Mat4> {
      |    ^^^^^^^^^^
 
 warning: function `follow` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1505:4
+    --> crates/kh1-hook/src/win/pose.rs:1506:4
      |
-1505 | fn follow(s: &mut Sora, slot: Option<usize>, to_world: &Mat4) -> Option<Vec<Mat4>> {
+1506 | fn follow(s: &mut Sora, slot: Option<usize>, to_world: &Mat4) -> Option<Vec<Mat4>> {
      |    ^^^^^^
 
 warning: function `anti_ledge` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1572:4
+    --> crates/kh1-hook/src/win/pose.rs:1573:4
      |
-1572 | fn anti_ledge() -> Option<Play> {
+1573 | fn anti_ledge() -> Option<Play> {
      |    ^^^^^^^^^^
 
 warning: constant `KH2_ITEM_USE` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1603:7
+    --> crates/kh1-hook/src/win/pose.rs:1604:7
      |
-1603 | const KH2_ITEM_USE: u16 = 9;
+1604 | const KH2_ITEM_USE: u16 = 9;
      |       ^^^^^^^^^^^^
 
 warning: function `misc_kh2` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1606:4
+    --> crates/kh1-hook/src/win/pose.rs:1607:4
      |
-1606 | fn misc_kh2() -> bool {
+1607 | fn misc_kh2() -> bool {
      |    ^^^^^^^^
 
 warning: function `follow_play` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1612:4
+    --> crates/kh1-hook/src/win/pose.rs:1613:4
      |
-1612 | fn follow_play(s: &mut Sora, slot: Option<usize>, to_world: &Mat4, forced: Option<Play>, cast: bool) -> Option<Vec<Mat4>> {
+1613 | fn follow_play(s: &mut Sora, slot: Option<usize>, to_world: &Mat4, forced: Option<Play>, cast: bool) -> Option<Vec<Mat4>> {
      |    ^^^^^^^^^^^
 
 warning: function `at_sora` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1824:11
+    --> crates/kh1-hook/src/win/pose.rs:1825:11
      |
-1824 | unsafe fn at_sora(instance: usize, param_world: usize) -> bool {
+1825 | unsafe fn at_sora(instance: usize, param_world: usize) -> bool {
      |           ^^^^^^^
 
 warning: multiple fields are never read
@@ -8640,4 +8640,4 @@ warning: function `GetWindowThreadProcessId` is never used
    |            ^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: `kh1-hook` (lib) generated 1387 warnings (run `cargo fix --lib -p kh1-hook` to apply 10 suggestions)
-    Finished `release` profile [optimized] target(s) in 26.28s
+    Finished `release` profile [optimized] target(s) in 26.13s
