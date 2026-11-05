@@ -1,32 +1,116 @@
 {
-  "name": "KH1FM Styles v72",
-  "stage": "s411",
-  "source_commit": "6e7e9bb17627c9baa5a565c175bd787f10787f8b",
-  "source_tree": "86c9a4300308da9be8e8c28c80135178fa495b3c",
-  "previous_v71_commit": "d9a1293f8d46f0352b38a66ef3a411069fd03e4b",
+  "name": "KH1FM Styles v73",
+  "stage": "s412",
+  "source_commit": "6253093f50b07f95d783a93877e6e4d192557592",
+  "source_tree": "bee462aeeea928c36bc28e2f915ef58987f3fde5",
+  "previous_v72_commit": "6e7e9bb17627c9baa5a565c175bd787f10787f8b",
   "upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "patch_commits": 72,
+  "patch_commits": 73,
   "changed_source_paths": [
     "AGENTS.md",
+    "crates/kh1-hook/native-tests/single_f/test_bridge.c",
     "crates/kh1-hook/native-tests/single_f/test_runtime.py",
+    "crates/kh1-hook/src/footsteps.rs",
     "crates/kh1-hook/src/lib.rs",
     "crates/kh1-hook/src/overdrive.rs",
     "crates/kh1-hook/src/single_f/styles_menu.h",
     "crates/kh1-hook/src/single_f/styles_slots.h",
     "crates/kh1-hook/src/win/dual.rs",
     "crates/kh1-hook/src/win/dual_magic_fx.rs",
+    "crates/kh1-hook/src/win/kh2sound.rs",
     "crates/kh1-hook/src/win/mod.rs",
+    "crates/kh1-hook/src/win/takeover.rs",
+    "crates/kh2-fx/src/effects.rs",
+    "crates/kh2-fx/tests/synthetic.rs",
     "docs/combat-model.md",
+    "docs/kh2-sound.md",
     "docs/single-f.md",
-    "docs/styles-v72.md"
+    "docs/styles-v73.md"
   ],
-  "overdrives": {
-    "Power": "#FF0000",
-    "Will": "#0000FF",
-    "Resistance": "#FFFF00",
-    "Brilliance": "#FFFFFF",
-    "Rage": "#000000"
-  },
+  "overdrive_catalogue": [
+    {
+      "name": "Control",
+      "color": "Dark Blue",
+      "hex": "#00008B",
+      "drain": 5,
+      "id": 6,
+      "future_description": "Doubles the range of all magic"
+    },
+    {
+      "name": "Will",
+      "color": "Purple",
+      "hex": "#800080",
+      "drain": 3,
+      "id": 2,
+      "future_description": "Doubles all magic damage/healing done"
+    },
+    {
+      "name": "Talent",
+      "color": "Neon Pink",
+      "hex": "#FF10F0",
+      "drain": 5,
+      "id": 7,
+      "future_description": "No MP Cost"
+    },
+    {
+      "name": "Might",
+      "color": "Deep Red",
+      "hex": "#8B0000",
+      "drain": 3,
+      "id": 1,
+      "future_description": "Doubles all physical damage done"
+    },
+    {
+      "name": "Vigor",
+      "color": "Burnt Orange",
+      "hex": "#CC5500",
+      "drain": 5,
+      "id": 8,
+      "future_description": "Increases speed by 10%"
+    },
+    {
+      "name": "Resistance",
+      "color": "Yellow",
+      "hex": "#FFFF00",
+      "drain": 3,
+      "id": 3,
+      "future_description": "Halves all damage taken"
+    },
+    {
+      "name": "Immunity",
+      "color": "Forest Green",
+      "hex": "#228B22",
+      "drain": 5,
+      "id": 9,
+      "future_description": "Invincibility"
+    },
+    {
+      "name": "Prowess",
+      "color": "Pale White",
+      "hex": "#F5F5FF",
+      "drain": 10,
+      "id": 4,
+      "future_description": "Doubles all damage done, No MP cost, Invincibility"
+    },
+    {
+      "name": "Spite",
+      "color": "Gray Black",
+      "hex": "#202020",
+      "drain": 1,
+      "id": 5,
+      "future_description": "Heals 1 HP upon dealing damage to an enemy"
+    }
+  ],
+  "overdrive_count": 9,
+  "overdrive_visible_rows": 8,
+  "stable_selection_ids_retained": true,
+  "palette_version": 2,
+  "old_palette_replaced_once": true,
+  "future_buffs_implemented": false,
+  "drain_mechanic_implemented": false,
+  "overdrive_ap_used_hidden": true,
+  "overdrive_zero_ap_exclusive_and_independent": true,
+  "overdrive_native_ability_slots_consumed": 0,
   "shared_overdrive_layers": [
     "Valor",
     "Wisdom"
@@ -35,69 +119,62 @@
     11,
     12
   ],
-  "wisdom_expected_retained_elements": [
-    100
-  ],
   "anti_shared_layer_removed": true,
-  "ordinary_stance_effects_retained": true,
-  "customize_header_fixed_through_all_categories": true,
-  "appearance_replaces_outfits": true,
-  "old_prowess_selection_id_preserved": true,
-  "legacy_prowess_color_supported": true,
-  "canonical_color_key": "brilliance_color",
-  "overdrive_ap_used_hidden": true,
-  "overdrive_row_panels": [
-    "Drain",
-    "5"
-  ],
-  "overdrive_panel_coordinates": [
-    327,
-    373
-  ],
-  "overdrive_panel_size": [
-    42,
-    22
-  ],
-  "overdrive_text_centered_with_native_width": true,
-  "drain_mechanic_implemented": false,
-  "overdrive_zero_ap_exclusive_and_independent": true,
-  "overdrive_stat_boosts": false,
-  "overdrive_native_ability_slots_consumed": 0,
-  "other_v71_mappings_and_gameplay_retained": true,
-  "retained_v71_payloads": {
+  "draw_time_bound_root_refresh": true,
+  "effect_clock_rng_alpha_and_detached_history_retained": true,
+  "native_and_imported_footsteps_muted": true,
+  "footstep_entry": {
+    "passed": true,
+    "build": "Steam Global",
+    "timestamp": 1721645006,
+    "native_step_rva": "0x295B40",
+    "existing_prologue_matches": true,
+    "hook_uses_build_mapped_rva": true,
+    "unrelated_push_contact_entry_unchanged": true,
+    "imported_step_sounds": [
+      300,
+      301,
+      302,
+      503032
+    ],
+    "actual_windows_or_game_audio_executed": false
+  },
+  "unrelated_audio_paths_retained": true,
+  "other_v72_combat_and_mappings_retained": true,
+  "retained_v72_payloads": {
     "passed": true,
     "headers": {
       "single_e": {
-        "byte_exact_to_v71": true,
+        "byte_exact_to_v72": true,
         "sha256": "e8318f15cf8f1660f25c01829596cb119bae5264351b8f914e816d640b5068fc",
         "bytes": 4895942
       },
       "single_f": {
-        "byte_exact_to_v71": true,
+        "byte_exact_to_v72": true,
         "sha256": "ec8c84424ed0f470bc10cbdca30885a36785ff5d2f6639449b820b77da853ff9",
         "bytes": 25885384
       }
     }
   },
-  "rust_tests_passed": 656,
+  "rust_tests_passed": 660,
   "nonempty_rust_suites": 30,
-  "shared_adapter_pe_checks": 122,
+  "shared_adapter_pe_checks": 123,
   "aqua_pe_checks": 49,
   "pe_api_and_rendering_mocked": true,
   "windows_x64_release": true,
   "actual_windows_or_game_execution": false,
-  "live_effect_appearance_verified": false,
+  "live_effect_or_audio_verified": false,
   "source_apply_check_pending": false,
-  "dll_sha256": "c4adb5cbfa4934784c577474d125edf695e590a5940d501d8646d577e56dc76f",
+  "dll_sha256": "950025b00738a860ccb6fa1ca7f7da808fabe920e6b50e7e9536e702732cf499",
   "private_payload_sha256": {
     "single_e": "e8318f15cf8f1660f25c01829596cb119bae5264351b8f914e816d640b5068fc",
     "single_f": "ec8c84424ed0f470bc10cbdca30885a36785ff5d2f6639449b820b77da853ff9"
   },
   "source_reconstruction": {
     "passed": true,
-    "full_patch_commits": 72,
+    "full_patch_commits": 73,
     "pinned_upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-    "expected_tree": "86c9a4300308da9be8e8c28c80135178fa495b3c",
-    "reconstructed_tree": "86c9a4300308da9be8e8c28c80135178fa495b3c"
+    "expected_tree": "bee462aeeea928c36bc28e2f915ef58987f3fde5",
+    "reconstructed_tree": "bee462aeeea928c36bc28e2f915ef58987f3fde5"
   }
 }

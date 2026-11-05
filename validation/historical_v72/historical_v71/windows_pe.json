@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "architecture": "Windows x64",
+  "exports": [
+    "DirectInput8Create",
+    "DllMain",
+    "OnFrame",
+    "OnInit"
+  ],
+  "imported_dlls": [
+    "KERNEL32.dll",
+    "msvcrt.dll",
+    "ntdll.dll",
+    "USERENV.dll",
+    "WINMM.dll",
+    "WS2_32.dll",
+    "api-ms-win-core-synch-l1-2-0.dll",
+    "bcryptprimitives.dll"
+  ]
+}

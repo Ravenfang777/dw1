@@ -1,32 +1,51 @@
 Customize -> Overdrives
-Power - Red #FF0000
-Will - Blue #0000FF
-Resistance - Yellow #FFFF00
-Brilliance - White #FFFFFF (formerly Prowess; same ID4)
-Rage - Black #000000
 
-All five share Valor plus Wisdom wind. Wisdom foot11/12 and shared Anti
-darkness are removed. The normal Anti/Wisdom stance effects are separate.
-One free selection, independent of Stance; select its active row to turn off.
+Control - Dark Blue #00008B - Drain 5
+  Doubles the range of all magic
+Will - Purple #800080 - Drain 3
+  Doubles all magic damage/healing done
+Talent - Neon Pink #FF10F0 - Drain 5
+  No MP Cost
+Might - Deep Red #8B0000 - Drain 3
+  Doubles all physical damage done
+Vigor - Burnt Orange #CC5500 - Drain 5
+  Increases speed by 10%
+Resistance - Yellow #FFFF00 - Drain 3
+  Halves all damage taken
+Immunity - Forest Green #228B22 - Drain 5
+  Invincibility
+Prowess - Pale White #F5F5FF - Drain 10
+  Doubles all damage done, No MP cost, Invincibility
+Spite - Gray Black #202020 - Drain 1
+  Heals 1 HP upon dealing damage to an enemy
 
-Two row panels show Drain and5. This value is for display/testing only:
-no AP/HP/MP/resource drain is implemented. No Overdrive AP Used footer.
+The descriptions are planned future effects. Only cosmetic auras and metadata
+are active now; Drain values do not deduct a resource and no listed bonus runs.
+One free exclusive choice, independent of Stance/native ability slots. Confirm
+the active row again to disable it. Eight visible rows; scroll for Spite.
+All use Valor plus Wisdom wind; no Wisdom foot11/12 or shared Anti darkness.
 
-Optional kh1-overdrive.ini settings beside the other mod settings:
-overdrive = 1
-power_color = #FF0000
-will_color = #0000FF
+SETTINGS
+kh1-overdrive.ini, beside the other mod settings, supports #RRGGBB colors.
+The first v73 load applies the new requested palette if palette_version2 is
+absent. A menu selection save writes version2/new colors, keeping the selected
+ID and unrelated settings. After this migration, manual color edits persist.
+Restart after manual edits. Example:
+palette_version = 2
+overdrive = 6
+control_color = #00008B
+will_color = #800080
+talent_color = #FF10F0
+might_color = #8B0000
+vigor_color = #CC5500
 resistance_color = #FFFF00
-brilliance_color = #FFFFFF
-rage_color = #000000
+immunity_color = #228B22
+prowess_color = #F5F5FF
+spite_color = #202020
 
-0 is off;1..5 follow the list above. Colors use six hexadecimal RGB digits.
-Restart after manual edits. Menu choices preserve custom colors and unknown
-keys. Old strength_color and prowess_color are aliases; current power_color
-and brilliance_color take precedence. Existing selection/settings need no reset.
-The ZIP does not overwrite existing settings. Missing keys use defaults and
-are appended on the next selection save. No texture extraction is needed.
-
-Check OVERDRIVE SHARED LAYER READY for Valor and Wisdom; Wisdom should list100.
-Live particles, black blending and the exact removed/retained visuals need an
-in-game check. See source/STYLES-V72.MD for sources, confidence and test scope.
+Stable IDs: 0 off,1 Might,2 Will,3 Resistance,4 Prowess,5 Spite,6 Control,
+7 Talent,8 Vigor,9 Immunity. Old Power1 becomes Might, Brilliance4 Prowess,
+and Rage5 Spite. Display order follows the catalogue, not ID order.
+The ZIP does not overwrite an INI. Exact RGB choices implement the named
+shades and can be adjusted after the version2 migration. Near-black Spite uses
+masked alpha rendering. See source/STYLES-V73.MD for evidence and live limits.

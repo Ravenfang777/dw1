@@ -1,5 +1,5 @@
-Clone the pinned public upstream, then git am Styles_v72.patch.
-Alternatively, fetch Styles_v72_from_v71.bundle into the recorded v71 checkout.
+Clone the pinned public upstream, then git am Styles_v73.patch.
+Alternatively, fetch Styles_v73_from_v72.bundle into the recorded v72 checkout.
 Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h.
 Copy rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
 These included headers are exact final build inputs. Never add generated
@@ -92,3 +92,10 @@ filtered after ordinary aura admission. Anti stance resources are independent.
 Brilliance uses brilliance_color, with prowess_color accepted as an alias.
 Menu changes and Drain5 display need no new resources or dependencies.
 See STYLES-V72.MD for current scope; earlier version sections are historical.
+
+v73 uses the same private headers and E/G/gallery fixtures as v72.
+Effects::refresh_bindings is an opt-in draw-time root refresh in kh2-fx;
+only cloned Overdrive packages call it. No shader or external dependency added.
+The checked native step-sound RVA uses the existing Epic/Steam address map.
+The current catalogue, settings version2 and test limits are in STYLES-V73.MD.
+Earlier sections above are historical. No asset regeneration is needed.

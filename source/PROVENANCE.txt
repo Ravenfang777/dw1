@@ -1,19 +1,17 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v71 commit: d9a1293f8d46f0352b38a66ef3a411069fd03e4b
-v72 commit: 6e7e9bb17627c9baa5a565c175bd787f10787f8b
-v72 source tree: 86c9a4300308da9be8e8c28c80135178fa495b3c
-Styles_v72.patch contains72 derivative commits, applied with git am.
-Styles_v72_from_v71.bundle requires the exact previous v71 commit above.
-Both generated payload headers remain byte exact to v71; no asset regeneration.
-All Overdrives retain Valor plus Wisdom wind, excluding Wisdom11/12 foot
-emitters and the shared Anti package. Ordinary stance/attack packages remain.
-Customize header is fixed across categories and the Passives selection window.
-Appearance replaces Outfits; Brilliance replaces Prowess with selection ID4
-and legacy prowess_color settings retained. brilliance_color is canonical.
-Overdrives has no AP Used footer and has paired Drain/5 native panels.
-Drain5 is display-only; actual costs, resources and gameplay are unchanged.
-v71 Type E jump/GC2, body-dash, pose/hand anchors and other stance rules remain.
-Historical validation is labeled under validation/historical_v71.
-No Windows/GPU/game execution or live effect appearance verification is claimed.
+Previous delivered v72 commit: 6e7e9bb17627c9baa5a565c175bd787f10787f8b
+v73 commit: 6253093f50b07f95d783a93877e6e4d192557592
+v73 source tree: bee462aeeea928c36bc28e2f915ef58987f3fde5
+Styles_v73.patch contains73 derivative commits, applied with git am.
+Styles_v73_from_v72.bundle requires the exact previous v72 commit above.
+Both generated animation headers remain byte exact to v72. No regeneration.
+Nine cosmetic Overdrives have individual colors/Drain/future-effect help.
+Stable IDs preserve old choices; palette version2 replaces old colors once.
+Future buffs and Drain resource deductions are NOT implemented.
+Overdrive continuously bound roots refresh at draw without advancing effects.
+Native step/material sounds and known imported gait sounds are muted; other
+audio paths and combat/animation/movement/contact rules stay unchanged.
+Historical validation is under validation/historical_v72.
+No Windows/game/GPU/audio playback or live hand-alignment test is claimed.
 No original executable, model, extracted table or decompiled code enters Git.

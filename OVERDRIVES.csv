@@ -1,0 +1,10 @@
+Name,Color,RGB_Hex,Drain,Stable_ID,Future_Description
+Control,Dark Blue,#00008B,5,6,Doubles the range of all magic
+Will,Purple,#800080,3,2,Doubles all magic damage/healing done
+Talent,Neon Pink,#FF10F0,5,7,No MP Cost
+Might,Deep Red,#8B0000,3,1,Doubles all physical damage done
+Vigor,Burnt Orange,#CC5500,5,8,Increases speed by 10%
+Resistance,Yellow,#FFFF00,3,3,Halves all damage taken
+Immunity,Forest Green,#228B22,5,9,Invincibility
+Prowess,Pale White,#F5F5FF,10,4,"Doubles all damage done, No MP cost, Invincibility"
+Spite,Gray Black,#202020,1,5,Heals 1 HP upon dealing damage to an enemy

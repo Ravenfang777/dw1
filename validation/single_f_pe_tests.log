@@ -56,6 +56,7 @@ test_native_abilities_for_other_party_members_use_original_record (__main__.Runt
 test_native_ap_box_is_not_created_only_in_styles (__main__.RuntimeTests.test_native_ap_box_is_not_created_only_in_styles) ... ok
 test_native_ap_renderer_geometry_has_one_aligned_panel_and_no_frame_layer (__main__.RuntimeTests.test_native_ap_renderer_geometry_has_one_aligned_panel_and_no_frame_layer) ... ok
 test_native_menu_title_and_normal_message_lookup (__main__.RuntimeTests.test_native_menu_title_and_normal_message_lookup) ... ok
+test_native_overdrive_scroll_reaches_spite_and_wraps_all_nine_rows (__main__.RuntimeTests.test_native_overdrive_scroll_reaches_spite_and_wraps_all_nine_rows) ... ok
 test_native_save_ability_append_stops_at_48_for_sora_and_shared (__main__.RuntimeTests.test_native_save_ability_append_stops_at_48_for_sora_and_shared) ... ok
 test_numbered_all_50_flags_toggle_at_zero_ap_with_full_48_native_list (__main__.RuntimeTests.test_numbered_all_50_flags_toggle_at_zero_ap_with_full_48_native_list) ... ok
 test_numbered_legacy_entries_migrate_once_and_keep_existing_mod_flags (__main__.RuntimeTests.test_numbered_legacy_entries_migrate_once_and_keep_existing_mod_flags) ... ok
@@ -68,7 +69,7 @@ test_only_one_animation_test_can_be_active_and_off_restores_no_stance (__main__.
 test_original_native_page_scroll_reaches_last_stances_and_wraps (__main__.RuntimeTests.test_original_native_page_scroll_reaches_last_stances_and_wraps) ... ok
 test_original_native_paging_reaches_id127_beyond_the_48_entry_boundary (__main__.RuntimeTests.test_original_native_paging_reaches_id127_beyond_the_48_entry_boundary) ... ok
 test_overdrive_persistence_bounds_and_removal_leave_native_state_unchanged (__main__.RuntimeTests.test_overdrive_persistence_bounds_and_removal_leave_native_state_unchanged) ... ok
-test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save (__main__.RuntimeTests.test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save) ... ok
+test_overdrives_are_nine_free_rows_with_requested_drains_help_and_stable_ids (__main__.RuntimeTests.test_overdrives_are_nine_free_rows_with_requested_drains_help_and_stable_ids) ... ok
 test_party_reawards_are_blocked_immediately_and_removed_on_next_update (__main__.RuntimeTests.test_party_reawards_are_blocked_immediately_and_removed_on_next_update) ... ok
 test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes (__main__.RuntimeTests.test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes) ... ok
 test_passives_native_dialog_enforces_ap_rejection_and_equips_or_removes (__main__.RuntimeTests.test_passives_native_dialog_enforces_ap_rejection_and_equips_or_removes) ... ok
@@ -122,6 +123,6 @@ test_ventus_profile_all_records_restore_in_normal_and_olympus_banks (__main__.Ru
 test_ventus_switch_retires_terra_dash_body_and_never_uses_terra_variants (__main__.RuntimeTests.test_ventus_switch_retires_terra_dash_body_and_never_uses_terra_variants) ... ok
 
 ----------------------------------------------------------------------
-Ran 122 tests in 17.258s
+Ran 123 tests in 18.676s
 
 OK

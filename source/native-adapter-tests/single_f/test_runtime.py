@@ -427,35 +427,42 @@ class RuntimeTests(unittest.TestCase):
     def g_variant(self,h,kind,slot):
         return h.expected_from(slot,Path(os.environ['VENTUS_SOURCE'])/f"variants/{kind}/fixtures/ventus_s{slot:03}.bin")
 
-    def test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save(self):
+    def test_overdrives_are_nine_free_rows_with_requested_drains_help_and_stable_ids(self):
         h=Host();root,page=h.passive_setup([6,117]);h.ui_page_frame(page,0x40);text=h.ui_page_frame(page,0x4000)
+        names=['Control','Will','Talent','Might','Vigor','Resistance','Immunity','Prowess','Spite']
+        ids=[6,2,7,1,8,3,9,4,5];drains=[5,3,5,3,5,3,5,10,1]
+        descriptions=['Doubles the range of all magic','Doubles all magic damage/healing done','No MP Cost','Doubles all physical damage done','Increases speed by 10%','Halves all damage taken','Invincibility','Doubles all damage done, No MP cost, Invincibility','Heals 1 HP upon dealing damage to an enemy']
         self.assertIn('Overdrives',text)
-        for name in ['Power','Will','Resistance','Brilliance','Rage']:self.assertIn(name,text)
-        self.assertNotIn('Prowess',text)
+        for name,drain in zip(names[:8],drains[:8]):self.assertIn(f'{name}|Drain|{drain}',text)
         self.assertNotIn('AP 0',text);self.assertNotIn('AP Used',text)
-        self.assertEqual(text.count('Drain|5'),5);self.assertEqual(bridge.bridge_menu_rect_count(),10)
-        for row in range(5):
+        self.assertEqual(bridge.bridge_menu_rect_count(),16)
+        for row in range(8):
             a=[bridge.bridge_menu_rect_word(row*2,j)for j in range(4)];b=[bridge.bridge_menu_rect_word(row*2+1,j)for j in range(4)]
             self.assertEqual(a[:1],[327]);self.assertEqual(b[:1],[373]);self.assertEqual(a[1:],b[1:]);self.assertEqual(a[2:],[42,22])
         labels=[([bridge.bridge_menu_plain_word(i,j)for j in range(4)],C.string_at(bridge.bridge_menu_plain_text(i)))for i in range(bridge.bridge_menu_plain_count())]
-        fives=[v for v,t in labels if t==b'\x26'];self.assertEqual(len(fives),5)
-        self.assertTrue(all(v[0]==373+(42-(v[2]+1)//2)//2 for v in fives))
+        numbers=[(v,t)for v,t in labels if 373<=v[0]<415 and t and all(0x21<=c<=0x2a for c in t)]
+        self.assertEqual(len(numbers),8)
+        for v,t in numbers:self.assertEqual(v[0],373+(42-len(t)*((v[2]+1)//2))//2)
         h.ui_page_frame(page,0x20)
-        self.assertEqual(r32(h.symbols['styles_picker']),3);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,5)
+        self.assertEqual(r32(h.symbols['styles_picker']),3);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,9)
         before=C.string_at(h.save,0x1000);bits=r64(h.symbols['numbered_bits'])
         bridge.call_ptr2(h.symbols['OverdriveInit'],0,bridge.bridge_symbol(b'OverdrivePersist'))
-        for row in range(5):
-            h.ui_choose(page,row);self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),row+1)
-            self.assertEqual(bridge.bridge_overdrive_saved(),row+1);self.assertEqual(C.string_at(h.save,0x1000),before)
-            self.assertEqual(r64(h.symbols['numbered_bits']),bits)
-        h.ui_choose(page,4);self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),0)
-        self.assertEqual(bridge.bridge_overdrive_save_calls(),6)
+        def decode(text):
+            return ''.join(' 'if c==1 else '%'if c==0x61 else ','if c==0x69 else '/'if c==0x66 else chr(c-0x2b+ord('A'))if 0x2b<=c<=0x44 else chr(c-0x45+ord('a'))if 0x45<=c<=0x5e else chr(c-0x21+ord('0'))if 0x21<=c<=0x2a else '?'for c in text)
+        for row,(name,id,drain,description)in enumerate(zip(names,ids,drains,descriptions)):
+            text=h.ui_choose(page,row);self.assertIn(f'{name}|Drain|{drain}',text)
+            self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),id);self.assertEqual(bridge.bridge_overdrive_saved(),id)
+            self.assertEqual(C.string_at(h.save,0x1000),before);self.assertEqual(r64(h.symbols['numbered_bits']),bits)
+            help=[decode(C.string_at(bridge.bridge_menu_plain_text(i)))for i in range(bridge.bridge_menu_plain_count())if bridge.bridge_menu_plain_word(i,0)==174]
+            self.assertEqual(' '.join(line.strip()for line in help),description)
+        h.ui_choose(page,8);self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),0)
+        self.assertEqual(bridge.bridge_overdrive_save_calls(),10)
 
     def test_overdrive_persistence_bounds_and_removal_leave_native_state_unchanged(self):
-        for value in [0,1,2,3,4,5,6,0xffffffff]:
+        for value in [0,1,2,3,4,5,6,7,8,9,10,0xffffffff]:
             h=Host();before=C.string_at(h.save,0x1000)
             bridge.call_ptr2(h.symbols['OverdriveInit'],value,bridge.bridge_symbol(b'OverdrivePersist'))
-            self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),value if value<=5 else 0)
+            self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),value if value<=9 else 0)
             self.assertEqual(C.string_at(h.save,0x1000),before);self.assertEqual(bridge.bridge_overdrive_save_calls(),0)
         h=Host();bridge.call_ptr2(h.symbols['OverdriveInit'],5,0);bridge.call_void1(h.symbols['OverdriveEnable'],0);self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),0)
         bridge.call_void1(h.symbols['OverdriveEnable'],1);self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),5)
@@ -738,7 +745,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn('AP Used|5 / 30',h.ui_choose(page,1))
         self.assertIn('AP Used|5 / 30',h.ui_choose(page,2))  # Numeric66 is free.
         h.ui_page_frame(page,0x40);text=h.ui_page_frame(page,0x4000)
-        self.assertNotIn('AP Used',text);self.assertIn('Power|Drain|5',text)
+        self.assertNotIn('AP Used',text);self.assertIn('Control|Drain|5',text)
         h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
         self.assertIn('AP Used|2 / 30',h.ui_choose(page,0))
         self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before[:2]+bytes([245])+before[3:])
@@ -1341,6 +1348,18 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn('Type M?|None|0',text);self.assertNotIn('Type A|',text)
         text=h.ui_page_frame(w,0x800)
         self.assertEqual(C.c_ushort.from_address(w+0xfc).value,0);self.assertIn('Type A|Single|I',text)
+        w32(h.ui_pad+16,0)
+
+    def test_native_overdrive_scroll_reaches_spite_and_wraps_all_nine_rows(self):
+        h=Host();root,page=h.passive_setup([6,117]);h.ui_page_frame(page,0x40);h.ui_page_frame(page,0x4000);h.ui_page_frame(page,0x20)
+        put(h.game+0x2ef670,h.ui_raw(0x2ef670,0x870))
+        for r in [0x2eb370,0x2f1100]:put(h.game+r,b'\xc3')
+        put(h.game+0x2eb130,bytes.fromhex('31c0c3'));w32(h.ui_pad+16,0x800)
+        text=h.ui_page_frame(page,0x800)
+        self.assertEqual(C.c_ushort.from_address(page+0xfc).value,16)
+        self.assertIn('Spite|Drain|1',text);self.assertIn('Prowess|Drain|10',text);self.assertNotIn('Control|',text)
+        text=h.ui_page_frame(page,0x800)
+        self.assertEqual(C.c_ushort.from_address(page+0xfc).value,0);self.assertIn('Control|Drain|5',text)
         w32(h.ui_pad+16,0)
 
     def test_passives_opens_sora_directly_and_returns_without_a_member_selector(self):

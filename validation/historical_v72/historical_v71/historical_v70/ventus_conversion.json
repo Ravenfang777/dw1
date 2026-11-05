@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "main_records": 38,
+  "action_variants": 4,
+  "max_position_error": 4.921277104700673,
+  "max_basis_error": 0.10458153525344889,
+  "max_segment_length_error": 3.04751779367507e-11,
+  "max_scale_error": 0.0,
+  "max_native_root_error": 0.0,
+  "validated_pose_samples": 9450,
+  "timestamp_adjusted_slots": [
+    99,
+    100,
+    101,
+    104
+  ]
+}
