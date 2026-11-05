@@ -1,7 +1,0 @@
-{
-  "passed": true,
-  "commits_applied": 66,
-  "expected_tree": "57a6b4958c67972249a292f1d39e34b016c8d401",
-  "applied_tree": "57a6b4958c67972249a292f1d39e34b016c8d401",
-  "full_patch_reconstructs_exact_source_tree": true
-}

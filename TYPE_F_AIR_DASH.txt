@@ -1,3 +1,6 @@
+v78 feedback: attacking aerial dash starts KH2 Limit30 Sonic Rave Finish and
+SE999027 once. No movement/contact change. See STYLES_V78.md.
+
 v71 Type F (retained from v70): airborne Square uses Ventus330, ordinary grip, native Fall10/request6.
 Speed24/duration29.25/distance702 before collision, unchanged from v69.
 Ground Dodge Roll/dash009/native DC also receives body-sized contacts.

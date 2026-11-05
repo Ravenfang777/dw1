@@ -1,9 +1,9 @@
-title: KH1FM Styles v77 - Charge Timing and KH2 Sound Auditions
+title: KH1FM Styles v78 - Dash Feedback and One-Second Overdrive
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  End Overdrive transformation when Infinity Tip Charge ends, with witnessed
-  pose gating the aura. Passives66..110 audition45 KH2 sound choices on ground
-  combo entry. Free exclusive previews keep stances; original combat retained.
+  Type G attacking air dash uses Sonic Rave27; Type F uses Sonic Rave Finish30.
+  Both play KH2 SE999027. Overdrive plays Infinity charge sound on press and
+  a60-game-frame transformation. Sound auditions and original combat retained.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

@@ -1,2 +1,4 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Keep runtime release text identical across Git checkouts.
+* text=auto eol=lf
+*.dll binary
+*.zip binary

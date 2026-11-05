@@ -1,3 +1,7 @@
+v78 retains the45 audition rows below. It also adds automatic F/G dash audio
+and Infinity sound on Overdrive press; activation now lasts one game second.
+See STYLES_V78.md for those current action changes.
+
 # Styles v77 / s416: charge-length activation and sound auditions
 
 Overdrive motion52 now stops when Infinity Tip Charge finishes. It no longer

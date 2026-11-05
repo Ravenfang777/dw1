@@ -1,25 +1,20 @@
 {
-  "name": "KH1FM Styles v77",
-  "stage": "s416",
-  "source_commit": "eb7552b6c17515afb7fa4952ca61931b27011bb3",
-  "source_tree": "053b3376c5f64118fcfa26a8eafdafb7877f470b",
-  "previous_v76_commit": "c1d983095d243af8edde62e063c173657c6b45fc",
-  "previous_v76_tree": "6be868251c99e503d90ae03fc19e4cda7aa04ba6",
+  "name": "KH1FM Styles v78",
+  "stage": "s417",
+  "source_commit": "80d8a6beacfbff262ad7b9c3c4249dce2529b415",
+  "source_tree": "3f3e10bddf8596cf5c2b07bb758d2c9a91f79293",
+  "previous_v77_commit": "eb7552b6c17515afb7fa4952ca61931b27011bb3",
+  "previous_v77_tree": "053b3376c5f64118fcfa26a8eafdafb7877f470b",
   "upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "patch_commits": 77,
+  "patch_commits": 78,
   "changed_source_paths": [
     "AGENTS.md",
-    "crates/kh1-hook/native-tests/single_f/test_bridge.c",
-    "crates/kh1-hook/native-tests/single_f/test_runtime.py",
-    "crates/kh1-hook/native-tests/single_f/test_sound_preview.py",
-    "crates/kh1-hook/src/dual_wield.rs",
+    "crates/kh1-hook/src/dash_feedback.rs",
     "crates/kh1-hook/src/lib.rs",
+    "crates/kh1-hook/src/native_dash_tests.rs",
     "crates/kh1-hook/src/native_overdrive_tests.rs",
-    "crates/kh1-hook/src/native_sound_tests.rs",
     "crates/kh1-hook/src/overdrive_activation.rs",
-    "crates/kh1-hook/src/single_f/numbered_passives.h",
-    "crates/kh1-hook/src/single_f/styles_slots.h",
-    "crates/kh1-hook/src/sound_preview.rs",
+    "crates/kh1-hook/src/win/dash_feedback.rs",
     "crates/kh1-hook/src/win/dual.rs",
     "crates/kh1-hook/src/win/dual_magic_fx.rs",
     "crates/kh1-hook/src/win/kh2sound.rs",
@@ -27,12 +22,10 @@
     "crates/kh1-hook/src/win/overdrive_activation.rs",
     "crates/kh1-hook/src/win/pose.rs",
     "crates/kh1-hook/src/win/single_f.rs",
-    "crates/kh1-hook/src/win/sound_preview.rs",
-    "crates/kh1-hook/src/win/takeover.rs",
     "docs/combat-model.md",
     "docs/kh2-sound.md",
     "docs/single-f.md",
-    "docs/styles-v77.md"
+    "docs/styles-v78.md"
   ],
   "sound_catalogue": [
     {
@@ -546,25 +539,18 @@
   "old_visual_and_animation_selectors_disabled": true,
   "footsteps_and_native_ap_policy_retained": true,
   "overdrive": {
-    "charge_expiry_controls_transform_cut": true,
-    "looped_source_uses_checked_authored_one_pass": true,
-    "final_cut_pose_witness_required": true,
-    "maximum_completion_game_frames": 600,
-    "centered_recolored_elements": [
-      {
-        "package": "obj/P_EX100_KH1F.a.us",
-        "element": 20
-      },
-      {
-        "package": "obj/P_EX100.a.us",
-        "element": 41
-      }
-    ],
-    "new_activation_audio_assigned": false
+    "fixed_duration_game_frames": 60,
+    "first_source_frames_at_normal_speed": true,
+    "source_motion": 52,
+    "final_pose_witness_required": true,
+    "charge_lifetime_controls_completion": false,
+    "activation_sound": "PAX sound assigned to Limit20; audition66 reference",
+    "sound_requested_once_on_accepted_press": true,
+    "effects_centered_and_recolored": true
   },
   "generated_payloads": {
     "passed": true,
-    "baseline": "Styles v76",
+    "baseline": "Styles v77",
     "headers": {
       "single_e/aqua_data.h": {
         "sha256": "e8318f15cf8f1660f25c01829596cb119bae5264351b8f914e816d640b5068fc",
@@ -574,24 +560,49 @@
         "sha256": "ec8c84424ed0f470bc10cbdca30885a36785ff5d2f6639449b820b77da853ff9",
         "size": 25885384
       }
-    }
+    },
+    "c_movement_adapter_source_unchanged": true
   },
-  "rust_tests_passed": 683,
+  "rust_tests_passed": 688,
   "nonempty_rust_suites": 30,
-  "new_rust_checks": 9,
+  "new_rust_checks": 5,
   "focused_final_pe_checks": 10,
   "private_animation_fixture_tests_rerun": false,
   "rust_audio_playback_mocked_in_pe_tests": true,
   "actual_windows_game_audio_or_gpu_execution": false,
   "windows_x64_release": true,
   "source_apply_check_pending": false,
-  "dll_sha256": "aa761ca8cd162eb476ebcc56bc614c5ab92d42c3692ddea069e9591b9ce1ff79",
+  "dll_sha256": "98d31b2efd106dd7c2323c419179882d12cbdc7b9860589b83d79b5d292dddaf",
+  "dash_feedback": {
+    "TypeG": {
+      "effect_package": "obj/P_EX100_KH1F.a.us",
+      "element": 27,
+      "name": "Sonic Rave effect27",
+      "sound_id": 999027
+    },
+    "TypeF": {
+      "effect_package": "obj/P_EX100_KH1F.a.us",
+      "element": 30,
+      "name": "Sonic Rave Finish effect30",
+      "sound_id": 999027
+    },
+    "committed_action_one_only": true,
+    "g_circle_dodge_excluded": true,
+    "f_ground_dash_unchanged": true,
+    "movement_and_contacts_unchanged": true,
+    "source_colors_retained": true,
+    "primary_blade_anchor": true,
+    "maximum_handles": 1,
+    "maximum_effect_game_frames": 120,
+    "source_end_behavior_at_dash_exit": true,
+    "pause_latch_preserved": true
+  },
   "source_reconstruction": {
     "passed": true,
-    "full_patch_commits": 77,
+    "full_patch_commits": 78,
     "pinned_upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-    "expected_tree": "053b3376c5f64118fcfa26a8eafdafb7877f470b",
-    "reconstructed_tree": "053b3376c5f64118fcfa26a8eafdafb7877f470b",
+    "expected_tree": "3f3e10bddf8596cf5c2b07bb758d2c9a91f79293",
+    "reconstructed_tree": "3f3e10bddf8596cf5c2b07bb758d2c9a91f79293",
     "bundle_tree_exact": true
   },
   "packaged_focused_harness_verified": true

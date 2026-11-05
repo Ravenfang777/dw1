@@ -1,8 +1,0 @@
-Windows x64 release: PASSED
-599 tests/31 suites;174 style,16 map,15 D policy.
-31 source checks;283 protected files; working jump and solver/map exact.
-Guard30 from native witness; second ground28.
-New finisher/air pending returned1580 source. Extra source is not executed.
-DLL SHA256 6872d92bc011e0a7dd5909af67350344249547960d2ce8f3c7a9c98ccfdb1dbb
-Source 54d18b73d6b4359476e97a887332fefcc44a5cdd
-Fresh v52 game/blocking/timing test pending.

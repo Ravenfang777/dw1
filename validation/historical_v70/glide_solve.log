@@ -1,3 +1,0 @@
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s
-     Running `target/debug/examples/native_mset_solve local/ventus_v68/xa_ex_0010.mdls local/v68-tests/glide038.mset local/v68-tests/glide038-poses.bin`
-Solved 131 poses from 1 slots on 293 bones

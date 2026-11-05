@@ -1,0 +1,8 @@
+# Runtime repository: development/recovery material stays outside this repo.
+/source/
+/validation/
+/validation.json
+# Locally generated game settings and logs.
+/kh1-dual-wield.ini
+/kh1-dual-wield.log
+/kh1-overdrive.ini

@@ -1,9 +1,0 @@
-{
-  "passed": true,
-  "retained_original_terra_and_variant_parts": 190,
-  "all35_ventus_test_profiles_unchanged": true,
-  "only_main_g_contact_timestamps_changed": true,
-  "single_e_payload_unchanged": true,
-  "dark_model_sha256": "ef243b6ffe6d5234a1c4b795946f82db34cafb5f427ab816c8090b89379d91e3",
-  "dark_mset_sha256": "b50be471d376786a80caabbdaf08e861985d0d957e914552dc98180aa6c4d2a8"
-}

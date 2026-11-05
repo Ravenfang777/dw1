@@ -1,7 +1,0 @@
-{
-  "passed": true,
-  "full_patch_commits": 74,
-  "pinned_upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "expected_tree": "db35ba356bf2e7ab84508db07ad5db8b04646ae5",
-  "reconstructed_tree": "db35ba356bf2e7ab84508db07ad5db8b04646ae5"
-}
