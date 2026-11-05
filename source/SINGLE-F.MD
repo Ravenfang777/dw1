@@ -1,10 +1,9 @@
 # Single F and the native Styles menu — v54 / s393
 
-Current Overdrive activation: see styles-v76.md. Selection arms Triangle;
-the shared KH2 transformation must finish before the selected aura starts.
-Current menu/testing: see styles-v75.md. Passives66..104 now preview individual
-KH2 weapon effects with names/IDs/readiness; Ventus/Dark Riku animation galleries
-are retired from the menu. Main Type F/G and all stance combat remain. Current
+Current activation/testing: see styles-v77.md. Motion52 ends with Infinity Tip
+Charge; a witnessed cut pose gates aura. Passives66..110 now audition KH2 sounds
+at ground-combo entry, replacing the v75 weapon-effect gallery. Older animation
+galleries also remain retired. Main Type F/G and all stance combat remain. Current
 nine Overdrives/palette3, Customize/Appearance and footsteps mute are retained.
 The following is historical v54 documentation.
 

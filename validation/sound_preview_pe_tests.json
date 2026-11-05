@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "tests": 10,
+  "failures": 0,
+  "errors": 0,
+  "executed_final_integrated_pe_c_adapter": true,
+  "native_menu_references_checked_against_supplied_executable": true,
+  "private_animation_fixtures_required": false,
+  "rust_audio_dispatch_and_playback_mocked": true,
+  "windows_or_game_executed": false
+}

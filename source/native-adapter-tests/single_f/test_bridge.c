@@ -287,3 +287,5 @@ void call_void1(uintptr_t fn,uintptr_t a){((void(ABI*)(uintptr_t))fn)(a);}
 void call_panel(uintptr_t fn,uintptr_t w,int x,int y,uint32_t color){((void(ABI*)(uintptr_t,int,int,uint32_t))fn)(w,x,y,color);}
 
 uintptr_t call_ptr2(uintptr_t fn,uintptr_t a,uintptr_t b){return ((uintptr_t(ABI*)(uintptr_t,uintptr_t))fn)(a,b);}
+
+uintptr_t call_ptr3(uintptr_t fn,uintptr_t a,uintptr_t b,uintptr_t c){return ((uintptr_t(ABI*)(uintptr_t,uintptr_t,uintptr_t))fn)(a,b,c);}

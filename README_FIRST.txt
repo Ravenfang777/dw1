@@ -1,65 +1,71 @@
-KH1FM STYLES v76 / s415 - TRIANGLE OVERDRIVE ACTIVATION
+KH1FM STYLES v77 / s416 - CHARGE TIMING AND KH2 SOUND AUDITIONS
 
 INSTALL
-Close KH1. Disable v75 and older main Styles packages. Import this ZIP into
-OpenKH Mod Manager, enable v76, Build and launch with Panacea. Keep the existing
-KH2FM installation/resources/settings. Restart after changing the DLL.
-Confirm s415 / STANCES v76 in kh1-dual-wield.log. Target: supplied Steam Global.
+Close KH1. Disable v76 and older main Styles packages. Import this ZIP into
+OpenKH Mod Manager, enable v77, Build and restart with Panacea. Keep your KH2FM
+installation/resources/settings. Check s416 / STANCES v77 in the log.
+Target remains the supplied Steam Global build.
 
-ACTIVATE
-Choose one Overdrive in Customize -> Overdrives, then return to the field.
-Selection now arms it; the aura stays off until transformation is complete.
-When the native Triangle box above the command menu says Overdrive, tap
-Triangle. All12 stances and base Sora use the full KH2 Drive transformation
-animation52, once. Infinity Tip Charge and Counterguard Hand Flash play
-centered on Sora, filtered to the selected Overdrive's configured color.
-The aura turns on only after the final transformation pose is submitted.
+OVERDRIVE
+Select an Overdrive in Customize, return to the field and tap the native
+Triangle Overdrive prompt. The KH2 transformation now ends with Infinity Tip
+Charge, rather than waiting for the full animation tail. Its centered Infinity
+and Counterguard effects retain the selected color. Only a matching pose at
+the stopping point enables the aura. A looping source plays one checked authored
+pass. Native interactions keep priority; holding Triangle does not retrigger.
+The duration comes from the actual effect, not a new fixed number of seconds.
 
-Holding Triangle does not repeat it. Once complete, another fresh tap can play
-one new sequence and re-enable that aura afterward. Selection persists; active
-state is runtime only. Changing/re-equipping an Overdrive or loading a new actor
-requires activation again. Same-owner stance changes retain a completed aura.
+SOUND AUDITIONS
+Customize -> Passives66..110 replaces the weapon-effect gallery with45 sound
+choices. Choose one, return to the field, and start a normal ground combo.
+The sound plays once at combo entry; continuing hits do not cut/restart it.
+Finish the combo, then start another to listen again. Confirm the active passive
+again to switch it off. All preview choices cost0 AP and keep your stance.
 
-Talk/Open and other occupied native context prompts keep Triangle priority.
-Return to normal Attack root before activating; not during submenus, L1 magic
-shortcuts, attacks/casts, special air actions, events, pause or removal mode.
-Native collision, gravity and damage remain live during the animation; field/
-action interruption cancels it without granting an aura. No invincibility or
-other planned Overdrive bonus/Drain deduction is implemented yet.
+66: sound referenced by Infinity Tip Charge, KH2 Limit Form element20.
+67: sound referenced by Counterguard Hand Flash, KH2 Sora element41.
+68..110: SE999000..999042 from se/se999.win32.scd, in numeric order.
 
-SOURCE EFFECTS
-Infinity Tip Charge: obj/P_EX100_KH1F.a.us element20.
-Counterguard Hand Flash: obj/P_EX100.a.us element41.
-Each starts once, not in a repeated preview cycle. Short flashes expire;
-remaining handles end with the transform. Both roots use Sora's body center,
-not the Keyblade tip/hands. Existing preview/stance textures are not recolored.
+The first two show their actual resolved SE ID when one is assigned. Some
+package elements or bank IDs may have no playable sound. Help explicitly shows
+loading, missing/empty, decode failure or audio budget, with the source ID.
+Numeric bank entries have source identifiers, not guessed semantic names.
+SOUND_TESTS.csv and SOUND_TESTS.txt list all45 choices. Package references can
+alias numeric IDs;45 choices need not mean45 different recordings.
 
-The same KH2 resources used for existing styles/previews must be available.
-OVERDRIVE ACTIVATION READY and ACTIVATION FX READY show admission; ACTIVATION
-START, TRANSFORM POSE READY, ACTIVATION FX START and OVERDRIVE ACTIVE show the
-sequence. Missing assets/conflicting reserved record prevent the prompt.
-Existing particle interpreter limitations/skipped programs still apply.
+Old animation/weapon-preview selections reset on upgrade. New selections use
+sound_previews=kh2-v1 in kh1-numbered-abilities.ini. Reserved111..114/127 remain.
+No native ability/save/AP slots are consumed. The old visual demo stops.
 
-RETAINED
-All main stances and combat, intrinsic passives/native AP, nine Overdrives and
-palette3 colors/Drain/help, Customize/Appearance, muted footsteps, and39 KH2
-effect previews in Passives66..104. Both generated animation headers are exact
-to v75. WEAPON_EFFECT_TESTS.csv/.txt remain the gallery guide. No KH1/BBS demos.
+Playback uses the existing KH2 mixer, kh2_volume setting and native master/SFX
+sliders. The KH2 files must be present. Loading/decoding stays off the game
+thread. Clips play once, at most15 seconds each, with a64MiB total cache bound.
+Changing selection/scope, opening pause, removal or a new audition retires only
+preview audio; queued audio can take roughly80ms to drain. Ground basic combos
+work with stock Sora/native E/F/G/D and imported style attacks. Air combos,
+guard, roll, casts, events and Overdrive transformation do not start previews.
+Native ability-only attacks outside the basic ground range are not triggers.
 
-VALIDATION
-674 Rust checks/30 nonempty suites and9 focused final-PE C/menu checks pass.
-Nine new activation checks cover fresh/held input, final-pose gate, scope,
-stance generations, prompt priority/conflicts, masks and interruptions.
-Native adapter engine dependencies, rendering and package availability are
-mocked; the PE harness executes the real C menu adapter using the Steam image.
-Steam hook/name/getter anchors, Windows x64 release, exports/imports, source
-reconstruction, bundle, ZIP CRC and file hashes are checked.
-No actual Windows/game/GPU run was performed here. Please check the Triangle
-box, full transform, center/scale/colors and delayed aura with base Sora and
-your usual stances. source/STYLES-V76.MD records scope and remaining live checks.
+Sounds are being auditioned for later assignment to the transformation. Send
+the preferred passive numbers or SE IDs after listening. No sound is newly
+attached to the Overdrive activation itself in this build.
 
-UNINSTALL
-Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v76, close KH1,
-disable the package and Build. Existing restoration/capacity rules remain.
-Previously requested saved partner-ability removal cannot be reversed
-automatically; that existing behavior is unchanged.
+LOGS AND VALIDATION
+SOUND PREVIEW READY/CATALOGUE READY/PLAY identify loaded and played IDs.
+OVERDRIVE CHARGE TIMING READY/CHARGE END report actual expiry/cut frames.
+683 Rust checks/30 nonempty suites and10 final-PE C/menu checks pass. These
+cover policy and actual sampler with inert engine/audio leaves, all45 menu
+rows, resolved IDs/statuses, all12 stance coexistence paths, capacity and AP.
+The actual C menu adapter runs against the supplied Steam image. Rust audio
+callbacks and playback are mocked there. Windows release/exports/imports,
+headers, full source reconstruction, bundle, ZIP CRC and hashes are checked.
+No actual Windows/game/audio/GPU session ran here; verify listening and the
+transformation cut in game. source/STYLES-V77.MD records evidence and limits.
+
+RETAINED / REMOVAL
+Main stance combat/movement, intrinsic passives/native AP, nine Overdrives,
+palette3/Drain/help, Customize/Appearance and footstep mute remain. Both private
+animation headers are unchanged. No gameplay Overdrive buffs or Drain deduction.
+For uninstall, set remove_dual_wield=on in kh1-dual-wield.ini; load/save with
+v77, close KH1, disable this package and Build. Existing saved partner-ability
+removal cannot be reversed automatically; existing restoration rules remain.

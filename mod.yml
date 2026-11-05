@@ -1,9 +1,9 @@
-title: KH1FM Styles v76 - Triangle Overdrive Activation
+title: KH1FM Styles v77 - Charge Timing and KH2 Sound Auditions
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Native Triangle Overdrive prompt, full KH2 Drive transformation for all
-  stances/base Sora, centered recolored Infinity Charge and Counterguard Flash.
-  Aura starts after the final pose. KH2 passive previews and prior combat retained.
+  End Overdrive transformation when Infinity Tip Charge ends, with witnessed
+  pose gating the aura. Passives66..110 audition45 KH2 sound choices on ground
+  combo entry. Free exclusive previews keep stances; original combat retained.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

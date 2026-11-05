@@ -1,0 +1,46 @@
+passive,name,sound_id,source_package,source_element,sound_bank,trigger,ap_cost,notes
+66,Infinity Tip Charge sound,Resolved at runtime from PAX sound field,obj/P_EX100_KH1F.a.us,20,From resolved sound ID,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+67,Counterguard Hand Flash sound,Resolved at runtime from PAX sound field,obj/P_EX100.a.us,41,From resolved sound ID,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+68,KH2 sound 999000,999000,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+69,KH2 sound 999001,999001,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+70,KH2 sound 999002,999002,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+71,KH2 sound 999003,999003,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+72,KH2 sound 999004,999004,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+73,KH2 sound 999005,999005,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+74,KH2 sound 999006,999006,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+75,KH2 sound 999007,999007,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+76,KH2 sound 999008,999008,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+77,KH2 sound 999009,999009,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+78,KH2 sound 999010,999010,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+79,KH2 sound 999011,999011,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+80,KH2 sound 999012,999012,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+81,KH2 sound 999013,999013,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+82,KH2 sound 999014,999014,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+83,KH2 sound 999015,999015,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+84,KH2 sound 999016,999016,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+85,KH2 sound 999017,999017,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+86,KH2 sound 999018,999018,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+87,KH2 sound 999019,999019,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+88,KH2 sound 999020,999020,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+89,KH2 sound 999021,999021,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+90,KH2 sound 999022,999022,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+91,KH2 sound 999023,999023,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+92,KH2 sound 999024,999024,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+93,KH2 sound 999025,999025,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+94,KH2 sound 999026,999026,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+95,KH2 sound 999027,999027,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+96,KH2 sound 999028,999028,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+97,KH2 sound 999029,999029,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+98,KH2 sound 999030,999030,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+99,KH2 sound 999031,999031,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+100,KH2 sound 999032,999032,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+101,KH2 sound 999033,999033,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+102,KH2 sound 999034,999034,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+103,KH2 sound 999035,999035,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+104,KH2 sound 999036,999036,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+105,KH2 sound 999037,999037,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+106,KH2 sound 999038,999038,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+107,KH2 sound 999039,999039,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+108,KH2 sound 999040,999040,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+109,KH2 sound 999041,999041,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist
+110,KH2 sound 999042,999042,,,se/se999.win32.scd,Once at normal ground combo entry,0,One exclusive audition; description reports actual availability; no assigned sound may exist

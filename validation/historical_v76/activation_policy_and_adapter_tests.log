@@ -1,0 +1,37 @@
+   Compiling kh1-hook v0.1.0 (/workspace/scratch/ac59123af99a/styles_v75_work/crates/kh1-hook)
+warning: unused import: `Env`
+    --> crates/kh1-hook/src/dual_wield.rs:2674:43
+     |
+2674 |         use character_core::{Input,Button,Env,StateName};
+     |                                           ^^^
+     |
+     = note: `#[warn(unused_imports)]` on by default
+
+warning: `kh1-hook` (lib test) generated 1 warning (run `cargo fix --lib -p kh1-hook --tests` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.01s
+     Running unittests src/lib.rs (target/debug/deps/dinput8-688da761342c6670)
+
+running 20 tests
+test native_overdrive_tests::native_activation_is_once_per_fresh_triangle_and_aura_waits_for_final_pose ... ok
+test overdrive::tests::one_value_persists_without_native_slots_or_stance_tokens ... ok
+test overdrive::tests::fallback_uses_only_looping_body_elements_from_the_selected_form ... ok
+test overdrive::tests::shared_wisdom_keeps_wind_without_foot_emitters_or_an_anti_layer ... ok
+test overdrive::visual_tests::current_palette_preserves_custom_hex_colors_aliases_and_unknown_settings ... ok
+test native_overdrive_tests::native_control_keeps_system_input_and_restores_only_masked_bits_without_actor_writes ... ok
+test overdrive::visual_tests::default_palette_and_black_blending_match_the_requested_colors ... ok
+test overdrive::visual_tests::malformed_streaks_are_removed_and_only_the_owned_frame_is_recolored ... ok
+test overdrive::visual_tests::cloned_texture_variants_preserve_alpha_and_allow_dark_effects_to_have_a_hue ... ok
+test native_overdrive_tests::native_prompt_rejects_conflicting_records_shortcuts_and_unavailable_assets ... ok
+test overdrive::visual_tests::hands_are_placed_on_actual_palms_without_moving_the_body_or_bone_axes ... ok
+test overdrive::visual_tests::v2_color_tuning_migrates_only_the_two_old_defaults ... ok
+test overdrive_activation::tests::all_stances_keep_completed_activation_but_owner_selection_changes_rearm ... ok
+test overdrive_activation::tests::each_fresh_press_plays_once_and_held_triangle_never_restarts ... ok
+test overdrive_activation::tests::selection_does_not_enable_aura_and_full_pose_witness_is_required ... ok
+test native_overdrive_tests::native_prompt_uses_only_free_fourth_slot_and_restores_only_owned_mask_bits ... ok
+test overdrive_activation::tests::centering_cancels_both_authored_hand_tip_offsets_without_editing_particles ... ok
+test overdrive::visual_tests::native_local_joints_survive_cached_draws_and_blended_transitions ... ok
+test overdrive::visual_tests::palette_upgrade_installs_all_nine_colors_and_keeps_selection_and_unknown_settings ... ok
+test overdrive_activation::tests::pauses_freeze_and_interruptions_never_grant_an_unplayed_aura ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 308 filtered out; finished in 0.00s
+

@@ -1,3 +1,6 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
    Compiling kh1-hook v0.1.0 (/workspace/scratch/ac59123af99a/styles_v75_work/crates/kh1-hook)
 warning: unused import: `shots_step`
   --> crates/kh1-hook/src/win/form.rs:96:59
@@ -64,9 +67,9 @@ warning: unused variable: `actor`
     |                                         ^^^^^ help: if this is intentional, prefix it with an underscore: `_actor`
 
 warning: function `monitor` is never used
-   --> crates/kh1-hook/src/win/mod.rs:183:27
+   --> crates/kh1-hook/src/win/mod.rs:184:27
     |
-183 | unsafe extern "system" fn monitor(_: *mut c_void) -> u32 {
+184 | unsafe extern "system" fn monitor(_: *mut c_void) -> u32 {
     |                           ^^^^^^^
     |
     = note: `#[warn(dead_code)]` on by default
@@ -4528,45 +4531,45 @@ warning: constant `VOICE_FILE` is never used
    |       ^^^^^^^^^^
 
 warning: function `start` is never used
-   --> crates/kh1-hook/src/win/kh2sound.rs:175:8
+   --> crates/kh1-hook/src/win/kh2sound.rs:180:8
     |
-175 | pub fn start() {
+180 | pub fn start() {
     |        ^^^^^
 
 warning: function `load` is never used
-   --> crates/kh1-hook/src/win/kh2sound.rs:246:4
+   --> crates/kh1-hook/src/win/kh2sound.rs:251:4
     |
-246 | fn load(events: &[character_core::EventKind], spell: &[(u8, u16, i32)]) -> Result<Loaded, String> {
+251 | fn load(events: &[character_core::EventKind], spell: &[(u8, u16, i32)]) -> Result<Loaded, String> {
     |    ^^^^
 
 warning: function `vtbl` is never used
-   --> crates/kh1-hook/src/win/kh2sound.rs:359:4
+   --> crates/kh1-hook/src/win/kh2sound.rs:364:4
     |
-359 | fn vtbl(bar: &[u8]) -> Vec<(u8, u8, Vec<i8>)> {
+364 | fn vtbl(bar: &[u8]) -> Vec<(u8, u8, Vec<i8>)> {
     |    ^^^^
 
 warning: constant `REFLECT_FINISHER_VOICE` is never used
-   --> crates/kh1-hook/src/win/kh2sound.rs:444:11
+   --> crates/kh1-hook/src/win/kh2sound.rs:449:11
     |
-444 | pub const REFLECT_FINISHER_VOICE: i16 = 25;
+449 | pub const REFLECT_FINISHER_VOICE: i16 = 25;
     |           ^^^^^^^^^^^^^^^^^^^^^^
 
 warning: constant `REFLECT_VOICES` is never used
-   --> crates/kh1-hook/src/win/kh2sound.rs:446:11
+   --> crates/kh1-hook/src/win/kh2sound.rs:451:11
     |
-446 | pub const REFLECT_VOICES: [i16; 1] = [REFLECT_FINISHER_VOICE];
+451 | pub const REFLECT_VOICES: [i16; 1] = [REFLECT_FINISHER_VOICE];
     |           ^^^^^^^^^^^^^^
 
 warning: function `reflect_voice` is never used
-   --> crates/kh1-hook/src/win/kh2sound.rs:449:15
+   --> crates/kh1-hook/src/win/kh2sound.rs:454:15
     |
-449 | pub unsafe fn reflect_voice(v: i16) {
+454 | pub unsafe fn reflect_voice(v: i16) {
     |               ^^^^^^^^^^^^^
 
 warning: function `voice` is never used
-   --> crates/kh1-hook/src/win/kh2sound.rs:462:15
+   --> crates/kh1-hook/src/win/kh2sound.rs:467:15
     |
-462 | pub unsafe fn voice(v: i16) {
+467 | pub unsafe fn voice(v: i16) {
     |               ^^^^^
 
 warning: struct `Limit` is never constructed
@@ -6153,9 +6156,6 @@ warning: multiple fields are never read
 20 |     pub commands: bool,
    |         ^^^^^^^^
 ...
-24 |     pub kh2_volume: f32,
-   |         ^^^^^^^^^^
-25 |     /// When the music is silent (`music_mute`, `music.rs`).
 26 |     pub music_mute: super::music::MusicMute,
    |         ^^^^^^^^^^
 ...
@@ -8604,4 +8604,4 @@ warning: function `GetWindowThreadProcessId` is never used
    |            ^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: `kh1-hook` (lib) generated 1381 warnings (run `cargo fix --lib -p kh1-hook` to apply 1 suggestion)
-    Finished `release` profile [optimized] target(s) in 10.50s
+    Finished `release` profile [optimized] target(s) in 9.76s

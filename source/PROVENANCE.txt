@@ -1,18 +1,16 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v75 commit: b503b865a15c86aa5086430b9800ece04aa85eb1
-Exact v75 source tree: fe234add1bea5646dd696f853635b8d717ec4266
-v76 commit: c1d983095d243af8edde62e063c173657c6b45fc
-v76 source tree: 6be868251c99e503d90ae03fc19e4cda7aa04ba6
-Styles_v76.patch contains76 derivative commits from pinned upstream.
-Styles_v76_from_v75.patch is the single new change on the delivered v75.
-Styles_v76_from_upstream.bundle requires only pinned upstream and includes all
-76 derivative commits, preserving history without an earlier private bundle.
-Both private generated animation headers remain byte exact to v75.
-KH2 activation motion/effect payloads are read at runtime, never committed.
-Current checks:674 Rust in30 nonempty suites,9 focused final-PE C/menu checks.
-Nine new Rust checks include4 actual native adapter tests with inert engine
-leaves and5 portable activation/math checks. The older validation folders are
-historical; they do not claim full movement/animation fixtures were rerun.
-No original executable, model, extracted table or decompiled code enters Git.
-No actual Windows/game/GPU run, full particle appearance or HUD render verified.
+Previous v76 commit/tree: c1d983095d243af8edde62e063c173657c6b45fc / 6be868251c99e503d90ae03fc19e4cda7aa04ba6
+v77 commit: eb7552b6c17515afb7fa4952ca61931b27011bb3
+v77 source tree: 053b3376c5f64118fcfa26a8eafdafb7877f470b
+Styles_v77.patch contains77 derivative commits from pinned upstream.
+Styles_v77_from_v76.patch contains the single new change on delivered v76.
+Styles_v77_from_upstream.bundle requires only pinned upstream and preserves
+all77 derivative commits, without depending on earlier private bundles.
+Both private generated headers remain byte exact to v76. No original game,
+executable, audio/particle payload or decompiled code is added to Git.
+Current checks:683 Rust in30 nonempty suites and10 focused final-PE C/menu.
+Nine new Rust checks cover sound policy/migration, charge timing and the actual
+physics sampler with inert engine/audio leaves. Historical validation folders
+are retained as history, not claimed as current movement-fixture reruns.
+No actual Windows/game/GPU/audio session or original SE appearance verified.

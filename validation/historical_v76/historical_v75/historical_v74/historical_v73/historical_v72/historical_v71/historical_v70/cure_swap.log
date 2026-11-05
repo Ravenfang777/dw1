@@ -1,0 +1,1 @@
+{"passed": true, "records": [{"slot": 56, "donor_slot": 81, "donor_animation": "318", "max_pose_position_error": 0.4018686091189316}, {"slot": 81, "donor_slot": 56, "donor_animation": "427", "max_pose_position_error": 0.39568779651469854}]}

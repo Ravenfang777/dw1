@@ -5,18 +5,19 @@
 #define VENTUS_TEST_COUNT 35u
 #define DARK_TEST_FIRST 101u
 #define DARK_TEST_COUNT 4u
-#define ANIMATION_TEST_COUNT 39u
+#define ANIMATION_TEST_COUNT 45u
 #define ANIMATION_TEST_MASK ((1ull<<ANIMATION_TEST_COUNT)-1ull)
 #define VENTUS_TEST_MASK ((1ull<<VENTUS_TEST_COUNT)-1ull)
 #if TERRA_PROFILE_COUNT != VENTUS_TEST_COUNT + 2
 #error Regenerate the shared payload with all Ventus numbered test profiles
 #endif
-/* IDs66..104 now select KH2 visual-only weapon effects, not body profiles. */
-static const char*const*weapon_fx_text;
-static u32 (ABI *weapon_fx_status)(u32);
-static int weapon_fx_enabled=1;
-void ABI WeaponFxPreviewInit(uptr descriptions,uptr status){weapon_fx_text=(const char*const*)descriptions;weapon_fx_status=(void*)status;}
-void ABI WeaponFxEnable(u32 enabled){weapon_fx_enabled=enabled!=0;}
+/* IDs66..110 select one KH2 ground-combo sound audition, never a body profile. */
+static const char*const*sound_preview_text;
+static u32 (ABI *sound_preview_status)(u32);
+static int sound_preview_enabled=1;
+static u32 (ABI *sound_preview_id)(u32);
+void ABI SoundPreviewInit(uptr descriptions,uptr status,uptr identifier){sound_preview_text=(const char*const*)descriptions;sound_preview_status=(void*)status;sound_preview_id=(void*)identifier;}
+void ABI SoundPreviewEnable(u32 enabled){sound_preview_enabled=enabled!=0;}
 static u64 numbered_bits;
 static void (ABI *numbered_persist)(u64);
 static int numbered_index(u32 id){return id>=66u&&id<=114u?(int)(id-66u):id==127u?50:-1;}
@@ -29,8 +30,9 @@ static void numbered_commit(u64 bits){
 }
 void ABI NumberedPassivesInit(u64 bits,uptr persist){numbered_bits=numbered_exclusive(bits&NUMBERED_MASK);numbered_persist=(void*)persist;}
 u32 ABI VentusTestChoice(void){return 0u;}
-u32 ABI WeaponFxChoice(void){if(remove_mode||!weapon_fx_enabled)return 0u;for(unsigned i=0;i<ANIMATION_TEST_COUNT;i++)if(numbered_bits&(1ull<<i))return VENTUS_TEST_FIRST+i;return 0u;}
+u32 ABI WeaponFxChoice(void){return 0u;}
+u32 ABI SoundPreviewChoice(void){if(remove_mode||!sound_preview_enabled)return 0u;for(unsigned i=0;i<ANIMATION_TEST_COUNT;i++)if(numbered_bits&(1ull<<i))return VENTUS_TEST_FIRST+i;return 0u;}
 static void numbered_toggle(u32 id){int index=numbered_index(id);if(index>=0)numbered_commit(numbered_bits^(1ull<<index));}
 
 u32 ABI DarkTestChoice(void){return 0u;}
-static const char*numbered_test_help(unsigned id){return weapon_fx_text&&numbered_is_test(id)?weapon_fx_text[(id-VENTUS_TEST_FIRST)*3u]:"KH2 weapon effect preview";}
+static const char*numbered_test_help(unsigned id){return sound_preview_text&&numbered_is_test(id)?sound_preview_text[(id-VENTUS_TEST_FIRST)*3u]:"KH2 ground-combo sound preview";}

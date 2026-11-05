@@ -1,4 +1,4 @@
-Cloning into '/workspace/scratch/ac59123af99a/styles_v75_work/local/v76-applycheck'...
+Cloning into '/workspace/scratch/ac59123af99a/styles_v75_work/local/v77-applycheck'...
 done.
 HEAD is now at 4adb946 s339: KH2-style Cure heals by KH2's rule from KH1's stats, partners in range too
 Applying: Add isolated passive Dual Wield ground prototype
@@ -80,5 +80,6 @@ Applying: Add nine cosmetic Overdrives, refresh bound draw roots and mute footst
 Applying: Styles v74: refresh native Overdrive poses and tune colors
 Applying: Styles v75: repurpose numbered passives for KH2 weapon effect previews
 Applying: Add Triangle Overdrive activation with witnessed KH2 transform and centered effects
-From /workspace/scratch/ac59123af99a/styles_v75_work/local/dist/KH1FM_Styles_v76/source/Styles_v76_from_upstream.bundle
- * [new ref]         HEAD       -> bundle-v76
+Applying: End Overdrive transform with charge and audition KH2 sounds on ground combos
+From /workspace/scratch/ac59123af99a/styles_v75_work/local/dist/KH1FM_Styles_v77/source/Styles_v77_from_upstream.bundle
+ * [new ref]         HEAD       -> bundle-v77

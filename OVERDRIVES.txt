@@ -1,11 +1,9 @@
 Customize -> Overdrives
 
-v76: Selection arms the native Triangle Overdrive prompt. Return to the field
-and tap Triangle to play one full KH2 Drive transformation with centered,
-recolored Infinity Tip Charge and Counterguard Hand Flash. Only its completed
-final pose enables the selected aura. Holding Triangle cannot repeat it.
-Native occupied interactions keep priority. A new selection/actor needs a new
-activation; same-owner stance changes keep a completed one.
+v77: Selection arms the Triangle Overdrive prompt. Transformation52 now ends
+with Infinity Tip Charge. Both centered recolored activation effects play once;
+a matching cut pose still gates aura. Fresh presses only, native interactions
+keep priority. Passives66..110 separately audition sounds at ground combo entry.
 
 Control - Blue #0055FF - Drain 5
   Doubles the range of all magic
@@ -33,7 +31,7 @@ the active row again to disable it. Eight visible rows; scroll for Spite.
 All use Valor plus Wisdom wind; no Wisdom foot11/12 or shared Anti darkness.
 
 SETTINGS
-kh1-overdrive.ini supports #RRGGBB colors. v76 reads palette3. Version2's exact
+kh1-overdrive.ini supports #RRGGBB colors. v77 reads palette3. Version2's exact
 old Control #00008B and Will #800080 defaults upgrade automatically; other
 colors and custom values remain. Older pre-version2 settings upgrade to the
 complete current defaults. A menu selection save persists version3. No settings
@@ -56,4 +54,4 @@ and Rage5 Spite. Display order follows the catalogue, not ID order.
 The ZIP does not overwrite an INI. Near-black Spite uses masked alpha.
 No-stance joint refresh now occurs at actual native Sora field submission;
 live continuity and exact glow brightness still require in-game checking.
-See source/STYLES-V76.MD for current activation and validation limits.
+See source/STYLES-V77.MD for current activation and validation limits.

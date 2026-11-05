@@ -308,7 +308,7 @@ class Host:
         self.control(state=2,request=6)
 
 BaseHost=Host
-for name,args,ret in [('adapter_init',[C.c_size_t,C.c_size_t,C.c_int],C.c_int),('adapter_frame',[C.c_size_t,C.c_size_t,C.c_int,C.c_uint64],C.c_int),('adapter_control',[C.c_size_t]*3,None),('adapter_observe',[C.c_size_t]*2,None),('call_int0',[C.c_size_t],C.c_int),('call_ptr1',[C.c_size_t]*2,C.c_size_t),('call_void1',[C.c_size_t]*2,None),('call_ptr2',[C.c_size_t]*3,C.c_size_t)]:
+for name,args,ret in [('adapter_init',[C.c_size_t,C.c_size_t,C.c_int],C.c_int),('adapter_frame',[C.c_size_t,C.c_size_t,C.c_int,C.c_uint64],C.c_int),('adapter_control',[C.c_size_t]*3,None),('adapter_observe',[C.c_size_t]*2,None),('call_int0',[C.c_size_t],C.c_int),('call_ptr1',[C.c_size_t]*2,C.c_size_t),('call_void1',[C.c_size_t]*2,None),('call_ptr2',[C.c_size_t]*3,C.c_size_t),('call_ptr3',[C.c_size_t]*4,C.c_size_t)]:
  f=getattr(bridge,name);f.argtypes=args;f.restype=ret
 class Host(BaseHost):
  def __init__(self,*args,**kwargs):
