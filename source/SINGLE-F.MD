@@ -23,7 +23,7 @@ Spell recovery follows its cast family. Magic and effects retain native
 keyblade-tip origins. Native Guard/Dodge Roll eligibility, hit events, damage,
 MP and collision remain. Single F retains ordinary held Glide.
 
-## Air dash — v69 / s408
+## Ground and air dashes — v70 / s409
 
 A fresh airborne Square copies Type G's Ventus330 damaging dash, with F's
 ordinary weapon grip. It travels1.5x G's current468-unit distance: speed24 for
@@ -37,11 +37,13 @@ copy starts from the immutable un-reversed G330 fixture; it does not acquire G's
 reverse grip. Restore the previous F fall body on completion/interruption. The
 old native Superglide source/pointer lease is no longer a dash dependency.
 
-The physical blade-contact coordinator now admits main F only during this live
-dash, using the same actual-blade/native-enemy-body test and native damage path
-as G. Each enemy can receive one successful record per dash; rejected contacts
-may retry. F's ordinary attacks do not enter G's paired-contact or flinch logic.
-Changing F/G resets the contact ledger even on an unchanged native binding.
+The actual shared post-motion callback now dispatches F as well as G. Both F's
+live air dash and grounded Dodge Roll/dash009 use a swept body-sized area:
+radius30, height120 above feet, sampled every20 units along the path. They
+retain the native damage/defense pipeline and one successful contact per enemy
+per dash; rejected contacts may retry. Ordinary F attacks do not enter G's
+paired-contact/flinch logic. G retains its actual-blade geometry. Changing F/G
+resets the contact ledger even on an unchanged native binding.
 
 The dash budget belongs to airtime. Completion, button release, damage,
 unequip/re-equip, native Glide and cache readmission do not refill it. A valid
@@ -50,7 +52,7 @@ style is selected. A new Sora actor gets its own budget. L1/LB shortcut chords,
 the active shortcut menu, casting, queued attacks, scripts and damage retain
 their existing exclusions. Collision can shorten the measured travel.
 
-See styles-v69.md for validation and limits. The menu description below records
+See styles-v70.md for validation and limits. The menu description below records
 the historical v54 integration; current Customize behavior is in styles-v60..64.
 
 ## Native Styles page

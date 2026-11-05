@@ -41,6 +41,8 @@ bridge.bridge_numbered_saved.argtypes=[];bridge.bridge_numbered_saved.restype=C.
 bridge.bridge_numbered_save_calls.argtypes=[];bridge.bridge_numbered_save_calls.restype=C.c_uint
 for name,args,ret in [('bridge_menu_plain_count',[],C.c_uint),('bridge_menu_plain_word',[C.c_uint,C.c_uint],C.c_int),('bridge_menu_plain_text',[C.c_uint],C.c_size_t)]:
     f=getattr(bridge,name);f.argtypes=args;f.restype=ret
+for name in ['bridge_overdrive_saved','bridge_overdrive_save_calls']:
+ f=getattr(bridge,name);f.argtypes=[];f.restype=C.c_uint
 libc=C.CDLL(None);libc.mmap.argtypes=[C.c_void_p,C.c_size_t,C.c_int,C.c_int,C.c_int,C.c_long];libc.mmap.restype=C.c_void_p
 
 libc.munmap.argtypes=[C.c_void_p,C.c_size_t];libc.munmap.restype=C.c_int
@@ -425,6 +427,38 @@ class RuntimeTests(unittest.TestCase):
     def g_variant(self,h,kind,slot):
         return h.expected_from(slot,Path(os.environ['VENTUS_SOURCE'])/f"variants/{kind}/fixtures/ventus_s{slot:03}.bin")
 
+    def test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save(self):
+        h=Host();root,page=h.passive_setup([6,117]);h.ui_page_frame(page,0x40);text=h.ui_page_frame(page,0x4000)
+        self.assertIn('Overdrives',text)
+        for name in ['Strength','Will','Resistance','Prowess','Rage']:self.assertIn(name,text)
+        self.assertEqual(text.count('AP 0'),5);h.ui_page_frame(page,0x20)
+        self.assertEqual(r32(h.symbols['styles_picker']),3);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,5)
+        before=C.string_at(h.save,0x1000);bits=r64(h.symbols['numbered_bits'])
+        bridge.call_ptr2(h.symbols['OverdriveInit'],0,bridge.bridge_symbol(b'OverdrivePersist'))
+        for row in range(5):
+            h.ui_choose(page,row);self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),row+1)
+            self.assertEqual(bridge.bridge_overdrive_saved(),row+1);self.assertEqual(C.string_at(h.save,0x1000),before)
+            self.assertEqual(r64(h.symbols['numbered_bits']),bits)
+        h.ui_choose(page,4);self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),0)
+        self.assertEqual(bridge.bridge_overdrive_save_calls(),6)
+
+    def test_overdrive_persistence_bounds_and_removal_leave_native_state_unchanged(self):
+        for value in [0,1,2,3,4,5,6,0xffffffff]:
+            h=Host();before=C.string_at(h.save,0x1000)
+            bridge.call_ptr2(h.symbols['OverdriveInit'],value,bridge.bridge_symbol(b'OverdrivePersist'))
+            self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),value if value<=5 else 0)
+            self.assertEqual(C.string_at(h.save,0x1000),before);self.assertEqual(bridge.bridge_overdrive_save_calls(),0)
+        h=Host();bridge.call_ptr2(h.symbols['OverdriveInit'],5,0);bridge.call_void1(h.symbols['OverdriveEnable'],0);self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),0)
+        bridge.call_void1(h.symbols['OverdriveEnable'],1);self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),5)
+
+    def test_equipping_another_stance_does_not_replace_the_equipped_overdrive(self):
+        h=Host();root,page=h.passive_setup([6,117]);h.ui_page_frame(page,0x40);h.ui_page_frame(page,0x1000)
+        bridge.call_ptr2(h.symbols['OverdriveInit'],3,0)
+        h.ui_page_frame(page,0x20)
+        for row in [5,6,0,0]:
+            h.ui_choose(page,row)
+            self.assertEqual(bridge.call_int0(h.symbols['OverdriveChoice']),3)
+
     def test_type_g_motion_rate_reaches_the_real_shared_native_motion_hook(self):
         h=Host(guard=True,jump=True,encoded_fields=True)
         self.assertEqual(bridge.adapter_init(h.symbols['SingleEInit'],h.game,1),1)
@@ -695,7 +729,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn('AP Used|5 / 30',h.ui_choose(page,1))
         self.assertIn('AP Used|5 / 30',h.ui_choose(page,2))  # Numeric66 is free.
         h.ui_page_frame(page,0x40);text=h.ui_page_frame(page,0x4000)
-        self.assertIn('AP Used|5 / 30',text);self.assertIn('No entries available yet',text)
+        self.assertIn('AP Used|5 / 30',text);self.assertIn('Strength',text)
         h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
         self.assertIn('AP Used|2 / 30',h.ui_choose(page,0))
         self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before[:2]+bytes([245])+before[3:])
@@ -1221,10 +1255,10 @@ class RuntimeTests(unittest.TestCase):
     def test_customize_categories_stance_toggle_and_reserved_categories_preserve_save(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());native=bytes([6,0x97,6,21]);put(h.save+0x44,native+bytes([117])+bytes(43))
         root=h.ui_window();w=h.ui_window();h.ui_call('styles_enter',root);w=r64(h.symbols['styles_custom_page'])
-        text=h.ui_page_frame(w,0x20);self.assertTrue(text.startswith('Stance|Passives|Limits|Outfits|'))
+        text=h.ui_page_frame(w,0x20);self.assertTrue(text.startswith('Stance|Passives|Overdrives|Outfits|'))
         self.assertFalse(r32(h.symbols['styles_picker'])) # Entry press cannot enter the list too.
         self.assertIn('Type A|Single|I',text);self.assertIn('Type H?|Dual|I',text);self.assertNotIn('Type I?',text)
-        for row in [2,3]:
+        for row in [3]:
             C.c_ushort.from_address(w+0xfe).value=(row-1)*16
             old=C.string_at(h.save,0x1000);text=h.ui_page_frame(w,0x4000)
             self.assertNotIn('Type A',text);self.assertIn('No entries available yet',text)
@@ -1310,7 +1344,7 @@ class RuntimeTests(unittest.TestCase):
         h.ui_choose(page,0);self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]))
         text=h.ui_page_frame(page,0x40);self.assertFalse(r32(h.symbols['styles_picker']));self.assertEqual(r64(page+0x20),0)
         self.assertFalse(r32(root+0x68)&1);self.assertFalse(r32(page+0x68)&1)
-        self.assertIn('Stance|Passives|Limits|Outfits',text);h.ui_page_frame(page,0x20)
+        self.assertIn('Stance|Passives|Overdrives|Outfits',text);h.ui_page_frame(page,0x20)
         self.assertEqual(r32(h.symbols['styles_picker']),2);self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]))
 
     def test_removed_root_abilities_selection_redirects_to_customize(self):

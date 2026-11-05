@@ -1,8 +1,8 @@
-Type F / Square airborne / Ventus330 / p01ex_105.arc
-Source:31 frames at30fps, range0..30; native Fall slot10, request6,40-frame
-native record. F uses the ordinary grip copy, G uses its baked reverse grip.
-Visual rate4/3; finite movement29.25 native ticks; speed24; distance702 before
-collision (1.5x G's468). Direction/facing locked at tap; once per airtime.
-Contact: actual equipped blade against native enemy body parts, one successful
-native physical record per target per dash, rejected-contact retries allowed.
-This mapping does not change Type F's other Terra animations.
+v70 Type F: airborne Square uses Ventus330, ordinary grip, native Fall10/request6.
+Speed24/duration29.25/distance702 before collision, unchanged from v69.
+Ground Dodge Roll/dash009/native DC also receives body-sized contacts.
+Both use radius30/height120 column above feet, swept every20 units between
+native physics samples. One native successful contact per enemy per dash.
+No weapon reach is required. Native enemy defenses and damage processing remain.
+The actual shared post-motion caller now admits F as well as G.
+Existing airtime/facing/shortcut rules and other Terra animations remain.

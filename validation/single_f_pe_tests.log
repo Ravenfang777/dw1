@@ -16,6 +16,7 @@ test_dash_needs_no_new_handle_or_animation_allocation (__main__.RuntimeTests.tes
 test_dash_survives_full_pointer_bank_table_in_both_banks (__main__.RuntimeTests.test_dash_survives_full_pointer_bank_table_in_both_banks) ... ok
 test_description_uses_native_width_and_fixed_footer_lines_with_white_large_ap (__main__.RuntimeTests.test_description_uses_native_width_and_fixed_footer_lines_with_white_large_ap) ... ok
 test_direct_passives_native_ap_checks_equipping_removing_and_duplicate_rows (__main__.RuntimeTests.test_direct_passives_native_ap_checks_equipping_removing_and_duplicate_rows) ... ok
+test_equipping_another_stance_does_not_replace_the_equipped_overdrive (__main__.RuntimeTests.test_equipping_another_stance_does_not_replace_the_equipped_overdrive) ... ok
 test_equipping_each_stance_clears_test_and_preserves_unassigned_numbered_flag (__main__.RuntimeTests.test_equipping_each_stance_clears_test_and_preserves_unassigned_numbered_flag) ... ok
 test_external_native_ability_change_cannot_be_overwritten_by_stale_view (__main__.RuntimeTests.test_external_native_ability_change_cannot_be_overwritten_by_stale_view) ... ok
 test_f_copied_dash330_keeps_normal_grip_and_native_pointer_in_both_banks (__main__.RuntimeTests.test_f_copied_dash330_keeps_normal_grip_and_native_pointer_in_both_banks) ... ok
@@ -66,6 +67,8 @@ test_once_per_airtime_survives_completion_release_damage_and_style_toggle (__mai
 test_only_one_animation_test_can_be_active_and_off_restores_no_stance (__main__.RuntimeTests.test_only_one_animation_test_can_be_active_and_off_restores_no_stance) ... ok
 test_original_native_page_scroll_reaches_last_stances_and_wraps (__main__.RuntimeTests.test_original_native_page_scroll_reaches_last_stances_and_wraps) ... ok
 test_original_native_paging_reaches_id127_beyond_the_48_entry_boundary (__main__.RuntimeTests.test_original_native_paging_reaches_id127_beyond_the_48_entry_boundary) ... ok
+test_overdrive_persistence_bounds_and_removal_leave_native_state_unchanged (__main__.RuntimeTests.test_overdrive_persistence_bounds_and_removal_leave_native_state_unchanged) ... ok
+test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save (__main__.RuntimeTests.test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save) ... ok
 test_party_reawards_are_blocked_immediately_and_removed_on_next_update (__main__.RuntimeTests.test_party_reawards_are_blocked_immediately_and_removed_on_next_update) ... ok
 test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes (__main__.RuntimeTests.test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes) ... ok
 test_passives_and_limits_show_the_same_spent_ap_and_refresh_after_toggles (__main__.RuntimeTests.test_passives_and_limits_show_the_same_spent_ap_and_refresh_after_toggles) ... ok
@@ -119,6 +122,6 @@ test_ventus_profile_all_records_restore_in_normal_and_olympus_banks (__main__.Ru
 test_ventus_switch_retires_terra_dash_body_and_never_uses_terra_variants (__main__.RuntimeTests.test_ventus_switch_retires_terra_dash_body_and_never_uses_terra_variants) ... ok
 
 ----------------------------------------------------------------------
-Ran 119 tests in 17.914s
+Ran 122 tests in 17.893s
 
 OK

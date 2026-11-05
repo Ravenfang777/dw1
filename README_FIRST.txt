@@ -1,46 +1,58 @@
-KH1FM STYLES v69 / s408 - TYPE F DAMAGING AIR DASH
+KH1FM STYLES v70 / s409 - BODY DASHES, TUNING AND OVERDRIVES
 
 INSTALL
-Close KH1. Disable v68 and older main Styles packages. Import this ZIP into
-OpenKH Mod Manager, enable v69, Build and launch with Panacea. Keep the existing
+Close KH1. Disable v69 and older main Styles packages. Import this ZIP into
+OpenKH Mod Manager, enable v70, Build and launch with Panacea. Keep the existing
 KH2FM resources/settings required by the other stances. Standalone Aqua/Terra
-and full KH2 Combat DLLs remain disabled. Confirm s408 / STANCES v69 in
+and full KH2 Combat DLLs remain disabled. Confirm s409 / STANCES v70 in
 kh1-dual-wield.log. This native adapter targets the supplied Steam Global build.
 
-TYPE F AIR DASH
-Type F now copies Type G's damaging Ventus330 air dash, with ordinary weapon
-grip. Tap Square in the air. It travels1.5x Type G's current distance:702 vs468
-unobstructed native units. Speed24 vs16 keeps the same29.25-tick duration and
-animation timing. Native collision may shorten travel.
+TYPE F
+Ground dash/Dodge Roll009 and air dash330 now hit through a swept body-sized
+area around Sora instead of blade reach. The actual contact-update caller now
+includes F, fixing v69's moving-but-not-hitting route. One successful native
+contact per enemy per dash; normal enemy defenses remain. Air travel stays702
+units/29.25 native ticks, locked facing, once per airtime and no magic shortcuts.
 
-The initial stick/facing direction stays locked. Use once per actual airtime;
-landing resets it. L1/LB magic shortcuts and the active shortcut menu cannot
-start/spend the dash. Casting, damage and script exclusions remain. Ordinary
-held Glide is usable after the dash; the tap dash replaces held Superglide.
+TYPE E
+Ground combo2 animation plays15% slower. Ground Cure uses318, air Cure427.
+The Circle dodge has15% less horizontal reach:464.1 vs546 units at full stick.
+Its26-tick movement duration,29.25 lift and animation timing are retained.
 
-Damage uses the same physical blade-contact/native damage path as G. The blade
-must reach the enemy. One successful contact per enemy per dash; rejected
-contacts may retry. Normal F combos and their contact/reaction behavior remain.
+OTHER AERIAL DODGES
+A/C/L? Circle dodge visual plays15% slower than v69. Their movement speed,
+distance and controller timing stay unchanged. K? no longer has aerial dodge.
+The user did not specify the A/C/L? reduction amount;15% is used for this test.
+
+OVERDRIVES
+Customize is now Stance / Passives / Overdrives / Outfits. Overdrives replaces
+Limits with five exclusive zero-AP rows. Select one, or confirm it again to
+turn it off. It does not replace your Stance or consume an ability slot.
+Strength = Valor effects; Will = Wisdom; Resistance = Master; Prowess = Final;
+Rage = Anti darkness. These are visual only; no stat boosts are assigned.
+Selection persists separately in kh1-overdrive.ini. Existing KH2 resources are
+used; check OVERDRIVE EFFECTS READY/unavailable messages if a donor is missing.
 
 RETAINED
-G's330/410 speed/distance, reverse grip, two attack-contact passes and mappings
-remain. Ventus66..100/Dark Riku101..104 previews, other stances, Customize,
-Passives, AP and seven built-in abilities remain. Previously requested removal
-of non-Sora abilities remains; saving persists it and uninstall does not restore
-the partner ability lists.
+G's reverse grip, body/action mapping, air travel and blade contacts remain.
+Other stance assignments, working numbered Passives, white AP Used/max and
+built-in abilities remain. Previously requested non-Sora ability removal remains;
+saving persists it and uninstall does not reconstruct partner ability lists.
 
 CHECK IN GAME
-After changing stance, stand idle for the safe body handoff. Check F's Square
-330 dash against an enemy, locked facing, once-per-airtime reset and L1+Square
-shortcut casting. Then check F -> G -> another stance and ordinary Glide.
+Check F ground and air dash damage against enemies, E Cure poses/GC2/dodge,
+A/C/L? slower dodge visuals and K?'s ordinary air controls. Cycle every Overdrive
+on F/G/E and imported stances, then switch/off and check that old particles stop.
+Stand idle after a stance change for the safe body handoff.
 
-647 Rust tests/30 suites and167 final-PE checks pass (119 shared,48 E).
-Unchanged37-profile/G-action/038/E payloads are byte-verified. Source, hashes
-and validation are included. See source/STYLES-V69.MD for exact scope.
-No Windows/game/GPU session was run here; appearance and actual HP damage
-still need an in-game check.
+650 Rust tests/30 suites and170 final-PE checks pass (122 shared,48 E).
+Source, generated build inputs, hashes and validation are included. The actual
+registered F/G callback is exercised with native mocks. Full source tree and
+archive hashes are verified. See source/STYLES-V70.MD for exact limitations.
+No Windows/game/GPU session was run here; actual HP damage and form-effect
+appearance still need an in-game check.
 
 UNINSTALL
-Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v69, close KH1,
-disable the package and Build. Existing native-entry restoration/capacity
-rules and numbered-flag behavior remain as described in prior versions.
+Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v70, close KH1,
+disable the package and Build. Overdrives are inactive in removal mode; existing
+native-entry restoration/capacity and numbered-flag rules remain.

@@ -1,0 +1,18 @@
+Customize -> Overdrives
+Strength - KH2 Valor Form effects
+Will - KH2 Wisdom Form effects
+Resistance - KH2 Master Form effects
+Prowess - KH2 Final Form effects
+Rage - KH2 Anti Form darkness
+
+All cost0 AP and consume no native ability slot. Select one, or choose the
+active row again to turn it off. Stance and numbered Passives remain independent.
+Visuals only in this version; stat boosts will be assigned later.
+
+Donor-owned body effects follow Sora's actual current pose. Bound loops are
+preferred; finite authored arrival body glows may replay after they finish.
+No form controller, weapon/projectile attack script or screen flash is run.
+Type M? plus Rage avoids duplicating the same Anti aura. Choice persists in
+kh1-overdrive.ini. The package does not overwrite an existing selection file.
+Missing form archive/body effect resources are logged; live appearance needs
+a game test with the existing KH2 resources installed.

@@ -335,6 +335,9 @@ class Host(BaseHost):
         return self.clean
 
 class RuntimeTests(unittest.TestCase):
+    def assertVectorClose(self,actual,expected):
+        for a,b in zip(actual,expected):self.assertAlmostEqual(a,b,places=4)
+
     def test_shared_post_motion_callback_runs_after_original_once_and_preserves_return_and_delta(self):
         h=Host();self.assertTrue(h.adapter_ready)
         self.assertEqual(bridge.bridge_after_register(h.ffi['SingleEAfterMotion']),1)
@@ -573,7 +576,7 @@ class RuntimeTests(unittest.TestCase):
             rate=bridge.bridge_motion_delta();hits.append((finish*8./30.)/rate);chains.append(finish/rate)
         self.assertAlmostEqual(hits[0],hits[1],places=5);self.assertAlmostEqual(chains[0],chains[1],places=5)
 
-    def test_main_fast_dodge_moves_same_distance_and_lift_in_two_thirds_time(self):
+    def test_main_fast_dodge_shortens_horizontal_distance_only_by_fifteen_percent(self):
         for bank in [98,60]:
             for dt in [.5,1.,2.,4.]:
                 for motion_first in [False,True]:
@@ -585,21 +588,21 @@ class RuntimeTests(unittest.TestCase):
                         for k in range(3):total[k]+=out[k]
                         elapsed+=min(dt,26.-elapsed)
                         if not motion_first:bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,dt)
-                    self.assertEqual(total,[546.,-29.25,0.]);self.assertEqual(h.body(10),h.expected(10,1))
-                    self.assertEqual(C.c_float.from_address(h.actor+0x3c0).value,14.)
+                    self.assertAlmostEqual(total[0],464.1,places=3);self.assertEqual(total[1:],[-29.25,0.]);self.assertEqual(h.body(10),h.expected(10,1))
+                    self.assertAlmostEqual(C.c_float.from_address(h.actor+0x3c0).value,11.9,places=4)
 
     def test_fast_dodge_advances_504_animation_by_one_and_a_half_per_native_tick(self):
         h=Host(air=True,guard=True);h.arm_air();h.control(down=6,pressed=6,x=1,tilt=1)
         bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.)
         self.assertEqual(bridge.bridge_motion_delta(),1.125);self.assertEqual(C.c_float.from_address(h.actor+0x16c).value,1.125)
-        self.assertEqual(h.move()[0],[21.,-1.125,0.,21.])
+        self.assertVectorClose(h.move()[0],[17.85,-1.125,0.,17.85])
         for slot,p in h.native_glide_motions.items():self.assertEqual(C.string_at(p,len(h.native_glide_originals[slot])),h.native_glide_originals[slot])
 
     def test_fast_dodge_retains_direction_and_same_diagonal_distance(self):
         import math
         for x,z in [(0,1),(0,-1),(-1,0),(.7,.7)]:
             h=Host(air=True,guard=True);h.arm_air();h.control(down=6,pressed=6,x=x,z=z,tilt=1)
-            out,_=h.move();self.assertAlmostEqual(math.hypot(out[0],out[2]),21.,places=4)
+            out,_=h.move();self.assertAlmostEqual(math.hypot(out[0],out[2]),17.85,places=4)
             h.control(down=0,x=-x,z=-z,tilt=1)
             after,_=h.move();self.assertEqual(after,out)
 
@@ -636,7 +639,7 @@ class RuntimeTests(unittest.TestCase):
     def test_rejected_superglide_does_not_cancel_a_live_dodge(self):
         h=Host(air=True,guard=True);h.arm_air();h.control(down=6,pressed=6,x=1,tilt=1)
         bridge.bridge_glide_eligible(0);bridge.bridge_glide(h.game+0x2b2750,h.actor)
-        self.assertEqual(h.body(10),h.dodge_body());self.assertEqual(h.move()[0][0],21.)
+        self.assertEqual(h.body(10),h.dodge_body());self.assertAlmostEqual(h.move()[0][0],17.85,places=4)
 
     def launch_native_jump(self,h,request=4,height=160.,elapsed=4.):
         w32(h.actor+0x70,1);w32(h.actor+0x164,request);put(h.actor+0x3b0,struct.pack('<f',elapsed))
@@ -662,17 +665,18 @@ class RuntimeTests(unittest.TestCase):
         w32(h.actor+0x164,5);out=h.buffer(bytes(16));bridge.bridge_move(h.game+0x2afda0,h.actor,C.cast(out,C.POINTER(C.c_float)))
         self.assertEqual(C.c_float.from_address(h.actor+0x3bc).value,height)
 
-    def test_second_ground_attack_has_no_held_recovery_and_keeps_contact_time(self):
+    def test_second_ground_attack_has_no_held_recovery_and_slows_fifteen_percent(self):
         for request,slot,rate,first_hit in [(0xc9,99,47./24.,5.4),(0xca,100,63./24.,7.96/1.4)]:
             h=Host(guard=True,encoded_fields=True);h.frame();h.equip(True);h.frame();w32(h.actor+0x164,request)
-            for at in [0.,20.*rate,24.*rate]:
+            base_rate=rate;rate*=.85
+            for at in [0.,20.*base_rate,24.*base_rate]:
                 h.clock(at);bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.)
                 self.assertAlmostEqual(bridge.bridge_motion_delta(),rate,places=5)
-            self.assertIn(h.event(slot,1,first_hit*rate-.01),(None,0))
-            self.assertEqual(h.event(slot,1,first_hit*rate+.01),1)
-            self.assertEqual(h.event(slot,5,20.*rate+.01),1)
-            self.assertEqual(h.event(slot,5,(24.*rate)),1)
-            self.assertLess((48. if slot==99 else 64.)/rate-24.,.52)
+            self.assertIn(h.event(slot,1,first_hit*base_rate-.01),(None,0))
+            self.assertEqual(h.event(slot,1,first_hit*base_rate+.01),1)
+            self.assertEqual(h.event(slot,5,20.*base_rate+.01),1)
+            self.assertEqual(h.event(slot,5,(24.*base_rate)),1)
+            self.assertLess((48. if slot==99 else 64.)/rate-24./.85,.62)
             h.clock(0.);bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,0.)
             self.assertEqual(bridge.bridge_motion_delta(),0.)
 
@@ -692,7 +696,7 @@ class RuntimeTests(unittest.TestCase):
         h=Host();h.frame(epoch=1);h.equip(True);h.frame(epoch=1);h.assert_all(self,True)
         h.arm_air();h.control(down=6,pressed=6,x=1,tilt=1)
         for _ in range(30):h.frame(epoch=h.epoch)
-        self.assertEqual(h.move()[0],[21.,-1.125,0.,21.])
+        self.assertVectorClose(h.move()[0],[17.85,-1.125,0.,17.85])
     def test_both_native_jump_types_get_boost_and_off_is_native(self):
         import math
         for bank in [98,60]:
@@ -713,9 +717,9 @@ class RuntimeTests(unittest.TestCase):
             bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.)
             delta,_=h.move()
             for i in range(3):total[i]+=delta[i]
-        self.assertEqual(total,[546.,-29.25,0.])
+        self.assertAlmostEqual(total[0],464.1,places=3);self.assertEqual(total[1:],[-29.25,0.])
         self.assertLessEqual(C.c_float.from_address(h.actor+0x16c).value,29.25)
-        self.assertAlmostEqual(C.c_float.from_address(h.actor+0x3c0).value,14.)
+        self.assertAlmostEqual(C.c_float.from_address(h.actor+0x3c0).value,11.9,places=4)
         calls=bridge.bridge_queue_calls();h.control();h.control(down=6,pressed=6);self.assertEqual(bridge.bridge_queue_calls(),calls)
 
 if __name__=='__main__':

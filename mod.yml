@@ -1,9 +1,9 @@
-title: KH1FM Styles v69 - Type F Damaging Air Dash
+title: KH1FM Styles v70 - Body Dashes and Overdrives
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Copy Type G damaging air dash330 to Type F with1.5x G distance and ordinary
-  weapon grip. Keep fixed facing, one use per airtime and shortcut exclusion.
-  Preserve G actions, other stances, numbered Passives and Customize menus.
+  Type F body-contact ground/air dashes. Type E combo, Cure and dodge tuning.
+  Slower A/C/L aerial dodge visuals; K aerial dodge removed. Five exclusive
+  cosmetic Overdrives, independent of Stance and AP. Preserve other mappings.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

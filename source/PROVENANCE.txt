@@ -1,16 +1,17 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v68 commit: 25ece052aaead9de0fc6ebf068f70fee28a71ad5
-v69 commit: 720234eda0180e972dc684d73654473336356654
-v69 source tree: eff7ed43531e348c0d9bcc01387d42cf237220a6
-Styles_v69.patch contains69 derivative commits, applied with git am.
-Styles_v69_from_v68.bundle requires the exact previous v68 commit above.
-Type F copies the immutable un-reversed main G330 dash body variant.
-F speed24/duration29.25/distance702 is1.5x G's468-unit distance.
-All37 existing profile parts, G action variants/038, F cast variants and E data
-remain byte exact. Only the new F fall variant adds330 body data.
-Native motion handles/events/headers/helpers remain unchanged by this variant.
-Rust contact coordinator includes F only during its live dash; G paired contacts
-remain. Tests use platform/native mocks, not a Windows or game session.
-Historical G conversion/pose reports are retained from the unchanged v68 data.
+Previous delivered v69 commit: 720234eda0180e972dc684d73654473336356654
+v70 commit: d05b5a75bde94cb57611e204462f2e7c3cf42e74
+v70 source tree: 23eaff65e5fa25aada3cb2f1b34ae285d46001dc
+Styles_v70.patch contains70 derivative commits, applied with git am.
+Styles_v70_from_v69.bundle requires the exact previous v69 commit above.
+All shared F/G/preview profile and variant payloads stay byte exact.
+E changes only Cure56/81 body curves/descriptors; native events/request tables,
+original data, Dodge504 and Blizzard variants stay exact.
+F's actual registered post-motion callback now runs its contact coordinator.
+F ground/air dashes use body-sized swept columns, native damage/defenses.
+Overdrives are cosmetic and independent of stance, AP and native learned slots.
+Actual form archives/effects load from the user's existing KH2 resources.
+No Windows/GPU/game execution or finalized enemy HP verification is claimed.
+Historical conversion/pose reports are retained for unchanged prior data.
 No original executable, model, extracted table or decompiled code enters Git.

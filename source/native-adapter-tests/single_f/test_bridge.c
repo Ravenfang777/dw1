@@ -16,8 +16,12 @@ static int hand_magic=1,air_enabled=1,alloc_failure,protect_failure;
 static unsigned control_calls,control_words[4],control_mode,queue_calls,native_glide_calls;
 static unsigned matrix_code,point_code;static float point_fraction;
 static char output[131072];static size_t used;
+static unsigned overdrive_saved,overdrive_save_calls;
+static void ABI overdrive_save(uint32_t id){overdrive_saved=id;overdrive_save_calls++;}
+unsigned bridge_overdrive_saved(void){return overdrive_saved;}
+unsigned bridge_overdrive_save_calls(void){return overdrive_save_calls;}
 static uint64_t numbered_saved;static unsigned numbered_save_calls;
-void bridge_reset(uintptr_t game){game_base=game;nranges=queries=protect_calls=0;remove_mode=conflict=0;hand_magic=air_enabled=1;control_calls=control_mode=queue_calls=native_glide_calls=0;glide_eligible=1;memset(control_words,0,sizeof(control_words));alloc_failure=protect_failure=0;matrix_code=point_code=0;used=0;output[0]=0;numbered_saved=0;numbered_save_calls=0;}
+void bridge_reset(uintptr_t game){game_base=game;nranges=queries=protect_calls=0;remove_mode=conflict=0;hand_magic=air_enabled=1;control_calls=control_mode=queue_calls=native_glide_calls=0;glide_eligible=1;memset(control_words,0,sizeof(control_words));alloc_failure=protect_failure=0;matrix_code=point_code=0;used=0;output[0]=0;numbered_saved=0;numbered_save_calls=0;overdrive_saved=overdrive_save_calls=0;}
 static void ABI numbered_save(uint64_t bits){numbered_saved=bits;numbered_save_calls++;}
 uint64_t bridge_numbered_saved(void){return numbered_saved;}
 unsigned bridge_numbered_save_calls(void){return numbered_save_calls;}
@@ -222,6 +226,7 @@ static void ABI native_menu_nav(uintptr_t w){
     *(uint16_t*)(w+0xfc)=(uint16_t)(top*16u);*(uint16_t*)(w+0xfe)=(uint16_t)((row-top)*16u);
 }
 uintptr_t bridge_symbol(const char*n){
+    if(!strcmp(n,"OverdrivePersist"))return (uintptr_t)overdrive_save;
     if(!strcmp(n,"NumberedPersist"))return (uintptr_t)numbered_save;
     if(!strcmp(n,"NativeMenuApPanel"))return (uintptr_t)native_menu_ap_panel;
     if(!strcmp(n,"NativeMenuPlainText"))return (uintptr_t)native_menu_plain_text;
