@@ -1,9 +1,9 @@
-title: KH1FM Styles v75 - KH2 Weapon Effect Previews
+title: KH1FM Styles v76 - Triangle Overdrive Activation
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Repurpose Passives66..104 as39 individual KH2 weapon effect previews.
-  Descriptions show names, package families, element IDs and readiness.
-  Visual-only previews coexist with stances; Overdrives and footsteps mute retained.
+  Native Triangle Overdrive prompt, full KH2 Drive transformation for all
+  stances/base Sora, centered recolored Infinity Charge and Counterguard Flash.
+  Aura starts after the final pose. KH2 passive previews and prior combat retained.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

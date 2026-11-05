@@ -1,4 +1,5 @@
-Preparing worktree (detached HEAD 4adb946)
+Cloning into '/workspace/scratch/ac59123af99a/styles_v75_work/local/v76-applycheck'...
+done.
 HEAD is now at 4adb946 s339: KH2-style Cure heals by KH2's rule from KH1's stats, partners in range too
 Applying: Add isolated passive Dual Wield ground prototype
 Applying: Retire Dual Wield trails and add Valor air combos and idle
@@ -52,7 +53,7 @@ Applying: Styles v49: borrow Single C jump and map Dark Riku basic combo poses
 Applying: Styles v50: resolve native combo requests to regular animation bank records
 Applying: Styles v51: select script-linked Dark Riku weapon attacks for both combos
 Applying: Styles v52: move Single D second attack to native Guard and capture extra source
-Applying: Styles v53: integrate main Aqua v21 as Sin/workspace/scratch/ac59123af99a/styles_v75_work/.git/worktrees/v75-applycheck/rebase-apply/patch:1008: new blank line at EOF.
+Applying: Styles v53: integrate main Aqua v21 as Sin.git/rebase-apply/patch:1008: new blank line at EOF.
 +
 warning: 1 line adds whitespace errors.
 gle E with shared native hooks
@@ -78,3 +79,6 @@ Applying: Trim shared Overdrive particles and update Customize labels and Drain 
 Applying: Add nine cosmetic Overdrives, refresh bound draw roots and mute footsteps
 Applying: Styles v74: refresh native Overdrive poses and tune colors
 Applying: Styles v75: repurpose numbered passives for KH2 weapon effect previews
+Applying: Add Triangle Overdrive activation with witnessed KH2 transform and centered effects
+From /workspace/scratch/ac59123af99a/styles_v75_work/local/dist/KH1FM_Styles_v76/source/Styles_v76_from_upstream.bundle
+ * [new ref]         HEAD       -> bundle-v76

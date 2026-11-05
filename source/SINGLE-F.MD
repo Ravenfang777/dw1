@@ -1,5 +1,7 @@
 # Single F and the native Styles menu — v54 / s393
 
+Current Overdrive activation: see styles-v76.md. Selection arms Triangle;
+the shared KH2 transformation must finish before the selected aura starts.
 Current menu/testing: see styles-v75.md. Passives66..104 now preview individual
 KH2 weapon effects with names/IDs/readiness; Ventus/Dark Riku animation galleries
 are retired from the menu. Main Type F/G and all stance combat remain. Current

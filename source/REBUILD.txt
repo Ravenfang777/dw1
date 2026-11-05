@@ -1,30 +1,31 @@
-Build current v75:
-Clone pinned upstream, then git am Styles_v75.patch, or fetch the complete
-Styles_v75_from_upstream.bundle from that upstream checkout. Bundle/patch contain
-all75 derivative commits. The exact source commit/tree is in PROVENANCE.txt.
-An equivalent v74 tree can instead git am Styles_v75_from_v74.patch.
+Build current v76:
+Clone pinned upstream, then git am Styles_v76.patch, or fetch the complete
+Styles_v76_from_upstream.bundle from that upstream checkout. Both contain all76
+derivative commits. Commit/tree and upstream are recorded in PROVENANCE.txt.
+An exact v75 checkout can instead git am Styles_v76_from_v75.patch.
 
 Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h and
 rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
-These private headers remain exact to v74; no animation regeneration is needed.
+Both headers remain exact to v75. No animation regeneration is needed.
 Never add generated headers or original game files to Git.
 
-Use Rust with x86_64-pc-windows-gnu and MinGW GCC/binutils:
+Rust with x86_64-pc-windows-gnu and MinGW GCC/binutils:
 cargo build -p kh1-hook --release --target x86_64-pc-windows-gnu
 Rename target/x86_64-pc-windows-gnu/release/dinput8.dll to kh1-dual-wield.dll.
-cargo test --workspace runs portable policy/math/engine checks.
-Build stamps and source commit metadata can differ on rebuild.
+cargo test --workspace includes the portable and actual-adapter activation
+checks (the latter compiled with inert engine leaves on non-Windows tests).
+Build timestamps can differ on rebuild.
 
-The focused final-PE UI tests require Linux GCC/Python and the user's unmodified
-Steam Global KH1 executable; private animation fixtures are not required.
-Set STYLES_DLL to the current DLL and KH1_EXE to that executable.
-Set STYLES_MENU_ANCHORS and STYLES_SLOT_ANCHORS to the corresponding .h files
-in native-adapter-tests/single_f, then run its test_weapon_fx.py.
-Its three supporting files test_runtime.py/test_bridge.c/weapon_fx.rs and
-reverse_grip.py/numbered_passives.h stay beside it as supplied.
-Renders, Rust effect callbacks and package availability are mocked in PE tests.
+Focused final-PE menu tests require Linux GCC/Python and the user's unmodified
+Steam Global KH1 executable. Set STYLES_DLL to the current DLL, KH1_EXE to that
+EXE, STYLES_MENU_ANCHORS/STYLES_SLOT_ANCHORS to the supplied corresponding .h
+files in native-adapter-tests/single_f, and run its test_weapon_fx.py.
+Supporting test_runtime.py/test_bridge.c/weapon_fx.rs/reverse_grip.py and
+numbered_passives.h stay beside it. Private animation fixtures are not needed.
+Renders, Rust effect callbacks and resource availability are mocked there.
 
-The larger historical movement/animation harnesses still require the user's
-original regeneration work/fixtures described in SINGLE-E/F/G.MD. Main profiles
-remain; numbered animation galleries are no longer exposed through Passives.
-STYLES-V75.MD is the current specification. Earlier guides are historical.
+Larger historical movement/animation harnesses require the user's regeneration
+work/fixtures described in SINGLE-E/F/G.MD. Main profiles remain unchanged;
+numbered animation galleries were replaced by KH2 effect previews in v75.
+STYLES-V76.MD specifies current activation. STYLES-V75.MD specifies the gallery.
+Earlier stage guides remain as historical evidence, not current instructions.

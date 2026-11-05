@@ -64,9 +64,9 @@ warning: unused variable: `actor`
     |                                         ^^^^^ help: if this is intentional, prefix it with an underscore: `_actor`
 
 warning: function `monitor` is never used
-   --> crates/kh1-hook/src/win/mod.rs:182:27
+   --> crates/kh1-hook/src/win/mod.rs:183:27
     |
-182 | unsafe extern "system" fn monitor(_: *mut c_void) -> u32 {
+183 | unsafe extern "system" fn monitor(_: *mut c_void) -> u32 {
     |                           ^^^^^^^
     |
     = note: `#[warn(dead_code)]` on by default
@@ -630,77 +630,77 @@ warning: constant `NOT_SORAS` is never used
     |       ^^^^^^^^^
 
 warning: field `aim` is never read
-   --> crates/kh1-hook/src/win/combat.rs:437:5
+   --> crates/kh1-hook/src/win/combat.rs:440:5
     |
-432 | struct Body {
+435 | struct Body {
     |        ---- field in this struct
 ...
-437 |     aim: [f32; 3],
+440 |     aim: [f32; 3],
     |     ^^^
 
 warning: field `barrier_met` is never read
-   --> crates/kh1-hook/src/win/combat.rs:618:5
+   --> crates/kh1-hook/src/win/combat.rs:621:5
     |
-590 | pub struct Strikes {
+593 | pub struct Strikes {
     |            ------- field in this struct
 ...
-618 |     barrier_met: HashSet<(u64, usize)>,
+621 |     barrier_met: HashSet<(u64, usize)>,
     |     ^^^^^^^^^^^
 
 warning: constant `CLASH_HALF_RVA` is never used
-    --> crates/kh1-hook/src/win/combat.rs:1003:7
+    --> crates/kh1-hook/src/win/combat.rs:1006:7
      |
-1003 | const CLASH_HALF_RVA: Rva = Rva(0x2B2A30);
+1006 | const CLASH_HALF_RVA: Rva = Rva(0x2B2A30);
      |       ^^^^^^^^^^^^^^
 
 warning: methods `targets` and `barrier_meet` are never used
-    --> crates/kh1-hook/src/win/combat.rs:1804:19
+    --> crates/kh1-hook/src/win/combat.rs:1807:19
      |
-1801 | impl Strikes {
+1804 | impl Strikes {
      | ------------ methods in this implementation
 ...
-1804 |     pub unsafe fn targets(&self) -> Vec<(u32, [f32; 3], [f32; 3])> {
+1807 |     pub unsafe fn targets(&self) -> Vec<(u32, [f32; 3], [f32; 3])> {
      |                   ^^^^^^^
 ...
-1879 |     pub unsafe fn barrier_meet(&mut self, sora: usize, key: u64, shapes: &[Shape]) -> Vec<[f32; 3]> {
+1882 |     pub unsafe fn barrier_meet(&mut self, sora: usize, key: u64, shapes: &[Shape]) -> Vec<[f32; 3]> {
      |                   ^^^^^^^^^^^^
 
 warning: function `kh1_spell_data` is never used
-    --> crates/kh1-hook/src/win/combat.rs:1985:8
+    --> crates/kh1-hook/src/win/combat.rs:1988:8
      |
-1985 | pub fn kh1_spell_data(spell: u8, level: u8) -> Option<i32> {
+1988 | pub fn kh1_spell_data(spell: u8, level: u8) -> Option<i32> {
      |        ^^^^^^^^^^^^^^
 
 warning: constant `ITEM_COMMAND_TYPE` is never used
-    --> crates/kh1-hook/src/win/combat.rs:2229:7
+    --> crates/kh1-hook/src/win/combat.rs:2232:7
      |
-2229 | const ITEM_COMMAND_TYPE: u8 = 3;
+2232 | const ITEM_COMMAND_TYPE: u8 = 3;
      |       ^^^^^^^^^^^^^^^^^
 
 warning: constant `MENU_ROOT_RVA` is never used
-    --> crates/kh1-hook/src/win/combat.rs:2235:7
+    --> crates/kh1-hook/src/win/combat.rs:2238:7
      |
-2235 | const MENU_ROOT_RVA: Rva = Rva(0x2D543F0);
+2238 | const MENU_ROOT_RVA: Rva = Rva(0x2D543F0);
      |       ^^^^^^^^^^^^^
 
 warning: constant `SUMMON_MENU_RVA` is never used
-    --> crates/kh1-hook/src/win/combat.rs:2237:7
+    --> crates/kh1-hook/src/win/combat.rs:2240:7
      |
-2237 | const SUMMON_MENU_RVA: Rva = Rva(0x5296A8);
+2240 | const SUMMON_MENU_RVA: Rva = Rva(0x5296A8);
      |       ^^^^^^^^^^^^^^^
 
 warning: function `spell_not_yet` is never used
-    --> crates/kh1-hook/src/win/combat.rs:2274:11
+    --> crates/kh1-hook/src/win/combat.rs:2278:11
      |
-2274 | unsafe fn spell_not_yet(menu: usize, entry: i32) -> bool {
+2278 | unsafe fn spell_not_yet(menu: usize, entry: i32) -> bool {
      |           ^^^^^^^^^^^^^
 
 warning: method `clear` is never used
-    --> crates/kh1-hook/src/win/combat.rs:2434:12
+    --> crates/kh1-hook/src/win/combat.rs:2438:12
      |
-2433 | impl NativeBladeContacts{
+2437 | impl NativeBladeContacts{
      | ------------------------ method in this implementation
-2434 |     pub fn clear(&mut self){*self=Self::default();}
+2438 |     pub fn clear(&mut self){*self=Self::default();}
      |            ^^^^^
 
 warning: constant `TEXT_RVA` is never used
@@ -6008,146 +6008,140 @@ warning: fields `follow`, `param_agree`, `param_ok`, and `jumps` are never read
 571 |     follow: Follow,
     |     ^^^^^^
 ...
-588 |     param_agree: u32,
+589 |     param_agree: u32,
     |     ^^^^^^^^^^^
-589 |     param_ok: bool,
+590 |     param_ok: bool,
     |     ^^^^^^^^
-590 |     /// Pose-derived placements that jumped from the last (kept out unless they persist).
-591 |     jumps: u32,
+591 |     /// Pose-derived placements that jumped from the last (kept out unless they persist).
+592 |     jumps: u32,
     |     ^^^^^
 
 warning: function `on_actor` is never used
-   --> crates/kh1-hook/src/win/pose.rs:662:11
+   --> crates/kh1-hook/src/win/pose.rs:663:11
     |
-662 | unsafe fn on_actor(m: Mat4) -> Mat4 {
+663 | unsafe fn on_actor(m: Mat4) -> Mat4 {
     |           ^^^^^^^^
 
 warning: function `close` is never used
-   --> crates/kh1-hook/src/win/pose.rs:699:4
+   --> crates/kh1-hook/src/win/pose.rs:700:4
     |
-699 | fn close(a: &Mat4, b: &Mat4, units: f32) -> bool {
+700 | fn close(a: &Mat4, b: &Mat4, units: f32) -> bool {
     |    ^^^^^
 
 warning: multiple fields are never read
-   --> crates/kh1-hook/src/win/pose.rs:706:5
+   --> crates/kh1-hook/src/win/pose.rs:707:5
     |
-705 | struct Follow {
+706 | struct Follow {
     |        ------ fields in this struct
-706 |     slot: Option<usize>,
+707 |     slot: Option<usize>,
     |     ^^^^
-707 |     play: Option<Play>,
+708 |     play: Option<Play>,
     |     ^^^^
-708 |     motion: u16,
+709 |     motion: u16,
     |     ^^^^^^
-709 |     field: bool,
+710 |     field: bool,
     |     ^^^^^
-710 |     since: Option<Instant>,
+711 |     since: Option<Instant>,
     |     ^^^^^
-711 |     /// Clip frames per real second (60, or stretched for swings).
-712 |     rate: f32,
+712 |     /// Clip frames per real second (60, or stretched for swings).
+713 |     rate: f32,
     |     ^^^^
-713 |     /// Ground combo swings in a row, and when the last one started.
-714 |     swings: u32,
+714 |     /// Ground combo swings in a row, and when the last one started.
+715 |     swings: u32,
     |     ^^^^^^
-715 |     last_swing: Option<Instant>,
+716 |     last_swing: Option<Instant>,
     |     ^^^^^^^^^^
-716 |     /// Last KH2 pose (model space) and when it was drawn, and the pose blended from on a change.
-717 |     last: Vec<Mat4>,
+717 |     /// Last KH2 pose (model space) and when it was drawn, and the pose blended from on a change.
+718 |     last: Vec<Mat4>,
     |     ^^^^
-718 |     last_at: Option<Instant>,
+719 |     last_at: Option<Instant>,
     |     ^^^^^^^
-719 |     from: Vec<(Vec3, Quat, Vec3)>,
+720 |     from: Vec<(Vec3, Quat, Vec3)>,
     |     ^^^^
-720 |     blend_start: Option<Instant>,
+721 |     blend_start: Option<Instant>,
     |     ^^^^^^^^^^^
-721 |     blend_secs: f32,
+722 |     blend_secs: f32,
     |     ^^^^^^^^^^
-722 |     /// Movement measured from the model origin (world units per second), smoothed.
-723 |     at: Option<(Vec3, Instant)>,
+723 |     /// Movement measured from the model origin (world units per second), smoothed.
+724 |     at: Option<(Vec3, Instant)>,
     |     ^^
-724 |     speed: f32,
+725 |     speed: f32,
     |     ^^^^^
-725 |     climb: f32,
+726 |     climb: f32,
     |     ^^^^^
-726 |     logged: u32,
+727 |     logged: u32,
     |     ^^^^^^
 
 warning: constant `BLEND_MOVE` is never used
-   --> crates/kh1-hook/src/win/pose.rs:732:7
+   --> crates/kh1-hook/src/win/pose.rs:733:7
     |
-732 | const BLEND_MOVE: f32 = 8.0 / 60.0;
+733 | const BLEND_MOVE: f32 = 8.0 / 60.0;
     |       ^^^^^^^^^^
 
 warning: constant `BLEND_GLIDE` is never used
-   --> crates/kh1-hook/src/win/pose.rs:733:7
+   --> crates/kh1-hook/src/win/pose.rs:734:7
     |
-733 | const BLEND_GLIDE: f32 = 16.0 / 60.0;
+734 | const BLEND_GLIDE: f32 = 16.0 / 60.0;
     |       ^^^^^^^^^^^
 
 warning: constant `COMBO_GAP` is never used
-   --> crates/kh1-hook/src/win/pose.rs:735:7
+   --> crates/kh1-hook/src/win/pose.rs:736:7
     |
-735 | const COMBO_GAP: f32 = 1.2;
+736 | const COMBO_GAP: f32 = 1.2;
     |       ^^^^^^^^^
 
 warning: function `sora_world` is never used
-   --> crates/kh1-hook/src/win/pose.rs:744:8
+   --> crates/kh1-hook/src/win/pose.rs:745:8
     |
-744 | pub fn sora_world() -> Option<[f32; 3]> {
+745 | pub fn sora_world() -> Option<[f32; 3]> {
     |        ^^^^^^^^^^
 
 warning: static `CLOCK` is never used
-   --> crates/kh1-hook/src/win/pose.rs:747:8
+   --> crates/kh1-hook/src/win/pose.rs:748:8
     |
-747 | static CLOCK: OnceLock<Instant> = OnceLock::new();
+748 | static CLOCK: OnceLock<Instant> = OnceLock::new();
     |        ^^^^^
 
 warning: function `wanted` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1431:4
+    --> crates/kh1-hook/src/win/pose.rs:1433:4
      |
-1431 | fn wanted(s: &mut Sora, slot: Option<usize>, to_world: &Mat4) -> Option<Vec<Mat4>> {
+1433 | fn wanted(s: &mut Sora, slot: Option<usize>, to_world: &Mat4) -> Option<Vec<Mat4>> {
      |    ^^^^^^
 
-warning: function `kh2_weapon` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1516:4
-     |
-1516 | fn kh2_weapon(rig: &Rig, motion: u16, frames: f32, looping: bool, body: &[Mat4]) -> Vec<Mat4> {
-     |    ^^^^^^^^^^
-
 warning: function `follow` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1531:4
+    --> crates/kh1-hook/src/win/pose.rs:1533:4
      |
-1531 | fn follow(s: &mut Sora, slot: Option<usize>, to_world: &Mat4) -> Option<Vec<Mat4>> {
+1533 | fn follow(s: &mut Sora, slot: Option<usize>, to_world: &Mat4) -> Option<Vec<Mat4>> {
      |    ^^^^^^
 
 warning: function `anti_ledge` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1598:4
+    --> crates/kh1-hook/src/win/pose.rs:1600:4
      |
-1598 | fn anti_ledge() -> Option<Play> {
+1600 | fn anti_ledge() -> Option<Play> {
      |    ^^^^^^^^^^
 
 warning: constant `KH2_ITEM_USE` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1629:7
+    --> crates/kh1-hook/src/win/pose.rs:1631:7
      |
-1629 | const KH2_ITEM_USE: u16 = 9;
+1631 | const KH2_ITEM_USE: u16 = 9;
      |       ^^^^^^^^^^^^
 
 warning: function `misc_kh2` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1632:4
+    --> crates/kh1-hook/src/win/pose.rs:1634:4
      |
-1632 | fn misc_kh2() -> bool {
+1634 | fn misc_kh2() -> bool {
      |    ^^^^^^^^
 
 warning: function `follow_play` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1638:4
+    --> crates/kh1-hook/src/win/pose.rs:1640:4
      |
-1638 | fn follow_play(s: &mut Sora, slot: Option<usize>, to_world: &Mat4, forced: Option<Play>, cast: bool) -> Option<Vec<Mat4>> {
+1640 | fn follow_play(s: &mut Sora, slot: Option<usize>, to_world: &Mat4, forced: Option<Play>, cast: bool) -> Option<Vec<Mat4>> {
      |    ^^^^^^^^^^^
 
 warning: function `at_sora` is never used
-    --> crates/kh1-hook/src/win/pose.rs:1850:11
+    --> crates/kh1-hook/src/win/pose.rs:1852:11
      |
-1850 | unsafe fn at_sora(instance: usize, param_world: usize) -> bool {
+1852 | unsafe fn at_sora(instance: usize, param_world: usize) -> bool {
      |           ^^^^^^^
 
 warning: multiple fields are never read
@@ -7675,18 +7669,6 @@ warning: constant `RECORD_RVA` is never used
 64 | const RECORD_RVA: Rva = Rva(0x28D7D0);
    |       ^^^^^^^^^^
 
-warning: constant `WORD_RVA` is never used
-  --> crates/kh1-hook/src/win/reflect.rs:65:18
-   |
-65 | pub(super) const WORD_RVA: Rva = Rva(0x28D820);
-   |                  ^^^^^^^^
-
-warning: constant `NAME_CALL_RVA` is never used
-  --> crates/kh1-hook/src/win/reflect.rs:66:18
-   |
-66 | pub(super) const NAME_CALL_RVA: Rva = Rva(0x2787FB);
-   |                  ^^^^^^^^^^^^^
-
 warning: constant `MAGIC_MENU_RVA` is never used
   --> crates/kh1-hook/src/win/reflect.rs:67:7
    |
@@ -8326,99 +8308,99 @@ warning: field `at` is never read
     |         ^^
 
 warning: function `item_use_now` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:1102:8
+    --> crates/kh1-hook/src/win/takeover.rs:1104:8
      |
-1102 | pub fn item_use_now() -> bool {
+1104 | pub fn item_use_now() -> bool {
      |        ^^^^^^^^^^^^
 
 warning: function `command_started` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:1131:8
+    --> crates/kh1-hook/src/win/takeover.rs:1133:8
      |
-1131 | pub fn command_started(shots: usize, spell: Option<u8>) {
+1133 | pub fn command_started(shots: usize, spell: Option<u8>) {
      |        ^^^^^^^^^^^^^^^
 
 warning: constant `ROOT_TRAVEL_MIN` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:1224:7
+    --> crates/kh1-hook/src/win/takeover.rs:1226:7
      |
-1224 | const ROOT_TRAVEL_MIN: f32 = 1.0;
+1226 | const ROOT_TRAVEL_MIN: f32 = 1.0;
      |       ^^^^^^^^^^^^^^^
 
 warning: function `travels` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:1228:8
+    --> crates/kh1-hook/src/win/takeover.rs:1230:8
      |
-1228 | pub fn travels(clip: &character_core::Clip) -> bool {
+1230 | pub fn travels(clip: &character_core::Clip) -> bool {
      |        ^^^^^^^
 
 warning: struct `RoomSeen` is never constructed
-    --> crates/kh1-hook/src/win/takeover.rs:1437:8
+    --> crates/kh1-hook/src/win/takeover.rs:1439:8
      |
-1437 | struct RoomSeen {
+1439 | struct RoomSeen {
      |        ^^^^^^^^
 
 warning: static `ROOM` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:1445:8
+    --> crates/kh1-hook/src/win/takeover.rs:1447:8
      |
-1445 | static ROOM: Mutex<Option<RoomSeen>> = Mutex::new(None);
+1447 | static ROOM: Mutex<Option<RoomSeen>> = Mutex::new(None);
      |        ^^^^
 
 warning: function `room_watch` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:1450:11
+    --> crates/kh1-hook/src/win/takeover.rs:1452:11
      |
-1450 | unsafe fn room_watch(actor: usize, kh2: bool) {
+1452 | unsafe fn room_watch(actor: usize, kh2: bool) {
      |           ^^^^^^^^^^
 
 warning: constant `FOOTSTEP_RVA` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:3310:7
+    --> crates/kh1-hook/src/win/takeover.rs:3312:7
      |
-3310 | const FOOTSTEP_RVA: Rva = Rva(0x293C70);
+3312 | const FOOTSTEP_RVA: Rva = Rva(0x293C70);
      |       ^^^^^^^^^^^^
 
 warning: constant `FOOTSTEP_PROLOGUE` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:3311:7
+    --> crates/kh1-hook/src/win/takeover.rs:3313:7
      |
-3311 | const FOOTSTEP_PROLOGUE: [u8; 10] = [0x48, 0x89, 0x5C, 0x24, 0x10, 0x56, 0x48, 0x83, 0xEC, 0x20];
+3313 | const FOOTSTEP_PROLOGUE: [u8; 10] = [0x48, 0x89, 0x5C, 0x24, 0x10, 0x56, 0x48, 0x83, 0xEC, 0x20];
      |       ^^^^^^^^^^^^^^^^^
 
 warning: static `ORIG_FOOTSTEP` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:3312:8
+    --> crates/kh1-hook/src/win/takeover.rs:3314:8
      |
-3312 | static ORIG_FOOTSTEP: AtomicUsize = AtomicUsize::new(0);
+3314 | static ORIG_FOOTSTEP: AtomicUsize = AtomicUsize::new(0);
      |        ^^^^^^^^^^^^^
 
 warning: function `footstep` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:3318:27
+    --> crates/kh1-hook/src/win/takeover.rs:3320:27
      |
-3318 | unsafe extern "system" fn footstep(actor: usize, kind: i32) -> usize {
+3320 | unsafe extern "system" fn footstep(actor: usize, kind: i32) -> usize {
      |                           ^^^^^^^^
 
 warning: function `kh1_camera_mode` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:3634:8
+    --> crates/kh1-hook/src/win/takeover.rs:3636:8
      |
-3634 | pub fn kh1_camera_mode(state: i32) -> bool {
+3636 | pub fn kh1_camera_mode(state: i32) -> bool {
      |        ^^^^^^^^^^^^^^^
 
 warning: function `kh1_scene` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:3642:8
+    --> crates/kh1-hook/src/win/takeover.rs:3644:8
      |
-3642 | pub fn kh1_scene() -> bool {
+3644 | pub fn kh1_scene() -> bool {
      |        ^^^^^^^^^
 
 warning: function `kh1_moves_sora` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:3665:8
+    --> crates/kh1-hook/src/win/takeover.rs:3667:8
      |
-3665 | pub fn kh1_moves_sora() -> bool {
+3667 | pub fn kh1_moves_sora() -> bool {
      |        ^^^^^^^^^^^^^^
 
 warning: function `kh1_move` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:3693:8
+    --> crates/kh1-hook/src/win/takeover.rs:3695:8
      |
-3693 | pub fn kh1_move() -> bool {
+3695 | pub fn kh1_move() -> bool {
      |        ^^^^^^^^
 
 warning: function `jump_held_raw` is never used
-    --> crates/kh1-hook/src/win/takeover.rs:3737:8
+    --> crates/kh1-hook/src/win/takeover.rs:3739:8
      |
-3737 | pub fn jump_held_raw() -> bool {
+3739 | pub fn jump_held_raw() -> bool {
      |        ^^^^^^^^^^^^^
 
 warning: constant `MODEL` is never used
@@ -8621,5 +8603,5 @@ warning: function `GetWindowThreadProcessId` is never used
 39 |     pub fn GetWindowThreadProcessId(window: *mut c_void, pid: *mut u32) -> u32;
    |            ^^^^^^^^^^^^^^^^^^^^^^^^
 
-warning: `kh1-hook` (lib) generated 1384 warnings (run `cargo fix --lib -p kh1-hook` to apply 1 suggestion)
-    Finished `release` profile [optimized] target(s) in 9.48s
+warning: `kh1-hook` (lib) generated 1381 warnings (run `cargo fix --lib -p kh1-hook` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 10.50s

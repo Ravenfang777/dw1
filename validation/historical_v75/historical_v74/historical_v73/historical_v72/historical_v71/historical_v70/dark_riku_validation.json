@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "source_bank": "xa_ex_1160",
+  "source_clips": 31,
+  "already_used_clips": [
+    0,
+    1,
+    2,
+    6,
+    7,
+    28,
+    29,
+    30
+  ],
+  "unused_clips": 23,
+  "passives": [
+    101,
+    102,
+    103,
+    104
+  ],
+  "mapped_pose_samples": 2139,
+  "target_bones": 293,
+  "actual_game_executed": false
+}

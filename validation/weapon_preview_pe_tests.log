@@ -9,6 +9,6 @@ test_stance_changes_keep_preview_and_reserved_flags (__main__.WeaponPreviewTests
 test_unequip_and_removal_stop_active_preview_query (__main__.WeaponPreviewTests.test_unequip_and_removal_stop_active_preview_query) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 1.605s
+Ran 9 tests in 1.932s
 
 OK

@@ -1,21 +1,18 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Original delivered v74 commit: bcbbdd6df6bc1f3aff80cb3f2e658af97ce76f06
-Restored equivalent v74 commit: 2d8b5d11c58218322c1dc26b05d5c5412ba6d3b0
-Exact v74 tree, both histories: db35ba356bf2e7ab84508db07ad5db8b04646ae5
-v75 commit: b503b865a15c86aa5086430b9800ece04aa85eb1
-v75 source tree: fe234add1bea5646dd696f853635b8d717ec4266
-The workspace was reconstructed from the supplied v74 full patch. Committer
-metadata changes its restored commit IDs; the entire v74 tree is byte exact.
-Styles_v75.patch contains75 derivative commits from pinned upstream.
-Styles_v75_from_v74.patch is the single new change, applicable to that v74 tree.
-Styles_v75_from_upstream.bundle requires only pinned upstream, and includes all
-75 derivative commits for reliable reconstruction without earlier bundles.
-Passives66..104 now preview39 individual KH2 elements; old body selectors retire.
-Both private generated animation headers remain byte exact to v74.
-No original KH2 particle payload is compiled or committed; read at runtime.
-Current validation has665 Rust checks and9 focused final-PE C/menu checks.
-The older172 PE checks under historical_v74 are historical, not a v75 rerun.
-New Rust effect dispatch/GPU and actual package appearances were not run in game.
-Main combat, Overdrives/colors, AP and footsteps mute remain from v74.
+Previous delivered v75 commit: b503b865a15c86aa5086430b9800ece04aa85eb1
+Exact v75 source tree: fe234add1bea5646dd696f853635b8d717ec4266
+v76 commit: c1d983095d243af8edde62e063c173657c6b45fc
+v76 source tree: 6be868251c99e503d90ae03fc19e4cda7aa04ba6
+Styles_v76.patch contains76 derivative commits from pinned upstream.
+Styles_v76_from_v75.patch is the single new change on the delivered v75.
+Styles_v76_from_upstream.bundle requires only pinned upstream and includes all
+76 derivative commits, preserving history without an earlier private bundle.
+Both private generated animation headers remain byte exact to v75.
+KH2 activation motion/effect payloads are read at runtime, never committed.
+Current checks:674 Rust in30 nonempty suites,9 focused final-PE C/menu checks.
+Nine new Rust checks include4 actual native adapter tests with inert engine
+leaves and5 portable activation/math checks. The older validation folders are
+historical; they do not claim full movement/animation fixtures were rerun.
 No original executable, model, extracted table or decompiled code enters Git.
+No actual Windows/game/GPU run, full particle appearance or HUD render verified.

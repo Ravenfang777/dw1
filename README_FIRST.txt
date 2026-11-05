@@ -1,62 +1,65 @@
-KH1FM STYLES v75 / s414 - KH2 WEAPON EFFECT PREVIEWS
+KH1FM STYLES v76 / s415 - TRIANGLE OVERDRIVE ACTIVATION
 
 INSTALL
-Close KH1. Disable v74 and older main Styles packages. Import this ZIP into
-OpenKH Mod Manager, enable v75, Build and launch with Panacea. Keep the existing
-KH2FM installation/resources and settings. Restart after changing the DLL.
-Confirm s414 / STANCES v75 in kh1-dual-wield.log. Target: supplied Steam Global.
+Close KH1. Disable v75 and older main Styles packages. Import this ZIP into
+OpenKH Mod Manager, enable v76, Build and launch with Panacea. Keep the existing
+KH2FM installation/resources/settings. Restart after changing the DLL.
+Confirm s415 / STANCES v76 in kh1-dual-wield.log. Target: supplied Steam Global.
 
-USE
-Customize -> Passives. Slots66..104 now select39 individual KH2 weapon-effect
-elements, replacing the Ventus and Dark Riku animation previews. Numeric names
-and AP0 remain. Each description shows its effect name, source package family
-and element number, with runtime readiness. Full paths/IDs are also listed in
-WEAPON_EFFECT_TESTS.csv and WEAPON_EFFECT_TESTS.txt.
+ACTIVATE
+Choose one Overdrive in Customize -> Overdrives, then return to the field.
+Selection now arms it; the aura stays off until transformation is complete.
+When the native Triangle box above the command menu says Overdrive, tap
+Triangle. All12 stances and base Sora use the full KH2 Drive transformation
+animation52, once. Infinity Tip Charge and Counterguard Hand Flash play
+centered on Sora, filtered to the selected Overdrive's configured color.
+The aura turns on only after the final transformation pose is submitted.
 
-Equip one preview and return to the field. It repeats every three seconds at
-normal game speed. Short flashes finish naturally; looping effects have a
-finite two-second window and one-second clear gap. Choose another slot to
-replace it, or select the active slot again to turn it off. Walk and attack to
-check attachment. The preview changes no moveset and keeps the equipped stance.
+Holding Triangle does not repeat it. Once complete, another fresh tap can play
+one new sequence and re-enable that aura afterward. Selection persists; active
+state is runtime only. Changing/re-equipping an Overdrive or loading a new actor
+requires activation again. Same-owner stance changes retain a completed aura.
 
-Old animation-test selections reset on upgrade, preventing unexpected effects.
-Reserved105..114/127 flags remain. Selection uses the existing mod-wide settings
-file, with weapon_effects=kh2-v1; no native ability/save/AP slots are consumed.
+Talk/Open and other occupied native context prompts keep Triangle priority.
+Return to normal Attack root before activating; not during submenus, L1 magic
+shortcuts, attacks/casts, special air actions, events, pause or removal mode.
+Native collision, gravity and damage remain live during the animation; field/
+action interruption cancels it without granting an aura. No invincibility or
+other planned Overdrive bonus/Drain deduction is implemented yet.
 
-WHAT TO EXPECT
-Kingdom Key flash; Limit Form glows/ribbon/catch/charge and Sonic Rave effects;
-Valor finisher bursts; Final weapon bursts/first swings; base Sora attack effects.
-One PAX element plays per slot, rather than an attack's entire combined effect.
-Original colors are retained. Effects are visual only; no attack, script,
-damage, sound or resource behavior is added. Overdrives remain independent.
-Only KH2 is included in this iteration.
+SOURCE EFFECTS
+Infinity Tip Charge: obj/P_EX100_KH1F.a.us element20.
+Counterguard Hand Flash: obj/P_EX100.a.us element41.
+Each starts once, not in a repeated preview cycle. Short flashes expire;
+remaining handles end with the transform. Both roots use Sora's body center,
+not the Keyblade tip/hands. Existing preview/stance textures are not recolored.
 
-Descriptions report loading, partial rendering/skipped programs, missing KH2
-archive/element, unavailable particle data or a retired geometry budget.
-Ready means parsed/admitted, not a verified full original visual. Limit36 has
-known unsupported lightning programs. Missing assets are not substituted.
-Weapon codes use the current primary blade, including left-only source codes.
-Other authored body/object anchors remain. A ribbon preview does not throw the
-Keyblade. Exact blade fit/scale and original effect appearance need game tests.
+The same KH2 resources used for existing styles/previews must be available.
+OVERDRIVE ACTIVATION READY and ACTIVATION FX READY show admission; ACTIVATION
+START, TRANSFORM POSE READY, ACTIVATION FX START and OVERDRIVE ACTIVE show the
+sequence. Missing assets/conflicting reserved record prevent the prompt.
+Existing particle interpreter limitations/skipped programs still apply.
 
 RETAINED
-All main stances including Type G and Type D, intrinsic passives, native AP,
-movement/damage/contact rules, nine Overdrives/palette3/Drain/help metadata,
-Customize/Appearance and muted footsteps. Both generated headers remain exact.
-No planned Overdrive buffs or Drain deduction mechanics are implemented.
+All main stances and combat, intrinsic passives/native AP, nine Overdrives and
+palette3 colors/Drain/help, Customize/Appearance, muted footsteps, and39 KH2
+effect previews in Passives66..104. Both generated animation headers are exact
+to v75. WEAPON_EFFECT_TESTS.csv/.txt remain the gallery guide. No KH1/BBS demos.
 
 VALIDATION
-665 Rust checks/30 nonempty suites pass, plus9 focused final-PE C/menu checks.
-The PE checks cover39 descriptions, all12 stance coexistence paths, exclusive
-selection, full-capacity zero-AP lists and readiness/footer bounds. They run
-the actual C adapter/menu against the supplied Steam EXE with Win64 ABI mocks.
-Rust particle dispatch/GPU and KH2 payload availability are not executed there.
-Windows x64 release, exports/imports, source reconstruction, ZIP CRC and file
-hashes are verified. No actual Windows/game/GPU session was performed here.
-Check each selected effect's appearance and transitions in game.
+674 Rust checks/30 nonempty suites and9 focused final-PE C/menu checks pass.
+Nine new activation checks cover fresh/held input, final-pose gate, scope,
+stance generations, prompt priority/conflicts, masks and interruptions.
+Native adapter engine dependencies, rendering and package availability are
+mocked; the PE harness executes the real C menu adapter using the Steam image.
+Steam hook/name/getter anchors, Windows x64 release, exports/imports, source
+reconstruction, bundle, ZIP CRC and file hashes are checked.
+No actual Windows/game/GPU run was performed here. Please check the Triangle
+box, full transform, center/scale/colors and delayed aura with base Sora and
+your usual stances. source/STYLES-V76.MD records scope and remaining live checks.
 
 UNINSTALL
-Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v75, close KH1,
+Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v76, close KH1,
 disable the package and Build. Existing restoration/capacity rules remain.
-The previously requested saved removal of partner abilities cannot be reversed
+Previously requested saved partner-ability removal cannot be reversed
 automatically; that existing behavior is unchanged.
