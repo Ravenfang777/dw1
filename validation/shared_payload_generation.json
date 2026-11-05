@@ -4,8 +4,10 @@
   "profiles": 37,
   "ventus_profile": true,
   "ventus_test_profiles": 35,
-  "main_only_body_variants": 2,
-  "native_dash_pointer_alias": true,
+  "main_only_body_variants": 3,
+  "native_dash_pointer_alias": false,
+  "type_f_dash_source": "Ventus330",
+  "type_f_dash_reverse_grip": false,
   "numbered_common_payloads_retained_from_v3": 0,
   "headers_counts_and_capacities_unchanged": true,
   "native_request_event_payloads_counts_and_pointers_unchanged": true,
@@ -20,5 +22,5 @@
   "immutable_glide038_bytes": 17024,
   "live_glide_streams_written": false,
   "all_changes_inside_existing_body_helper_tables": true,
-  "unique_data_blocks": 1226
+  "unique_data_blocks": 1227
 }

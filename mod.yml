@@ -1,9 +1,9 @@
-title: KH1FM Styles v68 - Type G Grip, Air Travel and Two Blade Passes
+title: KH1FM Styles v69 - Type F Damaging Air Dash
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Bake Type G reverse grip through converted pose transitions. Both air actions
-  move at2x v67 speed and1.5x distance. Two blade passes share native hit tracking.
-  Preserve stance assignments, working numbered Passives and Customize menus.
+  Copy Type G damaging air dash330 to Type F with1.5x G distance and ordinary
+  weapon grip. Keep fixed facing, one use per airtime and shortcut exclusion.
+  Preserve G actions, other stances, numbered Passives and Customize menus.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

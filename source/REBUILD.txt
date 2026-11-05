@@ -1,5 +1,5 @@
-Clone the pinned public upstream, then git am Styles_v68.patch.
-Alternatively, fetch Styles_v68_from_v67.bundle into the recorded v67 checkout.
+Clone the pinned public upstream, then git am Styles_v69.patch.
+Alternatively, fetch Styles_v69_from_v68.bundle into the recorded v68 checkout.
 Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h.
 Copy rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
 These included headers are exact final build inputs. Never add generated
@@ -61,3 +61,9 @@ PE tests include reverse_grip.py alongside the harness; use VENTUS_SOURCE for
 the current main work and VENTUS_TEST_SOURCE for the original gallery work.
 No regeneration is needed when using the provided private headers.
 See STYLES-V68.MD for test scope and live limitations.
+
+v69 uses the same immutable main G and test fixtures as v68. The F dash variant
+copies the G330 fixture before reverse_grip.py is applied for G. Do not reverse
+or modify the source fixtures in place. The provided headers require no asset
+regeneration. The current shared final-PE harness requires VENTUS_SOURCE and
+VENTUS_TEST_SOURCE, including when testing F's copy. See STYLES-V69.MD.

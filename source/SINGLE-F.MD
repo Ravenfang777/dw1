@@ -23,27 +23,35 @@ Spell recovery follows its cast family. Magic and effects retain native
 keyblade-tip origins. Native Guard/Dodge Roll eligibility, hit events, damage,
 MP and collision remain. Single F retains ordinary held Glide.
 
-## Air dash
+## Air dash — v69 / s408
 
-A fresh airborne Square starts the tested v4 horizontal dash: captured stick
-or character-facing direction, speed16,39 native ticks, maximum624 units. The
-visual now uses the original KH1 Superglide active loop (normal physical slot76,
-Olympus slot38,60 frames), sampled by KH1 itself. Its native animation bodies,
-hair, helper data and events are not converted or overwritten. The burst samples
-the beginning of that loop for its finite39 ticks. It replaces held Superglide.
+A fresh airborne Square copies Type G's Ventus330 damaging dash, with F's
+ordinary weapon grip. It travels1.5x G's current468-unit distance: speed24 for
+29.25 native ticks gives702 units before collision. The animation keeps G's
+4/3 playback rate and complete finite timing. Captured stick/facing direction
+stays locked throughout; ordinary held Glide remains available after the dash.
 
-A checked temporary pointer lease makes native fall slot10 resolve to that
-original Superglide record during the dash. KH1 resolves the physical slot from
-the live MSET each motion update (Steam29F3B8 and29FF80 paths). Completion or
-interruption restores the original fall handle. Room/model transitions retain
-a pending lease; rollback requires the same live MSET array, unchanged alias and
-a fully admitted fall target. Unknown/reused pointers receive no writes.
+Use an admitted330 body variant in native fall slot10. Its headers, key counts,
+helper capacities, native events and motion-array handle stay unchanged. The
+copy starts from the immutable un-reversed G330 fixture; it does not acquire G's
+reverse grip. Restore the previous F fall body on completion/interruption. The
+old native Superglide source/pointer lease is no longer a dash dependency.
+
+The physical blade-contact coordinator now admits main F only during this live
+dash, using the same actual-blade/native-enemy-body test and native damage path
+as G. Each enemy can receive one successful record per dash; rejected contacts
+may retry. F's ordinary attacks do not enter G's paired-contact or flinch logic.
+Changing F/G resets the contact ledger even on an unchanged native binding.
 
 The dash budget belongs to airtime. Completion, button release, damage,
-unequip/re-equip, native Glide and cache readmission do not refill it. Only a
-valid native ground state at floor height refills it, including landing while
-another style is selected. A newly created Sora actor gets its own budget.
-The v4 fix accepting the user's legitimate Square marker bits is retained.
+unequip/re-equip, native Glide and cache readmission do not refill it. A valid
+native ground state at floor height refills it, including landing while another
+style is selected. A new Sora actor gets its own budget. L1/LB shortcut chords,
+the active shortcut menu, casting, queued attacks, scripts and damage retain
+their existing exclusions. Collision can shorten the measured travel.
+
+See styles-v69.md for validation and limits. The menu description below records
+the historical v54 integration; current Customize behavior is in styles-v60..64.
 
 ## Native Styles page
 

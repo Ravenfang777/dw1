@@ -1,74 +1,46 @@
-KH1FM STYLES v68 / s407 - TYPE G GRIP, AIR TRAVEL AND TWO BLADE PASSES
+KH1FM STYLES v69 / s408 - TYPE F DAMAGING AIR DASH
 
 INSTALL
-Close KH1. Disable v67 and older main Styles packages. Import this ZIP into
-OpenKH Mod Manager, enable v68, Build and launch with Panacea. Keep the existing
+Close KH1. Disable v68 and older main Styles packages. Import this ZIP into
+OpenKH Mod Manager, enable v69, Build and launch with Panacea. Keep the existing
 KH2FM resources/settings required by the other stances. Standalone Aqua/Terra
-and full KH2 Combat DLLs remain disabled. Confirm s407 / STANCES v68 in
+and full KH2 Combat DLLs remain disabled. Confirm s408 / STANCES v69 in
 kh1-dual-wield.log. This native adapter targets the supplied Steam Global build.
 
-REVERSE GRIP
-Reverse grip is now stored in the converted G animations, including the main
-profile, all35 Ventus previews, body variants and held Glide038. The native
-sampler carries one consistent grip through converted pose transitions. Remove
-the separate runtime weapon-matrix correction that used a different attachment.
-Body poses, hilt position, bone lengths, native helpers and travel are preserved.
-Unmapped native actions keep their native records.
+TYPE F AIR DASH
+Type F now copies Type G's damaging Ventus330 air dash, with ordinary weapon
+grip. Tap Square in the air. It travels1.5x Type G's current distance:702 vs468
+unobstructed native units. Speed24 vs16 keeps the same29.25-tick duration and
+animation timing. Native collision may shorten travel.
 
-AIR DASH AND DODGE
-Square330 and airborne Circle410 move at2x v67 speed over1.5x its distance:
-468 unobstructed native units, previously312. The duration is29.25 native ticks,
-previously39. Animation playback is4/3 its previous rate to fit that duration.
-410's total lift is43.875 units, previously29.25. Type F remains unchanged.
+The initial stick/facing direction stays locked. Use once per actual airtime;
+landing resets it. L1/LB magic shortcuts and the active shortcut menu cannot
+start/spend the dash. Casting, damage and script exclusions remain. Ordinary
+held Glide is usable after the dash; the tap dash replaces held Superglide.
 
-Initial stick direction/facing stays locked and native collision remains active.
-Each action is once per actual airtime; landing resets it. Release the ground
-jump before an airborne Circle tap. L1 shortcuts, casting, damage and scripts
-cannot start an action. Ordinary held038 Glide is available after completion.
+Damage uses the same physical blade-contact/native damage path as G. The blade
+must reach the enemy. One successful contact per enemy per dash; rejected
+contacts may retry. Normal F combos and their contact/reaction behavior remain.
 
-TWO CONTACTS
-379 (ground2),411 (ground finisher) and482 (air finisher) now have separate first
-and second blade-contact windows. Original native hits and fallback contacts
-share successful-hit tracking, avoiding duplicates in the same pass. Failed
-attempts can retry. Earlier retiming also collapsed some on/off windows; those
-now keep positive width after the second swing. Damage/defenses stay native;
-the actual blade must reach the target. First finisher contact flinches and
-the second can use native finisher knockback.330 retains one contact per target.
-The log labels pass1/pass2 and native witnesses for testing.
-
-TYPE G MAPPING RETAINED
-Ground combo:300,379,411. Air combo:305,306,482.
-Ground and air item:395. Held ordinary Glide:038.
-Ground Cure/Aero/Thunder/Stop:390. Air:508.
-Ground Fire/Blizzard/Gravity:416. Air:417.
-Source spans/durations are in VENTUS_ANIMATIONS.csv.
-
-PASSIVES AND OTHER STANCES
-Ventus66..100 retain their187 source-clip assignments and body curves; only the
-grip changes. Dark Riku101..104 remain unchanged. Tests and stances stay mutually
-exclusive. Other stance mappings, menus, normal AP, white AP Used/max and seven
-slot-free built-ins remain. IDs and native48-byte capacity are unchanged.
-As requested previously, non-Sora ability lists remain cleared; saving persists
-that removal and uninstall does not reconstruct those partner abilities.
+RETAINED
+G's330/410 speed/distance, reverse grip, two attack-contact passes and mappings
+remain. Ventus66..100/Dark Riku101..104 previews, other stances, Customize,
+Passives, AP and seven built-in abilities remain. Previously requested removal
+of non-Sora abilities remains; saving persists it and uninstall does not restore
+the partner ability lists.
 
 CHECK IN GAME
-After leaving the menu, stand idle for a safe data handoff. Move between idle,
-run, jump, fall and both combos to check the grip. Check both air actions and
-two contacts on reachable enemies/objects. Then check G -> unequip -> another
-stance, plus numbered preview switching.
+After changing stance, stand idle for the safe body handoff. Check F's Square
+330 dash against an enemy, locked facing, once-per-airtime reset and L1+Square
+shortcut casting. Then check F -> G -> another stance and ordinary Glide.
 
-647 Rust tests/30 nonempty suites and166 final-PE checks pass. These include the
-actual Rust contact coordinator with mocked native dependencies and the actual
-shared native motion hook.324 converted records/2268 poses preserve body/travel
-and agree with rigid reverse-grip geometry. Source, hashes and validation are
-included; see source/STYLES-V68.MD for scope and exact limitations.
-
-No Windows/game/GPU session was run here. Live transition appearance, contact
-alignment, finalized HP damage and combat feel still need your game check.
+647 Rust tests/30 suites and167 final-PE checks pass (119 shared,48 E).
+Unchanged37-profile/G-action/038/E payloads are byte-verified. Source, hashes
+and validation are included. See source/STYLES-V69.MD for exact scope.
+No Windows/game/GPU session was run here; appearance and actual HP damage
+still need an in-game check.
 
 UNINSTALL
-Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v68, close KH1,
-disable the package and Build. The hidden stance token is removed. Built-in
-normal entries restore where capacity permits without eviction (Sora entries
-off, shared movement on). Partner ability lists stay removed; numbered flags
-stop applying when the mod is removed.
+Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v69, close KH1,
+disable the package and Build. Existing native-entry restoration/capacity
+rules and numbered-flag behavior remain as described in prior versions.

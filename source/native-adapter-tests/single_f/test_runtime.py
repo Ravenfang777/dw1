@@ -250,8 +250,8 @@ class Host:
             elif (ROOT/f"sets/shared_v2/fixtures/terra_{r['fixture_stem']}.bin").exists():folder=ROOT/'sets/shared_v2/fixtures'
         path=folder/f"{'terra' if on else 'original'}_{r['fixture_stem']}.bin"
         return self.expected_from(slot,path if path.exists() else self.original_path(r))
-    def expected_from(self,slot,path):
-        r=self.record_by_slot[slot];data=bytearray(reverse_native_grip(path.read_bytes()) if path.name.startswith('ventus_') else path.read_bytes())
+    def expected_from(self,slot,path,reverse=True):
+        r=self.record_by_slot[slot];data=bytearray(reverse_native_grip(path.read_bytes()) if reverse and path.name.startswith('ventus_') else path.read_bytes())
         data[:80]=self.runtime_originals[slot][:80]
         event_at=struct.unpack_from('<I',self.original_path(r).read_bytes(),60)[0]
         while struct.unpack_from('<I',data,event_at)[0]!=0xffffffff:
@@ -331,7 +331,7 @@ class Host(BaseHost):
  def native_super_glide(self):
   if not bridge.call_ptr1(self.symbols['SingleFSuppressSuperglide'],self.actor):super().native_super_glide()
  def observe(self):bridge.adapter_observe(self.symbols['SingleFObserve'],self.actor)
- def expected_variant(self,slot):return self.expected(10,1) if slot==10 else super().expected_variant(slot)
+ def expected_variant(self,slot):return self.expected_from(10,Path(os.environ['VENTUS_SOURCE'])/'variants/dash/fixtures/ventus_s010.bin',reverse=False) if slot==10 else super().expected_variant(slot)
  def finish_slide(self):
   for i in range(40):
    if not r32(self.symbols['slide_active']):return
@@ -435,6 +435,21 @@ class RuntimeTests(unittest.TestCase):
         self.assertGreaterEqual(bridge.bridge_motion_delta(),0.);self.assertLess(bridge.bridge_motion_delta(),.1)
         h.finish_slide();bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.)
         self.assertEqual(bridge.bridge_motion_delta(),1.)
+
+    def test_type_f_copied330_uses_g_timing_with_one_point_five_g_distance(self):
+        for bank in [98,60]:
+            for dt in [.5,1.,2.5]:
+                h=Host(slot=bank,guard=True,jump=True,encoded_fields=True)
+                self.assertEqual(bridge.adapter_init(h.symbols['SingleEInit'],h.game,1),1)
+                h.prepare_slide();h.tap_slide()
+                bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.)
+                self.assertAlmostEqual(bridge.bridge_motion_delta(),4./3.,places=6)
+                distance=0.;elapsed=0.
+                while r32(h.symbols['slide_active']):
+                    movement=h.move(dt)[0];distance+=movement[0];elapsed+=movement[0]/24.
+                self.assertAlmostEqual(elapsed,29.25);self.assertAlmostEqual(distance,468.*1.5)
+                self.assertEqual(h.body(10),h.expected(10,1))
+                bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.);self.assertEqual(bridge.bridge_motion_delta(),1.)
 
     def test_type_g_both_actions_finish_in_three_quarters_the_previous_time(self):
         for button,lift in [(0x10,0.),(6,-43.875)]:
@@ -626,7 +641,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(bridge.call_ptr1(h.symbols['SingleFSuppressSuperglide'],h.actor),0)
         self.assertEqual(bridge.call_ptr1(h.symbols['SingleFSuppressGlide'],h.actor),0)
 
-    def test_ventus_switch_retires_terra_dash_alias_and_never_uses_terra_variants(self):
+    def test_ventus_switch_retires_terra_dash_body_and_never_uses_terra_variants(self):
         if not os.environ.get('VENTUS_SOURCE'):self.skipTest('Provide converted Ventus fixtures')
         h=Host(encoded_fields=True);h.prepare_slide();h.tap_slide();self.assertEqual(r32(h.symbols['slide_active']),1)
         h.want=0;h.frame();self.assertEqual(r32(h.symbols['slide_active']),0)
@@ -883,37 +898,37 @@ class RuntimeTests(unittest.TestCase):
         h.ui_call('StylesMenuFrame');root=h.ui_window();h.ui_call('styles_enter',root);parent=r64(h.symbols['styles_custom_page']);h.ui_page_frame(parent);h.ui_page_frame(parent,0x4000);h.ui_page_frame(parent,0x20)
         self.assertEqual(C.string_at(h.symbols['styles_shadow']+0x44,3),bytes([6,0,0]));self.assertEqual(h.abilities()[:3],bytes([6,117,0]));self.assertEqual(h.ability_count(21),1)
 
-    def test_slide_fresh_square_plays009_and_release_does_not_shorten_it(self):
+    def test_slide_fresh_square_plays330_and_release_does_not_shorten_it(self):
         for bank in [98,60]:
             h=Host(slot=bank,encoded_fields=True,air=True);h.prepare_slide();h.tap_slide()
             self.assertEqual(h.body(10),h.expected_variant(10));self.assertEqual(r32(h.actor+0x164),6)
             self.assertEqual(bridge.bridge_queue_calls(),1)
             for i in range(5):
                 h.clock(float(i));h.control(state=2,request=6);delta,_=h.move()
-                self.assertEqual(delta,[16.,0.,0.,16.]);self.assertEqual(h.body(10),h.expected_variant(10))
+                self.assertEqual(delta,[24.,0.,0.,24.]);self.assertEqual(h.body(10),h.expected_variant(10))
             self.assertEqual(bridge.bridge_control_word(0)&0x16,0)
     def test_slide_distance_is_finite_and_independent_of_tick_size(self):
         for dt in [0.25,0.5,1.,1.25,2.5]:
             h=Host(air=True);h.prepare_slide();h.tap_slide();elapsed=0.;total=[0.,0.,0.]
-            while elapsed<39.-1e-5:
+            while elapsed<29.25-1e-5:
                 h.clock(elapsed);delta,_=h.move(dt)
                 for i in range(3):total[i]+=delta[i]
-                elapsed+=min(dt,39.-elapsed)
-            self.assertEqual(total,[624.,0.,0.]);self.assertEqual(h.body(10),h.expected(10,1))
+                elapsed+=min(dt,29.25-elapsed)
+            self.assertEqual(total,[702.,0.,0.]);self.assertEqual(h.body(10),h.expected(10,1))
             delta,_=h.move();self.assertEqual(delta,[1.,2.,3.,4.])
     def test_movement_duration_completion_restores_fall_and_release_velocity(self):
         h=Host(air=True);h.prepare_slide();h.tap_slide();h.move();h.finish_slide();h.control(state=2,request=6)
-        self.assertEqual(h.body(10),h.expected(10,1));self.assertEqual(struct.unpack('<f',C.string_at(h.actor+0x3c0,4))[0],8.)
+        self.assertEqual(h.body(10),h.expected(10,1));self.assertEqual(struct.unpack('<f',C.string_at(h.actor+0x3c0,4))[0],12.)
         self.assertEqual(h.move()[0],[1.,2.,3.,4.])
     def test_slide_locks_initial_analog_direction_and_does_not_write_actor_position(self):
         h=Host(air=True);h.prepare_slide();put(h.actor+0x10,struct.pack('<4f',12.,13.,14.,1.));h.tap_slide(.6,.8)
         h.control(state=2,request=6,tilt=1,x=-1,z=0);delta,_=h.move()
-        self.assertAlmostEqual(delta[0],9.6,places=5);self.assertAlmostEqual(delta[2],12.8,places=5)
+        self.assertAlmostEqual(delta[0],14.4,places=5);self.assertAlmostEqual(delta[2],19.2,places=5)
         self.assertEqual(C.string_at(h.actor+0x10,16),struct.pack('<4f',12.,13.,14.,1.))
         self.assertEqual(delta[1],0.)
     def test_slide_neutral_stick_uses_character_facing(self):
         h=Host(air=True);h.prepare_slide();put(h.actor+0x30,struct.pack('<3f',0.,0.,-1.));h.tap_slide(0,0)
-        self.assertEqual(h.move()[0],[0.,0.,-16.,16.])
+        self.assertEqual(h.move()[0],[0.,0.,-24.,24.])
     def test_dash_facing_stays_at_initial_direction_and_releases_after_end(self):
         for x,z in [(1,0),(0,-1),(-.6,.8),(.6,-.8)]:
             h=Host(control_mode=7);h.prepare_slide();h.tap_slide(x,z);yaw=math.atan2(x,z)
@@ -958,7 +973,7 @@ class RuntimeTests(unittest.TestCase):
         for height in [2.,10.,49.,50.,100.]:
             h=Host(air=True);h.prepare_slide();w32(h.game+0x2d5ec10,0);put(h.glide_work+0x100,struct.pack('<f',24.))
             h.control(down=0x10,pressed=0x10,state=2,request=10,height=height,tilt=1,x=1,z=0)
-            self.assertEqual(bridge.bridge_queue_calls(),1);self.assertEqual(h.body(10),h.expected_variant(10));self.assertEqual(h.move()[0],[16.,0.,0.,16.])
+            self.assertEqual(bridge.bridge_queue_calls(),1);self.assertEqual(h.body(10),h.expected_variant(10));self.assertEqual(h.move()[0],[24.,0.,0.,24.])
     def test_slide_does_not_replace_queued_attack_or_spell_command(self):
         for queued in [0xcc,0x36,0x40000000]:
             h=Host(air=True);h.prepare_slide();w32(h.actor+0x178,1);w32(h.actor+0x17c,queued);h.tap_slide()
@@ -966,10 +981,10 @@ class RuntimeTests(unittest.TestCase):
         h=Host(air=True);h.prepare_slide();w32(h.game+0x2d53a40,0x36);h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),0)
     def test_slide_waits_for_native_queue_commit_before_movement(self):
         h=Host(air=True,control_mode=3);h.prepare_slide();h.tap_slide();self.assertEqual(h.move()[0],[1.,2.,3.,4.])
-        bridge.bridge_commit(h.actor);h.clock(0.);self.assertEqual(h.move()[0],[16.,0.,0.,16.])
+        bridge.bridge_commit(h.actor);h.clock(0.);self.assertEqual(h.move()[0],[24.,0.,0.,24.])
     def test_slide_pauses_at_zero_delta_and_aborts_invalid_delta(self):
         h=Host(air=True);h.prepare_slide();h.tap_slide();self.assertEqual(h.move(0.)[0],[0.,0.,0.,0.]);self.assertEqual(h.body(10),h.expected_variant(10))
-        self.assertEqual(h.move()[0],[16.,0.,0.,16.])
+        self.assertEqual(h.move()[0],[24.,0.,0.,24.])
         for dt in [-1.,float('nan'),5.]:
             h=Host(air=True);h.prepare_slide();h.tap_slide();self.assertEqual(h.move(dt)[0],[1.,2.,3.,4.]);self.assertEqual(h.body(10),h.expected(10,1))
     def test_damage_landing_and_unequip_cancel_slide_without_granting_defense(self):
@@ -989,11 +1004,16 @@ class RuntimeTests(unittest.TestCase):
         for slot,p in h.native_glide_motions.items():self.assertEqual(C.string_at(p,len(h.native_glide_originals[slot])),h.native_glide_originals[slot])
         for slot,(p,raw) in h.native_reactions.items():self.assertEqual(C.string_at(p,len(raw)),raw)
         self.assertEqual(r32(h.actor+0x1d8),h.original_request_handle)
-    def test_default_superglide_alias_exact_and_scoped_in_both_banks(self):
-     for bank in [98,60]:
-      h=Host(slot=bank,encoded_fields=True);h.prepare_slide();slot=10 if bank==98 else h.record_by_slot[10]['olympus_slot'];old=r32(h.array+slot*4);h.tap_slide()
-      alias=r32(h.array+slot*4);self.assertEqual(h.decode(alias),h.native_glide_motions[76]);self.assertNotEqual(old,alias)
-      h.finish_slide();h.control();self.assertEqual(r32(h.array+slot*4),old)
+    def test_f_copied_dash330_keeps_normal_grip_and_native_pointer_in_both_banks(self):
+        for bank in [98,60]:
+            h=Host(slot=bank,encoded_fields=True);h.prepare_slide();slot=10 if bank==98 else h.record_by_slot[10]['olympus_slot'];old=r32(h.array+slot*4);h.tap_slide()
+            self.assertEqual(r32(h.array+slot*4),old)
+            self.assertEqual(h.body(10),h.expected_variant(10));self.assertNotEqual(h.body(10),self.g_variant(h,'dash',10))
+            self.assertEqual(bridge.call_ptr1(h.symbols['SingleFAirAction'],h.actor),1)
+            self.assertEqual(bridge.call_ptr1(h.symbols['SingleGAction'],h.actor),0)
+            h.finish_slide();h.control();self.assertEqual(r32(h.array+slot*4),old);self.assertEqual(h.body(10),h.expected(10,1))
+            self.assertEqual(bridge.call_ptr1(h.symbols['SingleFAirAction'],h.actor),0)
+
     def test_once_per_airtime_survives_completion_release_damage_and_style_toggle(self):
      h=Host();h.prepare_slide();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),1)
      h.finish_slide();h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),1)
@@ -1003,14 +1023,12 @@ class RuntimeTests(unittest.TestCase):
     def test_landing_while_other_style_selected_restores_budget(self):
      h=Host();h.prepare_slide();h.tap_slide();h.finish_slide();h.control();h.equip(False);w32(h.actor+0x164,0);h.frame()
      h.control(state=0,request=0,height=0);h.observe();h.equip(True);h.frame();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),2)
-    def test_native_superglide_runtime_header_is_retained_and_initial_foreign_curves_are_rejected(self):
-        h=Host();h.prepare_slide();motion=h.native_glide_motions[76];w32(motion,1);h.tap_slide()
-        self.assertEqual(bridge.bridge_queue_calls(),1);self.assertEqual(h.decode(r32(h.array+40)),motion);self.assertEqual(r32(motion),1)
-        h.finish_slide();h.control();h.control(state=0,request=0,height=0)
-        # A new, unadmitted source with foreign curves must still be refused.
-        h=Host();h.prepare_slide();motion=h.native_glide_motions[76]
-        keys=motion+r32(motion+40);old=C.string_at(keys,1);put(keys,bytes([old[0]^1]));h.tap_slide()
-        self.assertEqual(bridge.bridge_queue_calls(),0);self.assertEqual(C.string_at(keys,1),bytes([old[0]^1]))
+    def test_f_dash_does_not_read_or_modify_native_superglide_curves(self):
+        h=Host();h.prepare_slide();motion=h.native_glide_motions[76];w32(motion,1)
+        keys=motion+r32(motion+40);put(keys,b'\x55');native=C.string_at(motion,len(h.native_glide_originals[76]));h.tap_slide()
+        self.assertEqual(bridge.bridge_queue_calls(),1);self.assertEqual(h.body(10),h.expected_variant(10))
+        self.assertEqual(C.string_at(motion,len(native)),native)
+        h.finish_slide();h.control(state=0,request=0,height=0);h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),2)
 
     def test_dash_needs_no_new_handle_or_animation_allocation(self):
         for bank in [98,60]:
@@ -1023,8 +1041,8 @@ class RuntimeTests(unittest.TestCase):
             self.assertEqual(bridge.bridge_queue_calls(),1)
             self.assertEqual(C.string_at(h.game+0x2ee3980,64*8),banks)
             total=0.
-            for tick in range(39):total+=h.move()[0][0]
-            self.assertEqual(total,624.)
+            while r32(h.symbols['slide_active']):total+=h.move()[0][0]
+            self.assertEqual(total,702.)
 
     def test_dash_survives_full_pointer_bank_table_in_both_banks(self):
         data=Path(os.environ['KH1_EXE']).read_bytes();pe=struct.unpack_from('<I',data,60)[0];sh=pe+24+struct.unpack_from('<H',data,pe+20)[0]
@@ -1125,15 +1143,16 @@ class RuntimeTests(unittest.TestCase):
         put(h.symbols['styles_shadow']+0x44+5,bytes([116]));new=bytes([6,117,0x97,42])+bytes(44);put(h.save+0x44,new)
         h.ui_call('styles_page',w);self.assertEqual(h.abilities(),new)
 
-    def test_model_unload_restores_alias_and_main_readmits_without_resetting_air_budget(self):
+    def test_model_unload_retires_dash_and_main_readmits_without_resetting_air_budget(self):
         h=Host();h.prepare_slide();slot=10;original=r32(h.array+slot*4);h.tap_slide();w32(h.actor+0x374,0);h.frame()
         self.assertEqual(r32(h.array+slot*4),original);w32(h.actor+0x374,1);h.frame();h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),1)
         h.control(state=0,request=0,height=0);h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),2)
-    def test_returning_resource_array_recovers_its_temporary_pointer_lease(self):
+    def test_returning_resource_array_restores_its_known_f_body_variant(self):
         h=Host();h.prepare_slide();array=h.array;handle=r32(h.actor+0x1d4);original=r32(array+40);h.tap_slide()
-        h.activate_bank(False,True);w32(h.actor+0x164,0);h.frame();self.assertNotEqual(r32(array+40),original)
-        w32(h.actor+0x1d4,handle);h.observe();h.frame();self.assertEqual(r32(array+40),original)
+        h.activate_bank(False,True);w32(h.actor+0x164,0);h.frame();self.assertEqual(r32(array+40),original)
+        w32(h.actor+0x1d4,handle);h.observe();h.frame();self.assertEqual(r32(array+40),original);self.assertEqual(h.body(10),h.expected(10,1))
         h.control(state=0,request=0,height=0);h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),2)
+
     def test_reported_square_marker_bits_are_accepted_and_preserved(self):
         h=Host();h.prepare_slide();h.control(down=0x00900010,pressed=0x00900010,tilt=1,x=1)
         self.assertEqual(bridge.bridge_queue_calls(),1);self.assertEqual(bridge.bridge_control_word(0)&0x00900000,0x00900000)
@@ -1143,28 +1162,20 @@ class RuntimeTests(unittest.TestCase):
         w32(h.symbols['styles_customize_active'],0);put(h.game+0x311c66,bytes.fromhex('418074244580')+h.ui_tail);h.ui_call('styles_list',w);self.assertEqual(h.abilities(),data)
         self.assertEqual(C.c_ubyte.from_address(h.symbols['styles_shadow']+0x44+5).value,244)
 
-    def test_repeated_landings_rearm_f_and_reuse_native_superglide_with_runtime_header(self):
+    def test_repeated_landings_rearm_f_and_restore330_without_pointer_changes(self):
         for bank in [98,60]:
             h=Host(slot=bank,encoded_fields=True);h.prepare_slide();slot=10 if bank==98 else h.record_by_slot[10]['olympus_slot'];original=r32(h.array+slot*4)
-            source=(ROOT/'fixtures/native_glide_s076.bin').read_bytes()
             for count in range(1,9):
-                h.control(state=0,request=0,height=-.05);h.control(state=2,request=6)
-                h.control(down=0x900010,pressed=0x900010,state=2,request=6,x=1,tilt=1)
-                self.assertEqual(bridge.bridge_queue_calls(),count)
-                copy=h.decode(r32(h.array+slot*4));self.assertEqual(copy,h.native_glide_motions[76])
-                normalized=bytearray(C.string_at(copy,len(source)))
-                normalized[:4]=source[:4]
-                for field in [20,28,36,40,48,56,60,68,76]:
-                    off=struct.unpack_from('<I',source,field)[0]
-                    if off:self.assertEqual(h.decode(r32(copy+field)),copy+off);struct.pack_into('<I',normalized,field,off)
-                self.assertEqual(bytes(normalized),source)
-                # Reuse preserves the native player's header state.
-                w32(copy,0x12345678);h.finish_slide();h.control();self.assertEqual(r32(h.array+slot*4),original)
+                h.control(state=0,request=0,height=-.05);h.control(state=2,request=6);h.control(down=0x900010,pressed=0x900010,x=1,tilt=1)
+                self.assertEqual(bridge.bridge_queue_calls(),count);self.assertEqual(h.body(10),h.expected_variant(10));self.assertEqual(r32(h.array+slot*4),original)
+                h.finish_slide();h.control();self.assertEqual(h.body(10),h.expected(10,1));self.assertEqual(r32(h.array+slot*4),original)
                 h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),count)
-    def test_f_pointer_rollback_preserves_updated_body_caches(self):
-        h=Host();h.prepare_slide();original=r32(h.array+40);h.tap_slide();motion=h.motions[10];key=motion+r32(motion+40);value=C.string_at(key,1);put(key,bytes([value[0]^1]))
-        h.finish_slide();h.control();self.assertEqual(r32(h.array+40),original);self.assertEqual(C.string_at(key,1),bytes([value[0]^1]))
-    def test_dash_reuses_admitted_source_after_native_cache_fields_change(self):
+
+    def test_f_dash_refuses_foreign_fall_body_without_overwriting_it(self):
+        h=Host();h.prepare_slide();motion=h.motions[10];key=motion+r32(motion+40);value=C.string_at(key,1);put(key,bytes([value[0]^1]));before=h.body(10)
+        h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),0);self.assertEqual(h.body(10),before)
+
+    def test_dash_ignores_unrelated_native_superglide_cache_fields(self):
         for bank in [98,60]:
             h=Host(slot=bank,encoded_fields=True);h.prepare_slide();h.tap_slide();h.finish_slide()
             source=h.native_glide_motions[76];scratch=h.buffer(bytes(256))
@@ -1173,8 +1184,8 @@ class RuntimeTests(unittest.TestCase):
             for count in range(2,6):
                 h.control(state=0,request=0,height=-.05);h.tap_slide()
                 self.assertEqual(bridge.bridge_queue_calls(),count);total=0.
-                for tick in range(39):total+=h.move()[0][0]
-                self.assertEqual(total,624.);self.assertEqual(C.string_at(source,len(native)),native)
+                while r32(h.symbols['slide_active']):total+=h.move()[0][0]
+                self.assertEqual(total,702.);self.assertEqual(C.string_at(source,len(native)),native)
 
     def test_inherited_and_looping_animation_clock_cannot_shorten_dash_distance(self):
         for bank in [98,60]:
@@ -1182,16 +1193,15 @@ class RuntimeTests(unittest.TestCase):
             # A committed native Fall can retain a clock from before the tap.
             w32(h.actor+0x178,0);w32(h.actor+0x164,6);h.clock(120);h.control()
             total=0.
-            for tick in range(39):
+            for tick in range(30):
                 h.clock(float((120+tick)%60));h.control();total+=h.move()[0][0]
-            self.assertEqual(total,624.);self.assertFalse(r32(h.symbols['slide_active']))
+            self.assertEqual(total,702.);self.assertFalse(r32(h.symbols['slide_active']))
             h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),1)
 
-    def test_changed_admitted_source_address_or_layout_is_refused(self):
+    def test_changed_fall_header_or_pointer_is_refused_before_f_dash(self):
         for field in [16,24,32,44,52,40]:
-            h=Host();h.prepare_slide();h.tap_slide();h.finish_slide();source=h.native_glide_motions[76]
-            w32(source+field,r32(source+field)+4);h.control(state=0,request=0,height=0);h.tap_slide()
-            self.assertEqual(bridge.bridge_queue_calls(),1)
+            h=Host();h.prepare_slide();source=h.motions[10];w32(source+field,r32(source+field)+4);before=h.body(10)
+            h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),0);self.assertEqual(h.body(10),before)
 
     def test_customize_is_below_items_with_native_cursor_ids_preserved(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());w32(h.game+0x2e1f4d0,3);h.ui_call('styles_root_init')

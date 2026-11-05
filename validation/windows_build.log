@@ -71,6 +71,18 @@ warning: function `monitor` is never used
     |
     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
+warning: function `g_action` is never used
+  --> crates/kh1-hook/src/win/single_f.rs:91:15
+   |
+91 | pub unsafe fn g_action(actor:usize)->u32{if READY.load(Ordering::Acquire){SingleGAction(actor)}else{0}}
+   |               ^^^^^^^^
+
+warning: function `SingleGAction` is never used
+  --> crates/kh1-hook/src/win/single_f.rs:21:8
+   |
+21 |     fn SingleGAction(actor:usize)->u32;
+   |        ^^^^^^^^^^^^^
+
 warning: function `mov_rax_rip` is never used
    --> crates/kh1-hook/src/win/addr.rs:121:8
     |
@@ -8627,5 +8639,5 @@ warning: function `GetWindowThreadProcessId` is never used
 39 |     pub fn GetWindowThreadProcessId(window: *mut c_void, pid: *mut u32) -> u32;
    |            ^^^^^^^^^^^^^^^^^^^^^^^^
 
-warning: `kh1-hook` (lib) generated 1385 warnings (run `cargo fix --lib -p kh1-hook` to apply 10 suggestions)
-    Finished `release` profile [optimized] target(s) in 29.56s
+warning: `kh1-hook` (lib) generated 1387 warnings (run `cargo fix --lib -p kh1-hook` to apply 10 suggestions)
+    Finished `release` profile [optimized] target(s) in 25.50s

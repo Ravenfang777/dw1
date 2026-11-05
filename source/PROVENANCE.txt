@@ -1,16 +1,16 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v67 commit: d81b10c4ea23f01d1062bfdd4c825cdec55fbc2d
-v68 commit: 25ece052aaead9de0fc6ebf068f70fee28a71ad5
-v68 source tree: c3bcbd246a7e976428a84ba922b5f2dda31e504e
-Styles_v68.patch contains68 derivative commits, applied with git am.
-Styles_v68_from_v67.bundle requires the exact previous v67 commit above.
-Original/Type F/Type F variants and E private payload remain exact.
-G/profile bodies retain assignments and curves except the baked grip rotation.
-Four main-G on/off timelines retain positive width; other event bytes stay.
-Glide038 remains immutable and does not patch the live Glide record.
-Native profile1 is Terra,2 main Ventus,3..37 tests66..100.
-Dark Riku test assignments and implementation remain unchanged.
-Actual Rust constructor/contact-coordinator regressions use platform mocks.
-Full source reconstruction must match the source tree above.
+Previous delivered v68 commit: 25ece052aaead9de0fc6ebf068f70fee28a71ad5
+v69 commit: 720234eda0180e972dc684d73654473336356654
+v69 source tree: eff7ed43531e348c0d9bcc01387d42cf237220a6
+Styles_v69.patch contains69 derivative commits, applied with git am.
+Styles_v69_from_v68.bundle requires the exact previous v68 commit above.
+Type F copies the immutable un-reversed main G330 dash body variant.
+F speed24/duration29.25/distance702 is1.5x G's468-unit distance.
+All37 existing profile parts, G action variants/038, F cast variants and E data
+remain byte exact. Only the new F fall variant adds330 body data.
+Native motion handles/events/headers/helpers remain unchanged by this variant.
+Rust contact coordinator includes F only during its live dash; G paired contacts
+remain. Tests use platform/native mocks, not a Windows or game session.
+Historical G conversion/pose reports are retained from the unchanged v68 data.
 No original executable, model, extracted table or decompiled code enters Git.
