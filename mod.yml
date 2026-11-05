@@ -1,9 +1,9 @@
-title: KH1FM Styles v67 - Type G Dispatch and Switching Fix
+title: KH1FM Styles v68 - Type G Grip, Air Travel and Two Blade Passes
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Repair Type G air-action dispatch and stance switching after failed admission.
-  Immutable Glide038 visual and final-draw reverse grip. Preserve all stance
-  mappings, blade contacts and working Ventus/Dark Riku numbered Passives.
+  Bake Type G reverse grip through converted pose transitions. Both air actions
+  move at2x v67 speed and1.5x distance. Two blade passes share native hit tracking.
+  Preserve stance assignments, working numbered Passives and Customize menus.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

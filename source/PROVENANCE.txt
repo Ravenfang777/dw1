@@ -1,14 +1,16 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v66 commit: 06fb6c97619f5b98c572178e9eaca28695ba572f
-v67 commit: d81b10c4ea23f01d1062bfdd4c825cdec55fbc2d
-v67 source tree: 6d5144b8ac82c9b4c07350dfcdb91318a22e253b
-Styles_v67.patch contains67 derivative commits, applied with git am.
-Styles_v67_from_v66.bundle requires the exact previous v66 commit above.
-All37 live records/profiles/variants match v66; live Glide75 is not patched.
-Glide038 uses a separate immutable copy of the same converted clip.
-All35 Ventus previews, Dark Riku tests and E's private payload remain.
+Previous delivered v67 commit: d81b10c4ea23f01d1062bfdd4c825cdec55fbc2d
+v68 commit: 25ece052aaead9de0fc6ebf068f70fee28a71ad5
+v68 source tree: c3bcbd246a7e976428a84ba922b5f2dda31e504e
+Styles_v68.patch contains68 derivative commits, applied with git am.
+Styles_v68_from_v67.bundle requires the exact previous v67 commit above.
+Original/Type F/Type F variants and E private payload remain exact.
+G/profile bodies retain assignments and curves except the baked grip rotation.
+Four main-G on/off timelines retain positive width; other event bytes stay.
+Glide038 remains immutable and does not patch the live Glide record.
 Native profile1 is Terra,2 main Ventus,3..37 tests66..100.
-Actual Rust Glide callbacks are exercised by a portable regression.
+Dark Riku test assignments and implementation remain unchanged.
+Actual Rust constructor/contact-coordinator regressions use platform mocks.
 Full source reconstruction must match the source tree above.
 No original executable, model, extracted table or decompiled code enters Git.

@@ -1,9 +1,9 @@
-# Type G: BBS Ventus in KH1FM Styles v67
+# Type G: BBS Ventus in KH1FM Styles v68
 
 The original53-bone Ventus p01ex00 model and PAM sources are fitted to Sora's
 293-bone native body. Native headers, allocations, helper travel and action
 selection remain. Type G is ID115/runtime12, Single/I, zero AP. Profile1 remains
-Terra,2 is main Ventus and3..37 are the unchanged numbered Ventus previews.
+Terra,2 is main Ventus and3..37 keep the same numbered Ventus preview assignments.
 Dark Riku previews use internal runtime14 and their own existing pose map.
 
 | Action | Source |
@@ -31,24 +31,26 @@ body records and a separate immutable038 held-Glide visual. The live Glide75
 record is never patched or required for body admission. Native entry/exit/travel remain. Casting uses
 scoped family recovery bodies while native release events and effects remain.
 
-Square330 replaces Superglide at half Type F's unobstructed distance, with a
-locked initial direction and native collision. Circle410 has a small lift and
+Square330 replaces Superglide at468 unobstructed units (Type F remains624), with
+a locked initial direction and native collision.330/410 now move at2x v67 speed
+and1.5x distance over29.25 native ticks, with4/3 visual playback.410 lifts43.875 units and
 allows held038 Glide after completion. Each is once per real airtime. Shortcuts,
 casts, damage and scripted states cannot start an air action. Numbered previews
 retain their prior native controls. v67 fixes G's actual Rust constructor gates;
-see styles-v67.md for the dispatch/exit fix and styles-v66.md for action scopes.
+see styles-v68.md for current grip/travel/contact rules and styles-v67.md for the exit fix.
 
-Main G's dash and second379/411/482 passes use the actual equipped blade against
-native enemy body parts. Native physical rows supply damage/feedback. First
+Main G's dash and both379/411/482 passes use the actual equipped blade against
+native body parts, sharing successful-hit tracking with native contacts to
+prevent duplicate hits. Native physical rows supply damage/feedback. First
 finisher knockback waits until pass two through a scoped native record reaction.
 Selected native first-contact/action timestamps are admitted and restored as
 float-only changes; donor scripts/event payloads are never installed. Game feel,
 window alignment and actual contact damage still need an in-game test.
 
-The reverse grip uses the skinned wrist and immutable palm/grip offsets. It is
-refreshed after actor update, skeleton/IK and at final field model submission.
-Unskinned helper locals are not trusted for attachment. Only weapon280..292 is written;
-the transform remains idempotent. Other stances/body/hair/fingers stay separate.
+The reverse grip is baked into the existing grip280 rotation of every converted
+main/test clip and the separate038 visual. Native animation carries it through
+blends; the runtime weapon-matrix writer is removed. Hilt, body curves, lengths,
+header/count/capacity and native travel stay exact. Unmapped native records remain native.
 
 ## Rebuilding
 
@@ -73,12 +75,14 @@ python3 crates/kh1-hook/src/single_f/generate_data.py TERRA_V4_SOURCE local/sing
 The gallery builder also stores its common original G fixtures under
 TEST_WORK/common/fixtures. It covers all187 distinct originally unused clips;
 fixed-capacity failures split into labeled contiguous source ranges. Its35
-profiles stay byte-identical to v65. Set VENTUS_SOURCE=NEW_G_WORK and
+profiles retain their body curves/assignments and gain only the baked grip. Set VENTUS_SOURCE=NEW_G_WORK and
 VENTUS_TEST_SOURCE=TEST_WORK for the current F/G final-PE tests, along with the
 existing TERRA_SOURCE, STYLES_DLL and KH1_EXE variables.
 
-All190 old original/Terra/variant parts, all35 existing Ventus gallery profiles
-and E's private payload remain exact. Source identity, fitting, timestamp
-admission and validation limits are recorded in styles-v66.md and styles-v67.md. The original
+Original/Terra/variant parts and E's private payload remain exact. All35 Ventus
+previews retain their assignments; only grip rotation values change. The
+generator imports tools/ventus-retarget/reverse_grip.py and leaves its input
+fixtures untouched. Source identity, fitting, timestamp admission and current
+validation limits are recorded in styles-v68.md. The original
 retarget tools derive from this project's Terra tooling; ARC/PAM/PMO references
 remain credited in bbs_source_inspector.py.

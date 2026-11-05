@@ -7,6 +7,8 @@ from pathlib import Path
 import ctypes as C,json,struct,subprocess,sys,unittest,os,math,re
 ROOT=Path(os.environ['TERRA_SOURCE']).resolve()
 TEST_ROOT=Path(__file__).resolve().parent
+sys.path.insert(0,str(TEST_ROOT if (TEST_ROOT/'reverse_grip.py').exists() else TEST_ROOT.parents[3]/'tools/ventus-retarget'))
+from reverse_grip import reverse_native_grip
 NUMBERED_HEADER=Path(os.environ.get('NUMBERED_PASSIVES_HEADER',str(TEST_ROOT/'numbered_passives.h' if (TEST_ROOT/'numbered_passives.h').exists() else TEST_ROOT.parents[1]/'src/single_f/numbered_passives.h')))
 TEST_COUNT=int(re.search(r'#define ANIMATION_TEST_COUNT (\d+)u',NUMBERED_HEADER.read_text()).group(1))
 VENTUS_COUNT=int(re.search(r'#define VENTUS_TEST_COUNT (\d+)u',NUMBERED_HEADER.read_text()).group(1))
@@ -249,7 +251,7 @@ class Host:
         path=folder/f"{'terra' if on else 'original'}_{r['fixture_stem']}.bin"
         return self.expected_from(slot,path if path.exists() else self.original_path(r))
     def expected_from(self,slot,path):
-        r=self.record_by_slot[slot];data=bytearray(path.read_bytes())
+        r=self.record_by_slot[slot];data=bytearray(reverse_native_grip(path.read_bytes()) if path.name.startswith('ventus_') else path.read_bytes())
         data[:80]=self.runtime_originals[slot][:80]
         event_at=struct.unpack_from('<I',self.original_path(r).read_bytes(),60)[0]
         while struct.unpack_from('<I',data,event_at)[0]!=0xffffffff:
@@ -423,14 +425,34 @@ class RuntimeTests(unittest.TestCase):
     def g_variant(self,h,kind,slot):
         return h.expected_from(slot,Path(os.environ['VENTUS_SOURCE'])/f"variants/{kind}/fixtures/ventus_s{slot:03}.bin")
 
-    def test_type_g_dash330_has_half_f_distance_native_collision_and_one_use_until_landing(self):
+    def test_type_g_motion_rate_reaches_the_real_shared_native_motion_hook(self):
+        h=Host(guard=True,jump=True,encoded_fields=True)
+        self.assertEqual(bridge.adapter_init(h.symbols['SingleEInit'],h.game,1),1)
+        h.want=2;h.frame();h.control(state=0,request=0,height=0);h.control();h.tap_slide()
+        self.assertEqual(bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.),0x5678)
+        self.assertAlmostEqual(bridge.bridge_motion_delta(),4./3.,places=6)
+        h.clock(38.9);bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.)
+        self.assertGreaterEqual(bridge.bridge_motion_delta(),0.);self.assertLess(bridge.bridge_motion_delta(),.1)
+        h.finish_slide();bridge.bridge_motion_advance(h.game+0x29f0a0,h.actor,1.)
+        self.assertEqual(bridge.bridge_motion_delta(),1.)
+
+    def test_type_g_both_actions_finish_in_three_quarters_the_previous_time(self):
+        for button,lift in [(0x10,0.),(6,-43.875)]:
+            for dt in [.5,1.,2.5]:
+                h=self.g_prepare();h.control(down=button,pressed=button,x=1,tilt=1)
+                elapsed=0.;distance=0.;rise=0.
+                while r32(h.symbols['slide_active']):
+                    movement=h.move(dt)[0];distance+=movement[0];rise+=movement[1];elapsed+=movement[0]/16.
+                self.assertAlmostEqual(elapsed,29.25);self.assertAlmostEqual(distance,468.);self.assertAlmostEqual(rise,lift)
+
+    def test_type_g_dash330_has_double_old_speed_and_one_point_five_distance_until_landing(self):
         for bank in [98,60]:
             for dt in [.5,1.,2.5]:
                 h=self.g_prepare(bank);h.tap_slide();self.assertEqual(h.body(10),self.g_variant(h,'dash',10))
                 distance=0.
                 while r32(h.symbols['slide_active']):
                     distance+=h.move(dt)[0][0]
-                self.assertAlmostEqual(distance,312.,places=4);self.assertEqual(h.body(10),h.expected(10,2))
+                self.assertAlmostEqual(distance,468.,places=4);self.assertEqual(h.body(10),h.expected(10,2))
                 calls=bridge.bridge_queue_calls();h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),calls)
                 h.control(state=0,request=0,height=0);h.control();h.tap_slide();self.assertEqual(bridge.bridge_queue_calls(),calls+1)
 
@@ -439,7 +461,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(h.body(10),self.g_variant(h,'dodge',10));self.assertEqual(bridge.call_ptr1(h.symbols['SingleGAction'],h.actor),2)
         lift=0.
         while r32(h.symbols['slide_active']):lift+=h.move()[0][1]
-        self.assertAlmostEqual(lift,-29.25);self.assertEqual(h.body(10),h.expected(10,2))
+        self.assertAlmostEqual(lift,-43.875);self.assertEqual(h.body(10),h.expected(10,2))
         h.control();calls=bridge.bridge_queue_calls();h.control(down=6,pressed=6)
         self.assertEqual(bridge.bridge_queue_calls(),calls);self.assertEqual(bridge.bridge_control_word(0)&6,6)
         self.assertEqual(bridge.call_ptr1(h.symbols['SingleFSuppressGlide'],h.actor),0)
@@ -458,7 +480,7 @@ class RuntimeTests(unittest.TestCase):
     def test_type_g_dash_faces_the_initial_direction_through_release_and_steering(self):
         h=self.g_prepare();h.tap_slide(x=1,z=0)
         for x,z in [(-1,0),(0,1),(0,0)]:
-            h.control(tilt=1,x=x,z=z);self.assertEqual(h.move()[0],[8.,0.,0.,8.])
+            h.control(tilt=1,x=x,z=z);self.assertEqual(h.move()[0],[16.,0.,0.,16.])
             self.assertAlmostEqual(C.c_float.from_address(h.actor+0x30).value,1.)
             self.assertAlmostEqual(C.c_float.from_address(h.actor+0x38).value,0.)
 
@@ -487,6 +509,17 @@ class RuntimeTests(unittest.TestCase):
                 at+=12
             self.assertGreater(changed,0)
         h.control(state=0,request=0,height=0);h.want=1;h.frame();h.assert_all(self,1)
+
+    def test_type_g_native_on_off_windows_do_not_collapse_after_the_second_swing(self):
+        h=self.g_prepare()
+        for slot in [99,100,101,104]:
+            data=h.body(slot);original=self.original_for_events(h,slot);at=struct.unpack_from('<I',original,60)[0]
+            while struct.unpack_from('<I',original,at)[0]!=0xffffffff:
+                kind,n,keys=struct.unpack_from('<3I',original,at)
+                if kind>>16 in (1,5) and n==2:
+                    lo,hi=[struct.unpack_from('<f',data,keys+i*16)[0]for i in range(2)]
+                    self.assertGreater(hi,lo);self.assertEqual(h.event(slot,kind>>16,(lo+hi)/2),1)
+                at+=12
     def original_for_events(self,h,slot):return h.original_path(h.record_by_slot[slot]).read_bytes()
 
     def test_type_g_live_glide_stream_changes_cannot_block_entry_exit_or_terra(self):
@@ -515,7 +548,7 @@ class RuntimeTests(unittest.TestCase):
 
     def test_immutable_glide038_matches_converted_source_without_live_record_writes(self):
         h=Host();p=bridge.call_ptr1(h.symbols['SingleGGlideData'],0);n=bridge.call_ptr1(h.symbols['SingleGGlideBytes'],0)
-        source=(Path(os.environ['VENTUS_SOURCE'])/'fixtures/ventus_s075.bin').read_bytes()
+        source=reverse_native_grip((Path(os.environ['VENTUS_SOURCE'])/'fixtures/ventus_s075.bin').read_bytes())
         data=C.string_at(p,n);self.assertEqual(data[:8],struct.pack('<2I',1,8));self.assertEqual(data[8:12],b'MMTN')
         self.assertEqual(data[8+72:],source)
 

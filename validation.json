@@ -1,73 +1,169 @@
 {
-  "name": "KH1FM Styles v67",
-  "stage": "s406",
-  "source_commit": "d81b10c4ea23f01d1062bfdd4c825cdec55fbc2d",
-  "source_tree": "6d5144b8ac82c9b4c07350dfcdb91318a22e253b",
-  "previous_v66_commit": "06fb6c97619f5b98c572178e9eaca28695ba572f",
+  "name": "KH1FM Styles v68",
+  "stage": "s407",
+  "source_commit": "25ece052aaead9de0fc6ebf068f70fee28a71ad5",
+  "source_tree": "c3bcbd246a7e976428a84ba922b5f2dda31e504e",
+  "previous_v67_commit": "d81b10c4ea23f01d1062bfdd4c825cdec55fbc2d",
   "upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "patch_commits": 67,
+  "patch_commits": 68,
   "changed_source_paths": [
     "AGENTS.md",
     "crates/kh1-hook/native-tests/single_f/test_runtime.py",
     "crates/kh1-hook/src/dual_wield.rs",
     "crates/kh1-hook/src/lib.rs",
-    "crates/kh1-hook/src/native_dispatch_tests.rs",
+    "crates/kh1-hook/src/native_ventus_tests.rs",
+    "crates/kh1-hook/src/single_e/aqua_guard.h",
     "crates/kh1-hook/src/single_f/generate_data.py",
     "crates/kh1-hook/src/single_f/terra.c",
     "crates/kh1-hook/src/single_f/terra_actions.h",
+    "crates/kh1-hook/src/ventus_style.rs",
+    "crates/kh1-hook/src/win/combat.rs",
     "crates/kh1-hook/src/win/dual.rs",
-    "crates/kh1-hook/src/win/dual_actions.rs",
     "crates/kh1-hook/src/win/leftblade.rs",
     "crates/kh1-hook/src/win/mod.rs",
     "crates/kh1-hook/src/win/pose.rs",
-    "crates/kh1-hook/src/win/single_f.rs",
+    "crates/kh1-hook/src/win/probe.rs",
+    "crates/kh1-hook/src/win/ventus.rs",
     "docs/combat-model.md",
     "docs/single-g.md",
-    "docs/styles-v67.md"
+    "docs/styles-v68.md",
+    "tools/ventus-retarget/build_ventus_v66.py",
+    "tools/ventus-retarget/reverse_grip.py"
   ],
-  "fixed_actual_rust_type_g_glide_constructor_dispatch": true,
-  "actual_rust_constructor_callbacks_executed_with_platform_mocks": true,
-  "live_glide_streams_written": false,
-  "main_g_reversible_native_records": 37,
-  "immutable_glide_source": "038",
-  "failed_unmodified_entry_cannot_block_exit": true,
-  "successfully_applied_bodies_require_verified_restoration": true,
-  "reverse_grip_final_field_submission_refresh": true,
-  "immutable_palm_and_grip_attachment": true,
-  "bounded_air_cancellation_diagnostics": true,
-  "all_prior_g_mappings_contacts_and_variants_retained": true,
-  "numbered_passives_and_other_stances_retained": true,
-  "retained_v66_payloads": {
+  "baked_reverse_grip_main_variants_glide_and35_previews": true,
+  "runtime_weapon_matrix_correction_removed": true,
+  "body_hilt_scale_travel_unchanged": true,
+  "g_air_movement_speed_vs_v67": 2.0,
+  "g_air_distance_vs_v67": 1.5,
+  "g_air_duration": 29.25,
+  "g_air_speed": 16,
+  "g_air_distance": 468,
+  "g_dodge_lift": 43.875,
+  "g_air_animation_rate": 1.3333333333333333,
+  "terra_distance_unchanged": 624,
+  "shared_motion_hook_rate_verified": true,
+  "first_and_second_blade_passes": true,
+  "native_fallback_hit_tracking_shared": true,
+  "failed_contact_can_retry": true,
+  "native_damage_and_defenses_retained": true,
+  "positive_width_main_g_gate_timelines": true,
+  "prior_v67_dispatch_and_safe_exit_retained": true,
+  "numbered_preview_assignments_and_other_stances_retained": true,
+  "retained_v67_payloads": {
     "passed": true,
-    "unchanged_shared_records": 37,
-    "all37_profiles_and_all_variants_byte_exact": true,
-    "ventus_preview_profiles_unchanged": 35,
-    "dark_riku_test_code_unchanged": true,
-    "removed_live_glide_record": 75,
-    "immutable_glide_source_unchanged": true,
-    "single_e_payload_unchanged": true
+    "original_and_terra_and_terra_variant_parts_byte_exact": true,
+    "shared_records": 37,
+    "changed_g_grip_parts": 37,
+    "only_g_constant_or_curve_parts_and_four_gate_timelines_changed": true,
+    "original_terra_and_test_event_parts_byte_exact": true,
+    "main_g_gate_timing_slots": [
+      99,
+      100,
+      101,
+      104
+    ],
+    "single_e_payload_byte_exact": true,
+    "all_g_body_curves_preserved_except_grip_rotation": true,
+    "preview_assignments_unchanged": true
+  },
+  "baked_grip_validation": {
+    "passed": true,
+    "converted_source_records": 324,
+    "pose_samples": 2268,
+    "body_matrix_error": 0.0,
+    "reverse_weapon_position_error": 3.729568583323834e-06,
+    "reverse_weapon_basis_error": 8.742245714756652e-08,
+    "native_travel_helper_error": 0.0,
+    "unique_baked_grip_rotations": 1,
+    "baked_rotations": [
+      [
+        -2.7925267,
+        -0.0,
+        2.0071287
+      ]
+    ],
+    "only_grip_rotation_values_changed": true,
+    "headers_counts_capacities_preserved": true
   },
   "glide_pose_validation": {
     "passed": true,
     "samples": 131,
     "bones": 293,
-    "max_rust_python_position_error": 6.274502359633909e-05,
-    "max_rust_python_basis_error": 9.340637043830924e-07,
+    "max_rust_python_position_error": 5.015020727378318e-05,
+    "max_rust_python_basis_error": 9.123965756252517e-07,
+    "baked_grip": true,
     "live_glide_bytes_written": false
+  },
+  "gate_timing_validation": {
+    "passed": true,
+    "only_gate_timestamp_floats_changed": true,
+    "all_windows_have_positive_width": true,
+    "windows": [
+      {
+        "slot": 99,
+        "track": 1,
+        "times": [
+          31.29032325744629,
+          45.290321350097656
+        ]
+      },
+      {
+        "slot": 99,
+        "track": 5,
+        "times": [
+          31.29032325744629,
+          47.0
+        ]
+      },
+      {
+        "slot": 100,
+        "track": 1,
+        "times": [
+          40.58064651489258,
+          52.58064651489258
+        ]
+      },
+      {
+        "slot": 100,
+        "track": 5,
+        "times": [
+          40.58064651489258,
+          63.0
+        ]
+      },
+      {
+        "slot": 101,
+        "track": 1,
+        "times": [
+          36.52941131591797,
+          48.52941131591797
+        ]
+      },
+      {
+        "slot": 104,
+        "track": 1,
+        "times": [
+          41.8125,
+          55.0
+        ]
+      }
+    ]
   },
   "rust_tests_passed": 647,
   "nonempty_rust_suites": 30,
-  "shared_adapter_pe_checks": 115,
+  "shared_adapter_pe_checks": 118,
   "aqua_pe_checks": 48,
+  "actual_rust_contact_coordinator_executed_with_native_mocks": true,
   "pe_api_and_rendering_mocked": true,
   "windows_x64_release": true,
   "actual_windows_or_game_execution": false,
+  "live_damage_or_grip_verified": false,
   "source_apply_check_pending": false,
-  "dll_sha256": "c38dc955650e0a11f2f4385fc5a173f21295b8a5a6cb878f9e5fcde8d5f08fba",
+  "dll_sha256": "db8922cf59fb70700fc0fb91ac1855f2877bb03a26c065c193b96e7cce4a9619",
   "private_payload_sha256": {
     "single_e": "17011c36c9a16897f4db03c952e610722ed18e3bf4692a31cc1d697ea54932f6",
-    "single_f": "98ac88e9ba6279cc58153eb1dadcb85f8a6b1fbdc4caee43b6ce85dcebc4c642"
+    "single_f": "32dcf0e9acbcde30561fc41ba37ce281540518591146692a854944fcd90dd563"
   },
-  "full67_commit_patch_reconstructs_exact_tree": true,
-  "reconstructed_tree": "6d5144b8ac82c9b4c07350dfcdb91318a22e253b"
+  "full68_commit_patch_reconstructs_exact_tree": true,
+  "reconstructed_tree": "c3bcbd246a7e976428a84ba922b5f2dda31e504e"
 }

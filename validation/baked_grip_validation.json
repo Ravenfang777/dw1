@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "converted_source_records": 324,
+  "pose_samples": 2268,
+  "body_matrix_error": 0.0,
+  "reverse_weapon_position_error": 3.729568583323834e-06,
+  "reverse_weapon_basis_error": 8.742245714756652e-08,
+  "native_travel_helper_error": 0.0,
+  "unique_baked_grip_rotations": 1,
+  "baked_rotations": [
+    [
+      -2.7925267,
+      -0.0,
+      2.0071287
+    ]
+  ],
+  "only_grip_rotation_values_changed": true,
+  "headers_counts_capacities_preserved": true
+}

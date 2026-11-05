@@ -1154,10 +1154,22 @@
             "after": 31.29032258064516
           },
           {
+            "track": 65536,
+            "key": 1,
+            "before": 32.0,
+            "after": 45.29032258064516
+          },
+          {
             "track": 327680,
             "key": 0,
             "before": 26.0,
             "after": 31.29032258064516
+          },
+          {
+            "track": 327680,
+            "key": 1,
+            "before": 42.0,
+            "after": 47
           },
           {
             "track": 262144,
@@ -1265,13 +1277,19 @@
             "track": 65536,
             "key": 1,
             "before": 30.0,
-            "after": 40.58064516129032
+            "after": 52.58064516129032
           },
           {
             "track": 327680,
             "key": 0,
             "before": 26.0,
             "after": 40.58064516129032
+          },
+          {
+            "track": 327680,
+            "key": 1,
+            "before": 54.0,
+            "after": 63
           },
           {
             "track": 262144,
@@ -1386,6 +1404,12 @@
             "key": 0,
             "before": 26.0,
             "after": 36.529411764705884
+          },
+          {
+            "track": 65536,
+            "key": 1,
+            "before": 38.0,
+            "after": 48.529411764705884
           },
           {
             "track": 262144,
@@ -1551,7 +1575,7 @@
             "track": 65536,
             "key": 1,
             "before": 38.0,
-            "after": 41.8125
+            "after": 55
           }
         ],
         "native_event_payloads_counts_and_pointers_unchanged": true
