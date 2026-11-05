@@ -1,9 +1,9 @@
-title: KH1FM Styles v71 - Shared Overdrive Colors
+title: KH1FM Styles v72 - Customize and Overdrive Refinements
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Shared Valor/Wisdom/Anti auras: Power red, Will blue, Resistance yellow,
-  Prowess white, Rage black. Witnessed hand anchors and bounded particles.
-  Higher Type E jump and another15% slower ground2; prior stance behavior retained.
+  Keep Valor and Wisdom wind; remove Overdrive foot sparkles and Anti darkness.
+  Fixed Customize header, Appearance and Brilliance labels. Overdrive Drain/5
+  panels replace AP0, without AP Used or gameplay drain. Previous combat retained.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

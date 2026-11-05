@@ -1,95 +1,103 @@
 {
-  "name": "KH1FM Styles v71",
-  "stage": "s410",
-  "source_commit": "d9a1293f8d46f0352b38a66ef3a411069fd03e4b",
-  "source_tree": "0518700000c4225f48d39d430502141977e5dabb",
-  "previous_v70_commit": "d05b5a75bde94cb57611e204462f2e7c3cf42e74",
+  "name": "KH1FM Styles v72",
+  "stage": "s411",
+  "source_commit": "6e7e9bb17627c9baa5a565c175bd787f10787f8b",
+  "source_tree": "86c9a4300308da9be8e8c28c80135178fa495b3c",
+  "previous_v71_commit": "d9a1293f8d46f0352b38a66ef3a411069fd03e4b",
   "upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-  "patch_commits": 71,
+  "patch_commits": 72,
   "changed_source_paths": [
     "AGENTS.md",
-    "crates/kh1-hook/native-tests/single_e/test_runtime.py",
     "crates/kh1-hook/native-tests/single_f/test_runtime.py",
     "crates/kh1-hook/src/lib.rs",
     "crates/kh1-hook/src/overdrive.rs",
-    "crates/kh1-hook/src/single_e/aqua_air_dodge.h",
-    "crates/kh1-hook/src/single_e/aqua_guard.h",
-    "crates/kh1-hook/src/single_e/aqua_jump.h",
+    "crates/kh1-hook/src/single_f/styles_menu.h",
     "crates/kh1-hook/src/single_f/styles_slots.h",
     "crates/kh1-hook/src/win/dual.rs",
     "crates/kh1-hook/src/win/dual_magic_fx.rs",
     "crates/kh1-hook/src/win/mod.rs",
-    "crates/kh1-hook/src/win/pose.rs",
-    "crates/kh1-hook/src/win/single_f.rs",
     "docs/combat-model.md",
-    "docs/single-e.md",
     "docs/single-f.md",
-    "docs/styles-v71.md"
+    "docs/styles-v72.md"
   ],
   "overdrives": {
     "Power": "#FF0000",
     "Will": "#0000FF",
     "Resistance": "#FFFF00",
-    "Prowess": "#FFFFFF",
+    "Brilliance": "#FFFFFF",
     "Rage": "#000000"
   },
   "shared_overdrive_layers": [
     "Valor",
-    "Wisdom",
-    "Anti"
+    "Wisdom"
   ],
-  "old_strength_choice_id_preserved": true,
-  "custom_colors_persisted": true,
-  "black_alpha_blending": true,
-  "witnessed_effect_pose_max_age_frames": 2,
-  "native_wrist_and_palm_effect_alignment": true,
-  "overdrive_geometry_radius": 350,
+  "wisdom_excluded_elements": [
+    11,
+    12
+  ],
+  "wisdom_expected_retained_elements": [
+    100
+  ],
+  "anti_shared_layer_removed": true,
+  "ordinary_stance_effects_retained": true,
+  "customize_header_fixed_through_all_categories": true,
+  "appearance_replaces_outfits": true,
+  "old_prowess_selection_id_preserved": true,
+  "legacy_prowess_color_supported": true,
+  "canonical_color_key": "brilliance_color",
+  "overdrive_ap_used_hidden": true,
+  "overdrive_row_panels": [
+    "Drain",
+    "5"
+  ],
+  "overdrive_panel_coordinates": [
+    327,
+    373
+  ],
+  "overdrive_panel_size": [
+    42,
+    22
+  ],
+  "overdrive_text_centered_with_native_width": true,
+  "drain_mechanic_implemented": false,
   "overdrive_zero_ap_exclusive_and_independent": true,
   "overdrive_stat_boosts": false,
   "overdrive_native_ability_slots_consumed": 0,
-  "overdrive_form_assets_loaded_at_runtime": true,
-  "e_jump_height_factor": 1.5,
-  "e_jump_height_ratio_vs_v70": 1.2,
-  "e_jump_arc_time_factor": 1.224744871391589,
-  "e_native_gravity_retained": true,
-  "e_held_jump_input_retained": true,
-  "e_gc2_rate_vs_v70": 0.85,
-  "e_gc2_rate_vs_pre_v70": 0.7225,
-  "other_v70_mappings_and_travel_retained": true,
-  "retained_v70_payloads": {
+  "other_v71_mappings_and_gameplay_retained": true,
+  "retained_v71_payloads": {
     "passed": true,
     "headers": {
       "single_e": {
-        "byte_exact_to_v70": true,
+        "byte_exact_to_v71": true,
         "sha256": "e8318f15cf8f1660f25c01829596cb119bae5264351b8f914e816d640b5068fc",
         "bytes": 4895942
       },
       "single_f": {
-        "byte_exact_to_v70": true,
+        "byte_exact_to_v71": true,
         "sha256": "ec8c84424ed0f470bc10cbdca30885a36785ff5d2f6639449b820b77da853ff9",
         "bytes": 25885384
       }
     }
   },
-  "rust_tests_passed": 655,
+  "rust_tests_passed": 656,
   "nonempty_rust_suites": 30,
   "shared_adapter_pe_checks": 122,
   "aqua_pe_checks": 49,
   "pe_api_and_rendering_mocked": true,
   "windows_x64_release": true,
   "actual_windows_or_game_execution": false,
-  "live_effect_appearance_or_jump_parity_verified": false,
+  "live_effect_appearance_verified": false,
   "source_apply_check_pending": false,
-  "dll_sha256": "0a216af7752901d103a144c66e47898ccf59bc4de5dccd1949f4418e92640fc4",
+  "dll_sha256": "c4adb5cbfa4934784c577474d125edf695e590a5940d501d8646d577e56dc76f",
   "private_payload_sha256": {
     "single_e": "e8318f15cf8f1660f25c01829596cb119bae5264351b8f914e816d640b5068fc",
     "single_f": "ec8c84424ed0f470bc10cbdca30885a36785ff5d2f6639449b820b77da853ff9"
   },
   "source_reconstruction": {
     "passed": true,
-    "full_patch_commits": 71,
+    "full_patch_commits": 72,
     "pinned_upstream": "4adb946b642f6b9bd84f83d12ec16944e0638b8b",
-    "expected_tree": "0518700000c4225f48d39d430502141977e5dabb",
-    "reconstructed_tree": "0518700000c4225f48d39d430502141977e5dabb"
+    "expected_tree": "86c9a4300308da9be8e8c28c80135178fa495b3c",
+    "reconstructed_tree": "86c9a4300308da9be8e8c28c80135178fa495b3c"
   }
 }

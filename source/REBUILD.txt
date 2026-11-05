@@ -1,5 +1,5 @@
-Clone the pinned public upstream, then git am Styles_v71.patch.
-Alternatively, fetch Styles_v71_from_v70.bundle into the recorded v70 checkout.
+Clone the pinned public upstream, then git am Styles_v72.patch.
+Alternatively, fetch Styles_v72_from_v71.bundle into the recorded v71 checkout.
 Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h.
 Copy rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
 These included headers are exact final build inputs. Never add generated
@@ -84,3 +84,11 @@ Overdrives now use the shared Valor/Wisdom/Anti set. Their own texture copies
 are desaturated/masked and tinted at runtime. The original libraries/textures
 are not modified. Optional #RRGGBB settings live in kh1-overdrive.ini.
 See OVERDRIVES.txt and STYLES-V71.MD for exact colors, scope and limitations.
+
+v72 retains both v71 private headers byte exact. No asset regeneration is needed.
+Use the same E/G/gallery fixtures as v71 with the current final-PE harness.
+Shared Overdrive packages now include Valor and Wisdom only; Wisdom11/12 are
+filtered after ordinary aura admission. Anti stance resources are independent.
+Brilliance uses brilliance_color, with prowess_color accepted as an alias.
+Menu changes and Drain5 display need no new resources or dependencies.
+See STYLES-V72.MD for current scope; earlier version sections are historical.

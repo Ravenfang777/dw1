@@ -1,36 +1,32 @@
 Customize -> Overdrives
-Power - Red #FF0000 (renamed from Strength; same selection ID1)
+Power - Red #FF0000
 Will - Blue #0000FF
 Resistance - Yellow #FFFF00
-Prowess - White #FFFFFF
+Brilliance - White #FFFFFF (formerly Prowess; same ID4)
 Rage - Black #000000
 
-All five share Valor + Wisdom + Anti body-effect layers, tinted to their color.
-Master/Final archives are not needed. Check OVERDRIVE SHARED LAYER READY for
-all three donors in kh1-dual-wield.log. Missing layers are logged individually.
+All five share Valor plus Wisdom wind. Wisdom foot11/12 and shared Anti
+darkness are removed. The normal Anti/Wisdom stance effects are separate.
+One free selection, independent of Stance; select its active row to turn off.
 
-Cost0 AP, no native ability slot, one selected at a time. Choose the active
-row again to turn it off. Stance and numbered Passives remain independent.
-Visuals only; stat boosts will be assigned later.
+Two row panels show Drain and5. This value is for display/testing only:
+no AP/HP/MP/resource drain is implemented. No Overdrive AP Used footer.
 
-OPTIONAL CUSTOM COLORS
-kh1-overdrive.ini beside other mod settings accepts these values:
+Optional kh1-overdrive.ini settings beside the other mod settings:
 overdrive = 1
 power_color = #FF0000
 will_color = #0000FF
 resistance_color = #FFFF00
-prowess_color = #FFFFFF
+brilliance_color = #FFFFFF
 rage_color = #000000
 
-overdrive0 is off;1..5 follow the list above. Use six hexadecimal RGB digits.
-Restart the game after editing colors. Selecting another row preserves custom
-colors and unknown keys. Missing color keys use the requested defaults and
-are appended on the next menu selection save. Existing settings are not
-overwritten by installing this ZIP. Old strength_color is accepted unless
-power_color is also present. No asset extraction/image editing is needed.
+0 is off;1..5 follow the list above. Colors use six hexadecimal RGB digits.
+Restart after manual edits. Menu choices preserve custom colors and unknown
+keys. Old strength_color and prowess_color are aliases; current power_color
+and brilliance_color take precedence. Existing selection/settings need no reset.
+The ZIP does not overwrite existing settings. Missing keys use defaults and
+are appended on the next selection save. No texture extraction is needed.
 
-Cloned grayscale/alpha-mask textures remove donor color bias; the source
-stance/spell resources stay unchanged. Black uses alpha instead of invisible
-black additive blending. Wrist/palm alignment and bounded aura geometry are
-implemented; final hand tracking, layered brightness and Rage appearance
-still need an in-game check. See source/STYLES-V71.MD for validation scope.
+Check OVERDRIVE SHARED LAYER READY for Valor and Wisdom; Wisdom should list100.
+Live particles, black blending and the exact removed/retained visuals need an
+in-game check. See source/STYLES-V72.MD for sources, confidence and test scope.

@@ -430,8 +430,17 @@ class RuntimeTests(unittest.TestCase):
     def test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save(self):
         h=Host();root,page=h.passive_setup([6,117]);h.ui_page_frame(page,0x40);text=h.ui_page_frame(page,0x4000)
         self.assertIn('Overdrives',text)
-        for name in ['Power','Will','Resistance','Prowess','Rage']:self.assertIn(name,text)
-        self.assertEqual(text.count('AP 0'),5);h.ui_page_frame(page,0x20)
+        for name in ['Power','Will','Resistance','Brilliance','Rage']:self.assertIn(name,text)
+        self.assertNotIn('Prowess',text)
+        self.assertNotIn('AP 0',text);self.assertNotIn('AP Used',text)
+        self.assertEqual(text.count('Drain|5'),5);self.assertEqual(bridge.bridge_menu_rect_count(),10)
+        for row in range(5):
+            a=[bridge.bridge_menu_rect_word(row*2,j)for j in range(4)];b=[bridge.bridge_menu_rect_word(row*2+1,j)for j in range(4)]
+            self.assertEqual(a[:1],[327]);self.assertEqual(b[:1],[373]);self.assertEqual(a[1:],b[1:]);self.assertEqual(a[2:],[42,22])
+        labels=[([bridge.bridge_menu_plain_word(i,j)for j in range(4)],C.string_at(bridge.bridge_menu_plain_text(i)))for i in range(bridge.bridge_menu_plain_count())]
+        fives=[v for v,t in labels if t==b'\x26'];self.assertEqual(len(fives),5)
+        self.assertTrue(all(v[0]==373+(42-(v[2]+1)//2)//2 for v in fives))
+        h.ui_page_frame(page,0x20)
         self.assertEqual(r32(h.symbols['styles_picker']),3);self.assertEqual(C.c_ushort.from_address(page+0xf8).value,5)
         before=C.string_at(h.save,0x1000);bits=r64(h.symbols['numbered_bits'])
         bridge.call_ptr2(h.symbols['OverdriveInit'],0,bridge.bridge_symbol(b'OverdrivePersist'))
@@ -722,25 +731,25 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn('Native 6',text);self.assertIn('Native help.',text);self.assertIn('|66|AP 0|',text);self.assertNotIn('Type E',text)
         self.assertIn('AP Used|3 / 30',text);self.assertEqual(bridge.bridge_menu_rect_count(),8)
 
-    def test_passives_and_limits_show_the_same_spent_ap_and_refresh_after_toggles(self):
+    def test_passives_spent_ap_refreshes_and_overdrives_has_no_ap_budget(self):
         h=Host();root,page=h.passive_setup([0x86,0x87,117]);before=h.abilities()
         self.assertIn('AP Used|0 / 30',h.ui_page_frame(page))
         self.assertIn('AP Used|3 / 30',h.ui_choose(page,0))
         self.assertIn('AP Used|5 / 30',h.ui_choose(page,1))
         self.assertIn('AP Used|5 / 30',h.ui_choose(page,2))  # Numeric66 is free.
         h.ui_page_frame(page,0x40);text=h.ui_page_frame(page,0x4000)
-        self.assertIn('AP Used|5 / 30',text);self.assertIn('Power',text)
+        self.assertNotIn('AP Used',text);self.assertIn('Power|Drain|5',text)
         h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
         self.assertIn('AP Used|2 / 30',h.ui_choose(page,0))
         self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before[:2]+bytes([245])+before[3:])
-        h.ui_page_frame(page,0x40);self.assertIn('AP Used|0 / 30',h.ui_page_frame(page,0x4000))
+        h.ui_page_frame(page,0x40);self.assertNotIn('AP Used',h.ui_page_frame(page,0x4000))
 
     def test_spent_ap_zero_max_overbudget_and_category_scope(self):
         h=Host();root,page=h.passive_setup([6,7,117]);w32(h.game+0x2e942c4,3)
         self.assertIn('AP Used|3 / 3',h.ui_page_frame(page))  # Native clamps overspend.
         w32(h.game+0x2e942c4,0);self.assertIn('AP Used|0 / 0',h.ui_page_frame(page))
-        h.ui_page_frame(page,0x40);self.assertIn('AP Used|0 / 0',h.ui_page_frame(page,0x4000))
-        self.assertNotIn('AP Used',h.ui_page_frame(page,0x4000))  # Outfits.
+        h.ui_page_frame(page,0x40);self.assertNotIn('AP Used',h.ui_page_frame(page,0x4000))
+        self.assertNotIn('AP Used',h.ui_page_frame(page,0x4000))  # Appearance.
         h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x1000)
         self.assertNotIn('AP Used',h.ui_page_frame(page,0x1000))  # Stance.
 
@@ -1255,7 +1264,7 @@ class RuntimeTests(unittest.TestCase):
     def test_customize_categories_stance_toggle_and_reserved_categories_preserve_save(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());native=bytes([6,0x97,6,21]);put(h.save+0x44,native+bytes([117])+bytes(43))
         root=h.ui_window();w=h.ui_window();h.ui_call('styles_enter',root);w=r64(h.symbols['styles_custom_page'])
-        text=h.ui_page_frame(w,0x20);self.assertTrue(text.startswith('Stance|Passives|Overdrives|Outfits|'))
+        text=h.ui_page_frame(w,0x20);self.assertTrue(text.startswith('Stance|Passives|Overdrives|Appearance|'))
         self.assertFalse(r32(h.symbols['styles_picker'])) # Entry press cannot enter the list too.
         self.assertIn('Type A|Single|I',text);self.assertIn('Type H?|Dual|I',text);self.assertNotIn('Type I?',text)
         for row in [3]:
@@ -1340,11 +1349,16 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(r64(h.game+0x2e9cb70),root);self.assertEqual(r32(h.symbols['styles_view']),0)
         self.assertEqual(C.c_ushort.from_address(page+0xf8).value,52)
         title=bridge.call_ptr1(h.game+0x2d0970,0x6b)
-        self.assertEqual(C.string_at(title,9),bytes([0x3a,0x45,0x57,0x57,0x4d,0x5a,0x49,0x57,0]))
+        self.assertEqual(C.string_at(title,10),bytes([0x2d,0x59,0x57,0x58,0x53,0x51,0x4d,0x5e,0x49,0]))
         h.ui_choose(page,0);self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]))
         text=h.ui_page_frame(page,0x40);self.assertFalse(r32(h.symbols['styles_picker']));self.assertEqual(r64(page+0x20),0)
         self.assertFalse(r32(root+0x68)&1);self.assertFalse(r32(page+0x68)&1)
-        self.assertIn('Stance|Passives|Overdrives|Outfits',text);h.ui_page_frame(page,0x20)
+        self.assertIn('Stance|Passives|Overdrives|Appearance',text)
+        for category,picker in [(0,1),(2,3),(3,0)]:
+            h.ui_choose(page,category);self.assertEqual(r32(h.symbols['styles_picker']),picker)
+            self.assertEqual(bridge.call_ptr1(h.game+0x2d0970,0x6b),title)
+            if picker:h.ui_page_frame(page,0x40)
+        h.ui_choose(page,1)
         self.assertEqual(r32(h.symbols['styles_picker']),2);self.assertEqual(h.abilities()[:4],bytes([0x86,0x97,117,0]))
 
     def test_removed_root_abilities_selection_redirects_to_customize(self):

@@ -1,18 +1,19 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v70 commit: d05b5a75bde94cb57611e204462f2e7c3cf42e74
-v71 commit: d9a1293f8d46f0352b38a66ef3a411069fd03e4b
-v71 source tree: 0518700000c4225f48d39d430502141977e5dabb
-Styles_v71.patch contains71 derivative commits, applied with git am.
-Styles_v71_from_v70.bundle requires the exact previous v70 commit above.
-Both generated payload headers remain byte exact to v70; no asset regeneration.
-All five Overdrives share cloned Valor/Wisdom/Anti body effects, recolored red,
-blue, yellow, white and black. Strength is renamed Power, keeping selection ID1.
-Witnessed effect poses, actual wrist/palm alignment and bounded aura geometry.
-E native jump-height factor1.5 vs1.25 in v70; preserve held ascent input.
-Both E GC2 variants are another15% slower than v70 (72.25% pre-v70 rate).
-No other stance mappings, generated animation bodies or gameplay boosts change.
-Actual form archives/effects load from the user's existing KH2 resources.
+Previous delivered v71 commit: d9a1293f8d46f0352b38a66ef3a411069fd03e4b
+v72 commit: 6e7e9bb17627c9baa5a565c175bd787f10787f8b
+v72 source tree: 86c9a4300308da9be8e8c28c80135178fa495b3c
+Styles_v72.patch contains72 derivative commits, applied with git am.
+Styles_v72_from_v71.bundle requires the exact previous v71 commit above.
+Both generated payload headers remain byte exact to v71; no asset regeneration.
+All Overdrives retain Valor plus Wisdom wind, excluding Wisdom11/12 foot
+emitters and the shared Anti package. Ordinary stance/attack packages remain.
+Customize header is fixed across categories and the Passives selection window.
+Appearance replaces Outfits; Brilliance replaces Prowess with selection ID4
+and legacy prowess_color settings retained. brilliance_color is canonical.
+Overdrives has no AP Used footer and has paired Drain/5 native panels.
+Drain5 is display-only; actual costs, resources and gameplay are unchanged.
+v71 Type E jump/GC2, body-dash, pose/hand anchors and other stance rules remain.
+Historical validation is labeled under validation/historical_v71.
 No Windows/GPU/game execution or live effect appearance verification is claimed.
-Historical v70 validation is labeled under validation/historical_v70.
 No original executable, model, extracted table or decompiled code enters Git.

@@ -1,0 +1,25 @@
+test_dash_reuses_admitted_source_after_native_cache_fields_change (f_repro.RuntimeTests.test_dash_reuses_admitted_source_after_native_cache_fields_change) ... FAIL
+test_inherited_and_looping_animation_clock_cannot_shorten_dash_distance (f_repro.RuntimeTests.test_inherited_and_looping_animation_clock_cannot_shorten_dash_distance) ... FAIL
+
+======================================================================
+FAIL: test_dash_reuses_admitted_source_after_native_cache_fields_change (f_repro.RuntimeTests.test_dash_reuses_admitted_source_after_native_cache_fields_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac59123af99a/styles_v56_work/crates/kh1-hook/native-tests/single_f/test_runtime.py", line 608, in test_dash_reuses_admitted_source_after_native_cache_fields_change
+    self.assertEqual(bridge.bridge_queue_calls(),count);total=0.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_inherited_and_looping_animation_clock_cannot_shorten_dash_distance (f_repro.RuntimeTests.test_inherited_and_looping_animation_clock_cannot_shorten_dash_distance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac59123af99a/styles_v56_work/crates/kh1-hook/native-tests/single_f/test_runtime.py", line 620, in test_inherited_and_looping_animation_clock_cannot_shorten_dash_distance
+    self.assertEqual(total,624.);self.assertFalse(r32(h.symbols['slide_active']))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 39.0 != 624.0
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.108s
+
+FAILED (failures=2)

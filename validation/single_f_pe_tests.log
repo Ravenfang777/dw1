@@ -71,10 +71,10 @@ test_overdrive_persistence_bounds_and_removal_leave_native_state_unchanged (__ma
 test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save (__main__.RuntimeTests.test_overdrives_are_five_exclusive_free_rows_independent_of_stance_and_native_save) ... ok
 test_party_reawards_are_blocked_immediately_and_removed_on_next_update (__main__.RuntimeTests.test_party_reawards_are_blocked_immediately_and_removed_on_next_update) ... ok
 test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes (__main__.RuntimeTests.test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes) ... ok
-test_passives_and_limits_show_the_same_spent_ap_and_refresh_after_toggles (__main__.RuntimeTests.test_passives_and_limits_show_the_same_spent_ap_and_refresh_after_toggles) ... ok
 test_passives_native_dialog_enforces_ap_rejection_and_equips_or_removes (__main__.RuntimeTests.test_passives_native_dialog_enforces_ap_rejection_and_equips_or_removes) ... ok
 test_passives_opens_sora_directly_and_returns_without_a_member_selector (__main__.RuntimeTests.test_passives_opens_sora_directly_and_returns_without_a_member_selector) ... ok
 test_passives_preserves_native_names_and_help_while_numbered_names_are_decimal (__main__.RuntimeTests.test_passives_preserves_native_names_and_help_while_numbered_names_are_decimal) ... ok
+test_passives_spent_ap_refreshes_and_overdrives_has_no_ap_budget (__main__.RuntimeTests.test_passives_spent_ap_refreshes_and_overdrives_has_no_ap_budget) ... ok
 test_passives_toggles_an_existing_full_list_with_and_without_a_style_token (__main__.RuntimeTests.test_passives_toggles_an_existing_full_list_with_and_without_a_style_token) ... ok
 test_removed_root_abilities_selection_redirects_to_customize (__main__.RuntimeTests.test_removed_root_abilities_selection_redirects_to_customize) ... ok
 test_repeated_landings_rearm_f_and_restore330_without_pointer_changes (__main__.RuntimeTests.test_repeated_landings_rearm_f_and_restore330_without_pointer_changes) ... ok
@@ -122,6 +122,6 @@ test_ventus_profile_all_records_restore_in_normal_and_olympus_banks (__main__.Ru
 test_ventus_switch_retires_terra_dash_body_and_never_uses_terra_variants (__main__.RuntimeTests.test_ventus_switch_retires_terra_dash_body_and_never_uses_terra_variants) ... ok
 
 ----------------------------------------------------------------------
-Ran 122 tests in 19.044s
+Ran 122 tests in 17.258s
 
 OK

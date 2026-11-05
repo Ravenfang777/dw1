@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "only_gate_timestamp_floats_changed": true,
+  "all_windows_have_positive_width": true,
+  "windows": [
+    {
+      "slot": 99,
+      "track": 1,
+      "times": [
+        31.29032325744629,
+        45.290321350097656
+      ]
+    },
+    {
+      "slot": 99,
+      "track": 5,
+      "times": [
+        31.29032325744629,
+        47.0
+      ]
+    },
+    {
+      "slot": 100,
+      "track": 1,
+      "times": [
+        40.58064651489258,
+        52.58064651489258
+      ]
+    },
+    {
+      "slot": 100,
+      "track": 5,
+      "times": [
+        40.58064651489258,
+        63.0
+      ]
+    },
+    {
+      "slot": 101,
+      "track": 1,
+      "times": [
+        36.52941131591797,
+        48.52941131591797
+      ]
+    },
+    {
+      "slot": 104,
+      "track": 1,
+      "times": [
+        41.8125,
+        55.0
+      ]
+    }
+  ]
+}
