@@ -1,6 +1,6 @@
 Name,Color,RGB_Hex,Drain,Stable_ID,Future_Description
-Control,Dark Blue,#00008B,5,6,Doubles the range of all magic
-Will,Purple,#800080,3,2,Doubles all magic damage/healing done
+Control,Blue,#0055FF,5,6,Doubles the range of all magic
+Will,Deep Purple,#400060,3,2,Doubles all magic damage/healing done
 Talent,Neon Pink,#FF10F0,5,7,No MP Cost
 Might,Deep Red,#8B0000,3,1,Doubles all physical damage done
 Vigor,Burnt Orange,#CC5500,5,8,Increases speed by 10%

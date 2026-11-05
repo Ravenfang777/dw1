@@ -1,0 +1,40 @@
+passive,name,package,element,preview_host,repeat_game_frames,maximum_active_game_frames,ap_cost,notes
+66,Weapon appearance flash,obj/W_EX010.a.us,0,Primary blade midpoint,180,120,0,Availability and skipped programs reported in game
+67,Last Arcanum root glow,obj/P_EX100_KH1F.a.us,35,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+68,Last Arcanum tip glow,obj/P_EX100_KH1F.a.us,36,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+69,Strike Raid blade ribbon,obj/P_EX100_KH1F.a.us,32,Primary blade midpoint,180,120,0,Availability and skipped programs reported in game
+70,Valor finisher burst 13,obj/P_EX100_BTLF.a.us,13,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+71,Valor finisher burst 14,obj/P_EX100_BTLF.a.us,14,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+72,Final weapon burst 20,obj/P_EX100_ULTF.a.us,20,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+73,Final weapon burst 42,obj/P_EX100_ULTF.a.us,42,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+74,Final weapon burst 43,obj/P_EX100_ULTF.a.us,43,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+75,Final weapon burst 44,obj/P_EX100_ULTF.a.us,44,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+76,Final weapon burst 45,obj/P_EX100_ULTF.a.us,45,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+77,Final weapon burst 46,obj/P_EX100_ULTF.a.us,46,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+78,Final weapon burst 47,obj/P_EX100_ULTF.a.us,47,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+79,Final weapon burst 101,obj/P_EX100_ULTF.a.us,101,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+80,Final weapon burst 102,obj/P_EX100_ULTF.a.us,102,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+81,Guard Break effect 30,obj/P_EX100.a.us,30,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+82,Guard Break effect 31,obj/P_EX100.a.us,31,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+83,Guard Break effect 32,obj/P_EX100.a.us,32,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+84,Finishing Leap effect 33,obj/P_EX100.a.us,33,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+85,Finishing Leap effect 34,obj/P_EX100.a.us,34,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+86,Aerial Finish effect 35,obj/P_EX100.a.us,35,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+87,Aerial Finish effect 36,obj/P_EX100.a.us,36,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+88,Aerial Finish effect 37,obj/P_EX100.a.us,37,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+89,Aerial Finish effect 38,obj/P_EX100.a.us,38,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+90,Final first swing effect 52,obj/P_EX100_ULTF.a.us,52,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+91,Final first swing effect 53,obj/P_EX100_ULTF.a.us,53,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+92,Final first swing effect 54,obj/P_EX100_ULTF.a.us,54,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+93,Final first swing effect 55,obj/P_EX100_ULTF.a.us,55,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+94,Final first swing effect 56,obj/P_EX100_ULTF.a.us,56,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+95,Final first swing effect 57,obj/P_EX100_ULTF.a.us,57,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+96,Sonic Rave effect 26,obj/P_EX100_KH1F.a.us,26,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+97,Sonic Rave effect 27,obj/P_EX100_KH1F.a.us,27,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+98,Sonic Rave effect 28,obj/P_EX100_KH1F.a.us,28,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+99,Sonic Rave Finish effect 29,obj/P_EX100_KH1F.a.us,29,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+100,Sonic Rave Finish effect 30,obj/P_EX100_KH1F.a.us,30,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+101,Sonic Rave Finish effect 31,obj/P_EX100_KH1F.a.us,31,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+102,Strike Raid catch flash,obj/P_EX100_KH1F.a.us,34,Primary blade midpoint,180,120,0,Availability and skipped programs reported in game
+103,Infinity tip charge,obj/P_EX100_KH1F.a.us,20,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game
+104,Counterguard hand flash,obj/P_EX100.a.us,41,Authored body/object; weapon codes on primary blade,180,120,0,Availability and skipped programs reported in game

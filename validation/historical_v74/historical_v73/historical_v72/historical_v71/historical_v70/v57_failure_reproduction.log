@@ -1,0 +1,25 @@
+test_dash_facing_stays_at_initial_direction_and_releases_after_end (v57_reproduction.RuntimeTests.test_dash_facing_stays_at_initial_direction_and_releases_after_end) ... FAIL
+test_magic_shortcut_chord_and_active_shortcut_menu_never_dash_or_spend_budget (v57_reproduction.RuntimeTests.test_magic_shortcut_chord_and_active_shortcut_menu_never_dash_or_spend_budget) ... FAIL
+
+======================================================================
+FAIL: test_dash_facing_stays_at_initial_direction_and_releases_after_end (v57_reproduction.RuntimeTests.test_dash_facing_stays_at_initial_direction_and_releases_after_end)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "crates/kh1-hook/native-tests/single_f/test_runtime.py", line 407, in test_dash_facing_stays_at_initial_direction_and_releases_after_end
+    for a,b in zip(face,[x,0.,z,yaw]):self.assertAlmostEqual(a,b,places=5)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: -1.0 != 1 within 5 places (2.0 difference)
+
+======================================================================
+FAIL: test_magic_shortcut_chord_and_active_shortcut_menu_never_dash_or_spend_budget (v57_reproduction.RuntimeTests.test_magic_shortcut_chord_and_active_shortcut_menu_never_dash_or_spend_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "crates/kh1-hook/native-tests/single_f/test_runtime.py", line 415, in test_magic_shortcut_chord_and_active_shortcut_menu_never_dash_or_spend_budget
+    self.assertEqual(bridge.bridge_queue_calls(),0);self.assertFalse(r32(h.symbols['slide_air_used']))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.088s
+
+FAILED (failures=2)

@@ -1,0 +1,77 @@
+Preparing worktree (detached HEAD 4adb946)
+HEAD is now at 4adb946 s339: KH2-style Cure heals by KH2's rule from KH1's stats, partners in range too
+Applying: Add isolated passive Dual Wield ground prototype
+Applying: Retire Dual Wield trails and add Valor air combos and idle
+Applying: Align the offhand grip and add Valor running and Master cast visuals
+Applying: Use matching Valor action visuals and restore native KH1 casting
+Applying: Preserve native attack abilities and extend Dual Wield visual coverage
+Applying: Select glide donors and loop slower combat and scene idle
+Applying: Share the slowed scene idle and enable Final glide blade contacts
+Applying: Replace selected native Guard with the Valor rising attack
+Applying: Add exclusive Dual Close and Final Dual Ranged styles
+Applying: Remove uninitialized spell level lookup from Ranged casting
+Applying: Add Ranged Aero-pose combos and floor hover with held Close glides
+Applying: Keep Final idle over finite hovering spins and refresh held glide draws
+Applying: Dual styles v13: rename A/B, Final combos, Master dodge and spin Guard
+Applying: Dual styles v14: Valor finisher glide, silent Guard and moving spin
+Applying: Dual styles v15: real finisher, native Roll replacement and KH2 spell effects
+Applying: Four styles v16: passive Limit and Wisdom, direct dodges and native spell draw filter
+Applying: Add Anti style and base Sora Single A; repair spin and spell ownership
+Applying: Use Quick Run for Dual B; add target FX filtering and Anti darkness
+Applying: Fix style motion handoffs and revise defensive locomotion for v19
+Applying: Repair first-frame style admission and restore committed Quick Run for v20
+Applying: Track complete Fire casts and native Guard; isolate Wisdom dodge for v21
+Applying: Fix style Square arbitration and Fire recovery header handoff (s361)
+Applying: Use native committed Guard and consumed Fire recovery clock (s362)
+Applying: Keep Dual weapons visible and rebuild native glide attachment (s363)
+Applying: Fix Dual A regular Glide duplicate using the rendered palm
+Applying: Add exclusive playable Roxas Dual C and match held Glide weapon colors
+Applying: Load Dual C from normalized or model-default Roxas animation names
+Applying: Admit Dual C from measured Roxas bind geometry instead of Sora parents
+Applying: Map Dual C Roxas body from actual hand anchors and hierarchy
+Applying: Add native-blocking Sora Guard for Dual C and playable Riku Single C
+Applying: Admit exact Riku data donor independently of native control class
+Applying: Build Riku melee routing from native clips when PTYA is empty
+Applying: Refine Single C aerial actions, item casts, dodge and Sora fallbacks
+Applying: Map Single C mixed combos, guarded aerial casts and Triangle actions
+Applying: Revise Single C combo sources, trim Riku finisher and remove Triangle actions
+Applying: Repair named Sora strike admission and isolate Single C combo lanes
+Applying: End Single C Riku 182 at the middle strike boundary
+Applying: Remove residual Riku 182 follow-up and verify terminal air combo input
+Applying: Add Master Dual D and Dark Riku Single D source inventory
+Applying: Keep Master offhand in native actions and replace Glide with aerial dodge
+Applying: Extend Master aerial dodge and add Quick Run with base Sora Guard
+Applying: Styles v42: triple Master dodge travel and capture Dark Riku main bank
+Applying: Styles v43: share twofold Master Aerial Dodge with Single A/C and Dual C
+Applying: Styles v44: implement and validate Dark Riku authored pose solver
+Applying: Styles v45: map Dark Riku authored poses onto Sora and test field movement
+Applying: Styles v46: isolate Single D secondary rest and validate skin bases
+Applying: Styles v47: align Single D hips and hold one airborne pose interval
+Applying: Styles v48: restore Single D takeoff before the airborne hold
+Applying: Styles v49: borrow Single C jump and map Dark Riku basic combo poses
+Applying: Styles v50: resolve native combo requests to regular animation bank records
+Applying: Styles v51: select script-linked Dark Riku weapon attacks for both combos
+Applying: Styles v52: move Single D second attack to native Guard and capture extra source
+Applying: Styles v53: integrate main Aqua v21 as Sin/workspace/scratch/ac59123af99a/styles_v56_work/.git/worktrees/v72-applycheck/rebase-apply/patch:1008: new blank line at EOF.
++
+warning: 1 line adds whitespace errors.
+gle E with shared native hooks
+Applying: Add Terra Single F and a dedicated native Styles menu
+Applying: Refine Styles menu, dodge visuals and native action reuse (v55)
+Applying: Restore Single F air dash with its existing native animation handle (v56)
+Applying: Repair Single F dash reuse and make Styles green below Customize (v57)
+Applying: Styles v58: lock Single F dash facing and add equipment-style slots
+Applying: Styles v59: add Customize stance categories and weapon magic columns
+Applying: Fix stance panels and move native abilities into Customize Passives
+Applying: Make seven native abilities intrinsic without AP or save slots
+Applying: Expose all numbered slots in direct Sora Passives and remove partner abilities
+Applying: Show spent AP in Passives and Limits; prepare Ventus source capture
+Applying: Fix Customize footer and add native-body Ventus Type G
+Applying: Add exclusive Ventus animation tests and reverse Keyblade grip
+Applying: Add Type G air actions and blade passes; preview unused Dark Riku clips
+Applying: Fix Type G air dispatch and remove Glide admission lockout
+Applying: Bake Ventus reverse grip and fix paired contacts and air travel
+Applying: Copy G damaging air dash330 to Type F with longer travel
+Applying: Add cosmetic Overdrives and body dash contacts; tune stance animations
+Applying: Combine and recolor Overdrive auras; repair anchors and tune Type E
+Applying: Trim shared Overdrive particles and update Customize labels and Drain panels

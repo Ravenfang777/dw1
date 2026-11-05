@@ -1,9 +1,9 @@
-title: KH1FM Styles v73 - Nine Overdrives and Hand Follow
+title: KH1FM Styles v75 - KH2 Weapon Effect Previews
 originalAuthor: JamesPMx / PM2CRAZY; isolated derivative by OpenAI Codex
 description: >-
-  Nine cosmetic Overdrives with requested colors, Drain values and future help.
-  Draw-time bound hand-effect roots; native/imported footsteps muted. Retain
-  Valor/Wisdom wind, Customize/Appearance and all existing stance combat.
+  Repurpose Passives66..104 as39 individual KH2 weapon effect previews.
+  Descriptions show names, package families, element IDs and readiness.
+  Visual-only previews coexist with stances; Overdrives and footsteps mute retained.
 assets:
 - name: dll/kh1-dual-wield.dll
   method: copy

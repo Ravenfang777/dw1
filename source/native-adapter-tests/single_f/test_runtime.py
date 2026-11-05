@@ -622,14 +622,15 @@ class RuntimeTests(unittest.TestCase):
         desc=r32(h.motions[slot]+60);desc=h.decode(desc) if desc&0x80000000 else h.motions[slot]+desc
         w32(desc,r32(desc)^1);before=h.snapshot();h.want=1;h.frame();self.assertEqual(h.snapshot(),before)
 
-    def test_dark_riku_test_passives_use101_104_and_clear_stance_and_ventus_tests(self):
+    def test_former_dark_riku_slots_select_weapon_effects_and_keep_stance(self):
         h=Host();root,page=h.passive_setup([6,119]);h.ui_choose(page,1)
         for index in range(4):
             text=h.ui_choose(page,1+35+index)
             self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),0)
-            self.assertEqual(bridge.call_ptr1(h.symbols['DarkTestChoice'],0),index+1)
-            self.assertEqual(r64(h.symbols['numbered_bits']),1<<(35+index));self.assertEqual(h.ability_count(119),0)
-            self.assertIn('Dark Riku',text)
+            self.assertEqual(bridge.call_ptr1(h.symbols['DarkTestChoice'],0),0)
+            self.assertEqual(bridge.call_int0(h.symbols['WeaponFxChoice']),101+index)
+            self.assertEqual(r64(h.symbols['numbered_bits']),1<<(35+index));self.assertEqual(h.ability_count(119),1)
+            self.assertIn('KH2 weapon effect preview',text)
 
     def test_ventus_numbered_profiles_apply_all_records_and_restore_both_banks(self):
         if not os.environ.get('VENTUS_TEST_SOURCE'):self.skipTest('Provide numbered Ventus test fixtures')
@@ -640,34 +641,34 @@ class RuntimeTests(unittest.TestCase):
                 self.assertEqual(r32(h.symbols['cache_choice']),choice);self.assertEqual(r32(h.symbols['action_variant_mask']),0)
                 h.want=0;self.assertTrue(h.frame());h.assert_all(self,0)
 
-    def test_animation_test_unequips_every_stance_and_preserves_native_flags_ap_and_neighbors(self):
+    def test_weapon_preview_keeps_every_stance_native_flags_ap_and_neighbors(self):
         for stance in [124,123,120,119,117,116,115,126,125,121,118,122]:
             h=Host();root,page=h.passive_setup([6,0x87,stance]);before=C.string_at(h.save,0x1000)
             h.ui_choose(page,2)
-            expected=bytearray(before);expected[0x46]=stance|128
-            self.assertEqual(C.string_at(h.save,0x1000),bytes(expected));self.assertEqual(h.ability_count(66),1)
-            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),3)
+            self.assertEqual(C.string_at(h.save,0x1000),before);self.assertEqual(h.ability_count(66),1)
+            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),0)
             self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),27)
-            for other in [124,123,120,119,117,116,115,126,125,121,118,122]:self.assertEqual(h.ability_count(other),0)
+            for other in [124,123,120,119,117,116,115,126,125,121,118,122]:self.assertEqual(h.ability_count(other),int(other==stance))
 
-    def test_equipping_each_stance_clears_test_and_preserves_unassigned_numbered_flag(self):
+    def test_equipping_each_stance_keeps_preview_and_unassigned_numbered_flag(self):
         for row in range(12):
             h=Host();root,page=h.passive_setup([6,117]);h.ui_choose(page,1);h.numbered_init((1<<50)|1)
             h.ui_page_frame(page,0x40);h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20);h.ui_choose(page,row)
-            self.assertEqual(r64(h.symbols['numbered_bits']),1<<50)
+            self.assertEqual(r64(h.symbols['numbered_bits']),(1<<50)|1)
             self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),0)
             self.assertEqual(sum(h.ability_count(id) for id in [124,123,120,119,117,116,115,126,125,121,118,122]),1)
 
-    def test_only_one_animation_test_can_be_active_and_off_restores_no_stance(self):
+    def test_only_one_weapon_preview_can_be_active_and_off_keeps_stance(self):
         h=Host();root,page=h.passive_setup([6,117])
         for index in range(TEST_COUNT):
             h.ui_choose(page,1+index)
             self.assertEqual(r64(h.symbols['numbered_bits']),1<<index)
-            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),3+index if index<VENTUS_COUNT else 0)
-            self.assertEqual(bridge.call_ptr1(h.symbols['DarkTestChoice'],0),0 if index<VENTUS_COUNT else 1+index-VENTUS_COUNT)
-            self.assertEqual(h.abilities()[:3],bytes([6,245,0]))
+            self.assertEqual(bridge.call_ptr1(h.symbols['VentusTestChoice'],0),0)
+            self.assertEqual(bridge.call_ptr1(h.symbols['DarkTestChoice'],0),0)
+            self.assertEqual(bridge.call_int0(h.symbols['WeaponFxChoice']),66+index)
+            self.assertEqual(h.abilities()[:3],bytes([6,117,0]))
         h.ui_choose(page,TEST_COUNT)
-        self.assertEqual(r64(h.symbols['numbered_bits']),0);self.assertEqual(h.abilities()[:3],bytes([6,245,0]))
+        self.assertEqual(r64(h.symbols['numbered_bits']),0);self.assertEqual(h.abilities()[:3],bytes([6,117,0]))
 
     def test_animation_test_selection_rejects_invalid_native_list_without_partial_writes(self):
         h=Host();root,page=h.passive_setup([6,117]);before=h.abilities()
@@ -705,7 +706,7 @@ class RuntimeTests(unittest.TestCase):
         h.ui_page_frame(page,0x40);h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
         text=h.ui_choose(page,6);self.assertIn('Type G|Single|I',text);self.assertEqual(h.ability_count(115),1)
         self.assertEqual(h.abilities()[:3],bytes([6,115,0]));self.assertEqual(h.ability_count(127),1)
-        self.assertEqual(r64(h.symbols['numbered_bits']),1<<50)
+        self.assertEqual(r64(h.symbols['numbered_bits']),(1<<50)|1)
 
     def test_numbered_passives_all_50_ids_are_visible_with_native_rows_without_save_writes(self):
         h=Host();root,page=h.passive_setup([6]*46+[117]);before=C.string_at(h.save,0x1000);seen=set();expected=set(map(str,list(range(66,115))+[127]))
@@ -731,7 +732,7 @@ class RuntimeTests(unittest.TestCase):
         text=h.ui_choose(page,0);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]));self.assertIn('AP Used|3 / 3',text)
         h.ui_choose(page,1);self.assertEqual(bridge.bridge_menu_sound(),4);self.assertEqual(h.abilities()[:4],bytes([6,0x87,117,0]))
         h.ui_choose(page,0);h.ui_choose(page,1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]));self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1)
-        h.ui_choose(page,2);self.assertEqual(h.ability_count(66),1);self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,245,0]))
+        h.ui_choose(page,2);self.assertEqual(h.ability_count(66),1);self.assertEqual(bridge.call_ptr1(h.game+0x2e8660,0),1);self.assertEqual(h.abilities()[:4],bytes([0x86,7,117,0]))
 
     def test_passives_preserves_native_names_and_help_while_numbered_names_are_decimal(self):
         h=Host();root,page=h.passive_setup([6,117]);text=h.ui_page_frame(page)
@@ -748,7 +749,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertNotIn('AP Used',text);self.assertIn('Control|Drain|5',text)
         h.ui_page_frame(page,0x1000);h.ui_page_frame(page,0x20)
         self.assertIn('AP Used|2 / 30',h.ui_choose(page,0))
-        self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before[:2]+bytes([245])+before[3:])
+        self.assertIn('AP Used|0 / 30',h.ui_choose(page,1));self.assertEqual(h.abilities(),before)
         h.ui_page_frame(page,0x40);self.assertNotIn('AP Used',h.ui_page_frame(page,0x4000))
 
     def test_spent_ap_zero_max_overbudget_and_category_scope(self):
@@ -800,7 +801,7 @@ class RuntimeTests(unittest.TestCase):
         h=Host();root,page=h.passive_setup([6,117]);h.numbered_init((1<<64)-1);self.assertEqual(bridge.bridge_numbered_save_calls(),0)
         self.assertEqual(r64(h.symbols['numbered_bits']),(ALL_NUMBERED&~TEST_MASK)|1);self.assertEqual(h.ability_count(66),1);self.assertEqual(h.ability_count(127),1)
         h.ui_choose(page,50);self.assertEqual(bridge.bridge_numbered_saved(),(ALL_NUMBERED&~TEST_MASK&~(1<<50))|1);self.assertEqual(bridge.bridge_numbered_save_calls(),1);self.assertEqual(h.ability_count(127),0)
-        h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),2);self.assertEqual(r64(h.symbols['numbered_bits'])&TEST_MASK,0)
+        h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),1);self.assertEqual(r64(h.symbols['numbered_bits'])&TEST_MASK,1)
 
     def test_numbered_test_settings_are_mod_wide_and_not_written_into_a_new_save(self):
         h=Host();root,page=h.passive_setup([6,117]);h.ui_choose(page,1);self.assertEqual(h.ability_count(66),1)
@@ -810,7 +811,7 @@ class RuntimeTests(unittest.TestCase):
     def test_numbered_legacy_entries_migrate_once_and_keep_existing_mod_flags(self):
         h=Host();h.ui_seed();self.assertTrue(h.ui_init());h.passive_table();h.intrinsic_seed();h.numbered_init(1<<7)
         put(h.save+0x44,bytes([66,0xc2,114,255,127,6,117])+bytes(41));self.assertTrue(h.intrinsic_init())
-        self.assertEqual(h.abilities()[:3],bytes([6,117,0]));self.assertEqual(bridge.bridge_numbered_saved(),(1<<48)|(1<<50));self.assertEqual(bridge.bridge_numbered_save_calls(),1)
+        self.assertEqual(h.abilities()[:3],bytes([6,117,0]));self.assertEqual(bridge.bridge_numbered_saved(),(1<<7)|(1<<48)|(1<<50));self.assertEqual(bridge.bridge_numbered_save_calls(),1)
         h.intrinsic_frame();self.assertEqual(bridge.bridge_numbered_save_calls(),1)
 
     def test_party_removal_clears_all_nine_ability_arrays_and_preserves_other_save_bytes(self):

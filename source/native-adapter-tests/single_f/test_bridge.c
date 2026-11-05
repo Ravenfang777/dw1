@@ -177,7 +177,7 @@ static void ABI native_menu_text(uintptr_t w,int palette,int flags,int x,int y,i
     if(menu_text_count++&&strlen(menu_drawn)+1<sizeof(menu_drawn))strcat(menu_drawn,"|");
     size_t at=strlen(menu_drawn);
     while(*text&&at+1<sizeof(menu_drawn)){
-        unsigned char c=*text++;menu_drawn[at++]=c==1?' ':c==2?'\n':c==0x68?'.':c==0x66?'/':c==0x61?'%':c==0x69?',':c>=0x21&&c<=0x2a?(char)('0'+c-0x21):c>=0x2b&&c<=0x44?(char)('A'+c-0x2b):c>=0x45&&c<=0x5e?(char)('a'+c-0x45):'?';
+        unsigned char c=*text++;menu_drawn[at++]=c==1?' ':c==2?'\n':c==0x68?'.':c==0x66?'/':c==0x61?'%':c==0x69?',':c==0x6b?':':c>=0x21&&c<=0x2a?(char)('0'+c-0x21):c>=0x2b&&c<=0x44?(char)('A'+c-0x2b):c>=0x45&&c<=0x5e?(char)('a'+c-0x45):'?';
     }menu_drawn[at]=0;
 }
 static void ABI native_menu_pill(uintptr_t w,int kind,int flags,int x,int y,int width,int text_x,uintptr_t color,const unsigned char*text,int font){

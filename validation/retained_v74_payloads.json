@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "headers": {
+    "single_e": {
+      "byte_exact_to_v74": true,
+      "sha256": "e8318f15cf8f1660f25c01829596cb119bae5264351b8f914e816d640b5068fc",
+      "bytes": 4895942
+    },
+    "single_f": {
+      "byte_exact_to_v74": true,
+      "sha256": "ec8c84424ed0f470bc10cbdca30885a36785ff5d2f6639449b820b77da853ff9",
+      "bytes": 25885384
+    }
+  }
+}

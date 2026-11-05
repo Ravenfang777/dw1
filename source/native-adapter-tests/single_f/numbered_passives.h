@@ -11,6 +11,12 @@
 #if TERRA_PROFILE_COUNT != VENTUS_TEST_COUNT + 2
 #error Regenerate the shared payload with all Ventus numbered test profiles
 #endif
+/* IDs66..104 now select KH2 visual-only weapon effects, not body profiles. */
+static const char*const*weapon_fx_text;
+static u32 (ABI *weapon_fx_status)(u32);
+static int weapon_fx_enabled=1;
+void ABI WeaponFxPreviewInit(uptr descriptions,uptr status){weapon_fx_text=(const char*const*)descriptions;weapon_fx_status=(void*)status;}
+void ABI WeaponFxEnable(u32 enabled){weapon_fx_enabled=enabled!=0;}
 static u64 numbered_bits;
 static void (ABI *numbered_persist)(u64);
 static int numbered_index(u32 id){return id>=66u&&id<=114u?(int)(id-66u):id==127u?50:-1;}
@@ -22,14 +28,9 @@ static void numbered_commit(u64 bits){
  bits=numbered_exclusive(bits&NUMBERED_MASK);if(bits==numbered_bits)return;numbered_bits=bits;if(numbered_persist)numbered_persist(bits);
 }
 void ABI NumberedPassivesInit(u64 bits,uptr persist){numbered_bits=numbered_exclusive(bits&NUMBERED_MASK);numbered_persist=(void*)persist;}
-u32 ABI VentusTestChoice(void){for(unsigned i=0;i<VENTUS_TEST_COUNT;i++)if(numbered_bits&(1ull<<i))return 3u+i;return 0u;}
+u32 ABI VentusTestChoice(void){return 0u;}
+u32 ABI WeaponFxChoice(void){if(remove_mode||!weapon_fx_enabled)return 0u;for(unsigned i=0;i<ANIMATION_TEST_COUNT;i++)if(numbered_bits&(1ull<<i))return VENTUS_TEST_FIRST+i;return 0u;}
 static void numbered_toggle(u32 id){int index=numbered_index(id);if(index>=0)numbered_commit(numbered_bits^(1ull<<index));}
 
-u32 ABI DarkTestChoice(void){for(unsigned i=0;i<DARK_TEST_COUNT;i++)if(numbered_bits&(1ull<<(i+VENTUS_TEST_COUNT)))return i+1u;return 0u;}
-static const char*const dark_test_help[4]={
- "Dark Riku. Ground 3/4/5. Air 8/9/10.",
- "Dark Riku. Ground 11/12/13. Air 14/15/16.",
- "Dark Riku. Ground 17/18/19. Air 20/21/22.",
- "Dark Riku. Ground 23/24/25. Air 26/27/27."
-};
-static const char*numbered_test_help(unsigned id){return id<DARK_TEST_FIRST?terra_test_help[id-VENTUS_TEST_FIRST]:dark_test_help[id-DARK_TEST_FIRST];}
+u32 ABI DarkTestChoice(void){return 0u;}
+static const char*numbered_test_help(unsigned id){return weapon_fx_text&&numbered_is_test(id)?weapon_fx_text[(id-VENTUS_TEST_FIRST)*3u]:"KH2 weapon effect preview";}

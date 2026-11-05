@@ -1,17 +1,21 @@
 Upstream: https://github.com/PM2CRAZY/KH2-Combat-in-KH1
 Pinned upstream: 4adb946b642f6b9bd84f83d12ec16944e0638b8b
-Previous delivered v72 commit: 6e7e9bb17627c9baa5a565c175bd787f10787f8b
-v73 commit: 6253093f50b07f95d783a93877e6e4d192557592
-v73 source tree: bee462aeeea928c36bc28e2f915ef58987f3fde5
-Styles_v73.patch contains73 derivative commits, applied with git am.
-Styles_v73_from_v72.bundle requires the exact previous v72 commit above.
-Both generated animation headers remain byte exact to v72. No regeneration.
-Nine cosmetic Overdrives have individual colors/Drain/future-effect help.
-Stable IDs preserve old choices; palette version2 replaces old colors once.
-Future buffs and Drain resource deductions are NOT implemented.
-Overdrive continuously bound roots refresh at draw without advancing effects.
-Native step/material sounds and known imported gait sounds are muted; other
-audio paths and combat/animation/movement/contact rules stay unchanged.
-Historical validation is under validation/historical_v72.
-No Windows/game/GPU/audio playback or live hand-alignment test is claimed.
+Original delivered v74 commit: bcbbdd6df6bc1f3aff80cb3f2e658af97ce76f06
+Restored equivalent v74 commit: 2d8b5d11c58218322c1dc26b05d5c5412ba6d3b0
+Exact v74 tree, both histories: db35ba356bf2e7ab84508db07ad5db8b04646ae5
+v75 commit: b503b865a15c86aa5086430b9800ece04aa85eb1
+v75 source tree: fe234add1bea5646dd696f853635b8d717ec4266
+The workspace was reconstructed from the supplied v74 full patch. Committer
+metadata changes its restored commit IDs; the entire v74 tree is byte exact.
+Styles_v75.patch contains75 derivative commits from pinned upstream.
+Styles_v75_from_v74.patch is the single new change, applicable to that v74 tree.
+Styles_v75_from_upstream.bundle requires only pinned upstream, and includes all
+75 derivative commits for reliable reconstruction without earlier bundles.
+Passives66..104 now preview39 individual KH2 elements; old body selectors retire.
+Both private generated animation headers remain byte exact to v74.
+No original KH2 particle payload is compiled or committed; read at runtime.
+Current validation has665 Rust checks and9 focused final-PE C/menu checks.
+The older172 PE checks under historical_v74 are historical, not a v75 rerun.
+New Rust effect dispatch/GPU and actual package appearances were not run in game.
+Main combat, Overdrives/colors, AP and footsteps mute remain from v74.
 No original executable, model, extracted table or decompiled code enters Git.

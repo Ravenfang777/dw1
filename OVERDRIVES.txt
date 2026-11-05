@@ -1,8 +1,8 @@
 Customize -> Overdrives
 
-Control - Dark Blue #00008B - Drain 5
+Control - Blue #0055FF - Drain 5
   Doubles the range of all magic
-Will - Purple #800080 - Drain 3
+Will - Deep Purple #400060 - Drain 3
   Doubles all magic damage/healing done
 Talent - Neon Pink #FF10F0 - Drain 5
   No MP Cost
@@ -19,22 +19,22 @@ Prowess - Pale White #F5F5FF - Drain 10
 Spite - Gray Black #202020 - Drain 1
   Heals 1 HP upon dealing damage to an enemy
 
-The descriptions are planned future effects. Only cosmetic auras and metadata
-are active now; Drain values do not deduct a resource and no listed bonus runs.
+The descriptions are future effects. Only cosmetic auras and metadata are
+active; Drain values do not deduct a resource and no listed bonus runs.
 One free exclusive choice, independent of Stance/native ability slots. Confirm
 the active row again to disable it. Eight visible rows; scroll for Spite.
 All use Valor plus Wisdom wind; no Wisdom foot11/12 or shared Anti darkness.
 
 SETTINGS
-kh1-overdrive.ini, beside the other mod settings, supports #RRGGBB colors.
-The first v73 load applies the new requested palette if palette_version2 is
-absent. A menu selection save writes version2/new colors, keeping the selected
-ID and unrelated settings. After this migration, manual color edits persist.
-Restart after manual edits. Example:
-palette_version = 2
+kh1-overdrive.ini supports #RRGGBB colors. v74 reads palette3. Version2's exact
+old Control #00008B and Will #800080 defaults upgrade automatically; other
+colors and custom values remain. Older pre-version2 settings upgrade to the
+complete current defaults. A menu selection save persists version3. No settings
+reset is needed. Restart after manual color edits. Example:
+palette_version = 3
 overdrive = 6
-control_color = #00008B
-will_color = #800080
+control_color = #0055FF
+will_color = #400060
 talent_color = #FF10F0
 might_color = #8B0000
 vigor_color = #CC5500
@@ -43,9 +43,10 @@ immunity_color = #228B22
 prowess_color = #F5F5FF
 spite_color = #202020
 
-Stable IDs: 0 off,1 Might,2 Will,3 Resistance,4 Prowess,5 Spite,6 Control,
+Stable IDs:0 off,1 Might,2 Will,3 Resistance,4 Prowess,5 Spite,6 Control,
 7 Talent,8 Vigor,9 Immunity. Old Power1 becomes Might, Brilliance4 Prowess,
 and Rage5 Spite. Display order follows the catalogue, not ID order.
-The ZIP does not overwrite an INI. Exact RGB choices implement the named
-shades and can be adjusted after the version2 migration. Near-black Spite uses
-masked alpha rendering. See source/STYLES-V73.MD for evidence and live limits.
+The ZIP does not overwrite an INI. Near-black Spite uses masked alpha.
+No-stance joint refresh now occurs at actual native Sora field submission;
+live continuity and exact glow brightness still require in-game checking.
+See source/STYLES-V74.MD for evidence and limits.

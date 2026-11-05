@@ -1,61 +1,62 @@
-KH1FM STYLES v73 / s412 - NINE OVERDRIVES, HAND FOLLOW AND FOOTSTEPS
+KH1FM STYLES v75 / s414 - KH2 WEAPON EFFECT PREVIEWS
 
 INSTALL
-Close KH1. Disable v72 and older main Styles packages. Import this ZIP into
-OpenKH Mod Manager, enable v73, Build and launch with Panacea. Keep existing
-KH2FM resources/settings. Standalone Aqua/Terra and full KH2 Combat DLLs stay
-disabled. Confirm s412 / STANCES v73 in kh1-dual-wield.log. The native adapter
-targets the supplied Steam Global build. Restart after updating the DLL.
+Close KH1. Disable v74 and older main Styles packages. Import this ZIP into
+OpenKH Mod Manager, enable v75, Build and launch with Panacea. Keep the existing
+KH2FM installation/resources and settings. Restart after changing the DLL.
+Confirm s414 / STANCES v75 in kh1-dual-wield.log. Target: supplied Steam Global.
 
-OVERDRIVES
-Nine choices in your requested order, each with its own Drain number and
-exact future-effect description. See OVERDRIVES.txt and OVERDRIVES.csv.
-Eight rows are visible; scroll down to reach Spite. One selected at a time,
-free of AP/native ability slots and independent of Stance. Select its active
-row again to turn it off. The header stays Customize; Appearance remains.
-Descriptions state FUTURE functions. No buffs, healing, invincibility, free
-magic, damage/speed changes or Drain resource deductions are implemented yet.
+USE
+Customize -> Passives. Slots66..104 now select39 individual KH2 weapon-effect
+elements, replacing the Ventus and Dark Riku animation previews. Numeric names
+and AP0 remain. Each description shows its effect name, source package family
+and element number, with runtime readiness. Full paths/IDs are also listed in
+WEAPON_EFFECT_TESTS.csv and WEAPON_EFFECT_TESTS.txt.
 
-The requested nine-color set replaces older palette defaults automatically.
-Old settings cannot keep Will blue. The next selection save writes palette
-version2 and all new color keys, keeping the choice/other settings. Later
-custom version2 colors persist normally. Existing selection IDs are stable:
-Power->Might, Brilliance->Prowess, Rage->Spite; Will/Resistance remain.
+Equip one preview and return to the field. It repeats every three seconds at
+normal game speed. Short flashes finish naturally; looping effects have a
+finite two-second window and one-second clear gap. Choose another slot to
+replace it, or select the active slot again to turn it off. Walk and attack to
+check attachment. The preview changes no moveset and keeps the equipped stance.
 
-HAND EFFECT FOLLOW
-Visible continuously bound Overdrive roots now refresh immediately before
-draw using the latest witnessed pose. Effect clocks/RNG/alpha/particle history
-do not advance again. Detached particles, authored wind trails and script
-anchors retain their placement. Valor/Wisdom wind remains, with Wisdom foot
-sparkles and shared Anti darkness excluded as in v72. Live fast-motion hand
-tracking still needs an in-game check; no static hand offset was added.
+Old animation-test selections reset on upgrade, preventing unexpected effects.
+Reserved105..114/127 flags remain. Selection uses the existing mod-wide settings
+file, with weapon_effects=kh2-v1; no native ability/save/AP slots are consumed.
 
-FOOTSTEPS
-Native footstep/material-movement sounds are muted for all actors/kinds,
-including steps accidentally triggered during attacks and shared stop/jump/
-landing material sounds. Known imported walk/run sounds are also suppressed.
-Attack, impact, weapon, magic, voice, music and push/contact audio paths remain.
-Check FOOTSTEPS MUTED: native step routine installed=true in the log.
-The supplied Steam executable matches the checked native step entry.
+WHAT TO EXPECT
+Kingdom Key flash; Limit Form glows/ribbon/catch/charge and Sonic Rave effects;
+Valor finisher bursts; Final weapon bursts/first swings; base Sora attack effects.
+One PAX element plays per slot, rather than an attack's entire combined effect.
+Original colors are retained. Effects are visual only; no attack, script,
+damage, sound or resource behavior is added. Overdrives remain independent.
+Only KH2 is included in this iteration.
+
+Descriptions report loading, partial rendering/skipped programs, missing KH2
+archive/element, unavailable particle data or a retired geometry budget.
+Ready means parsed/admitted, not a verified full original visual. Limit36 has
+known unsupported lightning programs. Missing assets are not substituted.
+Weapon codes use the current primary blade, including left-only source codes.
+Other authored body/object anchors remain. A ribbon preview does not throw the
+Keyblade. Exact blade fit/scale and original effect appearance need game tests.
 
 RETAINED
-All stance/numbered animation mappings, E jump/GC2/Cure/dodge controls, F body
-dash contacts, G reverse grip/two-pass contacts and Passives AP behavior stay.
-Both generated animation headers remain byte exact to v72. Previously requested
-non-Sora ability removal remains permanent when saved; uninstall does not
-reconstruct partner lists. Stand idle for safe stance handoffs.
+All main stances including Type G and Type D, intrinsic passives, native AP,
+movement/damage/contact rules, nine Overdrives/palette3/Drain/help metadata,
+Customize/Appearance and muted footsteps. Both generated headers remain exact.
+No planned Overdrive buffs or Drain deduction mechanics are implemented.
 
-VALIDATION / LIVE CHECK
-660 Rust checks/30 suites and172 final-PE checks pass (123 shared,49 E).
-Checks cover nine labels/Drain/help, exact percent/comma output, native scrolling,
-palette migration, near-black policy, opt-in bound-root refresh without time/
-RNG/alpha advancement, and the checked native footstep signature. Windows x64
-release, full source reconstruction, ZIP CRC and file hashes are verified.
-No Windows/game/GPU/audio session ran here. Check glows during fast movement,
-all nine shades, help/glyph fit and absence of footstep sounds during attacks,
-walking/running/landing, with attack/impact/music still audible.
+VALIDATION
+665 Rust checks/30 nonempty suites pass, plus9 focused final-PE C/menu checks.
+The PE checks cover39 descriptions, all12 stance coexistence paths, exclusive
+selection, full-capacity zero-AP lists and readiness/footer bounds. They run
+the actual C adapter/menu against the supplied Steam EXE with Win64 ABI mocks.
+Rust particle dispatch/GPU and KH2 payload availability are not executed there.
+Windows x64 release, exports/imports, source reconstruction, ZIP CRC and file
+hashes are verified. No actual Windows/game/GPU session was performed here.
+Check each selected effect's appearance and transitions in game.
 
 UNINSTALL
-Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v73, close KH1,
-disable the package and Build. Removal mode restores step-sound routing.
-Existing ability restoration/capacity rules remain.
+Set remove_dual_wield=on in kh1-dual-wield.ini; load/save using v75, close KH1,
+disable the package and Build. Existing restoration/capacity rules remain.
+The previously requested saved removal of partner abilities cannot be reversed
+automatically; that existing behavior is unchanged.

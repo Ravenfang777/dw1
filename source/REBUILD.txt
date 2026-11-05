@@ -1,101 +1,30 @@
-Clone the pinned public upstream, then git am Styles_v73.patch.
-Alternatively, fetch Styles_v73_from_v72.bundle into the recorded v72 checkout.
-Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h.
-Copy rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
-These included headers are exact final build inputs. Never add generated
-payloads/private source fixtures to Git.
+Build current v75:
+Clone pinned upstream, then git am Styles_v75.patch, or fetch the complete
+Styles_v75_from_upstream.bundle from that upstream checkout. Bundle/patch contain
+all75 derivative commits. The exact source commit/tree is in PROVENANCE.txt.
+An equivalent v74 tree can instead git am Styles_v75_from_v74.patch.
 
-Install Rust x86_64-pc-windows-gnu plus MinGW GCC/binutils.
+Copy rebuild-inputs/single_e/aqua_data.h to local/single_e/aqua_data.h and
+rebuild-inputs/single_f/terra_data.h to local/single_f/terra_data.h.
+These private headers remain exact to v74; no animation regeneration is needed.
+Never add generated headers or original game files to Git.
+
+Use Rust with x86_64-pc-windows-gnu and MinGW GCC/binutils:
 cargo build -p kh1-hook --release --target x86_64-pc-windows-gnu
 Rename target/x86_64-pc-windows-gnu/release/dinput8.dll to kh1-dual-wield.dll.
-Build stamps/PE timestamps can differ. cargo test --workspace runs policy tests.
+cargo test --workspace runs portable policy/math/engine checks.
+Build stamps and source commit metadata can differ on rebuild.
 
-Optional private fixture regeneration for Single E:
-python3 crates/kh1-hook/src/single_e/retime_second.py AQUA_V21_SOURCE TERRA_V4_SOURCE OUTPUT_SOURCE
-python3 crates/kh1-hook/src/single_e/generate_data.py OUTPUT_SOURCE local/single_e
-The retimer needs Python NumPy and the user's Terra v4 tools/model/MSETs;
-it consumes the existing serialized Aqua v21 poses, not a new retarget.
+The focused final-PE UI tests require Linux GCC/Python and the user's unmodified
+Steam Global KH1 executable; private animation fixtures are not required.
+Set STYLES_DLL to the current DLL and KH1_EXE to that executable.
+Set STYLES_MENU_ANCHORS and STYLES_SLOT_ANCHORS to the corresponding .h files
+in native-adapter-tests/single_f, then run its test_weapon_fx.py.
+Its three supporting files test_runtime.py/test_bridge.c/weapon_fx.rs and
+reverse_grip.py/numbered_passives.h stay beside it as supplied.
+Renders, Rust effect callbacks and package availability are mocked in PE tests.
 
-Linux GCC/ctypes offline adapter tests:
-Set STYLES_DLL to the absolute final DLL path.
-Set AQUA_SOURCE to the retimer's OUTPUT_SOURCE and run single_e/test_runtime.py.
-Set TERRA_SOURCE to Terra v4/source, KH1_EXE to the supplied stock Steam Global
-executable, STYLES_MENU_ANCHORS to the included styles_menu_anchors.h and
-STYLES_SLOT_ANCHORS to the included styles_slots_anchors.h; run single_f/test_runtime.py.
-These variables refer to private local files. You can instead run the test files
-from their original locations inside the patched repository, where both anchor
-paths default to src/single_f automatically.
-The real C adapters execute from the final PE. Rust startup/dispatch, most menu drawing
-and navigation are mocked; native excerpt execution is in the receipts.
-The native AP renderer emits verified draw packets in one test; GPU submission
-and native engine cleanup are still substituted, not executed in Windows.
-
-Type G is profile2; all35 test profiles3..37 are in the shared terra_data.h.
-Optional regeneration is documented in SINGLE-G.MD; keep private game assets
-out of Git. Set VENTUS_SOURCE to the converted work directory when running
-the F/G final-PE tests.
-
-Set VENTUS_TEST_SOURCE to the converted numbered test work directory when
-running the full current F/G tests. The portable test directory includes its
-numbered_passives.h configuration, or set NUMBERED_PASSIVES_HEADER explicitly.
-See SINGLE-G.MD for optional regeneration of main G and every numbered test.
-
-The current main G and action variants require the v66 regeneration sequence
-in SINGLE-G.MD; preserve the old G work for unchanged numbered galleries.
-Dark Riku tests use the admitted main1160 source read from the original game.
-
-Set VENTUS_TEST_SOURCE to the converted numbered test work directory when
-running the full current F/G tests. The portable test directory includes its
-numbered_passives.h configuration, or set NUMBERED_PASSIVES_HEADER explicitly.
-See SINGLE-G.MD for optional regeneration of main G and every numbered test.
-
-v67 generates37 reversible body records plus an immutable038 container from
-the same NEW_G_WORK fixtures. No new original source is needed. The included
-private headers reproduce this arrangement without asset regeneration.
-See STYLES-V67.MD for the Rust dispatch regression and live validation limits.
-
-v68 supplied headers include the baked grip. Optional regeneration imports
-tools/ventus-retarget/reverse_grip.py; its Python dependencies include SciPy.
-The updated build_ventus_v66.py preserves positive-width main-G gate timelines.
-PE tests include reverse_grip.py alongside the harness; use VENTUS_SOURCE for
-the current main work and VENTUS_TEST_SOURCE for the original gallery work.
-No regeneration is needed when using the provided private headers.
-See STYLES-V68.MD for test scope and live limitations.
-
-v69 uses the same immutable main G and test fixtures as v68. The F dash variant
-copies the G330 fixture before reverse_grip.py is applied for G. Do not reverse
-or modify the source fixtures in place. The provided headers require no asset
-regeneration. The current shared final-PE harness requires VENTUS_SOURCE and
-VENTUS_TEST_SOURCE, including when testing F's copy. See STYLES-V69.MD.
-
-v70 supplies the updated E header with Cure poses exchanged. Optional regeneration:
-python3 crates/kh1-hook/src/single_e/swap_cure.py AQUA_V55_FIXTURES TERRA_V4_SOURCE OUTPUT_FIXTURES
-python3 crates/kh1-hook/src/single_e/generate_data.py OUTPUT_FIXTURES local/single_e
-Use OUTPUT_FIXTURES as AQUA_SOURCE for the E PE harness. F/G headers and source
-fixture paths remain those of v69. Supplied headers need no asset regeneration.
-Overdrive effects read the existing KH2 form archives at runtime; no new private
-form payload is compiled into the DLL. Selection is kh1-overdrive.ini beside
-other mod settings. See STYLES-V70.MD for limits and current test coverage.
-
-v71 retains both v70 private headers byte exact. No asset regeneration is needed.
-Use the v70 Cure-swapped E fixtures as AQUA_SOURCE; G/gallery fixtures remain
-those of v68/v65. The supplied final-PE harness checks the current v71 DLL.
-Overdrives now use the shared Valor/Wisdom/Anti set. Their own texture copies
-are desaturated/masked and tinted at runtime. The original libraries/textures
-are not modified. Optional #RRGGBB settings live in kh1-overdrive.ini.
-See OVERDRIVES.txt and STYLES-V71.MD for exact colors, scope and limitations.
-
-v72 retains both v71 private headers byte exact. No asset regeneration is needed.
-Use the same E/G/gallery fixtures as v71 with the current final-PE harness.
-Shared Overdrive packages now include Valor and Wisdom only; Wisdom11/12 are
-filtered after ordinary aura admission. Anti stance resources are independent.
-Brilliance uses brilliance_color, with prowess_color accepted as an alias.
-Menu changes and Drain5 display need no new resources or dependencies.
-See STYLES-V72.MD for current scope; earlier version sections are historical.
-
-v73 uses the same private headers and E/G/gallery fixtures as v72.
-Effects::refresh_bindings is an opt-in draw-time root refresh in kh2-fx;
-only cloned Overdrive packages call it. No shader or external dependency added.
-The checked native step-sound RVA uses the existing Epic/Steam address map.
-The current catalogue, settings version2 and test limits are in STYLES-V73.MD.
-Earlier sections above are historical. No asset regeneration is needed.
+The larger historical movement/animation harnesses still require the user's
+original regeneration work/fixtures described in SINGLE-E/F/G.MD. Main profiles
+remain; numbered animation galleries are no longer exposed through Passives.
+STYLES-V75.MD is the current specification. Earlier guides are historical.

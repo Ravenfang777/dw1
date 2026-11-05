@@ -1,11 +1,10 @@
 # Single F and the native Styles menu — v54 / s393
 
-For the current menu/Overdrives, see styles-v73.md: nine cosmetic choices with
-individual colors, Drain values and future-effect descriptions. Valor/Wisdom
-wind remains without foot emitters/shared Anti darkness. Bound Overdrive roots
-refresh at draw time; footsteps are muted. The header stays Customize and the
-last category is Appearance. The following is historical v54 documentation;
-v70 Type F body-dash contacts/v71 stance mappings and controls remain in v73.
+Current menu/testing: see styles-v75.md. Passives66..104 now preview individual
+KH2 weapon effects with names/IDs/readiness; Ventus/Dark Riku animation galleries
+are retired from the menu. Main Type F/G and all stance combat remain. Current
+nine Overdrives/palette3, Customize/Appearance and footsteps mute are retained.
+The following is historical v54 documentation.
 
 Single F is the user's tested Terra v4 main profile, integrated into the existing
 Styles DLL. Ability ID116 and runtime code11 are new. The other ten saved IDs

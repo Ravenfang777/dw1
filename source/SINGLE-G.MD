@@ -1,5 +1,10 @@
 # Type G: BBS Ventus in KH1FM Styles v68
 
+Current testing: Styles v75 replaces numbered animation galleries with KH2
+weapon-effect previews in Passives66..104. Main Type G remains; old numbered
+fixtures below are historical rebuild data, not the current menu behavior.
+See styles-v75.md for current controls, help and runtime readiness.
+
 The original53-bone Ventus p01ex00 model and PAM sources are fitted to Sora's
 293-bone native body. Native headers, allocations, helper travel and action
 selection remain. Type G is ID115/runtime12, Single/I, zero AP. Profile1 remains

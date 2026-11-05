@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "tests": 48,
+  "failures": 0,
+  "errors": 0,
+  "executed_final_integrated_pe_c_adapter": true,
+  "rust_shared_dispatch_mocked": true,
+  "native_event_sampler_jump_curve_and_glide_constructors_executed": true,
+  "windows_or_game_executed": false
+}
